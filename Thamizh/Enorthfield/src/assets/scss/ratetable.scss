@@ -1,0 +1,404 @@
+@import "util/util";
+
+$white: #ffffff;
+$primary-color: #0076bf;
+$body-font-color: #000000;
+$black: #000000;
+$lightgray-bg-color:#EDEDED;
+$img: "../../images/";
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1279px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+.breadcrumbWrapBottom {
+    + .filterspanel{
+        padding-top: 26px;
+        +.ratetablepanel{
+            padding-top: 24px;
+        }
+    }
+}
+.filterspanel{
+    @include breakpoint(small only){
+        display: none;
+    }
+    ul{
+        display: flex;
+        justify-content: end;
+        margin-bottom: 0;
+        li{
+            margin-right: 7px;
+            &:last-child{
+                margin-right: 0;
+            }
+            a{
+                background: #EDEDED;
+                color: #000000;
+                font-family: 'SourceSerif';
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 21px;
+                border-radius: 102px;
+                padding: 8px;
+                &:hover{
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+.ratetablepanel{
+    padding-top:82px;
+    &.comparetablepanel{
+        padding-top: 90px;
+        &.padding_adjust{
+            padding-top: 78px;
+        }
+        display: block;
+        @include breakpoint(small only){
+            display: none;
+        }
+    }
+    .h2title{
+        text-align: center;
+        margin-bottom: 6px;
+        line-height: 56px;
+        @include breakpoint(large){
+            text-align: left;
+        }
+    }
+    .producthead{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .tabletitle{
+            font-size: 40px;
+            line-height: 46px;
+            padding-bottom: 0px;
+        }
+        .tablesubtitle, h4{
+            font-size: 24px;
+            line-height: 30px; 
+            padding-bottom: 6px;
+            padding-top: 22px;
+        }
+        .checkingcta{
+            position: relative;
+            top: -25px;
+        }
+        .ctabutton{
+            font-size: 22px;
+            line-height: 26px;
+            padding: 16px 28px;
+        }
+    }.ratescta{
+        // justify-content: end;
+        h4{
+            width: 70%;
+            text-align: left;
+        }
+        .checkingcta{
+            width: 30%;
+            text-align: right;
+        }
+    }
+    
+    .ratesTable{
+        p{
+            font-size: 24px;
+            line-height: 30px; 
+            padding-bottom: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .ctabutton{
+                font-size: 28px;
+                line-height: 32px;
+                padding: 22.5px 36px;
+                text-decoration: none;
+                position: relative;
+                top: -22px;
+                margin-top: 38px;
+            }
+        }
+        table{
+            width: 100%;
+            table-layout: fixed;
+            border-collapse: collapse; 
+            th, td{
+              text-align: left; 
+              padding-left: 15px; 
+              font-weight: 700;
+              @media only screen and (min-width: 1279px){
+                padding-left: 58px;
+              }
+            }
+            .empty{
+                td{
+                    height: 28px;
+                    background: #ffffff;
+                    padding: 0;
+                }
+            }
+            thead{
+                th{
+                    background: rgb(178,217,151);
+                    background: -moz-linear-gradient(0deg, rgba(178,217,151,1) 0%, rgba(227,250,255,1) 100%);
+                    background: -webkit-linear-gradient(0deg, rgba(178,217,151,1) 0%, rgba(227,250,255,1) 100%);
+                    background: linear-gradient(0deg, rgba(178,217,151,1) 0%, rgba(227,250,255,1) 100%);
+                    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#b2d997",endColorstr="#e3faff",GradientType=1);
+                    border-right : 2px solid #ffffff;
+                    color: $black;
+                    font-size: 19px;
+                    line-height: 22px;
+                    padding-top: 19px;
+                    padding-bottom: 19px;
+                    &:last-child{
+                        border-right: none;
+                    }
+                }
+            }
+            tbody{
+                tr{
+                    &:first-child{
+                        border-top: 9px solid #C7C7C7;
+                    }
+                    &:last-child{
+                        border-bottom: 9px solid #C7C7C7; 
+                    }
+                    &:nth-child(even){
+                        background: #F5F5F5;
+                    }
+                }
+                td{
+                    font-size: 16px;
+                    line-height: 28px;
+                    border-right : 2px solid #C7C7C7; 
+                    padding-top: 24px;
+                    padding-bottom: 24px;
+                    p a, a{
+                        text-decoration: underline;
+                    }
+                    &:last-child{
+                        border-right: none;
+                    }
+                    .tablelinks{
+                        color: $black;
+                        border: 1px solid #636363;
+                        border-radius: 102px;
+                        padding: 2px 10px;
+                        padding-bottom: 5px;
+                        &:hover{
+                            background: $primary-color;
+                            border-color: $primary-color;
+                            color: #ffffff;
+                            text-decoration: none;
+                        }
+                    }
+                }    
+            }
+        }
+        &.compareTable{
+            .h2title{
+                text-align: center;
+                line-height: 44px;
+                margin-bottom: 30px;
+                @include breakpoint(large){
+                    text-align: left;
+                    line-height: 56px;
+                    margin-bottom: 18px;
+                }
+            }
+            table{
+                th, td{
+                    text-align: center; 
+                    padding-left: 0;
+                    font-weight: 700;
+                  }
+                  th{
+                    font-size: 18px;
+                    line-height: 20px;
+                    padding-top: 34px;
+                    padding-bottom: 20px;
+                    @include breakpoint(medium only){
+                        font-size: 14px;
+                        line-height: 16px;
+                        padding: 5px;
+                    }
+                    &.title{
+                        font-family: 'SourceSerif';
+                        font-size: 32px;
+                        font-weight: 400;
+                        line-height: 62px;
+                        @include breakpoint(medium only){
+                            font-size: 20px;
+                        }
+                    }
+                    .d-block{
+                        margin-top: 12px;
+                        @include breakpoint(medium only){
+                            margin-top: 8px;
+                        }
+                        .tablelinks{
+                            color: $black;
+                            background: $white;
+                            border-radius: 102px;
+                            padding: 2px 10px;
+                            padding-bottom: 5px;
+                            font-size: 15px;
+                            line-height: 28px;
+                            font-weight: 700;
+                            @include breakpoint(medium only){
+                                font-size: 12px;
+                                line-height: 18px;
+                                padding-bottom: 4px;
+                            }
+                            &:hover{
+                                background: $primary-color;
+                                color: #ffffff;
+                                text-decoration: none;
+                            }
+                        }
+                    }
+                  }
+                  td{
+                    font-size: 14px;
+                    line-height: 16px;
+                    padding-top: 26px;
+                    padding-bottom: 26px;
+                    p a, a{
+                        text-decoration: underline;
+                    }
+                    @include breakpoint(medium only){
+                        padding: 5px;
+                    }
+                    &:first-child{
+                        text-align: left;
+                        padding-left: 22px;
+                        padding-right: 27px;
+                    }
+                  }
+                  .empty{
+                    td{
+                        height: 28px;
+                        background: #ffffff;
+                        padding: 0;
+                    }
+                }
+            }
+        }
+    }
+    &.desktopversion{
+        display: none;
+        @include breakpoint(medium){
+            display: block;
+        }
+    }
+    &.mobileversion{
+        display: block;
+        + .mobileversion{
+            padding-top: 0;
+        }
+        @include breakpoint(medium){
+            display: none;
+        }
+        .grid-container{
+            padding: 0 !important;
+        }
+        .producthead{
+            display: block;
+            text-align: center;
+            .tabletitle{
+                font-size: 36px;
+                line-height: 40px;
+                background: rgb(178,217,151);
+                background: -moz-linear-gradient(0deg, rgba(178,217,151,1) 0%, rgba(227,250,255,1) 100%);
+                background: -webkit-linear-gradient(0deg, rgba(178,217,151,1) 0%, rgba(227,250,255,1) 100%);
+                background: linear-gradient(0deg, rgba(178,217,151,1) 0%, rgba(227,250,255,1) 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#b2d997",endColorstr="#e3faff",GradientType=1);
+                color: $black;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                margin-bottom: 0;
+                padding-left: 8px;
+                padding-right: 8px;
+            }
+            .tablesubtitle, h4{
+                background: #EBE7E7;
+                color: $black;
+                font-size: 24px;
+                line-height: 28px;
+                padding-top: 18px;
+                padding-bottom: 19px;
+                margin-bottom: 0;
+                padding-left: 8px;
+                padding-right: 8px;
+            }
+            .checkingcta{
+                top:0;
+                margin-bottom: 15px;
+                margin-top: 15px;
+                .ctabutton{
+                    font-size: 16px;
+                    line-height: 26px;
+                    padding: 6.5px 22px;
+                }
+            }
+        }
+        table{
+            tbody{
+                tr{
+                    border: none !important;  
+                    &:nth-child(odd){
+                        background: #F5F5F5;
+                    } 
+                    &:nth-child(even){
+                        background: #ffffff;
+                    }
+                }
+                th, td{
+                    padding-left: 0;
+                    text-align: center;
+                    background: transparent !important;
+                    border: none !important;
+                }
+                td{
+                    font-size: 16px;
+                    line-height: 20px;
+                    font-weight: 400;
+                    padding-top: 18px;
+                    padding-bottom: 18px;
+                    padding-left: 8px;
+                    padding-right: 8px;
+                }
+            }
+        }
+    }
+}
+
+.ratetablepanel .producthead + .ratesTable .producthead .checkingcta {
+    top: 0px;
+    @include breakpoint(medium){
+        top: -10px;
+    }
+}
+.ratesTable .producthead + table{
+    margin-bottom: 34px;
+}
+.ratetablepanel .ratesTable .producthead .checkingcta {
+    position: relative;
+    top:0;
+    @include breakpoint(medium){
+        top: -10px;
+    }
+}
+.twocolumnpanel + .filterspanel, .imageslicepanel + .filterspanel, .tabsection + .filterspanel, .fourcolumnpanel + .filterspanel,
+.disclaimerpanel + .filterspanel, .iconpanel + .filterspanel, .socialLnkpanel + .filterspanel, .getstartedpanel + .filterspanel,
+.helppanel + .filterspanel, .videopanel + .filterspanel + .twocolumngridnpanel .filterspanel, .generalcontent + .filterspanel,
+.counterpanel + .filterspanel, .threecolumnpanel + .filterspanel, .accordion + .filterspanel, .alternativepanel + .filterspanel{
+    margin-top: 96px;
+}

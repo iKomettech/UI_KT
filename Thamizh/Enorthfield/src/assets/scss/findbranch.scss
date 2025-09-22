@@ -1,0 +1,345 @@
+@import "util/util";
+$white: #ffffff;
+$primary-color: #0076bf;
+$black:#000000;
+$img: "../../images";
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+.findbranchPannel {
+  padding-top:90px;
+  @include breakpoint(small only) {		
+    padding-top:60px;		
+  }	
+  .grid-container{
+    @include breakpoint(small only){
+        padding-left: 18px !important;
+        padding-right: 18px !important;
+    }
+  }
+  .wraps{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 814px;
+    margin: 0 auto;
+    text-align: center;
+    background: #a194eb;
+    background: rgb(161,148,235);
+    background: -moz-linear-gradient(90deg, rgba(161,148,235,1) -40%, rgba(148,197,222,1) 36%, rgba(146,185,129,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(161,148,235,1) -40%, rgba(148,197,222,1) 36%, rgba(146,185,129,1) 100%);
+    background: linear-gradient(90deg, rgba(161,148,235,1) -40%, rgba(148,197,222,1) 36%, rgba(146,185,129,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#a194eb",endColorstr="#92b981",GradientType=1);
+    border-radius: 62px;
+    padding: 40px 24px 20px 24px;
+    @include breakpoint(medium){
+      flex-wrap: nowrap;
+      border-radius: 102px;
+      padding: 50px 50px 50px 50px;
+    }
+    @include breakpoint(large){
+      padding: 60px 100px 60px 90px;
+    }
+  }
+  h3  {
+    color: #000000;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 62px;
+    text-align: center;
+    width: 100%;
+    @include breakpoint(medium){
+      text-align: left;
+    }
+    @include breakpoint(large){
+      font-size: 45px;
+      max-width: 360px;
+    }
+  }
+form {
+  display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-start;
+  width: 100%;
+  position: relative;
+  .form-group {
+    position: relative;
+    margin-bottom: 0;
+    width: 100%;
+    max-width: 240px;
+  }
+  }
+
+.txtBox{
+  background: #FFFFFF;
+  padding: 0 25px;
+  height: 58px;
+  width: 100%;
+  border: 1px solid #FFFFFF;
+  font-size: 19px;
+  line-height: 58px;
+  color:$black;
+  border-radius: 29px 0 0 29px !important;
+  &::placeholder{
+    color: $black;
+  }
+  &.errortext{
+    border: 1px solid #ff0000 !important;
+  }
+}
+.ctaborder{
+  height: 58px;
+  min-width:81px;
+  position: relative;
+  border-radius: 0;
+  font-size: 26px;
+  line-height: 32px;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 0 29px 29px 0;
+  background: rgb(164,202,229);
+  background: -moz-linear-gradient(80deg, rgba(164,202,229,1) 0%, rgba(255,255,255,1) 85%);
+  background: -webkit-linear-gradient(80deg, rgba(164,202,229,1) 0%, rgba(255,255,255,1) 85%);
+  background: linear-gradient(80deg, rgba(164,202,229,1) 0%, rgba(255,255,255,1) 85%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#a4cae5",endColorstr="#ffffff",GradientType=1);
+  //background: #BED9D0;
+  color:$black;
+  transition: 0.45s all;
+  &:hover{
+    background: $primary-color;
+    color: $white;
+  }
+  @include breakpoint(small only){
+    font-size: 20px;
+  }
+}
+}
+.getError {
+  padding-top: 20px;
+  @include breakpoint(xxlarge) {
+    padding-top: 30px;
+  }
+  p {
+    text-align: center;
+    color: #d02323;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 18px;
+    @include breakpoint(medium) {
+      font-size: 22px;
+    }
+    @include breakpoint(xlarge) {
+      font-size: 26px;
+      font-weight: 500;
+      line-height: 26px;
+    }
+    @include breakpoint(xxlarge) {
+      font-size: 30px;
+      line-height: 30px;
+    }
+  }
+}
+
+
+input {
+  border: 0px;
+  &.form-control {
+    &.error {
+      border: 1px solid #ff0000 !important;
+    }
+  }
+}
+
+.errorSpan {
+  position: absolute;
+  top: 22px;
+  right: -11px;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  z-index: 1;
+  @include breakpoint(landscape) {
+    top: 11px;
+    right: -11px;
+  }
+  @include breakpoint(small) {
+    width: 20px;
+    height: 20px;
+    top: 18px;
+    right: -9px;
+  }
+}
+.errorForm {
+  .errorSpan {
+    background: red;
+  }
+}
+.successForm {
+  .errorSpan {
+    background:red;
+  }
+}
+.lbl-error {
+  color: red;   
+  position: relative;
+  top: 0px;
+  margin-bottom: 10px;
+  @include breakpoint(large) {
+    top: -22px;
+    position: absolute;
+  }
+  
+}
+.lbl-success {
+  color: $primary-color;
+  top: 0px;
+  margin-bottom: 10px;
+  position: relative;
+   @include breakpoint(large) {
+    position: absolute;
+    top: -22px;
+  }
+}
+
+input:-ms-input-placeholder:focus{
+    color: #999;
+}
+.findbranchPannel {
+  .umbraco-forms{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+    @include breakpoint(xlarge){
+      justify-content: space-between;
+      flex-wrap: nowrap;
+    }
+    h5, h3{
+      padding-top:10px;
+      @include breakpoint(medium only){
+        font-size: 28px;
+      }
+      @media (min-width: 1280px) and (max-width: 1390px) {
+        font-size: 26px;
+        padding-right: 15px;
+       }
+    }
+    .email-ad{
+      width: 100%;
+      text-align: center;
+      @include breakpoint(medium){
+        display: none;
+      }
+    }
+    .lbl-success, .lbl-error{
+      top: 0;
+      position: relative;
+      margin-left: 0;
+      width: 100%;
+      @include breakpoint(small only){
+        margin-left:-15px;
+      } 
+      @include breakpoint(large){
+        width: 940px;
+        position: absolute;
+        margin-left: 345px;
+        top: -28px;
+      } 
+      @include breakpoint(xlarge){
+        margin-left: 420px;
+        top: -28px;
+        position: absolute;
+      }
+      @media (min-width: 1360px) and (max-width: 1380px) {
+        margin-left: 405px;
+      }
+      @media (min-width: 1024px) and (max-width: 1279px) {
+        top: 0;
+        position: relative;
+        margin-left: 0;
+        width: 942px;
+      }
+    }
+    .lbl-success{
+      p{
+        font-size: 16px;
+        font-weight: 600;
+      }
+    }
+    .umbraco-forms-field-wrapper{
+      p.error{
+        font-size: 10px;
+      }
+    }
+    .umbraco-forms-field.emailaddress{
+      min-width: 814px;
+      @media (min-width: 1280px) and (max-width: 1390px) {
+        min-width: 754px;
+       }
+       @include breakpoint(medium only){
+        min-width: 605px;
+       }
+       @include breakpoint(small only){
+        min-width: 450px;
+     }
+     .umbraco-forms-label{
+      font-size: 0;
+     }
+    }
+    .btn.primary {
+      background: #FE5000;
+      color: #ffffff;
+      border: 1px solid #FE5000;
+      padding: 8px 18px;
+      font-weight:700;
+      display: inline-block;
+      position: relative;
+      transition: 0.3s;
+      background-size: 200% 100%;
+      background-position: 100% 0;
+      transition: background-position .3s;
+      &:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        background: $white;
+        transform: scaleX(1);
+        transform-origin: 100%;
+        transition-property: transform;
+        transition-duration: 0.3s;
+        transition-timing-function: ease-out;
+      }
+      &:before {
+        content: "";
+        background: $primary-color;
+      }
+      &:hover {
+          color: $white;
+          border: 1px solid $white;
+          background: $primary-color;
+          background-position: 0 0;
+          &:before {
+            transform: scaleX(0);
+        }
+      }
+     }
+  }
+}
+
+.umbraco-forms-field-wrapper .field-validation-error {
+  color: #ff0000;
+}
+.error-text{
+  font-size: 20px;
+  line-height: 2;
+  color: #ff0000;
+  padding-top: 4px;
+}

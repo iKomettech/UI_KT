@@ -1,0 +1,127 @@
+@import "util/util";
+$white: #ffffff;
+$primary-color: #0076bf;
+$body-font-color: #000000;
+$black: #000000;
+$lightgray-bg-color:#EDEDED;
+$img: "../../images/";
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1279px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+.subbannerpanel + .breadcrumbWrapBottom + link + .alternativepanel{
+    margin-top: 90px;
+    @include breakpoint(small only){
+        margin-top: 75px;
+    }
+}
+.alternativepanel{
+    margin-top:90px;
+    @include breakpoint(small only){
+        margin-top: 55px;
+    }	
+    +.alternativepanel{
+        .alternative.right{
+            padding-top: 0px;
+            padding-bottom: 0px;
+        }
+    }
+    .alternative{
+        padding: 24px 24px 24px 24px;
+        @include breakpoint(llarge){
+            padding: 30px 31px 55px 40px;
+        }
+        @include breakpoint(xlarge){
+            padding: 44px 51px 55px 81px;
+        }
+        &.lightbg{
+            background: $lightgray-bg-color;
+        }
+        &.right{
+            padding-left: 0;
+            @media (max-width: 1023px){
+                padding-right: 0;     
+             }
+            .flexwrap{
+                flex-direction: row-reverse;
+            }
+            .contentwrap{
+                @include breakpoint(large){
+                    padding-left: 35px;
+                    padding-right: 0px;
+                }
+                @include breakpoint(xlarge){
+                    margin-right: 76px;
+                    padding-left: 0;
+                }
+            }
+        }
+        .flexwrap{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            @include breakpoint(large){
+                flex-wrap: nowrap;
+            }
+            .contentwrap{
+                max-width: 100%;
+                width: 100%;
+                order: 2;
+                margin-top: 30px;
+                @include breakpoint(large){
+                    max-width: 50%;
+                    padding-right: 25px;
+                    margin-top: 0px;
+                    order: 1;
+                }
+                @include breakpoint(xlarge){
+                    max-width: 622px;
+                    padding-right: 0px;
+                }
+                .h2title{
+                    text-align: left;
+                    margin-bottom: 18px;
+                    padding-top: 10px;
+                    @include breakpoint(large){
+                        text-align: left;
+                        margin-bottom: 10px;
+                        line-height: 56px;
+                    }
+                }
+                p{
+                    font-size: 18px;
+                    line-height: 28px;
+                    padding-bottom: 29px;
+                    &:last-child{	
+                        padding-bottom: 0px;	
+                    }
+                }
+            }
+            .imgWrap{
+                order: 1;
+                min-width: 100%;
+                max-height: 100%;
+                overflow: hidden;
+                @include breakpoint(large){
+                    min-width: 50%;
+                    max-height: 406px;
+                    order: 2;
+                }
+                @include breakpoint(xlarge){
+                    min-width: 522px;
+                    max-height: 406px;
+                }
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }        
+        }
+    }  
+}
+  

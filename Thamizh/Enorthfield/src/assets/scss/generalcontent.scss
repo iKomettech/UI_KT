@@ -1,0 +1,286 @@
+@import "util/util";
+
+$white: #ffffff;
+$primary-color: #0076bf;
+$body-font-color: #000000;
+$black: #000000;
+$lightgray-bg-color:#EDEDED;
+$img: "../../images/";
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1279px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+.subbannerpanel + .breadcrumbWrapBottom + link + .generalcontent.padding_adjust{
+  margin-top: 80px;
+  @include breakpoint(small only) {	
+      margin-top:75px;	
+  }
+}
+.subbannerpanel + .breadcrumbWrapBottom + link + .generalcontent{
+  margin-top: 83px;
+  @include breakpoint(small only) {	
+      margin-top:70px;	
+  }
+}
+.subbannerpanel+link+.generalcontent {
+  margin-top: 130px;
+  @include breakpoint(small only) {
+      margin-top: 70px;
+  }
+}
+.generalcontent{
+  margin-top:85px;
+  @include breakpoint(small only) {	
+    margin-top:55px;	
+  }
+  &.padding_adjust{
+    margin-top: 83px;
+      @include breakpoint(small only) {	
+        margin-top:55px;	
+      }
+  }
+  .h2title{
+      text-align: left;
+      @include breakpoint(small only) {	
+        line-height: 44px;
+      }
+      // margin-bottom: 18px;
+      @include breakpoint(large){
+          text-align: left;
+          // margin-bottom: 14px;
+          line-height: 56px;
+      }
+  }
+   .pagecontent{
+      max-width: 100%;
+      width: 100%;
+      @include breakpoint(xlarge) {	
+        max-width: 1105px;	
+      }
+      p{
+        font-size: 18px;
+        line-height: 28px;
+        margin-bottom: 15px;	
+        @include breakpoint(large){	
+            margin-bottom: 30px;	
+        }
+        &:last-child{
+          margin-bottom: 0;
+        }
+      }
+   }
+}
+.Investment.Services{
+  .generalcontent{
+    .pagecontent{
+      max-width: 1248px;
+      width: 100%;
+    }
+  }
+}
+.generaltablepanel{
+  padding-top:45px;
+  @include breakpoint(large){
+    padding-top:82px;
+  }
+  .h2title{
+      text-align: center;
+      line-height: 44px;
+      margin-bottom: 30px;
+      @include breakpoint(large){
+          text-align: left;
+          line-height: 56px;
+          margin-bottom: 18px;
+      }
+  }
+  .generalTable{
+      table{
+          width: 100%;
+          border-collapse: collapse; 
+          th, td{
+            text-align: left; 
+            padding-left: 20px; 
+            padding-right: 17px;
+          }
+          .empty{
+              td{
+                  height: 28px;
+                  background: #ffffff;
+                  padding: 0;
+              }
+          }
+          thead{
+              th{
+                  background: rgb(178,217,151);
+                  background: -moz-linear-gradient(0deg, rgba(178,217,151,1) 0%, rgba(227,250,255,1) 100%);
+                  background: -webkit-linear-gradient(0deg, rgba(178,217,151,1) 0%, rgba(227,250,255,1) 100%);
+                  background: linear-gradient(0deg, rgba(178,217,151,1) 0%, rgba(227,250,255,1) 100%);
+                  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#b2d997",endColorstr="#e3faff",GradientType=1);
+                  color: #000000;
+                  color: $black;
+                  font-size: 19px;
+                  line-height: 22px;
+                  padding-top: 19px;
+                  padding-bottom: 19px;
+                  text-align: center;
+                  p{
+                    font-size: 16px;
+                    line-height: 28px;
+                    padding-bottom: 0;
+                    display: block;
+                  }
+              }
+          }
+          tbody{
+              tr{
+                  &:first-child{
+                      border-top: 9px solid #C7C7C7;
+                  }
+                  &:last-child{
+                      border-bottom: 9px solid #C7C7C7; 
+                  }
+                  &:nth-child(even){
+                      background: #F5F5F5;
+                  }
+              }
+              td{
+                  font-size: 16px;
+                  line-height: 28px;
+                  padding-top: 24px;
+                  padding-bottom: 24px;
+                  p{
+                    font-size: 16px;
+                    line-height: 28px;
+                    padding-bottom: 0;
+                    display: block;
+                  }
+              }
+              ul{
+                margin-left:0rem;
+                list-style-type: none;
+                margin-top: 1rem;
+                margin-bottom: 1rem !important;
+                li{
+                    padding-left: 20px;
+                    font-size: 16px;
+                    margin-bottom: 0;
+                    line-height: 28px;
+                    position: relative;
+                    &::before{
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        top: 10px;
+                        background-color:$primary-color; 
+                        width: 10px;
+                        height: 10px;
+                        border-radius: 50%;
+                        margin-right: 10px;   
+                    }
+                    ul{
+                        margin-left: 0;
+                        margin-top: 18px;
+                        li{
+                            padding-left: 32px;
+                            &::before{
+                                border-radius: 0%;
+                                width: 10px;
+                                height: 10px;
+                                background-color:$secondary-color; 
+                            }
+                        }
+                    }
+                }
+            }    
+          }
+      }
+  }
+}
+@media only screen and (min-width: 768px){
+  .checking.responsive_table{
+    display: table;
+  }
+  .responsive_table{
+    display: none;
+  }
+  .checking.responsive_table ~ table{
+    margin-top: 90px;
+  }
+}
+@media only screen and (max-width: 767px){
+  .checking.responsive_table{
+    display: none;
+  }
+  .responsive_table{
+    display: table;
+  }
+  .generaltablepanel .generalTable table.responsive_table{
+    width: 100%;
+    background-color: #f5f5f5;
+    margin-bottom:30px;
+    table-layout: fixed;
+  }
+  .responsive_table ~ table{
+    margin-top: 30px;
+  }
+  .generaltablepanel .generalTable table.responsive_table tr td:first-child{
+    background: rgb(178,217,151);
+    background: -moz-linear-gradient(0deg, rgba(178,217,151,1) 0%, rgba(227,250,255,1) 100%);
+    background: -webkit-linear-gradient(0deg, rgba(178,217,151,1) 0%, rgba(227,250,255,1) 100%);
+    background: linear-gradient(0deg, rgba(178,217,151,1) 0%, rgba(227,250,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#b2d997",endColorstr="#e3faff",GradientType=1);
+    color: #000000;
+    width: 150px;
+    padding-top: 3px;
+    padding-bottom:3px;
+  }
+  .generaltablepanel .generalTable table.responsive_table tr td{
+    font-size: 16px;
+    line-height: 28px;
+    padding: 10px 5px 10px 10px;
+  }
+  .generaltablepanel .generalTable table.responsive_table td p{
+    font-size: 16px;
+    line-height: 28px;
+    padding-bottom: 0;
+    display: block;
+  }
+  .generaltablepanel .generalTable table.responsive_table td ul{
+    margin-left: 0rem;
+    list-style-type: none;
+    margin-top: 1rem;
+    margin-bottom: 1rem !important;
+  }
+  .generaltablepanel .generalTable table.responsive_table td ul li{
+    padding-left: 20px;
+    font-size: 16px;
+    margin-bottom: 0;
+    line-height: 28px;
+    position: relative;
+  }
+  .generaltablepanel .generalTable table.responsive_table td ul li:before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 10px;
+    background-color: #0076bf;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+}
+@media only screen and (max-width: 550px){
+  .generaltablepanel .generalTable table.responsive_table tr td {
+    width: 100% !important;
+    display: block;
+    text-align: center;
+  }
+  .generaltablepanel .generalTable table.responsive_table td ul li{
+    text-align: left;
+  }
+}

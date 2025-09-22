@@ -1,0 +1,261 @@
+@import "util/util";
+$white: #ffffff;
+$secondary-color: #0076bf;
+$img: "../../images";
+.subbannerpanel + .breadcrumbWrapBottom + link + .iconpanel.padding_adjust{
+    margin-top: 80px;
+    @include breakpoint(small only) {
+        margin-top:65px;	
+    }
+}
+.subbannerpanel + .breadcrumbWrapBottom + link + .iconpanel{
+    margin-top: 60px;
+    @include breakpoint(small only) {
+        margin-top:65px;	
+    }
+}
+.iconpanel{
+    margin-top: 85px;
+    @include breakpoint(small only) {
+        margin-top:60px;	
+    }
+    &.padding_adjust {	
+        margin-top: 73px;
+        @include breakpoint(small only) {
+            margin-top: 55px;
+        }
+    }
+    .h2title{
+        @media (min-width: 375px) and (max-width:639px){		
+            max-width: 100%;		
+            text-align: left;		
+            padding-bottom: 40px;	
+            margin-bottom: 34px;	
+        } 
+    }
+    .dis-flex{
+        text-align: center;
+        display: flex;
+        @include breakpoint(small only) {
+         flex-wrap: wrap;
+        }
+        @include breakpoint(medium only) {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        @include breakpoint(large only) {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
+    .contentlist{
+        width: 100%;
+        text-align: center;
+        position: relative;
+        @media (min-width: 375px) and (max-width: 639px){
+            width:100%;
+            padding-bottom:30px;
+            &:last-child{
+                padding-bottom: 0px;
+            }
+        }
+        @include breakpoint(large only) {
+            width:50%;
+        }
+        .icontitle{
+        font-weight: 400;
+        padding-bottom:35px;
+        color:#555555;
+        text-align: center;
+        font-family: "SourceSerif";
+        font-size:30px;
+        line-height:35px;
+        @media (min-width: 375px) and (max-width:639px){
+            padding-bottom: 26px;
+            height: auto !important;
+        }
+        @include breakpoint(medium only) {	
+            max-width:280px;	
+            padding:0px 10px;	
+            font-size:30px;	
+            line-height:35px;
+            padding-bottom: 35px;
+        }
+        p{	
+            font-size: 28px;	
+            line-height: 33px;	
+            color: #555555;
+            padding-bottom: 0;
+            a{
+                font-size: 30px;	
+                line-height: 33px;	
+                color: #555555;
+                text-decoration: none;
+            }
+        }
+        }
+        .contentitem{
+        max-width:100%;
+        margin:0 auto;  
+        @include breakpoint(small) {
+            max-width:250px;
+            padding:0px 15px;
+        }
+        @include breakpoint(medium only) {
+            max-width:280px;
+            padding:0px 10px;
+        }
+        @include breakpoint(large) {
+            max-width:300px;
+        }
+        @include breakpoint(xlarge) {
+            max-width:336px;
+        }
+        &.cta_adjust{
+            padding-bottom: 0px; 	
+            @include breakpoint(medium) {	
+                padding-bottom: 60px; 	
+            }
+        }
+        }
+        ul{	
+            margin-left: 0px;
+            padding-bottom: 20px; 
+        }
+        p{
+        color: #000000;
+        font-size:18px;
+        line-height:23px;
+        padding-bottom:20px;
+        @include breakpoint(small only) {
+            font-size:16px;
+            line-height:20px;
+            padding-bottom: 0;
+        }
+       }
+       .imgwrap{
+        img{
+
+        transition: .75s all;
+        min-width: 135px;
+        max-width: 135px;
+        min-height: 135px;
+        max-height: 135px;
+        @include breakpoint(small only) {
+            margin-bottom: 5px;	
+        }
+        }
+        @include breakpoint(medium only) {
+            margin-bottom: 20px;
+            margin-top: 30px;
+        }
+        @include breakpoint(large only) {
+            margin-bottom: 20px;
+            margin-top: 30px;
+        }
+        @include breakpoint(xlarge) {
+            margin-bottom: 34px;
+        }
+    }
+    a{
+        &:hover{
+            text-decoration: none;
+        }
+       }
+    .ctablock{
+        position: absolute;
+        bottom:0px;
+        margin:0 auto;
+        left: 0;
+        right: 0;
+        text-align: center;
+        @media (min-width: 375px) and (max-width:639px){
+            position: relative;
+        }
+        .applycta{
+            font-size: 22px;
+            line-height: 26px;
+        }
+    }
+}
+    &.iconborder{
+        .h2title{	
+            @media (min-width: 375px) and (max-width:639px){		
+                border-bottom: 1px solid #707070;   	
+            } 	
+        }
+        .contentlist{
+            width: 100%;
+            text-align: center;
+            border-right:1px solid #707070;
+            @media (min-width: 375px) and (max-width:639px){	
+                border-right:unset;	
+            }
+            a{
+                &:hover{
+                    text-decoration: none;
+                } 
+            }
+            &:last-child{
+                border-right:unset;
+                padding-bottom:0px;
+                @media (min-width: 375px) and (max-width:639px){	
+                    border-bottom:unset !important;	
+                    padding-bottom: 0px;
+                }
+            }
+         
+            &:nth-child(even){
+                @include breakpoint(medium only) {
+                    border-right:unset;
+                }
+                @include breakpoint(large only) {
+                    border-right:unset;
+                }
+            }
+            @include breakpoint(small only) {
+                padding-bottom: 30px;
+                border-right:unset;
+                border-bottom:1px solid #707070;
+                padding-top: 30px;
+                &:last-child{
+                    border-bottom:1px solid #707070;
+                }
+            }
+            @include breakpoint(medium only) {
+                width: 50%;
+                margin-bottom: 20px;
+                margin-top: 30px;
+            }
+            @include breakpoint(large only) {
+                width: 50%;
+                margin-bottom: 20px;
+                margin-top: 30px;
+            }
+            @media (min-width: 375px) and (max-width:639px){	
+                width: 100%;	
+                padding-bottom: 60px;
+                padding-top: 60px;
+            }
+            &:first-child{
+                @media (min-width: 375px) and (max-width:639px){
+                    padding-top: 0px;
+                    margin-top:25px;
+                }
+            }
+            &:hover{
+                p{
+                    text-decoration: none;
+                } 
+                .icontitle{
+                    text-decoration: none;
+                }
+                img{
+                    transition: 1s ease;
+                    transform: scale(1.1);
+                }
+            }
+        }
+       
+    }       
+}

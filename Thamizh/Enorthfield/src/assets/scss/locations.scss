@@ -1,0 +1,523 @@
+@import "util/util";
+
+$white: #ffffff;
+$primary-color: #0076bf;
+$body-font-color: #000000;
+$black: #000000;
+$img: "../../images/";
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1279px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+.breadcrumbWrapBottom {
+    @include breakpoint(small only) {
+      display: none;
+    }
+    @include breakpoint(large){
+        padding-bottom: 22px;
+    }
+    padding-top: 0px;
+    padding-bottom: 40px;
+    .breadcrumbs{
+        margin-bottom: 0;
+    }
+    li {
+      font-size: 18px;
+      text-transform: inherit;
+      color: $body-font-color;
+      font-weight: 400;
+      line-height: 22px;
+      margin-bottom: 0;
+      a {
+        font-size: 18px;
+        font-weight: 400;
+        color: #000000;
+        line-height: 22px;
+      }
+      &:not(:last-child)::after {
+        content: "|";
+        color: #000000;
+        margin: 0 5px;
+      }
+      &.active {
+        margin: 0px 0;
+        a {
+          font-weight: 400;
+          color: #000000;
+        }
+      }
+    }
+  }
+
+.locationpanel{
+    @include breakpoint(small only) {
+        margin-top: 10px;
+    }
+    .locationtitle{
+        max-width: 470px;
+        h1{
+            font-size: 40px;
+            line-height: 40px;
+            font-weight: 400;
+            border-top: 1px solid #707070;
+            border-bottom: 1px solid #707070;
+            padding-top: 20px;
+            padding-bottom: 22px;
+            @include breakpoint(large) {
+                font-size: 60px;
+                line-height: 62px;
+            }
+        }
+    }
+    .inputWrap{
+        padding-top: 38px;
+        @include breakpoint(small only) {
+            padding-top: 54px;
+        }
+        .filtertitle{
+            h2{
+                font-size: 20px;
+                line-height: 18px;
+                font-weight: 400;
+                font-family: "SourceSerif";
+                margin-bottom: 18px;
+                @include breakpoint(large) {
+                    margin-bottom: 0;
+                    font-size: 30px;
+                    line-height: 60px;
+                }
+            }
+        }
+        .dataFilter{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            @include breakpoint(large){
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+            }
+            .column-1{
+                max-width: 50%;
+                width: 100%;
+                @include breakpoint(large){
+                    max-width: 232px;
+                }
+                @media (min-width: 375px) and (max-width: 650px){
+                    max-width: 100%;
+                }
+                .inputSearch{
+                    .form-group{
+                        .txtBox{
+                            background-color: #EDEDED;
+                            height: 58px;
+                            border-radius: 29px !important;
+                            font-size: 18px;
+                            line-height: 20px;
+                            font-weight: 700;
+                            padding-left: 25px;
+                            @include breakpoint(small only){
+                                font-size: 14px;
+                            }
+                        }
+                    } 
+                }
+            }
+            .column-2{
+                max-width: 50%;
+                width: 100%;
+                padding-left: 10px;
+                @include breakpoint(large){
+                    max-width: 344px;
+                }
+                @media (min-width: 375px) and (max-width: 650px){
+                    max-width: 100%;
+                    margin-top: 18px;
+                    padding-left: 0;
+                }
+                .selctbox{
+                    .ui-selectmenu-button.ui-button{
+                        border: none;
+                        background: #EDEDED;
+                        height: 58px;
+                        border-radius: 29px !important;
+                        width: 100%;
+                    }
+                    .ui-selectmenu-text{
+                        padding-left: 18px;
+                        font-size: 20px;
+                        font-weight: 700;
+                        line-height:44px;
+                        @include breakpoint(small only){
+                            font-size: 14px;
+                        }
+                    }
+                    .ui-selectmenu-button-closed, .ui-selectmenu-button-open{
+                        &::after{
+                            width: 18px;
+                            background: url("#{$img}icons/list-down-arrow.svg");
+                            background-repeat: no-repeat;
+                            background-size: contain;
+                            height: 13px;
+                            right:20px;
+                            margin-top: 4px;
+                        }
+                    }
+                }
+            }
+            .column-3{
+                max-width: 300px;
+                width: 100%;
+                align-self: center;
+                margin-left: 0px;
+                margin-top: 18px;
+                text-align: center;
+                @include breakpoint(large){
+                    margin-left: 10px;
+                    margin-top: 0px;
+                    text-align: left;
+                }
+                .input-group-append{
+                    border-radius: 0;
+                    button{
+                        border-radius: 29px;
+                    }
+                    .ctabutton{
+                        text-align: center;
+                        padding:16px 35px;
+                        font-size: 20px;
+                        line-height: 20px;
+                        font-weight: 700;
+                        +.ctabutton{
+                            margin-left: 10px;
+                            padding:16px 41px;
+                        }
+                        @include breakpoint(small only){
+                            margin-top: 0;
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .mapFilter{
+        padding-top: 60px;
+        .innerWrap{
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            .locationWrap{
+                width: 40%;
+                height: 1114px;
+                overflow-y: auto;
+                @include breakpoint(xlarge) {
+                    width: 27%;
+                }
+                &::-webkit-scrollbar{
+                    width: 6px;
+                    background: #dddddd;
+                }
+                &::-webkit-scrollbar-track{
+                    border-radius: 0px;   
+                }
+                &::-webkit-scrollbar-thumb{
+                    border-radius: 0px;
+                    background: $primary-color;
+                    height: 2px;
+                }
+                @include breakpoint(medium only) {
+                    width: 100%;
+                    height: auto;
+                    overflow-y: hidden;
+                    order: 1;
+                }
+                @include breakpoint(small only) {
+                    width: 100%;
+                    height: auto;
+                    overflow-y: hidden;
+                    order: 1;
+                }
+                .addresswrap{
+                    display: flex;
+                    flex-wrap: wrap;
+                    background: #ffffff;
+                    overflow: hidden;
+                    padding-bottom: 39px;
+                    padding-top: 34px;
+                    border-top: 1px solid #707070;
+                    cursor: pointer;
+                    @include breakpoint(large) {
+                        padding-right: 15px;
+                    }
+                    &.active{
+                        background: #2C67D6;
+                        .addresssec{
+                            p{
+                                color: $white;
+                            }
+                        }
+                    }
+                    &:last-child{
+                        border-bottom: 1px solid #707070;
+                    }
+                    .addresssec{
+                        max-width: 100%;
+                        width: 100%;
+                        padding: 0px;
+                        p{
+                            color: $black;
+                            font-size:16px;
+                            line-height: 18px;
+                            font-weight: 400;
+                            @include breakpoint(large) {
+                                font-size:18px;
+                                line-height: 24px;
+                            }
+                        }
+                        ul{
+                            margin-left:1.5rem;
+                            width: calc(100% - 80px);
+                            margin-bottom: 22px !important;
+                            position: relative;
+                            &.letteralign{
+                                margin-left: 2.4rem;
+                            }
+                            li{
+                                display: inline-flex;
+                                flex-grow: 1;
+                                flex-basis: auto;
+                                padding-right: 4px;
+                                padding-left: 6px;
+                                text-align: center;
+                                border-left: 1px solid #000;
+                                background-color: #fff;
+                                justify-content: center;
+                                font-size: 14px;
+                                line-height: 17px;
+                                font-weight: 400;
+                                &:first-child{
+                                    border: none;
+                                    padding-left: 0;
+                                }
+                            }
+                        }
+                        .offerlist{
+                            display: flex;
+                            justify-content: space-between;
+                            position: relative;
+                            .heading, .miles{
+                                font-size: 24px;
+                                line-height: 28px;
+                                font-family: "SourceSerif";
+                                font-weight: 400;
+                                padding-bottom: 0px;
+                                color: #0076bf;
+                            }
+                            .heading{
+                                width: calc(100% - 74px);
+                                padding-right: 15px;
+                                a{
+                                    text-decoration: none;
+                                    color: #0076bf;
+                                    &:hover{
+                                        color: $black;
+                                    }
+                                }
+                            }
+                            .miles{
+                                font-size: 18px;
+                                right: 0px;
+                                position: relative;
+                            }
+                            .map-pin{
+                                background-image: url(#{$img}map-pin-selected.svg);
+                                background-size: 50%;
+                                background-repeat: no-repeat;
+                                width: 34px;
+                                height: 44px;
+                                position: absolute;
+                                top: 30px;
+                                right: 0;
+                            }
+                        }
+                        .contactnumber{
+                            padding-bottom: 20px;
+                            a{
+                                font-size: 18px;
+                                line-height: 24px;
+                                font-weight: 700;
+                                color: $black;
+                                @include breakpoint(llarge) {
+                                    font-size: 24px;
+                                    line-height: 29px;
+                                }
+                            }
+                        }
+                        .openhrs{
+                            padding-bottom: 9px;
+                        }
+                        .closehrs{
+                            padding-bottom: 18px;
+                        }
+                        .addreslist{
+                            padding-bottom: 12px;
+                            p{
+                                line-height: 28px;
+                            }
+                        }
+                    }
+                    .locationbtnwrap{
+                        max-width: 100%;
+                        width: 100%;
+                        display: flex;
+                        flex-wrap: wrap;                        
+                        a{
+                            font-size: 16px;
+                            line-height: 22px;
+                            font-weight: 700;
+                            color: $black;
+                            border-left: 1px solid #000;
+                            padding-left: 5px;
+                            padding-right: 5px;
+                            @include breakpoint(llarge) {
+                                padding-left: 21px;
+                                padding-right: 21px;
+                                font-size: 18px;
+                            }
+                            &:first-child{
+                                border: none;
+                                padding-left: 0;
+                            }
+                            &:last-child{
+                                padding-right: 0;
+                            }
+                            
+                        }
+                    }
+                }
+            }
+            .mapdetails{
+                width: 100%;
+                height: 400px;
+                margin-left: 0px;
+                padding-bottom: 30px;
+                @include breakpoint(large) {
+                    width: 60%;
+                    height: 1114px;
+                    padding-bottom: 0;
+                }
+                @include breakpoint(xlarge) {
+                    width: 73%;
+                }
+                #map{
+                    width: 100%;
+                    height: 100%;
+                    margin: 0;
+                    padding: 0;
+                }
+                .gm-style-iw {
+                    left: 0 !important;
+                    background-color: #ffffff;
+                    -webkit-box-shadow: none;
+                    box-shadow: none;
+                    border-radius: 15px !important;
+                    padding: 0;
+                    border: solid 1px #000000;
+                    color: #000000; 
+                    width: 434px;
+                    min-width: 250px !important;
+                    max-width: 250px !important;
+                    @include breakpoint(large) {
+                        min-width: 434px !important; 
+                        max-width: 434px !important;
+                    }
+                }
+                .gm-style-iw-d{
+                    overflow: hidden !important;
+                    padding: 12px;
+                    @include breakpoint(large) {
+                        padding: 24px 18px 26px 37px;
+                    }
+                    div{
+                       .head{
+                        font-size: 24px;
+                        font-weight: 400;
+                        line-height: 28px;
+                        font-family: "SourceSerif";
+                        color: #0076bf;
+                        padding-bottom: 0px;
+                        @include breakpoint(large) {
+                            padding-bottom: 10px;
+                        }
+                       }
+                       .getlnk a{
+                        font-size: 14px;
+                        font-weight: 700;
+                        line-height: 22px;
+                        text-decoration: none;
+                        color: #000000;
+                        padding-left: 4px;
+                        padding-right: 4px;
+                        border-left: 1px solid #0F76BF;
+                        @include breakpoint(large) {
+                            font-size: 18px;
+                            padding-left: 21px;
+                            padding-right: 21px;
+                        }
+                        &:hover{
+                            text-decoration: underline;
+                        }
+                        &:first-child{
+                            border: none;
+                            padding-left: 0;
+                        }
+                        &:last-child{
+                            padding-right: 0;
+                        }
+                       }
+                    }
+                }
+                .gm-style .gm-style-iw-tc{
+                    background: black;
+                    clip-path: polygon(16% 10%, 50% 100%, 100% -42%);
+                    height: 16px;
+                    top: -2px;
+                    &:after{
+                        background: white;
+                        height: 20px;
+                        top: -6px;
+                    }
+                }
+                .gm-ui-hover-effect {
+                    opacity: 1;
+                    top: -2px !important;
+                    right: -2px !important;
+                }
+                .gm-ui-hover-effect>span{
+                    background-color: #000000;
+                    width: 24px !important;
+                    height: 24px !important;
+                    margin: 2px !important;
+                }
+                .gm-fullscreen-control {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+div#location-count-msg {
+    padding-bottom: 10px;
+    color: #0076bf;
+}
+.selctbox select {
+    background: #EDEDED;
+    border-color: #EDEDED;
+    height: 58px;
+    border-radius: 29px !important;
+}

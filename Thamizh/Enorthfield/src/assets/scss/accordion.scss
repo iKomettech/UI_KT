@@ -1,0 +1,389 @@
+@import "util/util";
+$white: #ffffff;
+$primary-color: #0076bf;
+$black: #000000;
+$img: "../../images";
+$breakpoints: (
+  small: 0,
+  medium: 768px,
+  large: 1024px,
+  xlarge: 1360px,
+  xxlarge: 1440px,
+);
+.subbannerpanel + .breadcrumbWrapBottom + link + .accordion.padding_adjust{
+    margin-top: 80px;
+    @include breakpoint(small only) {	
+        margin-top:80px;	
+    }
+}
+.subbannerpanel + .breadcrumbWrapBottom + link + script + .accordion{
+    margin-top: 90px;
+    @include breakpoint(small only) {	
+        margin-top:70px;	
+    }
+}
+.accordion{
+    margin-top:90px;
+    @include breakpoint(small only) {	
+        margin-top:55px;	
+    }
+    .grid-container{
+        @media (min-width: 375px) and (max-width: 639px){	
+            padding-right: 0px !important;
+            padding-left: 0px !important;
+        }
+    }
+    &.padding_adjust{
+        margin-top: 85px;
+        @include breakpoint(small only) {	
+            margin-top:55px;	
+        }
+    }
+    .h2title {
+        @include breakpoint(large) {
+            line-height: 56px;
+            margin-bottom: 10px;
+        }
+    }
+    .accordion-container {
+        .heading-title {
+            margin-bottom: 53px;
+            @media (min-width: 375px) and (max-width: 639px){
+                padding-right: 28px !important;
+                padding-left: 28px !important;
+            }
+        }
+        position: relative;
+    }
+    .team-accordion {
+        position: relative;
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+        :last-child{
+            margin-bottom: 0px;
+        }
+        img{
+            @include breakpoint(small only) {
+                width: 100%;
+            }
+        }
+    }
+    .team-accordion > a {
+        display: block;
+        padding: 15px 40px 18px 20px;     
+        text-decoration: none;
+        font-weight: 400;
+        -webkit-transition: all 0.2s linear;
+        transition: all 0.2s linear;
+        align-items: center;
+        position: relative;
+        font-size: 20px;
+        line-height: 27px;
+        word-break: break-word;
+        background: linear-gradient(-40deg,#DAD6F5 -40%,#CDE4F0 36%,#D2EDC6 100%);
+        color: #000000;
+        display: grid;
+        align-items: center;
+        transition: all .5s;
+        @include breakpoint(small) {
+            font-size: 20px;
+            line-height: 25px;
+            font-weight: 600;
+            min-height: 117px;
+        }
+        @include breakpoint(large) {
+            font-size: 24px;
+            line-height: 20px;
+            font-weight: 600;
+            padding: 39px 24px 32px 48px;
+            min-height: 142px;
+        }
+        @include breakpoint(xlarge) {
+            font-size: 24px;
+            line-height: 20px;
+            font-weight: 700;
+            padding: 39px 24px 32px 48px;
+        } 
+        h3{
+            font-size:32px;
+            line-height: 30px;
+            font-weight: 400;
+            font-family: "SourceSerif";
+            @include breakpoint(large) {
+                font-size:36px;
+                line-height: 30px;
+            } 
+        } 
+        p{
+            font-size:16px;
+            line-height: 25px;
+            font-weight: 400;
+            font-family: "SourceSerif";
+            @include breakpoint(large) {
+                font-size:18px;
+                line-height: 21px;
+            } 
+        }
+        .team-fade{
+            transition: all 0.5s linear;	
+            opacity: 1;
+            p{
+                color:#000000;
+            }
+            max-width: 90%;
+            @media (min-width: 375px) and (max-width: 450px){
+                max-width: 85%;
+           }
+        }
+        &.active{
+            .team-fade{
+                opacity: 0;	
+                transition: all 0.5s linear;
+                @media (min-width: 375px) and (max-width: 767px){	
+                    display:none;	
+                }
+            }
+        }
+    }
+    .team-accordion > a i {
+        position: relative;
+        &.fa-angle-down {
+            background: url("#{$img}/icons/team-up.svg");
+            position: absolute;
+            top: 30%;
+            background-size: contain;
+            background-repeat: no-repeat;
+            transition: all .5s;
+            transform: rotate(360deg);
+            right: 21px;
+            width: 47px;
+            height: 47px;
+        }
+        &.fa-angle-up {
+            background: url("#{$img}/icons/team-up.svg");
+            position: absolute;
+            top: 30%;
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 18px;
+            height: 20px;
+            transition: all .3s;
+            transform: translate(0px, -50%);
+            transform: rotate(180deg);
+            right: 21px;
+            width: 47px;
+            height: 47px;
+        }
+    }
+    .team-content {
+        display: none;
+        .teamcontent_wrap{
+            display:flex;
+            @media (min-width: 375px) and (max-width: 639px){
+                 display:block;
+            }
+            .imgWrap{
+                width:30%;
+                max-width:363px;
+                padding: 28px 0px 28px 28px;
+                @media (min-width: 375px) and (max-width: 639px){
+                    width:100%;
+                    margin:0px auto;
+                    padding:0px;
+                    padding-top:0px;
+                    max-width:100%;
+                }
+                @include breakpoint(large) {
+                    padding: 48px 0px 48px 48px;
+                }
+            }
+            .contentwrap
+            {
+                width:100%;
+                padding:28px;
+                @media (min-width: 375px) and (max-width: 639px){
+                    padding-right: 28px !important;
+                    padding-left: 28px !important;
+                }
+                @include breakpoint(large) {
+                    padding:48px;
+                }
+                @media (min-width: 375px) and (max-width: 639px){
+                    padding: 30px 0px;
+                    padding-bottom:20px;
+                }
+              
+                h3{
+                    font-size: 32px;
+                    line-height: 25px;
+                    padding-bottom:0px;
+                    @include breakpoint(large) {
+                        font-size:40px;
+                        line-height:30px;
+                    }
+                }
+                h4{
+                    font-size:16px;
+                    line-height:25px;
+                    @include breakpoint(large) {
+                        font-size:18px;
+                        line-height:30px;
+                    }
+                }
+                p{
+                    font-size:18px;
+                    line-height:30px; 
+                    &:last-child{
+                        padding-bottom:0px;
+                    }
+                    &:first-child{	
+                        @include breakpoint(large) {	
+                            padding-bottom:30px;	
+                        }	
+                    }	
+                    padding-bottom:25px;
+                }
+            }
+        }
+    }
+}
+.ratetableaccordionpanel{
+    display: none;
+    margin-top: 86px;
+    .h2title{
+        text-align: center;
+    }
+    @include breakpoint(small only){
+        display: block;
+    }
+    .grid-container{
+        padding-right: 0px !important;
+        padding-left: 0px !important;
+    }
+    .accordion-container{
+        margin: 0;
+    }
+    .faq-accordion{
+        margin-left: 0;
+        margin-bottom: 0;
+        .accordion-content {
+            display: none; 
+            table{
+                width: 100%;
+                table-layout: fixed;
+                padding-bottom: 35px;
+                tbody{
+                    tr{
+                        &:nth-child(even){
+                            background: #F5F5F5; 
+                        }
+                    }
+                    td{
+                        font-size: 14px;
+                        line-height: 20px;
+                        font-weight: 700;
+                        text-align: center;
+                        padding-top: 16px;
+                        padding-bottom: 18px;
+                        p a, a{
+                            text-decoration: underline;
+                        }
+                        &.tablehead{
+                            font-family: 'SourceSerif';
+                            font-size: 24px;
+                            line-height: 28px;
+                            font-weight: 400;
+                        }
+                    }
+                }
+            }
+        }
+        .hov{
+            display: grid;
+            align-items: center;
+            margin-bottom: 0;
+            &.mainActive{
+                i{
+                    background: url("#{$img}/icons/team-up.svg");
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    transition: all .3s;
+                    transform: translate(0px, -50%);
+                    transform: rotate(180deg);
+                }
+            }
+            i {
+                position: relative;
+                background: url("#{$img}/icons/team-up.svg");
+                background-size: contain;
+                background-repeat: no-repeat;
+                transition: all .5s;
+                transform: rotate(360deg);
+                width: 36px;
+                height: 36px;
+                display: inline-block;
+                cursor: pointer;
+                margin-top: 20px;
+            }
+           .accordion-heading{
+                padding:22px 18px;    
+                padding-bottom:17px; 
+                text-decoration: none;
+                font-weight: 400;
+                -webkit-transition: all 0.2s linear;
+                transition: all 0.2s linear;
+                align-items: center;
+                position: relative;
+                font-size: 20px;
+                line-height: 27px;
+                word-break: break-word;
+                background: rgb(227,250,255);
+                background: -moz-linear-gradient(0deg, rgba(227,250,255,1) -75%, rgba(178,217,151,1) 160%);
+                background: -webkit-linear-gradient(0deg, rgba(227,250,255,1) -75%, rgba(178,217,151,1) 160%);
+                background: linear-gradient(0deg, rgba(227,250,255,1) -75%, rgba(178,217,151,1) 160%);
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e3faff",endColorstr="#b2d997",GradientType=1);
+                color: #000000;
+                transition: all .5s;
+                text-align: center;
+           }
+           .titlehead{
+            p{
+                font-size: 18px;
+                font-weight: 700;
+                line-height: 20px;
+                margin-bottom: 13px;
+                a{
+                    text-decoration: none;
+                }
+                br{
+                    display: none;
+                }
+            }
+           }
+           .tablelinks{
+            color: $black;
+            background: $white;
+            border-radius: 102px;
+            padding: 4px 13.5px;
+            padding-bottom: 6px;
+            font-size: 15px;
+            line-height: 28px;
+            font-weight: 700;
+            @include breakpoint(medium only){
+                font-size: 12px;
+                line-height: 18px;
+                padding-bottom: 4px;
+            }
+            &:hover{
+                background: $primary-color;
+                color: #ffffff;
+                text-decoration: none;
+            }
+        }
+        }
+    } 
+}
+.accordion .team-accordion:last-child .team-content .teamcontent_wrap .contentwrap {
+    padding-bottom: 0px;
+}

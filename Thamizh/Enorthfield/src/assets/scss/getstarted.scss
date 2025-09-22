@@ -1,0 +1,264 @@
+@import "util/util";
+
+$white: #ffffff;
+$primary-color: #0076bf;
+$body-font-color: #000000;
+$black: #000000;
+$lightgray-bg-color:#EDEDED;
+$img: "../../images/";
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1279px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+.subbannerpanel + .breadcrumbWrapBottom + link + .getstartedpanel.padding_adjust{
+    margin-top: 70px;
+    @include breakpoint(small only) {	
+        margin-top:70px;	
+    }
+}
+.subbannerpanel + .breadcrumbWrapBottom + link + .getstartedpanel{
+    margin-top: 90px;
+    @include breakpoint(small only) {	
+        margin-top:75px;	
+    }
+}
+.getstartedpanel{
+    margin-top:90px;
+    @include breakpoint(small only) {	
+        margin-top:60px;	
+    }
+    &.padding_adjust{
+        margin-top: 73px;
+        @include breakpoint(small only) {	
+            margin-top:55px;	
+        }
+    }
+    .h2title{
+        text-align: left;
+    }
+    .getstartedwrap{
+        background: $lightgray-bg-color;
+        padding-top: 60px;
+        padding-bottom: 60px;
+        .flexwrap{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: flex-end;
+            flex-wrap: wrap;
+            margin: 0 auto;
+            @include breakpoint(medium){
+                max-width: 720px;
+            }
+            @include breakpoint(large){
+                max-width: 975px;
+            }
+            @include breakpoint(llarge){
+                max-width: 100%;
+            }
+            .colblock{
+                width: 100%;
+                max-width: 240px;
+                text-align: center;
+                margin-right: 0;
+                padding-top: 63px;
+                @include breakpoint(medium){
+                    max-width: 50%;
+                    margin-right: 0;
+                    padding-top: 63px;
+                }
+                @include breakpoint(large){
+                    margin-right: 0.5%;
+                    max-width: 205px;
+                    padding-top: 0px;
+                }
+                @include breakpoint(llarge){
+                    margin-right: 2.5%;
+                    max-width: 240px;
+                }
+                @include breakpoint(xlarge){
+                    margin-right: 8.3%;
+                }
+                &:last-child,&:nth-child(4n+4) {
+                    margin-right: 0;
+                }
+                &:nth-child(4n+4) {
+                    +.colblock{
+                        padding-top: 73px;
+                    }
+                }
+                &:first-child{
+                    padding-top:0;
+                }
+                @media (min-width:1360px) and (max-width:1390px){
+                    margin-right: 5.5%;
+                }
+                p, a{
+                    font-family: "SourceSerif";
+                    color: #000000;
+                    font-size: 28px;
+                    line-height: 30px;
+                    text-decoration: none;
+                    transition: .75s all;
+                    @include breakpoint(large){
+                        font-size: 24px;
+                    }
+                    @include breakpoint(llarge){
+                        font-size: 26px;
+                        line-height: 28px;
+                    }
+                    img{
+                        transition: .75s all;
+                        min-width: 99px;
+                        max-width: 99px;
+                    }
+                    &:hover{
+                        text-decoration: none;
+                        transition: all .3s;
+                        img{
+                            transition: 1s ease;
+                            transform: scale(1.1);
+                        }
+                    }
+                }
+                .ctalink{
+                    padding-top: 38px;
+                }
+                &.branchblock{
+                    max-width: 302px;
+                    position: relative;
+                    @include breakpoint(small){
+                        max-width: 302px;
+                    }
+                    @include breakpoint(medium){
+                        max-width: 50%;
+                    }
+                    @include breakpoint(large){
+                        max-width: 302px;
+                    }
+                    .map-block{
+                        display: flex;
+                        justify-content: center;
+                        margin-bottom: 38px;
+                        align-items: flex-end;
+                    }
+                    p{
+                        font-size: 34px;
+                        line-height: 38px;
+                        font-family: "SourceSerif";
+                        text-align: left;
+                        padding-left: 18px;
+                        align-self: end;
+                        @include breakpoint(small only){
+                            font-size: 30px;
+                            line-height:36px;
+                        }
+                    }
+                    .error-text {
+                        font-size: 20px;
+                        line-height: 2;
+                        color: #ff0000;
+                        padding-top: 4px;
+                        font-family: "lato";
+                        position: absolute;
+                    }
+                    form {
+                        display: flex;
+                          flex-wrap: nowrap;
+                          justify-content: center;
+                          align-items: flex-start;
+                          width: 100%;
+                          position: relative;
+                          padding-top: 9px;
+                        .form-group {
+                            position: relative;
+                            margin-bottom: 0;
+                            width: 100%;
+                            max-width: 220px;
+                            }
+                        }
+                      
+                      .txtBox{
+                        background: #FFFFFF;
+                        padding: 0 25px;
+                        height: 58px;
+                        width: 100%;
+                        border: 1px solid #FFFFFF;
+                        font-size: 19px;
+                        line-height: 58px;
+                        font-weight: 400;
+                        color:$black;
+                        border-radius: 29px 0 0 29px !important;
+                        &::placeholder{
+                          color: $black;
+                        }
+                        &.errortext{
+                          border: 1px solid #ff0000 !important;
+                        }
+                      }
+                      .ctaborder{
+                        height: 58px;
+                        min-width:81px;
+                        position: relative;
+                        border-radius: 0;
+                        font-size: 26px;
+                        line-height: 32px;
+                        font-weight: 700;
+                        text-transform: uppercase;
+                        border-radius: 0 39px 39px 0;
+                        background: #BED9D0;
+                        transition: 0.45s all;
+                        color: $black;
+                        &:hover{
+                          background: $primary-color;
+                          color: $white;
+                        }
+                      }
+                }
+            }
+        }
+    }
+    &.branchpanel{
+        @include breakpoint(xlarge){
+            margin-top: 40px;
+        }
+        .getstartedwrap{
+            padding-top: 45px;
+            padding-bottom: 56px;
+            .h2title{
+                text-align: center;
+            }
+            .flexwrap{
+                .colblock{
+                    p, a{
+                        font-size: 20px;
+                        line-height: 26px;
+                    }
+                    .ctalink{
+                        padding-top: 23px;
+                    }
+                }
+                img{
+                    min-width: 104px;
+                    max-width: 104px;
+                }
+            }
+        }
+    }
+}
+// body.Online.and.Mobile.Banking .getstartedpanel .getstartedwrap .flexwrap .colblock:nth-child(1) img, body.Online.and.Mobile.Banking .getstartedpanel .getstartedwrap .flexwrap .colblock:nth-child(2) img {
+//     max-width: fit-content;
+// }
+// body.Zelle .getstartedpanel .getstartedwrap .flexwrap .colblock:nth-child(2) img , body.Zelle .getstartedpanel .getstartedwrap .flexwrap .colblock:nth-child(3) img{
+//     max-width: fit-content;
+// }
+// body.Apple.Pay.and.Google.Pay .getstartedwrap .flexwrap .colblock:nth-child(3) img, body.Apple.Pay.and.Google.Pay .getstartedwrap .flexwrap .colblock:nth-child(4) img {
+//     max-width: fit-content;
+// } 
+// body.Card.Hub .getstartedwrap .flexwrap .colblock:nth-child(3) img, body.Card.Hub .getstartedwrap .flexwrap .colblock:nth-child(4) img {
+//     max-width: fit-content;
+// }

@@ -1,0 +1,1140 @@
+{{!-- This is the base layout for your project, and will be used on every page unless specified. --}}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Northfield Bank</title>
+    <meta name="title" content="Northfield Bank" />
+    <meta name="description"
+        content="We design wealth strategies specifically to fit the needs of each client. Contact us to see how Northfield Bank advisors can assist you with reaching your goals." />
+    <link rel="shortcut icon" type="image/x-icon" href="{{root}}assets/images/settings/favicon.ico">
+    <link rel="preload" crossorigin="anonymous" fetchpriority="low" href="{{root}}assets/css/fonts/sourceserifpro-light-webfont.woff2" as="font" type="font/woff2"
+        crossorigin>
+    <link rel="preload" crossorigin="anonymous" fetchpriority="low" href="{{root}}assets/css/fonts/sourceserifpro-extralight-webfont.woff2" as="font" type="font/woff2"
+        crossorigin>
+    <link rel="preload" crossorigin="anonymous" fetchpriority="low" href="{{root}}assets/css/fonts/sourceserifpro-regular-webfont.woff2" as="font" type="font/woff2"
+        crossorigin>
+    <link rel="preload" crossorigin="anonymous" fetchpriority="low" href="{{root}}assets/css/fonts/sourceserifpro-semibold-webfont.woff2" as="font" type="font/woff2"
+        crossorigin>    
+    <link rel="preload" crossorigin="anonymous" fetchpriority="low" href="{{root}}assets/css/fonts/sourceserifpro-bold-webfont.woff2" as="font" type="font/woff2"
+        crossorigin>
+    <link rel="preload" crossorigin="anonymous" fetchpriority="low" href="{{root}}assets/css/fonts/sourceserifpro-black-webfont.woff2" as="font" type="font/woff2"
+        crossorigin>
+    <link rel="preload" crossorigin="anonymous" fetchpriority="low" href="{{root}}assets/css/fonts/lato-light-webfont.woff2" as="font" type="font/woff2"
+        crossorigin>
+    <link rel="preload" crossorigin="anonymous" fetchpriority="low" href="{{root}}assets/css/fonts/lato-regular-webfont.woff2" as="font" type="font/woff2"
+        crossorigin>
+     <link rel="preload" crossorigin="anonymous" fetchpriority="low" href="{{root}}assets/css/fonts/lato-medium-webfont.woff2" as="font" type="font/woff2"
+        crossorigin>   
+    <link rel="preload" crossorigin="anonymous" fetchpriority="low" href="{{root}}assets/css/fonts/lato-bold-webfont.woff2" as="font" type="font/woff2"
+        crossorigin>
+    <link rel="preload" crossorigin="anonymous" fetchpriority="low" href="{{root}}assets/css/fonts/lato-Black-webfont.woff2" as="font" type="font/woff2"
+        crossorigin>                
+    <link rel="stylesheet" href="{{root}}assets/css/global/font.css">
+    <link rel="stylesheet" href="{{root}}assets/css/global/jquery-ui.min.css">
+    <link rel="stylesheet" href="{{root}}assets/css/global/style.css" media="all">
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="skiptocontent"><a href="#maincontent" alt="skip to main content">skip to main content</a></div>
+    <div class="loaderBlock">
+        <div class="svgAnimation">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="50" />
+            </svg>
+        </div>
+        <div class="loaderWrap">
+            <img src="{{root}}assets/images/settings/logo.svg" alt="Northfield Bank" width="256" 
+               />
+        </div>
+    </div>
+    <div class="sitewrap">
+        <header class="sticky module">
+         <!-- <div class="alertsPannel">
+          <div class="grid-container">
+            <div class="alertsWrap">
+              <div class="wrap">
+                <img src="../assets/images/more-info.svg" alt="alert-icon"/>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                  dolore magna aliqua. Ut enim ad minim veniam Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                  <a href="#">Learn More</a>
+                </p>
+                <a href="#" id="alertsPannelClose" class="close-alerts">
+                    <i></i>
+                    <span class="screen-reader-text">
+                      Close
+                    </span>
+                  </a>
+              </div>
+            </div>
+          </div>
+        </div> -->
+            <div class="grid-container">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="{{root}}assets/images/settings/logo.svg" alt="Northfield Bank" width="279" height="82" />
+                    </a>
+                </div>
+
+                <div class="headerMainWrapper toprightcta">
+                    <div class="secondary-nav">
+                        <ul class="mainmenu">
+                          <li><a href="#">Careers</a></li>
+                          <li><a href="#">Newsroom</a></li>
+                          <li><a href="#">Find a Branch</a></li> 
+                          <li><a href="#">Customer Service</a></li>  
+                          <li class="menusearchBlock">
+                            <button type="button" name="searchbutton" class="submit">
+                        <i>Search</i>
+                        </button>
+                            <div class="form-group search-bar-container">
+                                
+                            </div>
+                        </li>
+                        </ul>
+                    </div>
+                    <div class="headerWrapper">
+                        <div class="hamburger">
+                            <a href="#" class="Loginbtn" title="Mobile Login">Login</a>
+                            <a href="#" class="mhamburger" title="Mobile hamburger">
+                                <span> <img src="{{root}}assets/images/settings/hamburger-icon.svg" alt="Northfield Bank"
+                                        class="screen-reader-text" /></span>
+                            </a>
+                        </div>
+                        <div class="header-menu">
+                            <ul class="mainMenu">
+                                <li class="dropdownMenu menu-mega-blog"><a href="javascript:void(0);"
+                                        class="first-level-link">Personal</a>
+                                        <div class="magasubfn-megamenu-wrapper fusion-megamenu-fullwidth">
+                                            <div class="menuWrapper megaMenuList">
+                                                <div class="flexBox navInner">
+                                                    <div class="columnwrap">
+                                                        <div class="col">
+                                                            <ul class="menu-mega-blog-nav">
+                                                                <li class="menuTitle">
+                                                                    Checking
+                                                                </li>
+                                                                <li class="navlinks">
+                                                                    <a href="#" class="caterylink" title="Simply Free Checking">
+                                                                        Simply Free Checking
+                                                                    </a>
+                                                                </li>
+                                                                <li class="navlinks">
+                                                                    <a href="#" class="caterylink" title="50+ Checking">
+                                                                        50+ Checking
+                                                                    </a>
+                                                                </li>
+                                                                <li class="navlinks">
+                                                                    <a href="#" class="caterylink" title="Direct Interest Checking">
+                                                                        Direct Interest Checking
+                                                                    </a>
+                                                                </li>
+                                                                <li class="navlinks">
+                                                                    <a href="#" class="caterylink" title="Premium Interest Checking">
+                                                                        Premium Interest Checking
+                                                                    </a>
+                                                                </li>
+                                                                <li class="navlinks">
+                                                                    <a href="#" class="caterylink" title="Convenience Checking">
+                                                                        Convenience Checking
+                                                                    </a>
+                                                                </li>
+                                                                <li class="navlinks">
+                                                                    <a href="#" class="caterylink" title="Compare Accounts">
+                                                                        Compare Accounts
+                                                                    </a>
+                                                                </li>
+                                                                <li class="navlinks">
+                                                                    <a href="#" class="caterylink whitectabutton" title="Compare Accounts">
+                                                                        Compare Accounts
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="col">
+                                                            <ul class="menu-mega-blog-nav">
+                                                                <li class="menuTitle">
+                                                                    Savings
+                                                                </li>
+                                                                <li class="navlinks">
+                                                                    <a href="#" class="caterylink" title="Visa Platinum">
+                                                                        Visa Platinum
+                                                                    </a>
+                                                                </li>
+                                                                <li class="navlinks">
+                                                                    <a href="#" class="caterylink" title="Visa+ Signature Travel">
+                                                                        Visa+ Signature Travel
+                                                                    </a>
+                                                                </li>
+                                                                <li class="navlinks">
+                                                                    <a href="#" class="caterylink" title="Apply Online">
+                                                                        Apply Online
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="col">
+                                                            <ul class="menu-mega-blog-nav">
+                                                                <li class="menuTitle">
+                                                                    Credit Card
+                                                                </li>
+                                                                <li class="navlinks">
+                                                                    <a href="#" class="caterylink" title="Leadership">
+                                                                        Leadership
+                                                                    </a>
+                                                                </li>
+                                                                <li class="navlinks">
+                                                                    <a href="#" class="caterylink" title="Contact Us">
+                                                                        Contact Us
+                                                                    </a>
+                                                                </li>
+                                                                <li class="navlinks">
+                                                                    <a href="#" class="caterylink" title="About Us">
+                                                                        About Us
+                                                                    </a>
+                                                                </li>
+                                                                <li class="navlinks">
+                                                                    <a href="#" class="caterylink" title="Community">
+                                                                        Community
+                                                                    </a>
+                                                                </li>
+                                                                <li class="navlinks">
+                                                                    <a href="#" class="caterylink" title="Grant Application">
+                                                                        Grant Application
+                                                                    </a>
+                                                                </li>
+                                                                <li class="navlinks">
+                                                                    <a href="#" class="caterylink" title="Annual Report">
+                                                                        Annual Report
+                                                                    </a>
+                                                                </li>
+                                                                <li class="navlinks">
+                                                                    <a href="#" class="caterylink whitectabutton" title="Apply Online">
+                                                                        Apply Online
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="col">
+                                                            <ul class="menu-mega-blog-nav">
+                                                                <li class="menuTitle">
+                                                                    Banking Tools
+                                                                </li>
+                                                                <li class="navlinks">
+                                                                    <a href="#" class="caterylink" title="Online Banking">
+                                                                        Online Banking
+                                                                    </a>
+                                                                </li>
+                                                                <li class="navlinks">
+                                                                    <a href="#" class="caterylink" title="Mobile Banking">
+                                                                        Mobile Banking
+                                                                    </a>
+                                                                </li>
+                                                                <li class="navlinks">
+                                                                    <a href="#" class="caterylink" title="Zelle">
+                                                                        Zelle
+                                                                    </a>
+                                                                </li>
+                                                                <li class="navlinks">
+                                                                    <a href="#" class="caterylink" title="Apple/Google Pay">
+                                                                        Apple/Google Pay
+                                                                    </a>
+                                                                </li>
+                                                                <li class="navlinks">
+                                                                    <a href="#" class="caterylink" title="uChoose Rewards">
+                                                                        uChoose Rewards
+                                                                    </a>
+                                                                </li>
+                                                                <li class="navlinks">
+                                                                    <a href="#" class="caterylink" title="Card Valet">
+                                                                        Card Valet
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="col">
+                                                            <ul class="menu-mega-blog-nav">
+                                                                <li class="menuTitle">
+                                                                    Home Equity
+                                                                </li>
+                                                                <li class="navlinks">
+                                                                    <a href="#" class="caterylink" title="Fixed Rate Loans">
+                                                                        Fixed Rate Loans
+                                                                    </a>
+                                                                </li>
+                                                                <li class="navlinks">
+                                                                    <a href="#" class="caterylink" title="Line of Credit">
+                                                                        Line of Credit
+                                                                    </a>
+                                                                </li>
+                                                                <li class="navlinks">
+                                                                    <a href="#" class="caterylink" title="Check Rates">
+                                                                        Check Rates
+                                                                    </a>
+                                                                </li>
+                                                                <li class="navlinks">
+                                                                    <a href="#" class="caterylink" title="Apply Online">
+                                                                        Apply Online
+                                                                    </a>
+                                                                </li>
+                                                                <li class="navlinks">
+                                                                    <a href="#" class="caterylink whitectabutton" title="Apply Online">
+                                                                        Apply Online
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="navContent">
+                                                        <div class="wraps">
+                                                            <a href="#" target="_blank">
+                                                                <figure><img src="{{root}}assets/images/settings/feature.jpg" alt="Featured Article" /></figure>
+                                                                <div class="content">
+                                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam hendrerit nisi sed sollicitudin pellentesque. Nunc posuere purus rhoncus pulvinar aliquam. Ut aliquet tristique nisl vitae volutpat. Nulla aliquet porttitor venenatis.</p>
+                                                                    <a href="#" class="caterylink ctabutton" title="Learn More">
+                                                                        Learn More
+                                                                    </a>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> 
+                                        </div>
+                                </li>
+                                <li class="dropdownMenu menu-mega-blog">
+                                    <a class="first-level-link" href="#">Commercial</a>
+                                    <div class="magasubfn-megamenu-wrapper fusion-megamenu-fullwidth">
+                                        <div class="menuWrapper megaMenuList">
+                                            <div class="flexBox navInner">
+                                                <div class="columnwrap">
+                                                    <div class="col">
+                                                        <ul class="menu-mega-blog-nav">
+                                                            <li class="menuTitle">
+                                                                Checking
+                                                            </li>
+                                                            <li class="navlinks">
+                                                                <a href="#" class="caterylink" title="Simply Free Checking">
+                                                                    Simply Free Checking
+                                                                </a>
+                                                            </li>
+                                                            <li class="navlinks">
+                                                                <a href="#" class="caterylink" title="50+ Checking">
+                                                                    50+ Checking
+                                                                </a>
+                                                            </li>
+                                                            <li class="navlinks">
+                                                                <a href="#" class="caterylink" title="Direct Interest Checking">
+                                                                    Direct Interest Checking
+                                                                </a>
+                                                            </li>
+                                                            <li class="navlinks">
+                                                                <a href="#" class="caterylink" title="Premium Interest Checking">
+                                                                    Premium Interest Checking
+                                                                </a>
+                                                            </li>
+                                                            <li class="navlinks">
+                                                                <a href="#" class="caterylink" title="Convenience Checking">
+                                                                    Convenience Checking
+                                                                </a>
+                                                            </li>
+                                                            <li class="navlinks">
+                                                                <a href="#" class="caterylink" title="Compare Accounts">
+                                                                    Compare Accounts
+                                                                </a>
+                                                            </li>
+                                                            <li class="navlinks">
+                                                                <a href="#" class="caterylink whitectabutton" title="Compare Accounts">
+                                                                    Compare Accounts
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col">
+                                                        <ul class="menu-mega-blog-nav">
+                                                            <li class="menuTitle">
+                                                                Savings
+                                                            </li>
+                                                            <li class="navlinks">
+                                                                <a href="#" class="caterylink" title="Visa Platinum">
+                                                                    Visa Platinum
+                                                                </a>
+                                                            </li>
+                                                            <li class="navlinks">
+                                                                <a href="#" class="caterylink" title="Visa+ Signature Travel">
+                                                                    Visa+ Signature Travel
+                                                                </a>
+                                                            </li>
+                                                            <li class="navlinks">
+                                                                <a href="#" class="caterylink" title="Apply Online">
+                                                                    Apply Online
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col">
+                                                        <ul class="menu-mega-blog-nav">
+                                                            <li class="menuTitle">
+                                                                Credit Card
+                                                            </li>
+                                                            <li class="navlinks">
+                                                                <a href="#" class="caterylink" title="Leadership">
+                                                                    Leadership
+                                                                </a>
+                                                            </li>
+                                                            <li class="navlinks">
+                                                                <a href="#" class="caterylink" title="Contact Us">
+                                                                    Contact Us
+                                                                </a>
+                                                            </li>
+                                                            <li class="navlinks">
+                                                                <a href="#" class="caterylink" title="About Us">
+                                                                    About Us
+                                                                </a>
+                                                            </li>
+                                                            <li class="navlinks">
+                                                                <a href="#" class="caterylink" title="Community">
+                                                                    Community
+                                                                </a>
+                                                            </li>
+                                                            <li class="navlinks">
+                                                                <a href="#" class="caterylink" title="Grant Application">
+                                                                    Grant Application
+                                                                </a>
+                                                            </li>
+                                                            <li class="navlinks">
+                                                                <a href="#" class="caterylink" title="Annual Report">
+                                                                    Annual Report
+                                                                </a>
+                                                            </li>
+                                                            <li class="navlinks">
+                                                                <a href="#" class="caterylink whitectabutton" title="Apply Online">
+                                                                    Apply Online
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col">
+                                                        <ul class="menu-mega-blog-nav">
+                                                            <li class="menuTitle">
+                                                                Banking Tools
+                                                            </li>
+                                                            <li class="navlinks">
+                                                                <a href="#" class="caterylink" title="Online Banking">
+                                                                    Online Banking
+                                                                </a>
+                                                            </li>
+                                                            <li class="navlinks">
+                                                                <a href="#" class="caterylink" title="Mobile Banking">
+                                                                    Mobile Banking
+                                                                </a>
+                                                            </li>
+                                                            <li class="navlinks">
+                                                                <a href="#" class="caterylink" title="Zelle">
+                                                                    Zelle
+                                                                </a>
+                                                            </li>
+                                                            <li class="navlinks">
+                                                                <a href="#" class="caterylink" title="Apple/Google Pay">
+                                                                    Apple/Google Pay
+                                                                </a>
+                                                            </li>
+                                                            <li class="navlinks">
+                                                                <a href="#" class="caterylink" title="uChoose Rewards">
+                                                                    uChoose Rewards
+                                                                </a>
+                                                            </li>
+                                                            <li class="navlinks">
+                                                                <a href="#" class="caterylink" title="Card Valet">
+                                                                    Card Valet
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col">
+                                                        <ul class="menu-mega-blog-nav">
+                                                            <li class="menuTitle">
+                                                                Home Equity
+                                                            </li>
+                                                            <li class="navlinks">
+                                                                <a href="#" class="caterylink" title="Fixed Rate Loans">
+                                                                    Fixed Rate Loans
+                                                                </a>
+                                                            </li>
+                                                            <li class="navlinks">
+                                                                <a href="#" class="caterylink" title="Line of Credit">
+                                                                    Line of Credit
+                                                                </a>
+                                                            </li>
+                                                            <li class="navlinks">
+                                                                <a href="#" class="caterylink" title="Check Rates">
+                                                                    Check Rates
+                                                                </a>
+                                                            </li>
+                                                            <li class="navlinks">
+                                                                <a href="#" class="caterylink" title="Apply Online">
+                                                                    Apply Online
+                                                                </a>
+                                                            </li>
+                                                            <li class="navlinks">
+                                                                <a href="#" class="caterylink whitectabutton" title="Apply Online">
+                                                                    Apply Online
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="navContent">
+                                                    <div class="wraps">
+                                                        <a href="#" target="_blank">
+                                                            <figure><img src="{{root}}assets/images/settings/feature.jpg" alt="Featured Article" /></figure>
+                                                            <div class="content">
+                                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam hendrerit nisi sed sollicitudin pellentesque. Nunc posuere purus rhoncus pulvinar aliquam. Ut aliquet tristique nisl vitae volutpat. Nulla aliquet porttitor venenatis.</p>
+                                                                <a href="#" class="caterylink ctabutton" title="Learn More">
+                                                                    Learn More
+                                                                </a>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div> 
+                                    </div>
+                                </li>
+                                
+                                <li class="dropdownMenu menu-mega-blog"><a class="first-level-link" href="#">Investments</a>
+                                    <div class="magasubfn-megamenu-wrapper fusion-megamenu-fullwidth">
+                                        <div class="menuWrapper megaMenuList">
+                                            <div class="flexBox navInner">
+                                                <div class="columnwrap">
+                                                    <div class="col">
+                                                        <ul class="menu-mega-blog-nav">
+                                                            <li class="menuTitle">
+                                                                About Northfield Investment Services
+                                                            </li>
+                                                            <li class="navlinks">
+                                                                <a href="#" class="caterylink" title="Your Investment Partner">
+                                                                    Your Investment Partner
+                                                                </a>
+                                                            </li>
+                                                            <li class="navlinks">
+                                                                <a href="#" class="caterylink" title="Meet the Team">
+                                                                    Meet the Team
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col">
+                                                        <ul class="menu-mega-blog-nav">
+                                                            <li class="menuTitle">
+                                                                Our Services
+                                                            </li>
+                                                            <li class="navlinks">
+                                                                <a href="#" class="caterylink" title="Financial Planning">
+                                                                    Financial Planning
+                                                                </a>
+                                                            </li>
+                                                            <li class="navlinks">
+                                                                <a href="#" class="caterylink" title="College Planning">
+                                                                    College Planning
+                                                                </a>
+                                                            </li>
+                                                            <li class="navlinks">
+                                                                <a href="#" class="caterylink" title="Retirement Planning">
+                                                                    Retirement Planning
+                                                                </a>
+                                                            </li>
+                                                            <li class="navlinks">
+                                                                <a href="#" class="caterylink" title="Estate Planning">
+                                                                    Estate Planning
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="navContent">
+                                                    <div class="wraps">
+                                                        <a href="#" target="_blank">
+                                                            <figure><img src="{{root}}assets/images/settings/feature.jpg" alt="Featured Article" /></figure>
+                                                            <div class="content">
+                                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam hendrerit nisi sed sollicitudin pellentesque. Nunc posuere purus rhoncus pulvinar aliquam. Ut aliquet tristique nisl vitae volutpat. Nulla aliquet porttitor venenatis.</p>
+                                                                <a href="#" class="caterylink ctabutton" title="Learn More">
+                                                                    Learn More
+                                                                </a>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div> 
+                                    </div>
+                                </li>
+                                <li class="dropdownMenu menu-mega-blog"><a class="first-level-link" href="#">About</a>
+                                    <div class="magasubfn-megamenu-wrapper fusion-megamenu-fullwidth">
+                                        <div class="menuWrapper megaMenuList">
+                                            <div class="flexBox navInner">
+                                                <div class="columnwrap">
+                                                    <div class="col">
+                                                        <ul class="menu-mega-blog-nav">
+                                                            <li class="menuTitle">
+                                                                Our Company
+                                                            </li>
+                                                            <li class="navlinks">
+                                                                <a href="#" class="caterylink" title="Company Overview">
+                                                                    Company Overview
+                                                                </a>
+                                                            </li>
+                                                            <li class="navlinks">
+                                                                <a href="#" class="caterylink" title="Leadership Team">
+                                                                    Leadership Team
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col">
+                                                        <ul class="menu-mega-blog-nav">
+                                                            <li class="menuTitle">
+                                                                Corporate Responsibility
+                                                            </li>
+                                                            <li class="navlinks">
+                                                                <a href="#" class="caterylink" title="ESG">
+                                                                    ESG
+                                                                </a>
+                                                            </li>
+                                                            <li class="navlinks">
+                                                                <a href="#" class="caterylink" title="DEI">
+                                                                    DEI
+                                                                </a>
+                                                            </li>
+                                                            <li class="navlinks">
+                                                                <a href="#" class="caterylink" title="Commitment to Customers">
+                                                                    Commitment to Customers
+                                                                </a>
+                                                            </li>
+                                                            <li class="navlinks">
+                                                                <a href="#" class="caterylink" title="Commitment to Community">
+                                                                    Commitment to Community
+                                                                </a>
+                                                            </li>
+                                                            <li class="navlinks">
+                                                                <a href="#" class="caterylink" title="Security Center">
+                                                                    Security Center
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col">
+                                                        <ul class="menu-mega-blog-nav">
+                                                            <li class="menuTitle">
+                                                                Careers
+                                                            </li>
+                                                            <li class="navlinks">
+                                                                <a href="#" class="caterylink" title="Find Your Career">
+                                                                    Find Your Career
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col">
+                                                        <ul class="menu-mega-blog-nav">
+                                                            <li class="menuTitle">
+                                                                Investor Relations
+                                                            </li>
+                                                            <li class="navlinks">
+                                                                <a href="#" class="caterylink" title="Visit Investor">
+                                                                    Visit Investor
+                                                                </a>
+                                                            </li>
+                                                            <li class="navlinks">
+                                                                <a href="#" class="caterylink" title="Relations Page">
+                                                                    Relations Page
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="navContent">
+                                                    <div class="wraps">
+                                                        <a href="#" target="_blank">
+                                                            <figure><img src="{{root}}assets/images/settings/feature.jpg" alt="Featured Article" /></figure>
+                                                            <div class="content">
+                                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam hendrerit nisi sed sollicitudin pellentesque. Nunc posuere purus rhoncus pulvinar aliquam. Ut aliquet tristique nisl vitae volutpat. Nulla aliquet porttitor venenatis.</p>
+                                                                <a href="#" class="caterylink ctabutton" title="Learn More">
+                                                                    Learn More
+                                                                </a>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div> 
+                                    </div>
+                                </li>
+                                <li class="dropdownMenu"><a class="login" href="javascript:void(0)">Login</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="innerloginWrapper">
+                            <div class="logtitle">Login To Your Account</div>
+                            <div class="formBLock">
+                                <form method="post" class="LoginForm" autocomplete="off">
+                                    <div class="form-group">
+                                        <fieldset>
+                                            <legend class="screen-reader-text">Choose Account Type</legend>
+                                            <select class="selectMenu" id="accountype" name="accountype" title="Choose Account Type">
+                                                <option value="Online Banking">Online Banking</option>
+                                                <option value="Business Online Banking">Business Online Banking</option>
+                                            </select>
+                                        </fieldset>
+                                    </div>
+                                    <div class="form-group">
+                                        <fieldset>
+                                            <legend class="screen-reader-text">Username</legend>
+                                            <label for="username" class="screen-reader-text">Username</label>
+                                            <input type="text" class="txtBox" name="username" title="Username" id="username" value="" placeholder="Username" required>
+                                            <span class="errorSpan vd f-important"></span>
+                                        </fieldset>
+                                    </div>
+                                    <div class="form-group">
+                                        <fieldset>
+                                            <legend class="screen-reader-text">Password</legend>
+                                            <label for="password" class="screen-reader-text">Password</label>
+                                            <input type="password" autocomplete="new-password" class="txtBox" name="password" title="Password" id="password" placeholder="Password" required>
+                                            <span class="errorSpan vd f-important"></span>
+                                        </fieldset>
+                                    </div>
+                                    <div class="btnBlock">
+                                        <fieldset>
+                                            <legend class="screen-reader-text">login</legend>
+                                            <button type="submit" class="logBtn">
+                                                Login
+                                            </button>
+                                    </fieldset>
+                                    </div>
+                                    <div class="forgotblock">
+                                        <a href="https://web13.secureinternetbank.com/pbi_pbi1151/ForgotPassword/226071457" target="_blank" title="mobile Online Banking Login forgotPassword">
+                                            Forgot Password
+                                        </a>
+                                        <a href="https://web13.secureinternetbank.com/pbi_pbi1151/enroll/226071457" target="_blank">
+                                            Enroll
+                                        </a>
+                                    </div>
+                                    <div class="otherblock">
+                                        <div class="othertitle">Other Online Accounts</div>
+                                        <div class="dropdown">
+                                            <a href="javascript:void(0)" onclick="servicesFunction()" class="dropbtn">Select a Service</a>
+                                            <div id="paymentDropdown" class="dropdown-content">
+                                                <a href="https://myaccountviewonline.com/login/">Investment Services</a>
+                                                <a href="https://www.mycardstatement.com/#/">Credit Card Account</a>
+                                                <a href="https://www.crewardscard.com/#/home">Credit Card Rewards</a>
+                                                <a href="https://www.ezbusinesscardmanagement.com/">Credit Card eZBusiness</a>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="form-group">
+                                            <fieldset>
+                                                <legend class="screen-reader-text">Select a Service</legend>
+                                                <select class="selectMenu" id="selectservice" name="selectservice" title="Select a Service">
+                                                    <option value="">Select a Service</option>
+                                                    <option value="Services 1">Services 1</option>
+                                                    <option value="Services 2">Services 2</option>
+                                                    <option value="Services 3">Services 3</option>
+                                                    <option value="Services 4">Services 4</option>
+                                                    <option value="Services 5">Services 5</option>
+                                                    <option value="Services 3">Services 6</option>
+                                                    <option value="Services 4">Services 7</option>
+                                                    <option value="Services 5">Services 8</option>
+                                                    <option value="Services 4">Services 9</option>
+                                                    <option value="Services 5">Services 10</option>
+                                                </select>
+                                            </fieldset>
+                                        </div> -->
+                                    </div>
+                                </form>
+                                </div>
+                                </div>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-wrapper">
+                <nav role="navigation">
+                    <div class="nav-toggle">
+                        <span class="nav-back"></span>
+                        <span class="nav-title">Back <br> <span class="nav-heading-title"></span>
+                        <span class="nav-close"></span>
+                    </div>
+                    <div class="menu-section">
+                        <ul class="topmeu mobileboxmenu">
+                            <li class="mobilesearchbox">
+                                <div class="searchblocksec">
+                                    <button type="submit" class="formbtn"><span>&nbsp;<i class="screen-reader-text"> Mobile Search </i></span></button>
+                                    <div class="form-group mobile-search-bar-container">
+                                        
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="primarymeu">
+                            <li class="has-dropdown">
+                                <a href="#">Personal</a>
+                                <ul class="innermenu">
+                                    <li class="menu__item subtitle" role="menuitem">Checking</li>
+                                    <li class="menu__item" role="menuitem"><a class="menu__link" title="Simply Free Checking" href="#">Simply Free Checking</a></li>
+                                    <li class="menu__item" role="menuitem"><a class="menu__link" title="50+ Checking" href="#">50+ Checking</a></li>
+                                    <li class="menu__item" role="menuitem"><a class="menu__link" title="Direct Interest Checking" href="#">Direct Interest Checking</a></li>
+                                    <li class="menu__item" role="menuitem"><a class="menu__link" title="Premium Interest Checking" href="#">Premium Interest Checking</a></li>
+                                    <li class="menu__item" role="menuitem"><a class="menu__link" title="Convenience Checking" href="#">Convenience Checking</a></li>
+                                    <li class="menu__item" role="menuitem"><a class="menu__link ctabutton" title="Compare Accounts" href="#">Compare Accounts</a></li>
+                                   
+                                    <li class="menu__item subtitle" role="menuitem">Savings</li>
+                                    <li class="menu__item" role="menuitem"><a class="menu__link" title="Visa Platinum" href="#">Visa Platinum</a></li>
+                                    <li class="menu__item" role="menuitem"><a class="menu__link" title="Visa+ Signature Travel" href="#">Visa+ Signature Travel</a></li>
+                                    <li class="menu__item" role="menuitem"><a class="menu__link" title="Visa Secured" href="#">Visa Secured</a></li>
+                                    <li class="menu__item" role="menuitem"><a class="menu__link" title="Apply Online" href="#">Apply Online</a></li>
+                                   
+                                    <li class="menu__item subtitle" role="menuitem">Credit Card</li>
+                                    <li class="menu__item" role="menuitem"><a class="menu__link" title="Leadership" href="#">Leadership</a></li>
+                                    <li class="menu__item" role="menuitem"><a class="menu__link" title="Contact Us" href="#">Contact Us</a></li>
+                                    <li class="menu__item" role="menuitem"><a class="menu__link" title="About Us" href="#">About Us</a></li>
+                                    <li class="menu__item" role="menuitem"><a class="menu__link" title="Community" href="#">Community</a></li>
+                                    <li class="menu__item" role="menuitem"><a class="menu__link" title="Grant Application" href="#">Grant Application</a></li>
+                                    <li class="menu__item" role="menuitem"><a class="menu__link" title="Annual Report" href="#">Annual Report</a></li>
+                                    <li class="menu__item" role="menuitem"><a class="menu__link ctabutton" title="Apply Online" href="#">Apply Online</a></li>
+                                    
+                                    <li class="menu__item subtitle" role="menuitem">Home Equity</li>
+                                    <li class="menu__item" role="menuitem"><a class="menu__link" title="Fixed Rate Loans" href="#">Fixed Rate Loans</a></li>
+                                    <li class="menu__item" role="menuitem"><a class="menu__link" title="Line of Credit" href="#">Line of Credit</a></li>
+                                    <li class="menu__item" role="menuitem"><a class="menu__link" title="Check Rates" href="#">Check Rates</a></li>
+                                    <li class="menu__item" role="menuitem"><a class="menu__link" title="Apply Online" href="#">Apply Online</a></li>
+                                    <li class="menu__item" role="menuitem"><a class="menu__link ctabutton" title="Apply Online" href="#">Apply Online</a></li>
+                                    
+                                    <li class="menu__item subtitle" role="menuitem">Banking Tools</li>
+                                    <li class="menu__item" role="menuitem"><a class="menu__link" title="Online Banking" href="#">Online Banking</a></li>
+                                    <li class="menu__item" role="menuitem"><a class="menu__link" title="Mobile Banking" href="#">Mobile Banking</a></li>
+                                    <li class="menu__item" role="menuitem"><a class="menu__link" title="Zelle" href="#">Zelle</a></li>
+                                    <li class="menu__item" role="menuitem"><a class="menu__link" title="Apple/Google Pay" href="#">Apple/Google Pay</a></li>
+                                    <li class="menu__item" role="menuitem"><a class="menu__link" title="uChoose Rewards" href="#">uChoose Rewards</a></li>
+                                    <li class="menu__item" role="menuitem"><a class="menu__link" title="Card Valet" href="#">Card Valet</a></li>
+                                    <li class="menu__item" role="menuitem"><a class="menu__link ctabutton" title="Learn More" href="#">Learn More</a></li>
+                                </ul>
+                            </li>
+                            <li class="has-dropdown">
+                                <a href="#">Commercial</a>
+                            </li>
+                            <li class="has-dropdown">
+                                <a href="#">Investments</a>
+                            </li>
+                            <li class="has-dropdown">
+                                <a href="#">About</a>
+                            </li>
+                        </ul>
+
+                        <ul class="topmeu">
+                            <li class="">
+                                <a href="#">Careers       
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="#">Newsroom        
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="#">Find a Branch
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="#">Customer Service
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <div class="stickyEmpty">
+        </div>
+        <div class="main" id="maincontent">
+        {{!-- Pages you create in the src/pages/ folder are inserted here when the flattened page is created. --}} {{>
+        body}}
+        </div>
+        
+        <footer class="threerow module">
+            <div class="grid-container">
+                <div class="footersec">
+                    <div class="primaryfooter">
+                        <div class="column-1">
+                            <div class="fLogo">
+                                <a href="#"><img src="{{root}}assets/images/settings/logo.svg" alt="Northfield Bank" width="220" height="64" /></a>
+                            </div>
+                            <div class="fdic">
+                                <img src="{{root}}assets/images/settings/fdic.svg" alt="FDIC" width="193" height="82" />
+                                <span>Routing Number: 226071457</span>
+                            </div>
+                        </div>
+                        <div class="column-2">
+                            <p class="menutitle">Quick Links</p>
+                            <ul>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Resources</a></li>
+                                <li><a href="#">Calculators</a></li>
+                                <li><a href="#">Rates</a></li>
+                                <li><a href="#">Security Center</a></li>
+                                <li><a href="#">Check Reorders</a></li>
+                                <li><a href="#">Northfield Bank Foundation</a></li>
+                                <li><a href="#">Media Relations</a></li>
+                            </ul>
+                        </div>
+                        <div class="column-3">
+                            <p class="menutitle">Legal</p>
+                            <ul>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Accessibility</a></li>
+                                <li><a href="#">Site Map</a></li>
+                                <li><a href="#">Error Resolution</a></li>
+                                <li><a href="#">Our Use of Cookies</a></li>
+                                <li><a href="#">Corporate Social Responsibility</a></li>
+                            </ul>
+                        </div>
+                        <div class="column-4">
+                            <p class="menutitle">Headquarters</p>
+                            <p class="addClass">
+                                581 Main Street, Suite 810 <br> Woodbridge, NJ 07095
+                            </p>
+                            <ul>
+                                <p><a href="tel:(833) 301-NFBK" class="phone">(833) 301-NFBK</a></p>
+                                <p><a href="#">Branch Locations</a></p>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="secondaryfooter">
+                        <div class="column-1">
+                            
+                        </div>
+                        <div class="column-2">
+                            <ul class="footerlinks copy">
+                                <li>© <span id="copyright-year"></span> Northfield Bank All Rights Reserved</li>
+                                <li><a href="https://www.multimediasolutions.com/" target="_blank" rel="noopener">Site Designed and Developed by Multimedia Solutions</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+        </footer>
+    </div>
+    <input type="hidden" name="excludeUrl" id="excludeUrl" value="[{&quot;excludeUrl&quot;:&quot;https://www.google.com&quot;},{&quot;excludeUrl&quot;:&quot;https://web13.secureinternetbank.com/ebc_ebc1151/Login/221270651#&quot;}]" />
+    <div class="speedBump">
+        <div class="grid-container">
+            <div class="speedContainer">
+                <div class="imgblock">
+                    <img src="assets/images/settings/logo.svg" alt="Northfield Bank" width="368" height="58" />
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <a href="#">Learn More</a></p>
+                <div class="speedButSection">
+                    <div class="cancelparent">
+                        <a href="javascript:void(0)" aria-label="back to the page in speedbump" class="ctaborder secondarybtn cancel">Back</a>
+                    </div>
+                    <div class="proceedparent">
+                        <a href="#" target="_blank" class="ctaborder secondarybtn proceed">Proceed</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+
+    <!-- <div class="alertsPannel footeraletpanel">
+        <div class="grid-container">
+          <div class="alertsWrap">
+            <div class="wrap">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                <a href="#">Learn More</a>
+              </p>
+              <a href="#" id="alertsPannelClose" class="close-alerts">
+                  <i></i>
+                  <span class="screen-reader-text">
+                    Close
+                  </span>
+                </a>
+            </div>
+          </div>
+        </div>
+      </div> -->
+</body>
+
+
+<div class="paginacontainer">
+    <div class="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 118.041;"></path>
+        </svg>
+    </div>
+
+</div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".lazy").Lazy({
+                afterLoad: function (element) {
+                    $("img").removeClass("layzeloading");
+                }
+            });
+        });
+</script>
+
+<script src="{{root}}assets/scripts/global/nprogress.js" defer></script>
+<script src="{{root}}assets/scripts/global/jquery-ui.min.js" defer></script>
+<script src="{{root}}assets/scripts/global/imagetoSVG.js" defer ></script>
+<script src="{{root}}assets/scripts/global/custom.js" defer></script>
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4E2Q3mxv7Xt6TmKoZEYdEkqZrKAinDDo&amp;libraries=drawing,geometry&callback=initMap"></script>
+<script type="text/javascript">
+    var gmarkers = [], markersContent = [];
+    function initMap() {
+            var locations = [
+                ['<p class="head">Avenel Office</p> <p class="getlnk"><a href="http://maps.google.com/maps?saddr=Current+Location&amp;daddr=24+Princeton+Avenue+Brick%2c+NJ+08724" target="_blank">Get Directions</a>  <a href="#" target="_blank">Branch Details</a></p>', '40.6550688', '-73.9122805', '1'],
+                ['<p class="head">Avenel Office</p> <p class="getlnk"><a href="http://maps.google.com/maps?saddr=Current+Location&amp;daddr=24+Princeton+Avenue+Brick%2c+NJ+08724" target="_blank">Get Directions</a>  <a href="#" target="_blank">Branch Details</a></p>', '40.6545753', '-73.9134312', '2'],
+                ['<p class="head">Avenel Office</p> <p class="getlnk"><a href="http://maps.google.com/maps?saddr=Current+Location&amp;daddr=24+Princeton+Avenue+Brick%2c+NJ+08724" target="_blank">Get Directions</a>  <a href="#" target="_blank">Branch Details</a></p>', '40.6545753', '-73.9121915', '3'],
+                ['<p class="head">Avenel Office</p> <p class="getlnk"><a href="http://maps.google.com/maps?saddr=Current+Location&amp;daddr=24+Princeton+Avenue+Brick%2c+NJ+08724" target="_blank">Get Directions</a>  <a href="#" target="_blank">Branch Details</a></p>', '40.6550688', '-73.9134312', '4'],
+            ];
+
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 17,
+                center: new google.maps.LatLng(40.654605, -73.9121705),
+                mapTypeControl: false,
+                zoomControl:false,
+                panControl:false,
+                streetViewControl:false,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            });
+            gmarkers.push(marker);
+            var infowindow = new google.maps.InfoWindow();
+            var marker, i;
+            var image = '../assets/images/location-pin.png';
+
+            for (i = 0; i < locations.length; i++) {
+                marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                    map: map,
+                    icon: image,
+                    label: {
+                        color: '#ffffff', fontSize: '12px', fontWeight: '600',
+                        text: (tempCounter).toString()
+				    },
+                    animation: google.maps.Animation.DROP,
+                });
+                google.maps.event.addListener(marker, 'click', (function (marker, i) {
+                    return function () {
+                        infowindow.setContent(locations[i][0]);
+                        infowindow.open(map, marker);
+                    }
+                })(marker, i));
+                google.maps.event.addListener(marker, 'mouseover', (function (marker, i) {
+                    return function () {
+                        infowindow.setContent(locations[i][0]);
+                        infowindow.open(map, marker);
+                    }
+                })(marker, i));
+                google.maps.event.addListener(marker, 'mouseout', (function (marker, i) {
+                    return function () {
+                        infowindow.setContent(locations[i][0]);
+                        infowindow.open(map, marker);
+                    }
+                })(marker, i));
+                infowindow.setContent(locations[i][0]);
+                infowindow.open(map, marker);
+            }
+        } 
+        function infoOpen(i) {
+                //console.log(gmarkers);
+                google.maps.event.trigger(gmarkers[i], 'click');
+             }      
+    </script>
+
+<script>
+$(document).ready(function () {  
+    $('#copyright-year').text(new Date().getFullYear());
+    setTimeout(function () {
+		if ($('.popUpWrapper').length > 0) {
+        $('html').addClass('popUpOpen');
+		  setTimeout(function () {
+			    $('.popupWrap .wrap,.popUpWrapper').addClass('Open');
+		  }, 100);
+	    }
+	}, 1000);  
+    $('.popUpWrapper .popup-close').click(function () {
+		$('html').removeClass('popUpOpen');
+		$('.popupWrap .wrap,.popUpWrapper').removeClass('Open');			
+    });                  
+});
+</script>
+
+<script>
+    
+function servicesFunction() {
+    $('.dropbtn').toggleClass('act');
+    $('.dropdown-content').toggleClass('show');
+}
+$('body').bind('click', function (e) {
+        //console.log("IOS Devices Click Event Test ...");
+        if ($(e.target).closest('.dropbtn').length == 0) {
+            var opened = $('.dropdown-content').hasClass('show');
+            var opened1 = $('.dropbtn').hasClass('act');
+            if (opened === true) {
+                $('.dropdown-content').removeClass('show');
+            }
+            if (opened1 === true) {
+                $('.dropbtn').removeClass('act');
+            }
+        }
+    });
+    function initAnswers() {
+        ANSWERS.init({
+            apiKey: '1e1f087e7bca3d9ff8a5df124c801ced',
+            experienceKey: 'nbanswers',
+            experienceVersion: 'PRODUCTION',
+            businessId: '2074953',
+            onReady: function () {
+                ANSWERS.addComponent("SearchBar", {
+                    container: ".search-bar-container",
+                    name: "search-bar",
+                    redirectUrl: "/search",
+                    promptHeader: 'We can help you find:',
+                    searchText: 'What can we help you find?',
+                    placeholderText: 'Search',
+                });
+                if ($(".mobile-search-bar-container").length > 0) {
+                        ANSWERS.addComponent("SearchBar", {
+                            container: ".mobile-search-bar-container",
+                            name: "mobile-search-bar",
+                            redirectUrl: "/search",
+                            promptHeader: 'We can help you find:',
+                            searchText: 'What can we help you find?',
+                            placeholderText: 'Search'
+                        });
+                    }
+                    if ($(".help-bar-container").length > 0) {
+                        ANSWERS.addComponent("SearchBar", {
+                            container: ".help-bar-container",
+                            name: "help-search-bar",
+                            redirectUrl: "/search",
+                            searchText: 'What can we help you find?',
+                            placeholderText: 'Search Help Topics'
+                        });
+                    }
+            }
+        });
+    }
+</script>
+<script src="https://assets.sitescdn.net/answers/v0.12.1/answers.min.js" onload="ANSWERS.domReady(initAnswers)" async defer></script>
+
+</body>
+</html>

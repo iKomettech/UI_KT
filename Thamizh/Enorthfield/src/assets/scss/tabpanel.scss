@@ -1,0 +1,351 @@
+@import "util/util";
+$white: #ffffff;
+$secondary-color: #0076bf;
+$img: "../../images";
+$breakpoints: (
+  small: 0,
+  medium: 768px,
+  large: 1024px,
+  xlarge: 1360px,
+  xxlarge: 1440px,
+);
+.imageslicepanel + link + script + script + .padding_adjust{
+  @include breakpoint(medium) {	
+    margin-top: 100px !important;
+  }
+}
+.imageslicepanel.Left + link + script + script + .tabsection{
+  @include breakpoint(medium) {	
+    margin-top: 120px !important;
+  }
+}
+.subbannerpanel + .breadcrumbWrapBottom + link + script + script + .tabsection.padding_adjust{
+  @include breakpoint(small only) {
+      margin-top:70px;	
+  }
+}
+.subbannerpanel + .breadcrumbWrapBottom + link + script + script + .tabsection{
+  @include breakpoint(small only) {
+      margin-top:75px;	
+  }
+}
+.tabsection{	
+  margin-top:90px;	 
+  @include breakpoint(small only) {	
+    margin-top:55px;	
+  }	
+  &.padding_adjust {	
+    margin-top: 70px;
+    @include breakpoint(small only) {	
+      margin-top: 55px;
+    }
+  }
+}
+.tabpanel{
+  position: relative;
+  z-index: 9;
+  &:before{
+    content: "";
+    background: rgba(0,0,0,0.16);
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    position: absolute;
+    z-index: -1;
+    top:0;
+  }
+  .tabpasection{
+    background-color:$white;
+    border-bottom-right-radius:38px;
+    border-bottom-left-radius:38px;  
+    @include breakpoint(small only){
+      background-color:transparent;
+    } 
+  }
+//background: url("#{$img}/tabbg_image.jpg") no-repeat center;
+background-size: cover;
+background-position:center;
+padding-top: 160px;
+padding-bottom: 90px;
+@include breakpoint(small only){
+  padding-top: 22px;
+  padding-bottom: 83px;
+} 
+ul.resp-tabs-list,
+p {
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  font-size: 16px;
+  @include breakpoint(small only){
+    padding: 10px 0px;
+  }
+}
+.resp-tabs-list li {
+  display: block;
+  margin: 0 auto;
+  list-style: none;
+  cursor: pointer;
+  box-shadow: 0px 3px 23px rgba(0,0,0,0.16);
+  float: left;
+  width: 100%;
+  margin-right: 20px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  border-top-right-radius:28px;
+  border-top-left-radius:28px;
+  margin-top:-70px;
+  background-color: $white;
+  transition: all 0.4s;
+  border-bottom: 16px solid #ffffff;
+  &:hover{
+    border-bottom:16px solid #EF8E2E;
+    @include breakpoint(medium only){
+      border-bottom:10px solid #EF8E2E;
+    }
+    p{
+      font-weight: 700;
+    }
+  }
+  &:first-child{
+    margin-left:27px;
+  }
+  &:last-child{
+    margin-right:27px;
+  }
+  .image_top{
+      display: block;
+      margin:0 auto;
+      width:80px;
+      height:76px;
+      @include breakpoint(medium only){
+        width:52px;
+        height:50px;
+      }
+      @include breakpoint(large only){
+        width:60px;
+        height:60px;
+      }
+  }
+  img{
+    width: 150px;
+    height: 100%;
+    height: 80px;
+    display: block;
+    margin: 0 auto;
+  }
+  p{
+    text-transform: uppercase;
+    font-size:16px;
+    line-height:18px;
+    padding-top: 20px;
+    text-align: center;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+.resp-tabs-container {
+  padding: 0px;
+  background-color: $white;
+  clear: left;
+  border-bottom-right-radius:38px;
+  border-bottom-left-radius:38px;
+  @include breakpoint(small only){
+    background-color: transparent;
+  }
+  @include breakpoint(medium only){
+    background-color: transparent;
+  }
+    .tabimage{
+      padding-top: 17px;
+      padding-bottom: 16px;
+      margin: 0 auto;
+      img{
+        max-width: 490px;
+        @include breakpoint(small only){
+          max-width: 100%;
+        }
+        @include breakpoint(medium only){	
+          max-width: 350px;	
+        }
+      }
+    }
+    .tabtext{
+      padding: 60px 10px 65px 100px;
+      overflow: hidden;
+      @include breakpoint(small only){
+        margin: 20px 18px;
+        margin-top:10px;
+        padding:0px;
+      }
+      @include breakpoint(medium only){
+        margin: 18px 22px;
+        padding:0px;
+      }
+      @include breakpoint(large only){	
+        padding: 60px 50px 65px 45px;	
+     }
+      p{
+          max-width: 690px;
+          padding-bottom:30px;
+          line-height:29px;
+          font-size:18px;
+          text-align: left;
+          display: block;
+          @include breakpoint(small only){
+            line-height:28px;
+            padding-bottom:30px;
+          }
+      }
+    }
+}
+div.resp-accordion {
+  cursor: pointer;
+  padding: 5px;
+  display: none;
+  border-top-right-radius:28px;
+  border-top-left-radius:28px;
+  @include breakpoint(small only){
+    border-radius:28px;
+    //min-height: 141px;
+  }
+  img{
+    display: block;
+    margin:auto auto;
+    width: 100%;
+    height: 100%;
+    max-width: 80px;
+    @include breakpoint(small only){
+    position: relative;
+    display: block;
+    max-width: 185px;
+    height:127px;
+  }
+  &.image_top{
+       top:0px;
+       width:80px;
+       height:80px;
+       object-fit: contain;
+  }
+  }
+
+}
+.resp-tab-content {
+  display: none;
+  padding: 15px;
+  background-color: $white;
+  border-bottom-right-radius:38px;
+  border-bottom-left-radius:38px;
+  @include breakpoint(small only){
+    box-shadow: 0px 3px 23px rgba(0,0,0,0.16);
+  }
+}
+.resp-tab-active {
+  background-color: #fff;
+  border-bottom:16px solid #EF8E2E !important;
+  @include breakpoint(medium only){
+    border-bottom:10px solid #EF8E2E !important;
+  }
+  p{
+    font-weight: 700;
+  }
+}
+.resp-content-active,
+.resp-accordion-active { display: block; }
+div.resp-accordion {
+  font-size: 13px;
+  margin: 0px;
+  padding: 10px 15px;
+  background-color: $white;
+  text-transform: uppercase;
+  @include breakpoint(small only){
+    margin-top: 34px;
+    box-shadow: 0px 3px 23px rgba(0,0,0,0.16);
+  }
+}
+div.resp-tab-active {
+  margin-bottom: 0px !important;
+  padding: 10px 15px !important;
+  @include breakpoint(small only){
+    padding-top:16px;
+    padding-bottom:21px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+  }
+}
+.resp-tab-content-active{
+  display: flex !important;
+  @include breakpoint(small only){
+    display: flex !important;
+    flex-direction: column-reverse;
+  }
+}
+@media only screen and (max-width: 767px) {
+  ul.resp-tabs-list { display: none; }
+  div.resp-accordion { 
+    display: block;
+  } 
+  
+  .resp-vtabs .resp-tabs-container {
+    border: none;
+    float: none;
+    width: 100%;
+    min-height: initial;
+    clear: none;
+  }
+  .resp-accordion-closed { display: none !important; }
+  }
+  &.careerpage{	
+    li{	
+      p{	
+        padding-bottom:10px;	
+      }	
+      &.image_center{	
+         align-items: center;	
+         display: grid;	
+         img{	
+           width:150px;	
+           height:62px;	
+         }	
+      }	
+    } 	
+    .tabtext{	
+      p{	
+        max-width: 670px;	
+        line-height:29px;	
+        font-size:18px;	
+        text-align: left;	
+        display: block;
+        @include breakpoint(small only){	
+          line-height:28px;	
+          padding-bottom:20px;	
+        }	
+      }	
+    }	
+    .resp-accordion{	
+      @include breakpoint(small only){	
+        display: grid;	
+      }	
+    }  	
+}
+}
+
+.Careers .tabpanel div.resp-accordion{
+  padding: 50px;
+  min-height: unset;
+}
+.Careers .tabpanel div.resp-tab-active{
+  padding: 50px !important;
+}
+.Home .tabsection .h2title{
+  @media (min-width: 375px) and (max-width:480px){	
+    max-width:297px;
+  }
+}
+.tabpanel .resp-tabs-container .fulltabtext .tabtext p{
+  @include breakpoint(medium){
+    max-width: 90%;
+  } 
+}

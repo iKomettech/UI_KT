@@ -1,0 +1,356 @@
+@import "util/util";
+$white: #ffffff;
+$secondary-color: #0076bf;
+$img: "../../images";
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+.subbannerpanel + .breadcrumbWrapBottom + link + .imageslicepanel.padding_adjust{
+    margin-top: 85px;
+    @include breakpoint(small only) {
+        margin-top:90px;	
+    }
+}
+.subbannerpanel + .breadcrumbWrapBottom + link + .imageslicepanel{
+    margin-top: 85px;
+    @include breakpoint(small only) {
+        margin-top:65px;	
+    }
+}
+.Foundation .subbannerpanel + .breadcrumbWrapBottom + link + .imageslicepanel{
+    margin-top: 70px; 
+}
+.imageslicepanel{ 
+   margin-top: 90px;
+    @include breakpoint(small) {
+        +.imageslicepanel{
+            margin-top:60px;
+        }
+    }
+    @include breakpoint(xxlarge) {
+        +.imageslicepanel{
+            margin-top: 136px;
+        }
+    }
+    &.Left{
+    .grid-container{  
+        @include breakpoint(small only) {
+          padding-left: 0px !important;
+        }
+        @media (min-width: 320px) and (max-width: 650px){
+            padding-right: 0px !important;
+        }
+    }
+   }
+    .flexwrap{
+        display: flex;
+        position: relative;
+        @media (min-width: 320px) and (max-width: 650px){
+            flex-wrap: wrap;
+        }
+        .imgWrap{
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+            transform-origin: top right;
+            transform: skew(-33deg,0deg);
+            max-width: 746px;
+            width: 100%;
+            max-height: 507px;
+            height: 100%;
+            // min-height:470px;
+            @media (min-width: 320px) and (max-width: 650px){
+                min-width: 100%;  
+            }
+            @include breakpoint(small only) {
+                min-width: 50%;
+                // max-width: 375px;
+            }
+            @include breakpoint(medium only) {
+                min-width: 50%;
+                transform: skew(-20deg,0deg);
+            }
+           
+            img{
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+                transform-origin: top right;
+                transform: skew(33deg,0deg);
+                @include breakpoint(small only) {
+                    object-position: top;
+                    height: 240px;
+                }
+                @include breakpoint(medium only) {
+                    object-position: top;
+                    transform: skew(20deg,0deg);
+                    height: 330px;
+                }
+                @include breakpoint(large only) {
+                    height: 370px;
+                }            
+            } 
+            .learnmorecta {
+                @include breakpoint(xlarge) {
+                    margin-top: 40px;
+                }  
+            }
+        }
+        .leftwarp{
+            width: 100%;
+            max-width: 603px;  
+            .contwrap{
+                padding-top: 56px;
+                padding-right: 28px !important;
+                padding-left: 28px !important;
+                @include breakpoint(small only) {
+                    max-width: 100%;
+                }
+                @include breakpoint(medium) {
+                    padding-left: 15px !important;
+                    padding-right: 15px !important;
+                }
+                @include breakpoint(large) {
+                    padding-top: 50px;
+                    padding-left: 28px;
+                    padding-right: 25px;
+                }
+                @include breakpoint(xlarge) {
+                    padding-top: 44px;
+                    padding-left: 20px !important;
+                }
+                @media (min-width: 651px) and (max-width: 767px){
+                    padding-top:14px;
+                    padding-right: 0px !important;
+                }
+                .content-title{
+                    font-size: 40px;
+                    line-height: 40px;
+                    font-weight:400;
+                    @include breakpoint(small only) {
+                        padding-bottom: 33px;
+                    }
+                    @include breakpoint(medium) {
+                        font-size: 34px;
+                        line-height: 34px;
+                    }
+                    @include breakpoint(large) {
+                        font-size: 48px;
+                        line-height: 50px;
+                    }
+                    @include breakpoint(xlarge) {
+                        font-size: 54px;
+                        line-height: 56px;
+                        padding-bottom: 0px;
+                    }
+                    @media (min-width: 1024px) and (max-width: 1279px){
+                        font-size: 40px;
+                        line-height: 40px;
+                    }
+                    @media (min-width: 651px) and (max-width: 767px){
+                        font-size: 30px;
+                        line-height: 34px;
+                    }
+                }
+                .desc{
+
+                    padding-top: 6px;
+                    @include breakpoint(medium) {
+                        padding-bottom: 10px;
+                        padding-top: 0;
+                    }
+                    @include breakpoint(large) {
+                        padding-top: 25px;
+                        padding-bottom: 12px;
+                    }
+                    @include breakpoint(xlarge) {
+                        padding-top: 35px;
+                        // max-width: 402px;
+                    }
+                    p{
+                        font-size: 18px;
+                        font-weight: 400;
+                        line-height: 28px;
+                        @include breakpoint(large) {
+                            line-height: 30px;
+                        }
+                    }    
+                }    
+                .desc + .learnmorecta{
+                    margin-top: 38px;
+                    display: inline-block;
+                }     
+            }
+        }
+        .overlay{
+            background: url("#{$img}/image_slice.svg") no-repeat center;
+            content: "";
+            position: relative;
+            width: 235px;
+            height: 26px;
+            overflow: hidden;
+            background-size: cover;
+            top: 0px;
+            left: 0px;
+            z-index: -1;
+            background-position: bottom;
+            @include breakpoint(medium) {
+                left: -66px;
+                height: 230px;
+                width: 335px;
+                top: 135px;
+                position: absolute;
+            }
+            @include breakpoint(large) {
+                height: 230px;
+                width: 538px;
+                top: 170px;
+            }
+            @include breakpoint(xlarge) {
+                height: 320px;
+                top: 196px;
+            }
+            @media (min-width: 1360px) and (max-width: 1390px){
+                height: 300px;
+                top: 233px;
+            }
+            @media (min-width: 651px) and (max-width: 767px){
+                left: -66px;
+                width: 245px;
+                height: 126px;
+                top:134px;
+                position: absolute;
+            }
+            @media (min-width: 1024px) and (max-width: 1279px){
+                left: -110px;
+            }
+            &.layzeloading{
+                visibility: hidden;
+            }
+        }
+    }
+    &.right{
+        + .imageslicepanel{
+            margin-top: 60px;
+        }
+        .grid-container {
+            @media (min-width: 320px) and (max-width: 650px){
+                padding-right: 0px !important;
+                padding-left: 0px !important;
+            }
+            @media (min-width: 651px) and (max-width: 767px){
+                padding-right: 0px !important;
+                padding-left: 28px !important;
+            }
+            .h2title, .leftwarp{
+                @media (min-width: 320px) and (max-width: 650px){
+                    padding-right: 28px !important;
+                    padding-left: 28px !important;
+                }
+            }
+        }
+        .flexwrap{
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            .leftwarp{
+                max-width: 683px;
+                .contwrap{
+                    padding-top: 0;
+                    padding-left: 0 !important;
+                    @media (min-width: 320px) and (max-width: 650px){
+                        padding-right:28px !important;
+                        padding-top: 56px;
+                    }
+                    @media (min-width: 651px) and (max-width: 767px){
+                        padding-right: 0px !important;
+                    }
+                    @include breakpoint(xlarge) {
+                        padding-right: 0px !important;
+                    }
+                    .desc{
+                        max-width: 100%;
+                        padding-top: 0;
+                        p{
+                            padding-bottom: 18px;
+                            line-height: 23px;
+                            &:last-child{
+                                padding-bottom: 0;
+                            }
+                        }
+                    }
+                }
+            }
+            .imgWrap{
+                transform-origin:top left;
+                transform: skew(33deg, 0deg);
+                max-height: 347px;
+                max-width: 644px;
+                img{
+                    transform-origin:top left;
+                    transform: skew(-33deg, 0deg);
+                    @include breakpoint(medium only) {
+                        height: 330px;
+                    }
+                    @media (min-width: 651px) and (max-width: 767px){
+                        height: 240px;
+                    }
+                    @include breakpoint(large) {
+                        height: 347px;
+                    }
+                }
+            }
+            .overlay{
+                background: url("#{$img}/image_slice-alter.svg") no-repeat center;
+                content: "";
+                position: relative;
+                height: 26px;
+                width: 213px;
+                overflow: hidden;
+                background-size: cover;
+                top: 0px;
+                left: 0;
+                z-index: -1;
+                background-position: bottom;
+                transform-origin:top left;
+                transform: skew(13deg, 0deg);
+                @include breakpoint(medium) {
+                    height: 122px;
+                    top: 232px;
+                    left: 62%;
+                    position: absolute;
+                }
+                @include breakpoint(large) {
+                    width: 213px;
+                    top:252px;
+                    left: 61%;
+                }
+                @include breakpoint(xlarge) {
+                    left: 62%;
+                }
+                @media (min-width: 1024px) and (max-width:1200px){
+                    left: 62%;
+                }
+                @media (min-width: 651px) and (max-width: 767px){
+                    height: 122px;
+                    top: 142px;
+                    left: 59%;
+                    position: absolute;
+                }
+                &.layzeloading{
+                    visibility: hidden;
+                }
+            }
+        }
+    }
+}
+
+.Foundation .imageslicepanel{
+    margin-top: 116px;
+    @include breakpoint(small only) {
+        margin-top: 68px;
+    }
+}
