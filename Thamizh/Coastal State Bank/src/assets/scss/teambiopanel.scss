@@ -1,0 +1,324 @@
+@import "util/util";
+$white: #ffffff;
+$primary-color: #004986;
+$secondary-color: #B58412;
+$breakpoints: (
+  small: 0,
+  medium: 768px,
+  large: 1024px,
+  xlarge: 1360px,
+  xxlarge: 1440px,
+);
+.breadcrumbWrapBottom {
+    padding-top: 35px;
+    padding-bottom: 40px;
+}
+.teambiopanel{
+    background-color: #F5F7FB;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 29px 29px -29px;
+    .containerWrapper{
+        padding-bottom: 40px;
+        padding-top: 45px;
+        @include breakpoint(large){
+            padding-left: 0px;
+            padding-bottom: 50px;
+            padding-top: 45px;;
+        }
+        @include breakpoint(xlarge){
+            // padding-left: 95px;
+            padding-bottom: 80px;
+            padding-top: 45px;;
+        }
+        @include breakpoint(xxlarge){
+            // padding-left: 135px;
+            padding-bottom: 105px;
+            padding-top: 45px;;
+        }
+    }
+    .panelwrap {
+        display: block;
+        @include breakpoint(medium){
+            display: flex;
+            width: 100%;
+        }
+       
+    }
+    .imgwrap {
+        width: 100%;
+        margin-left: 0px;
+        //overflow: hidden;
+        @include breakpoint(medium){
+            display: flex;
+            width: 100%;
+            max-width: 304px;
+            margin-right: 24px;
+        }
+        @include breakpoint(large){
+            margin-right: 64px;
+        }
+        .image-block{
+            //box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 10px 0px;
+            img{
+                @media (min-width: 370px) and (max-width: 450px){
+                  margin:0 auto;
+                  width:100%;
+                  max-width:304px;
+                  max-width: 304px;
+                  justify-content: center;
+                  display: flex;
+                }
+                max-height: 426px;
+                -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 10px 0px;
+                -moz-box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 10px 0px;
+                box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 10px 0px;
+            }
+        }
+    }
+
+    .cntwrap {
+        position: relative;
+        width: 100%;
+        display: grid;
+        padding-top:10px;
+        @include breakpoint(small only){
+            padding-top: 40px;
+         }
+        //  @include breakpoint(medium only){
+        //     padding-left: 50px;
+        //  }
+         @include breakpoint(medium){
+            width: 73.5%;
+         }
+     
+        .columncontent{
+            // @include breakpoint(large only){
+            //    padding-left:50px;
+            // }
+            h3{
+                font-size:32px;
+                line-height:34px;
+                font-weight: 600;
+                color:$primary-color;
+                @include breakpoint(small only){
+                    font-size:32px;
+                    line-height:34px;
+                }
+                @include breakpoint(large){
+                font-size:42px;
+                line-height:34px;
+                }
+              }
+              h4{
+                  margin-bottom: -5px;
+                  font-weight: 600;
+                  color:$secondary-color;
+                @include breakpoint(small only){
+                    font-size:18px;
+                    line-height:24px;
+                    padding-bottom:10px;
+                }
+                @include breakpoint(medium){
+                    font-size:20px;
+                    line-height:24px;
+                    padding-bottom:10px;
+                }
+                @include breakpoint(large){
+                    font-size:24px;
+                    line-height:24px;
+                    padding-bottom:10px;
+                }
+                @include breakpoint(xlarge){
+                    font-size:24px;
+                    line-height:34px;
+                    padding-bottom:0px;
+                }
+              }
+              p{
+                  font-size:18px;
+                  line-height:24px;
+                  color: #1F1F1F;
+                @include breakpoint(large){
+                    font-size:24px;
+                    line-height:34px;
+                }
+               
+              }
+        }
+        .contact-address{
+            p{
+                font-size:18px;
+                line-height:24px;
+                color: #1F1F1F;
+                margin-bottom: 0px;
+                margin-top: 0px;
+                @include breakpoint(large){
+                    font-size:24px;
+                    line-height: 34px;
+                }
+                a{
+                    font-size: 18px;
+                    line-height: 24px;
+                    color: #1F1F1F;
+                    //text-decoration: none;
+                    &:hover{
+                        color: $primary-color;
+                    }
+                    @include breakpoint(large){
+                        font-size:24px;
+                    }
+                }
+            }
+        }
+        .columncontactcontent{
+            padding: 0;
+            display: block;
+            position: relative;
+            padding-top: 30px;
+            .contact-info{
+                display: block;
+                padding-left: 0px;
+                padding-top: 10px;
+                .callme{
+                    position: relative;
+                    margin-right: 40px;
+                    font-size:24px;
+                    line-height:34px;
+                    color: #1F1F1F;
+                    text-decoration: none;
+                    @include breakpoint(small only){
+                        font-size:18px;
+                        line-height:24px;
+                    }
+                    @include breakpoint(medium only){
+                        font-size:18px;
+                        line-height:24px;
+                    }
+                    &:hover{
+                        text-decoration: none;
+                        color: #004986;
+                    }
+                    img{
+                        padding-right: 10px;
+                    }
+              
+                }
+                .emailme{
+                    position: relative;
+                    padding-left: 0px;
+                    font-size:24px;
+                    line-height:34px;
+                    color: #1F1F1F;
+                    text-decoration: none;
+                    @include breakpoint(small only){
+                        font-size:18px;
+                        line-height:24px;
+                    }
+                    @include breakpoint(medium only){
+                        font-size:18px;
+                        line-height:24px;
+                    }
+                    &:hover{
+                        text-decoration: none;
+                        color: #004986;
+                    }
+                    img{
+                        padding-right: 10px;
+                    }
+                
+                }
+            } 
+            &.biocontent{
+                padding-top: 12px;
+                @include breakpoint(large){
+                    padding-top: 22px;
+                }
+            }
+            .contentwrap{
+                padding-top: 0;
+                max-width: 1045px;
+                width: 100%;
+                p{
+                    font-size:16px;
+                    line-height:24px;
+                    margin-bottom:0px;
+                    @include breakpoint(large){
+                        font-size:18px;
+                        line-height:30px;
+                    }
+                }
+            }
+        } 
+       
+    }
+    .contentwrap{
+        padding-top:50px;
+        @include breakpoint(xlarge){
+            max-width:933px;
+            padding-top:105px;
+        }
+        p{
+            font-size:16px;
+            line-height:24px;
+            margin-bottom:0px;
+            @include breakpoint(large){
+                font-size:18px;
+                line-height:30px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+.teambiopanel  ~ .testimonialPanel {
+  margin-top:10px;
+}
+}
+
+@media screen and (max-width: 767px) {
+    .teambiopanel  ~ .testimonialPanel {
+      margin-top:40px;
+    }
+    .teambiopanel  ~ .testimonialPanel .flexWrap .titleWrap {
+        min-height: 115px;
+        max-width: 200px;
+    }
+    .teambiopanel  ~ .testimonialPanel .flexWrap .testiWrap .swiper .textBlock .imgWrap {
+        height: 100px;
+        width: 100px;
+        top: -113px;
+        left: 225px;
+    }
+}
+@media screen and (min-width: 1024px) {
+    .teambiopanel  ~ .testimonialPanel .flexWrap .testiWrap{
+        max-width: 65%;
+    }
+    .teambiopanel  ~ .testimonialPanel .flexWrap .titleWrap{
+        max-width: 300px;
+    }
+    .teambiopanel  ~ .testimonialPanel{
+        margin-top: 55px;
+    }
+}       
+    @media screen and (min-width: 1280px) {
+    .teambiopanel  ~ .testimonialPanel .flexWrap .testiWrap{
+        max-width: 820px;
+    }
+    .teambiopanel  ~ .testimonialPanel .flexWrap .titleWrap{
+        max-width: 384px;
+    }
+    }
+     
+    @media screen and (min-width: 1382px) {
+    //   .teambiopanel  ~ .testimonialPanel .grid-container {
+    //     padding-left: 125px;}
+    .teambiopanel  ~ .testimonialPanel .flexWrap .titleWrap{
+        max-width: 325px;
+        margin-right: 64px;
+    }
+    .teambiopanel  ~ .testimonialPanel .flexWrap .testiWrap{
+        max-width: 853px;
+    }
+
+   
+}

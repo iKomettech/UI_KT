@@ -1,0 +1,333 @@
+@import "util/util";
+$white: #ffffff;
+$primary-color: #004986;
+$secondary-color: #B58412;
+$img: "../../images";
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+.testimonialPanel + link + script + .personalproductpanel{
+    margin-top: 20px;
+    @include breakpoint(medium) {
+        margin-top: 38px;
+    }
+    @include breakpoint(llarge) {
+        margin-top: 84px;
+    }
+}
+.personalproductpanel ~ .imageslicepanel {
+    margin-top: 20px;
+    @include breakpoint(medium) {
+        margin-top: 40px;
+    }
+    @include breakpoint(llarge) {
+        margin-top: 80px;
+    }
+}
+.personalproductpanel {
+    margin-top: 25px;
+    @media (min-width: 440px) and (max-width:767px){
+        margin-top: 25px;
+    }
+    +.personalproductpanel{
+        margin-top: 110px;
+    }
+    .headtitleblock{
+        position: relative;
+        h2{
+            font-size: 21px;
+            line-height: 26px;
+            color: $primary-color;
+            padding-bottom: 18px;
+            font-weight: 600;
+            @include breakpoint(medium) {
+                font-size: 28px;
+                line-height: 32px;
+                padding-bottom: 48px;
+            }
+            @include breakpoint(llarge) {
+                font-size: 48px;
+                line-height: 56px;
+                padding-bottom: 42px;
+            }
+         }
+         .clicktext{
+             position: absolute;
+             right: 0;
+             bottom: 10px;
+             p{
+                 color: $primary-color;
+                 font-size: 14px;
+                 line-height: 20px;
+                 font-weight: 600;
+                 @include breakpoint(small only) {
+                    display: none;
+                 }
+                 @include breakpoint(llarge) {
+                    font-size: 16px;
+                 }
+             }
+         }
+    }
+    
+.personalswiperpanel{
+    position: relative;
+    &::before{
+        content: '';
+        width: 100%;
+        height: 225px;
+        background: #E0E8EE;
+        display: block;
+        top: 56px;
+        position: absolute;
+        @include breakpoint(small only) {
+            display: none;
+        }
+        @include breakpoint(llarge) {
+            top: 78px;
+            height: 275px;
+        }
+        @include breakpoint(xlarge) {
+            height: 365px;
+        }
+    }
+    .grid-container{
+        @include breakpoint(small only) {
+            padding: 0;
+        }
+    }
+    .ProductSlider{
+        padding-bottom: 20px;
+        .swiper-list{
+            text-align: center;
+            filter: drop-shadow(0px 6px 3px rgba(0, 0, 0, 0.16)); 
+            position: relative;
+            pointer-events: none;
+            span{
+            width: 123px;
+            height: 120px;
+            transition: all 0.4s;
+            position: relative;
+            clip-path: polygon(0 0, 100% 0%, 100% 82%, 50% 100%, 0 82%);
+            background: $white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @include breakpoint(llarge) {
+                width: 188px;
+                height: 182px;
+            }
+            svg{
+                width: 49px;
+                @include breakpoint(llarge) {
+                    width: 74px;
+                }
+            }
+           }
+        }
+        .swiper-wrapper{
+            @include breakpoint(small only) {
+                display: block;
+            }
+        }
+        .swiper-slide{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+            @include breakpoint(small only) {
+                margin-bottom: 45px;
+                &::before{
+                    content: '';
+                    width: 100%;
+                    height: 225px;
+                    background: #E0E8EE;
+                    display: block;
+                    top: 56px;
+                    position: absolute;
+                    z-index: -1;
+                }
+            }
+            &:last-child{
+                @include breakpoint(small only) {
+                    margin-bottom: 0;
+                }
+                .swiper-list{
+                    @include breakpoint(medium) {
+                        margin-right: -10%;
+                    }
+                }       
+                
+              
+            }
+            &:first-child{
+                .swiper-list{
+                    @include breakpoint(medium) {
+                        margin-left: -11%;
+                    }
+                }             
+            }
+        }
+        .swiper-content{
+            display: none;
+            @include breakpoint(small only) {
+                display: block;
+                margin-left: 15px;
+                margin-right: 15px;
+                margin-top: 40px;
+            }
+            .contentblock {
+                @include breakpoint(small only) {
+                    padding: 18px;
+                    padding-bottom: 46px;
+                }
+                .ctablock{
+                    @include breakpoint(small only) {
+                        left:15px;
+                    }
+                }
+            }
+        }
+        }
+        .swiper-button-next, .swiper-button-prev{
+            margin-top: calc(-18px - (var(--swiper-navigation-size)/ 2));
+            @include breakpoint(small only) {
+                display: none !important;
+            }
+        }
+        .swiper-button-prev{
+            left: 0;
+            &:after{
+                background: url("#{$img}/icons/slider-previous-icon.svg") no-repeat center;
+                overflow: hidden;
+                background-size: cover;
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                width: 20px;
+                height: 34px;
+                font-size: 0;
+                @include breakpoint(llarge) {
+                    width: 30px;
+                    height: 52px;
+                }
+            }
+        }
+        .swiper-button-next{
+            right: 5px;
+            &:after{
+                background: url("#{$img}/icons/slider-next-icon.svg") no-repeat center;
+                overflow: hidden;
+                background-size: cover;
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                width: 20px;
+                height: 34px;
+                font-size: 0;
+                @include breakpoint(llarge) {
+                    width: 30px;
+                    height: 52px;
+                }
+            }
+        }
+    }
+    .ProductContentSlider{
+        margin-top: 30px;
+        padding-bottom: 30px;
+        @include breakpoint(small only) {
+            display: none;
+        }
+    }
+}
+.swiper-content{
+    overflow: hidden;
+    background: $white;
+    width: 100%;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.16);
+    .titleblock{
+        background: #F5F7FB;
+        text-align: center;
+        padding-top: 5px;
+        padding-bottom: 4px;
+        min-height: 47px;
+        padding-left: 15px;
+        padding-right: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include breakpoint(medium) {
+            min-height: 48px;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-top: 0px;
+            padding-bottom: 0px;
+        }
+        @include breakpoint(xlarge) {
+            padding-left: 32px;
+            padding-right: 32px;
+            min-height: 65px;
+            padding-top: 5px;
+            padding-bottom: 4px;
+        }
+        p{
+            font-size: 21px;
+            line-height: 40px;
+            font-weight: 600;
+            color: $primary-color;
+            margin-bottom: 0;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+            @include breakpoint(medium) {
+                font-size: 18px;
+                line-height: 21px;
+            }
+            @include breakpoint(xlarge) {
+                font-size: 24px;
+                line-height: 27px;
+            }
+        }
+    }
+    .contentblock{
+        padding: 15px;
+        padding-bottom: 60px;
+        @include breakpoint(llarge) {
+            padding: 26px 25px;
+            padding-bottom: 50px;
+        }
+        @include breakpoint(xlarge) {
+            padding-bottom: 102px;
+        }
+        p{
+            font-size: 16px;
+            line-height: 22px;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 4;
+            overflow: hidden;  
+            min-height: 88px;
+            @include breakpoint(xlarge) {
+                font-size: 18px;
+                line-height: 30px;
+                min-height: 120px;  
+            }                  
+        }
+        .ctablock {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            a{
+                font-weight: 600;
+            }
+        }
+    }
+}

@@ -1,0 +1,108 @@
+.teambiopanel{
+    background-color: #F5F7FB;
+    .containerWrapper{
+        padding-left: 125px;
+        padding-bottom: 110px;
+        padding-top: 45px;
+    }
+    .panelwrap {
+        display: block;
+        @include breakpoint(large){
+            display: flex;
+            width: 100%;
+        }
+       
+    }
+    .imgwrap {
+        width: 28%;
+        margin-left: 0px;
+        overflow: hidden;
+        img{
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+    }
+    .cntwrap {
+        position: relative;
+        width: 70%;
+        display: grid;
+        align-items: center;
+        .columncontent{
+            h3{
+                font-size:42px;
+                line-height:34px;
+                font-weight: 700;
+                color:$primary-color;
+              }
+              h4{
+                  font-size:24px;
+                  line-height:34px;
+                  font-weight: 700;
+                  color:$secondary-color;
+              }
+              p{
+                  font-size:24px;
+                  line-height:34px;
+                  color: #1F1F1F;
+              }
+        }
+        .contact-address{
+            p{
+                font-size:24px;
+                line-height:34px;
+                color: #1F1F1F;
+            }
+        }
+        .columncontactcontent{
+            padding: 0;
+            display: flex;
+            position: relative;
+            padding-top: 30px;
+           
+            .contact-info{
+                display: flex;
+                align-items: end;
+                padding-left: 53px;
+                .callme{
+                    position: relative;
+                    padding-right: 45px;
+                    padding-left: 35px;
+                span:after {
+                    background: url(../../images/icons/callbio.svg) no-repeat;
+                    content: "";
+                    width: 24px;
+                    height: 48px;
+                    position: absolute;
+                    top: -14px;
+                    left:0px;
+                    background-size: contain;
+                }
+                }
+                .emailme{
+                    position: relative;
+                    padding-left: 50px;
+                span:after {
+                    background: url(../../images/icons/mailbio.svg) no-repeat;
+                    content: "";
+                    width: 37px;
+                    height: 29px;
+                    position: absolute;
+                    top: -3px;
+                    left:0px;
+                    background-size: contain;
+                }
+                }
+            } 
+           
+        } 
+       
+    }
+    .contentwrap{
+        max-width:933px;
+        padding-top:110px;
+        p{
+            font-size:18px;
+            line-height:30px;
+        }
+
+    }
+}

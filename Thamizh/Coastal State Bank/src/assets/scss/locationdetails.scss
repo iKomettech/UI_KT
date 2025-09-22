@@ -1,0 +1,273 @@
+@import "util/util";
+$white: #ffffff;
+$primary-color: #004986;
+$secondary-color: #B58412;
+$breakpoints: (
+  small: 0,
+  medium: 768px,
+  large: 1024px,
+  xlarge: 1360px,
+  xxlarge: 1440px,
+);
+
+$img: "../../images/";
+.lobbypanel{
+    padding-top: 20px;
+    @include breakpoint(medium){
+        padding-top: 10px;
+    }
+    .contenttitle{
+        h1{
+            font-size:21px;
+            line-height:56px;
+            color:$primary-color;
+            font-weight: 600;
+            font-family: 'SourceSerif';
+            @include breakpoint(medium){
+                font-size:48px;
+                line-height:56px;
+            }
+        }
+    }
+    .branchbg{
+        @include breakpoint(medium){
+            margin-top: 45px;
+        }
+        background-color: #F5F7FB;
+    }
+    .flexwrap{
+        padding-top:45px;
+        padding-bottom:45px;
+        display: block;
+        @include breakpoint(medium){
+            display: flex;
+        }
+        @include breakpoint(small only){
+            padding-top: 24px;
+            padding-bottom: 24px;
+        }
+        .rightwrap{
+            max-width: 550px;
+            width: 100%;
+            @include breakpoint(medium){
+                max-width: 448px;
+                margin-left:17px;
+            }
+            @include breakpoint(large){
+                max-width: 556px;
+                margin-left:20px;
+            }
+            .h2title{
+                font-size: 28px;
+                line-height: 34px;
+                color: $primary-color;
+                margin-bottom: 0;
+                font-family: "Montserrat", sans-serif !important; 
+                font-weight: 600;
+                padding-bottom: 7px;
+                @include breakpoint(medium){
+                    font-size: 28px;
+                    line-height: 34px;
+                    
+                }
+                @include breakpoint(small only){
+                    font-size: 21px;
+                    padding-bottom: 7px;
+                }
+            }
+            .branch-title{
+                padding-top:25px;
+                .h2title{
+                    font-size: 21px;
+                    line-height: 34px;
+                    font-weight: 600;
+                    color:#1F1F1F;
+                    @include breakpoint(medium){
+                        font-size: 28px;
+                        line-height: 34px;
+                    }
+                }
+            }
+            .brhrs{
+                font-size: 20px !important;
+                line-height:24px !important;
+                color: $primary-color;
+                padding-bottom: 18px;
+            }
+            .offerlist{
+                div,.heading{
+                    p{
+                        font-size:24px;
+                        line-height:34px;
+                        font-weight:400;
+                        margin-bottom:0px;
+                        @include breakpoint(small only) {
+                            font-size: 16px;
+                        }
+                    }
+                }
+                a{
+                    font-size:28px;
+                    line-height:34px;
+                    font-weight:600;
+                    &:hover{
+                        //text-decoration: none;
+                    }
+                    @include breakpoint(small only) {
+                        font-size: 21px;
+                    }
+                }
+            }
+            p{
+                font-size: 24px;
+                line-height:34px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+                vertical-align: top;
+                @include breakpoint(small only) {
+                    font-size: 16px;
+                    line-height: 34px;
+                }
+                @include breakpoint(medium only) {
+                    font-size: 18px;
+                }
+                @include breakpoint(large only) {
+                    font-size: 18px;
+                }
+                b,strong{
+                    font-weight: 500;
+                    @include breakpoint(small only) {
+                        font-weight: 400;
+                    }
+                }
+            }
+            table{
+                padding-top: 20px;
+                tr{
+                    td{
+                        &:first-child{
+                            max-width:230px;
+                            overflow: hidden;
+                            padding-right: 5px;
+                        }
+                    }
+                }
+                th,td,p{
+                    font-size: 18px;
+                    line-height:34px;
+                    vertical-align: top;
+                    @include breakpoint(small only) {
+                        font-size: 16px;
+                        line-height: 22px;
+                        padding-bottom: 10px;
+                    }
+                    @include breakpoint(medium only) {
+                        font-size: 18px;
+                    }
+                    @include breakpoint(large only) {
+                        font-size: 18px;
+                    }
+                    b,strong{
+                        font-weight: 500;
+                        @include breakpoint(small only) {
+                            font-weight: 400;
+                        }
+                    }
+                }
+            }
+            .holidayhrs{
+                padding-bottom: 40px;
+                @media (min-width: 375px) and (max-width: 767px) {
+                    padding-bottom: 15px;
+
+                }
+                .ac-title {
+                    position: relative;
+                    cursor: pointer;
+                    h2{
+                        font-size:24px;
+                        line-height:34px;
+                        position: relative;
+                        &.acc-active{
+                            color: $secondary-color;
+                        }
+                        .arrow-down{
+                            width: 7px;
+                            background: url("#{$img}icons/ionic-ios-arrow-back.svg");
+                            background-repeat: no-repeat;
+                            background-size: contain;
+                            height: 13px;
+                            position: absolute;
+                            top: 15px;
+                            transition: all .3s;
+                            transform: rotate(90deg);
+                            margin-left: 20px;
+                        }
+                        .arrow-up{
+                            transition: all .3s;
+                            transform: rotate(270deg);
+                            background: url("#{$img}icons/yellow-arrow-back.svg");
+                            background-size: contain;
+                            background-repeat: no-repeat;
+                            
+                        }
+                        @media (min-width: 375px) and (max-width: 767px) {
+                            font-size:21px;
+                        }
+                    }
+                }
+                .holidayhide{
+                    table{
+                        + p{
+                            padding-top: 40px;
+                        }
+                    }
+                    p{
+                        font-size: 14px;
+                        line-height: 20px;
+                        max-width: 340px;
+                    }
+                }
+                
+            }
+        }
+        .leftwrap{
+            max-width:827px;
+            width: 100%;
+            @media (min-width: 375px) and (max-width: 767px) {
+                padding-bottom: 20px;
+            }
+         
+            .colblock{
+                .imagewrap{
+                    figure{
+                        object-fit: cover; 
+                    }
+                }
+            
+            }
+            
+        }
+    }
+}
+@media screen and (min-width: 1280px) {
+    .teambiopanel  ~ .testimonialPanel {
+        margin-top: 40px;
+        @media (min-width: 375px) and (max-width: 767px) {
+            margin-top: 10px;
+        }
+    }
+} 
+.locationdetailspanel  ~ .disclaimerpanel {
+    @media (min-width: 375px) and (max-width: 767px) {
+        p + p {
+             margin-top: 0px; 
+        }
+    }
+}
+.findlocationPannel {
+   margin-top: 45px !important; 
+}
+.double_gridpanel + .disclaimerpanel {
+    margin-top: 45px; 
+}

@@ -1,0 +1,65 @@
+@import "util/util";
+$white: #ffffff;
+$black: #000000;
+$primary-color: #004986;
+$secondary-color: #B58412;
+$img: "../../images";
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+.infopanel{
+    margin-top: 38px;
+    @include breakpoint(medium) {
+        margin-top: 64px;
+    }
+    @include breakpoint(llarge) {
+        margin-top: 102px;
+    }
+    .contentwrap{
+        h2{
+            font-size: 21px;
+            line-height: 40px;
+            font-weight: 600;
+            color: $primary-color;
+            margin-bottom: 0px;
+            font-family: "Montserrat", sans-serif !important;
+            @include breakpoint(medium) {
+                font-size: 32px;
+                line-height: 40px;
+                margin-bottom: 5px;
+            }
+        }
+        p{
+            font-size: 14px;
+            line-height: 25px;
+           
+        }
+        ul{
+            margin-left: 15px;
+            li{
+                &::before{
+                    display: none;
+                }
+                margin-left: 0;
+                padding-left: 0;
+                font-size: 14px;
+                line-height: 25px;
+                margin-bottom: 10px;
+                list-style: decimal;
+                @include breakpoint(medium) {
+                    margin-bottom: 14px;
+                }
+                &:last-child{
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+

@@ -1,0 +1,165 @@
+@import "util/util";
+$white: #ffffff;
+$primary-color: #004986;
+$secondary-color: #B58412;
+$img: "../../images";
+$breakpoints: (
+  small: 0,
+  medium: 768px,
+  large: 1024px,
+  xlarge: 1360px,
+  xxlarge: 1500px,
+);
+.chatbot{
+    position: relative;
+    margin-top: calc(clamp(2.5rem, 6.573vw + 0.96rem, 6.875rem));    
+    .wraps{
+        display: block;
+        @media screen and (min-width:540px){ 
+            display: flex;
+        }
+        .leftwrap{
+           width:100%;
+           @include breakpoint(small only) {
+            display: flex;
+            justify-content: center;
+            max-width: 265px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-bottom: 40px;
+            }
+            @media screen and (min-width:540px) and (max-width:767px){ 
+                max-width: 155px;
+            }
+            @include breakpoint(medium) {
+                width:49%;
+            }
+            @media screen and (min-width:1280px){ 
+                margin-left: 55px;
+            }
+        }
+        .rightwrap{
+            width:100%;
+            max-width: 926px;
+            max-height: 377px;
+            position: relative;
+            @include breakpoint(small only) {
+                max-width: 345px;
+                max-height: 496px;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 40px;
+                margin-bottom: 40px;
+            }
+            &:before{
+                content: '';
+                background: url(#{$img}/chatbot-text-bg.png) no-repeat center;
+                overflow: hidden;
+                background-size: contain;
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                z-index: -1;
+                @include breakpoint(small only) {
+                    height: 150%;
+                    width: 100%;
+                }
+            }
+            .content{
+                margin-left: 36%;
+                margin-top: 0%;
+                transition: top 0.4s ease-in-out, margin 0.4s ease-in-out;
+                @include breakpoint(small only) {
+                    position: relative;
+                    top:-30px;
+                }
+                @media screen and (min-width:540px) and (max-width:767px){ 
+                    top:-12px;
+                }
+                @include breakpoint(medium) {
+                    margin-left: 38%;
+                    margin-top: 14%;
+                }
+                @include breakpoint(large) {
+                    margin-top: 14.2%;
+                    margin-left: 42%;
+                }
+                @media screen and (min-width:1100px){ 
+                    margin-top: 10.2%;
+                }
+                @media screen and (min-width:1280px){ 
+                    margin-top: 7.2%;
+                }
+                h2{
+                  color: $primary-color;
+                  font-size:20px;
+                  font-weight: 600;
+                  line-height:100%;
+                  margin-bottom: 8px;
+                  @include breakpoint(medium) {
+                        font-size: calc(clamp(1.75rem, 2.353vw + 0.621rem, 2.125rem));
+                        margin-bottom: 12px;
+                }
+                  @include breakpoint(large) {
+                        font-size: calc(clamp(2.125rem, 3.922vw - 0.385rem, 2.75rem)) !important;
+                        margin-bottom: 16px;
+                  }
+                  @media screen and (min-width:1280px){ 
+                    font-size: calc(clamp(2.75rem, 2.5vw + 0.75rem, 3rem));
+                    line-height:61px;
+                    margin-bottom: 24px;
+                  }
+                }
+                p{
+                    font-size:14px;
+                    line-height:110%;
+                    font-weight: 400; 
+                    color:#1F1F1F;
+                    max-width: 216px;
+                    @include breakpoint(small only) {
+                        margin-bottom: 0;
+                    }
+                    @include breakpoint(medium) {
+                        font-size: calc(clamp(1.125rem, 0.784vw + 0.749rem, 1.25rem));
+                        max-width: calc(clamp(15.625rem, 19.608vw + 6.213rem, 18.75rem));
+                    }
+                    @include breakpoint(large) {
+                        font-size: calc(clamp(1.25rem, 1.569vw + 0.246rem, 1.5rem));
+                        max-width: calc(clamp(18.75rem, 20.433vw + 5.673rem, 24.063rem));
+                    }
+                    @media screen and (min-width:1280px){ 
+                        font-size: calc(clamp(1.5rem, 2.5vw - 0.5rem, 1.75rem));
+                        line-height:32px;
+                    }
+                }
+                .ctabtn{
+                    border-radius: 0;
+                    font-size:14px;
+                    line-height:110%;
+                    font-weight: 600; 
+                    margin-top: 8px;
+                    padding:4px 8px;
+                    @include breakpoint(medium) {
+                        font-size: calc(clamp(1.125rem, 0.784vw + 0.749rem, 1.25rem));
+                        margin-top: 4px;
+                        padding: 8px 10px;
+                    }
+                    @include breakpoint(large) {
+                        font-size: calc(clamp(1.25rem, 1.569vw + 0.246rem, 1.5rem));
+                        padding: 11px 20px;
+                        margin-top: 14px;
+                    }
+                    @media screen and (min-width:1280px){ 
+                        font-size: calc(clamp(1.5rem, 2.5vw - 0.5rem, 1.75rem));
+                        padding: 11px 40px;
+                        line-height:32px;
+                        margin-top: 26px;
+                    }
+                }
+            }
+        }
+    }
+}

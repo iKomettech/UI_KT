@@ -1,0 +1,414 @@
+@import "util/util";
+$img: "../../images";
+$white: #ffffff;
+$black: #000000;
+$primary-color: #004986;
+$secondary-color: #BE8B13;
+$img: "../../images";
+$breakpoints: (
+  small: 0,
+  medium: 768px,
+  large: 1024px,
+  llarge: 1280px,
+  xlarge: 1360px,
+  xxlarge: 1440px,
+);
+
+[type='submit'],
+[type='button'] {
+  border-radius: 0;
+}
+
+.searchlanding {
+  h1 {
+    font-size: 38px;
+    line-height: 66px;
+    font-family: "SourceSerif" !important;
+    color: $primary-color;
+    font-weight: 600;
+    margin-top: 16px;
+  }
+
+  .search_res {
+    p {
+      font-size: 18px;
+      line-height: 28px;
+      margin-top: 34px;
+
+      & strong {
+        color: $primary-color;
+      }
+    }
+  }
+}
+
+.searachpanel {
+  display: block;  
+  margin-top: 44px;
+  margin-bottom: 34px;
+  @include breakpoint(medium) {
+  display: flex;
+  justify-content: space-between;  
+}
+@include breakpoint(medium) {
+  margin-bottom: 72px; 
+}
+  .contentsec {
+    min-width: 61.2%;
+    .quickserach {
+      display: flex;
+      flex-wrap: nowrap;
+      width: 100%;
+    }
+
+    .buttongroup {
+      display: flex;
+      justify-content: space-between;
+
+      button {
+        height: 52px;
+        margin-left: 12px;
+        @include breakpoint(medium) {
+          margin-left: 21px;
+        }
+      }
+    }
+
+    .icongroup {
+      max-width: 558px;
+      width: 100%;
+      position: relative;
+
+      input {
+        background: #F5F7FB;
+        height: 52px;
+        width: 100%;
+        border: 0;
+        box-shadow: none;
+        font-size: 18px;
+        line-height: 28px;
+        margin: 0;
+        color: #1F1F1F;
+        padding-right: 45px;
+      }
+
+      span.form-control-search {
+        background: url(#{$img}/settings/search-icon.svg) no-repeat;
+        right: 15px;
+        width: 25px;
+        top: 14px;
+        position: absolute;
+        z-index: 9;
+        height: 25px;
+      }
+    }
+  }
+  .selctbox{
+    width: 100%;
+    max-width: 100%;
+    margin-top: 16px;
+    @include breakpoint(medium) {
+      margin-top: 0px;
+      width: 29.6%;
+      max-width: 401px;
+    }
+    .ui-selectmenu-button.ui-button {
+      background: #f5f7fb;      
+    }
+    .ui-selectmenu-button.ui-button {
+      text-align: left;
+      white-space: nowrap;
+      width: 100%;
+      border-bottom: unset;
+      display: block;
+      padding: 10px;
+      font-size: 18px;
+      line-height: 28px;
+      height: 52px;
+      outline: none;
+      @include breakpoint(large) {
+        font-size: 24px;
+        line-height: 34px;
+      }
+    }
+    .ui-selectmenu-button-closed::after {
+      background-image: url(#{$img}/settings/nav-arrow-color.svg);
+      width: 29px;
+      height: 17px;
+    }  
+    .ui-selectmenu-button-open::after {
+      width: 29px;
+      height: 17px;
+      top: 35%;
+    }    
+  }
+}
+.ui-selectmenu-menu .ui-menu{
+  border-top: 5px solid $secondary-color;
+  padding: 0px 0;
+  height: auto;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+}
+.ui-menu .ui-menu-item-wrapper{
+  font-size: 18px;
+  line-height: 28px;
+  padding: 0px 0 0 24px;
+  margin: 10px 0px;
+  color: $primary-color;
+  @include breakpoint(large) {
+    font-size: 24px;
+    line-height: 34px;
+  }
+}
+.ui-menu .ui-state-active, .ui-menu .ui-state-focus{
+  font-weight: normal;
+  background: $primary-color;
+  color: $white;
+}
+.resulthighlight {
+  margin: 24px 0px 25px;
+  display: block;
+  flex-wrap: wrap;
+  @include breakpoint(medium) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  @include breakpoint(large) {
+    margin: 24px 0px 45px;
+  }
+  h2{
+    font-family: "Montserrat", sans-serif !important;
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 600;
+    color: $primary-color;
+    @include breakpoint(medium) {
+      font-size: 21px;
+     line-height: 28px;
+    }
+    a {
+      color: $primary-color;
+    }   
+  }
+  .headwrp{
+    width: 100%;
+  }
+  .imgWrap{
+    min-width: 267px;
+    overflow: hidden;
+    margin-right: 20px;
+    @include breakpoint(small only) {
+      margin-right: 0px;
+    }
+    figure{
+    width: 267px;
+    background-size: cover;
+    background-position: center;
+    -webkit-transition: all 0.75s;
+    transition: all 0.75s;
+    height: 178px;
+    @include breakpoint(small only) {
+      width: 100%;
+    }
+    picture{
+      visibility: hidden;
+    }
+    &:hover{
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+    }
+    }
+  }
+  &.without-img{
+    .cntWrap{
+      max-width: 100%;
+      @include breakpoint(medium) {
+        max-width: 844px;
+      }
+      
+    }
+  }
+  .cntWrap{
+    max-width: 100%;
+    margin-top: 15px;
+      @include breakpoint(medium) {
+        max-width: 61%;
+        margin-top: 0;
+      }
+      @include breakpoint(large) {
+        max-width: 564px;
+      }
+    
+  }
+
+}
+.pagination{
+  margin-top: 52px;
+  @include breakpoint(xlarge) {
+    margin-top: 92px;
+  }
+  ul{
+      justify-content: center;
+      display: flex;
+      margin-bottom: 0px;
+      margin-left: 0;
+      @include breakpoint(small only) {
+        flex-wrap: wrap;
+        }
+      li{
+          padding: 11px;
+          font-size:18px;
+          line-height:20px;
+          font-weight: 400; 
+          margin-bottom: 0; 
+          @include breakpoint(medium) {
+            padding: 15px;
+          }
+          @include breakpoint(large) {
+            padding: 25px;
+            font-size:24px;
+           
+          }   
+          @include breakpoint(xlarge) {
+            padding: 30px;
+          }       
+          &.prev{
+            padding: 15px 15px 15px 14px;
+            @include breakpoint(small only) {
+              width: 100%;
+              padding: 12px 15px 12px 14px;
+              }
+            @include breakpoint(large) {
+              padding: 25px 25px 25px 14px;
+             
+            }   
+            @include breakpoint(xlarge) {
+              padding: 30px 30px 30px 14px;
+            } 
+            a:hover{
+              color: $primary-color;
+            &::after{
+              display: none;
+            }
+            }
+          }
+          &.first {
+            font-size: 0;
+            padding: 15px 0px 15px 0;
+            @include breakpoint(small only) {
+              width: 100%;
+              padding: 12px 0px 12px 0;
+              }
+            @include breakpoint(large) {
+              padding: 25px 0px 25px 0;
+            }   
+            @include breakpoint(xlarge) {
+              padding: 30px 0px 30px 0;
+            }  
+            a:hover{
+              color: $primary-color;
+              &::after{
+                display: none;
+              }
+              }
+        }
+          &::before{
+            display: none;
+          }
+          a{
+              color: #1F1F1F;
+              position: relative;
+              &:hover{
+                text-decoration: none;
+                color: $white;    
+                &::after{
+                  content: "";
+                  width: 45px;
+                  height: 45px;
+                  background: $primary-color;
+                  border-radius: 100%;
+                  top: 50%;
+                  left: 50%;
+                  position: absolute;
+                  z-index: -1;
+                  transform: translate(-50%, -50%);
+                 }
+              } 
+          }
+          &.active{
+             a{
+              color: $white;             
+              &::after{
+                content: "";
+                width: 45px;
+                height: 45px;
+                background: $primary-color;
+                border-radius: 100%;
+                top: 50%;
+                left: 50%;
+                position: absolute;
+                z-index: -1;
+                transform: translate(-50%, -50%);
+               }
+             }
+          }
+          &.first{
+            font-size: 0;    
+             a::before{
+              background-image: url("#{$img}/settings/pagination-arrow-back.svg");             
+              display: inline-block;
+              background-repeat: no-repeat;
+              content: "";
+              height: 17px;
+              width: 22px;
+              border: 0;              
+             }             
+          }
+          &.next{  
+            padding-right: 15px;       
+            @include breakpoint(small only) {
+              width: 100%;             
+              }        
+            a:hover{
+              color: $primary-color;
+              &::after{
+                display: none;
+              }
+             }     
+          }       
+          &.last{  
+            font-size: 0;    
+            padding: 15px 0;
+            @include breakpoint(small only) {
+            width: 100%;
+            padding: 12px 0;
+            }
+            @include breakpoint(large) {
+              padding: 25px 0;             
+            }   
+            @include breakpoint(xlarge) {
+              padding: 30px 0;
+            }        
+            a::after{
+              content: "";
+              background: url("#{$img}/settings/pagination-arrow-back.svg");             
+              display: inline-block;
+              background-repeat: no-repeat;
+              content: "";
+              height: 17px;
+              width: 22px;
+              border: 0; transform: rotate(180deg);
+              left: 0;
+              top: 0;
+              position: inherit;
+              border-radius: 0;
+             }  
+             a:hover{              
+              &::after{
+                display: inline-block;
+              }
+             }     
+          }
+      }
+  }
+}

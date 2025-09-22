@@ -1,0 +1,212 @@
+@import "util/util";
+$white: #ffffff;
+$primary-color: #004986;
+$secondary-color: #B58412;
+$img: "../../images";
+$breakpoints: (
+    small: 0,
+    ssmall: 430px,
+    medium: 768px,
+    large: 1025px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+.bannerpanel ~ .twocolumnimagepanel{
+    margin-top: 20px;
+    @include breakpoint(medium) {
+        margin-top: 35px;
+    }
+    @include breakpoint(llarge) {
+        margin-top: 74px;
+    }
+}
+.twocolumnimagepanel{
+    margin-top: 30px;
+    margin-bottom: 40px;
+    padding-top: 10px;
+    padding-bottom: 18px;
+    @include breakpoint(large) {
+        margin-top: 70px;
+    }   
+    @include breakpoint(llarge) {
+        margin-top: 110px;
+        margin-bottom: 40px;
+        padding-top: 32px;
+        padding-bottom: 15px;
+    }
+.contwrap{
+    text-align: center;
+    h2{
+        color: $primary-color;
+        font-size: 21px;
+        line-height: 29px;
+        font-weight: 600;
+        margin-bottom: 14px;
+        @include breakpoint(medium) {
+            font-size: 32px;
+            line-height: 44px;
+            margin-bottom: 0.2rem;
+        }
+        @include breakpoint(llarge) {
+            font-size: 40px;
+            line-height: 54px;
+        }
+    }
+    p{
+        font-size: 16px;
+        line-height: 22px;
+        margin-bottom: 18px;
+        @include breakpoint(medium) {
+            font-size: 18px;
+            line-height: 34px;
+        }
+        @include breakpoint(llarge) {
+            font-size: 24px;
+            line-height: 34px;
+            margin-bottom: 14px;
+        }
+    }
+}
+.flexwrap{
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    top:-15px;
+    flex-wrap: wrap;
+    @include breakpoint(medium) {
+        flex-wrap: nowrap;
+    }
+    @include breakpoint(large) {
+        top:-22px;
+    }
+    @include breakpoint(llarge) {
+        top:-32px;
+    }
+    .imgWrap{
+        width: 100%;
+        max-height: 173px;
+        height: 100%;
+        overflow: hidden;
+        @include breakpoint(ssmall) {
+            max-height: 242px;
+        }
+        @include breakpoint(llarge) {
+            max-height: 363px;
+        }
+        img{
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .ctabtn{
+        padding: 6px 32px 6px 32px;
+        top: 20px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
+        min-height: 37px;
+        position: relative;
+        z-index: 9;
+        @include breakpoint(small only) {
+            width: 100%;
+            text-align: center;
+        }
+        @include breakpoint(ssmall only) {
+            width: 100%;
+            text-align: center;
+        }
+        @include breakpoint(medium) {
+            padding: 12px 52px 12px 13px;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 22px;
+        }
+        
+        @include breakpoint(large) {
+            padding: 12px 80px 12px 22px;
+        }
+        @include breakpoint(llarge) {
+            padding:25px 118px 25px 49px;
+            top: 44px;
+            font-size: 24px;
+            line-height: 29px;
+            min-height: 78px;
+        }
+        &:hover{
+            &::after{
+                right: -15px;
+                background: url("#{$img}/icons/icon-arrow-right-circle-blue.svg") no-repeat;
+                background-size: contain;
+                @include breakpoint(medium) {
+                    right: 15px;
+                }
+                @include breakpoint(llarge) {
+                    right: 55px;
+                }
+            }
+        }
+        &:after{
+            content: "";
+            background: url("#{$img}/icons/icon-arrow-right-circle.svg") no-repeat;
+            background-size: contain;
+            display: inline-block;
+            height: 19px;
+            vertical-align: middle;
+            width: 19px;
+            position: relative;
+            right: -9px;
+            top: -1px;
+            color: #fff;
+            -webkit-transition: all .45s;
+            transition: all .45s;
+            @include breakpoint(medium) {
+                 width: 26px;
+                height: 26px;
+                top: 9px;
+                right: 13px;
+                position: absolute;
+            }
+            @include breakpoint(llarge) {
+                width: 38px;
+                height: 38px;
+                right: 50px;
+                top: 20px;
+            }
+        }
+    }
+    .leftWrap{
+        width: 100%;
+        @include breakpoint(medium) {
+            width: 50%;
+        }
+        .ctabtn{
+            float: none;
+            @include breakpoint(medium) {
+                float: right;
+            }
+        }
+    }
+    .rightWrap{
+        width: 100%;
+        margin-top: 5px;
+        @include breakpoint(medium) {
+            width: 50%;
+            margin-top: 0;
+        }
+        .ctabtn{
+            float: left;
+            &:hover{
+                &::after{
+                    background: url("#{$img}/icons/icon-arrow-right-circle-yellow.svg") no-repeat;
+                    background-size: contain;
+                }
+            }
+            &:after{
+                content:"";
+            }    
+        }
+    }
+}
+}

@@ -1,0 +1,852 @@
+
+<link rel="stylesheet" href="assets/css/subbaner/subbaner.css">
+<div class="bannerpanel subbaner module">
+    <div class="homeBanner">
+        <div class="grid-container-fullwidth">
+            <div class="imagebg-shadow">
+                <div class="image-shadow"></div>
+            </div>
+            <div class="homeBannerSlider">
+                <div class="bannerwrap">
+                    <div class="imgWrap">
+                        <div class="filter-img">
+                            <img class="image-block" src="{{root}}assets/images/personal-checking/personal-checking-bg.jpg" width="1920" height="598" alt="slider-1">
+                        </div>
+                    </div>
+                    <div class="contentwrap ctawrap">
+                        <div class="content">
+                            <h1><b>Personal </b>Checking</h1>
+                            <p>All Coastal States Bank personal checking accounts offer convenient services that make banking easy.</p>
+                        </div>
+                    </div>
+                </div>            
+            </div>
+        </div>
+    </div>
+</div>
+<div class="breadcrumbWrapBottom module">
+    <div class="grid-container">
+        <ul class="breadcrumbs">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item">Personal</li>
+        </ul>
+    </div>
+</div>
+<link rel="stylesheet" href="{{root}}assets/css/heroslider/swiper.min.css">
+<link rel="stylesheet" href="{{root}}assets/css/testimonialpanel/testimonialpanel.css" media="all">
+<script src="{{root}}assets/scripts/heroslider/swiper.min.js" defer></script>
+<script src="assets/scripts/inlinevideo/custom-video.js" defer></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        if ($(".testimonialPanel .swiper .swiper-slide").length > 1) {
+        var sliderDelay = $(".hdnAwardsSliderDelay").val();
+        var swiperCarousel = new Swiper('.carouselSlider', {
+        autoplayDisableOnInteraction: true,
+        spaceBetween: 0,
+        loop: true,
+        autoplay: {
+        delay: sliderDelay,
+        disableOnInteraction: true,
+        },
+        simulateTouch: true,
+        preloadImages: false,
+        lazy:true,
+        speed: 2500,
+        pagination: {
+        el: '.carouselSlider .swiper-pagination',
+        clickable: true
+        },
+        navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+        },
+        on: {  
+        slideChange: function() {
+               var getyoutubevalue = $('.swiper-slide-active').children('.videoBlock').find('figure').hasClass('youtubevideopanel');
+               var getvimeovalue = $('.swiper-slide-active').children('.videoBlock').find('figure').hasClass('vimeovideopanel');
+               var this_dataindex;
+               var this_datavimeoindex;
+               if (getyoutubevalue) {
+                   var pictureyoutubedata = $('.swiper-slide-active').children('.videoBlock').find('figure');
+                   this_dataindex = $(pictureyoutubedata).attr('data-index');
+                   if (this_dataindex) {
+                        YoutubeplayerList[this_dataindex].pauseVideo();
+                   }
+               }
+               if (getvimeovalue) {
+                   var picturevimeodata = $('.swiper-slide-active').children('.videoBlock').find('figure');
+                   this_datavimeoindex = $(picturevimeodata).attr('data-index');
+                   if (this_datavimeoindex) {
+                        VimeoplayerList[this_datavimeoindex].pause();
+                   }
+               }
+            },
+        },
+        });
+        $(".carouselSlider").hover(function () {
+        (this).swiper.autoplay.stop();
+        }, function () {
+        (this).swiper.autoplay.start();
+        });
+        var mySwiper = document.querySelector('.carouselSlider').swiper
+        $(".carouselSlider").mouseenter(function() {
+            mySwiper.autoplay.stop();
+        });
+        
+        $(".carouselSlider").mouseleave(function() {
+            mySwiper.autoplay.start();
+        });
+        $('.textBlock').each(function(){
+            if($(this).hasClass('imagerender')) {
+                $(this).closest('.carouselSlider').addClass('imageSlider');
+            } 
+        });
+        }
+    });
+</script>
+<div class="testimonialPanel firstcontentpanel">
+    <div class="grid-container">
+        <div class="flexWrap">
+            <div class="titleWrap">
+                <h2>
+                    <span class="font-72px" style="color: #B58412;">We Help</span> 
+                    <span class="font-52px" style="color: #B58412;">Our Clients</span> 
+                    <span class="font-72px" style="color: #004986;">Succeed</span> 
+                    <span class="font-65px" style="color: #004986;">Everyday</span>
+                </h2>
+            </div>
+            <div class="testiWrap">
+                <div class="swiper carouselSlider">
+                    <div class="swiper-wrapper">
+                        <input type="hidden" class="hdnAwardsSliderDelay" value="6000" />
+                        <div class="swiper-slide">
+                            <div class="textBlock withoutImageBlock">
+                                <div class="contentwrap">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                                    <p>- CSB Customer</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="textBlock withoutImageBlock">
+                                <div class="contentwrap">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                                    <p>- CSB Customer</p>
+                                </div>
+                            </div>
+                        </div>
+                       
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<link rel="stylesheet" href="{{root}}assets/css/comparecheckingpanel/comparecheckingpanel.css" media="all">
+<script type="text/javascript" defer>
+ $(document).ready(function () {   
+    if ($(".compare_table .ct_option_desktop_slider .swiper-slide").length > 1) {
+        pricingCardSwiper = new Swiper(".ct_option_desktop_slider", {
+            slidesPerView: 3,
+            spaceBetween: 0,
+            allowTouchMove: false,
+            navigation: {
+                nextEl: ".desktop-nav .button-next",
+                prevEl: ".desktop-nav .button-prev",
+            },
+            pagination: {
+            el: '.ct_option_desktop_slider .swiper-pagination',
+            clickable: true
+            },
+            breakpoints: {
+                300: {
+                slidesPerView: 1,
+                },
+                768: {
+                slidesPerView: 2,
+                },
+                1024: {
+                slidesPerView: 3,
+                },
+                1360: {
+                slidesPerView: 4,
+                },
+            },
+        });   
+    }   
+    if ($(".compare_table .ct_option_mobile_slider .swiper-slide").length > 1) {
+        pricingCardSwiper = new Swiper(".ct_option_mobile_slider", {
+            slidesPerView: 3,
+            spaceBetween: 0,
+            allowTouchMove: true,
+            navigation: {
+                nextEl: ".mobile-nav .button-next",
+                prevEl: ".mobile-nav .button-prev",
+            },
+            pagination: {
+            el: '.ct_option_mobile_slider .swiper-pagination',
+            clickable: true
+            },
+            breakpoints: {
+                300: {
+                slidesPerView: 1,
+                },
+                768: {
+                slidesPerView: 2,
+                },
+                1024: {
+                slidesPerView: 3,
+                },
+                1360: {
+                slidesPerView: 4,
+                },
+            },
+        });   
+    }   
+    var SwiperLength = $(".comparecheckingpanel .ct_option_desktop_slider .swiper-slide").length;
+
+    navswiper();
+        function navswiper(){
+            var windowSize = $(window).outerWidth();
+            //console.log(windowSize);
+            if (windowSize < 1023) {
+            //alert('Less than 960');
+            if (SwiperLength >= 3) {
+                   $('.comparecheckingpanel .swiper-nav .button-prev').show();
+                      $('.comparecheckingpanel .swiper-nav .button-next').show();
+                       $('.comparecheckingpanel .clicktext').show();
+            } 
+            }
+            if (windowSize > 1360) {
+            //alert('Less than 960');
+            if (SwiperLength <= 4) {
+                   $('.comparecheckingpanel .swiper-nav .button-prev').hide();
+                      $('.comparecheckingpanel .swiper-nav .button-next').hide();
+                       $('.comparecheckingpanel .clicktext').hide();
+            } 
+            }
+            else {
+                if (SwiperLength >= 4) {
+                    $('.comparecheckingpanel .swiper-nav .button-prev').show();
+                      $('.comparecheckingpanel .swiper-nav .button-next').show();
+                       $('.comparecheckingpanel .clicktext').show();
+            }
+            }
+        }
+    $(window).resize(navswiper);
+
+    // navswipertable();
+    //             function navswipertable() {
+    //                 var windowSize = $(window).outerWidth();
+    //                 if (windowSize < 1023) {
+    //                     //alert('Less than 1023');
+    //                     if (SwiperLengthtable >= 3) {
+    //                         $('.comparecheckingpanel .swiper-nav .button-prev').show();
+    //                         $('.comparecheckingpanel .swiper-nav .button-next').show();
+    //                         $('.comparecheckingpanel .clicktext').show();
+    //                     }
+    //                 }else if (windowSize >= 1360) {
+    //                     //alert('Less than 1360');
+    //                     if (SwiperLength <= 4) {
+    //                             $('.comparecheckingpanel .swiper-nav .button-prev').hide();
+    //                             $('.comparecheckingpanel .swiper-nav .button-next').hide();
+    //                             $('.comparecheckingpanel .clicktext').hide();
+    //                     } 
+    //                 }
+    //                 // else {
+    //                 //     if (SwiperLengthtable >= 4) {
+    //                 //         $('.comparecheckingpanel .swiper-nav .button-prev').show();
+    //                 //         $('.comparecheckingpanel .swiper-nav .button-next').show();
+    //                 //         $('.comparecheckingpanel .clicktext').show();
+    //                 //     }
+    //                 // }
+    //             }
+                
+    //         $(window).resize(navswipertable);
+});
+</script>
+<div class="comparecheckingpanel">
+    <div class="compareTable" style="display: none;">
+        <div class="grid-container">
+            <table border="0">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th><span><b>LOCAL.</b></span>Premier Checking</th>
+                        <th><span><b>LOCAL.</b></span>CSB Checking</th>
+                        <th><span><b>LOCAL.</b></span>Elite Checking</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Open an Account with as Little as $50</td>
+                        <td><span class="not-check"></span></td>
+                        <td><span class="check"></span></td>
+                        <td><span class="check"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Free ATM/Debit Card with Worldwide Access</td>
+                        <td><span class="not-check"></span></td>
+                        <td><span class="check"></span></td>
+                        <td><span class="check"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Includes uChoose Rewards
+                        </td>
+                        <td><span class="not-check"></span></td>
+                        <td><span class="check"></span></td>
+                        <td><span class="check"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Interest Bearing Account
+    
+                        </td>
+                        <td><span class="not-check"></span></td>
+                        <td><span class="check"></span></td>
+                        <td><span class="check"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Minimum Balance Requirement
+    
+    
+                        </td>
+                        <td><span class="not-check"></span></td>
+                        <td><span class="check"></span></td>
+                        <td><span class="check"></span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>  
+<div class="headtitleblock">
+    <div class="grid-container">
+        <h2>Checking Products Comparison Chart</h2>
+    </div>
+</div>   
+<div class="grid-container">
+<div class="compare_table_panel">
+    <div class="clicktext">
+        <p>Click Arrow to View More Products</p>
+    </div>
+    <div class="compare_table">
+        <div class="swiper-nav desktop-nav">
+            <a href="javascript:void(0)" class="button-prev"></a>
+            <a href="javascript:void(0)" class="button-next"></a>
+        </div>
+        <div class="swiper-nav mobile-nav">
+            <a href="javascript:void(0)" class="button-prev"></a>
+            <a href="javascript:void(0)" class="button-next"></a>
+        </div>
+        <div class="ct_title desktop_title">
+          <div class="ct_title_wrap">
+            <div class="ct_row"></div>
+            <div class="ct_row">No minimum balance</div>
+            <div class="ct_row">No monthly service charge
+            </div>
+            <div class="ct_row">Low opening balance
+            </div>
+            <div class="ct_row">No ATM/Card fee
+            </div>
+            <div class="ct_row">uChoose Rewards
+            </div>
+            <div class="ct_row">Earn interest
+            </div>
+            <div class="ct_row">3-in-1 cred file monitoring
+            </div>
+            <div class="ct_row">ID theft reimbursement
+            </div>
+            <div class="ct_row">Cell phone protection
+            </div>
+          </div>
+        </div>
+        <div class="ct_title mobile_title">
+            <div class="ct_title_wrap">
+              <div class="ct_row"></div>
+              <div class="ct_row"><span><b>LOCAL.</b></span>Business Money <br>
+                Market Accounts</div>
+              <div class="ct_row"><span><b>LOCAL.</b></span>Business Certificate <br>
+                of Deposits</div>
+              <div class="ct_row"><span><b>LOCAL.</b></span>Business Certificate <br>
+                of Deposits</div>
+            </div>
+          </div>
+        <div class="ct_option">
+          <div class="ct_option_slider ct_option_desktop_slider swiper">
+            <div class="swiper-pagination"></div>
+            <div class="swiper-wrapper">
+              <div class="swiper-slide ct_option_item">
+                <div class="ct_item">
+                  <div class="ct_item_wrap desktop_wrap">
+                    <div class="ct_row"><a href="#"><span>Business Interest <br>
+                        Checking</span></a></div>
+                    <div class="ct_row"><span class="not-check"></span></div>
+                    <div class="ct_row"><span class="check"></span></div>
+                    <div class="ct_row"><span class="check"></span></div>
+                    <div class="ct_row"><span class="check"></span></div>
+                    <div class="ct_row"><span class="check"></span></div>
+                    <div class="ct_row"><span class="check"></span></div>
+                    <div class="ct_row"><span class="check"></span></div>
+                    <div class="ct_row"><span class="check"></span></div>
+                    <div class="ct_row"><span class="check"></span></div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide ct_option_item">
+                <div class="ct_item">
+                  <div class="ct_item_wrap desktop_wrap">
+                    <div class="ct_row"><span><b>LOCAL.</b></span>Money Market</div>
+                    <div class="ct_row"><span class="check"></span></div>
+                    <div class="ct_row"><span class="check"></span></div>
+                    <div class="ct_row"><span class="check"></span></div>
+                    <div class="ct_row"><span class="not-check"></span></div>
+                    <div class="ct_row"><span class="not-check"></span></div>
+                    <div class="ct_row"><span class="not-check"></span></div>
+                    <div class="ct_row"><span class="not-check"></span></div>
+                    <div class="ct_row"><span class="not-check"></span></div>
+                    <div class="ct_row"><span class="not-check"></span></div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide ct_option_item">
+                <div class="ct_item">
+                  <div class="ct_item_wrap desktop_wrap">
+                    <div class="ct_row"><span><b>LOCAL.</b></span>Certificates of<br> Deposit</div>
+                    <div class="ct_row"><span class="check"></span></div>
+                    <div class="ct_row"><span class="check"></span></div>
+                    <div class="ct_row"><span class="check"></span></div>
+                    <div class="ct_row"><span class="not-check"></span></div>
+                    <div class="ct_row"><span class="not-check"></span></div>
+                    <div class="ct_row"><span class="not-check"></span></div>
+                    <div class="ct_row"><span class="not-check"></span></div>
+                    <div class="ct_row"><span class="not-check"></span></div>
+                    <div class="ct_row"><span class="not-check"></span></div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide ct_option_item">
+                <div class="ct_item">
+                    <div class="ct_item_wrap desktop_wrap">
+                        <div class="ct_row"><span><b>LOCAL.</b></span>Individual Retirement 
+                             <br> Accounts</div>
+                        <div class="ct_row"><span class="not-check"></span></div>
+                        <div class="ct_row"><span class="check"></span></div>
+                        <div class="ct_row"><span class="check"></span></div>
+                        <div class="ct_row"><span class="check"></span></div>
+                        <div class="ct_row"><span class="check"></span></div>
+                        <div class="ct_row"><span class="check"></span></div>
+                        <div class="ct_row"><span class="check"></span></div>
+                        <div class="ct_row"><span class="check"></span></div>
+                        <div class="ct_row"><span class="check"></span></div>
+                      </div>
+                </div>
+              </div>
+              <!-- <div class="swiper-slide ct_option_item">
+                <div class="ct_item">
+                    <div class="ct_item_wrap desktop_wrap">
+                        <div class="ct_row"><span><b>LOCAL.</b></span>Business Retirement <br> Accounts
+                             </div>
+                        <div class="ct_row"><span class="not-check"></span></div>
+                        <div class="ct_row"><span class="check"></span></div>
+                        <div class="ct_row"><span class="check"></span></div>
+                        <div class="ct_row"><span class="check"></span></div>
+                        <div class="ct_row"><span class="check"></span></div>
+                        <div class="ct_row"><span class="check"></span></div>
+                        <div class="ct_row"><span class="check"></span></div>
+                        <div class="ct_row"><span class="check"></span></div>
+                        <div class="ct_row"><span class="check"></span></div>
+                      </div>
+                      
+                </div>
+              </div> -->
+              <!-- <div class="swiper-slide ct_option_item">
+                <div class="ct_item">
+                    <div class="ct_item_wrap desktop_wrap">
+                        <div class="ct_row"><span><b>LOCAL.</b></span>Business Retirement <br> Accounts
+                             </div>
+                        <div class="ct_row"><span class="not-check"></span></div>
+                        <div class="ct_row"><span class="check"></span></div>
+                        <div class="ct_row"><span class="check"></span></div>
+                        <div class="ct_row"><span class="check"></span></div>
+                        <div class="ct_row"><span class="check"></span></div>
+                        <div class="ct_row"><span class="check"></span></div>
+                        <div class="ct_row"><span class="check"></span></div>
+                        <div class="ct_row"><span class="check"></span></div>
+                        <div class="ct_row"><span class="check"></span></div>
+                      </div>
+                      
+                </div>
+              </div> -->
+            </div>
+          </div>
+          <div class="ct_option_slider ct_option_mobile_slider swiper">
+            <div class="swiper-pagination"></div>
+            <div class="swiper-wrapper">
+              <div class="swiper-slide ct_option_item">
+                <div class="ct_item">
+                  <div class="ct_item_wrap mobile_wrap">
+                    <div class="ct_row"><span>No minimum balance</div>
+                    <div class="ct_row"><span class="not-check"></span></div>
+                    <div class="ct_row"><span class="check"></span></div>
+                    <div class="ct_row"><span class="check"></span></div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide ct_option_item">
+                <div class="ct_item">
+                  <div class="ct_item_wrap mobile_wrap">
+                    <div class="ct_row"><span>No monthly service charge</div>
+                    <div class="ct_row"><span class="not-check"></span></div>
+                    <div class="ct_row"><span class="check"></span></div>
+                    <div class="ct_row"><span class="check"></span></div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide ct_option_item">
+                <div class="ct_item">
+                  <div class="ct_item_wrap mobile_wrap">
+                    <div class="ct_row"><span>Low opening balance</div>
+                    <div class="ct_row"><span class="not-check"></span></div>
+                    <div class="ct_row"><span class="check"></span></div>
+                    <div class="ct_row"><span class="check"></span></div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide ct_option_item">
+                <div class="ct_item">
+                      <div class="ct_item_wrap mobile_wrap">
+                        <div class="ct_row"><span>No ATM/Card fee</div>
+                        <div class="ct_row"><span class="not-check"></span></div>
+                        <div class="ct_row"><span class="check"></span></div>
+                        <div class="ct_row"><span class="check"></span></div>
+                      </div>
+                </div>
+              </div>
+              <div class="swiper-slide ct_option_item">
+                <div class="ct_item">
+                      <div class="ct_item_wrap mobile_wrap">
+                        <div class="ct_row"><span>uChoose Rewards</div>
+                        <div class="ct_row"><span class="not-check"></span></div>
+                        <div class="ct_row"><span class="check"></span></div>
+                        <div class="ct_row"><span class="check"></span></div>
+                      </div>
+                </div>
+              </div>
+              <div class="swiper-slide ct_option_item">
+                <div class="ct_item">
+                      <div class="ct_item_wrap mobile_wrap">
+                        <div class="ct_row"><span>Earn interest
+                        </div>
+                        <div class="ct_row"><span class="not-check"></span></div>
+                        <div class="ct_row"><span class="check"></span></div>
+                        <div class="ct_row"><span class="check"></span></div>
+                      </div>
+                </div>
+              </div>
+              <div class="swiper-slide ct_option_item">
+                <div class="ct_item">
+                      <div class="ct_item_wrap mobile_wrap">
+                        <div class="ct_row"><span>3-in-1 cred file monitoring
+                        </div>
+                        <div class="ct_row"><span class="not-check"></span></div>
+                        <div class="ct_row"><span class="check"></span></div>
+                        <div class="ct_row"><span class="check"></span></div>
+                      </div>
+                </div>
+              </div>
+              <div class="swiper-slide ct_option_item">
+                <div class="ct_item">
+                      <div class="ct_item_wrap mobile_wrap">
+                        <div class="ct_row"><span>ID theft reimbursement
+                        </div>
+                        <div class="ct_row"><span class="not-check"></span></div>
+                        <div class="ct_row"><span class="check"></span></div>
+                        <div class="ct_row"><span class="check"></span></div>
+                      </div>
+                </div>
+              </div>
+              <div class="swiper-slide ct_option_item">
+                <div class="ct_item">
+                      <div class="ct_item_wrap mobile_wrap">
+                        <div class="ct_row"><span>Cell phone protection
+                        </div>
+                        <div class="ct_row"><span class="not-check"></span></div>
+                        <div class="ct_row"><span class="check"></span></div>
+                        <div class="ct_row"><span class="check"></span></div>
+                      </div>
+                </div>
+              </div>
+              <div class="swiper-slide ct_option_item">
+                <div class="ct_item">
+                      <div class="ct_item_wrap mobile_wrap">
+                        <div class="ct_row"><span>Buyers Protection
+                        </div>
+                        <div class="ct_row"><span class="not-check"></span></div>
+                        <div class="ct_row"><span class="check"></span></div>
+                        <div class="ct_row"><span class="check"></span></div>
+                      </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>    
+</div>
+<link rel="stylesheet" href="{{root}}assets/css/imagecontentslider/imagecontentslider.css" media="all">
+<script type="text/javascript" defer>
+$(document).ready(function () {
+    if ($(".personalcheckingpanel .swiper .swiper-slide").length > 1) {
+            var swiperCarousel = new Swiper('.CarouselCheckingSlider', {
+            centeredSlides: false,
+            slidesPerView: 3,
+            allowTouchMove: false,
+            preloadImages: false,
+            lazy:true,
+            spaceBetween: 30,
+            navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                300: {
+                slidesPerView: 1,
+                },
+                768: {
+                slidesPerView: 2,
+                },
+                1280: {
+                slidesPerView: 3,
+                },
+            },
+        });
+    }
+    var SwiperLength = $(".personalcheckingpanel .CarouselCheckingSlider .swiper-slide").length;
+                navswiperpersonal();
+                function navswiperpersonal() {
+                    var windowSize = $(window).outerWidth();
+                    if (windowSize > 1279) {
+                        //alert('Less than 960');
+                        if (SwiperLength <= 3) {
+                            $('.personalcheckingpanel .CarouselCheckingSlider .swiper-button-prev').hide();
+                            $('.personalcheckingpanel .CarouselCheckingSlider .swiper-button-next').hide();
+                            $('.personalcheckingpanel .clicktext').hide();
+                        }
+                    }
+                    else {
+                        if (SwiperLength >= 3) {
+                            $('.personalcheckingpanel .CarouselCheckingSlider .swiper-button-prev').show();
+                            $('.personalcheckingpanel .CarouselCheckingSlider .swiper-button-next').show();
+                            $('.personalcheckingpanel .clicktext').show();
+                        }
+                    }
+                }
+                
+                $(window).resize(navswiperpersonal);
+    
+});
+</script>
+<div class="personalcheckingpanel module">
+    <div class="grid-container">
+        <div class="headtitleblock">
+            <div class="clicktext">
+                <p>Click Arrow to View More Products</p>
+            </div>
+        </div>
+        <div class="swiper-container">
+            <div class="swiper CarouselCheckingSlider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="swiper-image">
+                            <img src="assets/images/personal-checking/slide-1.jpg" alt="Premier Checking">
+                        </div>
+                        <div class="swiper-content">
+                            <div class="contentblock">
+                                <div class="titleblock">
+                                    <h2><span><b>LOCAL.</b></span>Business Money <br>
+                                        Market Account</h2>
+                                </div>
+                                <p>A simple way to keep your family finances safer and take advantage of smart discounts on financial services. </p>
+                                <div class="ctablock">
+                                    <div class="ctasection">
+                                        <a href="#" class="ctabtn secondarybtn" aria-label="Open an Account Premier Checking">Open an Account</a>
+                                        <a href="#" class="ctabtn primarybtn" aria-label="Learn More Premier Checking">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="swiper-image">
+                            <img src="assets/images/personal-checking/slide-2.jpg" alt="CSB Checking">
+                        </div>
+                        <div class="swiper-content">
+                            <div class="contentblock">
+                                <div class="titleblock">
+                                    <h2><span><b>LOCAL.</b></span>Certificates of <br>
+                                        Deposit</h2>
+                                </div>
+                                <p>A simple way to keep your family finances safer and take advantage of smart discounts on financial services. </p>
+                                <div class="ctablock">
+                                    <div class="ctasection">
+                                        <a href="#" class="ctabtn secondarybtn" aria-label="Open an Account Premier Checking">Open an Account</a>
+                                        <a href="#" class="ctabtn primarybtn" aria-label="Learn More Premier Checking">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="swiper-image">
+                            <img src="assets/images/personal-checking/slide-3.jpg" alt="Elite Checking">
+                        </div>
+                        <div class="swiper-content">
+                            <div class="contentblock">
+                                <div class="titleblock">
+                                    <h2><span><b>LOCAL.</b></span>Individual Retirement <br>
+                                        Accounts</h2>
+                                </div>
+                                <p>A simple way to keep your family finances safer and take advantage of smart discounts on financial services. </p>
+                                <div class="ctablock">
+                                    <div class="ctasection">
+                                        <a href="#" class="ctabtn secondarybtn" aria-label="Open an Account Premier Checking">Open an Account</a>
+                                        <a href="#" class="ctabtn primarybtn" aria-label="Learn More Premier Checking">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+</div>
+<link rel="stylesheet" href="{{root}}assets/css/fearuredpanel/fearuredpanel.css" media="all">
+<div class="fearuredpanel greybgpanel module">
+    <div class="fearuredwrap">
+        <div class="grid-container">
+            <div class="contentwrap">
+                <h2>Features Personalized for Your Needs</h2>
+                <p style="font-weight: 600;">All Coastal States Bank personal checking accounts offer convenient services that make banking easy. </p>
+                <p>All checking accounts include the following services:</p>
+            </div>
+            <div class="flexwrap">
+                <div class="colblock">
+                    <div class="colflex">
+                        <img data-src="assets/images/personal-checking/online-banking.svg" alt="Online Banking" class="lazy layzeloading zoom" with="49" height="49">
+                        <div class="ctalink">
+                            <p>Online Banking<sup>1</sup></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="colblock">
+                    <div class="colflex">
+                        <img data-src="assets/images/personal-checking/mobile-payment.svg" alt="Mobile Banking" class="lazy layzeloading zoom" with="49" height="49">
+                        <div class="ctalink">
+                            <p>Mobile Banking<sup>1</sup></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="colblock">
+                    <div class="colflex">
+                        <img data-src="assets/images/personal-checking/bill-pay.svg" alt="Bill Pay" class="lazy layzeloading zoom" with="49" height="49">
+                        <div class="ctalink">
+                            <p>Bill Pay<sup>1,3</sup></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="colblock">
+                    <div class="colflex">
+                        <img data-src="assets/images/personal-checking/mobile-deposit.svg" alt="mobile-deposit" class="lazy layzeloading zoom" with="49" height="49">
+                        <div class="ctalink">
+                            <p>Mobile Deposit<sup>1</sup></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="colblock">
+                    <div class="colflex">
+                        <img data-src="assets/images/personal-checking/atm-access.svg" alt="mobile-deposit" class="lazy layzeloading zoom" with="49" height="49">
+                        <div class="ctalink">
+                            <p>Worldwide ATM Access</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="colblock">
+                    <div class="colflex">
+                        <img data-src="assets/images/personal-checking/credit-card.svg" alt="credit-card" class="lazy layzeloading zoom" with="49" height="49">
+                        <div class="ctalink">
+                            <p>ATM/Debit Card</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="colblock">
+                    <div class="colflex">
+                        <img data-src="assets/images/personal-checking/direct-deposit.svg" alt="direct-deposit" class="lazy layzeloading zoom" with="49" height="49">
+                        <div class="ctalink">
+                            <p>Direct Deposit</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="colblock">
+                    <div class="colflex">
+                        <img data-src="assets/images/personal-checking/alerts.svg" alt="alerts" class="lazy layzeloading zoom" with="49" height="49">
+                        <div class="ctalink">
+                            <p>Alerts<sup>1</sup></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="colblock">
+                    <div class="colflex">
+                        <img data-src="assets/images/personal-checking/statements.svg" alt="statements" class="lazy layzeloading zoom" with="49" height="49">
+                        <div class="ctalink">
+                            <p>eStatements</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="colblock">
+                    <div class="colflex">
+                        <img data-src="assets/images/personal-checking/phone.svg" alt="phone" class="lazy layzeloading zoom" with="49" height="49">
+                        <div class="ctalink">
+                            <p>24 Hour Telephone
+                                Banking</p>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+            <div class="contentwrap bottomwrap">
+                <h2>Other Services Include</h2>
+                <!-- <p style="font-weight: 500;">Courtesy Overdraft Service<sup>2</sup> • Notary Services<sup>3</sup> • Bank to Bank Transfers<sup>3</sup> • Wire Transfers<sup>3</sup> • Safe Deposit</p> -->
+                <ul class="bottomlist">
+                    <li>Courtesy Overdraft Service<sup>2</sup></li>
+                    <li>Notary Services<sup>3</sup></li>
+                    <li>Bank to Bank Transfers<sup>3</sup></li>
+                    <li>Wire Transfers<sup>3</sup></li>
+                    <li>Safe Deposit<sup>3</sup></li>
+                </ul>
+            </div>
+        </div>
+    </div>       
+</div>
+
+<link rel="stylesheet" href="{{root}}assets/css/infopanel/infopanel.css" media="all">
+<div class="infopanel module">
+    <div class="grid-container">
+        <div class="contentwrap">
+            <h2>Important Information</h2>
+            <ul>
+                <li>Message and data rates may apply. Fees may apply for certain optional services available through Personal Online & Mobile Banking.</li>
+                <li>Coastal States Bank may pay overdrafts at our discretion and reserves the right to terminate this service at any time. You are required to pay a $31 overdraft fee for each overdraft transaction that is paid by the bank. There is a limit of $155 each day in total fees that you can be charged for overdrawing your account. Items not paid will be returned and you will incur a $31 returned item fee. Overdraft service applies to checks, pre-authorized electronic debits, and online banking and bill payment transactions. Additionally, ATM withdrawals and one-time debit card transactions are covered if you choose to opt in to this service for those transactions. Reimbursement of overdraft coverage payments must be made promptly by making a deposit in your account. Overdraft items are generally not covered for accounts that are not in good standing or do not have regular deposits.</li>
+                <li>Fees may apply.</li>
+                <li>Debit card and customer activation required.</li>
+                <li>Credit file monitoring may take several days to begin following activation.</li>
+                <li>Bill must be paid through the premier account for coverage to apply.</li>
+                <li>To reduce the monthly maintenance fee, enroll in eStatements ($2.00 reduction), maintain an average daily balance of $2,500 during the monthly statement cycle ($4.95 reduction) Eliminate the monthly maintenance fee by maintaining a combined average daily balance of $10,000 during the statement cycle in related Local.Checking or related Local. Savings account(s).</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    

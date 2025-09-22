@@ -1,0 +1,606 @@
+{{!-- This is the base layout for your project, and will be used on every page unless specified. --}}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coastal States Bank | Local. And Proud Of It.</title>
+    <meta name="title" content="Coastal States Bank | Local. And Proud Of It." />
+    <meta name="description"
+        content="CSB provides a full range of banking services designed for businesses, their owners, and individuals looking for a local banking partner." />
+    <link rel="shortcut icon" type="image/x-icon" href="{{root}}assets/images/settings/favicon.ico">         
+    <link rel="stylesheet" href="{{root}}assets/css/global/font.css">
+    <link rel="stylesheet" href="{{root}}assets/css/global/jquery-ui.min.css">
+    <link rel="stylesheet" href="{{root}}assets/css/global/style.css" media="all">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="skiptocontent"><a href="#maincontent" alt="skip to main content">skip to main content</a></div>
+    <div class="loaderBlock">
+        <div class="svgAnimation">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="50" />
+            </svg>
+        </div>
+        <div class="loaderWrap">
+            <img src="{{root}}assets/images/settings/logo.svg" alt="Coastal States Bank" width="256" 
+               />
+        </div>
+    </div>
+    <div class="sitewrap">
+        <header class="sticky module">
+         <div class="alertsPannel">
+          <div class="grid-container">
+            <div class="alertsWrap">
+              <div class="wrap">
+                <img src="{{root}}assets/images/alert-icon.svg" alt="alert-icon"/>
+                <p>
+                  Our branches will be closed Monday, January 1, 2024 for New Year's Day.
+                </p>
+                <a href="javascript:void(0)" class="close-alerts alertsPannelClose">
+                    <i></i>
+                    <span class="screen-reader-text">
+                      Close
+                    </span>
+                  </a>
+              </div>
+            </div>
+          </div>
+        </div>
+            <div class="grid-container">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="{{root}}assets/images/settings/logo.svg" alt="Coastal States Bank" width="229" height="104" />
+                    </a>
+                </div>
+
+                <div class="headerMainWrapper toprightcta">
+                    <div class="secondary-nav">
+                        <ul class="mainmenu">
+                          <li class="menusearchBlock">
+                            <button type="button" name="searchbutton" class="submit">
+                                <i>Search</i>
+                            </button>
+                            <div class="desktopSearch">
+                                <div class="containerWrapper">
+                                    <div class="wraps">
+                                        <form class="" action="/search" method="GET">
+                                            <label for="inputSearch" class="screen-reader-text">search</label>
+                                            <input type="text" class="txtBox" name="q" id="inputSearch" value="" placeholder="What can we help you find?">
+                                            <button type="submit" name="button" class="searchBtn" id="searchBtn">Search</button>
+                                            <i>search</i>
+                                        </form>
+                                    </div>
+                                    <div class="rserachLst" style="display: none;">
+                                        <ul>
+                                            <li><a href="#">Personal Checking</a></li>
+                                            <li><a href="#">Business Checking</a></li>
+                                            <li><a href="#">uChoose Rewards</a></li>
+                                            <li><a href="#">Telephone Banking</a></li>
+                                            <li><a href="#">Marine  and RV Lending Support</a></li>
+                                        </ul>
+                                        <div class="bottomBtn">
+                                            <a href="javascript:void(0);" class="ctabtn secondarybtn">
+                                                View All 
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                          </li>
+                          <li><a href="#">Open an Account</a></li>
+                          <li><a href="#">Locations</a></li>
+                          <li><a href="#">Resources</a></li>
+                          <li class="singlemenu"><a href="#">About</a>
+                            <div class="singleMenuWrap">
+                                <ul>
+                                            <li><a href="#">Our Story</a></li>
+                                            <li><a href="#">Careers</a></li>
+                                            <li><a href="#">Investor Relations</a></li>
+                                            <li><a href="#">Community Commitment</a></li>
+                                </ul>
+                            </div>
+                          </li> 
+                          <li><a href="#">News</a></li> 
+                          <li><a href="#">Contact</a></li> 
+                        </ul>
+                    </div>
+                    <div class="headerWrapper">
+                        <div class="hamburger">
+                            <a href="#" class="Loginbtn ctabtn secondarybtn" title="Mobile Login"><span class="textlogin">Login</span><span class="closeicon"></span></a>
+                            <a href="#" class="searchicon" title="Mobile searchicon">
+                                <span></span>
+                            </a>
+                            <a href="#" class="mhamburger" title="Mobile hamburger">
+                                <span></span>
+                            </a>
+                        </div>
+                        <div class="mobileSearch">
+                            <div class="desktopSearch">
+                                <div class="containerWrapper">
+                                    <div class="wraps">
+                                        <form class="" action="/search" method="GET">
+                                            <label for="inputSearchMobile" class="screen-reader-text">search</label>
+                                            <input type="text" class="txtBox" name="q" id="inputSearchMobile" value="" placeholder="What can we help you find?">
+                                            <button type="submit" name="button" class="searchBtn" id="searchBtnMobile">Search</button>
+                                            <i>search</i>
+                                        </form>
+                                    </div>
+                                    <div class="rserachLst" style="display: none;">
+                                        <ul>
+                                            <li><a href="#">Personal Checking</a></li>
+                                            <li><a href="#">Business Checking</a></li>
+                                            <li><a href="#">uChoose Rewards</a></li>
+                                            <li><a href="#">Telephone Banking</a></li>
+                                            <li><a href="#">Marine  and RV Lending Support</a></li>
+                                        </ul>
+                                        <div class="bottomBtn">
+                                            <a href="javascript:void(0);" class="ctabtn secondarybtn">
+                                                View All 
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="header-menu">
+                            <ul class="mainMenu">
+                                <li class="dropdownMenu menu-mega-blog mainmenuact"><a href="javascript:void(0);"
+                                        class="first-level-link">Personal</a>
+                               </li>
+                                <li class="dropdownMenu menu-mega-blog">
+                                    <a class="first-level-link" href="#">Commercial</a>
+                                </li>
+                                <li class="dropdownMenu menu-mega-blog">
+                                    <a class="first-level-link" href="#">Small Business</a>
+                                </li>
+                                <li class="dropdownMenu menu-mega-blog">
+                                    <a class="first-level-link" href="#">Specialty Lending</a>
+                                </li>
+                                <li class="dropdownMenu"><a class="login ctabtn secondarybtn" href="javascript:void(0)"><span class="textlogin">Login</span><span class="closeicon"></span></a>
+                                </li>
+                            </ul>
+                            <div class="header-submenu">
+                                <ul class="mainsubMenu">
+                                    <li class="dropdownMenu singlemenu menu-open"><a href="#"
+                                        class="first-level-link">Checking</a>
+                                        <div class="singleMenuWrap">
+                                            <ul>
+                                                        <li><a href="#">Local Savings</a></li>
+                                                        <li><a href="#">Minor Savings</a></li>
+                                                        <li><a href="#">Local Money Market</a></li>
+                                                        <li><a href="#">Certificates of Deposit</a></li>
+                                                        <li><a href="#">Individual Retirement Accounts</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="dropdownMenu singlemenu menu-open"><a href="#"
+                                        class="first-level-link">Savings</a>
+                                    </li>
+                                    <li class="dropdownMenu singlemenu menu-open"><a href="#"
+                                        class="first-level-link">Digital Banking</a>
+                                    </li>
+                                    <li class="dropdownMenu singlemenu menu-open"><a href="#"
+                                        class="first-level-link">Lending</a>
+                                    </li>
+                                    <li class="dropdownMenu singlemenu menu-open"><a href="#"
+                                        class="first-level-link">Private Banking</a>
+                                    </li>
+                                </ul>
+                                <!-- <ul class="mainsubMenu">
+                                    <li class="dropdownMenu singlemenu menu-open"><a href="#"
+                                        class="first-level-link">Home Builder Financing</a>
+                                        <div class="singleMenuWrap">
+                                            <ul>
+                                                        <li><a href="#">Local Savings</a></li>
+                                                        <li><a href="#">Minor Savings</a></li>
+                                                        <li><a href="#">Local Money Market</a></li>
+                                                        <li><a href="#">Certificates of Deposit</a></li>
+                                                        <li><a href="#">Individual Retirement Accounts</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="dropdownMenu singlemenu menu-open"><a href="#"
+                                        class="first-level-link">Senior Housing Financing</a>
+                                    </li>
+                                    <li class="dropdownMenu singlemenu menu-open"><a href="#"
+                                        class="first-level-link">Warehouse Lending</a>
+                                    </li>
+                                    <li class="dropdownMenu singlemenu menu-open"><a href="#"
+                                        class="first-level-link">Correspondent Banking</a>
+                                    </li>
+                                </ul> -->
+                            </div>
+                        </div>
+                        <div class="innerloginWrapper">
+                            <div class="logtitle">Online Banking Login</div>
+                            <div class="formBLock">
+                                    <div class="form-group">
+                                            <fieldset>
+                                                <legend class="screen-reader-text">Account Type</legend>
+                                                <label class="type-account">Account Type</label>
+                                                <select class="selectMenu" id="desk-account" name="desk-account" title="Account Type">
+                                                    <option value="Personal & Small Business">Personal & Small Business</option>
+                                                    <option value="Commercial">Commercial</option>
+                                                </select>
+                                            </fieldset>
+                                        </div>
+                                    <form class="ROLoginForm LoginForm" method="post" id="pbi-form" novalidate="novalidate" autocomplete="on" action="/">
+                                        <div class="form-group">
+                                            <fieldset>
+                                                <legend class="screen-reader-text">Desktop Username</legend>
+                                                <label for="username" class="screen-reader-text">Username</label>
+                                                <input type="text" class="txtBox" name="username" title="Username" id="pbi-username" value="" placeholder="Username" required autocomplete="username">
+                                                <span class="errorSpan vd f-important" style="display:none;">Please enter the Username</span>
+                                            </fieldset>
+                                        </div>
+                                        <div class="form-group">
+                                            <fieldset>
+                                                <legend class="screen-reader-text">Desktop Password</legend>
+                                                <label for="password" class="screen-reader-text">Password</label>
+                                                <input type="password" autocomplete="current-password" class="txtBox" name="password" title="Password" id="pbi-password" value="" placeholder="Password" required>
+                                                <button type="button" name="eyebutton" class="eyeicon">
+                                                    <i class="screen-reader-text">eyeicon</i>
+                                                </button>
+                                                <span class="errorSpan vd f-important" style="display:none;">Please enter the password</span>
+                                            </fieldset>
+                                        </div>
+                                        <div class="forgotblock">
+                                            <a href="#" aria-label="pbi Enroll Here" target="_blank">
+                                                Enroll Here
+                                            </a> | 
+                                            <a href="https://web13.secureinternetbank.com/PBI_PBI1151/ForgotPassword/053208105/1" aria-label="pbi Forgot Password" target="_blank">
+                                                Forgot Password
+                                            </a>
+                                        </div>
+                                        <div class="loginDiv btnBlock">
+                                            <button type="submit" class="logBtn ctabtn secondarybtn ROLoginSubmitButton" id="pbi-submit">
+                                                Login
+                                            </button>
+                                            <a href="#" aria-label="pbi open account" target="_blank">
+                                                Open an Account
+                                            </a>
+                                        </div>
+                                    </form>
+                                    
+                                </div>
+                                </div>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-wrapper">
+                <nav role="navigation">
+                    <div class="nav-toggle">
+                        <span class="nav-back"></span>
+                        <span class="nav-title"><span class="home">Home</span> <span class="back" style="display: none;"></span></span>
+                        <span class="nav-close"></span>
+                    </div>
+                    <div class="menu-section">
+                        <ul class="primarymeu">
+                            <li class="has-dropdown">
+                                <a href="#">Personal</a> <span class="has-dropdown-icon"></span>
+                                <ul class="innermenu">
+                                    <li class="menu__item subtitle itemtitle homemenuitem" role="menuitem">Personal</li>
+                                    <li class="menu__item has-dropdown">
+                                        <a class="menu__link" title="Checking" href="#">Checking</a> <span class="has-dropdown-icon"></span>
+                                        <ul class="innermenu">
+                                            <li class="menu__item subtitle submenuitem" role="menuitem">Checking</li>
+                                            <li class="menu__item" role="menuitem"><a class="menu__link" title="View All Savings" href="#">View all Personal Checking</a></li>
+                                            <li class="menu__item" role="menuitem"><a class="menu__link" title="Local Savings" href="#">Local Savings</a></li>
+                                            <li class="menu__item" role="menuitem"><a class="menu__link" title="Minor Savings" href="#">Minor Savings</a></li>
+                                            <li class="menu__item" role="menuitem"><a class="menu__link" title="Local Money Market" href="#">Local Money Market</a></li>
+                                            <li class="menu__item" role="menuitem"><a class="menu__link" title="Certificates of Deposit" href="#">Certificates of Deposit</a></li>
+                                            <li class="menu__item" role="menuitem"><a class="menu__link" title="Individual Retirement Accounts" href="#">Individual Retirement Accounts</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu__item has-dropdown" role="menuitem">
+                                        <a class="menu__link" title="Savings" href="#">Savings</a> <span class="has-dropdown-icon"></span>
+                                        <ul class="innermenu">
+                                            <li class="menu__item subtitle submenuitem" role="menuitem">Savings</li>
+                                            <li class="menu__item" role="menuitem"><a class="menu__link" title="View All Savings" href="#">View all Personal Savings</a></li>
+                                            <li class="menu__item" role="menuitem"><a class="menu__link" title="Local Savings" href="#">Local Savings</a></li>
+                                            <li class="menu__item" role="menuitem"><a class="menu__link" title="Minor Savings" href="#">Minor Savings</a></li>
+                                            <li class="menu__item" role="menuitem"><a class="menu__link" title="Local Money Market" href="#">Local Money Market</a></li>
+                                            <li class="menu__item" role="menuitem"><a class="menu__link" title="Certificates of Deposit" href="#">Certificates of Deposit</a></li>
+                                            <li class="menu__item" role="menuitem"><a class="menu__link" title="Individual Retirement Accounts" href="#">Individual Retirement Accounts</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu__item has-dropdown" role="menuitem">
+                                        <a class="menu__link" title="Digital Banking" href="#">Digital Banking</a> <span class="has-dropdown-icon"></span>
+                                        <ul class="innermenu">
+                                            <li class="menu__item subtitle submenuitem" role="menuitem">Digital Banking</li>
+                                            <li class="menu__item" role="menuitem"><a class="menu__link" title="View All Savings" href="#">View all Personal Digital Banking</a></li>
+                                            <li class="menu__item" role="menuitem"><a class="menu__link" title="Local Savings" href="#">Local Savings</a></li>
+                                            <li class="menu__item" role="menuitem"><a class="menu__link" title="Minor Savings" href="#">Minor Savings</a></li>
+                                            <li class="menu__item" role="menuitem"><a class="menu__link" title="Local Money Market" href="#">Local Money Market</a></li>
+                                            <li class="menu__item" role="menuitem"><a class="menu__link" title="Certificates of Deposit" href="#">Certificates of Deposit</a></li>
+                                            <li class="menu__item" role="menuitem"><a class="menu__link" title="Individual Retirement Accounts" href="#">Individual Retirement Accounts</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu__item" role="menuitem"><a class="menu__link" title="Lending" href="#">Lending</a></li>
+                                    <li class="menu__item" role="menuitem"><a class="menu__link" title="Private Banking" href="#">Private Banking</a></li>
+                                </ul>
+                            </li>
+                            <li class="has-dropdown">
+                                <a href="#">Commercial</a> <span class="has-dropdown-icon"></span>
+                                <ul class="innermenu">
+                                    <li class="menu__item subtitle itemtitle homemenuitem" role="menuitem">Commercial</li>
+                                    <li class="menu__item has-dropdown">
+                                        <a class="menu__link" title="Checking" href="#">Commercial Checking</a> <span class="has-dropdown-icon"></span>
+                                        <ul class="innermenu">
+                                            <li class="menu__item subtitle submenuitem" role="menuitem">Commercial Checking</li>
+                                            <li class="menu__item" role="menuitem"><a class="menu__link" title="Local Savings" href="#">Local Savings</a></li>
+                                            <li class="menu__item" role="menuitem"><a class="menu__link" title="Minor Savings" href="#">Minor Savings</a></li>
+                                            <li class="menu__item" role="menuitem"><a class="menu__link" title="Local Money Market" href="#">Local Money Market</a></li>
+                                            <li class="menu__item" role="menuitem"><a class="menu__link" title="Certificates of Deposit" href="#">Certificates of Deposit</a></li>
+                                            <li class="menu__item" role="menuitem"><a class="menu__link" title="Individual Retirement Accounts" href="#">Individual Retirement Accounts</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu__item" role="menuitem"><a class="menu__link" title="Savings" href="#">Savings</a></li>
+                                    <li class="menu__item" role="menuitem"><a class="menu__link" title="Digital Banking" href="#">Digital Banking</a></li>
+                                    <li class="menu__item" role="menuitem"><a class="menu__link" title="Lending" href="#">Lending</a></li>
+                                    <li class="menu__item" role="menuitem"><a class="menu__link" title="Private Banking" href="#">Private Banking</a></li>
+                                </ul>
+                            </li>
+                            <li class="has-dropdown">
+                                <a href="#">Small Business</a>
+                            </li>
+                            <li class="has-dropdown">
+                                <a href="#">Specialty Lending</a>
+                            </li>
+                        </ul>
+
+                        <ul class="topmeu">
+                            <li class="">
+                                <a href="#">Locations       
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="#">Resources        
+                                </a>
+                            </li>
+                            <li class="has-dropdown">
+                                <a href="#">About</a> <span class="has-dropdown-icon"></span>
+                                <ul class="innermenu">
+                                    <li class="menu__item subtitle homemenuitem" role="menuitem">About</li>
+                                    <li class="menu__item" role="menuitem"><a class="menu__link" title="Our Story" href="#">Our Story</a></li>
+                                    <li class="menu__item" role="menuitem"><a class="menu__link" title="Careers" href="#">Careers</a></li>
+                                    <li class="menu__item" role="menuitem"><a class="menu__link" title="Investor Relations" href="#">Investor Relations</a></li>
+                                    <li class="menu__item" role="menuitem"><a class="menu__link" title="Community Commitment" href="#">Community Commitment</a></li>
+                                </ul>
+                            </li>
+                            <li class="">
+                                <a href="#">News
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="#">Contact
+                                </a>
+                            </li>
+                            <li class="menubtn">
+                                <a href="#" class="ctabtn secondarybtn">Open an Account</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <div class="stickyEmpty">
+        </div>
+        <div class="main" id="maincontent">
+        {{!-- Pages you create in the src/pages/ folder are inserted here when the flattened page is created. --}} {{>
+        body}}
+        </div>
+        <link rel="stylesheet" href="{{root}}assets/css/findlocation/findlocation.css" media="all">
+        <div class="findlocationPannel module">
+            <div class="grid-container">
+                <div class="wraps">
+                    <h3>Find a Location</h3>
+                    <form data-form-validate="true" class="findlocaion" method="post" id="findlocaion" novalidate="novalidate">
+                        <div class="form-group">
+                            <fieldset>
+                                <legend class="screen-reader-text">Zipcode</legend>
+                                <input type="text" class="txtBox form-control" id="locationzipcode" name="locationzipcode" placeholder="Search by Zipcode">
+                            </fieldset>
+                        </div>
+                        <button type="submit" name="button"><img src="{{root}}assets/images/settings/find-location.png" width="39" height="39" alt="find location button"></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <footer class="threerow module greybgpanel">
+            <div class="grid-container">
+                <div class="footersec">
+                    <div class="primaryfooter">
+                        <div class="column-1">
+                            <div class="fLogo">
+                                <a href="#"><img src="{{root}}assets/images/settings/logo.svg" alt="Coastal States Bank" width="217" height="99" /></a>
+                            </div>
+                            <div class="route-social">
+                                <p><b>Routing #123456789</b></p>
+                            </div>
+                            <div class="socialLnkpanel">
+                                <ul class="sociallinks">
+                                    <li>
+                                        <a href="#" aria-label="Facebook" target="_blank">
+                                            <img src="{{root}}assets/images/settings/facebook.svg" alt="Facebook" class="lazy imagetoSVG" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" aria-label="linkedin" target="_blank">
+                                            <img src="{{root}}assets/images/settings/linkedin.svg" alt="linkedin" class="lazy imagetoSVG" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" aria-label="instagram" target="_blank">
+                                            <img src="{{root}}assets/images/settings/instagram.svg" alt="instagram" class="lazy imagetoSVG" />
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>    
+                        </div>
+                        <div class="column-2">
+                            <p class="menutitle">About Coastal State Bank</p>
+                            <ul>
+                                <li><a href="#">About</a></li>
+                                <li><a href="#">Investor Relations</a></li>
+                                <li><a href="#">News</a></li>
+                                <li><a href="#">Careers</a></li>
+                            </ul>
+                        </div>
+                        <div class="column-3">
+                            <p class="menutitle">Quick Links</p>
+                            <ul>
+                                <li><a href="#">Financial Calculators</a></li>
+                                <li><a href="#">Loan Payments</a></li>
+                                <li><a href="#">Lost or Stolen Debit Cards</a></li>
+                                <li><a href="#">Check Reorders</a></li>
+                                <li><a href="#">Switch Kit</a></li>
+                            </ul>
+                        </div>
+                        <div class="column-4">
+                            <p class="menutitle">Policy</p>
+                            <ul>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Accessibility Policy</a></li>
+                                <li><a href="#">Cookie Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+            <div class="secondaryfooter">
+                <div class="grid-container">
+                    <div class="column-1">
+                        <ul>
+                            <li><a href="#"><img src="{{root}}assets/images/settings/member-fdic.svg" width="84" height="51" alt="Member FDIC Logo"></a></li>
+                            <li><a href="#"><img src="{{root}}assets/images/settings/equal-housing-lender.svg" width="48" height="51" alt="Equal Housing Lender Logo"></a></li>
+                        </ul>
+                        <p>NMLS # 737963</p>
+                        <p>Coastal States Mortgage NMLS # 154698</p>
+                    </div>
+                    <div class="column-2">
+                        <ul class="footerlinks copyright"> 
+                            <li>© <span id="copyright-year"></span> Coastal States Bank | All Rights Reserved</li>
+                            <li><a href="#">Sitemap</a></li>
+                            <li><a href="https://www.multimediasolutions.com/" target="_blank" rel="noopener">Site Designed and Developed by Multimedia Solutions</a></li>
+                        </ul>
+                    </div>
+                </div> 
+            </div>
+        </footer>
+    </div>
+</body>
+
+
+<div class="paginacontainer">
+    <div class="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 118.041;"></path>
+        </svg>
+    </div>
+
+</div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.11/jquery.lazy.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".lazy").Lazy({
+                afterLoad: function (element) {
+                    $("img").removeClass("layzeloading");
+                }
+            });
+        });
+</script>
+
+<script src="{{root}}assets/scripts/global/nprogress.js" defer></script>
+<script src="{{root}}assets/scripts/global/jquery-ui.min.js" defer></script>
+<script src="{{root}}assets/scripts/global/imagetoSVG.js" defer ></script>
+<script src="{{root}}assets/scripts/global/custom.js" defer></script>
+<script type="text/javascript">
+    $(document).ready(function () {  
+        $('#copyright-year').text(new Date().getFullYear());
+        $('#copyright-year-notfound').text(new Date().getFullYear());
+        setTimeout(function () {
+            if ($('.popUpWrapper').length > 0) {
+            $('html').addClass('popUpOpen');
+              setTimeout(function () {
+                    $('.popupWrap .wrap,.popUpWrapper').addClass('Open');
+              }, 100);
+            }
+        }, 1000);  
+        $('.popUpWrapper .popup-close').click(function () {
+            $('html').removeClass('popUpOpen');
+            $('.popupWrap .wrap,.popUpWrapper').removeClass('Open');			
+        });                  
+    });
+    </script>
+
+
+<!-- 
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4E2Q3mxv7Xt6TmKoZEYdEkqZrKAinDDo&amp;libraries=drawing,geometry&callback=initMap"></script>
+<script type="text/javascript">
+    var gmarkers = [], markersContent = [];
+    function initMap() {
+            var locations = [
+                ['<p class="head">Avenel Office</p> <p class="getlnk"><a href="http://maps.google.com/maps?saddr=Current+Location&amp;daddr=24+Princeton+Avenue+Brick%2c+NJ+08724" target="_blank">Get Directions</a>  <a href="#" target="_blank">Branch Details</a></p>', '40.6550688', '-73.9122805', '1'],
+                ['<p class="head">Avenel Office</p> <p class="getlnk"><a href="http://maps.google.com/maps?saddr=Current+Location&amp;daddr=24+Princeton+Avenue+Brick%2c+NJ+08724" target="_blank">Get Directions</a>  <a href="#" target="_blank">Branch Details</a></p>', '40.6545753', '-73.9134312', '2'],
+                ['<p class="head">Avenel Office</p> <p class="getlnk"><a href="http://maps.google.com/maps?saddr=Current+Location&amp;daddr=24+Princeton+Avenue+Brick%2c+NJ+08724" target="_blank">Get Directions</a>  <a href="#" target="_blank">Branch Details</a></p>', '40.6545753', '-73.9121915', '3'],
+                ['<p class="head">Avenel Office</p> <p class="getlnk"><a href="http://maps.google.com/maps?saddr=Current+Location&amp;daddr=24+Princeton+Avenue+Brick%2c+NJ+08724" target="_blank">Get Directions</a>  <a href="#" target="_blank">Branch Details</a></p>', '40.6550688', '-73.9134312', '4'],
+            ];
+
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 17,
+                center: new google.maps.LatLng(40.654605, -73.9121705),
+                mapTypeControl: false,
+                zoomControl:false,
+                panControl:false,
+                streetViewControl:false,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            });
+            gmarkers.push(marker);
+            var infowindow = new google.maps.InfoWindow();
+            var marker, i;
+            var image = '../assets/images/location-pin.png';
+
+            for (i = 0; i < locations.length; i++) {
+                marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                    map: map,
+                    icon: image,
+                    animation: google.maps.Animation.DROP,
+                });
+                google.maps.event.addListener(marker, 'click', (function (marker, i) {
+                    return function () {
+                        infowindow.setContent(locations[i][0]);
+                        infowindow.open(map, marker);
+                    }
+                })(marker, i));
+                google.maps.event.addListener(marker, 'mouseover', (function (marker, i) {
+                    return function () {
+                        infowindow.setContent(locations[i][0]);
+                        infowindow.open(map, marker);
+                    }
+                })(marker, i));
+                google.maps.event.addListener(marker, 'mouseout', (function (marker, i) {
+                    return function () {
+                        infowindow.setContent(locations[i][0]);
+                        infowindow.open(map, marker);
+                    }
+                })(marker, i));
+                infowindow.setContent(locations[i][0]);
+                infowindow.open(map, marker);
+            }
+        } 
+        function infoOpen(i) {
+                //console.log(gmarkers);
+                google.maps.event.trigger(gmarkers[i], 'click');
+             }      
+</script> -->
+
+</body>
+</html>

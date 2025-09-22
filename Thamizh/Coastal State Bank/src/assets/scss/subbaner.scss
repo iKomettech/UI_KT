@@ -1,0 +1,410 @@
+@import "util/util";
+$white: #ffffff;
+$primary-color: #004986;
+$secondary-color: #B58412;
+$img: "../../images/";
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+.bannerpanel {
+    position: relative;
+    min-height: 280px;
+    @include breakpoint(large) {
+        min-height: 685px;
+    }
+    .homeBanner {
+        position: relative;
+        .grid-container-fullwidth {
+            width: 100%;
+            .imagebg-shadow {
+                position: absolute;
+                width: 100%;
+                height: 102px;
+                display: block;
+                background: #ffffff;
+                z-index: 9;
+                clip-path: polygon(0 100%, 0 0, 31% 100%);
+                @include breakpoint(medium) {
+                    height: 200px;
+                }
+                @include breakpoint(large) {
+                    height: 267px;
+                }
+                @include breakpoint(llarge) {
+                    height: 100%;
+                }
+                @media (min-width: 441px) and (max-width:767px){
+                    height: 216px !important;
+                }
+                .image-shadow{
+                    position: absolute;
+                    left: 0;
+                    background: #e0e8ee;
+                    width: 100%;
+                    display: block;
+                    height: 100%;
+                    clip-path: polygon(0 70%, 0 0, 31% 100%);
+                    z-index: 99;
+                }
+            }
+        }
+        .bannerwrap{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            .contentwrap{
+                max-width: 100%;
+                width: 100%;
+                text-align: center;
+                @include breakpoint(medium) {
+                    max-width: 450px;
+                   
+                    //left: calc(100% - 44%);
+                    bottom: -25px;
+                }
+                @include breakpoint(large) {
+                    max-width: 560px;
+                    position: absolute;
+                    //left: calc(100% - 44%);
+                    bottom: -25px;
+                }
+                .content{
+                    position: relative;
+                    top: 0px;
+                    padding-top: 22px;
+                    padding-bottom:0px;
+                    @include breakpoint(large) {
+                        top: 20px;
+                        padding-top: 0;
+                        padding-bottom:7px;
+                    }
+                    @include breakpoint(llarge) {
+                        top:0px;
+                        padding-top: 0;
+                        padding-bottom:7px;
+                    }
+                    @include breakpoint(xlarge) {
+                        top: 20px;
+                    }
+                    h1, h2{
+                        font-size: 30px;
+                        line-height: 38px;
+                        font-weight: 400;
+                        word-wrap: break-word;
+                        color: $primary-color;
+                        @include breakpoint(medium) {
+                            font-size: 50px;
+                            line-height: 60px;
+                            padding-right: 15px;
+                        }
+                        @include breakpoint(large) {
+                            font-size: 45px;
+                            line-height: 55px;
+                            padding-right: 0px;
+                        }
+                        @media (min-width: 1279px) {
+                            font-size: 50px;
+                            line-height: 60px;
+                            padding-right: 0px;
+                        }
+
+                        @include breakpoint(xlarge) {
+                            font-size: 62px;
+                            line-height: 70px;
+                            padding-right: 0px;
+                        }
+                         @include breakpoint(xxlarge) {
+                            font-size: 65px;
+                            line-height: 70px;
+                            padding-right: 0px;
+                        }
+                    }
+                }
+            }
+            .imgWrap{
+                max-width: 100%;
+                min-height: 132px;
+                width: 100%;
+                height: 100%;
+                position: relative;
+                @include breakpoint(medium) {
+                    min-height: 440px;
+                }
+                @include breakpoint(large) {
+                    min-height: 675px;
+                }
+                @include breakpoint(xlarge) {
+                    min-height: 675px;
+                }
+                @media (min-width: 441px) and (max-width:767px){
+                    min-height: 214px !important;
+                }
+                .filter-img{
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    position: absolute;
+                    width: 100%;
+                    height: 130px;
+                    clip-path: polygon(100% 0, 0 0, 31% 78.5%);
+                    @include breakpoint(medium) {
+                        height: 462px;
+                    }
+                    @include breakpoint(large) {
+                        height: 862px;
+                    }
+                    @media (min-width: 441px) and (max-width:767px){
+                        height: 274px !important;
+                    }
+                    .image-block{
+                        object-fit: cover;
+                        object-position: top;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+.subbaner.bannerpanel {
+    min-height: 100%;
+    padding-bottom: 0px;
+    @media (min-width: 441px) and (max-width:767px){
+        min-height: 100%;
+    }
+    @include breakpoint(large) {
+        padding-bottom: 0;
+    }
+    .homeBanner{
+     .bannerwrap 
+     {
+        .grid-container{
+            width: 100%;
+            padding: 0;
+            position: relative;
+        }
+     .imgWrap {
+        @include breakpoint(medium only) {
+            min-height: 200px;
+        }
+        @include breakpoint(large) {
+            min-height: 362px;
+        }
+        @include breakpoint(llarge) {
+            min-height: 496px;
+        }
+        .filter-img {
+            @include breakpoint(medium only) {
+                height: 254px;
+            }
+            @include breakpoint(large) {
+                height: 340px;
+            }
+            @include breakpoint(llarge) {
+                height: 632px;
+            }
+            .image-block {
+                max-height:290px;
+                @include breakpoint(llarge) {
+                    min-height: 496px;
+                }
+                @include breakpoint(medium only) {
+                    max-height: 215px;
+                }
+            }
+        }
+    }
+   
+    .contentwrap{
+        text-align: left;
+        display: flex;
+        max-width: 450px;
+        @include breakpoint(medium) {
+            max-width: 560px;
+            bottom:0px;
+        }
+        @include breakpoint(large) {
+            right: 15px;
+            justify-content: end;
+           
+        }
+        @media (min-width: 1480px){
+            right: 0;
+        }
+        // .content{
+        //     @include breakpoint(xlarge) {
+        //         top: 50px;
+        //     }
+        // }
+        &.ctawrap{
+            .content{
+                @include breakpoint(large) {
+                    top:45px;
+                    padding-left:0px;
+                }
+                @include breakpoint(xlarge) {
+                    top:55px;
+                    padding-left:0px;
+                }
+            }
+        }
+  
+        @include breakpoint(xlarge) {
+            max-width: 500px;
+        }
+        @include breakpoint(xlarge) {
+            max-width: 560px;
+        }
+        .content{
+            @include breakpoint(medium only) {
+                padding-left:20px;
+                padding-right:20px;
+            }
+            @include breakpoint(small only) {
+                top:-4px;
+                padding-top: 0;
+                padding-left:15px;
+                padding-right:15px;
+            }
+            @media (min-width: 441px) and (max-width: 767px){
+                top:30px;
+                padding-bottom: 45px;
+            }
+            h1{
+                font-size:30px;
+                line-height:35px;
+                margin-bottom:0px;
+                @include breakpoint(small only) {
+                    text-align: left;
+                }
+                @include breakpoint(large) {
+                    font-size:29px;
+                    line-height:34px;
+                }
+                @include breakpoint(llarge) {
+                    font-size:42px;
+                    line-height:35px;
+                }
+                @include breakpoint(xlarge) {
+                    font-size:42px;
+                    line-height:45px;
+                }
+            }
+            p{
+                font-size:16px;
+                line-height:22px;
+                margin-bottom:0px;
+                @include breakpoint(large) {
+                    max-width:493px;
+                    padding-top: 5px;
+                    text-align: left;
+                    font-size:18px;
+                    line-height:22px;
+                }
+                @include breakpoint(llarge) {
+                    font-size:18px;
+                    line-height:24px;
+                }
+                overflow: hidden;
+                // display: -webkit-box;
+                // -webkit-box-orient: vertical;
+                // -webkit-line-clamp: 3;
+                
+                strong{  
+                    @include breakpoint(large) {
+                        font-size:20px;
+                        line-height:24px; 
+                        font-weight: 600;
+                    }
+                }
+                + p{
+                    margin-top:0px;
+                }
+                
+            }
+        }
+     
+    }
+    .ctablock{
+        padding-top:5px;
+        @include breakpoint(small only) {
+         display: flex;
+        }
+        a{
+            @include breakpoint(large only) {
+                padding: 8px 21px;
+            }
+        }
+        @include breakpoint(xlarge) {
+            padding-top: 13px;
+        }
+        a{
+            @include breakpoint(small only) {
+                font-size: 12px;
+                line-height: 15px;
+            }
+            &:first-child{
+                @include breakpoint(small only) {
+                    margin-right:30px;
+                }
+                margin-right:24px;
+            }
+            &:nth-child(2){
+                border:3px solid $primary-color;
+                background-color:$primary-color;
+                &::before{
+                    background-color:$primary-color;
+                }
+                
+                &:hover{
+                    background-color: #ffffff;
+                    color: $primary-color;
+                   
+                }
+            }
+            &:first-child{
+                border:3px solid $secondary-color;
+                
+                &::before{
+                    background-color:$secondary-color;
+                }
+                &:hover{
+                    background-color: #ffffff;
+                    color: $secondary-color; 
+                }
+            }
+        }
+   
+    }
+}
+}
+}
+.subbaner.bannerpanel .homeBanner .bannerwrap .contentwrap.headtopwrap{
+    justify-content: flex-start;
+}
+@media (min-width: 1024px) {
+    .subbaner.bannerpanel .homeBanner .bannerwrap .contentwrap.headtopwrap{
+        bottom: 105px;
+    }
+     .subbaner.bannerpanel .homeBanner .bannerwrap .contentwrap.headtopwrap .content{
+        left: 65px;
+    }
+}
+@media (min-width: 1280px) {
+    .subbaner.bannerpanel .homeBanner .bannerwrap .contentwrap.headtopwrap{
+        bottom: 95px;
+    }
+    .subbaner.bannerpanel .homeBanner .bannerwrap .contentwrap.headtopwrap .content{
+        left: 10px;
+    }
+}
+

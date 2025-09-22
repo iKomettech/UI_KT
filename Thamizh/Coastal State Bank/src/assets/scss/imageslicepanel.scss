@@ -1,0 +1,324 @@
+@import "util/util";
+$white: #ffffff;
+$primary-color: #004986;
+$secondary-color: #B58412;
+$img: "../../images";
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+.testimonialPanel + link + .imageslicepanel{
+    margin-top:25px;
+   @include breakpoint(large) {
+    margin-top:56px;
+   }
+   @include breakpoint(llarge) {
+    margin-top:96px;
+   }
+}
+.subbaner + .breadcrumbWrapBottom + link + .imageslicepanel{
+    margin-top: 28px;
+    @include breakpoint(medium) {
+        margin-top: 38px;
+    }
+    @include breakpoint(llarge) {
+        margin-top:20px;
+    }
+}
+.imageslicepanel + link + .double_gridpanel{
+    margin-top:40px;
+   @include breakpoint(large) {
+    margin-top:56px;
+   }
+   @include breakpoint(llarge) {
+    margin-top:96px;
+   }
+}
+.imageslicepanel + link + .featuretablepanel{
+    margin-top:40px;
+   @include breakpoint(large) {
+    margin-top:56px;
+   }
+   @include breakpoint(llarge) {
+    margin-top:94px;
+   }
+}
+.imageslicepanel{ 
+   margin-top:40px;
+   @include breakpoint(large) {
+    margin-top:70px;
+   }
+   @include breakpoint(llarge) {
+    margin-top:110px;
+   }
+   .grid-container{  
+        @include breakpoint(small only) {
+        padding-left: 0;
+        padding-right: 0;
+        }
+    }
+    .flexwrap{
+        display: flex;
+        position: relative;
+        align-items: center;
+        @include breakpoint(small only) {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .contwrap{
+            &.mobilewrap{
+                h2{
+                    display: none;
+                    @include breakpoint(small only) {
+                        display: block;
+                        text-align: center;
+                        span{
+                            margin-right: 5px;
+                            + br{
+                                display: none;
+                            }
+                         
+                        }
+                    }
+                }
+            }
+            h2{
+                font-weight: 600;
+                color: $primary-color;
+                margin-bottom: 12px;
+                font-size: 21px;
+                line-height: 28px;
+                @include breakpoint(small only) {
+                    display: none;
+                }
+                @include breakpoint(medium) {
+                    font-size: 28px;
+                    line-height: 32px;
+                    display: block;
+                }
+                @include breakpoint(large) {
+                    font-size: 38px;
+                    line-height: 43px;
+                }
+                @media screen and (min-width: 1024px) and (max-width:1200px) {
+                    font-size: 28px;
+                    line-height: 32px;
+                }
+                span{
+                    font-family: "Montserrat", sans-serif;
+                }
+            }   
+            p{
+                font-size: 16px;
+                line-height: 22px;
+                @include breakpoint(medium) {
+                    font-size: 18px;
+                    line-height: 25px;
+                }
+                @include breakpoint(large) {
+                    font-size: 24px;
+                    line-height: 34px;
+                }
+                @media screen and (min-width: 1024px) and (max-width:1200px) {
+                    font-size: 18px;
+                    line-height: 25px;
+                }
+                +p{
+                    margin-top: 10px;
+                    @include breakpoint(large) {
+                        margin-top: 20px;
+                    }
+                }
+                small{
+                    font-size: 16px;
+                    line-height: 20px;
+                    @include breakpoint(large) {
+                        font-size: 18px;
+                        line-height: 30px;
+                    }
+                    @media screen and (min-width: 1024px) and (max-width:1200px) {
+                        font-size: 16px;
+                        line-height: 20px;
+                    }
+                    .semibold{
+                        strong{
+                            font-weight: 600;
+                        }
+                    }
+                }
+                a{
+                    color: $primary-color;
+                    text-decoration: none;
+                    &:hover, &:focus{
+                        color: $secondary-color;
+                        text-decoration: underline;
+                    }
+                }        
+            }
+            .ctabtn{
+                margin-top: 15px;
+                @include breakpoint(medium only) {
+                    padding: 7px 8px;
+                    font-size: 18px;
+                    line-height: 22px;
+                    font-weight: 600;
+                }
+                @include breakpoint(large) {
+                    margin-top: 34px;
+                }
+                @media screen and (min-width: 1024px) and (max-width:1200px) {
+                    padding: 7px 8px;
+                    font-size: 18px;
+                    line-height: 22px;
+                    font-weight: 600;
+                    margin-top: 15px;
+                }
+            }
+        }
+        .imgWrap{
+            overflow: hidden;
+            max-width: 907px;
+            width: 100%;
+            height: 175px;
+            position: relative;
+            @include breakpoint(small only) {
+                padding-right: 45px;
+                max-width: 100%;
+            }
+            @media screen and (min-width: 431px) and (max-width:767px) {
+                height: 312px;
+            }
+            @include breakpoint(medium) {
+                height: 212px;
+            }
+            @include breakpoint(large) {
+                height: 515px;
+            }  
+            @media screen and (min-width: 1024px) and (max-width:1200px) {
+                height: 312px;
+            }
+            img{
+                object-fit: cover;
+                width: 100%;
+                height: 166px;
+                clip-path: polygon(0% 0%, 67.5% 0, 100% 50%, 61% 100%, 0 100%);
+                @media screen and (min-width: 431px) and (max-width:767px) {
+                    height: 300px;
+                    clip-path: polygon(0% 0%, 67.5% 0, 100% 50%, 59% 100%, 0 100%);
+                }
+                @include breakpoint(medium) {
+                    height: 200px;
+                    clip-path: polygon(0% 0%, 70.5% 0, 100% 50%, 64% 100%, 0 100%);
+                }   
+                @include breakpoint(large) {
+                    height: 490px;
+                    clip-path: polygon(0% 0%, 70.5% 0, 100% 50%, 64% 100%, 0 100%);
+                } 
+                @media screen and (min-width: 1024px) and (max-width:1200px) {
+                    height: 290px;
+                    clip-path: polygon(0% 0%, 70.5% 0, 100% 50%, 64% 100%, 0 100%);
+                }
+            } 
+        }
+        .leftwarp{
+            width: 100%;
+            max-width: 300px;  
+            margin-left: 0px;
+            margin-top: 10px;
+            text-align: center;
+            @include breakpoint(medium) {
+                max-width: 352px;
+                margin-left: 34px;
+                margin-top: 0;
+                text-align: left;
+            }
+            @include breakpoint(large) {
+                max-width: 496px;
+                margin-left: 34px;
+            }
+            @media screen and (min-width: 1024px) and (max-width:1200px) {
+                max-width: 352px;
+            }
+        }
+        .overlay{
+            background: url("#{$img}/promo-yellow.svg") no-repeat center;
+            overflow: hidden;
+            background-size: cover;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            width: 100%;
+            height: 76px;
+            clip-path: polygon(0% 0%, 0% -200%, 79.5% 21%, 55% 100%, 0 100%);
+            z-index: -1;
+            @media screen and (min-width: 431px) and (max-width:767px) {
+                height: 125px;
+            }
+            @include breakpoint(medium) {
+                height: 95px;
+                clip-path: polygon(0% 0%, 0% 0, 100% 0%, 65% 100%, 0 100%);
+            }
+            @include breakpoint(large) {
+                height: 230px;
+            }
+            @media screen and (min-width: 1024px) and (max-width:1200px) {
+                height: 130px;
+                clip-path: polygon(0% 0%, 0% 0, 100% 0%, 65% 100%, 0 100%);
+            }
+            &.layzeloading{
+                visibility: hidden;
+            }
+        }
+    }
+    &.right{
+        .flexwrap{
+            flex-direction: row-reverse;
+            .leftwarp{
+                margin-left: 0;
+                margin-right: 36px;
+                @include breakpoint(small only) {
+                    margin-right: 0px;
+                }
+                .contwrap{
+                    padding-left: 0 !important;
+                    padding-right: 0px !important;
+                }
+            }
+            .contwrap {
+                &.mobilewrap{
+                    h2{
+                        @include breakpoint(small only) {
+                            margin-left: 15px;
+                            margin-right: 15px;
+                        }
+                    }
+                }
+            }
+            .imgWrap{
+                @include breakpoint(small only) {
+                    padding-left: 28px;
+                    padding-right: 0;
+                }
+                img{
+                    clip-path: polygon(28% 0%, 100% 0, 100% 100%, 35% 100%, 0 52%);
+                    @include breakpoint(small only) {
+                        clip-path: polygon(28% 0%, 100% 0, 100% 100%, 36.5% 100%, 0 52%);
+                    }
+                }
+            }
+            .overlay{
+                background: url("#{$img}/promo-blue.svg") no-repeat center;
+                background-size: cover;
+                clip-path: polygon(34% 100%, 0% 0, 100% 0%, 100% 100%, 0 100%);
+                @include breakpoint(small only) {
+                    clip-path:polygon(40% 100%, 18% 32%, 24% 0%, 100% 100%, 0 100%);
+                }
+            }
+        }
+    }
+}

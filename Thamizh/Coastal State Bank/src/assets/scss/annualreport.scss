@@ -1,0 +1,56 @@
+@import "util/util";
+$white: #ffffff;
+$primary-color: #0076bf;
+$body-font-color: #000000;
+$black: #000000;
+$lightgray-bg-color:#EDEDED;
+$img: "../../images/";
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1279px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+.annualreport{
+    margin-top:90px;
+    @media (min-width:375px) and (max-width:639px){
+        margin-top:60px;
+    }
+    .contentwrap{
+        background: $lightgray-bg-color;
+        padding-top: 45px;
+        padding-bottom: 55px;
+        p{
+            font-size:18px;
+            line-height:24px;
+            font-weight: 700;
+            padding-bottom:50px;
+        }
+    }
+    ul{
+        margin-left:0px;
+        column-count: 2;
+        @media (min-width:375px) and (max-width:639px){
+            column-count: 1;
+        }
+        @include breakpoint(large){
+            column-count: 3;
+        }
+        @include breakpoint(xlarge){
+            column-gap: 230px;
+        }
+        li{
+            margin-right:50px;
+            a{
+                color:#000000;
+                text-decoration: underline;
+                font-size:18px;
+                line-height: 35px;
+                font-weight: 700;
+            }
+        }
+    }
+}
+  

@@ -1,0 +1,166 @@
+@import "util/util";
+
+$white: #ffffff;
+$primary-color: #004986;
+$secondary-color: #B58412;
+$black: #000000;
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1279px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+$img: "../../images/";
+.alternativepanel{
+    margin-top:110px;
+    @include breakpoint(small only){
+        margin-top: 45px;
+    }	
+    @include breakpoint(medium only){
+        margin-top: 45px;
+    }
+    +.alternativepanel{
+        .alternative.right{
+            padding-top: 0px;
+            padding-bottom: 0px;
+        }
+    }
+    .alternative{
+        &.right{
+            padding-left: 0;
+            @media (max-width: 1023px){
+                padding-right: 0;     
+             }
+            .flexwrap{
+                flex-direction: row-reverse;
+                .imgWrap{
+                    padding-left:0px;
+                }
+            }
+            .contentwrap{
+                @include breakpoint(large only){
+                    padding-left: 35px;
+                    padding-right: 0px;
+                }
+                @include breakpoint(xlarge){
+                    margin-left: 76px;
+                }
+            }
+         
+        }
+        .flexwrap{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: nowrap;
+            @include breakpoint(small only){
+                flex-wrap: wrap;
+            }
+            .contentwrap{
+                max-width: 100%;
+                width: 100%;
+                order: 2;
+                margin-top: 33px;
+                @include breakpoint(medium){
+                    max-width: 50%;
+                    margin-right: 33px;
+                    margin-top: 0px;
+                    order: 1;
+                }
+                @include breakpoint(xlarge){
+                    max-width: 856px;
+                    margin-right: 93px;
+                }
+                h2{
+                    text-align: left;
+                    margin-bottom: 18px;
+                    padding-top: 10px;
+                    font-size: 28px;
+                    line-height:32px;
+                    font-weight: 600;
+                    color: $primary-color;
+                    margin-bottom: 7px;
+                    padding-top: 0px;
+                
+                    @include breakpoint(medium){
+                      
+                        margin-bottom: 10px;
+                        font-size: 38px;
+                        line-height: 40px;
+                    }
+                    @include breakpoint(xlarge){
+                      
+                        margin-bottom: 5px;
+                        font-size: 54px;
+                        line-height: 65px;
+                        margin-top: -10px;
+                    }
+                }
+                p{
+                    font-size: 16px;
+                    line-height: 22px;
+                    @include breakpoint(medium){
+                    font-size: 18px;
+                    line-height: 28px;
+                    }
+                    &:last-child{	
+                        padding-bottom: 40px;	
+                    }
+                }
+                p+p{
+                    margin-top:7px;
+                }
+                .ctabtn{
+                    margin-top: 35px;
+                }
+            }
+            .imgWrap{
+                order: 1;
+                min-width: 100%;
+                max-height: 100%;
+                overflow: hidden;
+                @include breakpoint(small only){
+                margin-left: -15px;
+                margin-right: -15px;
+                margin:0 auto;
+                }
+                @include breakpoint(medium){
+                    min-width: 50%;
+                    max-height: 406px;
+                    order: 2;
+                }
+                @include breakpoint(xlarge){
+                    min-width: 584px;
+                    max-width: 584px;
+                    max-height: 604px;
+                    height: 604px;
+                }
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    min-height: 387px;
+                }
+            }        
+        }
+    }  
+}
+@media print, screen and (min-width: 48em)
+{
+.alternativepanel .alternative.right .flexwrap .contentwrap {
+    margin-left: 33px;
+    margin-right:0px;
+}
+}
+@media screen and (min-width: 85em)
+{
+.alternativepanel .alternative.Left .flexwrap .contentwrap {
+    margin-right: 93px;
+    margin-left:0px;
+}
+.alternativepanel .alternative.right .flexwrap .contentwrap {
+    margin-left: 93px;
+    margin-right:0px;
+}
+}
