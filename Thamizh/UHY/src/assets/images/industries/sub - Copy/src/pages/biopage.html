@@ -1,0 +1,373 @@
+
+<div class="breadcrumbWrapBottom white" data-swiftype-index="false">
+    <div class="grid-container">
+        <ul class="breadcrumbs">
+                <li class="breadcrumb-item ">
+                    <a href="/" aria-label="Learn More - Home">Home</a>
+                </li>
+                <li class="breadcrumb-item ">
+                    Locations						
+                </li>
+                <li class="breadcrumb-item ">
+                    Bow Circle Branch						
+                </li>
+                <li class="breadcrumb-item ">
+                    Diana McDougall						
+                </li>
+        </ul>
+    </div>
+</div>
+ <link rel="stylesheet" href="{{root}}assets/css/teambiopanel/teambiopanel.css" media="all">
+<div class="teambiopanel module">
+    <div class="grid-container">
+    <div class="containerWrapper">
+    <div class="panelwrap">
+    <div class="imgwrap" id="team-img-1">
+        <div class="image-block">
+            <img alt="Diana" class="lazy" width="304" height="426" src="assets/images/biopage/Diana.jpg" style="">
+        </div>
+    </div>
+    <div class="cntwrap">
+    <div class="columncontent">
+    <h3>Diana McDougall</h3>
+    <h4>Regional President - Lowcountry, SC</h4>
+    <!-- <p>NMLS #:1024017</p> -->
+   
+    <div class="columncontactcontent biocontent">
+        <div class="contentwrap">
+            <p>
+                Steve Stone serves as President and Chief Executive Officer of CoastalSouth Bancshares, Inc. and Coastal States Bank. As CEO, Steve led the recapitalization of CoastalSouth in 2017 and is responsible for executing the business strategy that he and Tony Valduga implemented when they joined the bank. That strategy is focused on strong organic growth through CSB’s community banking line of business and specialized lending groups combined with mergers and acquisitions. Prior to joining Coastal States in 2017, he previously served as Chief Strategy Officer and General Counsel at Community & Southern Bank. Steve is responsible for mergers and acquisitions, strategic planning and special projects, and investor relations. Steve was formerly an attorney in the Financial Services and Products Group at the law firm of Alston & Bird, LLP in Atlanta, Georgia. While at Alston & Bird, Steve’s practice was focused primarily on public and private mergers and acquisitions and corporate finance transactions in the financial services industry. Steve received a Bachelor of Arts degree from the University of Virginia and received his law degree from the Washington College of Law at The American University, cum laude.
+            </p>
+        </div>
+    </div>
+    
+    <!-- <div class="columncontactcontent">
+    <div class="contact-address">
+       <p>5 Bow Circle</p>
+       <p>Hilton Head, SC 29928</p>
+       <p>Office: <a href="tel:(843) 341-9910">(843) 341-9910</a></p>
+       <p>Mobile:<a href="tel:(843) 304-6966">(843) 304-6966</a></p>
+      <p><a href="mailto:dmcdougall@coastalstatesbank.com">dmcdougall@coastalstatesbank.com</a></p>
+    </div>
+    <div class="contact-info">
+    <a href="tel:9735689465" class="callme" tabindex=0 role=button><span><img src="assets/images/icons/callbio.svg" alt="Call Me"></span>Call Me</a>
+    <a href="mailto:CMiller@columbiabankonline.com" class="emailme" tabindex=0 role=button><span><img src="assets/images/icons/mailbio.svg" alt="Call Me"></span>Email Me</a>
+    </div>
+    </div> -->
+</div>
+    </div>
+    </div>
+    <!-- <div class="contentwrap">
+        <p>
+            Diana has served on the management team for Coastal States Bank since the Bank’s inception in 2004. As the leader of the Retail Banking team, her responsibilities include retail and business banking, business development, retail sales and branch administration. Diana has more than 30 years of experience in and around the banking industry. She serves as Treasurer of the Zonta Club of Hilton Head as and is an active member of other community organizations
+        </p>
+    </div> -->
+    </div>
+    </div>
+</div>
+
+<link rel="stylesheet" href="{{root}}assets/css/testimonialpanel/testimonialpanel.css" media="all">
+<script src="{{root}}assets/scripts/heroslider/swiper.min.js" defer></script>
+<script src="assets/scripts/inlinevideo/custom-video.js" defer></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        if ($(".testimonialPanel .swiper .swiper-slide").length >= 1) {
+        var sliderDelay = $(".hdnAwardsSliderDelay").val();
+        var swiperCarousel = new Swiper('.carouselSlider', {
+        spaceBetween: 0,
+        loop: false,
+        preventClicks: true,
+        autoplay: {
+        delay: sliderDelay,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+        },
+        simulateTouch: false,
+        preloadImages: false,
+        lazy:true,
+        speed: 2500,
+        pagination: {
+        el: '.carouselSlider .swiper-pagination',
+        clickable: true
+        },
+        navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+        },
+        on: {  
+        slideChange: function() {
+               var getyoutubevalue = $('.swiper-slide-active').children('.videoBlock').find('figure').hasClass('youtubevideopanel');
+               var getvimeovalue = $('.swiper-slide-active').children('.videoBlock').find('figure').hasClass('vimeovideopanel');
+               var this_dataindex;
+               var this_datavimeoindex;
+               if (getyoutubevalue) {
+                   var pictureyoutubedata = $('.swiper-slide-active').children('.videoBlock').find('figure');
+                   this_dataindex = $(pictureyoutubedata).attr('data-index');
+                   if (this_dataindex) {
+                        YoutubeplayerList[this_dataindex].pauseVideo();
+                   }
+               }
+               if (getvimeovalue) {
+                   var picturevimeodata = $('.swiper-slide-active').children('.videoBlock').find('figure');
+                   this_datavimeoindex = $(picturevimeodata).attr('data-index');
+                   if (this_datavimeoindex) {
+                        VimeoplayerList[this_datavimeoindex].pause();
+                   }
+               }
+            },
+            afterInit: function() {
+                if($(".swiper-button-next").hasClass("swiper-button-disabled")){
+                    $(".swiper-button-next").removeClass("swiper-button-disabled");
+                    $(".swiper-button-next").attr("aria-disabled", "false");
+                }
+                if($(".swiper-button-prev").hasClass("swiper-button-disabled")){
+                    $(".swiper-button-prev").removeClass("swiper-button-disabled");
+                    $(".swiper-button-prev").attr("aria-disabled", "false");
+                }
+            },  
+        },
+        });
+        var pgClickswiper = 0;
+        $(".testimonials-swiper-button").on("click", function(e) {
+            e.preventDefault();
+            if (pgClickswiper == 0) {
+                swiperCarousel.autoplay.stop();
+                $(this).addClass("active");
+                pgClickswiper = 1;
+            } else {
+                swiperCarousel.autoplay.start();
+                $(this).removeClass("active");
+                pgClickswiper = 0;
+            }
+        });
+        $(".video-thumb-image").on("click", function (e) {
+            swiperCarousel.autoplay.stop();
+            $(".testimonials-swiper-button").addClass("active");
+        });
+        $('.textBlock').each(function(){
+            if($(this).hasClass('imagerender')) {
+                $(this).closest('.carouselSlider').addClass('imageSlider');
+            } 
+        });
+    }
+});
+</script>
+<div class="teambiopanel"></div>
+<div class="testimonialPanel">
+    <div class="grid-container">
+        <div class="flexWrap">
+            <div class="titleWrap">
+                <!-- <h2>
+                    <span class="font-72px" style="color: #B58412;">What Our</span> 
+                    <span class="font-48px" style="color: #B58412;">Valued Clients</span> 
+                    <span class="font-68px" style="color: #B58412;">Say About</span> 
+                    <span class="font-50px" style="color: #004986;">Coastal States</span> 
+                    <span class="font-133px" style="color: #004986;">Bank</span>
+                </h2> -->
+                <!-- <h2><span class="font-46px" style="color: rgb(190, 139, 19);">What Our Employees</span> <span class="font-45px" style="color: rgb(190, 139, 19);">Say About Working At</span> <span class="font-50px" style="color: rgb(0, 73, 134);">Coastal States Bank</span></h2> -->
+                <h2><span class="font-72px" style="color: rgb(190, 139, 19);">Paul's</span><br><span class="font-65px" style="color: rgb(0, 73, 134);">Testimonials</span></h2>
+            </div>
+            <div class="testiWrap">
+                <div class="swiper carouselSlider">
+                    <div class="swiper-wrapper">
+                        <input type="hidden" class="hdnAwardsSliderDelay" value="10000" />
+                        <div class="swiper-slide">
+                            <div class="textBlock imagerender">
+                                <div class="contentwrap">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                                    <p>- CSB Customer</p>
+                                </div>
+                                <div class="imgWrap">
+                                    <img src="{{root}}assets/images/testimonials.jpg" loading="lazy" width="374" height="374" alt="testimonial-1">
+                                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="textBlock withoutImageBlock">
+                                <div class="contentwrap">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                                    <p>- CSB Customer</p>
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="swiper-slide">
+                            <div class="textBlock withoutImageBlock">
+                                <div class="contentwrap">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                                    <p>- CSB Customer</p>
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="swiper-slide">
+                            <div class="textBlock withoutImageBlock">
+                                <div class="contentwrap">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                                    <p>- CSB Customer</p>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="flexBox">
+                        <a href="javascript:void(0)" class="swiper-button-prev"></a>
+                        <div class="swiper-pagination"></div>
+                        <a href="javascript:void(0)" class="testimonials-swiper-button" id="testimonials-play-slider">
+                            <span class="screen-reader-text">Play / Pause</span>
+                        </a> 
+                        <a href="javascript:void(0)" class="swiper-button-next"></a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<link rel="stylesheet" href="{{root}}assets/css/heroslider/swiper.min.css">
+<link rel="stylesheet" href="assets/css/communitypanel/communitypanel.css" media="all">
+<script src="{{root}}assets/scripts/heroslider/swiper.min.js" defer></script>
+<script type="text/javascript" defer>
+     $(document).ready(function () {
+                if ($(".communitypanel .swiper .swiper-slide").length > 1) {
+                    var sliderDelay = $(".sliderDelay").val();
+                    var swiperHomeBannerper = new Swiper('.community-slider', {
+                        autoplayDisableOnInteraction: true,
+                        loop: true,
+                        centeredSlides: true,
+                        slideToClickedSlide:true,
+                        autoplay: {
+                            delay: sliderDelay,
+                        },
+                        speed: 2500,
+                        breakpoints: {
+                            375: {
+                                spaceBetween: 0,
+                                slidesPerView: 1,
+                            },
+                            1023: {
+                                slidesPerView: 2.195,
+                                spaceBetween: 25,
+                            },
+                            1500: {
+                                slidesPerView: 2.195,
+                                spaceBetween: 75,
+                            },
+
+                        },
+                        // pagination: {
+                        //     el: '.swiper-pagination',
+                        //     clickable: true
+                        // },
+                    })
+                    // var pgClick = 0;
+                    // $(".swiper-button-play").click(function () {
+                    //     if (pgClick == 0) {
+                    //         swiperHomeBannerper.autoplay.stop();
+                    //         $(this).addClass("active");
+                    //         pgClick = 1;
+                    //     } else {
+                    //         swiperHomeBannerper.autoplay.start();
+                    //         $(this).removeClass("active");
+                    //         pgClick = 0;
+                    //     }
+                    // });
+                }
+            });
+</script>
+<div class="communitypanel">
+    <div class="grid-container">
+        <h2>How We Give Back</h2>
+    </div>
+    <div class="grid-container-full">
+        <div class="swiper community-slider">
+            <div class="swiper-wrapper">
+                <input type="hidden" class="sliderDelay" value="6000" />
+                <div class="swiper-slide">
+                    <div class="image-wrap">
+                        <div class="imagerow">
+                            <img class="image-block" src="{{root}}assets/images/biopage/communityimage.jpg" width="825" height="464" alt="communityimage">
+                        </div>
+                    <div class="content-block">
+                    <div class="image-content">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                    </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="image-wrap">
+                        <div class="imagerow">
+                            <img class="image-block" src="{{root}}assets/images/biopage/communityimage.jpg" width="825" height="464" alt="communityimage">
+                        </div>
+                        <div class="content-block">
+                        <div class="image-content">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="image-wrap">
+                        <div class="imagerow">
+                            <img class="image-block" src="{{root}}assets/images/biopage/communityimage.jpg" width="825" height="464" alt="communityimage">
+                        </div>
+                        <div class="content-block">
+                        <div class="image-content">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                        </div>
+                        </div>
+                    </div>
+                 
+                </div>
+                <div class="swiper-slide">
+                    <div class="image-wrap">
+                        <div class="imagerow">
+                            <img class="image-block" src="{{root}}assets/images/biopage/communityimage.jpg" width="825" height="464" alt="communityimage">
+                        </div>
+                        <div class="content-block">
+                        <div class="image-content">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                        </div>
+                        </div>
+                    </div>
+                
+                </div>
+                <div class="swiper-slide">
+                    <div class="image-wrap">
+                        <div class="imagerow">
+                            <img class="image-block" src="{{root}}assets/images/biopage/communityimage.jpg" width="825" height="464" alt="communityimage">
+                        </div>
+                        <div class="content-block">
+                        <div class="image-content">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                        </div>
+                        </div>
+                    </div>
+                 
+                </div>
+                <div class="swiper-slide">
+                 
+                    <div class="image-wrap">
+                        <div class="imagerow">
+                            <img class="image-block lazy" src="{{root}}assets/images/biopage/communityimage.jpg" width="825" height="464" alt="communityimage">
+                        </div>
+                     
+                        <div class="content-block">
+                        <div class="image-content">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                        </div>
+                        </div>
+                    </div>
+                  
+                </div>
+            </div>
+            <div class="flexBox">
+                    <div class="swiper-pagination"></div>
+                <!-- <a href="javascript:void(0)" class="swiper-button-play" id="play-slider">
+                    <span class="screen-reader-text">Play / Pause</span>
+                </a> -->
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,500 @@
+
+<link rel="stylesheet" href="assets/css/subbaner/subbaner.css">
+<div class="bannerpanel subbaner module">
+    <div class="homeBanner">
+        <div class="grid-container-fullwidth">
+            <div class="imagebg-shadow">
+                <div class="image-shadow"></div>
+            </div>
+            <div class="homeBannerSlider">
+                <div class="bannerwrap">
+                    <div class="imgWrap">
+                        <div class="filter-img">
+                            <img class="image-block" src="{{root}}assets/images/personal-banking/personal-banking-bg.jpg" width="1920" height="598" alt="slider-1">
+                        </div>
+                    </div>
+                    <div class="contentwrap ctawrap">
+                        <div class="content">
+                            <h1><b>Personal </b>Banking</h1>
+                            <p>All Coastal States Bank personal checking accounts offer convenient services that make banking easy.</p>
+                        </div>
+                    </div>
+                </div>            
+            </div>
+        </div>
+    </div>
+</div>
+<div class="breadcrumbWrapBottom module">
+    <div class="grid-container">
+        <ul class="breadcrumbs">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item">Personal</li>
+        </ul>
+    </div>
+</div>
+<link rel="stylesheet" href="{{root}}assets/css/heroslider/swiper.min.css">
+<link rel="stylesheet" href="{{root}}assets/css/testimonialpanel/testimonialpanel.css" media="all">
+<script src="{{root}}assets/scripts/heroslider/swiper.min.js" defer></script>
+<script src="assets/scripts/inlinevideo/custom-video.js" defer></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        if ($(".testimonialPanel .swiper .swiper-slide").length > 1) {
+        var sliderDelay = $(".hdnAwardsSliderDelay").val();
+        var swiperCarousel = new Swiper('.carouselSlider', {
+        autoplayDisableOnInteraction: true,
+        spaceBetween: 0,
+        loop: true,
+        autoplay: {
+        delay: sliderDelay,
+        disableOnInteraction: true,
+        },
+        simulateTouch: true,
+        preloadImages: false,
+        lazy:true,
+        speed: 2500,
+        pagination: {
+        el: '.carouselSlider .swiper-pagination',
+        clickable: true
+        },
+        navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+        },
+        on: {  
+        slideChange: function() {
+               var getyoutubevalue = $('.swiper-slide-active').children('.videoBlock').find('figure').hasClass('youtubevideopanel');
+               var getvimeovalue = $('.swiper-slide-active').children('.videoBlock').find('figure').hasClass('vimeovideopanel');
+               var this_dataindex;
+               var this_datavimeoindex;
+               if (getyoutubevalue) {
+                   var pictureyoutubedata = $('.swiper-slide-active').children('.videoBlock').find('figure');
+                   this_dataindex = $(pictureyoutubedata).attr('data-index');
+                   if (this_dataindex) {
+                        YoutubeplayerList[this_dataindex].pauseVideo();
+                   }
+               }
+               if (getvimeovalue) {
+                   var picturevimeodata = $('.swiper-slide-active').children('.videoBlock').find('figure');
+                   this_datavimeoindex = $(picturevimeodata).attr('data-index');
+                   if (this_datavimeoindex) {
+                        VimeoplayerList[this_datavimeoindex].pause();
+                   }
+               }
+            },
+        },
+        });
+        $(".carouselSlider").hover(function () {
+        (this).swiper.autoplay.stop();
+        }, function () {
+        (this).swiper.autoplay.start();
+        });
+        var mySwiper = document.querySelector('.carouselSlider').swiper
+        $(".carouselSlider").mouseenter(function() {
+            mySwiper.autoplay.stop();
+        });
+        
+        $(".carouselSlider").mouseleave(function() {
+            mySwiper.autoplay.start();
+        });
+        $('.textBlock').each(function(){
+            if($(this).hasClass('imagerender')) {
+                $(this).closest('.carouselSlider').addClass('imageSlider');
+            } 
+        });
+        }
+    });
+</script>
+<div class="testimonialPanel firstcontentpanel">
+    <div class="grid-container">
+        <div class="flexWrap">
+            <div class="titleWrap">
+                <h2>
+                    <span class="font-72px" style="color: #B58412;">We Help</span> 
+                    <span class="font-52px" style="color: #B58412;">Our Clients</span> 
+                    <span class="font-72px" style="color: #004986;">Succeed</span> 
+                    <span class="font-65px" style="color: #004986;">Everyday</span>
+                </h2>
+            </div>
+            <div class="testiWrap">
+                <div class="swiper carouselSlider">
+                    <div class="swiper-wrapper">
+                        <input type="hidden" class="hdnAwardsSliderDelay" value="6000" />
+                        <div class="swiper-slide">
+                            <div class="textBlock withoutImageBlock">
+                                <div class="contentwrap">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                                    <p>- CSB Customer</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="textBlock withoutImageBlock">
+                                <div class="contentwrap">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                                    <p>- CSB Customer</p>
+                                </div>
+                            </div>
+                        </div>
+                       
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<link rel="stylesheet" href="{{root}}assets/css/productslider/productslider.css" media="all">
+<script type="text/javascript" defer>
+$(document).ready(function () {
+    if ($(".personalswiperpanel .swiper .swiper-slide").length > 1) {
+            var swiperCarousel = new Swiper('.ProductSlider', {
+            centeredSlides: false,
+            slidesPerView: "4",
+            allowTouchMove: false,
+            preloadImages: false,
+            lazy:true,
+            navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                300: {
+                slidesPerView: 1,
+                },
+                768: {
+                slidesPerView: 3,
+                },
+                1024: {
+                slidesPerView: 4,
+                },
+            },
+        });
+        var swiperCarouselContent = new Swiper(".ProductContentSlider", {
+        slidesPerView: 4,
+        spaceBetween: 53,
+        allowTouchMove: false,
+        preloadImages: false,
+        lazy:true,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        thumbs: {
+            swiper: swiperCarousel,
+        },
+        breakpoints: {
+            300: {
+            slidesPerView: 1,
+            spaceBetween: 0,
+            },
+            768: {
+            slidesPerView: 3,
+            spaceBetween: 53,
+            },
+            1024: {
+            slidesPerView: 4,
+            spaceBetween: 21,
+            },
+            1280: {
+            slidesPerView: 4,
+            spaceBetween: 53,
+            },
+        },
+        });
+    }
+    var SwiperLength = $(".personalswiperpanel .ProductSlider .swiper-slide").length;
+    navswiper();
+        function navswiper(){
+            var windowSize = $(window).outerWidth();
+            //console.log(windowSize);
+
+            if (windowSize > 1023) {
+            //alert('Less than 960');
+            if (SwiperLength <= 4) {
+                    $('.personalswiperpanel .ProductSlider .swiper-button-prev').hide();
+                    $('.personalswiperpanel .ProductSlider .swiper-button-next').hide();
+                    $('.clicktext').hide();
+            } 
+            }
+            else {
+                if (SwiperLength >= 4) {
+                    $('.personalswiperpanel .ProductSlider .swiper-button-prev').show();
+                    $('.personalswiperpanel .ProductSlider .swiper-button-next').show();
+                    $('.clicktext').show();
+            }
+            }
+        }
+    $(window).resize(navswiper);
+        //    if (windowSize >= 1024) { 
+        //         console.log("1024");
+        //         if (SwiperLength <= 4) {
+        //             $('.personalswiperpanel .ProductSlider .swiper-button-prev').hide();
+        //             $('.personalswiperpanel .ProductSlider .swiper-button-next').hide();
+        //             $('.clicktext').hide();
+        //     } 
+        //     if (windowSize <= 1023) {
+        //         console.log("768");
+        //         if (SwiperLength >= 4) {
+        //             $('.personalswiperpanel .ProductSlider .swiper-button-prev').show();
+        //             $('.personalswiperpanel .ProductSlider .swiper-button-next').show();
+        //             $('.clicktext').show();
+        //     }
+        //     }
+        // }
+    
+    
+    // if ($(".personalproductpanel .ProductContentSlider .swiper-content").length > 0) {
+    //     productscontenthgt();
+    //     function productscontenthgt(){
+    //         heights = $(".personalproductpanel .ProductContentSlider .swiper-content").map(function ()
+    //         {
+    //             return $(this).height();
+    //         }).get();
+    //         maxHeight = Math.max.apply(null, heights);
+    //         $(".personalproductpanel .ProductContentSlider .swiper-content").css('height', maxHeight);
+
+    //         heightstitle = $(".personalproductpanel .ProductContentSlider .swiper-content .titleblock").map(function ()
+    //         {
+    //             return $(this).height();
+    //         }).get();
+    //         maxHeighttitle = Math.max.apply(null, heightstitle);
+    //         $(".personalproductpanel .ProductContentSlider .swiper-content .titleblock").css('height', maxHeighttitle);
+    //     }
+    //     $(window).on("resize", function (){
+    //         $(".personalproductpanel .ProductContentSlider .swiper-content").css('height', 'unset');
+    //         $(".personalproductpanel .ProductContentSlider .swiper-content .titleblock").css('height', 'unset');
+    //         setTimeout(function() {
+    //             productscontenthgt();
+    //         }, 500);
+    //     });
+    // }   
+});
+</script>
+<div class="personalproductpanel module">
+    <div class="grid-container">
+        <div class="headtitleblock">
+            <h2>Personal Products to Serve You</h2>
+            <div class="clicktext">
+                <p>Click Arrow to View More Products</p>
+            </div>
+        </div>
+    </div>
+    <div class="personalswiperpanel">
+        <div class="grid-container">
+            <div class="swiper ProductSlider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="swiper-list">
+                            <span>
+                                <img src="assets/images/personal-banking/online-account.svg" class="imagetoSVG" alt="Personal Checking">
+                            </span>
+                        </div>
+                        <div class="swiper-content">
+                            <div class="titleblock">
+                                <p>Home Builder 
+                                    Financing</p>
+                            </div>
+                            <div class="contentblock">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                                <div class="ctablock">
+                                    <a href="#" class="ctabtn secondarybtn" aria-label="Learn More Personal Checking">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="swiper-list">
+                            <span>
+                                <img src="assets/images/personal-banking/save-money.svg" class="imagetoSVG" alt="Personal Savings">
+                            </span>
+                        </div>
+                        <div class="swiper-content">
+                            <div class="titleblock">
+                                <p>Senior Housing 
+                                    Financing</p>
+                            </div>
+                            <div class="contentblock">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                                <div class="ctablock">
+                                    <a href="#" class="ctabtn secondarybtn" aria-label="Learn More Private Banking">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="swiper-list">
+                            <span>
+                                <img src="assets/images/personal-banking/profit.svg" class="imagetoSVG" alt="Personal Lending">
+                            </span>
+                        </div>
+                        <div class="swiper-content">
+                            <div class="titleblock">
+                                <p>Warehouse Lending</p>
+                            </div>
+                            <div class="contentblock">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                                <div class="ctablock">
+                                    <a href="#" class="ctabtn secondarybtn" aria-label="Learn More Personal Lending">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="swiper-slide">
+                        <div class="swiper-list">
+                            <span>
+                                <img src="assets/images/personal-banking/broker.svg" class="imagetoSVG" alt="Private Banking">
+                            </span>
+                        </div>
+                        <div class="swiper-content">
+                            <div class="titleblock">
+                                <p>Financial Institutions 
+                                    Group</p>
+                            </div>
+                            <div class="contentblock">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua </p>
+                                <div class="ctablock">
+                                    <a href="#" class="ctabtn secondarybtn" aria-label="Learn More Private Banking">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                    <!-- <div class="swiper-slide">
+                        <div class="swiper-list">
+                            <span>
+                                <img src="assets/images/personal-banking/broker.svg" class="imagetoSVG" alt="Private Banking">
+                            </span>
+                        </div>
+                        <div class="swiper-content">
+                            <div class="titleblock">
+                                <p>Digital Banking</p>
+                            </div>
+                            <div class="contentblock">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua </p>
+                                <div class="ctablock">
+                                    <a href="#" class="ctabtn secondarybtn" aria-label="Learn More Private Banking">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>  
+            <div thumbsSlider="" class="swiper ProductContentSlider">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="swiper-content">
+                        <div class="titleblock">
+                            <p>Home Builder 
+                                Financing</p>
+                        </div>
+                        <div class="contentblock">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                            <div class="ctablock">
+                                <a href="#" class="ctabtn secondarybtn" aria-label="Learn More Personal Checking">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="swiper-content">
+                        <div class="titleblock">
+                            <p>Senior Housing 
+                                Financing</p>
+                        </div>
+                        <div class="contentblock">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                            <div class="ctablock">
+                                <a href="#" class="ctabtn secondarybtn" aria-label="Learn More Personal Savings">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="swiper-content">
+                        <div class="titleblock">
+                            <p>Warehouse Lending</p>
+                        </div>
+                        <div class="contentblock">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                            <div class="ctablock">
+                                <a href="#" class="ctabtn secondarybtn" aria-label="Learn More Personal Lending">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                  <!-- <div class="swiper-slide">
+                    <div class="swiper-content">
+                        <div class="titleblock">
+                            <p>Financial Institutions 
+                                Group</p>
+                        </div>
+                        <div class="contentblock">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua </p>
+                            <div class="ctablock">
+                                <a href="#" class="ctabtn secondarybtn" aria-label="Learn More Private Banking">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                  </div> -->
+                  <!-- <div class="swiper-slide">
+                    <div class="swiper-content">
+                        <div class="titleblock">
+                            <p>Digital Banking</p>
+                        </div>
+                        <div class="contentblock">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua </p>
+                            <div class="ctablock">
+                                <a href="#" class="ctabtn secondarybtn" aria-label="Learn More Private Banking">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                  </div> -->
+                </div>
+              </div>    
+        </div>
+    </div>
+</div>
+<link rel="stylesheet" href="{{root}}assets/css/imageslicepanel/imageslicepanel.css" media="all">
+<div class="imageslicepanel right module">
+    <div class="grid-container">
+    <div class="flexwrap">
+        <div class="contwrap mobilewrap">                          
+            <h2>Leave Paper Statements and Clutter Behind</h2>
+        </div>
+        <div class="imgWrap">
+            <img data-src="{{root}}assets/images/personal-banking/4.jpg" alt="promo-1" class="lazy layzeloading" width="908" height="490">
+            <div class="overlay"></div>
+        </div>
+        <div class="leftwarp">
+            <div class="contwrap">                          
+                <h2>Leave Paper Statements and Clutter Behind</h2>
+                <p><small><b>Enroll in eStatements</b> - the safe, simple, and green way to view your statements and check images online.</small></p>
+                <a href="#" class="ctabtn secondarybtn">Explore eStatements</a>
+            </div>
+        </div>
+    </div>                     
+</div>
+</div>     
+<div class="imageslicepanel left module">
+    <div class="grid-container">
+    <div class="flexwrap">
+        <div class="contwrap mobilewrap">                          
+            <h2>The Power of Personal</h2>
+        </div>
+        <div class="imgWrap">
+            <img data-src="{{root}}assets/images/personal-banking/5.jpg" alt="promo-2" class="lazy layzeloading" width="908" height="490">
+            <div class="overlay"></div>
+        </div>
+        <div class="leftwarp">
+            <div class="contwrap">                          
+                <h2>The Power of Personal</h2>
+                <p><small>Life is easier with Digital Banking. Pay bills, transfer funds, and make deposits right from your desktop or mobile device.</small></p>
+                <a href="#" class="ctabtn secondarybtn">Learn More</a>
+            </div>
+        </div>
+    </div>                     
+</div>
+</div> 
+
+    

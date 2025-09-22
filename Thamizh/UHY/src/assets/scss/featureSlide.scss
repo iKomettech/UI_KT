@@ -1,0 +1,673 @@
+@import "util/util";
+$white: #ffffff;
+$primary-color: #007041;
+$img: "../../images/";
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    mlarge: 1199px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+
+.featureSlidePanel {
+    position: relative;
+    margin-top: 71px;
+    background: #DCE7E4;
+    padding: 27px 0 25px;
+
+    @include breakpoint(large) {}
+
+    @include breakpoint(large) {
+        margin-top: 70px;
+
+        padding: 28px 0 0px;
+    }
+ 
+
+    .testiTitle{
+        margin-bottom: 0;  
+        h2, p{
+            line-height: 32px;
+            @include breakpoint(xlarge){
+                line-height: 55px;
+            }
+        }
+    }
+
+    .gridContainer {
+        max-width: 1500px;
+        margin: 0 auto;
+        overflow: hidden;
+        position: relative;
+        @media screen and (max-width:1023px) {
+            padding: 0 10px;
+        }
+
+        .features {
+            padding-top: 10px;
+            @include breakpoint(large){
+                padding-top: 20px;
+            }
+            .carouselcontainer {
+
+                padding: 0;
+
+                @include breakpoint(large) {
+                    padding: 20px 0px 40px;
+                }
+                @include breakpoint(llarge) {
+                    padding: 40px 0px 70px;
+                }
+
+                .featureSlider { 
+
+                    .navBox {
+
+                        .swiper-button-prev {
+                            top: var(--swiper-navigation-top-offset, 28%);
+                            width: calc(var(--swiper-navigation-size) / 36* 17);
+                            left: 20px;
+
+                            @include breakpoint(medium) {
+                                top: var(--swiper-navigation-top-offset, 33%);
+                            }
+
+                            @include breakpoint(large) {
+                                top: var(--swiper-navigation-top-offset, 50%);
+                                width: calc(var(--swiper-navigation-size) / 44* 27);
+                                left: 0px;
+                            }
+                            @include breakpoint(llarge) { 
+                                left: 10px;
+                            }
+                            @include breakpoint(xlarge) {
+                                top: var(--swiper-navigation-top-offset, 50%); 
+                                left: 20px;
+                            }
+
+                            @media (min-width:500px) and (max-width:767px) {
+                                top: var(--swiper-navigation-top-offset, 28%);
+
+                            }
+
+                            &::after {
+                                background: url('#{$img}settings/arrow-dropleft.svg') no-repeat;
+                            }
+                            &:hover,
+                            &:target,
+                            &:focus {
+                                &::after {
+                                    background: url('#{$img}/settings/arrow-fillleft.svg') no-repeat;
+                                    background-size: contain;
+                                }
+
+                            }
+
+                        }
+
+                        .swiper-button-next {
+                            top: var(--swiper-navigation-top-offset, 28%);
+                            width: calc(var(--swiper-navigation-size) / 36* 17);
+                            right: 20px;
+
+                            @media (min-width:500px) and (max-width:767px) {
+                                top: var(--swiper-navigation-top-offset, 28%);
+
+                            }
+
+                            @include breakpoint(medium) {
+                                top: var(--swiper-navigation-top-offset, 33%);
+                            }
+
+                            @include breakpoint(large) {
+                                top: var(--swiper-navigation-top-offset, 50%);
+                                width: calc(var(--swiper-navigation-size) / 44* 27);
+                                right: 10px;
+                            }
+                            @include breakpoint(xlarge) {
+                                top: var(--swiper-navigation-top-offset, 50%); 
+                                right: 20px;
+                            }
+
+                            &::after {
+                                background: url('#{$img}settings/arrow-dropright.svg') no-repeat;
+                            }
+                            &:hover,
+                            &:target,
+                            &:focus {
+                                &::after {
+                                    background: url('#{$img}/settings/arrow-fillright.svg') no-repeat;
+                                    background-size: contain;
+                                }
+
+                            }
+                        }
+
+                        .swiper-button-prev::after,
+                        .swiper-button-next::after {
+                            content: '' !important;
+                            background-size: contain;
+                            width: 27px;
+                            height: 38px;
+                        }
+                    }
+
+                    .bulltedBox {
+                        position: relative;
+                        height: 0;
+
+                        .swiper-pagination {
+                            text-align: inherit;
+                        }
+
+                        .swiper-pagination-bullet {
+                            width: 13px;
+                            height: 13px;
+                            display: inline-block;
+                            border: 1px solid #005844;
+                            background: transparent;
+                            opacity: 1;
+
+                            @include breakpoint(large) {
+                                width: 18px;
+                                height: 18px;
+                            }
+
+                            @include breakpoint(xlarge) {
+                                width: 23px;
+                                height: 23px;
+                            }
+                        }
+
+                        .swiper-pagination-bullet-active {
+                            background: #015844;
+                        }
+
+                        .swiper-pagination-bullets.swiper-pagination-horizontal {
+                            top: -45px;
+                            width: 100%;
+                            text-align: center;
+
+                            @include breakpoint(large) {
+                                left: 43.75%;
+                                top: -15px;
+                                width: 89%;
+                                // text-align: inherit;
+                                text-align: left;
+                            }
+                            @media screen and (min-width:1200px) {
+                                left: 38.75%;
+                            }
+
+
+                            @include breakpoint(mlarge) {
+                                top: -15px;
+                                // left: 460px;
+                            }
+                            @include breakpoint(xlarge) { 
+                                // width: 100%;
+                                // left: 40.5%;
+                            }
+                        }
+                    }
+
+
+                    .cardBlock {
+                        position: relative;
+                        padding: 122px 0 0;
+                
+                        @include breakpoint(large) {
+                            padding: 33px 0 30px;
+                            width: 90%;
+                            margin: 0 auto;
+                        }
+                
+                        .flexdiv {
+                            display: flex;
+                            flex-direction: column;
+                            background: #fff;
+                            filter: drop-shadow(0px 3px 20px rgba(0, 0, 0, .16));
+                            position: relative;
+                            border-radius: 20px;
+                
+                            @include breakpoint(large) {
+                                flex-direction: row;
+                                background: linear-gradient(270deg, #fff 85%, transparent 80%);
+                                border-radius: 30px;
+                            }
+                
+                            @include breakpoint(xlarge) {
+                
+                                background: linear-gradient(270deg, #fff 80%, transparent 80%);
+                            }
+                
+                            .lftBlock {
+                                width: 100%;
+                
+                                @include breakpoint(large) {
+                
+                                    width: 41%;
+                                }
+                                @media screen and (min-width:1200px) {
+                                    width: 36%;
+                                }
+                                @include breakpoint(xlarge) {
+                
+                                    width: 37.75%;
+                                }
+                                a{
+                                    width: 100%;
+                                    height: 100%;
+                                    display: block;
+                                    &:hover{
+                                        .video-image{
+                                            &::after{
+                                                content: unset;
+                                            }
+                                        }
+                                    }
+                                }
+                                .imgCard {
+                                    position: absolute;
+                                    top: -115px;
+                                    left: 50%;
+                                    max-width: 237px;
+                                    background: #fff;
+                                    padding: 10px;
+                                    width: 100%;
+                                    border-radius: 50%;
+                                    overflow: hidden;
+                                    transform: translate(-50%, 0);
+                
+                                    @include breakpoint(large) {
+                                        left: -10px;
+                                        top: -35px;
+                                        max-width: 345px;
+                                        padding: 15px;
+                                        transform: inherit;
+                                        z-index: -1;
+                                    }
+                                    @media screen and (min-width:1200px) {
+                                        top: -40px;
+                                    }
+                
+                                    @include breakpoint(llarge) {
+                                        left: 0;
+                                        top: -60px;
+                                        max-width: 405px;
+                                        padding: 20px;
+                                    }
+                
+                                    @include breakpoint(xlarge) {
+                                        left: 0;
+                                        top: -60px;
+                                        max-width: 410px;
+                                        padding: 25px;
+                                    }
+                
+                                    .imgWrap {
+                                        border-radius: 50%;
+                                        overflow: hidden;
+                                        filter: drop-shadow(0px 3px 10px rgba(0, 0, 0, .25));
+                                        transition: all .5s ease;
+                                        position: relative;
+                
+                                        img {
+                                            width: 100%;
+                                        }
+
+                                         
+                                    }
+
+                                    .video-image {
+                                        height: 100%;
+                
+                                        &.loaded {
+                                            display: block;
+                                            visibility: visible;
+                                            opacity: 1;
+                
+                                            &::before,
+                                            &::after {
+                                                display: none;
+                                            }
+                
+                                            iframe {
+                                                display: block;
+                                                visibility: visible;
+                                                opacity: 1;
+                                            }
+                                        }
+                
+                                        iframe {
+                                            display: none;
+                                            opacity: 0;
+                                            visibility: hidden;
+                                            position: absolute;
+                                            top: 0;
+                                            left: 0;
+                                            right: 0;
+                                            bottom: 0;
+                                            width: 100%;
+                                            height: 100%; 
+                                        }
+                
+                                        &.loading {
+                                            &:before {
+                                                position: absolute;
+                                                top: 50%;
+                                                left: 50%;
+                                                content: "";
+                                                border-radius: 100%;
+                                                border: 5px solid;
+                                                border-top-color: $secondary-color;
+                                                border-bottom-color: $primary-color;
+                                                border-left-color: $secondary-color;
+                                                border-right-color: $primary-color;
+                                                -webkit-animation: spin 1s ease-in-out infinite;
+                                                animation: spin 1s ease-in-out infinite;
+                                                -webkit-animation-delay: -0.8s;
+                                                animation-delay: -0.8s;
+                                                width: 60px;
+                                                height: 60px;
+                                                margin: -29px 0 0 -26px;
+                                                -webkit-transition: none;
+                                                transition: none;
+                                                background-image: none;
+                                            }
+                
+                                            &::after {
+                                                content: "";
+                                                display: block;
+                                                height: 100%;
+                                                position: absolute;
+                                                top: 0;
+                                                left: 0;
+                                                width: 100%;
+                                                z-index: 1;
+                                                background-color: rgba(37, 32, 32, 0.4);
+                                                background-image: none;
+                                                margin: 0px;
+                                                -webkit-transition: none;
+                                                transition: none;
+                                                transition: none;
+                                            }
+                                        }
+                
+                                        &::before {
+                                            content: "";
+                                            position: absolute;
+                                            top: 0;
+                                            bottom: 0;
+                                            left: 0;
+                                            right: 0;
+                                            margin: auto;
+                                            width: 45px;
+                                            height: 45px;
+                                            background-image: url("#{$img}/settings/play-icon.svg");
+                                            background-size: cover;
+                                            background-repeat: no-repeat;
+                                            cursor: pointer;
+                                            -webkit-transition: all 0.3s;
+                                            transition: all 0.3s;
+                                            z-index: 9;
+                
+                                            @include breakpoint(medium) {
+                                                width: 65px;
+                                                height: 65px;
+                                            }
+                
+                                            @include breakpoint(large) {
+                                                width: 90px;
+                                                height: 90px;
+                                            }
+                
+                                            @include breakpoint(xlarge) {
+                                                width: 110px;
+                                                height: 110px;
+                                            }
+                                        }
+                
+                                        &::after {
+                                            content: "";
+                                            position: absolute;
+                                            width: 100%;
+                                            height: 100%;
+                                            top: 0;
+                                            bottom: 0;
+                                            left: 0;
+                                            right: 0;
+                                            background-color: rgba(0, 0, 0, 0.20);
+                                        }
+                
+                                        &:hover {
+                                            &::before {
+                                                transform: scale(0.85);
+                                            }
+                
+                                            &::after {
+                                                opacity: 0;
+                                            }
+                
+                                        }
+                                    }
+                                }
+                            }
+                
+                            .rgtBlock {
+                                width: 100%;
+                
+                                @include breakpoint(large) {
+                                    width: 59%;
+                                    min-height: 300px;
+                                }
+                                @include breakpoint(llarge) {
+                                    min-height: 340px;
+                                }
+                
+                                .cardSec {
+                                    padding: 150px 15px 20px;
+                                    // text-align: center;
+                                    position: relative;
+                
+                                    @include breakpoint(large) {
+                                        text-align: left;
+                                        padding: 15px 10px 15px 20px;
+                                        max-width: 615px;
+                                    }
+                
+                                    @include breakpoint(llarge) {
+                                        max-width: 715px;
+                                    }
+                
+                                    @include breakpoint(xlarge) {
+                                        padding: 28px 10px 21px 0;
+                                        max-width: 765px;
+                                    }
+                
+                                    .flxCol {
+                                        display: flex;
+                                        gap: 14px;
+                                        align-items: center;
+                                        margin-bottom: 2px;
+                                        justify-content: center;
+                
+                                        @include breakpoint(large) {
+                                            justify-content: flex-start;
+                                            margin-bottom: 6px;
+                                        }
+                
+                                        .dateCol {
+                                            p {
+                                                font-size: 15px;
+                                                font-family: 'mundial';
+                                                line-height: 18px;
+                                                color: #000;
+                                                font-weight: normal;
+                                            }
+                                        }
+                
+                                        .secTit {
+                                            p {
+                                                font-size: 17px;
+                                                font-family: 'mundial';
+                                                line-height: 20px;
+                                                color: #5BA23F;
+                                                font-weight: 700;
+                                            }
+                                        }
+                                    }
+                
+                                    .cardTitle {
+                                        p, a {
+                                            font-family: 'mundial';
+                                            font-size: 20px;
+                                            line-height: 24px;
+                                            font-weight: 600;
+                                            color: #000;
+                                            margin-bottom: 15px;
+                                            text-align: center;
+                                            display: block;
+                                            @include breakpoint(large) {
+                                                text-align: left;
+                                                font-size: 18px;
+                                                line-height: 22px;
+                                            }
+                
+                                            @include breakpoint(llarge) {
+                                                font-size: 28px;
+                                                line-height: 33px;
+                                                margin-bottom: 11px;
+                                            }
+                                        }
+                                        @include breakpoint(small only){
+                                            margin-bottom: 18px;
+                                        }
+                                    }
+                
+                                    .cardDesc {
+                                        p {
+                                            margin-bottom: 32px;
+                                            font-weight: 400;
+                                            font-size: 18px;
+                                            line-height: 24px;
+                                            font-family: 'mundial';
+                
+                                            @include breakpoint(large) {
+                                                font-size: 15px;
+                                                line-height: 20px;
+                                                margin-bottom: 22px;
+                                                // word-wrap: break-word;
+                                                // -webkit-box-orient: vertical;
+                                                // display: -webkit-box;
+                                                // -webkit-line-clamp: 4;
+                                                // overflow: hidden;
+                                            }
+                
+                                            @include breakpoint(llarge) {
+                                                margin-bottom: 26px;
+                                                font-size: 18px;
+                                                line-height: 24px;
+                                            }
+                
+                                            +p{
+                                                display: none;
+                                            }
+                                        }
+                                    }
+                
+                                    .goIcon {
+                                        margin-right: 2px;
+                                        width: 35px;
+                                        height: 35px;
+                                        // float: right;
+                                        // margin-bottom: 15px;
+
+                                        // position: absolute;
+                                        // bottom: 25px;
+                
+                                        // @include breakpoint(large) {
+                                        //     position: inherit;
+                                        //     bottom: inherit;
+                                        // }
+                
+                                        @include breakpoint(llarge) {
+                                            margin-right: 6px;
+                                            width: 45px;
+                                            height: 45px;
+                                            margin-bottom: 0;
+                                        }
+                
+                                        i {
+                                            background: url('#{$img}industries/search-go.svg') no-repeat;
+                                            background-size: contain;
+                                            width: 35px;
+                                            height: 35px;
+                                            display: block;
+                                            // position: absolute;
+                                            font-size: 0;
+                                            bottom: 10px;
+                                            right: 10px;
+                                            cursor: pointer;
+                                            transition: all .45s;
+                                            position: absolute;
+                                            bottom: 25px;
+                                            @include breakpoint(large) {
+                                                position: inherit;
+                                                bottom: 10px;
+                                            }
+                                            @include breakpoint(llarge) {
+                                                width: 45px;
+                                                height: 45px;
+                                            }
+                                        }
+                                    }
+                
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+// .signifyPanel .lftImg.topLeft {
+//     width: 43.5%;
+// }
+
+// .signifyPanel .lftImg.topLeft .imageWrap {
+//     transform: skew(-26deg, 0deg);
+//     transform-origin: top left;
+// }
+
+// .signifyPanel .lftImg.topLeft .imageWrap img {
+//     transform: skew(26deg, 0deg);
+//     transform-origin: top left;
+// }
+
+// .segmentPanel .flex .rgtImg.topRight {width: 56.5%;}
+
+// .segmentPanel .flex .rgtImg.topRight .imageWrap {
+//     transform: skew(-24deg, 0deg);
+//     transform-origin: bottom left;
+// }
+
+// .segmentPanel .flex .rgtImg.topRight .imageWrap img {
+//     transform-origin: bottom left;
+//     transform: skew(24deg, 0deg);
+// }
+
+// .segmentPanel.topRight .flex .signiFile {
+//     margin-right: -13%;
+// }

@@ -1,0 +1,164 @@
+@import "util/util";
+$white: #ffffff;
+$primary-color: #004986;
+$secondary-color: #B58412;
+$img: "../../images";
+.sitemap{
+  ul:empty{
+    display: none;
+  }
+  ul{
+  margin:0px 0px 10px 5px
+  }
+  .group{
+    @include breakpoint(medium only) {
+    column-count: 1; 
+    margin-top: 30px;
+    }
+    @include breakpoint(large only) {
+      column-gap: 50px;
+    }
+   @include breakpoint(small only) {
+    column-count: 1; 
+    margin-top: 30px;
+   }
+   .heading-title 
+   {
+    @include breakpoint(medium only) {
+      text-align: left;
+    }
+    &:after{
+      @include breakpoint(medium only) {
+        left: 0;
+      }
+    }
+    h3{
+      font-size: 38px;
+      line-height: 65px;
+      color: $primary-color;
+      margin-bottom: 40px;
+      font-family: 'SourceSerif';
+      @include breakpoint(large only) {
+        column-gap: 50px;
+        font-size: 28px;
+        line-height: 40px;
+      }
+      @include breakpoint(medium only) {
+        font-size: 28px;
+        line-height: 30px;
+      }
+      @include breakpoint(small only) {
+        font-size: 25px;
+        line-height: 28px;
+        text-align: left;
+        
+      }
+      a{
+        &:hover{
+          text-decoration: unset;
+        }
+      }
+    }
+    }
+    h4{
+      font-size: 24px;
+      line-height: 34px;
+      font-weight: 500;
+      margin-bottom:20px;
+    }
+  }
+  .item-one{
+    .item{
+      break-inside: avoid;
+      column-count: 1;
+      @include breakpoint(large) {
+        column-count: 1;
+        column-gap: 100px;
+        margin-top: 0px;
+      }
+    }
+
+  }
+  .item{
+    break-inside: avoid;
+    column-count: 1;
+    @include breakpoint(medium) {
+      column-count: 2;
+      column-gap: 50px;
+      margin-top: 0px;
+    }
+    @include breakpoint(xlarge) {
+      column-count: 3;
+      column-gap: 50px;
+      margin-top: 0px;
+    }
+    @include breakpoint(xxlarge) {
+      column-count: 4;
+      column-gap: 100px;
+      margin-top: 0px;
+    }
+    @include breakpoint(small only) {
+      width: 100%;  
+    }
+    .desc{
+      margin-bottom: 35px;
+      ul{
+        margin-left:0px;
+        li{
+          padding-left: 0px;
+          margin-bottom: 26px;
+         a{
+           font-size:17px;
+           line-height:22px; 
+         
+           &:hover{
+            text-decoration: none;
+         } 
+         }
+         &::before{
+          content:unset;
+         }
+       }
+      }
+    }
+  }
+.heading-title 
+{
+ margin-bottom: 18px;
+ @include breakpoint(small only) {
+   text-align: left;
+   margin-left:0px;
+ } 
+ &:after{
+   @include breakpoint(small only) {
+     text-align: left;
+     margin-left:0px;
+     left:0px; 
+   } 
+ }
+
+}
+hr{
+  border-bottom:3px solid $secondary-color;
+  margin-bottom:35px;
+}
+h2{
+  font-size:36px;
+  line-height:35px; 
+  margin-top: 30px;
+  margin-bottom:60px;
+  color: $primary-color;
+   @include breakpoint(small only) {
+     text-align: left;
+     margin-left:0px;
+     &:after{
+       left:0px;
+     }
+   }
+   @include breakpoint(large) {
+    font-size:56px;
+    line-height:65px; 
+  }
+ }
+}
+

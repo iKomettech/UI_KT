@@ -1,0 +1,492 @@
+@import "util/util";
+$white: #ffffff;
+$primary-color: #007041;
+$img: "../../images/";
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+.testiTitle {
+    p, h2 {
+        font-size: 25px;
+        line-height: 36px;
+        font-weight: 700;
+        font-family: 'mundial';
+        text-align: center;
+        color: #00362A;
+
+        @include breakpoint(large) {
+            line-height: 55px;
+            text-align: left;
+            font-size: 48px;
+        }
+    }
+
+    margin-bottom: 25px;
+
+    @include breakpoint(xlarge) {
+        margin-bottom: 40px;
+    }
+}
+
+.laedParent {
+    // .advisoryPanel {
+    //     .flexWrapTeam {
+    //         display: flex;
+    //         flex-wrap: wrap;
+    //         gap: 25px;
+    //         justify-content: center;
+
+    //         @media (min-width:1024px) and (max-width:1027px) {
+    //             gap: 15px;
+    //         }
+
+    //         @include breakpoint(large) {
+    //             justify-content: space-between;
+    //             row-gap: 35px;
+    //         }
+
+    //         @include breakpoint(xlarge) {
+    //             gap: 80px;
+    //         }
+
+    //         .bioBlock {
+    //             position: relative;
+    //             width: 300px;
+    //             height: 534px;
+    //             border-radius: 15px;
+    //             overflow: hidden;
+    //             background: #fff;
+    //             // border: 1px solid #015844;
+    //             filter: drop-shadow(0 3px 20px rgba(0, 0, 0, .16));
+    //             // width: 100%;
+
+    //             // @include breakpoint(small only) {
+
+    //             //     width: 278px;
+    //             // }
+
+    //             // @media (min-width:640px) and (max-width:767px) {
+    //             //     width: 281px;
+    //             // }
+
+    //             // @include breakpoint(medium) {
+    //             //     height: 281px;
+    //             // }
+
+    //             // @include breakpoint(xlarge) {
+    //             //     height: 534px;
+
+    //             // }
+
+    //             .ctablock {
+    //                 background: #DCE7E4;
+    //                 position: absolute;
+    //                 width: 100%;
+    //                 left: 0;
+    //                 height: 44px;
+    //                 bottom: 0px;
+    //                 // border-radius: 0px 0px 20px 20px;
+    //                 overflow: hidden;
+    //                 padding-top: 6px;
+
+    //                 @include breakpoint(medium) {
+    //                     height: 49px;
+    //                     padding-top: 0;
+    //                 }
+
+    //                 .goIcon {
+    //                     width: 31px;
+    //                     height: 31px;
+    //                     margin-right: 3px;
+
+    //                     @include breakpoint(medium) {
+    //                         margin-right: 6px;
+    //                         width: 31px;
+    //                         height: 31px;
+    //                     }
+
+    //                     i {
+    //                         background: url('#{$img}/industries/search-go.svg') no-repeat;
+    //                         background-size: contain;
+    //                         width: 31px;
+    //                         height: 31px;
+    //                         display: block;
+    //                         position: absolute;
+    //                         font-size: 0;
+    //                         top: 8px;
+    //                         right: 9px;
+    //                         cursor: pointer;
+    //                         transition: all .45s;
+
+    //                         @include breakpoint(medium) {
+    //                             width: 31px;
+    //                             height: 31px;
+    //                         }
+
+    //                         &:hover {
+    //                             margin-right: 4px;
+    //                         }
+    //                     }
+    //                 }
+
+    //                 .bioSocial {
+    //                     display: flex;
+    //                     margin-left: 0;
+    //                     margin-top: 7px;
+
+    //                     @include breakpoint(large) {
+    //                         margin-top: 13px;
+    //                     }
+
+    //                     li {
+    //                         padding-left: 9px;
+
+    //                         &:first-child {
+    //                             padding-left: 12px;
+    //                         }
+
+    //                         &::before {
+    //                             content: inherit;
+    //                         }
+
+    //                         a {
+    //                             svg {
+    //                                 width: 19px;
+    //                                 height: 19px;
+    //                             }
+    //                         }
+
+    //                         &:first-child {
+    //                             padding-left: 15px;
+    //                         }
+    //                     }
+    //                 }
+
+    //             }
+
+    //             .imgWrap {
+    //                 overflow: hidden;
+
+    //                 img {
+    //                     width: 100%;
+    //                 }
+    //             }
+
+    //             .bioSection {
+    //                 padding: 4px 15px 5px;
+
+    //                 .bioTitle {
+    //                     p {
+    //                         font-size: 24px;
+    //                         font-weight: 700;
+    //                         line-height: 38px;
+    //                         font-family: 'mundial';
+    //                         color: #005844;
+    //                         margin-bottom: 6px;
+    //                     }
+    //                 }
+
+    //                 .bioContent {
+    //                     ul {
+    //                         margin-left: 1px;
+
+    //                         li {
+    //                             line-height: 22px;
+    //                             font-size: 15px;
+    //                             font-weight: 400;
+    //                             font-family: 'mundial';
+    //                             color: #000;
+    //                             margin-bottom: 0;
+    //                             padding-left: 0;
+
+    //                             &::before {
+    //                                 content: inherit;
+    //                             }
+    //                         }
+    //                     }
+    //                 }
+    //             }
+    //         }
+
+    //     }
+    // }
+    position: relative;
+    .advisoryPanel{
+        margin-top: 60px;
+        @include breakpoint(llarge){
+            margin-top: 85px;} 
+    }
+    .leadPanel{
+        margin-top: 60px;
+        @include breakpoint(llarge){
+            margin-top: 85px;}
+    }
+    .leadPanel, .advisoryPanel {
+        .gdContainer{
+            @media (min-width:663px) and (max-width:1023px) {
+                max-width: 625px;
+                margin: 0 auto; 
+            }
+        }
+        .flexWrapTeam {
+            display: flex;
+            flex-wrap: wrap;
+            min-width: 100%;
+            max-width: 100%;
+            gap: 25px;
+            justify-content: center;
+
+            @media (min-width:1024px) and (max-width:1027px) {
+                // gap: 15px;
+            }
+            
+
+        @media (min-width:663px) and (max-width:1023px) {
+            max-width: 625px;
+            margin: 0 auto;
+            justify-content: flex-start;
+        }
+            @include breakpoint(large) { 
+                justify-content: flex-start;
+                gap: inherit;
+                row-gap: 35px;
+            }
+
+            @include breakpoint(xlarge) {
+                row-gap: 80px;
+            }
+
+            .outBio {
+                width: 300px;
+                margin-right: 0;
+                border-radius: 15px;
+                overflow: hidden;
+                background: #fff;
+                position: relative;
+                // border: 1px solid #015844;
+                filter: drop-shadow(0 3px 20px rgba(22, 22, 22, .25));
+
+                @include breakpoint(large only) {
+                    &:nth-child(3n+3) {
+                        margin-right: 0;
+                    }}
+                @include breakpoint(large) {
+                    width: 30.68%;
+                    margin-right: 3.48%;
+                }
+
+                @include breakpoint(llarge) {
+                    width: 20.834%;
+                    margin-right: 5.55%; 
+                     &:nth-child(4n+4) {
+                        margin-right: 0;
+                    }
+                }
+
+                .bioBlock {
+                    // position: relative;
+                    width: 100%;
+                    height: auto;
+                    // width: 100%;
+
+                    // @include breakpoint(small only) {
+
+                    //     width: 278px;
+                    // }
+
+                    // @media (min-width:640px) and (max-width:767px) {
+                    //     width: 281px;
+                    // }
+
+                    // @include breakpoint(medium) {
+                    //     height: 281px;
+                    // }
+
+                    // @include breakpoint(xlarge) {
+                    //     height: 534px;
+
+                    // }
+
+                    .ctablock {
+                        background: #DCE7E4;
+                        position: absolute;
+                        width: 100%;
+                        left: 0;
+                        height: 44px;
+                        bottom: 0px;
+                        // border-radius: 0px 0px 20px 20px;
+                        overflow: hidden;
+                        padding-top: 6px;
+
+                        @include breakpoint(medium) {
+                            height: 49px;
+                            padding-top: 0;
+                        }
+
+                        .goIcon {
+                            width: 31px;
+                            height: 31px;
+                            margin-right: 3px;
+
+                            @include breakpoint(medium) {
+                                margin-right: 6px;
+                                width: 31px;
+                                height: 31px;
+                            }
+
+                            i {
+                                background: url('#{$img}/industries/search-go.svg') no-repeat;
+                                background-size: contain;
+                                width: 31px;
+                                height: 31px;
+                                display: block;
+                                position: absolute;
+                                font-size: 0;
+                                top: 8px;
+                                right: 9px;
+                                cursor: pointer;
+                                transition: all .45s;
+
+                                @include breakpoint(medium) {
+                                    width: 31px;
+                                    height: 31px;
+                                }
+
+                                &:hover {
+                                    margin-right: 4px;
+                                }
+                            }
+                        }
+
+                        .bioSocial {
+                            display: flex;
+                            margin-left: 0;
+                            margin-top: 7px;
+
+                            @include breakpoint(large) {
+                                margin-top: 13px;
+                            }
+
+                            li {
+                                padding-left: 9px;
+
+                                &:first-child {
+                                    padding-left: 12px;
+                                }
+
+                                &::before {
+                                    content: inherit;
+                                }
+
+                                a {
+                                    svg {
+                                        width: 19px;
+                                        height: 19px;
+                                    }
+                                }
+
+                                &:first-child {
+                                    padding-left: 15px;
+                                }
+                            }
+                        }
+
+                    }
+
+                    .imgWrap {
+                        overflow: hidden;
+
+                        img {
+                            width: 100%;
+                        }
+                    }
+
+                    .bioSection {
+                        padding: 4px 15px 72px;
+
+                        .bioTitle {
+                            p {
+                                font-size: 24px;
+                                font-weight: 700;
+                                line-height: 38px;
+                                font-family: 'mundial';
+                                color: #005844;
+                                margin-bottom: 6px;
+                            }
+                        }
+
+                        .bioContent {
+                            min-height: 68px;
+                            p{
+                                
+                                line-height: 22px;
+                                font-size: 15px;
+                                font-weight: 400;
+                                font-family: 'mundial';
+                                color: #000;
+                                margin-bottom: 0;
+                                padding-left: 0;
+                            }
+                            ul {
+                                margin-left: 1px;
+
+                                li {
+                                    line-height: 22px;
+                                    font-size: 15px;
+                                    font-weight: 400;
+                                    font-family: 'mundial';
+                                    color: #000;
+                                    margin-bottom: 0;
+                                    padding-left: 0;
+
+                                    &::before {
+                                        content: inherit;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+              
+            }
+
+        }
+    }
+    .patternTop{
+        .pattern{
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: -1;  
+            display: none;
+            @include breakpoint(large){
+                display: block; 
+                right: -2%;
+                top: -10%;}
+            @include breakpoint(llarge){
+                right: -8%;
+                top: -17%;}
+        }
+    }
+    .patternBottom{
+        .pattern {
+            display: none;
+            @include breakpoint(large){
+                display: block;
+                bottom: -6%;
+                left: -9%;
+            }
+            position: absolute;
+            bottom: 0;
+            left: -9%;
+            z-index: -1; 
+        }
+    }
+}

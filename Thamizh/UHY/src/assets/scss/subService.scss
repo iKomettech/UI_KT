@@ -1,0 +1,74 @@
+@import "util/util";
+$white: #ffffff;
+$primary: #007041;
+$primary-color: #007041;
+$img: "../../images/";
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+.testiTitle {
+    p, h2 {
+        font-size: 25px;
+        line-height: 32px;
+        font-weight: 700;
+        font-family: 'mundial';
+        text-align: center;
+        color: #00362A;
+
+        @include breakpoint(large) {
+            text-align: left;
+            font-size: 48px;
+            line-height: 55px;
+        }
+    }
+
+    margin-bottom: 20px;
+
+    @include breakpoint(xlarge) {
+        margin-bottom: 40px;
+    }
+}
+
+.parentDiv{
+    position: relative;
+        .pattern{
+            display: none;
+            position: absolute;    
+            top: 20%;
+            min-width: 501px;
+            left: -19%;
+            z-index: -1;
+            z-index: -1;
+            @include breakpoint(medium){
+                display: block;
+                top: -5%;
+                left: -5%;
+            } 
+            @include breakpoint(medium){
+                top: -18%;
+                left: -5%; 
+            }
+            @include breakpoint(llarge){
+                top: -34%;
+                left: -10%;
+            }
+            img{
+               width: 100%;
+               height: 100%;
+               @include breakpoint(large){ 
+                max-width: 1023px;
+                max-height: 1100px;}
+                @include breakpoint(xlarge){
+                    max-width: 1451px;
+                    max-height: 1525px;
+                }
+            }
+        }
+    
+}

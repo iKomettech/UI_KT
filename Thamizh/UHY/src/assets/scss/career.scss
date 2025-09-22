@@ -1,0 +1,334 @@
+@import "util/util";
+$white: #ffffff;
+$primary-color: #007041;
+$img: "../../images/";
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+
+
+
+.testiTitle {
+
+    p,
+    h2 {
+        font-size: 25px;
+        line-height: 30px;
+        font-weight: 700;
+        font-family: 'mundial';
+        text-align: left;
+        color: #00362A;
+
+
+
+        @include breakpoint(large) {
+            text-align: left;
+            font-size: 48px;
+            line-height: 55px;
+        }
+    }
+
+    margin-bottom: 25px;
+
+    @include breakpoint(xlarge) {
+        margin-bottom: 45px;
+    }
+}
+.positionPanel {
+    margin-top: 70px;
+
+    @include breakpoint(large) {
+        margin-top: 90px;
+    }
+
+    @include breakpoint(xlarge) {
+        margin-top: 110px;
+    }
+
+    .twoFlex {
+        display: flex;
+        gap: 25px;
+        justify-content: space-between;
+        flex-direction: column;
+
+        @include breakpoint(medium) {
+            flex-direction: row;
+        }
+        @include breakpoint(large){
+            gap: 30px;
+        }
+
+        .leftCard {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0 0 0 90px;
+            box-shadow:  0 3px 20px rgba(0, 0, 0, .25);
+            @include breakpoint(large) {
+                border-radius: 0 0 0 120px;
+            }
+
+            @include breakpoint(llarge) {
+                border-radius: 0 0 0 200px;
+            }
+
+            .imgBlock {
+                overflow: hidden;
+                border-radius: 0 0 0 90px;
+
+                @include breakpoint(large) {
+                    border-radius: 0 0 0 120px;
+                }
+
+                @include breakpoint(llarge) {
+                    border-radius: 0 0 0 200px;
+                }
+                &:not(:hover){
+                &::before {
+                    transition: all .3s ease;
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    top: 0;
+                    height: 100%;
+                    background: linear-gradient(135deg, black, transparent);
+                    border-radius: 0 0 0 90px;
+
+                    @include breakpoint(large) {
+                        border-radius: 0 0 0 120px;
+                    }
+
+                    @include breakpoint(llarge) {
+                        border-radius: 0 0 0 200px;
+                    }
+                }}
+                // &:hover{
+                //     transition: all .5s ease;
+                //     &::before{
+                //         content: inherit;
+                //     }
+                // }
+            }
+
+            .ctaBlock {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+
+                .cusCta {
+                    display: block;
+                    height: 54px;
+                    width: 159px;
+                    background: #E8EDEC;
+                    color: #01362A;
+                    font-weight: 600;
+                    font-size: 20px;
+                    line-height: 19px;
+                    text-align: center;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 25px 0 0 0;
+                    margin-bottom: 0;
+                    @include breakpoint(large) {
+                        height: 107px;
+                        width: 315px;
+                        font-size: 40px;
+                        line-height: 38px;
+                        text-align: left;
+                        padding: 15px;
+                        padding-left: 40px;
+                        border-radius: 50px 0 0 0;
+                    }
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+
+        .rightCard {
+            position: relative;
+            overflow: hidden;
+            box-shadow:  0 3px 20px rgba(0, 0, 0, .25);
+            border-radius: 0 90px 0 0;
+
+
+            @include breakpoint(large) {
+                border-radius: 0 120px 0 0;
+            }
+
+            @include breakpoint(llarge) {
+                border-radius: 0 200px 0 0;
+            }
+
+            .imgBlock {
+                overflow: hidden;
+                border-radius: 0 90px 0 0;
+
+
+                @include breakpoint(large) {
+                    border-radius: 0 120px 0 0;
+                }
+
+                @include breakpoint(llarge) {
+                    border-radius: 0 200px 0 0;
+                }
+                
+                &:not(:hover){
+                &::before {
+                    transition: all .3s ease-in-out;
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    top: 0;
+                    height: 100%;
+                    background: linear-gradient(135deg, black, transparent);
+                    border-radius: 0 90px 0 0;
+
+                    @include breakpoint(large) {
+                        border-radius: 0 120px 0 0;
+                    }
+
+                    @include breakpoint(llarge) {
+                        border-radius: 0 200px 0 0;
+                    }
+
+                }}
+            }
+
+            .ctaBlock {
+                position: absolute;
+                left: 0;
+                bottom: 0;
+
+                .cusCta {
+                    display: block;
+                    height: 54px;
+                    width: 159px;
+                    background: #E8EDEC;
+                    color: #01362A;
+                    font-weight: 600;
+                    font-size: 20px;
+                    line-height: 19px;
+                    text-align: center;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 0 25px 0 0;
+                    margin-bottom: 0;
+
+                    @include breakpoint(large) {
+                        height: 107px;
+                        width: 315px;
+                        font-size: 40px;
+                        line-height: 38px;
+                        padding: 30px;
+                        border-radius: 0 50px 0 0;
+                    }
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.ourValuesPanel{
+    margin-top: 70px;
+    @include breakpoint(large){
+        margin-top: 90px;
+    }
+    @include breakpoint(xlarge){
+        margin-top: 110px;
+    }
+    .valueCards{
+        @include breakpoint(xlarge){
+            max-width: 1345px;
+            margin: 0 auto;
+        }
+        .flexCards{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            @media (min-width:600px) and (max-width: 767px)  { 
+                gap: 10px;
+            }
+            @media screen and (min-width: 768px)  { 
+                gap: 10px;
+                justify-content: space-between;
+            }
+            @include breakpoint(xxlarge){
+                gap: 0;
+                justify-content: inherit;
+            }
+            .listCard{
+                @media screen and (max-width: 599px)  { 
+                    width: 100%;
+                }
+                @media (min-width:600px) and (max-width: 767px)  { 
+                    width: 48%;
+                }
+                @media screen and (min-width: 768px)  { 
+                    width: 23.75%;
+                }
+                @include breakpoint(large){
+                    width: 24%;
+                }
+                @include breakpoint(xxlarge){
+                    width: 20.75%;
+                    margin-right: 5.666%;}
+                    &:nth-child(4n + 4){
+                        @include breakpoint(medium){
+                            margin-right: 0;
+                        }
+                    }
+                .iconCard{
+                    img{
+                        width: 100%;
+                    }
+                }
+                .contentCard{
+                    padding: 10px 20px;
+                    @include breakpoint(medium){
+                        padding: 10px 15px; 
+                    }
+                    @include breakpoint(large){
+                        padding: 10px 10px; 
+                    }
+                    @include breakpoint(llarge){
+                        padding: 15px 15px; 
+                    }
+                    p{  
+                        font-size: 18px;
+                        line-height: 24px;
+                        font-weight: 400;
+                        color: #000;
+                        @media (min-width:600px) and (max-width: 1023px)  { 
+                           
+                            font-size: 16px;
+                            line-height: 20px;}
+                    }
+                    h3{
+                        font-size: 22px;
+                        line-height: 24px;
+
+                        @include breakpoint(llarge){
+                            font-size: 30px;
+                            line-height: 30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

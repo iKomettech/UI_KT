@@ -1,0 +1,339 @@
+
+<link rel="stylesheet" href="assets/css/subbaner/subbaner.css">
+<div class="bannerpanel subbaner module">
+    <div class="homeBanner">
+        <div class="grid-container-fullwidth">
+            <div class="imagebg-shadow">
+                <div class="image-shadow"></div>
+            </div>
+            <div class="homeBannerSlider">
+                <div class="bannerwrap">
+                    <div class="imgWrap">
+                        <div class="filter-img">
+                            <img class="image-block" src="{{root}}assets/images/lifestage/life-sates-bg.jpg" width="1920" height="598" alt="slider-1">
+                        </div>
+                    </div>
+                    <div class="grid-container">
+                        <div class="contentwrap">
+                            <div class="content">
+                                <h1><b>Personal </b>Banking</h1>
+                                <p>All Coastal States Bank personal checking accounts offer convenient services that make banking easy.</p>
+                                <div class="ctablock">
+                                    <a href="#" class="ctabutton account_btn ctabtn secondarybtn" aria-label="Find a Branch">
+                                        Find a Branch
+                                    </a>
+                                    <a href="#" class="ctabutton account_btn ctabtn secondarybtn" aria-label="Open Account">
+                                       Open Account
+                                    </a>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>            
+            </div>
+        </div>
+    </div>
+</div>
+<div class="breadcrumbWrapBottom module">
+    <div class="grid-container">
+        <ul class="breadcrumbs">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">Business Life Stages</a></li>
+        </ul>
+    </div>
+</div>
+<link rel="stylesheet" href="{{root}}assets/css/heroslider/swiper.min.css">
+<link rel="stylesheet" href="{{root}}assets/css/lifestagepanel/lifestagepanel.css" media="all">
+<script src="{{root}}assets/scripts/tabpanel/easy-responsive-tabs.js" defer></script>
+<script src="assets/scripts/heroslider/swiper.min.js" defer></script>
+<script type="text/javascript" defer>
+$(document).ready(function () {
+    $('.tabpanel').easyResponsiveTabs({
+        type: 'default',        
+        width: 'auto',
+        fit: true,  
+        closed: 'accordion',
+        tabidentify: 'tab_identifier_child', 
+        activate: function(event) { 
+        var $tab = $(this);
+        var $info = $('#tabInfo');
+        var $name = $('span', $info);
+        $name.text($tab.text());
+        $info.show();
+        }
+    });
+    if ($(".lifestageswiperpanel .swiper .swiper-slide").length > 1) {
+        var swiperCarousel = new Swiper('.lifestageSlider', {
+            centeredSlides: true,
+            slidesPerView: "2.2",
+            allowTouchMove: true,
+            preloadImages: false,
+            spaceBetween: 24,
+            lazy:true,
+            loop:false,
+            navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+            },
+            // thumbs: {
+            // swiper: swiperCarouselContent,
+            // },
+            // on: {  
+            //     reachEnd: function() {
+            //         //console.log("hi");
+            //         $('.swiper-button-first').show();
+            //         $('.swiper-button-first').on('click', function (e){
+            //             swiperCarousel.slideTo(0, 100, false);
+            //             $('.swiper-button-first').hide();
+            //         });
+            //     }
+            // }
+        });
+        var swiperCarouselContent = new Swiper(".lifestageContentSlider", {
+        spaceBetween: 0,
+        allowTouchMove: true,
+        preloadImages: false,
+        lazy:true,
+        autoHeight: true,
+        loop:false,
+        // navigation: {
+        //     nextEl: ".swiper-button-next",
+        //     prevEl: ".swiper-button-prev",
+        // },
+        // on: {  
+        //         reachEnd: function() {
+        //             //console.log("hi");
+        //             $('.swiper-button-first').on('click', function (e){
+        //                 swiperCarouselContent.slideTo(0, 100, false);
+        //             });
+        //         }
+        //     }
+        });
+        swiperCarousel.controller.control = swiperCarouselContent;
+        swiperCarouselContent.controller.control = swiperCarousel;
+        // swiperCarousel.addEventListener("touchmove", { 
+            
+        //  });
+    }
+});
+</script>
+<div class="lifestagepanel">
+    <div class="lifestagetitle module">
+        <div class="grid-container">
+            <h2>We are Here for You</h2>
+            <p>Whether you are starting a business, growing your client base, expanding to new areas, or just maintaining your thriving business, we service it all:</p>
+        </div>
+    </div>
+    <div class="tabpanel greybgpanel module">
+        <div class="grid-container">
+        <div class="tabpasection">
+            <ul class="resp-tabs-list" role="tablist" aria-label="Product Tabs">
+            <li role="tab"> 
+                <span>
+                    <img src="{{root}}assets/images/lifestage/icon-meter.svg" class="imagetoSVG" alt="Starting Out">       
+                    <p>Starting Out</p>
+                </span>
+            </li>
+            <li role="tab">
+               <span>
+                <img src="{{root}}assets/images/lifestage/icon-growing.svg" class="imagetoSVG" alt="Growing">
+                <p>Growing</p>
+               </span>
+            </li>
+            <li role="tab">
+                <span>
+                    <img src="{{root}}assets/images/lifestage/icon-expansion.svg" class="imagetoSVG" alt="Expanding">
+                    <p>Expanding</p>
+                </span>
+            </li>
+            <li role="tab">
+                <span>
+                    <img src="{{root}}assets/images/lifestage/icon-growing-business.svg" class="imagetoSVG" alt="Flourishing">
+                    <p>Flourishing</p>
+                </span>
+            </li>
+            </ul>
+            <div class="resp-tabs-container">
+                <div class="tabblock module">
+                    <div class="tabimagecontent">
+                        <div class="tabtext">
+                            <p>You have an idea and need capital to start building your future and jumpstart your business. Our dedicated team is here to service those needs; see the list of products below that can get you started:</p>
+                        </div>
+                        <div class="tabimage">
+                            <img data-src="{{root}}assets/images/lifestage/map_location.png" class="lazy layzeloading" width="523" height="347" alt="Starting Out Map">
+                        </div>
+                    </div>
+                    <div class="taColumnBlock">
+                        <div class="tabBoxBlock module">
+                            <div class="titleblock">
+                                <p>Commercial Loans</p>
+                            </div>
+                            <div class="imageblock">
+                                <img data-src="{{root}}assets/images/lifestage/tab-box-image-1.jpg" class="lazy layzeloading" width="703" height="315" alt="Commercial Loans Box Image" >
+                            </div>
+                            <div class="contentblock">
+                                <div class="contentsection">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                    <div class="ctablock">
+                                        <div class="ctasection">
+                                            <a href="#" class="readmorecta" aria-label="Learn More Commercial Loans">Learn More<span class="icon"></span></a>
+                                            <a href="#" class="readmorecta" aria-label="Learn More Commercial Loans">Learn More<span class="icon"></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tabBoxBlock module">
+                            <div class="titleblock">
+                                <p>Small Business Loans</p>
+                            </div>
+                            <div class="imageblock">
+                                <img data-src="{{root}}assets/images/lifestage/tab-box-image-2.jpg" class="lazy layzeloading" width="703" height="315" alt="Commercial Loans Box Image" >
+                            </div>
+                            <div class="contentblock">
+                                <div class="contentsection">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                                    <div class="ctablock">
+                                        <div class="ctasection">
+                                            <a href="#" class="readmorecta" aria-label="Learn More Small Business Loans">Compare Cards<span class="icon"></span></a>
+                                            <a href="#" class="readmorecta" aria-label="Learn More Commercial Loans">Apply Today<span class="icon"></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tabBoxBlock module">
+                            <div class="titleblock">
+                                <p>Small Business Checking</p>
+                            </div>
+                            <div class="imageblock">
+                                <img data-src="{{root}}assets/images/lifestage/tab-box-image-3.jpg" class="lazy layzeloading" width="703" height="315" alt="Commercial Loans Box Image" >
+                            </div>
+                            <div class="contentblock">
+                                <div class="contentsection">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                    <div class="ctablock">
+                                        <div class="ctasection">
+                                            <a href="#" class="readmorecta" aria-label="Learn More Small Business Loans">Explore Positive Pay Today<span class="icon"></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tabBoxBlock module">
+                            <div class="titleblock">
+                                <p>Business Credit Cards</p>
+                            </div>
+                            <div class="imageblock">
+                                <img data-src="{{root}}assets/images/lifestage/tab-box-image-4.jpg" class="lazy layzeloading" width="703" height="315" alt="Commercial Loans Box Image" >
+                            </div>
+                            <div class="contentblock">
+                                <div class="contentsection">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                    <div class="ctablock">
+                                        <div class="ctasection">
+                                            <a href="#" class="readmorecta" aria-label="Learn More Small Business Loans">Learn More<span class="icon"></span></a>
+                                        </div>
+                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tabblock">
+                    <div class="tabimagecontent">
+                        <div class="tabtext">
+                            <p>adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, </p>
+                        </div>
+                        <div class="tabimage">
+                            <img data-src="{{root}}assets/images/lifestage/map_location.png" class="lazy" width="523" height="347" alt="Growing Map">
+                        </div>
+                    </div>
+                </div>
+                <div class="tabblock">
+                    <div class="tabimagecontent">
+                        <div class="tabtext">
+                            <p> quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, </p>
+                        </div>
+                        <div class="tabimage">
+                            <img data-src="{{root}}assets/images/lifestage/map_location.png" class="lazy" width="523" height="347" alt="Expanding Map">
+                        </div>
+                    </div>
+                </div>
+                <div class="tabblock">
+                    <div class="tabimagecontent">
+                        <div class="tabtext">
+                            <p>et dolore magnam aliquam quaerat voluptatem. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, </p>
+                        </div>
+                        <div class="tabimage">
+                            <img data-src="{{root}}assets/images/lifestage/map_location.png" class="lazy" width="523" height="347" alt="Flourishing Map">
+                        </div>
+                    </div>
+                </div>    
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="lifestageswiperpanel greybgpanel module">
+        <div class="grid-container">
+            <div class="swiper lifestageSlider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="swiper-list">
+                            <span>
+                                <img src="assets/images/lifestage/icon-meter.svg" class="imagetoSVG" alt="Starting Out">       
+                                <p>Starting Out</p>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="swiper-list">
+                            <span>
+                                <img src="assets/images/lifestage/icon-growing.svg" class="imagetoSVG" alt="Growing">
+                                <p>Growing</p>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="swiper-list">
+                            <span>
+                                <img src="assets/images/lifestage/icon-expansion.svg" class="imagetoSVG" alt="Expanding">
+                                <p>Expanding</p>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="swiper-list">
+                            <span>
+                                <img src="assets/images/lifestage/icon-growing-business.svg" class="imagetoSVG" alt="Flourishing">
+                                <p>Flourishing</p>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-prev swiper-button-first" style="display: none;"></div>
+            </div>  
+            <div thumbsSlider="" class="swiper lifestageContentSlider">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="swiper-content"></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="swiper-content"></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="swiper-content"></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="swiper-content"></div>
+                  </div>
+                </div>
+              </div>    
+        </div>
+    </div>
+</div>
+
+
+    

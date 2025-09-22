@@ -1,0 +1,300 @@
+@import "util/util";
+$white: #ffffff;
+$primary-color: #00362A;
+$lightgray-bg-color:#EDEDED;
+$breakpoints: (
+  small: 0,
+  medium: 768px,
+  large: 1024px,
+  llarge: 1280px,
+  xlarge: 1360px,
+  xxlarge: 1440px,
+);
+.breadcrumbWrapBottom {
+    @include breakpoint(small only) {
+      display: none;
+    }
+    padding-top: 35px;
+    padding-bottom: 15px;
+    @include breakpoint(llarge) {
+      padding-top: 64px;
+    }
+    position: relative;
+    z-index: 9;
+    .breadcrumbs{
+        margin-bottom: 0;
+    }
+    li.breadcrumb-item {
+      font-size: 16px;
+      text-transform: inherit;
+      color:$primary-color;
+      font-weight: 400;
+      line-height: 20px;
+      margin-bottom: 0;
+      a {
+        font-size: 16px;
+        color: $primary-color;
+        line-height: 20px;
+      }
+      &:not(:last-child)::after {
+        content: "";
+        margin: 0 6px;
+      }
+    }
+  }
+ .sitemapheading{
+  margin-top: 40px;
+  @include breakpoint(llarge) {
+    margin-top: 80px;
+  }
+   h1{
+     font-size: 35px;
+     line-height: 45px;
+     font-weight: 700;
+     color: $primary-color;
+     @include breakpoint(medium) {
+      font-size: 40px;
+      line-height: 50px;
+     }
+     @include breakpoint(large) {
+      font-size: 45px;
+      line-height: 55px;
+     }
+     @include breakpoint(llarge) {
+      font-size: 65px;
+      line-height: 75px;
+     }
+   }
+ } 
+ .col-1 {
+  margin-bottom: 56px !important;
+}
+.col-1 .heading-title {
+  margin-bottom: 16px !important;
+}
+.group.item-one .heading-title, .group.item-one .heading-title h3{
+  margin-bottom: 0 !important;
+}
+.col-1 .heading-title h4 {
+  @include breakpoint(large) {
+    margin-top: 28px !important;
+  }
+}
+.col-1 .desc {
+  margin-bottom: 0 !important;
+}
+.sitemap{
+  margin-top: 40px;
+  @include breakpoint(llarge) {
+    margin-top: 80px;
+  }
+  ul:empty{
+    display: none;
+  }
+  ul{
+  margin:0px 0px 10px 5px
+  }
+  .group{
+    @include breakpoint(medium only) {
+    column-count: 1; 
+    }
+    @include breakpoint(large only) {
+      column-gap: 50px;
+    }
+   @include breakpoint(small only) {
+    column-count: 1; 
+   }
+   .heading-title 
+   {
+    @include breakpoint(medium only) {
+      text-align: left;
+    }
+    &:after{
+      @include breakpoint(medium only) {
+        left: 0;
+      }
+    }
+    a{
+      &:hover{
+        color: $primary-color;
+      }
+    }
+    h3{
+      font-size: 48px;
+      line-height: 75px;
+      color: $primary-color;
+      margin-bottom: 23px;
+      font-weight: 700;
+      max-width: 300px;
+      position: relative; 
+      @include breakpoint(large only) {
+        font-size: 34px;
+        line-height: 40px;
+        padding-bottom: 10px;
+      }
+      @include breakpoint(medium only) {
+        font-size: 28px;
+        line-height: 30px;
+        margin-bottom: 16px;
+      }
+      @include breakpoint(small only) {
+        font-size: 25px;
+        line-height: 28px;
+        margin-bottom: 10px;
+      }
+      a{
+        &:hover{
+          text-decoration: unset;
+        }
+      }
+      // &::after{
+      //   content: '';
+      //   position: absolute;
+      //   background: #84BD00;
+      //   width: 86px;
+      //   height: 9px;
+      //   left: 0;
+      //   bottom:-4px;
+      //   @include breakpoint(small only) {
+      //     height: 5px;
+      //     bottom: 2px;
+      //   }
+      // }
+    }
+    }
+    h4{
+      font-size: 18px;
+      line-height: 24px;
+      font-weight: 400;
+      color: #015844;
+      margin-bottom:0px;
+      margin-top: 20px;
+      @include breakpoint(medium) {
+        font-size: 20px;
+        line-height: 25px;
+        margin-top: 20px;
+      }
+      @include breakpoint(large) {
+        font-size: 24px;
+        line-height: 34px;
+      }
+      @include breakpoint(llarge) {
+        font-size: 35px;
+        line-height: 35px;
+        margin-block: 28px;
+      }
+    }
+  }
+  .item-one{
+    .item{
+      break-inside: avoid;
+      column-count: 1;
+      @include breakpoint(large) {
+        column-count: 1;
+        column-gap: 100px;
+        margin-top: 0px;
+      }
+    }
+
+  }
+  .item{
+    break-inside: avoid;
+    column-count: 1;
+    @include breakpoint(medium) {
+      column-count: 2;
+      column-gap: 90px;
+      margin-top: 0px;
+    }
+    @include breakpoint(small only) {
+      width: 100%;  
+    }
+    @include breakpoint(xxlarge){
+      width: 70%;
+    }
+    .desc{
+      margin-bottom: 42px;
+      ul{
+        margin-left:0px;
+        li{
+          padding-left: 0px;
+          margin-bottom: 8px;
+          @include breakpoint(llarge) {
+            margin-bottom: 21px;
+          }
+         a{
+           font-size:16px;
+           line-height:24px;
+           font-weight: 600; 
+           @include breakpoint(large) {
+            font-size: 20px;
+            line-height: 24px;
+           }
+           @include breakpoint(llarge) {
+            font-size: 24px;
+            line-height: 28px;
+           }
+           &:hover{
+            color: #2d2d2d;
+            text-decoration: underline;
+         } 
+         }
+         &::before{
+          content:unset;
+         }
+       }
+      }
+      +.heading-title {
+        margin-top: 43px ;
+    }
+    }
+  }
+.heading-title 
+{
+ margin-bottom: 48px;
+ @include breakpoint(small only) {
+   text-align: left;
+   margin-left:0px;
+   margin-bottom: 18px;
+ } 
+ @include breakpoint(medium only) {
+  margin-bottom: 18px;
+ }
+ &:after{
+   @include breakpoint(small only) {
+     text-align: left;
+     margin-left:0px;
+     left:0px; 
+   } 
+ }
+
+}
+hr{
+  border-bottom:3px solid $secondary-color;
+  margin-bottom:35px;
+}
+h2{
+  font-size:36px;
+  line-height:35px; 
+  margin-top: 30px;
+  margin-bottom:60px;
+  color: $primary-color;
+   @include breakpoint(small only) {
+     text-align: left;
+     margin-left:0px;
+     &:after{
+       left:0px;
+     }
+   }
+   @include breakpoint(large) {
+    font-size:56px;
+    line-height:65px; 
+  }
+ }
+}
+
+.sitemap .item .desc + .desc {
+  margin-bottom: 8px;
+  @include breakpoint(large) {
+    margin-bottom: 18px;
+  }
+}

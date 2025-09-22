@@ -1,0 +1,2498 @@
+<link rel="stylesheet" href="{{root}}assets/css/bannerPanel/bannerPanel.css">
+<div class="header-overlay">
+    <picture>
+        <source media="(min-width:320px) and (max-width:430px)"
+            srcset="{{root}}assets/images/settings/header-overlay-mobile.svg" type="image/jpg">
+        <source media="(min-width:431px) and (max-width:1023px)"
+            srcset="{{root}}assets/images/settings/header-overlay.svg" type="image/jpg">
+        <source media="(min-width:1024px) and (max-width:1279px)"
+            srcset="{{root}}assets/images/settings/header-overlay-tablet.svg" type="image/jpg">
+        <source media="(min-width: 1280px)" srcset="{{root}}assets/images/settings/header-overlay.svg" type="image/jpg">
+        <img src="{{root}}assets/images/settings/header-overlay.svg" alt="UHY header-overlay" />
+    </picture>
+</div>
+
+<div class="industriesPanel module come-in">
+    <picture>
+        <source media="(min-width:320px) and (max-width:480px)" srcset="../assets/images/industries/sub/service.jpg"
+            type="image/jpg">
+        <img src="../assets/images/industries/sub/services.jpg" width="1920" height="554" alt="banner" loading="lazy"
+            class="lazy">
+    </picture>
+    <div class="grid-container">
+        <div class="indTitle">
+            <h1>Services</h1>
+        </div>
+    </div>
+</div>
+
+
+<div class="breadcrumbWrapBottom module come-in " data-swiftype-index="false">
+    <div class="grid-container">
+        <ul class="breadcrumbs">
+            <li class="breadcrumb-item ">
+                <a href="/" aria-label="Home">Home</a>
+            </li>
+            <li class="breadcrumb-item ">Services</li>
+        </ul>
+    </div>
+</div>
+
+
+<link rel="stylesheet" href="{{root}}assets/css/overviewCard/overviewCard.css">
+<div class="expertisePanel module come-in">
+    <div class="grid-container">
+        <div class="expertbanner">
+            <div class="insideData">
+                <div class="expertTitle">
+                    <p>A 360° VIEW OF YOUR BUSINESS</p>
+                </div>
+                <div class="expertDesc">
+                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
+                        ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
+                        ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<link rel="stylesheet" href="{{root}}assets/css/services/services.css">
+<script type="text/javascript" defer>
+    $(document).ready(function () {
+        $('.cardBorder1 a, .cardBorder2 a, .cardBorder3 a, .cardBorder4 a').click(function (event) {
+            event.preventDefault();
+            var tabId = $(this).attr('id');
+            console.log(tabId);
+            switchTab(tabId); 
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.substr(1) + ']');
+            if (target.length) {
+                $('html,body').animate({
+                    scrollTop: target.offset().top - $("header").height() - 50
+                }, 500);
+                return false;
+            }
+        });
+        function switchTab(tabId) {
+            $('.resp-tab-item').removeClass('resp-tab-active');
+            $('.resp-tab-item[aria-controls="' + tabId + '"]').addClass('resp-tab-active');
+            
+            // $('.resp-accordion').removeClass('resp-tab-content-active');
+            // $('.resp-accordion[aria-controls="' + tabId + '"]').addClass('resp-tab-content-active'); 
+            $('.tabblock').removeClass('resp-tab-content-active').css({
+                'display': 'none'
+            });
+            $('.tabblock[id="' + tabId + '"]').addClass('resp-tab-content-active').css({
+                'display': 'flex '
+            }); 
+        } 
+    })
+</script>
+<div class="svgPanel module come-in">
+    <div class="grid-container">
+        <div class="bgPanel">
+            <img src="../assets/images/industries/sub/intersection.svg" class="imagetoSVG " width="1450" height="1524"
+                alt="bgPattern">
+        </div>
+        <div class="flexdiv">
+            <div class="lftBlock">
+                <div class="cardBorder1">
+                    <a href="#grow" id="tab_item-0">
+                        <div class="cardBlock1">
+                            <div class="cdTitle">
+                                <p>Grow</p>
+                            </div>
+                            <div class="cdDesc">
+                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                                    tempor
+                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+                                    accusam
+                                    et justo duo</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="cardBorder2">
+                    <a href="#transform" id="tab_item-2">
+                        <div class="cardBlock2">
+                            <div class="cdTitle">
+                                <p>Transform</p>
+                            </div>
+                            <div class="cdDesc">
+                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                                    tempor
+                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+                                    accusam
+                                    et justo duo</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="empty1"></div>
+            </div>
+            <div class="midBlock">
+                <div class="svgArea">
+                    <div class="imgSvg">
+                        <!-- <div class="curved-text">
+                            <span>G</span>
+                            <span>r</span>
+                            <span>o</span>
+                            <span>w</span> 
+                        </div> -->
+                        <img src="../assets/images/industries/sub/growBlo.svg" width="745" height="740"
+                            class="lazy imagetoSVG" alt="grow svg">
+                    </div>
+                </div>
+            </div>
+            <div class="rgtBlock">
+                <div class="empty2"></div>
+                <div class="cardBorder3">
+                    <a href="#manage" id="tab_item-1">
+                        <div class="cardBlock3">
+                            <div class="cdTitle">
+                                <p>Manage</p>
+                            </div>
+                            <div class="cdDesc">
+                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                                    tempor
+                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+                                    accusam
+                                    et justo duo</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="cardBorder4" id="panel2">
+                    <a href="#transition" id="tab_item-3">
+                        <div class="cardBlock4">
+                            <div class="cdTitle">
+                                <p>Transition</p>
+                            </div>
+                            <div class="cdDesc">
+                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                                    tempor
+                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+                                    accusam
+                                    et justo duo</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        //     const mediaQuery = window.matchMedia('(max-width: 1180px)');
+
+        //     function swapPanels(e) {
+        //         const panel1 = $('.cardBorder2');
+        //         console.log(panel1);
+        //         const panel2 = $('.cardBorder3');
+        //         const em1 = $('.empty1');
+        //         const em2 = $('.empty2');
+        //         // var panel1 = $('.panel1');
+        //         // var panel2 = $('.panel2');
+
+        //         if (e.matches) {
+        //             alert('swap working fine')
+        //             // If the viewport is 1023px or less, change the class names
+        //             em1.replaceWith(panel2);
+        //             em2.replaceWith(panel1);
+        //         } else {
+        //             // If the viewport is wider than 1023px, revert the class names 
+        //             em1.replaceWith(panel1);
+        //             em2.replaceWith(panel2);
+        //             alert('1080 above also working')
+        //         }
+        //     }
+
+        //     // Add a listener for the media query change
+
+        //     // mediaQuery.addListener(swapPanels);
+
+        //     // Check the media query on initial load
+        //     // swapPanels(mediaQuery);
+        //     window.addEventListener('resize', function(event){ 
+        //         // swapPanels(); 
+        // });
+
+
+        var leader = $('.cardBorder3').clone();
+        $('.empty1').html(leader).hide();
+        $('.empty1').show();
+
+
+
+        var leader = $('.cardBorder2').clone();
+        $('.empty2').html(leader).hide();
+        $('.empty2').show();
+    });
+</script>
+
+
+<div class="servicePanel module come-in">
+    <div class="grid-container">
+        <div class="testiTitle">
+            <p>Our Services</p>
+        </div>
+        <div class="serviceCard">
+            <div class="flexdiv">
+                <div class="flexCard1">
+                    <div class="svgImg">
+                        <img src="../assets/images/industries/sub/audit.svg" alt="Audit & Assurance">
+                    </div>
+                    <div class="textArea">
+                        <a href="#" aria-label="Audit & Assurance">Audit & Assurance</a>
+                    </div>
+                </div>
+                <div class="flexCard2">
+                    <div class="svgImg">
+                        <img src="../assets/images/industries/sub/tax.svg" alt="Tax">
+                    </div>
+                    <div class="textArea">
+                        <a href="#" aria-label="Tax">Tax</a>
+                    </div>
+                </div>
+                <div class="flexCard3">
+                    <a href="">
+                        <div class="dd">
+                            <div class="svgImg">
+                                <img src="../assets/images/industries/sub/advisory.svg" alt="Advisory">
+                            </div>
+                            <div class="textArea">
+                                <p>Advisory</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="flexCard4">
+                    <div class="svgImg">
+                        <img src="../assets/images/industries/sub/consult.svg" alt="Consuting">
+                    </div>
+                    <div class="textArea">
+                        <a href="#" aria-label="Consuting">Consuting</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<link rel="stylesheet" href="assets/css/tabpanel/tabpanel.css" media="all">
+<script src="assets/scripts/tabpanel/easy-responsive-tabs.js" defer></script>
+<link rel="stylesheet" href="assets/css/industryCard/industryCard.css">
+<script type="text/javascript" defer>
+    $(document).ready(function () {
+        $('.tabpanel').easyResponsiveTabs({
+            type: 'default',
+            width: 'auto',
+            fit: true,
+            tabidentify: 'tab_identifier_child',
+            activate: function (event) {
+                var $tab = $(this);
+                var $info = $('#tabInfo');
+                var $name = $('span', $info);
+                $name.text($tab.text());
+                $info.show();
+            }
+        });
+        $('.tabpanel .resp-tabs-list .resp-tab-item').click(function () {
+            var getyoutubevalue = $('.tabimagecontent').find('.videoPanel').hasClass('youtubevideopanel');
+            var getvimeovalue = $('.tabimagecontent').find('.videoPanel').hasClass('vimeovideopanel');
+            var this_dataindex;
+            var this_datavimeoindex;
+            if (getyoutubevalue) {
+                var pictureyoutubedata = $('.tabimagecontent').find('.youtubevideopanel');
+                this_dataindex = $(pictureyoutubedata).attr('data-index');
+                if (this_dataindex) {
+                    YoutubeplayerList[this_dataindex].pauseVideo();
+                }
+            }
+            if (getvimeovalue) {
+                var picturevimeodata = $('.tabimagecontent').find('.vimeovideopanel');
+                this_datavimeoindex = $(picturevimeodata).attr('data-index');
+                if (this_datavimeoindex) {
+                    VimeoplayerList[this_datavimeoindex].pause();
+                }
+            }
+        });
+
+        if ($(".tapswiperpanel .swiper .swiper-slide").length > 0) {
+            var swiperCarousel = new Swiper('.tapSlider', {
+                slidesPerView: "1",
+                allowTouchMove: true,
+                preloadImages: false,
+                spaceBetween: 10,
+                lazy: true,
+                loop: false,
+                navigation: {
+                    nextEl: '.tapSlider .swiper-button-next',
+                    prevEl: '.tapSlider .swiper-button-prev',
+                },
+            });
+            var swiperCarouselContent = new Swiper(".tabContentSlider", {
+                spaceBetween: 10,
+                allowTouchMove: true,
+                preloadImages: false,
+                lazy: true,
+                autoHeight: false,
+                loop: false,
+            });
+            swiperCarousel.controller.control = swiperCarouselContent;
+            swiperCarouselContent.controller.control = swiperCarousel;
+        }
+    });
+</script>
+<div class="tabsection servicetab module">
+    <!--    
+    <div class="grid-container">
+        <h2 class="h2title">From the Newsroom</h2>
+    </div> -->
+    <div class="tabpanel">
+        <div class="grid-container">
+            <div class="tabpasection">
+                <ul class="resp-tabs-list" role="tablist" aria-label="Product Tabs" aria-controls="tab_item-0"
+                    role="tab">
+                    <li id="grow" class="resp-tab-item resp-tab-active" aria-controls="tab_item-0" role="tab">
+                        <p>Grow</p>
+                    </li>
+                    <li id="manage" class="resp-tab-item " aria-controls="tab_item-1" role="tab">
+                        <p>Manage</p>
+                    </li>
+                    <li id="transform" class="resp-tab-item" aria-controls="tab_item-2" role="tab">
+                        <p>Transform</p>
+                    </li>
+                    <li id="transition" class="resp-tab-item" aria-controls="tab_item-3" role="tab">
+                        <p>Transition</p>
+                    </li>
+                </ul>
+                <div class="resp-tabs-container">
+                    <div class="tabblock">
+                        <div class="tabimagecontent">
+                            <div class="indSpecialPanel module">
+
+                                <div class="flexBoxs ">
+                                    <div class="cardBlock">
+                                        <div class="insideCard">
+                                            <div class="cardTitle">
+                                                <a href="#" aria-label="Aerospace & Defense">
+                                                    <p>Aerospace <br>
+                                                        & Defense</p>
+                                                </a>
+                                            </div>
+                                            <div class="cardContent">
+                                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                                                    nonumy eirmod tempor
+                                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                                    At vero eos et </p>
+                                            </div>
+                                            <div class="ctablock">
+
+                                                <span class="goIcon"><a href="#"
+                                                        aria-label="Advisory"><i>Search</i></a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cardBlock">
+                                        <div class="insideCard">
+                                            <div class="cardTitle">
+                                                <a href="#" aria-label="Automotive Automotive">
+                                                    <p>Automotive <br>
+                                                        Automotive</p>
+                                                </a>
+                                            </div>
+                                            <div class="cardContent">
+                                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                                                    nonumy eirmod tempor
+                                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                                    At vero eos et </p>
+                                            </div>
+                                            <div class="ctablock">
+
+                                                <span class="goIcon"><a href="#"
+                                                        aria-label="Advisory"><i>Search</i></a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cardBlock">
+                                        <div class="insideCard">
+                                            <div class="cardTitle">
+                                                <a href="#" aria-label="Consumer Products">
+                                                    <p>Consumer <br>
+                                                        Products</p>
+                                                </a>
+                                            </div>
+                                            <div class="cardContent">
+                                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                                                    nonumy eirmod tempor
+                                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                                    At vero eos et </p>
+                                            </div>
+                                            <div class="ctablock">
+
+                                                <span class="goIcon"><a href="#"
+                                                        aria-label="Advisory"><i>Search</i></a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cardBlock">
+                                        <div class="insideCard">
+                                            <div class="cardTitle">
+                                                <a href="" aria-label="Distribution">
+                                                    <p>Distribution </p>
+                                                </a>
+                                            </div>
+                                            <div class="cardContent">
+                                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                                                    nonumy eirmod tempor
+                                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                                    At vero eos et </p>
+                                            </div>
+                                            <div class="ctablock">
+
+                                                <span class="goIcon"><a href="#"
+                                                        aria-label="Advisory"><i>Search</i></a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cardBlock">
+                                        <div class="insideCard">
+                                            <div class="cardTitle">
+                                                <a href="" aria-label="Industrial">
+                                                    <p>Industrial</p>
+                                                </a>
+                                            </div>
+                                            <div class="cardContent">
+                                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                                                    nonumy eirmod tempor
+                                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                                    At vero eos et </p>
+                                            </div>
+                                            <div class="ctablock">
+
+                                                <span class="goIcon"><a href="#"
+                                                        aria-label="Advisory"><i>Search</i></a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cardBlock">
+                                        <div class="insideCard">
+                                            <div class="cardTitle">
+                                                <a href="#" aria-label="Aerospace & Defense">
+                                                    <p>Aerospace <br>
+                                                        & Defense</p>
+                                                </a>
+                                            </div>
+                                            <div class="cardContent">
+                                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                                                    nonumy eirmod tempor
+                                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                                    At vero eos et </p>
+                                            </div>
+                                            <div class="ctablock">
+
+                                                <span class="goIcon"><a href="#"
+                                                        aria-label="Advisory"><i>Search</i></a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cardBlock">
+                                        <div class="insideCard">
+                                            <div class="cardTitle">
+                                                <a href="#" aria-label="Automotive Automotive">
+                                                    <p>Automotive <br>
+                                                        Automotive</p>
+                                                </a>
+                                            </div>
+                                            <div class="cardContent">
+                                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                                                    nonumy eirmod tempor
+                                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                                    At vero eos et </p>
+                                            </div>
+                                            <div class="ctablock">
+
+                                                <span class="goIcon"><a href="#"
+                                                        aria-label="Advisory"><i>Search</i></a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cardBlock">
+                                        <div class="insideCard">
+                                            <div class="cardTitle">
+                                                <a href="#" aria-label="Consumer Products">
+                                                    <p>Consumer <br>
+                                                        Products</p>
+                                                </a>
+                                            </div>
+                                            <div class="cardContent">
+                                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                                                    nonumy eirmod tempor
+                                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                                    At vero eos et </p>
+                                            </div>
+                                            <div class="ctablock">
+
+                                                <span class="goIcon"><a href="#"
+                                                        aria-label="Advisory"><i>Search</i></a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cardBlock">
+                                        <div class="insideCard">
+                                            <div class="cardTitle">
+                                                <a href="" aria-label="Distribution">
+                                                    <p>Distribution </p>
+                                                </a>
+                                            </div>
+                                            <div class="cardContent">
+                                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                                                    nonumy eirmod tempor
+                                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                                    At vero eos et </p>
+                                            </div>
+                                            <div class="ctablock">
+
+                                                <span class="goIcon"><a href="#"
+                                                        aria-label="Advisory"><i>Search</i></a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cardBlock">
+                                        <div class="insideCard">
+                                            <div class="cardTitle">
+                                                <a href="" aria-label="Industrial">
+                                                    <p>Industrial</p>
+                                                </a>
+                                            </div>
+                                            <div class="cardContent">
+                                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                                                    nonumy eirmod tempor
+                                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                                    At vero eos et </p>
+                                            </div>
+                                            <div class="ctablock">
+
+                                                <span class="goIcon"><a href="#"
+                                                        aria-label="Advisory"><i>Search</i></a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cardBlock">
+                                        <div class="insideCard">
+                                            <div class="cardTitle">
+                                                <a href="#" aria-label="Consumer Products">
+                                                    <p>Consumer <br>
+                                                        Products</p>
+                                                </a>
+                                            </div>
+                                            <div class="cardContent">
+                                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                                                    nonumy eirmod tempor
+                                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                                    At vero eos et </p>
+                                            </div>
+                                            <div class="ctablock">
+
+                                                <span class="goIcon"><a href="#"
+                                                        aria-label="Advisory"><i>Search</i></a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cardBlock">
+                                        <div class="insideCard">
+                                            <div class="cardTitle">
+                                                <a href="#" aria-label="Automotive Automotive">
+                                                    <p>Automotive <br>
+                                                        Automotive</p>
+                                                </a>
+                                            </div>
+                                            <div class="cardContent">
+                                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                                                    nonumy eirmod tempor
+                                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                                    At vero eos et </p>
+                                            </div>
+                                            <div class="ctablock">
+
+                                                <span class="goIcon"><a href="#"
+                                                        aria-label="Advisory"><i>Search</i></a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tabblock">
+                        <div class="tabimagecontent">
+                            <div class="indSpecialPanel module">
+
+                                <div class="flexBoxs ">
+                                    <div class="cardBlock">
+                                        <div class="insideCard">
+                                            <div class="cardTitle">
+                                                <a href="" aria-label="Industrial">
+                                                    <p>Industrial</p>
+                                                </a>
+                                            </div>
+                                            <div class="cardContent">
+                                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                                                    nonumy eirmod tempor
+                                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                                    At vero eos et </p>
+                                            </div>
+                                            <div class="ctablock">
+
+                                                <span class="goIcon"><a href="#"
+                                                        aria-label="Advisory"><i>Search</i></a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cardBlock">
+                                        <div class="insideCard">
+                                            <div class="cardTitle">
+                                                <a href="#" aria-label="Aerospace & Defense">
+                                                    <p>Aerospace <br>
+                                                        & Defense</p>
+                                                </a>
+                                            </div>
+                                            <div class="cardContent">
+                                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                                                    nonumy eirmod tempor
+                                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                                    At vero eos et </p>
+                                            </div>
+                                            <div class="ctablock">
+
+                                                <span class="goIcon"><a href="#"
+                                                        aria-label="Advisory"><i>Search</i></a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cardBlock">
+                                        <div class="insideCard">
+                                            <div class="cardTitle">
+                                                <a href="#" aria-label="Automotive Automotive">
+                                                    <p>Automotive <br>
+                                                        Automotive</p>
+                                                </a>
+                                            </div>
+                                            <div class="cardContent">
+                                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                                                    nonumy eirmod tempor
+                                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                                    At vero eos et </p>
+                                            </div>
+                                            <div class="ctablock">
+
+                                                <span class="goIcon"><a href="#"
+                                                        aria-label="Advisory"><i>Search</i></a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cardBlock">
+                                        <div class="insideCard">
+                                            <div class="cardTitle">
+                                                <a href="#" aria-label="Consumer Products">
+                                                    <p>Consumer <br>
+                                                        Products</p>
+                                                </a>
+                                            </div>
+                                            <div class="cardContent">
+                                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                                                    nonumy eirmod tempor
+                                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                                    At vero eos et </p>
+                                            </div>
+                                            <div class="ctablock">
+
+                                                <span class="goIcon"><a href="#"
+                                                        aria-label="Advisory"><i>Search</i></a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cardBlock">
+                                        <div class="insideCard">
+                                            <div class="cardTitle">
+                                                <a href="" aria-label="Industrial">
+                                                    <p>Industrial</p>
+                                                </a>
+                                            </div>
+                                            <div class="cardContent">
+                                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                                                    nonumy eirmod tempor
+                                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                                    At vero eos et </p>
+                                            </div>
+                                            <div class="ctablock">
+
+                                                <span class="goIcon"><a href="#"
+                                                        aria-label="Advisory"><i>Search</i></a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cardBlock">
+                                        <div class="insideCard">
+                                            <div class="cardTitle">
+                                                <a href="#" aria-label="Aerospace & Defense">
+                                                    <p>Aerospace <br>
+                                                        & Defense</p>
+                                                </a>
+                                            </div>
+                                            <div class="cardContent">
+                                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                                                    nonumy eirmod tempor
+                                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                                    At vero eos et </p>
+                                            </div>
+                                            <div class="ctablock">
+
+                                                <span class="goIcon"><a href="#"
+                                                        aria-label="Advisory"><i>Search</i></a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cardBlock">
+                                        <div class="insideCard">
+                                            <div class="cardTitle">
+                                                <a href="#" aria-label="Automotive Automotive">
+                                                    <p>Automotive <br>
+                                                        Automotive</p>
+                                                </a>
+                                            </div>
+                                            <div class="cardContent">
+                                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                                                    nonumy eirmod tempor
+                                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                                    At vero eos et </p>
+                                            </div>
+                                            <div class="ctablock">
+
+                                                <span class="goIcon"><a href="#"
+                                                        aria-label="Advisory"><i>Search</i></a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cardBlock">
+                                        <div class="insideCard">
+                                            <div class="cardTitle">
+                                                <a href="#" aria-label="Consumer Products">
+                                                    <p>Consumer <br>
+                                                        Products</p>
+                                                </a>
+                                            </div>
+                                            <div class="cardContent">
+                                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                                                    nonumy eirmod tempor
+                                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                                    At vero eos et </p>
+                                            </div>
+                                            <div class="ctablock">
+
+                                                <span class="goIcon"><a href="#"
+                                                        aria-label="Advisory"><i>Search</i></a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cardBlock">
+                                        <div class="insideCard">
+                                            <div class="cardTitle">
+                                                <a href="" aria-label="Distribution">
+                                                    <p>Distribution </p>
+                                                </a>
+                                            </div>
+                                            <div class="cardContent">
+                                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                                                    nonumy eirmod tempor
+                                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                                    At vero eos et </p>
+                                            </div>
+                                            <div class="ctablock">
+
+                                                <span class="goIcon"><a href="#"
+                                                        aria-label="Advisory"><i>Search</i></a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cardBlock">
+                                        <div class="insideCard">
+                                            <div class="cardTitle">
+                                                <a href="" aria-label="Industrial">
+                                                    <p>Industrial</p>
+                                                </a>
+                                            </div>
+                                            <div class="cardContent">
+                                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                                                    nonumy eirmod tempor
+                                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                                    At vero eos et </p>
+                                            </div>
+                                            <div class="ctablock">
+
+                                                <span class="goIcon"><a href="#"
+                                                        aria-label="Advisory"><i>Search</i></a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cardBlock">
+                                        <div class="insideCard">
+                                            <div class="cardTitle">
+                                                <a href="#" aria-label="Consumer Products">
+                                                    <p>Consumer <br>
+                                                        Products</p>
+                                                </a>
+                                            </div>
+                                            <div class="cardContent">
+                                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                                                    nonumy eirmod tempor
+                                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                                    At vero eos et </p>
+                                            </div>
+                                            <div class="ctablock">
+
+                                                <span class="goIcon"><a href="#"
+                                                        aria-label="Advisory"><i>Search</i></a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cardBlock">
+                                        <div class="insideCard">
+                                            <div class="cardTitle">
+                                                <a href="#" aria-label="Automotive Automotive">
+                                                    <p>Automotive <br>
+                                                        Automotive</p>
+                                                </a>
+                                            </div>
+                                            <div class="cardContent">
+                                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                                                    nonumy eirmod tempor
+                                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                                    At vero eos et </p>
+                                            </div>
+                                            <div class="ctablock">
+
+                                                <span class="goIcon"><a href="#"
+                                                        aria-label="Advisory"><i>Search</i></a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tabblock">
+                        <div class="tabimagecontent">
+                            <div class="indSpecialPanel module">
+
+                                <div class="flexBoxs ">
+                                    <div class="cardBlock">
+                                        <div class="insideCard">
+                                            <div class="cardTitle">
+                                                <a href="#" aria-label="Aerospace & Defense">
+                                                    <p>Aerospace <br>
+                                                        & Defense</p>
+                                                </a>
+                                            </div>
+                                            <div class="cardContent">
+                                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                                                    nonumy eirmod tempor
+                                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                                    At vero eos et </p>
+                                            </div>
+                                            <div class="ctablock">
+
+                                                <span class="goIcon"><a href="#"
+                                                        aria-label="Advisory"><i>Search</i></a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cardBlock">
+                                        <div class="insideCard">
+                                            <div class="cardTitle">
+                                                <a href="#" aria-label="Automotive Automotive">
+                                                    <p>Automotive <br>
+                                                        Automotive</p>
+                                                </a>
+                                            </div>
+                                            <div class="cardContent">
+                                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                                                    nonumy eirmod tempor
+                                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                                    At vero eos et </p>
+                                            </div>
+                                            <div class="ctablock">
+
+                                                <span class="goIcon"><a href="#"
+                                                        aria-label="Advisory"><i>Search</i></a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cardBlock">
+                                        <div class="insideCard">
+                                            <div class="cardTitle">
+                                                <a href="#" aria-label="Consumer Products">
+                                                    <p>Consumer <br>
+                                                        Products</p>
+                                                </a>
+                                            </div>
+                                            <div class="cardContent">
+                                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                                                    nonumy eirmod tempor
+                                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                                    At vero eos et </p>
+                                            </div>
+                                            <div class="ctablock">
+
+                                                <span class="goIcon"><a href="#"
+                                                        aria-label="Advisory"><i>Search</i></a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cardBlock">
+                                        <div class="insideCard">
+                                            <div class="cardTitle">
+                                                <a href="" aria-label="Distribution">
+                                                    <p>Distribution </p>
+                                                </a>
+                                            </div>
+                                            <div class="cardContent">
+                                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                                                    nonumy eirmod tempor
+                                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                                    At vero eos et </p>
+                                            </div>
+                                            <div class="ctablock">
+
+                                                <span class="goIcon"><a href="#"
+                                                        aria-label="Advisory"><i>Search</i></a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cardBlock">
+                                        <div class="insideCard">
+                                            <div class="cardTitle">
+                                                <a href="" aria-label="Industrial">
+                                                    <p>Industrial</p>
+                                                </a>
+                                            </div>
+                                            <div class="cardContent">
+                                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                                                    nonumy eirmod tempor
+                                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                                    At vero eos et </p>
+                                            </div>
+                                            <div class="ctablock">
+
+                                                <span class="goIcon"><a href="#"
+                                                        aria-label="Advisory"><i>Search</i></a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cardBlock">
+                                        <div class="insideCard">
+                                            <div class="cardTitle">
+                                                <a href="#" aria-label="Aerospace & Defense">
+                                                    <p>Aerospace <br>
+                                                        & Defense</p>
+                                                </a>
+                                            </div>
+                                            <div class="cardContent">
+                                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                                                    nonumy eirmod tempor
+                                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                                    At vero eos et </p>
+                                            </div>
+                                            <div class="ctablock">
+
+                                                <span class="goIcon"><a href="#"
+                                                        aria-label="Advisory"><i>Search</i></a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cardBlock">
+                                        <div class="insideCard">
+                                            <div class="cardTitle">
+                                                <a href="#" aria-label="Automotive Automotive">
+                                                    <p>Automotive <br>
+                                                        Automotive</p>
+                                                </a>
+                                            </div>
+                                            <div class="cardContent">
+                                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                                                    nonumy eirmod tempor
+                                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                                    At vero eos et </p>
+                                            </div>
+                                            <div class="ctablock">
+
+                                                <span class="goIcon"><a href="#"
+                                                        aria-label="Advisory"><i>Search</i></a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cardBlock">
+                                        <div class="insideCard">
+                                            <div class="cardTitle">
+                                                <a href="#" aria-label="Consumer Products">
+                                                    <p>Consumer <br>
+                                                        Products</p>
+                                                </a>
+                                            </div>
+                                            <div class="cardContent">
+                                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                                                    nonumy eirmod tempor
+                                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                                    At vero eos et </p>
+                                            </div>
+                                            <div class="ctablock">
+
+                                                <span class="goIcon"><a href="#"
+                                                        aria-label="Advisory"><i>Search</i></a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cardBlock">
+                                        <div class="insideCard">
+                                            <div class="cardTitle">
+                                                <a href="" aria-label="Distribution">
+                                                    <p>Distribution </p>
+                                                </a>
+                                            </div>
+                                            <div class="cardContent">
+                                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                                                    nonumy eirmod tempor
+                                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                                    At vero eos et </p>
+                                            </div>
+                                            <div class="ctablock">
+
+                                                <span class="goIcon"><a href="#"
+                                                        aria-label="Advisory"><i>Search</i></a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cardBlock">
+                                        <div class="insideCard">
+                                            <div class="cardTitle">
+                                                <a href="" aria-label="Industrial">
+                                                    <p>Industrial</p>
+                                                </a>
+                                            </div>
+                                            <div class="cardContent">
+                                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                                                    nonumy eirmod tempor
+                                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                                    At vero eos et </p>
+                                            </div>
+                                            <div class="ctablock">
+
+                                                <span class="goIcon"><a href="#"
+                                                        aria-label="Advisory"><i>Search</i></a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cardBlock">
+                                        <div class="insideCard">
+                                            <div class="cardTitle">
+                                                <a href="#" aria-label="Consumer Products">
+                                                    <p>Consumer <br>
+                                                        Products</p>
+                                                </a>
+                                            </div>
+                                            <div class="cardContent">
+                                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                                                    nonumy eirmod tempor
+                                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                                    At vero eos et </p>
+                                            </div>
+                                            <div class="ctablock">
+
+                                                <span class="goIcon"><a href="#"
+                                                        aria-label="Advisory"><i>Search</i></a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cardBlock">
+                                        <div class="insideCard">
+                                            <div class="cardTitle">
+                                                <a href="#" aria-label="Automotive Automotive">
+                                                    <p>Automotive <br>
+                                                        Automotive</p>
+                                                </a>
+                                            </div>
+                                            <div class="cardContent">
+                                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                                                    nonumy eirmod tempor
+                                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                                    At vero eos et </p>
+                                            </div>
+                                            <div class="ctablock">
+
+                                                <span class="goIcon"><a href="#"
+                                                        aria-label="Advisory"><i>Search</i></a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tabblock">
+                        <div class="tabimagecontent">
+                            <div class="indSpecialPanel module">
+
+                                <div class="flexBoxs ">
+                                    <div class="cardBlock">
+                                        <div class="insideCard">
+                                            <div class="cardTitle">
+                                                <a href="" aria-label="Industrial">
+                                                    <p>Industrial</p>
+                                                </a>
+                                            </div>
+                                            <div class="cardContent">
+                                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                                                    nonumy eirmod tempor
+                                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                                    At vero eos et </p>
+                                            </div>
+                                            <div class="ctablock">
+
+                                                <span class="goIcon"><a href="#"
+                                                        aria-label="Advisory"><i>Search</i></a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cardBlock">
+                                        <div class="insideCard">
+                                            <div class="cardTitle">
+                                                <a href="#" aria-label="Aerospace & Defense">
+                                                    <p>Aerospace <br>
+                                                        & Defense</p>
+                                                </a>
+                                            </div>
+                                            <div class="cardContent">
+                                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                                                    nonumy eirmod tempor
+                                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                                    At vero eos et </p>
+                                            </div>
+                                            <div class="ctablock">
+
+                                                <span class="goIcon"><a href="#"
+                                                        aria-label="Advisory"><i>Search</i></a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cardBlock">
+                                        <div class="insideCard">
+                                            <div class="cardTitle">
+                                                <a href="#" aria-label="Automotive Automotive">
+                                                    <p>Automotive <br>
+                                                        Automotive</p>
+                                                </a>
+                                            </div>
+                                            <div class="cardContent">
+                                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                                                    nonumy eirmod tempor
+                                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                                    At vero eos et </p>
+                                            </div>
+                                            <div class="ctablock">
+
+                                                <span class="goIcon"><a href="#"
+                                                        aria-label="Advisory"><i>Search</i></a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cardBlock">
+                                        <div class="insideCard">
+                                            <div class="cardTitle">
+                                                <a href="#" aria-label="Consumer Products">
+                                                    <p>Consumer <br>
+                                                        Products</p>
+                                                </a>
+                                            </div>
+                                            <div class="cardContent">
+                                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                                                    nonumy eirmod tempor
+                                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                                    At vero eos et </p>
+                                            </div>
+                                            <div class="ctablock">
+
+                                                <span class="goIcon"><a href="#"
+                                                        aria-label="Advisory"><i>Search</i></a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cardBlock">
+                                        <div class="insideCard">
+                                            <div class="cardTitle">
+                                                <a href="" aria-label="Industrial">
+                                                    <p>Industrial</p>
+                                                </a>
+                                            </div>
+                                            <div class="cardContent">
+                                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                                                    nonumy eirmod tempor
+                                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                                    At vero eos et </p>
+                                            </div>
+                                            <div class="ctablock">
+
+                                                <span class="goIcon"><a href="#"
+                                                        aria-label="Advisory"><i>Search</i></a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cardBlock">
+                                        <div class="insideCard">
+                                            <div class="cardTitle">
+                                                <a href="#" aria-label="Aerospace & Defense">
+                                                    <p>Aerospace <br>
+                                                        & Defense</p>
+                                                </a>
+                                            </div>
+                                            <div class="cardContent">
+                                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                                                    nonumy eirmod tempor
+                                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                                    At vero eos et </p>
+                                            </div>
+                                            <div class="ctablock">
+
+                                                <span class="goIcon"><a href="#"
+                                                        aria-label="Advisory"><i>Search</i></a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cardBlock">
+                                        <div class="insideCard">
+                                            <div class="cardTitle">
+                                                <a href="#" aria-label="Automotive Automotive">
+                                                    <p>Automotive <br>
+                                                        Automotive</p>
+                                                </a>
+                                            </div>
+                                            <div class="cardContent">
+                                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                                                    nonumy eirmod tempor
+                                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                                    At vero eos et </p>
+                                            </div>
+                                            <div class="ctablock">
+
+                                                <span class="goIcon"><a href="#"
+                                                        aria-label="Advisory"><i>Search</i></a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cardBlock">
+                                        <div class="insideCard">
+                                            <div class="cardTitle">
+                                                <a href="#" aria-label="Consumer Products">
+                                                    <p>Consumer <br>
+                                                        Products</p>
+                                                </a>
+                                            </div>
+                                            <div class="cardContent">
+                                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                                                    nonumy eirmod tempor
+                                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                                    At vero eos et </p>
+                                            </div>
+                                            <div class="ctablock">
+
+                                                <span class="goIcon"><a href="#"
+                                                        aria-label="Advisory"><i>Search</i></a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cardBlock">
+                                        <div class="insideCard">
+                                            <div class="cardTitle">
+                                                <a href="" aria-label="Distribution">
+                                                    <p>Distribution </p>
+                                                </a>
+                                            </div>
+                                            <div class="cardContent">
+                                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                                                    nonumy eirmod tempor
+                                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                                    At vero eos et </p>
+                                            </div>
+                                            <div class="ctablock">
+
+                                                <span class="goIcon"><a href="#"
+                                                        aria-label="Advisory"><i>Search</i></a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cardBlock">
+                                        <div class="insideCard">
+                                            <div class="cardTitle">
+                                                <a href="" aria-label="Industrial">
+                                                    <p>Industrial</p>
+                                                </a>
+                                            </div>
+                                            <div class="cardContent">
+                                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                                                    nonumy eirmod tempor
+                                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                                    At vero eos et </p>
+                                            </div>
+                                            <div class="ctablock">
+
+                                                <span class="goIcon"><a href="#"
+                                                        aria-label="Advisory"><i>Search</i></a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cardBlock">
+                                        <div class="insideCard">
+                                            <div class="cardTitle">
+                                                <a href="#" aria-label="Consumer Products">
+                                                    <p>Consumer <br>
+                                                        Products</p>
+                                                </a>
+                                            </div>
+                                            <div class="cardContent">
+                                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                                                    nonumy eirmod tempor
+                                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                                    At vero eos et </p>
+                                            </div>
+                                            <div class="ctablock">
+
+                                                <span class="goIcon"><a href="#"
+                                                        aria-label="Advisory"><i>Search</i></a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cardBlock">
+                                        <div class="insideCard">
+                                            <div class="cardTitle">
+                                                <a href="#" aria-label="Automotive Automotive">
+                                                    <p>Automotive <br>
+                                                        Automotive</p>
+                                                </a>
+                                            </div>
+                                            <div class="cardContent">
+                                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                                                    nonumy eirmod tempor
+                                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                                    At vero eos et </p>
+                                            </div>
+                                            <div class="ctablock">
+
+                                                <span class="goIcon"><a href="#"
+                                                        aria-label="Advisory"><i>Search</i></a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tapswiperpanel">
+        <div class="grid-container">
+            <div class="swiper tapSlider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="swiper-list">
+                            <p>Grow</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="swiper-list">
+                            <p>Manage</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="swiper-list">
+                            <p>Transform</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="swiper-list">
+                            <p>Transition</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+            <div thumbsSlider="" class="swiper tabContentSlider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="swiper-content">
+                            <div class="tabblock">
+                                <div class="tabimagecontent">
+                                    <div class="indSpecialPanel module">
+
+                                        <div class="flexBoxs ">
+                                            <div class="cardBlock">
+                                                <div class="insideCard">
+                                                    <div class="cardTitle">
+                                                        <a href="#" aria-label="Aerospace & Defense">
+                                                            <p>Aerospace <br>
+                                                                & Defense</p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="cardContent">
+                                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                                            diam nonumy eirmod tempor
+                                                            invidunt ut labore et dolore magna aliquyam erat, sed diam
+                                                            voluptua. At vero eos et </p>
+                                                    </div>
+                                                    <div class="ctablock">
+
+                                                        <span class="goIcon"><a href="#"
+                                                                aria-label="Advisory"><i>Search</i></a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="cardBlock">
+                                                <div class="insideCard">
+                                                    <div class="cardTitle">
+                                                        <a href="#" aria-label="Automotive Automotive">
+                                                            <p>Automotive <br>
+                                                                Automotive</p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="cardContent">
+                                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                                            diam nonumy eirmod tempor
+                                                            invidunt ut labore et dolore magna aliquyam erat, sed diam
+                                                            voluptua. At vero eos et </p>
+                                                    </div>
+                                                    <div class="ctablock">
+
+                                                        <span class="goIcon"><a href="#"
+                                                                aria-label="Advisory"><i>Search</i></a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="cardBlock">
+                                                <div class="insideCard">
+                                                    <div class="cardTitle">
+                                                        <a href="#" aria-label="Consumer Products">
+                                                            <p>Consumer <br>
+                                                                Products</p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="cardContent">
+                                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                                            diam nonumy eirmod tempor
+                                                            invidunt ut labore et dolore magna aliquyam erat, sed diam
+                                                            voluptua. At vero eos et </p>
+                                                    </div>
+                                                    <div class="ctablock">
+
+                                                        <span class="goIcon"><a href="#"
+                                                                aria-label="Advisory"><i>Search</i></a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="cardBlock">
+                                                <div class="insideCard">
+                                                    <div class="cardTitle">
+                                                        <a href="" aria-label="Distribution">
+                                                            <p>Distribution </p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="cardContent">
+                                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                                            diam nonumy eirmod tempor
+                                                            invidunt ut labore et dolore magna aliquyam erat, sed diam
+                                                            voluptua. At vero eos et </p>
+                                                    </div>
+                                                    <div class="ctablock">
+
+                                                        <span class="goIcon"><a href="#"
+                                                                aria-label="Advisory"><i>Search</i></a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="cardBlock">
+                                                <div class="insideCard">
+                                                    <div class="cardTitle">
+                                                        <a href="" aria-label="Industrial">
+                                                            <p>Industrial</p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="cardContent">
+                                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                                            diam nonumy eirmod tempor
+                                                            invidunt ut labore et dolore magna aliquyam erat, sed diam
+                                                            voluptua. At vero eos et </p>
+                                                    </div>
+                                                    <div class="ctablock">
+
+                                                        <span class="goIcon"><a href="#"
+                                                                aria-label="Advisory"><i>Search</i></a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="cardBlock">
+                                                <div class="insideCard">
+                                                    <div class="cardTitle">
+                                                        <a href="#" aria-label="Aerospace & Defense">
+                                                            <p>Aerospace <br>
+                                                                & Defense</p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="cardContent">
+                                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                                            diam nonumy eirmod tempor
+                                                            invidunt ut labore et dolore magna aliquyam erat, sed diam
+                                                            voluptua. At vero eos et </p>
+                                                    </div>
+                                                    <div class="ctablock">
+
+                                                        <span class="goIcon"><a href="#"
+                                                                aria-label="Advisory"><i>Search</i></a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="cardBlock">
+                                                <div class="insideCard">
+                                                    <div class="cardTitle">
+                                                        <a href="#" aria-label="Automotive Automotive">
+                                                            <p>Automotive <br>
+                                                                Automotive</p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="cardContent">
+                                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                                            diam nonumy eirmod tempor
+                                                            invidunt ut labore et dolore magna aliquyam erat, sed diam
+                                                            voluptua. At vero eos et </p>
+                                                    </div>
+                                                    <div class="ctablock">
+
+                                                        <span class="goIcon"><a href="#"
+                                                                aria-label="Advisory"><i>Search</i></a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="cardBlock">
+                                                <div class="insideCard">
+                                                    <div class="cardTitle">
+                                                        <a href="#" aria-label="Consumer Products">
+                                                            <p>Consumer <br>
+                                                                Products</p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="cardContent">
+                                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                                            diam nonumy eirmod tempor
+                                                            invidunt ut labore et dolore magna aliquyam erat, sed diam
+                                                            voluptua. At vero eos et </p>
+                                                    </div>
+                                                    <div class="ctablock">
+
+                                                        <span class="goIcon"><a href="#"
+                                                                aria-label="Advisory"><i>Search</i></a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="cardBlock">
+                                                <div class="insideCard">
+                                                    <div class="cardTitle">
+                                                        <a href="" aria-label="Distribution">
+                                                            <p>Distribution </p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="cardContent">
+                                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                                            diam nonumy eirmod tempor
+                                                            invidunt ut labore et dolore magna aliquyam erat, sed diam
+                                                            voluptua. At vero eos et </p>
+                                                    </div>
+                                                    <div class="ctablock">
+
+                                                        <span class="goIcon"><a href="#"
+                                                                aria-label="Advisory"><i>Search</i></a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="cardBlock">
+                                                <div class="insideCard">
+                                                    <div class="cardTitle">
+                                                        <a href="" aria-label="Industrial">
+                                                            <p>Industrial</p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="cardContent">
+                                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                                            diam nonumy eirmod tempor
+                                                            invidunt ut labore et dolore magna aliquyam erat, sed diam
+                                                            voluptua. At vero eos et </p>
+                                                    </div>
+                                                    <div class="ctablock">
+
+                                                        <span class="goIcon"><a href="#"
+                                                                aria-label="Advisory"><i>Search</i></a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="cardBlock">
+                                                <div class="insideCard">
+                                                    <div class="cardTitle">
+                                                        <a href="#" aria-label="Consumer Products">
+                                                            <p>Consumer <br>
+                                                                Products</p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="cardContent">
+                                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                                            diam nonumy eirmod tempor
+                                                            invidunt ut labore et dolore magna aliquyam erat, sed diam
+                                                            voluptua. At vero eos et </p>
+                                                    </div>
+                                                    <div class="ctablock">
+
+                                                        <span class="goIcon"><a href="#"
+                                                                aria-label="Advisory"><i>Search</i></a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="cardBlock">
+                                                <div class="insideCard">
+                                                    <div class="cardTitle">
+                                                        <a href="#" aria-label="Automotive Automotive">
+                                                            <p>Automotive <br>
+                                                                Automotive</p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="cardContent">
+                                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                                            diam nonumy eirmod tempor
+                                                            invidunt ut labore et dolore magna aliquyam erat, sed diam
+                                                            voluptua. At vero eos et </p>
+                                                    </div>
+                                                    <div class="ctablock">
+
+                                                        <span class="goIcon"><a href="#"
+                                                                aria-label="Advisory"><i>Search</i></a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="swiper-content">
+                            <div class="tabblock">
+                                <div class="tabimagecontent">
+                                    <div class="indSpecialPanel module">
+
+                                        <div class="flexBoxs ">
+                                            <div class="cardBlock">
+                                                <div class="insideCard">
+                                                    <div class="cardTitle">
+                                                        <a href="#" aria-label="Aerospace & Defense">
+                                                            <p>Aerospace <br>
+                                                                & Defense</p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="cardContent">
+                                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                                            diam nonumy eirmod tempor
+                                                            invidunt ut labore et dolore magna aliquyam erat, sed diam
+                                                            voluptua. At vero eos et </p>
+                                                    </div>
+                                                    <div class="ctablock">
+
+                                                        <span class="goIcon"><a href="#"
+                                                                aria-label="Advisory"><i>Search</i></a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="cardBlock">
+                                                <div class="insideCard">
+                                                    <div class="cardTitle">
+                                                        <a href="#" aria-label="Automotive Automotive">
+                                                            <p>Automotive <br>
+                                                                Automotive</p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="cardContent">
+                                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                                            diam nonumy eirmod tempor
+                                                            invidunt ut labore et dolore magna aliquyam erat, sed diam
+                                                            voluptua. At vero eos et </p>
+                                                    </div>
+                                                    <div class="ctablock">
+
+                                                        <span class="goIcon"><a href="#"
+                                                                aria-label="Advisory"><i>Search</i></a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="cardBlock">
+                                                <div class="insideCard">
+                                                    <div class="cardTitle">
+                                                        <a href="#" aria-label="Consumer Products">
+                                                            <p>Consumer <br>
+                                                                Products</p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="cardContent">
+                                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                                            diam nonumy eirmod tempor
+                                                            invidunt ut labore et dolore magna aliquyam erat, sed diam
+                                                            voluptua. At vero eos et </p>
+                                                    </div>
+                                                    <div class="ctablock">
+
+                                                        <span class="goIcon"><a href="#"
+                                                                aria-label="Advisory"><i>Search</i></a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="cardBlock">
+                                                <div class="insideCard">
+                                                    <div class="cardTitle">
+                                                        <a href="" aria-label="Distribution">
+                                                            <p>Distribution </p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="cardContent">
+                                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                                            diam nonumy eirmod tempor
+                                                            invidunt ut labore et dolore magna aliquyam erat, sed diam
+                                                            voluptua. At vero eos et </p>
+                                                    </div>
+                                                    <div class="ctablock">
+
+                                                        <span class="goIcon"><a href="#"
+                                                                aria-label="Advisory"><i>Search</i></a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="cardBlock">
+                                                <div class="insideCard">
+                                                    <div class="cardTitle">
+                                                        <a href="" aria-label="Industrial">
+                                                            <p>Industrial</p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="cardContent">
+                                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                                            diam nonumy eirmod tempor
+                                                            invidunt ut labore et dolore magna aliquyam erat, sed diam
+                                                            voluptua. At vero eos et </p>
+                                                    </div>
+                                                    <div class="ctablock">
+
+                                                        <span class="goIcon"><a href="#"
+                                                                aria-label="Advisory"><i>Search</i></a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="cardBlock">
+                                                <div class="insideCard">
+                                                    <div class="cardTitle">
+                                                        <a href="#" aria-label="Aerospace & Defense">
+                                                            <p>Aerospace <br>
+                                                                & Defense</p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="cardContent">
+                                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                                            diam nonumy eirmod tempor
+                                                            invidunt ut labore et dolore magna aliquyam erat, sed diam
+                                                            voluptua. At vero eos et </p>
+                                                    </div>
+                                                    <div class="ctablock">
+
+                                                        <span class="goIcon"><a href="#"
+                                                                aria-label="Advisory"><i>Search</i></a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="cardBlock">
+                                                <div class="insideCard">
+                                                    <div class="cardTitle">
+                                                        <a href="#" aria-label="Automotive Automotive">
+                                                            <p>Automotive <br>
+                                                                Automotive</p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="cardContent">
+                                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                                            diam nonumy eirmod tempor
+                                                            invidunt ut labore et dolore magna aliquyam erat, sed diam
+                                                            voluptua. At vero eos et </p>
+                                                    </div>
+                                                    <div class="ctablock">
+
+                                                        <span class="goIcon"><a href="#"
+                                                                aria-label="Advisory"><i>Search</i></a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="cardBlock">
+                                                <div class="insideCard">
+                                                    <div class="cardTitle">
+                                                        <a href="#" aria-label="Consumer Products">
+                                                            <p>Consumer <br>
+                                                                Products</p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="cardContent">
+                                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                                            diam nonumy eirmod tempor
+                                                            invidunt ut labore et dolore magna aliquyam erat, sed diam
+                                                            voluptua. At vero eos et </p>
+                                                    </div>
+                                                    <div class="ctablock">
+
+                                                        <span class="goIcon"><a href="#"
+                                                                aria-label="Advisory"><i>Search</i></a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="cardBlock">
+                                                <div class="insideCard">
+                                                    <div class="cardTitle">
+                                                        <a href="" aria-label="Distribution">
+                                                            <p>Distribution </p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="cardContent">
+                                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                                            diam nonumy eirmod tempor
+                                                            invidunt ut labore et dolore magna aliquyam erat, sed diam
+                                                            voluptua. At vero eos et </p>
+                                                    </div>
+                                                    <div class="ctablock">
+
+                                                        <span class="goIcon"><a href="#"
+                                                                aria-label="Advisory"><i>Search</i></a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="cardBlock">
+                                                <div class="insideCard">
+                                                    <div class="cardTitle">
+                                                        <a href="" aria-label="Industrial">
+                                                            <p>Industrial</p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="cardContent">
+                                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                                            diam nonumy eirmod tempor
+                                                            invidunt ut labore et dolore magna aliquyam erat, sed diam
+                                                            voluptua. At vero eos et </p>
+                                                    </div>
+                                                    <div class="ctablock">
+
+                                                        <span class="goIcon"><a href="#"
+                                                                aria-label="Advisory"><i>Search</i></a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="cardBlock">
+                                                <div class="insideCard">
+                                                    <div class="cardTitle">
+                                                        <a href="#" aria-label="Consumer Products">
+                                                            <p>Consumer <br>
+                                                                Products</p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="cardContent">
+                                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                                            diam nonumy eirmod tempor
+                                                            invidunt ut labore et dolore magna aliquyam erat, sed diam
+                                                            voluptua. At vero eos et </p>
+                                                    </div>
+                                                    <div class="ctablock">
+
+                                                        <span class="goIcon"><a href="#"
+                                                                aria-label="Advisory"><i>Search</i></a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="cardBlock">
+                                                <div class="insideCard">
+                                                    <div class="cardTitle">
+                                                        <a href="#" aria-label="Automotive Automotive">
+                                                            <p>Automotive <br>
+                                                                Automotive</p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="cardContent">
+                                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                                            diam nonumy eirmod tempor
+                                                            invidunt ut labore et dolore magna aliquyam erat, sed diam
+                                                            voluptua. At vero eos et </p>
+                                                    </div>
+                                                    <div class="ctablock">
+
+                                                        <span class="goIcon"><a href="#"
+                                                                aria-label="Advisory"><i>Search</i></a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="swiper-content">
+                            <div class="tabblock">
+                                <div class="tabimagecontent">
+                                    <div class="indSpecialPanel module">
+
+                                        <div class="flexBoxs ">
+                                            <div class="cardBlock">
+                                                <div class="insideCard">
+                                                    <div class="cardTitle">
+                                                        <a href="#" aria-label="Aerospace & Defense">
+                                                            <p>Aerospace <br>
+                                                                & Defense</p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="cardContent">
+                                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                                            diam nonumy eirmod tempor
+                                                            invidunt ut labore et dolore magna aliquyam erat, sed diam
+                                                            voluptua. At vero eos et </p>
+                                                    </div>
+                                                    <div class="ctablock">
+
+                                                        <span class="goIcon"><a href="#"
+                                                                aria-label="Advisory"><i>Search</i></a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="cardBlock">
+                                                <div class="insideCard">
+                                                    <div class="cardTitle">
+                                                        <a href="#" aria-label="Automotive Automotive">
+                                                            <p>Automotive <br>
+                                                                Automotive</p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="cardContent">
+                                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                                            diam nonumy eirmod tempor
+                                                            invidunt ut labore et dolore magna aliquyam erat, sed diam
+                                                            voluptua. At vero eos et </p>
+                                                    </div>
+                                                    <div class="ctablock">
+
+                                                        <span class="goIcon"><a href="#"
+                                                                aria-label="Advisory"><i>Search</i></a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="cardBlock">
+                                                <div class="insideCard">
+                                                    <div class="cardTitle">
+                                                        <a href="#" aria-label="Consumer Products">
+                                                            <p>Consumer <br>
+                                                                Products</p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="cardContent">
+                                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                                            diam nonumy eirmod tempor
+                                                            invidunt ut labore et dolore magna aliquyam erat, sed diam
+                                                            voluptua. At vero eos et </p>
+                                                    </div>
+                                                    <div class="ctablock">
+
+                                                        <span class="goIcon"><a href="#"
+                                                                aria-label="Advisory"><i>Search</i></a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="cardBlock">
+                                                <div class="insideCard">
+                                                    <div class="cardTitle">
+                                                        <a href="" aria-label="Distribution">
+                                                            <p>Distribution </p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="cardContent">
+                                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                                            diam nonumy eirmod tempor
+                                                            invidunt ut labore et dolore magna aliquyam erat, sed diam
+                                                            voluptua. At vero eos et </p>
+                                                    </div>
+                                                    <div class="ctablock">
+
+                                                        <span class="goIcon"><a href="#"
+                                                                aria-label="Advisory"><i>Search</i></a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="cardBlock">
+                                                <div class="insideCard">
+                                                    <div class="cardTitle">
+                                                        <a href="" aria-label="Industrial">
+                                                            <p>Industrial</p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="cardContent">
+                                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                                            diam nonumy eirmod tempor
+                                                            invidunt ut labore et dolore magna aliquyam erat, sed diam
+                                                            voluptua. At vero eos et </p>
+                                                    </div>
+                                                    <div class="ctablock">
+
+                                                        <span class="goIcon"><a href="#"
+                                                                aria-label="Advisory"><i>Search</i></a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="cardBlock">
+                                                <div class="insideCard">
+                                                    <div class="cardTitle">
+                                                        <a href="#" aria-label="Aerospace & Defense">
+                                                            <p>Aerospace <br>
+                                                                & Defense</p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="cardContent">
+                                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                                            diam nonumy eirmod tempor
+                                                            invidunt ut labore et dolore magna aliquyam erat, sed diam
+                                                            voluptua. At vero eos et </p>
+                                                    </div>
+                                                    <div class="ctablock">
+
+                                                        <span class="goIcon"><a href="#"
+                                                                aria-label="Advisory"><i>Search</i></a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="cardBlock">
+                                                <div class="insideCard">
+                                                    <div class="cardTitle">
+                                                        <a href="#" aria-label="Automotive Automotive">
+                                                            <p>Automotive <br>
+                                                                Automotive</p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="cardContent">
+                                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                                            diam nonumy eirmod tempor
+                                                            invidunt ut labore et dolore magna aliquyam erat, sed diam
+                                                            voluptua. At vero eos et </p>
+                                                    </div>
+                                                    <div class="ctablock">
+
+                                                        <span class="goIcon"><a href="#"
+                                                                aria-label="Advisory"><i>Search</i></a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="cardBlock">
+                                                <div class="insideCard">
+                                                    <div class="cardTitle">
+                                                        <a href="#" aria-label="Consumer Products">
+                                                            <p>Consumer <br>
+                                                                Products</p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="cardContent">
+                                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                                            diam nonumy eirmod tempor
+                                                            invidunt ut labore et dolore magna aliquyam erat, sed diam
+                                                            voluptua. At vero eos et </p>
+                                                    </div>
+                                                    <div class="ctablock">
+
+                                                        <span class="goIcon"><a href="#"
+                                                                aria-label="Advisory"><i>Search</i></a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="cardBlock">
+                                                <div class="insideCard">
+                                                    <div class="cardTitle">
+                                                        <a href="" aria-label="Distribution">
+                                                            <p>Distribution </p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="cardContent">
+                                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                                            diam nonumy eirmod tempor
+                                                            invidunt ut labore et dolore magna aliquyam erat, sed diam
+                                                            voluptua. At vero eos et </p>
+                                                    </div>
+                                                    <div class="ctablock">
+
+                                                        <span class="goIcon"><a href="#"
+                                                                aria-label="Advisory"><i>Search</i></a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="cardBlock">
+                                                <div class="insideCard">
+                                                    <div class="cardTitle">
+                                                        <a href="" aria-label="Industrial">
+                                                            <p>Industrial</p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="cardContent">
+                                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                                            diam nonumy eirmod tempor
+                                                            invidunt ut labore et dolore magna aliquyam erat, sed diam
+                                                            voluptua. At vero eos et </p>
+                                                    </div>
+                                                    <div class="ctablock">
+
+                                                        <span class="goIcon"><a href="#"
+                                                                aria-label="Advisory"><i>Search</i></a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="cardBlock">
+                                                <div class="insideCard">
+                                                    <div class="cardTitle">
+                                                        <a href="#" aria-label="Consumer Products">
+                                                            <p>Consumer <br>
+                                                                Products</p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="cardContent">
+                                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                                            diam nonumy eirmod tempor
+                                                            invidunt ut labore et dolore magna aliquyam erat, sed diam
+                                                            voluptua. At vero eos et </p>
+                                                    </div>
+                                                    <div class="ctablock">
+
+                                                        <span class="goIcon"><a href="#"
+                                                                aria-label="Advisory"><i>Search</i></a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="cardBlock">
+                                                <div class="insideCard">
+                                                    <div class="cardTitle">
+                                                        <a href="#" aria-label="Automotive Automotive">
+                                                            <p>Automotive <br>
+                                                                Automotive</p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="cardContent">
+                                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                                            diam nonumy eirmod tempor
+                                                            invidunt ut labore et dolore magna aliquyam erat, sed diam
+                                                            voluptua. At vero eos et </p>
+                                                    </div>
+                                                    <div class="ctablock">
+
+                                                        <span class="goIcon"><a href="#"
+                                                                aria-label="Advisory"><i>Search</i></a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="swiper-content">
+                            <div class="tabblock">
+                                <div class="tabimagecontent">
+                                    <div class="indSpecialPanel module">
+
+                                        <div class="flexBoxs ">
+                                            <div class="cardBlock">
+                                                <div class="insideCard">
+                                                    <div class="cardTitle">
+                                                        <a href="#" aria-label="Aerospace & Defense">
+                                                            <p>Aerospace <br>
+                                                                & Defense</p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="cardContent">
+                                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                                            diam nonumy eirmod tempor
+                                                            invidunt ut labore et dolore magna aliquyam erat, sed diam
+                                                            voluptua. At vero eos et </p>
+                                                    </div>
+                                                    <div class="ctablock">
+
+                                                        <span class="goIcon"><a href="#"
+                                                                aria-label="Advisory"><i>Search</i></a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="cardBlock">
+                                                <div class="insideCard">
+                                                    <div class="cardTitle">
+                                                        <a href="#" aria-label="Automotive Automotive">
+                                                            <p>Automotive <br>
+                                                                Automotive</p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="cardContent">
+                                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                                            diam nonumy eirmod tempor
+                                                            invidunt ut labore et dolore magna aliquyam erat, sed diam
+                                                            voluptua. At vero eos et </p>
+                                                    </div>
+                                                    <div class="ctablock">
+
+                                                        <span class="goIcon"><a href="#"
+                                                                aria-label="Advisory"><i>Search</i></a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="cardBlock">
+                                                <div class="insideCard">
+                                                    <div class="cardTitle">
+                                                        <a href="#" aria-label="Consumer Products">
+                                                            <p>Consumer <br>
+                                                                Products</p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="cardContent">
+                                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                                            diam nonumy eirmod tempor
+                                                            invidunt ut labore et dolore magna aliquyam erat, sed diam
+                                                            voluptua. At vero eos et </p>
+                                                    </div>
+                                                    <div class="ctablock">
+
+                                                        <span class="goIcon"><a href="#"
+                                                                aria-label="Advisory"><i>Search</i></a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="cardBlock">
+                                                <div class="insideCard">
+                                                    <div class="cardTitle">
+                                                        <a href="" aria-label="Distribution">
+                                                            <p>Distribution </p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="cardContent">
+                                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                                            diam nonumy eirmod tempor
+                                                            invidunt ut labore et dolore magna aliquyam erat, sed diam
+                                                            voluptua. At vero eos et </p>
+                                                    </div>
+                                                    <div class="ctablock">
+
+                                                        <span class="goIcon"><a href="#"
+                                                                aria-label="Advisory"><i>Search</i></a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="cardBlock">
+                                                <div class="insideCard">
+                                                    <div class="cardTitle">
+                                                        <a href="" aria-label="Industrial">
+                                                            <p>Industrial</p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="cardContent">
+                                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                                            diam nonumy eirmod tempor
+                                                            invidunt ut labore et dolore magna aliquyam erat, sed diam
+                                                            voluptua. At vero eos et </p>
+                                                    </div>
+                                                    <div class="ctablock">
+
+                                                        <span class="goIcon"><a href="#"
+                                                                aria-label="Advisory"><i>Search</i></a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="cardBlock">
+                                                <div class="insideCard">
+                                                    <div class="cardTitle">
+                                                        <a href="#" aria-label="Aerospace & Defense">
+                                                            <p>Aerospace <br>
+                                                                & Defense</p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="cardContent">
+                                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                                            diam nonumy eirmod tempor
+                                                            invidunt ut labore et dolore magna aliquyam erat, sed diam
+                                                            voluptua. At vero eos et </p>
+                                                    </div>
+                                                    <div class="ctablock">
+
+                                                        <span class="goIcon"><a href="#"
+                                                                aria-label="Advisory"><i>Search</i></a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="cardBlock">
+                                                <div class="insideCard">
+                                                    <div class="cardTitle">
+                                                        <a href="#" aria-label="Automotive Automotive">
+                                                            <p>Automotive <br>
+                                                                Automotive</p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="cardContent">
+                                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                                            diam nonumy eirmod tempor
+                                                            invidunt ut labore et dolore magna aliquyam erat, sed diam
+                                                            voluptua. At vero eos et </p>
+                                                    </div>
+                                                    <div class="ctablock">
+
+                                                        <span class="goIcon"><a href="#"
+                                                                aria-label="Advisory"><i>Search</i></a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="cardBlock">
+                                                <div class="insideCard">
+                                                    <div class="cardTitle">
+                                                        <a href="#" aria-label="Consumer Products">
+                                                            <p>Consumer <br>
+                                                                Products</p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="cardContent">
+                                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                                            diam nonumy eirmod tempor
+                                                            invidunt ut labore et dolore magna aliquyam erat, sed diam
+                                                            voluptua. At vero eos et </p>
+                                                    </div>
+                                                    <div class="ctablock">
+
+                                                        <span class="goIcon"><a href="#"
+                                                                aria-label="Advisory"><i>Search</i></a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="cardBlock">
+                                                <div class="insideCard">
+                                                    <div class="cardTitle">
+                                                        <a href="" aria-label="Distribution">
+                                                            <p>Distribution </p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="cardContent">
+                                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                                            diam nonumy eirmod tempor
+                                                            invidunt ut labore et dolore magna aliquyam erat, sed diam
+                                                            voluptua. At vero eos et </p>
+                                                    </div>
+                                                    <div class="ctablock">
+
+                                                        <span class="goIcon"><a href="#"
+                                                                aria-label="Advisory"><i>Search</i></a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="cardBlock">
+                                                <div class="insideCard">
+                                                    <div class="cardTitle">
+                                                        <a href="" aria-label="Industrial">
+                                                            <p>Industrial</p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="cardContent">
+                                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                                            diam nonumy eirmod tempor
+                                                            invidunt ut labore et dolore magna aliquyam erat, sed diam
+                                                            voluptua. At vero eos et </p>
+                                                    </div>
+                                                    <div class="ctablock">
+
+                                                        <span class="goIcon"><a href="#"
+                                                                aria-label="Advisory"><i>Search</i></a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="cardBlock">
+                                                <div class="insideCard">
+                                                    <div class="cardTitle">
+                                                        <a href="#" aria-label="Consumer Products">
+                                                            <p>Consumer <br>
+                                                                Products</p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="cardContent">
+                                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                                            diam nonumy eirmod tempor
+                                                            invidunt ut labore et dolore magna aliquyam erat, sed diam
+                                                            voluptua. At vero eos et </p>
+                                                    </div>
+                                                    <div class="ctablock">
+
+                                                        <span class="goIcon"><a href="#"
+                                                                aria-label="Advisory"><i>Search</i></a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="cardBlock">
+                                                <div class="insideCard">
+                                                    <div class="cardTitle">
+                                                        <a href="#" aria-label="Automotive Automotive">
+                                                            <p>Automotive <br>
+                                                                Automotive</p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="cardContent">
+                                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                                            diam nonumy eirmod tempor
+                                                            invidunt ut labore et dolore magna aliquyam erat, sed diam
+                                                            voluptua. At vero eos et </p>
+                                                    </div>
+                                                    <div class="ctablock">
+
+                                                        <span class="goIcon"><a href="#"
+                                                                aria-label="Advisory"><i>Search</i></a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="bottomBG">
+        <img src="assets/images/home/follow-bg-red.svg" alt="UHY follow-overlay" />
+    </div> -->
+</div>

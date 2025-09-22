@@ -1,0 +1,291 @@
+@import "util/util";
+$white: #ffffff;
+$primary: #007041;
+$primary-color: #007041;
+$img: "../../images/";
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+.testiTitle {
+
+    p,
+    h2 {
+        font-size: 25px;
+        line-height: 32px;
+        font-weight: 700;
+        font-family: 'mundial';
+        text-align: center;
+        color: #00362A;
+
+        @include breakpoint(large) {
+            text-align: left;
+            font-size: 48px;
+            line-height: 55px;
+        }
+    }
+
+    margin-bottom: 20px;
+
+    @include breakpoint(xlarge) {
+        margin-bottom: 40px;
+    }
+}
+
+
+.activitiesPanel {
+    position: relative;
+    // background: #dce7e4;
+    margin-top: 70px; 
+    padding-bottom: 25px;
+    @include breakpoint(large) {
+        margin-top: 110px;
+        padding-bottom: inherit;
+    }
+
+    .activity {
+        position: relative;
+        z-index: 2;
+
+        .flexActivity {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: 27px;
+            @include breakpoint(large) {
+                flex-direction: row;
+                gap: 0;
+            }
+
+            &:nth-child(even) {
+                @include breakpoint(large) {
+                    flex-direction: row-reverse;
+                }
+
+                .contentActivity {
+                    margin-top: 0;
+                    // direction: rtl; 
+                    .insideContent {
+                        @include breakpoint(large) {
+                            margin-left: 0;
+                            margin-right: 50px;
+                        }
+
+                        @include breakpoint(llarge) {
+                            margin-left: 0;
+                            margin-right: 60px;
+                        }
+
+                        .titleCon {
+                            @include breakpoint(large){
+
+                            }
+                            p,
+                            h2 {
+                                @include breakpoint(large) {
+                                    text-align: right;
+                                }
+                            }
+                        }
+
+                        .descCont {
+                            p {
+                                @include breakpoint(large) {
+                                    text-align: right;
+                                    float: right;
+                                    margin-bottom: 4px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .imgActivity {
+               width: 100%;
+                @include breakpoint(large){ width: 50%;}
+                .clipImg {
+                    overflow: hidden;
+
+                    .imgBlock {
+                        overflow: hidden;
+                        img{
+                            width: 100%;
+                        }
+
+                    }
+                }
+
+                .clipImg2 {
+                    overflow: hidden;
+
+                    .imgBlock {
+                        overflow: hidden;
+                    }
+                }
+
+                .clipImg1 {
+                    overflow: hidden;
+
+                    .imgBlock {
+                        overflow: hidden;
+
+                    }
+                }
+
+                .leftFirst{
+                    border-radius: 50px 50px 0 50px;
+                    @include breakpoint(large) {
+                        border-radius: 60px 60px 0 60px;
+                    }
+                    @include breakpoint(xlarge) {
+                        border-radius: 120px 120px 0 120px;
+                    }
+
+                }
+                .rightFirst{
+                    border-radius: 50px 50px  50px 0;
+                    @include breakpoint(large) {
+                        border-radius: 60px 60px  60px 0;
+                    }
+                    @include breakpoint(xlarge) {
+                        border-radius: 120px 120px  120px 0;
+                    }
+
+                }
+
+                .leftLast {
+                    border-radius: 0 50px 50px 50px ;
+                    @include breakpoint(large) {
+                        border-radius: 60px 0 60px 60px;
+                    }
+                    @include breakpoint(xlarge) {
+                        border-radius: 120px 0 120px 120px;
+                    }
+                }
+                .rightLast {
+                    border-radius: 50px 0 50px 50px;
+                    @include breakpoint(large) {
+                        border-radius:  0 60px 60px 60px;
+                    }
+                    @include breakpoint(xlarge) {
+                        border-radius:  0 120px 120px 120px;
+                    }
+                }
+                .leftMiddle{
+                    border-radius: 0 50px 0 50px;
+                    @include breakpoint(large) {
+                        border-radius:  60px 0 0 60px ;
+                    }
+                    @include breakpoint(xlarge) {
+                        border-radius:  120px 0 0 120px ;
+                    }
+                }
+                .rightMiddle{
+                    border-radius: 50px 0 50px 0;
+                    @include breakpoint(large) {
+                        border-radius: 0 60px 60px 0;
+                    }
+                    @include breakpoint(xlarge) {
+                        border-radius: 0 120px 120px 0;
+                    }
+                }
+            }
+
+            .contentActivity {
+                width: 100%;
+                @include breakpoint(large){
+                    margin-top: -20px;
+                    width: 50%;
+                }
+                .insideContent {
+                    @include breakpoint(large) {
+                        margin-left: 65px;
+                    }
+
+                    .titleCon {
+                        @include breakpoint(large){    margin-bottom: 17px;}
+                        h2 {
+                            color: #00362A;
+                            font-family: 'mundial';
+                            font-weight: 700;
+                            font-size: 25px;
+                            line-height: 30px;
+
+                            @include breakpoint(large only) {
+                                font-size: 28px;
+                                line-height: 36px;
+                            }
+                            @include breakpoint(llarge){
+                                font-size: 48px;
+                                line-height: 58px;}
+                        }
+                    }
+
+                    .descCont {
+                        p {
+                            font-size: 18px;
+                            line-height: 24px;
+                            font-family: 'mundial';
+                            font-weight: normal;
+
+                            @include breakpoint(large only) {
+                                font-size: 15px;
+                                line-height: 18px;
+
+                                +p {
+
+                                    margin-top: 5px;
+                                }
+                            }
+
+                            br{
+                                display: none;
+                                @include breakpoint(large){
+                                    display: block;
+                                }
+                            }
+                        }
+
+                    }
+                }
+            }
+            + .flexActivity{
+                margin-top: 40px;
+                @include breakpoint(large){
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+
+    &::before {
+
+        content: '';
+        background: #dce7e4;
+        height: calc(100% - 3%);
+        width: 100%;
+        position: absolute;
+        top: 3%;
+        z-index: 0;
+        @include breakpoint(large){
+            height: calc(100% - 6%);}
+    }
+
+    // &::after {
+
+    //     content: '';
+    //     background: #fff;
+    //     height: 30px;
+    //     width: 100%;
+    //     position: absolute;
+    //     bottom: 0;
+    //     z-index: 0;
+
+    // }
+}

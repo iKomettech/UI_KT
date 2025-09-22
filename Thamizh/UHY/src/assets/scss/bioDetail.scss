@@ -1,0 +1,604 @@
+@import "util/util";
+$white: #ffffff;
+$primary-color: #007041;
+$img: "../../images/";
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+
+p,
+b {
+    margin: 0;
+}
+
+
+
+.testiTitle {
+
+    p,
+    h2 {
+        font-size: 25px;
+        line-height: 38px;
+        font-weight: 700;
+        font-family: 'mundial';
+        text-align: center;
+        color: #00362A;
+        margin-bottom: 15px;
+
+        @include breakpoint(large) {
+            line-height: 55px;
+            text-align: left;
+            font-size: 48px;
+        }
+    }
+
+    margin-bottom: 25px;
+
+    @include breakpoint(xlarge) {
+        margin-bottom: 40px;
+    }
+}
+
+
+.bioDetailPanel {
+    background: #EFF5F4;
+    padding-top: 88px;
+    position: relative;
+
+    @media (min-width: 549px) and (max-width: 767px) {
+
+        padding-top: 120px;
+
+    }
+
+    @include breakpoint(medium) {
+        padding-top: 125px;
+    }
+
+    @include breakpoint(large) {
+        padding-top: 175px;
+    }
+
+    .flex-banner {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 26px;
+
+        @include breakpoint(medium) {
+            flex-direction: row;
+            gap: 25px;
+        }
+
+        @include breakpoint(xxlarge) {
+            gap: 70px;
+            margin-top: 30px;
+        }
+
+        .lftBlock {
+            @include breakpoint(large) {
+                width: 46%;
+            }
+
+            .imgBlock {
+                overflow: hidden;
+                max-width: 375px;
+                margin: 0 auto;
+                box-shadow: 0 3px 10px rgba(0, 0, 0, .25);
+
+                @include breakpoint(large) {
+                    margin-bottom: -12%;
+                }
+
+                img {
+                    width: 100%;
+                }
+            }
+        }
+
+        .rgtBlock {
+            @include breakpoint(large) {
+                width: 54%;
+                margin-top: 7px;
+            }
+
+            .bannerContent {
+                padding-top: 0px;
+
+
+                .titleCol {
+                    padding-bottom: 5px;
+
+                    @include breakpoint(large) {
+                        padding-top: 0;
+                    }
+
+                    @include breakpoint(xlarge) {
+                        max-width: 487px;
+                    }
+
+                    h1 {
+                        font-size: 25px;
+                        line-height: 30px;
+                        font-weight: 700;
+                        color: #01362A;
+                        margin-bottom: 5px;
+
+                        @include breakpoint(large) {
+                            font-size: 48px;
+                            line-height: 48px;
+                        }
+                    }
+
+                }
+
+                .bioDesc {
+                    max-width: 545px;
+
+                    p {
+                        font-size: 20px;
+                        line-height: 22px;
+                        color: #01362A;
+                        font-weight: 400;
+                        font-family: 'mundial';
+
+                        @include breakpoint(large) {
+                            font-size: 28px;
+                            line-height: 38px;
+                        }
+                    }
+                }
+
+                .bioCity {
+                    p {
+                        font-size: 16px;
+                        line-height: 20px;
+                        font-weight: 400;
+                        color: #01362A;
+                        font-family: 'mundial';
+
+                        @include breakpoint(large) {
+                            font-size: 18px;
+                            line-height: 38px;
+                        }
+                    }
+
+                    margin-bottom: 20px;
+
+                    @include breakpoint(large) {
+                        margin-bottom: 40px;
+                    }
+                }
+
+                .ctaBlock {
+                    margin-bottom: 32px;
+
+                    .ctabtn.secondarybtn {
+                        color: #01362A;
+                        border-color: #01362A;
+
+                        &:hover {
+                            background: #01362A;
+                            color: #fff;
+                        }
+                    }
+                }
+
+                .socialCol {
+
+                    .socialLpanel {
+                        .sociallinks {
+                            display: flex;
+                            align-items: center;
+                            margin-left: 0;                         
+
+                            li {
+                                list-style: none;
+                                padding-left: 16px;
+
+                                &::before {
+                                    content: inherit;
+                                }
+
+                                a {
+                                    display: flex;
+                                    align-items: center;
+
+                                    svg {
+                                        transition: all 0.5s;
+                                        height: 23px;
+                                        width: 23px;
+
+                                        @include breakpoint(large) {
+                                            height: 43px;
+                                            width: 43px;
+                                        }
+
+                                        &:hover {
+                                            transition: all 0.5s;
+                                            transform: scale(1.05);
+
+                                            path {
+                                                fill: #007041;
+                                            }
+                                        }
+                                    }
+
+                                    span {
+                                        color: #01362A;
+                                        font-size: 18px;
+                                        line-height: 38px;
+                                        visibility: hidden;
+                                        transition: all .5s ease;
+                                        top: 3px;
+                                        position: relative;
+                                        @include breakpoint(large) {
+                                            top: 12px;
+                                        }
+                                    }
+
+                                    &:hover {
+                                        span {
+                                            visibility: visible;
+                                            transition: all .5s ease;
+                                        }
+                                    }
+                                }
+
+                                &:first-child {
+                                    padding-left: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .patternBanner {
+        display: none;
+
+        @include breakpoint(large) {
+            display: block;
+        }
+
+        position: absolute;
+        top: -112px;
+        right: -7px;
+        z-index: 0;
+    }
+}
+
+
+.bioDescription {
+    position: relative;
+    margin-top: 40px;
+
+    @include breakpoint(xlarge) {
+        margin-top: 63px;
+    }
+
+    .flexContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 35px;
+
+        @include breakpoint(large) {
+            flex-direction: row;
+            gap: 0px;
+        }
+
+        .lftBlock {
+            width: 100%;
+
+            @include breakpoint(large) {
+                width: 56%;
+            }
+
+            .desContent {
+                @include breakpoint(large) {
+                    padding-right: 15px;
+                }
+
+                @include breakpoint(xlarge) {
+                    max-width: 720px;
+                    padding-right: 0;
+                }
+
+                p {
+                    font-size: 18px;
+                    line-height: 24px;
+                    font-weight: 400;
+                    font-family: 'mundial';
+                }
+
+                p+p {
+                    margin-top: 24px;
+                }
+
+            }
+
+
+
+
+        }
+
+        .rgtBlock {
+            width: 100%;
+
+            @include breakpoint(large) {
+                width: 44%;
+            }
+
+            .formContent {
+                background: #A9C8D0;
+                border-radius: 20px;
+                padding: 32px 20px 25px;
+                margin-top: 5px;
+
+                // @include breakpoint(xlarge) {
+                //     max-width: 491px;
+                // }
+
+                .formTitle {
+                    p {
+                        b {
+                            font-size: 28px;
+                            font-family: 'mundial';
+                            line-height: 38px;
+                            color: #01362A;
+                        }
+                    }
+                }
+
+                .formDesc {
+                    padding-top: 19px;
+
+                    p {
+                        font-size: 18px;
+                        font-weight: 400;
+                        line-height: 24px;
+                        font-family: 'mundial';
+                        color: #000;
+                    }
+                }
+
+                .qaForm {
+                    margin-top: 30px;
+
+                    .form-group {
+                        label {
+                            font-size: 20px;
+                            font-weight: 600;
+                            line-height: 38px;
+                            font-family: 'mundial';
+                            color: #01362A;
+                            padding-bottom: 3px;
+                        }
+
+                        .txtBox {
+                            box-shadow: none;
+                            font-size: 18px;
+                            font-family: 'mundial';
+                            line-height: 38px;
+                            border-radius: 0;
+                            height: 54px;
+                            padding: .5rem 18px
+                        }
+
+                        .txtArea {
+                            box-shadow: none;
+                            font-size: 18px;
+                            font-family: 'mundial';
+                            line-height: 38px;
+                            border-radius: 0;
+                            padding: .5rem 18px;
+                            min-height: 225px;
+                        }
+
+                        .mt-9 {
+                            margin-top: 9px;
+                        }
+
+                        .ctaBtn {
+                            color: #004B30;
+                            background: transparent;
+                            border: 2px solid #004B30;
+                            padding: 10px 29px;
+                            font-size: 16px;
+                            border-radius: 20px;
+                            font-family: 'mundial';
+                            line-height: 19px;
+                            font-weight: 600;
+                            margin-top: 9px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .flex-tags {
+        display: flex;
+        gap: 10px;
+        margin-top: 25px;
+        flex-wrap: wrap;
+
+        @include breakpoint(xlarge) {
+            margin-top: 90px;
+            max-width: 720px;
+        }
+
+        .flexDiv {
+            .btnComp {
+                padding: 6px 10px;
+                background: #fff;
+                filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.25));
+                border-radius: 5px;
+
+                @include breakpoint(large) {
+                    padding: 10px 14px;
+                }
+
+                span {
+                    font-size: 18px;
+                    font-weight: 200;
+                    letter-spacing: -.8px;
+                    font-family: 'mundial';
+                    color: #015844;
+                    @include breakpoint(large) {
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
+
+    .flex-tags1 {
+        display: flex;
+        gap: 10px;
+        margin-top: 15px;
+        flex-wrap: wrap;
+
+        @include breakpoint(xlarge) {
+            margin-top: 20px;
+        }
+
+        .flexDiv {
+            .btnComp {
+                padding: 6px 10px;
+                background: #fff;
+                filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.25));
+                border-radius: 5px;
+
+                @include breakpoint(large) {
+                    padding: 10px 14px;
+                }
+
+                span {
+                    font-size: 18px;
+                    font-weight: 200;
+                    letter-spacing: -.8px;
+                    font-family: 'mundial';
+                    color: #015844;
+
+                    @include breakpoint(large) {
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
+
+
+    .tagFlex {
+        display: flex;
+        align-items: center;
+        margin-left: -12px;
+        filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.25));
+        border-radius: 3px;
+        height: 47px;
+
+        .pentagon {
+            position: relative;
+            width: 37px;
+            height: 17px;
+            transform: rotate(270deg);
+            border-width: 0px 11px 17px;
+            border-style: solid;
+            border-color: #007041 transparent;
+
+            @include breakpoint(large) {
+                width: 46.5px;
+                height: 20px;
+                border-width: 0px 15px 20px;
+
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                height: 15px;
+                width: 15px;
+                background: rgb(255, 255, 255);
+                filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.25));
+                border-radius: 15px;
+                left: 9.08%;
+                top: 7px;
+            }
+        }
+
+        .price-tag {
+            font-size: 18px;
+            color: #fff;
+            background: #007041;
+            padding: 0 11px 3px 14px;
+            border-radius: 0px 5px 5px 2px;
+            font-weight: 700;
+            margin-left: -10px;
+            line-height: 35px;
+
+            @include breakpoint(large) {
+                font-size: 24px;
+                line-height: 48px;
+                padding: 0 20px 0 21px;
+                margin-left: -14px;
+
+            }
+        }
+
+        .price-tag1 {
+            font-size: 18px;
+            color: #fff;
+            background: #007041;
+            padding: 0 11px 3px 14px;
+            border-radius: 0px 5px 5px 2px;
+            font-weight: 700;
+            margin-left: -10px;
+            line-height: 35px;
+
+            @include breakpoint(large) {
+                font-size: 24px;
+                line-height: 48px;
+                padding: 0 11px 0 10px;
+                margin-left: -14px;
+
+            }
+        }
+
+
+    }
+
+    .patternBg {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        max-width: 309px;
+        max-height: 190px;
+        bottom: 0;
+        right: 0px;
+        z-index: -1;
+        background-repeat: no-repeat;
+        background-size: contain;
+        // @include breakpoint(medium){
+
+        // max-width: 398px;
+        // max-height: 242px;
+        // }
+        @include breakpoint(large) {
+            right: -8px;
+            max-width: 832px;
+            max-height: 512px;
+        }
+    }
+
+}

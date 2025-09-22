@@ -1,0 +1,825 @@
+<link rel="stylesheet" href="{{root}}assets/css/bannerPanel/bannerPanel.css">
+<div class="header-overlay">
+    <picture>
+        <source media="(min-width:320px) and (max-width:430px)"
+            srcset="{{root}}assets/images/settings/header-overlay-mobile.svg" type="image/jpg">
+        <source media="(min-width:431px) and (max-width:1023px)"
+            srcset="{{root}}assets/images/settings/header-overlay.svg" type="image/jpg">
+        <source media="(min-width:1024px) and (max-width:1279px)"
+            srcset="{{root}}assets/images/settings/header-overlay-tablet.svg" type="image/jpg">
+        <source media="(min-width: 1280px)" srcset="{{root}}assets/images/settings/header-overlay.svg" type="image/jpg">
+        <img src="{{root}}assets/images/settings/header-overlay.svg" alt="UHY header-overlay" />
+    </picture>
+</div>
+
+<div class="industriesPanel module come-in">
+    <img src="../assets/images/industries/sub/advisory.jpg" width="1920" height="554" alt="banner" loading="lazy"
+        class="lazy">
+    <div class="grid-container">
+        <div class="indTitle">
+            <h1>Insights</h1>
+        </div>
+    </div>
+</div>
+
+
+<div class="breadcrumbWrapBottom module come-in " data-swiftype-index="false">
+    <div class="grid-container">
+        <ul class="breadcrumbs">
+            <li class="breadcrumb-item ">
+                <a href="/" aria-label="Home">Home</a>
+            </li>
+            <li class="breadcrumb-item ">
+                <a href="/" aria-label="Insights">Insights</a>
+            </li>
+            <li class="breadcrumb-item ">View All Insights</li>
+        </ul>
+    </div>
+</div>
+
+<link rel="stylesheet" href="{{root}}assets/css/insights/insights.css">
+<!-- <div class="featureInsightsPanel">
+    <div class="grid-container">
+        <div class="testiTitle">
+            <p>Featured Insight</p>
+        </div>
+        <div class="cardBlock">
+            <div class="flexdiv">
+                <div class="lftBlock">
+                    <div class="imgCard">
+                        <div class="imgWrap">
+                            <img src="../assets/images/industries/sub/featureInsights.jpg" alt="feature Insights"
+                                width="400" height="400" class="lazy zoom">
+                        </div>
+                    </div>
+                </div>
+                <div class="rgtBlock">
+                    <div class="cardSec">
+                        <div class="flxCol">
+                            <div class="dateCol">
+                                <p><span>10/10/24</span></p>
+                            </div>
+                            <div class="secTit">
+                                <p>Video</p>
+                            </div>
+                            <div class="secTimestamp">
+                                <p>1 min watch</p>
+                            </div>
+                        </div>
+                        <div class="cardTitle">
+                            <p>Manufacturers Risk Inaccurate Financial Information Using
+                                Outdated Cost Models</p>
+                        </div>
+                        <div class="cardDesc">
+                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+                                accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+                                sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+                                sadipscing elitr, sed </p>
+                        </div>
+                        <div class="goIcon">
+                            <i>search</i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+
+<link rel="stylesheet" href="{{root}}assets/css/featureSlide/featureSlide.css">
+<script type="text/javascript" defer>
+    $(document).ready(function () {
+        var swiper = new Swiper(".featureSlider", {
+            slidesPerView: 1,
+            spaceBetween: 50,
+            loop: true,
+            pagination: {
+                el: ".featureSlider .swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".featureSlider .swiper-button-next",
+                prevEl: ".featureSlider .swiper-button-prev",
+            },
+            // autoplay: {
+            //     delay: 2500,
+            //     disableOnInteraction: false,
+            // },
+            breakpoints: {
+                640: {
+                    slidesPerView: 1,
+                    slidesPerGroup: 1,
+                    spaceBetween: 50,
+                },
+                768: {
+                    slidesPerView: 1,
+                    slidesPerGroup: 1,
+                    spaceBetween: 50,
+                },
+                1024: {
+                    slidesPerView: 1,
+                    slidesPerGroup: 1,
+                    spaceBetween: 50,
+                },
+                1199: {
+                    slidesPerView: 1,
+                    spaceBetween: 60,
+                },
+            },
+        });
+    });
+
+
+    $(document).ready(function () {
+        function setMaxHeight() {
+           
+            var swiperheightsnew = $(".featureSlidePanel .gridContainer .features .cardBlock .flexdiv .rgtBlock").map(function () {
+                return $(this).height();
+            }).get();
+             
+            var swipermaxHeightnew = Math.max.apply(null, swiperheightsnew);
+         
+            $(".featureSlidePanel .gridContainer .features .cardBlock .flexdiv .rgtBlock").css('height', swipermaxHeightnew + 15);
+        }
+
+        setMaxHeight();
+
+        $(window).resize(function () {
+      
+            $(".featureSlidePanel .gridContainer .features .cardBlock .flexdiv .rgtBlock").css('height', 'auto');
+            setMaxHeight();
+        });
+    });
+    // $(document).ready(function () {
+    //     var heightsnew = $(".featureSlidePanel .gridContainer .features .cardBlock .flexdiv .rgtBlock").map(function () {
+    //         return $(this).height();
+    //     }).get();
+    //     maxHeightnew = Math.max.apply(null, heightsnew);
+
+    //     $(".featureSlidePanel .gridContainer .features .cardBlock .flexdiv .rgtBlock ").css('height', maxHeightnew + 15);
+    //     $(window).resize(function () {
+    //        setTimeout(() => {
+    //         console.log(maxHeightnew);
+    //         $(".featureSlidePanel .gridContainer .features .cardBlock .flexdiv .rgtBlock").css('height', maxHeightnew + 15);
+    //        }, 500);
+    //         //alert('is working')
+    //     });
+    // });
+</script>
+<div class="featureSlidePanel module">
+    <div class="grid-container">
+        <div class="testiTitle">
+            <p>What Do Our Clients Think?</p>
+        </div>
+    </div>
+
+    <div class="gridContainer">
+        <div class="features">
+            <div class="carouselcontainer">
+                <div class="swiper-container featureSlider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="cardBlock">
+                                <div class="flexdiv">
+                                    <div class="lftBlock">
+                                        <div class="imgCard">
+                                            <div class="imgWrap video-image">
+                                                <img src="../assets/images/industries/sub/featureInsights.jpg"
+                                                    alt="feature Insights" width="400" height="400" class="lazy zoom">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="rgtBlock">
+                                        <div class="cardSec">
+                                            <div class="flxCol">
+                                                <div class="dateCol">
+                                                    <p><span>10/10/24</span></p>
+                                                </div>
+                                                <div class="secTit">
+                                                    <p>Video</p>
+                                                </div>
+                                                <div class="secTimestamp">
+                                                    <p>1 min watch</p>
+                                                </div>
+                                            </div>
+                                            <div class="cardTitle">
+                                                <p>Manufacturers Risk Inaccurate Financial Information Using
+                                                    Outdated Cost Models</p>
+                                            </div>
+                                            <div class="cardDesc">
+                                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                                                    nonumy eirmod tempor
+                                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                                    At vero eos et
+                                                    accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+                                                    no sea takimata
+                                                    sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+                                                    consetetur
+                                                    sadipscing elitr, sed </p>
+                                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                                                    nonumy eirmod tempor
+                                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                                    At vero eos et
+                                                    accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+                                                    no sea takimata
+                                                    sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+                                                    consetetur
+                                                    sadipscing elitr, sed </p>
+                                            </div>
+                                            <div class="goIcon">
+                                                <i>search</i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="cardBlock">
+                                <div class="flexdiv">
+                                    <div class="lftBlock">
+                                        <div class="imgCard">
+                                            <div class="imgWrap">
+                                                <img src="../assets/images/industries/sub/featureInsights.jpg"
+                                                    alt="feature Insights" width="400" height="400" class="lazy zoom">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="rgtBlock">
+                                        <div class="cardSec">
+                                            <div class="flxCol">
+                                                <div class="dateCol">
+                                                    <p><span>10/10/24</span></p>
+                                                </div>
+                                                <div class="secTit">
+                                                    <p>Video</p>
+                                                </div>
+                                                <div class="secTimestamp">
+                                                    <p>1 min watch</p>
+                                                </div>
+                                            </div>
+                                            <div class="cardTitle">
+                                                <p>Manufacturers Risk Inaccurate Financial Information Using
+                                                    Outdated Cost Models</p>
+                                            </div>
+                                            <div class="cardDesc">
+                                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                                                    nonumy eirmod tempor
+                                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                                    At vero eos et
+                                                    accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+                                                    no sea takimata
+                                                    sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+                                                    consetetur
+                                                    sadipscing elitr, sed </p>
+                                            </div>
+                                            <div class="goIcon">
+                                                <i>search</i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="navBox">
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+                    <div class="bulltedBox">
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<script>
+    $(document).ready(function () {
+        $('.flxData').on('click', function () {
+            $(this).remove();
+
+        });
+
+    });
+</script>
+<div class="divParent">
+    <div class="patternPanel">
+        <div class="pattern">
+            <img src="../assets/images/industries/sub/helpPattern.svg" alt="pattern" width="1450" height="1524"
+                loading="lazy" class="lazy">
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $(".faq-cta").click(function () {
+                $(".patternPanel .pattern").toggleClass("active");
+            });
+        });
+    </script>
+    <div class="accordionPanel">
+        <div class="grid-container">
+            <div class="resultPanel" style="display: block;">
+                <div class="grid-container">
+                    <div class="resTitle">
+                        <p>Filter Result</p>
+                    </div>
+                    <div class="resultData">
+                        <div class="flexResult">
+                            <div class="flxData">
+                                <a href="#" aria-label="close">Wealth Management</a>
+                            </div>
+                            <div class="flxData">
+                                <a href="#" aria-label="close">Healthcare</a>
+                            </div>
+                            <div class="flxData">
+                                <a href="#" aria-label="close">News</a>
+                            </div>
+                            <div class="flxData">
+                                <a href="#" aria-label="close">Podcast</a>
+                            </div>
+                            <div class="flxData">
+                                <a href="#" aria-label="close">Past 7 Days</a>
+                            </div>
+                            <div class="clear">
+                                <a href="#" aria-label="close">Clear Filter</a>
+                            </div>
+                        </div>
+                        <div class="noOfResults">
+                            <p>Showing 4 results out of 100</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-container">
+
+                <div class="faq-accordion graypanelbg">
+                    <a href="javascript:void(0);" class="faq-cta ">
+                        Filter By
+                        <i class="active fa-angle-up"></i>
+                    </a>
+                    <div class="faq-content" style="display:none; margin-top: 5px;">
+                        <div class="flexAcc">
+                            <div class="flexAcc1">
+                                <ul class="anyClass2 skinPlank">
+                                    <li><a href="#">Services</a>
+                                        <ul style="overflow-y: hidden;">
+                                            <li><a href="#">Audit & Assurance</a>
+
+                                                <ul>
+                                                    <li>Highlights</li>
+                                                    <li>Any Size, Any Fabric
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="#">Tax</a>
+
+                                                <ul>
+                                                    <li>Highlights</li>
+                                                    <li>Any Size, Any Fabric
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="#">Advisory</a>
+
+                                                <ul>
+                                                    <li><span>Wealth Management</span> <input type="checkbox" name="wm"
+                                                            id="wm"></li>
+                                                    <li><span>Business Valuation Services</span> <input type="checkbox"
+                                                            name="wm" id="wm"></li>
+                                                    <li><span>Business Valuation Services</span> <input type="checkbox"
+                                                            name="wm" id="wm"></li>
+                                                    <li><span>Business Valuation Services</span> <input type="checkbox"
+                                                            name="wm" id="wm"></li>
+                                                    <li><span>Business Valuation Services</span> <input type="checkbox"
+                                                            name="wm" id="wm"></li>
+                                                    <li><span>Business Valuation Services</span> <input type="checkbox"
+                                                            name="wm" id="wm"></li>
+                                                    <li><span>Business Valuation Services</span> <input type="checkbox"
+                                                            name="wm" id="wm"></li>
+                                                    <li><span>Business Valuation Services</span> <input type="checkbox"
+                                                            name="wm" id="wm"></li>
+                                                    <li>Business Valuation Services</li>
+                                                    <li>Business Valuation Services</li>
+                                                    <li>Business Valuation Services</li>
+                                                    <li>Business Valuation Services</li>
+                                                    <li>Business Valuation Services</li>
+                                                    <li>Business Valuation Services</li>
+                                                    <li>Business Valuation Services</li>
+                                                    <li>Business Valuation Services</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="flexAcc1">
+                                <ul class="anyClass2 skinPlank">
+                                    <li><a href="#">industries</a>
+                                        <ul>
+                                            <li class="flxBox"> <span>Cannabis</span> <input type="checkbox" name="wm"
+                                                    id="wm"></li>
+                                            <li class="flxBox"> <span>Construction</span> <input type="checkbox"
+                                                    name="wm" id="wm"></li>
+                                            <li class="flxBox"> <span>Government</span> <input type="checkbox" name="wm"
+                                                    id="wm"></li>
+                                            <li class="flxBox"> <span>Healthcare</span> <input type="checkbox" name="wm"
+                                                    id="wm"></li>
+                                            <li class="flxBox"> <span>Financial Institutions</span> <input
+                                                    type="checkbox" name="wm" id="wm"></li>
+                                            <li class="flxBox"> <span>Not-For-Profit & Higher Education</span> <input
+                                                    type="checkbox" name="wm" id="wm"></li>
+                                            <li class="flxBox"> <span>Energy</span> <input type="checkbox" name="wm"
+                                                    id="wm"></li>
+                                            <li class="flxBox"> <span>Cannabis</span> <input type="checkbox" name="wm"
+                                                    id="wm"></li>
+                                            <li class="flxBox"> <span>Cannabis</span> <input type="checkbox" name="wm"
+                                                    id="wm"></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="flexAcc1">
+                                <ul class="anyClass2 skinPlank">
+                                    <li><a href="#">Type</a>
+                                        <ul>
+                                            <li class="flxBox"> <span>Articles</span> <input type="checkbox" name="wm"
+                                                    id="wm"></li>
+                                            <li class="flxBox"> <span>Videos</span> <input type="checkbox" name="wm"
+                                                    id="wm"></li>
+                                            <li class="flxBox"> <span>Podcasts</span> <input type="checkbox" name="wm"
+                                                    id="wm"></li>
+                                            <li class="flxBox"> <span>News</span> <input type="checkbox" name="wm"
+                                                    id="wm">
+                                            </li>
+                                            <li class="flxBox"> <span>Case Study</span> <input type="checkbox" name="wm"
+                                                    id="wm"></li>
+                                            <li class="flxBox"> <span>Upcoming Events</span> <input type="checkbox"
+                                                    name="wm" id="wm"></li>
+                                            <li class="flxBox"> <span>Recordings</span> <input type="checkbox" name="wm"
+                                                    id="wm"></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="flexAcc1">
+                                <ul class="anyClass2 skinPlank">
+                                    <li><a href="#">Time</a>
+                                        <ul>
+                                            <li class="flxBox"> <span>All Time</span> <input type="checkbox" name="wm"
+                                                    id="wm"></li>
+                                            <li class="flxBox"> <span>Past 12 Months</span> <input type="checkbox"
+                                                    name="wm" id="wm"></li>
+                                            <li class="flxBox"> <span>Past 30 Days</span> <input type="checkbox"
+                                                    name="wm" id="wm"></li>
+                                            <li class="flxBox"> <span>Past 7 Days</span> <input type="checkbox"
+                                                    name="wm" id="wm"></li>
+                                            <li class="flxBox"> <span>Past 24 Hours</span> <input type="checkbox"
+                                                    name="wm" id="wm"></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="searchContainer">
+                            <form class="" action="/search" method="GET">
+                                <!-- <label for="inputSearch" class="screen-reader-text">search</label> -->
+                                <div class="flexi-row">
+                                    <input type="text" class="txtBox" name="q" id="searchInput" value=""
+                                        placeholder="Search for insights by name, industry, or service...">
+
+                                </div>
+                                <div class="reserachLst" style="display: none;">
+                                    <p class="match">Search results matching: John</p>
+                                    <ul>
+                                        <li><a href="#">John Ferro</a></li>
+                                        <li><a href="#">John Hipperson</a></li>
+                                        <li><a href="#">John Kincaid</a></li>
+                                        <li><a href="#">John Salemi</a></li>
+                                        <li><a href="#">National Valuation practice welcomes new managing
+                                                director John Ferro... <span>In Insights</span></a></li>
+                                    </ul>
+                                    <div class="bottomBtn">
+                                        <div class="allresult">See All Results</div>
+                                        <a href="#" class="goIcon"><i>Search</i></a>
+                                    </div>
+                                </div>
+                                <div class="flex-btn">
+                                    <a href="#" class=" submitbtn">Submit</a>
+                                    <a href="#" class=" resetbtn">Reset</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $('.faq-cta').each(function (i, e) {
+                $(this).attr("id", "faq-" + i);
+            });
+
+            $(document).find("a[id^='faq-']").click(function () {
+                console.log($(this));
+                if ($(this).hasClass("active")) {
+                    $(this).addClass('active').removeClass('active');
+                    $(this).find('i').addClass('active').removeClass('active');
+                    $(this).parent().find('.faq-content').slideUp(200);
+                    $(this).find('i').removeClass("fa-angle-up").addClass("fa-angle-down");
+                }
+                else {
+                    $(this).parent().parent().find(".faq-content").slideUp(200);
+                    $(this).parent().parent().find("a").removeClass('active');
+                    $(this).parent().parent().find("i").removeClass('active');
+                    $(this).parent().parent().find("i").removeClass("fa-angle-up").addClass("fa-angle-down");
+                    $(this).removeClass("active").addClass('active');
+                    $(this).find('i').removeClass("active").addClass('active');
+                    $(this).find('i').removeClass("fa-angle-down").addClass("fa-angle-up");
+                    $(this).parent().find('.faq-content').slideDown(250);
+                }
+                var self = this;
+                var faqheight = $("header").height() + 36;
+                setTimeout(function () {
+                    theOffset = $(self).offset();
+                    $('body,html').animate({
+                        scrollTop: theOffset.top - faqheight
+                    });
+                }, 600);
+            });
+        });
+
+
+
+        (function ($) {
+            $.fn.liHarmonica = function (params) {
+                var p = $.extend({
+                    currentClass: 'cur', //Класс для выделенного пункта меню
+                    onlyOne: true, //true - открытым может быть только один пункт, 
+                    //false - число открытых одновременно пунктов не ограничено
+                    speed: 500 //Скорость анимации
+                }, params);
+                return this.each(function () {
+                    var
+                        el = $(this).addClass('harmonica'),
+                        linkItem = $('ul', el).prev('a');
+                    el.children(':last').addClass('last');
+                    $('ul', el).each(function () {
+                        $(this).children(':last').addClass('last');
+                    });
+                    $('ul', el).prev('a').addClass('harFull');
+                    el.find('.' + p.currentClass).parents('ul').show().prev('a').addClass(p.currentClass).addClass('harOpen');
+                    linkItem.on('click', function () {
+                        if ($(this).next('ul').is(':hidden')) {
+                            $(this).addClass('harOpen');
+                        } else {
+                            $(this).removeClass('harOpen');
+                        }
+                        if (p.onlyOne) {
+                            $(this).closest('ul').closest('ul').find('ul').not($(this).next('ul')).slideUp(p.speed).prev('a').removeClass('harOpen');
+                            $(this).next('ul').slideToggle(p.speed);
+                        } else {
+                            $(this).next('ul').stop(true).slideToggle(p.speed);
+                        }
+                        return false;
+                    });
+                });
+            };
+        })(jQuery);
+
+        /*Инициализация плагина*/
+        $(function () {
+            $('.anyClass').liHarmonica({
+                onlyOne: false,
+                speed: 500
+            });
+            $('.anyClass2').liHarmonica({
+                onlyOne: true,
+                speed: 400
+            });
+        });
+
+    </script>
+
+    <div class="latestInsightPanel">
+        <div class="grid-container">
+            <div class="filterPanel">
+            </div>
+            <div class="flexdiv">
+                <div class="testiTitle">
+                    <p>Latest Insights</p>
+                </div>
+                <div class="viewPagination">
+                    <div class="flexPage">
+                        <div class="descPage">
+                            <p>View per page</p>
+                        </div>
+                        <ul class="pageCount">
+                            <li class="pageNo active"><a href="#" title="listView">4</a></li>
+                            <li class="pageNo"><a href="#" title="listView">8</a></li>
+                            <li class="pageNo"><a href="#" title="listView">12</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <div class="colFlex">
+                <div class="lftImageCard">
+                    <div class="cardFlex">
+                        <div class="lftCard">
+                            <div class="imgWrap video-image">
+                                <img src="../assets/images/industries/sub/insightVideo.jpg" alt="Video" width="494"
+                                    height="288" class="lazy zoom">
+                            </div>
+                        </div>
+                        <div class="rgtCard">
+                            <div class="cardSec">
+                                <div class="flxCol">
+                                    <div class="dateCol">
+                                        <p>10/10/24</p>
+                                    </div>
+                                    <div class="titCol">
+                                        <p>Video</p>
+                                    </div>
+                                    <div class="durCol">
+                                        <p>1 Min Watch</p>
+                                    </div>
+                                </div>
+                                <div class="cardTitle">
+                                    <p>Manufacturers Risk Inaccurate Financial Information
+                                        Using Outdated Cost Models</p>
+                                </div>
+                                <div class="cardDesc">
+                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                                        tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+                                        vero
+                                        eos et accusam</p>
+                                </div>
+                                <div class="goIcon">
+                                    <i>search</i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rgtImageCard">
+                    <div class="cardFlex">
+                        <div class="lftCard">
+                            <div class="imgWrap video-image">
+                                <img src="../assets/images/industries/sub/insightArticle.jpg" alt="Article" width="494"
+                                    height="288" class="lazy zoom">
+                            </div>
+                        </div>
+                        <div class="rgtCard">
+                            <div class="cardSec">
+                                <div class="flxCol">
+                                    <div class="dateCol">
+                                        <p>10/10/24</p>
+                                    </div>
+                                    <div class="titCol">
+                                        <p>Article</p>
+                                    </div>
+                                    <div class="durCol">
+                                        <p>1 Min Read</p>
+                                    </div>
+                                </div>
+                                <div class="cardTitle">
+                                    <p>Manufacturers Risk Inaccurate Financial Information
+                                        Using Outdated Cost Models</p>
+                                </div>
+                                <div class="cardDesc">
+                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                                        tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+                                        vero
+                                        eos et accusam</p>
+                                </div>
+                                <div class="goIcon">
+                                    <i>search</i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lftImageCard">
+                    <div class="cardFlex">
+                        <div class="lftCard">
+                            <div class="imgWrap">
+                                <img src="../assets/images/industries/sub/insightVideo1.jpg" alt="Video" width="494"
+                                    height="288" class="lazy zoom">
+                            </div>
+                        </div>
+                        <div class="rgtCard">
+                            <div class="cardSec">
+                                <div class="flxCol">
+                                    <div class="dateCol">
+                                        <p>10/10/24</p>
+                                    </div>
+                                    <div class="titCol">
+                                        <p>Video</p>
+                                    </div>
+                                    <div class="durCol">
+                                        <p>1 Min Watch</p>
+                                    </div>
+                                </div>
+                                <div class="cardTitle">
+                                    <p>Manufacturers Risk Inaccurate Financial Information
+                                        Using Outdated Cost Models</p>
+                                </div>
+                                <div class="cardDesc">
+                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                                        tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+                                        vero
+                                        eos et accusam</p>
+                                </div>
+                                <div class="goIcon">
+                                    <i>search</i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rgtImageCard">
+                    <div class="cardFlex">
+                        <div class="lftCard">
+                            <div class="imgWrap">
+                                <img src="../assets/images/industries/sub/insightArticle1.jpg" alt="Article" width="494"
+                                    height="288" class="lazy zoom">
+                            </div>
+                        </div>
+                        <div class="rgtCard">
+                            <div class="cardSec">
+                                <div class="flxCol">
+                                    <div class="dateCol">
+                                        <p>10/10/24</p>
+                                    </div>
+                                    <div class="titCol">
+                                        <p>Article</p>
+                                    </div>
+                                    <div class="durCol">
+                                        <p>1 Min Read</p>
+                                    </div>
+                                </div>
+                                <div class="cardTitle">
+                                    <p>Manufacturers Risk Inaccurate Financial Information
+                                        Using Outdated Cost Models</p>
+                                </div>
+                                <div class="cardDesc">
+                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                                        tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+                                        vero
+                                        eos et accusam</p>
+                                </div>
+                                <div class="goIcon">
+                                    <i>search</i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="paginate">
+                <div class="item">
+                    <ul class="simple-pagination">
+                        <li class="1 arrow"><a href="?page=1" class="prevIcon" aria-label="pagination"
+                                title="pagination"><i>prev</i></a></li>
+                        <li class="1 btn"><a href="?page=1" title="pagination"><span class="prevbtn">Prev</span></a>
+                        </li>
+                        <li class="1 ">
+                            <a href="?page=1" title="pagination">1</a>
+                        </li>
+                        <li class="2 active">
+                            <a href="?page=2" class="" title="pagination">2</a>
+                        </li>
+                        <li class="3">
+                            <a href="?page=3" class="" title="pagination">3</a>
+                        </li>
+                        <li class="pages">...</li>
+                        <li class="100"><a href="?page=100" title="pagination">100</a></li>
+                        <li class="2 btn"><a href="?page=2" title="pagination"><span class="nextbtn">Next</span></a>
+                        </li>
+                        <li class="100 arrow"><a href="?page=100" class="nextIcon" aria-label="pagination"
+                                title="pagination"><i>prev</i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

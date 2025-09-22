@@ -1,0 +1,303 @@
+<link rel="stylesheet" href="{{root}}assets/css/subbanner/subbanner.css" media="all">
+<div class="subbannerpanel">
+    <div class="grid-container">
+    <div class="flexwrap">
+        <div class="imgWrap">
+            <figure>
+                <style type="text/css">
+                    @media screen and (min-width: 320px) {
+                        .subbannerpanel .flexwrap .imgWrap figure {
+                            background: url('assets/images/corparate_subbaner.jpg') no-repeat center;
+                            background-size: cover;
+                        }
+                    }
+                    @media only screen and (min-width:768px) {
+                        .subbannerpanel .flexwrap .imgWrap figure {
+                            background: url('assets/images/corparate_subbaner.jpg') no-repeat center;
+                            background-size: cover;
+                        }
+                    }
+      
+                    @media only screen and (min-width:1024px) {
+                        .subbannerpanel .flexwrap .imgWrap figure {
+                            background: url('assets/images/corparate_subbaner.jpg') no-repeat center;
+                            background-size: cover;
+                        }
+                    }
+                    @media only screen and (min-width:1366px) {
+                        .subbannerpanel .flexwrap .imgWrap figure {
+                            background: url('assets/images/corparate_subbaner.jpg') no-repeat center;
+                            background-size: cover;
+                        }
+                    }
+                </style>
+            </figure>
+        </div>
+        <div class="contentwrap">
+            <div class="contenttitle">
+                <h1>Our
+                    <br>
+                    Company
+                    </h1>
+                 <a href="#" class="sublink ctabutton" title="Open Online">
+                    Open Online
+                </a>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+<div class="breadcrumbWrapBottom">
+    <div class="grid-container">
+        <ul class="breadcrumbs">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item">Our Company</li>
+        </ul>
+    </div>
+</div>
+<link rel="stylesheet" href="assets/css/counter/counter.css" media="all">
+<script defer type="text/javascript">
+    $(document).ready(function () {
+        function visible(partial) {
+            var $t = partial,
+                $w = jQuery(window),
+                viewTop = $w.scrollTop(),
+                viewBottom = viewTop + $w.height(), langtogBtn
+            _top = $t.offset().top,
+                _bottom = _top + $t.height(),
+                compareTop = partial === true ? _bottom : _top,
+                compareBottom = partial === true ? _top : _bottom;
+
+            return ((compareBottom <= viewBottom) && (compareTop >= viewTop) && $t.is(':visible'));
+        }
+
+        $(window).scroll(function () {
+            if ($(".counter").length > 0) {
+                if (visible($('.count-digit'))) {
+                    if ($('.count-digit').hasClass('counter-loaded')) return;
+                    $('.count-digit').addClass('counter-loaded');
+                    $('.count-digit').each(function () {
+                        var $this = $(this);
+                        jQuery({ Counter: 0 }).animate({ Counter: $this.text() }, {
+                            duration: 3000,
+                            easing: 'swing',
+                            separator: ",",
+                            step: function () {
+                                $this.text(Math.ceil(this.Counter).toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,"));
+
+                            }
+                        });
+                    });
+                }
+            }
+        });
+    });
+
+</script>
+<div class="counterpanel">
+   <div class="grid-container">
+       <h2 class="h2title tabpanel-title">Our Story</h2>
+       <div class="flexwrap">
+           <div class="contentwrap">
+               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam hendrerit nisi sed sollicitudin pellentesque. Nunc posuere purus rhoncus pulvinar aliquam. Ut aliquet tristique nisl vitae volutpat. Nulla aliquet porttitor venenatis. Donec a dui et dui fringilla consectetur id nec massa. Aliquam erat volutpat. Sed ut dui ut lacus dictum fermentum vel tincidunt neque. Sed sed lacinia lectus. Duis sit amet sodales felis. Duis nunc eros, mattis at dui ac, convallis semper risus. In adipiscing ultrices tellus, in suscipit massa vehicula eu.</p>
+               <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p> 
+               <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur</p>
+           </div>
+           <div class="counterwrap">
+               <div class="counter">
+                   <div class="counter-col">
+                       <div role="heading" class="countersec"><span class="count-digit">1600</span><span class="plus">+</span></div>
+                       <h2><strong>Million</strong></h2>
+                       <p>Nam hendrerit nisi sed sollicitudin</p>
+                   </div>
+                   <div class="counter-col">
+                    <div role="heading" class="countersec"><span class="percent">%</span><span class="count-digit">1600</span></div>
+                       <p>Nam hendrerit nisi sed sollicitudin</p>
+                   </div>
+                   <div class="counter-col">
+                    <div role="heading" class="countersec"><span class="percent">%</span><span class="count-digit">1600</div>
+                       <p>Nam hendrerit nisi sed sollicitudin</p>
+                   </div>
+                   <div class="counter-col">
+                    <div role="heading" class="countersec"><span class="count-digit">1600</span><span class="plus">+</span></div>
+                       <p>Nam hendrerit nisi sed sollicitudin</p>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+</div>
+<link rel="stylesheet" href="assets/css/alternative/alternative.css" media="all">
+<div class="alternativepanel">
+   <div class="grid-container">
+   <div class="alternative lightbg">
+           <div class="flexwrap">
+               <div class="contentwrap">
+                   <div class="h2title">Title</div>
+                   <p>orem ipsum dolor sit amet, consectetur adipiscing elit. Nam hendrerit nisi sed sollicitudin pellentesque. Nunc posuere purus rhoncus pulvinar aliquam. Ut aliquet tristique nisl vitae volutpat. Nulla aliquet porttitor venenatis. Donec a dui et dui fringilla consectetur id nec massa. Aliquam erat volutpat. Sed ut dui ut lacus dictum fermentum vel tincidunt neque. Sed sed lacinia lectus. Duis sit amet sodales felis. Duis nunc eros, mattis at dui ac, convallis semper risus. In adipiscing ultrices tellus, in suscipit massa vehicula eu.</p>
+                   <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                   <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur</p>
+               </div>
+               <div class="imgWrap">
+                   <picture>
+                       <source media="(min-width:320px) and (max-width:767px)" srcset="assets/images/alternate-1.jpg" type="image/jpg">
+                       <source media="(min-width:768px) and (max-width:1023px)" srcset="assets/images/alternate-1.jpg" type="image/jpg">
+                       <source media="(min-width:1024px) and (max-width:1279px)" srcset="assets/images/alternate-1.jpg" type="image/jpg">
+                       <source media="(min-width: 1366px)" srcset="assets/images/alternate-1.jpg" type="image/jpg">
+                       <img data-src="assets/images/alternate-1.jpg" data-srcset="assets/images/alternate-1.jpg" srcset="assets/images/alternate-1.jpg" alt="alternate" class="lazy zoom" width="522" height="406">
+                   </picture>
+               </div>
+           </div>
+       </div>
+   </div>
+</div>
+<div class="alternativepanel">
+    <div class="grid-container">
+    <div class="alternative right">
+            <div class="flexwrap">
+                <div class="contentwrap">
+                    <div class="h2title">Title</div>
+                    <p>orem ipsum dolor sit amet, consectetur adipiscing elit. Nam hendrerit nisi sed sollicitudin pellentesque. Nunc posuere purus rhoncus pulvinar aliquam. Ut aliquet tristique nisl vitae volutpat. Nulla aliquet porttitor venenatis. Donec a dui et dui fringilla consectetur id nec massa. Aliquam erat volutpat. Sed ut dui ut lacus dictum fermentum vel tincidunt neque. Sed sed lacinia lectus. Duis sit amet sodales felis. Duis nunc eros, mattis at dui ac, convallis semper risus. In adipiscing ultrices tellus, in suscipit massa vehicula eu.</p>
+                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                    <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur</p>
+                </div>
+                <div class="imgWrap">
+                    <picture>
+                        <source media="(min-width:320px) and (max-width:767px)" srcset="assets/images/alternate-2.jpg" type="image/jpg">
+                        <source media="(min-width:768px) and (max-width:1023px)" srcset="assets/images/alternate-2.jpg" type="image/jpg">
+                        <source media="(min-width:1024px) and (max-width:1279px)" srcset="assets/images/alternate-2.jpg" type="image/jpg">
+                        <source media="(min-width: 1366px)" srcset="assets/images/alternate-2.jpg" type="image/jpg">
+                        <img data-src="assets/images/alternate-2.jpg" data-srcset="assets/images/alternate-2.jpg" srcset="assets/images/alternate-2.jpg" alt="alternate" class="lazy zoom" width="522" height="406">
+                    </picture>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<link rel="stylesheet" href="{{root}}assets/css/iconpanel/iconpanel.css" media="all">
+<div class="iconpanel iconborder  module come-in">
+    <div class="grid-container">
+        <h2 class="h2title">We Are Committed</h2>
+        <div class="dis-flex">
+            <div class="contentlist">
+                <a href="#" target="_self" >
+                    <div class="imgwrap">
+                        <figure>
+                            <img class="lazy" alt="" src="{{root}}assets/images/icons/estate.svg" width="135" height="135">
+                        </figure>
+                    </div>
+                </a>
+                <div class="contentitem">
+                <a href="#" target="_self" >
+                    <div class="icontitle">
+                        Estate
+                        <br>
+                        Planning
+                    </div>  
+                </a>
+                <div class="ctablock">
+                    <a href="#" class="applycta" title="Apply Online">
+                        Apply Online
+                    </a>
+                    </div>  
+                </div>
+            </div> 
+            <div class="contentlist">
+                <a href="#" target="_self" >
+                    <div class="imgwrap">
+                        <figure>
+                            <img class="lazy" alt="" src="{{root}}assets/images/icons/estate.svg" width="135" height="135">
+                        </figure>
+                    </div>
+                </a>
+                <div class="contentitem">
+                <a href="#" target="_self" >
+                    <div class="icontitle">
+                        Estate
+                        <br>
+                        Planning
+                    </div>  
+                </a>
+                <div class="ctablock">
+                    <a href="#" class="applycta" title="Apply Online">
+                        Apply Online
+                    </a>
+                    </div>  
+                </div>
+            </div> 
+            <div class="contentlist">
+                <a href="#" target="_self" >
+                    <div class="imgwrap">
+                        <figure>
+                            <img class="lazy" alt="" src="{{root}}assets/images/icons/estate.svg" width="135" height="135">
+                        </figure>
+                    </div>
+                </a>
+                <div class="contentitem">
+                <a href="#" target="_self" >
+                    <div class="icontitle">
+                        Estate
+                        <br>
+                        Planning
+                    </div>  
+                </a>
+                <div class="ctablock">
+                    <a href="#" class="applycta" title="Apply Online">
+                        Apply Online
+                    </a>
+                    </div>  
+                </div>
+            </div> 
+            <div class="contentlist">
+                <a href="#" target="_self" >
+                    <div class="imgwrap">
+                        <figure>
+                            <img class="lazy" alt="" src="{{root}}assets/images/icons/estate.svg" width="135" height="135">
+                        </figure>
+                    </div>
+                </a>
+                <div class="contentitem">
+                <a href="#" target="_self" >
+                    <div class="icontitle">
+                        Estate
+                        <br>
+                        Planning
+                    </div>  
+                </a>
+                <div class="ctablock">
+                    <a href="#" class="applycta" title="Apply Online">
+                        Apply Online
+                    </a>
+                    </div>  
+                </div>
+            </div> 
+        </div>
+    </div>
+</div>
+
+<div class="socialLnkpanel module">
+    <div class="grid-container">
+        <ul class="sociallinks">
+                <li>
+                    <a href="#" target="_blank">
+                        <img src="{{root}}assets/images/settings/facebook.svg" alt="facebook" class="lazy imagetoSVG" width="15" height="32"/>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" target="_blank">
+                        <img src="{{root}}assets/images/settings/twitter.svg" alt="twitter" class="lazy imagetoSVG" width="34" height="28"/>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" target="_blank">
+                        <img src="{{root}}assets/images/settings/youtube.svg" alt="youtube" class="lazy imagetoSVG" width="47" height="34"/>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" target="_blank">
+                        <img src="{{root}}assets/images/settings/instagram.svg" alt="instagram" class="lazy imagetoSVG" width="34" height="34"/>
+                    </a>
+                </li>
+        </ul>
+    </div>
+</div>

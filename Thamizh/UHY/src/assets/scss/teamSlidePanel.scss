@@ -1,0 +1,605 @@
+@import "util/util";
+$white: #ffffff;
+$primary-color: #007041;
+$img: "../../images/";
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+
+// .swiper-slide {
+//     text-align: center;
+//     font-size: 18px;
+//     // background: #fff;
+//     border-radius: 0 0 24px 24px;
+//     /* Center slide text vertically */
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+// }
+
+
+
+
+
+
+.teamsPanel {
+    margin-top: 38px;
+    padding: 25px 0 75px;
+
+    @include breakpoint(large) {
+        padding: 0px 0;
+        margin-top: 85px;
+        // padding: 45px 0;
+    }
+
+    .testiTitle {
+        margin-bottom: 20px;
+
+        p, h2 {
+
+            line-height: 32px;
+
+            @include breakpoint(large) {
+                line-height: 55px;
+            }
+        }
+
+        @include breakpoint(large) {
+            margin-bottom: 35px;
+        }
+    }
+
+    .swiper-slide {
+        // text-align: center;
+        font-size: 18px;
+        // background: #fff;
+        border-radius: 0 0 24px 24px;
+        /* Center slide text vertically */
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        height: unset;
+        max-width: 100%;
+        max-height: 100%;
+        flex-direction: column;
+    }
+
+    .carouselcontainer {
+        position: relative;
+
+        @media (min-width:400px) and (max-width:650px) {
+            width: 380px;
+            margin: 0 auto;
+        }
+
+        @include breakpoint(medium only) {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        @include breakpoint(large) {
+            width: 965px;
+            margin: 0 auto;
+        }
+
+        @include breakpoint(llarge) {
+            width: 1220px;
+            margin: 0 auto;
+        }
+
+        @include breakpoint(xlarge) {
+            width: 1300px;
+            margin: 0 auto;
+        }
+
+        @include breakpoint(xxlarge) {
+            width: inherit;
+            margin: 0 -20px;
+        }
+
+        .swiper-container {
+            overflow: hidden;            
+            @include breakpoint(medium) {
+                padding: 15px;
+            }
+            @include breakpoint(large) {
+                width: 860px;
+                margin: 0 auto;
+                padding: 15px;
+            }
+
+            @include breakpoint(llarge) {
+                width: 1040px;           
+            }
+
+            @include breakpoint(xlarge) {
+                width: 1180px;
+             
+            }
+
+            @include breakpoint(xxlarge) {
+                width: 1330px;      
+                padding: 20px;
+            }
+        }
+
+        a {
+            width: 100%;
+            height: 100%;
+            display: block;
+
+            &:hover {
+                text-decoration: none;
+
+                .zoom {
+                    transition: all 0.75s;
+                    transform: scale(1.1);
+                }
+            }
+        }
+
+
+        .swiper-container {
+
+            @media screen and (max-width:767px) {
+
+                position: relative;
+            }
+        }
+
+        .bioBlock {
+            position: relative;
+            max-width: 300px;
+            // height: 534px;
+            border-radius: 15px;
+            overflow: hidden;
+            background: #fff;
+            height: 100%;
+            width: 100%;
+            // border: 1px solid #015844;
+            box-shadow: 0 3px 12px rgba(22, 22, 22, 0.15);
+            // width: 100%;
+
+            // @include breakpoint(small only) {
+
+            //     width: 278px;
+            // }
+
+            // @media (min-width:640px) and (max-width:767px) {
+            //     width: 281px;
+            // }
+
+            // @include breakpoint(medium) {
+            //     height: 281px;
+            // }
+
+            // @include breakpoint(xlarge) {
+            //     height: 534px;
+
+            // }
+
+            .ctablock {
+                background: #DCE7E4;
+                position: absolute;
+                width: 100%;
+                left: 0;
+                height: 44px;
+                bottom: 0px;
+                // border-radius: 0px 0px 20px 20px;
+                overflow: hidden;
+                padding-top: 6px;
+
+                @include breakpoint(medium) {
+                    height: 49px;
+                    padding-top: 0;
+                }
+
+                .goIcon {
+                    width: 31px;
+                    height: 31px;
+                    margin-right: 3px;
+
+                    @include breakpoint(medium) {
+                        margin-right: 6px;
+                        width: 31px;
+                        height: 31px;
+                    }
+
+                    i {
+                        background: url('#{$img}/industries/search-go.svg') no-repeat;
+                        background-size: contain;
+                        width: 31px;
+                        height: 31px;
+                        display: block;
+                        position: absolute;
+                        font-size: 0;
+                        top: 8px;
+                        right: 9px;
+                        cursor: pointer;
+                        transition: all .45s;
+
+                        @include breakpoint(medium) {
+                            width: 31px;
+                            height: 31px;
+                        }
+
+                        &:hover {
+                            margin-right: 4px;
+                        }
+                    }
+                }
+
+                .bioSocial {
+                    display: flex;
+                    margin-left: 0;
+                    margin-top: 7px;
+
+                    @include breakpoint(large) {
+                        margin-top: 13px;
+                    }
+
+                    li {
+                        padding-left: 9px;
+
+                        &:first-child {
+                            padding-left: 12px;
+                        }
+
+                        &::before {
+                            content: inherit;
+                        }
+
+                        a {
+                            svg, img {
+                                width: 19px;
+                                height: 19px;
+                            }
+                        }
+
+                        &:first-child {
+                            padding-left: 15px;
+                        }
+                    }
+                }
+
+            }
+
+            .imgWrap {
+                overflow: hidden;
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            .bioSection {
+                padding: 7px 15px 65px;
+
+                .bioTitle {
+                    p {
+                        font-size: 24px;
+                        font-weight: 700;
+                        line-height: 38px;
+                        font-family: 'mundial';
+                        color: #005844;
+                        margin-bottom: 6px;
+                    }
+                }
+
+                .bioContent {
+                    p {
+                        line-height: 22px;
+                        font-size: 15px;
+                        font-weight: 400;
+                        font-family: 'mundial';
+                        color: #000;
+                        margin-bottom: 0;
+                        padding-left: 0;
+                    }
+
+                    ul {
+                        margin-left: 1px;
+
+                        li {
+                            line-height: 22px;
+                            font-size: 15px;
+                            font-weight: 400;
+                            font-family: 'mundial';
+                            color: #000;
+                            margin-bottom: 0;
+                            padding-left: 0;
+
+                            &::before {
+                                content: inherit;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &:hover {
+                .ctablock {
+                    background: #015844;
+                    
+                .goIcon {
+                    i{
+                        background: url('#{$img}settings/search-go.svg') no-repeat;
+                    }
+                }
+                .bioSocial{
+                    svg{
+                        path{
+                            fill: #fff;
+                        }
+                    }
+                    img{
+                        filter:brightness(427.5);
+                    }
+                }
+                }
+            }
+        }
+
+        .navBox {
+
+            .swiper-button-prev,
+            .swiper-button-next {
+                top: 47.5%;
+
+                @include breakpoint(medium) {
+                    top: 44%;
+                }
+
+                @include breakpoint(xlarge) {
+                    width: 45px;
+                    height: 65px;
+                    top: 43%;
+                }
+            }
+
+            .swiper-pagination {
+                top: 4px;
+                position: relative;
+                height: 30px;
+
+                @include breakpoint(large) {
+                    bottom: -49px;
+                    top: inherit;
+                    height: 74px;
+                }
+            }
+
+            .swiper-pagination-bullet {
+                cursor: pointer;
+                background: transparent;
+                opacity: 1;
+                border: 2px solid #005844;
+                width: 12px;
+                height: 12px;
+
+                @include breakpoint(medium) {
+                    width: 14px;
+                    height: 14px;
+                }
+
+                @include breakpoint(xlarge) {
+                    width: 23px;
+                    height: 23px;
+                }
+            }
+
+            .swiper-pagination-bullet-active {
+                background: #005844;
+            }
+
+            .swiper-button-prev {
+                @media screen and (max-width:767px) {
+
+                    left: 0 !important;
+                }
+
+                @media screen and (min-width:651px) and (max-width:767px) {
+                    left: 134px !important;
+                }
+
+                @include breakpoint(medium only) {
+                    left: -8%;
+                }
+
+                @include breakpoint(xxlarge) {
+                    left: 20px !important;
+                }
+
+                &::after {
+                    content: '' !important;
+                    background: url('#{$img}/settings/arrow-dropleft.svg') no-repeat;
+                    background-size: contain;
+                    width: 18px;
+                    height: 26px;
+
+                    @include breakpoint(medium) {
+                        width: 27px;
+                        height: 40px;
+
+                    }
+
+                    @include breakpoint(xlarge) {
+                        width: 35px;
+                        height: 51px;
+                    }
+                }
+
+                &:hover,
+                &:target,
+                &:focus {
+                    &::after {
+                        background: url('#{$img}/settings/arrow-fillleft.svg') no-repeat;
+                        background-size: contain;
+                    }
+
+                }
+            }
+
+            .swiper-button-next {
+
+                @media screen and (max-width:767px) {
+                    right: 0 !important;
+                }
+
+                @media screen and (min-width:651px) and (max-width:767px) {
+                    right: 135px !important;
+                }
+
+                @include breakpoint(medium only) {
+                    right: -8%;
+                }
+
+                @include breakpoint(xxlarge) {
+                    right: 20px !important;
+                }
+
+                &::after {
+                    content: '' !important;
+                    background: url('#{$img}/settings/arrow-dropright.svg') no-repeat;
+                    background-size: contain;
+                    width: 18px;
+                    height: 26px;
+
+                    @include breakpoint(medium) {
+                        width: 27px;
+                        height: 40px;
+
+                    }
+
+                    @include breakpoint(xlarge) {
+                        width: 35px;
+                        height: 51px;
+                    }
+                }
+
+                &:hover,
+                &:target,
+                &:focus {
+                    &::after {
+                        background: url('#{$img}/settings/arrow-fillright.svg') no-repeat;
+                        background-size: contain;
+                    }
+
+                }
+            }
+        }
+    }
+
+    .grid-container {
+        position: relative;
+
+        // .viewLink {
+        //     position: absolute;
+        //     top: 5%;
+        //     right: 6%;
+
+        //     a {
+        //         font-size: 18px;
+        //         font-weight: 700;
+        //         font-family: 'mundial';
+        //         line-height: 22px;
+        //         color: #005844;
+        //         transition: all ease .5s;
+
+        //         &:hover {
+        //             padding-right: 5px;
+        //             text-decoration: none;
+        //             transition: all ease .5s;
+        //         }
+
+        //         &::after {
+        //             content: '';
+        //             display: inline-block;
+        //             height: 15px;
+        //             vertical-align: middle;
+        //             width: 24px;
+        //             position: relative;
+        //             right: -5px;
+        //             top: -2px;
+        //             color: #fff;
+        //             background: url(../../images/settings/arrow-green.svg) no-repeat;
+        //             background-size: contain;
+        //         }
+        //     }
+        // }
+        .viewLink {
+            position: absolute;
+            bottom: -9.7%;
+            right: 0;
+            width: 100%;
+            text-align: center;
+            top: inherit;
+
+            @include breakpoint(large) {
+                top: 6%;
+                right: 6%;
+                width: inherit;
+                text-align: inherit;
+                bottom: inherit;
+            }
+
+            a {
+                font-size: 16px;
+                line-height: 19px;
+                font-weight: 700;
+                font-family: 'mundial';
+                color: #005844;
+                transition: all ease .5s;
+                border: 2px solid #005844;
+                border-radius: 17px;
+                padding: 5px 15px;
+
+                @include breakpoint(large) {
+                    font-size: 18px;
+                    line-height: 22px;
+                    border: none;
+                    padding: 0;
+                }
+
+                &:hover {
+                    text-decoration: none;
+                    transition: all ease .5s;
+                    background: #005844;
+                    color: #fff;
+
+                    @include breakpoint(large) {
+                        padding-right: 5px;
+                        background: inherit;
+                        color: #005844;
+                    }
+
+                    &::after {
+                        @media screen and (max-width:1023px) {
+                            background: url(../../images/settings/arrow-white.svg) no-repeat;
+                        }
+                    }
+                }
+
+                &::after {
+                    content: '';
+                    display: inline-block;
+                    height: 15px;
+                    vertical-align: middle;
+                    width: 24px;
+                    position: relative;
+                    right: -5px;
+                    top: -2px;
+                    color: #fff;
+                    background: url(../../images/settings/arrow-green.svg) no-repeat;
+                    background-size: contain;
+                }
+            }
+        }
+    }
+}

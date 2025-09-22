@@ -1,0 +1,286 @@
+@import "util/util";
+$white: #ffffff;
+$primary-color: #007041;
+$img: "../../images/";
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+.testiTitle {
+
+    p,
+    h2 {
+        font-size: 25px;
+        line-height: 55px;
+        font-weight: 700;
+        font-family: 'mundial';
+        text-align: center;
+        color: #00362A;
+
+        @include breakpoint(large) {
+            text-align: left;
+            font-size: 48px;
+        }
+    }
+
+    margin-bottom: 25px;
+
+    @include breakpoint(xlarge) {
+        margin-bottom: 40px;
+    }
+}
+
+.transactionPanel {
+    margin-top: 70px;
+
+    @include breakpoint(large) {
+        margin-top: 90px;
+    }
+
+    @include breakpoint(xlarge) {
+        margin-top: 110px;
+    }
+
+    .flexCard {
+        display: flex;
+        flex-wrap: wrap;
+
+        max-width: 360px;
+        margin: 0 auto;
+        row-gap: 20px;
+
+        @media (min-width: 646px) and (max-width:1023px) {
+            max-width: 800px;
+            margin: 0 auto;
+            row-gap: 30px;
+        }
+
+        @include breakpoint(large) {
+            max-width: inherit;
+            margin: inherit;
+            row-gap: 30px;
+        }
+
+        @include breakpoint(xlarge) {
+            row-gap: 45px;
+        }
+
+        .outerCard {
+            border-radius: 15px;
+            padding: 30px;
+            width: 100%;
+            background: #fff;
+            box-shadow: 0 3px 10px rgba(22, 22, 22, .25);
+            @media screen and (max-width: 645px) {
+                height: clamp(25.938rem, calc(0vw + 25.938rem), 25.938rem);
+            }
+            @media (min-width: 646px) and (max-width:1023px) {
+                width: 48.5%;
+                margin-right: 3%;       
+                 height: clamp(26.25rem, calc(6.631vw + 23.573rem), 27.813rem);
+            }
+
+            @include breakpoint(large) {
+                width: 31.3%;
+                margin-right: 3.05%;
+            }
+
+            @media screen and (min-width:1200px) {
+                padding: 30px 30px
+            }
+
+            @include breakpoint(xlarge) {
+                padding: 60px 50px;
+            }
+
+            .innerCard {
+                text-align: center;
+                padding: 20px 0;
+                position: relative;
+                z-index: 1;
+                background-size: contain;
+                background-position: center;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+
+                .topImg {
+                    img {
+                        mix-blend-mode: darken;
+                    }
+                }
+
+                .bottomImg {
+                    img {
+                        mix-blend-mode: darken;
+                    }
+                }
+
+                .midContent {
+                    padding: 13px 0;
+
+                    p {
+                        font-size: 18px;
+                        line-height: 24px;
+                        font-weight: 400;
+                        color: #000;
+                        margin: 0;
+
+                        &:first-child {
+                            margin-bottom: 11px;
+                            font-size: 19px;
+                            line-height: 24px;
+                            letter-spacing: -0.8px;
+                            color: #015844;
+                            font-weight: 600;
+
+                            @include breakpoint(xlarge) {
+                                font-size: 24px;
+                                line-height: 30px;
+                            }
+                        }
+
+                        &:last-child {
+                            margin-top: 12px;
+                            margin-bottom: 0;
+                            font-size: 19px;
+                            line-height: 24px;
+                            letter-spacing: -0.8px;
+                            color: #015844;
+                            font-weight: 600;
+
+                            @include breakpoint(xlarge) {
+                                font-size: 24px;
+                                line-height: 30px;
+                            }
+                        }
+
+                        // &:nth-child(2) {
+                        //     margin: 0;
+                        //     font-size: inherit;
+                        //     line-height: inherit;
+
+                        //     span {
+                        //         font-size: 18px;
+                        //         line-height: 24px;
+                        //         font-weight: 400;
+                        //         color: #000;
+                        //     }
+
+                        // }
+                    }
+
+                    +p {
+                        margin: inherit;
+                    }
+                }
+
+                .bgImg {
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    width: 100%;
+                    height: 375px;
+                    z-index: -1;
+                    // background: url('#{$img}transaction/uhy-bg.png') no-repeat;
+                    background-size: contain !important;
+                    background-position-y: center !important;
+                    @media screen and (max-width: 645px) {
+                        height: 325px;
+                    }
+                }
+
+                .ctablock {
+                    background: transparent;
+                    position: absolute;
+                    width: 100%;
+                    left: 0;
+                    height: 55px;
+                    bottom: 0px;
+                    border-radius: 0px 0px 20px 20px;
+                    transition: all ease .1s;
+
+                    @include breakpoint(large) {
+                        height: 70px;
+                    }
+
+                    .goIcon {
+                        width: 25px;
+                        height: 25px;
+                        margin-right: 3px;
+
+                        @include breakpoint(medium) {
+                            margin-right: 6px;
+                            width: 33px;
+                            height: 33px;
+                        }
+
+                        i {
+                            background: url('#{$img}industries/search-go.svg') no-repeat;
+                            background-size: contain;
+                            width: 35px;
+                            height: 35px;
+                            display: block;
+                            position: absolute;
+                            font-size: 0;
+                            bottom: 0px;
+                            right: 0px;
+                            cursor: pointer;
+                            transition: all .45s;
+
+                            @include breakpoint(medium) {
+                                width: 33px;
+                                height: 33px;
+                                bottom: 0px;
+                                right: 0px;
+                            }
+
+                            &:hover {
+                                margin-right: 4px;
+                            }
+                        }
+                    }
+
+                }
+                // &::before{
+                //     content: '';
+                //     position: absolute;
+                //     top: 0;
+                //     bottom: 0;
+                //     left: 0;
+                //     right: 0;
+                //     width: 100%;
+                //     height: 100%;
+                //     z-index: -1;
+                //     background: url('#{$img}transaction/uhy-bg.png') no-repeat;
+                //     background-size: contain !important;
+                //     background-position-y: center !important;
+                // }
+            }
+
+            &:nth-child(2n + 2) {
+                @media (min-width: 646px) and (max-width:1023px) {
+                    margin-right: 0;
+                }
+
+
+            }
+
+            @include breakpoint(large) {
+
+                &:nth-child(3n + 3) {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}

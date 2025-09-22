@@ -1,0 +1,579 @@
+
+<link rel="stylesheet" href="assets/css/subbaner/subbaner.css">
+<div class="bannerpanel subbaner module">
+    <div class="homeBanner">
+        <div class="grid-container-fullwidth">
+            <div class="imagebg-shadow">
+                <div class="image-shadow"></div>
+            </div>
+            <div class="homeBannerSlider">
+                <div class="bannerwrap">
+                    <div class="imgWrap">
+                        <div class="filter-img">
+                            <img class="image-block" src="{{root}}assets/images/premier-checking/premier-checking-bg.jpg" width="1920" height="598" alt="slider-1">
+                        </div>
+                    </div>
+                    <div class="contentwrap ctawrap">
+                        <div class="content">
+                            <h1><b>Premier </b>Checking</h1>
+                            <p>All Coastal States Bank personal checking accounts offer convenient services that make banking easy.</p>
+                        </div>
+                    </div>
+                </div>            
+            </div>
+        </div>
+    </div>
+</div>
+<div class="breadcrumbWrapBottom module">
+    <div class="grid-container">
+        <ul class="breadcrumbs">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item">Personal</li>
+        </ul>
+    </div>
+</div>
+<link rel="stylesheet" href="{{root}}assets/css/heroslider/swiper.min.css">
+<link rel="stylesheet" href="{{root}}assets/css/testimonialpanel/testimonialpanel.css" media="all">
+<script src="{{root}}assets/scripts/heroslider/swiper.min.js" defer></script>
+<script src="assets/scripts/inlinevideo/custom-video.js" defer></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        if ($(".testimonialPanel .swiper .swiper-slide").length > 1) {
+        var sliderDelay = $(".hdnAwardsSliderDelay").val();
+        var swiperCarousel = new Swiper('.carouselSlider', {
+        autoplayDisableOnInteraction: true,
+        spaceBetween: 0,
+        loop: true,
+        autoplay: {
+        delay: sliderDelay,
+        disableOnInteraction: true,
+        },
+        simulateTouch: true,
+        preloadImages: false,
+        lazy:true,
+        speed: 2500,
+        pagination: {
+        el: '.carouselSlider .swiper-pagination',
+        clickable: true
+        },
+        navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+        },
+        on: {  
+        slideChange: function() {
+               var getyoutubevalue = $('.swiper-slide-active').children('.videoBlock').find('figure').hasClass('youtubevideopanel');
+               var getvimeovalue = $('.swiper-slide-active').children('.videoBlock').find('figure').hasClass('vimeovideopanel');
+               var this_dataindex;
+               var this_datavimeoindex;
+               if (getyoutubevalue) {
+                   var pictureyoutubedata = $('.swiper-slide-active').children('.videoBlock').find('figure');
+                   this_dataindex = $(pictureyoutubedata).attr('data-index');
+                   if (this_dataindex) {
+                        YoutubeplayerList[this_dataindex].pauseVideo();
+                   }
+               }
+               if (getvimeovalue) {
+                   var picturevimeodata = $('.swiper-slide-active').children('.videoBlock').find('figure');
+                   this_datavimeoindex = $(picturevimeodata).attr('data-index');
+                   if (this_datavimeoindex) {
+                        VimeoplayerList[this_datavimeoindex].pause();
+                   }
+               }
+            },
+        },
+        });
+        $(".carouselSlider").hover(function () {
+        (this).swiper.autoplay.stop();
+        }, function () {
+        (this).swiper.autoplay.start();
+        });
+        var mySwiper = document.querySelector('.carouselSlider').swiper
+        $(".carouselSlider").mouseenter(function() {
+            mySwiper.autoplay.stop();
+        });
+        
+        $(".carouselSlider").mouseleave(function() {
+            mySwiper.autoplay.start();
+        });
+        $('.textBlock').each(function(){
+            if($(this).hasClass('imagerender')) {
+                $(this).closest('.carouselSlider').addClass('imageSlider');
+            } 
+        });
+        }
+    });
+</script>
+<div class="testimonialPanel firstcontentpanel">
+    <div class="grid-container">
+        <div class="flexWrap">
+            <div class="titleWrap">
+                <h2>
+                    <span class="font-72px" style="color: #B58412;">We Help</span> 
+                    <span class="font-52px" style="color: #B58412;">Our Clients</span> 
+                    <span class="font-72px" style="color: #004986;">Succeed</span> 
+                    <span class="font-65px" style="color: #004986;">Everyday</span>
+                </h2>
+            </div>
+            <div class="testiWrap">
+                <div class="swiper carouselSlider">
+                    <div class="swiper-wrapper">
+                        <input type="hidden" class="hdnAwardsSliderDelay" value="6000" />
+                        <div class="swiper-slide">
+                            <div class="textBlock withoutImageBlock">
+                                <div class="contentwrap">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                                    <p>- CSB Customer</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="textBlock withoutImageBlock">
+                                <div class="contentwrap">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                                    <p>- CSB Customer</p>
+                                </div>
+                            </div>
+                        </div>
+                       
+                    </div>
+                    <div class="flexBox"><div class="swiper-pagination"></div></div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<link rel="stylesheet" href="{{root}}assets/css/imageslicepanel/imageslicepanel.css" media="all">
+<div class="imageslicepanel left module">
+    <div class="grid-container">
+    <div class="flexwrap">
+        <div class="contwrap mobilewrap">                          
+            <h2><span>LOCAL.</span> <br> Premier Checking</h2>
+        </div>
+        <div class="imgWrap">
+            <img data-src="{{root}}assets/images/premier-checking/4.jpg" alt="promo-2" class="lazy layzeloading" width="908" height="490">
+            <div class="overlay"></div>
+        </div>
+        <div class="leftwarp">
+            <div class="contwrap">                          
+                <h2><span>LOCAL.</span> <br> Premier Checking</h2>
+                <p><small><b>A simple way to keep your family finances safer and take advantage of smart discounts on financial services.</b> <br>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea</small>
+                </p>
+                <a href="#" class="ctabtn secondarybtn">Open an Account</a>
+            </div>
+        </div>
+    </div>                     
+</div>
+</div> 
+<link rel="stylesheet" href="{{root}}assets/css/fearuredpanel/fearuredpanel.css" media="all">
+<div class="fearuredpanel greybgpanel module">
+    <div class="fearuredwrap">
+        <div class="grid-container">
+            <div class="contentwrap">
+                <h2>Account Features</h2>
+                <div class="contentlist">
+                    <ul>
+                        <li>Open an account with as little as $100</li>
+                        <li>Includes a free, no fee instant issue ATM/Debit card with worldwide access ($50 minimum withdrawal required to avoid service charge)</li>
+                        <li>Includes uChoose Rewards®</li>
+                        <li>Earns interest on balances greater than $2,500</li>
+                        <li>Up to $10,000 Identity Theft Reimbursement Coverage to clear your name and restore your identity</li>
+                        <li>3-in-1 Credit File Monitoring and eligible to receive a 3-in-1 Credit Report every 90 days or in receipt of an alert</li>
+                        <li>Cellular Telephone Protection-Receive up to $300 of repair or replacement costs if your cell phone is stolen or damaged</li>
+                        <li>Buyers Protection & Extended Warranty for 90 days from the date of purchase</li>
+                        <li>Monthly maintenance fee of $6.95</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="contentwrap bottomwrap">
+                <h2>Other Services Include</h2>
+                <!-- <p style="font-weight: 500;">Courtesy Overdraft Service<sup>2</sup> • Notary Services<sup>3</sup> • Bank to Bank Transfers<sup>3</sup> • Wire Transfers<sup>3</sup> • Safe Deposit</p> -->
+                    <ul class="bottomlist">
+                        <li>Courtesy Overdraft Service<sup>2</sup></li>
+                        <li>Notary Services<sup>3</sup></li>
+                        <li>Bank to Bank Transfers<sup>3</sup></li>
+                        <li>Wire Transfers<sup>3</sup></li>
+                        <li>Safe Deposit<sup>3</sup></li>
+                    </ul>
+            </div>
+        </div>
+    </div>       
+</div>
+<link rel="stylesheet" href="{{root}}assets/css/imageslicepanel/imageslicepanel.css" media="all">
+<div class="imageslicepanel right module">
+    <div class="grid-container">
+    <div class="flexwrap">
+        <div class="contwrap mobilewrap">                          
+            <h2>Explore Other Checking Options</h2>
+        </div>
+        <div class="imgWrap">
+            <img data-src="{{root}}assets/images/premier-checking/5.jpg" alt="promo-1" class="lazy layzeloading" width="908" height="490">
+            <div class="overlay"></div>
+        </div>
+        <div class="leftwarp">
+            <div class="contwrap">                          
+                <h2>Explore Other Checking Options</h2>
+                <p><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </small></p>
+                <a href="#" class="ctabtn secondarybtn">Other Checking Products</a>
+            </div>
+        </div>
+    </div>                     
+</div>
+</div>     
+
+<div class="grid-container">
+    <h2>Upload your Resume</h2>
+    <div><iframe id="ntxFormContainer-961e1d70-ef38-4bc8-b95d-e0603921dc31" style="width: 100%; border: none;" src="https://csb.workflowcloud.com/embedform/iframe?id=961e1d70-ef38-4bc8-b95d-e0603921dc31&tenancy=csb.workflowcloud.com" height="100%" scrolling="no"></iframe></div>
+    <script src=https://csb.workflowcloud.com/embedform/iframe/ntx-embed-iframe.js data-id="ntxFormContainer-961e1d70-ef38-4bc8-b95d-e0603921dc31"></script>
+</div>
+
+<link rel="stylesheet" href="{{root}}assets/css/twocolumngridpanel/twocolumngridpanel.css" media="all">
+ <div class="double_gridpanel module">
+    <div class="grid-container">
+        <h2>Meet Our Team</h2>
+        <div class="grid-x wrapgrid">
+            <div class="double_grid_left">
+                <div class="grid-x grid-news">
+                    <div class="double_left">
+                        <div class="image_content">
+                            <figure>
+                                <a href="">
+                                    <img src="{{root}}assets/images/biopage/Diana.jpg" alt="CAIN Health and One Brooklyn Health Partner to Offer Remote Patient Monitoring" width="232" height="325" loading="lazy" class=" ls-is-cached lazyloaded">
+                                </a>
+                            </figure>
+                            <div class="overlay"></div>
+                        </div>
+                    </div>
+                    <div class="double_right">
+                        <div class="contentsec">
+                            <div class="contact-address">
+                                <p class="name">Diana McDougall</p>
+                                <p class="dis">Lowcountry Regional President</p>
+                                <p>Office:<a href="tel:(843) 341-9910">(843) 341-9910</a></p>
+                                <p>Mobile:<a href="tel:(843) 304-6966">(843) 304-6966</a></p>
+                               <p><a href="mailto:dmcdougall@coastalstatesbank.com">dmcdougall@coastalstatesbank.com</a></p>
+                               <p>NMLS# 1086486</p>
+                             </div>
+                             <a href="" class="applylink" tabindex=0 role=button>Read Bio <span><img src="{{root}}assets/images/location/feather-arrow-right-circle.svg" alt="Read Bio"></span></a>
+                             <a href="" class="applylink" tabindex=0 role=button>Apply for a Loan with Brian <span><img src="{{root}}assets/images/location/feather-arrow-right-circle.svg" alt="Apply"></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="double_grid_right">
+                <div class="grid-x grid-news">
+                    <div class="double_left">
+                        <div class="image_content">
+                            <figure>
+                                <a href="">
+                                    <img src="{{root}}assets/images/biopage/Diana.jpg" alt="CAIN Health and One Brooklyn Health Partner to Offer Remote Patient Monitoring" width="232" height="325" loading="lazy" class=" ls-is-cached lazyloaded">
+                                </a>
+                               
+                            </figure>
+                            <div class="overlay"></div>
+                        </div>
+                    </div>
+                    <div class="double_right">
+                        <div class="contentsec">
+                            <div class="contact-address">
+                                <p class="name">Diana McDougall</p>
+                                <p class="dis">Lowcountry Regional President</p>
+                                <p>Office:<a href="tel:(843) 341-9910">(843) 341-9910</a></p>
+                                <p>Mobile:<a href="tel:(843) 304-6966">(843) 304-6966</a></p>
+                               <p><a href="mailto:dmcdougall@coastalstatesbank.com">dmcdougall@coastalstatesbank.com</a></p>
+                               <p>NMLS# 1086486</p>
+                             </div>
+                             <a href="" class="applylink" tabindex=0 role=button>Read Bio <span><img src="{{root}}assets/images/location/feather-arrow-right-circle.svg" alt="Read Bio"></span></a>
+                             <a href="" class="applylink" tabindex=0 role=button>Apply for a Loan with Brian <span><img src="{{root}}assets/images/location/feather-arrow-right-circle.svg" alt="Apply"></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="double_grid_left">
+                <div class="grid-x grid-news">
+                    <div class="double_left">
+                        <div class="image_content">
+                            <figure>
+                                <a href="">
+                                    <img src="{{root}}assets/images/biopage/Diana.jpg" alt="CAIN Health and One Brooklyn Health Partner to Offer Remote Patient Monitoring" width="232" height="325" loading="lazy" class=" ls-is-cached lazyloaded">
+                                </a>
+                            </figure>
+                            <div class="overlay"></div>
+                        </div>
+                    </div>
+                    <div class="double_right">
+                        <div class="contentsec">
+                            <div class="contact-address">
+                                <p class="name">Diana McDougall</p>
+                                <p class="dis">Lowcountry Regional President</p>
+                                <p>Office:<a href="tel:(843) 341-9910">(843) 341-9910</a></p>
+                                <p>Mobile:<a href="tel:(843) 304-6966">(843) 304-6966</a></p>
+                               <p><a href="mailto:dmcdougall@coastalstatesbank.com">dmcdougall@coastalstatesbank.com</a></p>
+                               <p>NMLS# 1086486</p>
+                             </div>
+                             <a href="" class="applylink" tabindex=0 role=button>Read Bio <span><img src="{{root}}assets/images/location/feather-arrow-right-circle.svg" alt="Read Bio"></span></a>
+                             <a href="" class="applylink" tabindex=0 role=button>Apply for a Loan with Brian <span><img src="{{root}}assets/images/location/feather-arrow-right-circle.svg" alt="Apply"></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="double_grid_right">
+                <div class="grid-x grid-news">
+                    <div class="double_left">
+                        <div class="image_content">
+                            <figure>
+                                <a href="">
+                                    <img src="{{root}}assets/images/biopage/Diana.jpg" alt="CAIN Health and One Brooklyn Health Partner to Offer Remote Patient Monitoring" width="232" height="325" loading="lazy" class=" ls-is-cached lazyloaded">
+                                </a>
+                            </figure>
+                            <div class="overlay"></div>
+                        </div>
+                    </div>
+                    <div class="double_right">
+                        <div class="contentsec">
+                            <div class="contact-address">
+                                <p class="name">Diana McDougall</p>
+                                <p class="dis">Lowcountry Regional President</p>
+                                <p>Office:<a href="tel:(843) 341-9910">(843) 341-9910</a></p>
+                                <p>Mobile:<a href="tel:(843) 304-6966">(843) 304-6966</a></p>
+                               <p><a href="mailto:dmcdougall@coastalstatesbank.com">dmcdougall@coastalstatesbank.com</a></p>
+                               <p>NMLS# 1086486</p>
+                             </div>
+                             <a href="" class="applylink" tabindex=0 role=button>Read Bio <span><img src="{{root}}assets/images/location/feather-arrow-right-circle.svg" alt="Read Bio"></span></a>
+                             <a href="" class="applylink" tabindex=0 role=button>Apply for a Loan with Brian <span><img src="{{root}}assets/images/location/feather-arrow-right-circle.svg" alt="Apply"></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<link rel="stylesheet" href="{{root}}assets/css/formpanel/formpanel.css" media="all">
+<div class="formpanel module">
+    <div class="grid-container">
+        <h2>Have a question about this product? Please let us know!</h2>
+    </div>
+    <div class="formpanelwrap greybgpanel">
+        <div class="grid-container">
+            <div id="umbraco_form_d9e6d40bafdb48feb95ada218861ef19" class="umbraco-forms-form premierchecking premierCheck umbraco-forms-">
+
+                <form action="/personal/personal-checking/premier-checking" enctype="multipart/form-data" id="formd35e51c26f064dcd8c53833305ed01b8" method="post"><input data-val="true" data-val-required="The FormId field is required." name="FormId" type="hidden" value="d9e6d40b-afdb-48fe-b95a-da218861ef19" /><input data-val="true" data-val-required="The FormName field is required." name="FormName" type="hidden" value="Premier Checking" /><input data-val="true" data-val-required="The RecordId field is required." name="RecordId" type="hidden" value="00000000-0000-0000-0000-000000000000" /><input name="PreviousClicked" type="hidden" value="" /><input name="Theme" type="hidden" value="" /><input name="RedirectToPageId" type="hidden" value="" />            <input type="hidden" name="FormStep" value="0" />
+                            <input type="hidden" name="RecordState" value="Q2ZESjhCazg1WG9sZnI5R3JuODl5aHljbG9KSzBIeWd4aUFwRkJhZE93VEc2ZDhyLUNzNXJmOU1YZjJwYklWNGdPSlAybndaallTZHVpREdYaWpOamNvT21NMDJWdzkwdU9TRHpGVEwxcGJzY2VFSE1OZmtndTMzeEc5MWpJZS1meVVVS0E=" />
+                
+                
+                
+                
+                <div class="umbraco-forms-page" id="e7726a68-f0cf-4efc-ba58-8ea5ac33d026">
+                
+                
+                
+                
+                        <fieldset class="umbraco-forms-fieldset" id="9740f281-217c-4719-b617-5645d94785a9">
+                
+                
+                            <div class="row-fluid">
+                
+                                    <div class="umbraco-forms-container col-md-12">
+                
+                                                    <div class=" umbraco-forms-field name shortanswer mandatory ">
+                
+                                                            <label for="d7b6a629-311a-48fa-887a-81eec8dd3b03" class="umbraco-forms-label">
+                Name            <span class="umbraco-forms-indicator">*</span>
+                                                            </label>
+                
+                        <div class="umbraco-forms-field-wrapper">
+                
+                            <input type="text" name="d7b6a629-311a-48fa-887a-81eec8dd3b03" id="d7b6a629-311a-48fa-887a-81eec8dd3b03" data-umb="d7b6a629-311a-48fa-887a-81eec8dd3b03" class="text " value="" maxlength="255"
+                        data-val="true"  data-val-required="" aria-required="true"  data-val-regex="" data-val-regex-pattern="^[a-zA-Z ]+$" />
+                
+                
+                
+                
+                
+                <span class="field-validation-valid" data-valmsg-for="d7b6a629-311a-48fa-887a-81eec8dd3b03" data-valmsg-replace="true" role="alert"></span>
+                        </div>
+                
+                                                    </div>
+                                                    <div class=" umbraco-forms-field email shortanswer mandatory alternating ">
+                
+                                                            <label for="cacc8e6c-1d73-4718-e246-f952169b5d32" class="umbraco-forms-label">
+                Email            <span class="umbraco-forms-indicator">*</span>
+                                                            </label>
+                
+                        <div class="umbraco-forms-field-wrapper">
+                
+                            <input type="text" name="cacc8e6c-1d73-4718-e246-f952169b5d32" id="cacc8e6c-1d73-4718-e246-f952169b5d32" data-umb="cacc8e6c-1d73-4718-e246-f952169b5d32" class="text " value="" maxlength="255"
+                        data-val="true"  data-val-required="" aria-required="true"  data-val-regex="" data-val-regex-pattern="^[a-zA-Z0-9_\.\+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-\.]+$" />
+                
+                
+                
+                
+                
+                <span class="field-validation-valid" data-valmsg-for="cacc8e6c-1d73-4718-e246-f952169b5d32" data-valmsg-replace="true" role="alert"></span>
+                        </div>
+                
+                                                    </div>
+                                                    <div class=" umbraco-forms-field phone shortanswer mandatory ">
+                
+                                                            <label for="73ee4f93-a163-4507-c91f-754081bd71e3" class="umbraco-forms-label">
+                Phone            <span class="umbraco-forms-indicator">*</span>
+                                                            </label>
+                
+                        <div class="umbraco-forms-field-wrapper">
+                
+                            <input type="text" name="73ee4f93-a163-4507-c91f-754081bd71e3" id="73ee4f93-a163-4507-c91f-754081bd71e3" data-umb="73ee4f93-a163-4507-c91f-754081bd71e3" class="text " value="" maxlength="255"
+                        data-val="true"  data-val-required="" aria-required="true"  data-val-regex="" data-val-regex-pattern="^[0-9]*$" />
+                
+                
+                
+                
+                
+                <span class="field-validation-valid" data-valmsg-for="73ee4f93-a163-4507-c91f-754081bd71e3" data-valmsg-replace="true" role="alert"></span>
+                        </div>
+                
+                                                    </div>
+                                                    <fieldset class=" umbraco-forms-field preferredmethodofcontact multiplechoice mandatory alternating ">
+                
+                                                            <legend class="umbraco-forms-legend">
+                Preferred Method of Contact            <span class="umbraco-forms-indicator">*</span>
+                                                            </legend>
+                
+                        <div class="umbraco-forms-field-wrapper">
+                
+                            <div class="  radiobuttonlist" id="6b0e19f7-8144-4270-e841-272c9daf37da" data-umb="6b0e19f7-8144-4270-e841-272c9daf37da">
+                                <input type="radio" name="6b0e19f7-8144-4270-e841-272c9daf37da" id="6b0e19f7-8144-4270-e841-272c9daf37da_0" data-umb="6b0e19f7-8144-4270-e841-272c9daf37da_0" value="Email" data-val="true" data-val-required="Please select any one option" data-rule-required="true" data-msg-required="Please select any one option">
+                                <label for="6b0e19f7-8144-4270-e841-272c9daf37da_0">Email*</label>
+                                <br>
+                                <input type="radio" name="6b0e19f7-8144-4270-e841-272c9daf37da" id="6b0e19f7-8144-4270-e841-272c9daf37da_1" data-umb="6b0e19f7-8144-4270-e841-272c9daf37da_1" value="Phone" data-val="true" data-val-required="Please select any one option" data-rule-required="true" data-msg-required="Please select any one option">
+                                <label for="6b0e19f7-8144-4270-e841-272c9daf37da_1">Phone*</label>
+                                <br>
+                            </div>            
+                          
+                <!-- <span class="checkboxlist" id="6b0e19f7-8144-4270-e841-272c9daf37da" data-umb="6b0e19f7-8144-4270-e841-272c9daf37da">
+                    <input type="checkbox" 
+                           class="" 
+                           name="6b0e19f7-8144-4270-e841-272c9daf37da" id="6b0e19f7-8144-4270-e841-272c9daf37da_0" data-umb="6b0e19f7-8144-4270-e841-272c9daf37da_0" value="Email" 
+                    data-val="true" data-val-required="" data-rule-required="true" data-msg-required=""/>
+                    <label for="6b0e19f7-8144-4270-e841-272c9daf37da_0">Email*</label>
+                    <br />
+                    <input type="checkbox" 
+                           class="" 
+                           name="6b0e19f7-8144-4270-e841-272c9daf37da" id="6b0e19f7-8144-4270-e841-272c9daf37da_1" data-umb="6b0e19f7-8144-4270-e841-272c9daf37da_1" value="Phone" 
+                    data-val="true" data-val-required="" data-rule-required="true" data-msg-required=""/>
+                    <label for="6b0e19f7-8144-4270-e841-272c9daf37da_1">Phone*</label>
+                    <br />
+                </span>
+                 -->
+                
+                <span class="field-validation-valid" data-valmsg-for="6b0e19f7-8144-4270-e841-272c9daf37da" data-valmsg-replace="true" role="alert"></span>
+                        </div>
+                
+                                                    </fieldset>
+                                                    <div class=" umbraco-forms-field commentsquestions longanswer ">
+                
+                                                            <label for="c94e3cf2-0ede-4233-b10d-e1f7c31a053d" class="umbraco-forms-label">
+                Comments/Questions                                            </label>
+                
+                        <div class="umbraco-forms-field-wrapper">
+                
+                            
+                <textarea class=""
+                          name="c94e3cf2-0ede-4233-b10d-e1f7c31a053d"
+                          id="c94e3cf2-0ede-4233-b10d-e1f7c31a053d"
+                          data-umb="c94e3cf2-0ede-4233-b10d-e1f7c31a053d"
+                          rows="2"
+                          cols="20"
+                          ></textarea>
+                
+                
+                
+                <span class="field-validation-valid" data-valmsg-for="c94e3cf2-0ede-4233-b10d-e1f7c31a053d" data-valmsg-replace="true" role="alert"></span>
+                        </div>
+                
+                                                    </div>
+                
+                                    </div>
+                            </div>
+                
+                        </fieldset>
+                
+                    <div class="umbraco-forms-hidden" aria-hidden="true">
+                        <input type="text" name="d9e6d40bafdb48feb95ada218861ef19" />
+                    </div>
+                
+                    <div class="umbraco-forms-navigation row-fluid">
+                
+                        <div class="col-md-12">
+                                <input type="submit"
+                                       class="btn primary"
+                                       value="Submit"
+                                       name="__next"
+                                       data-form-navigate="next"
+                                       data-umb="submit-forms-form" />
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
+                <input name="__RequestVerificationToken" type="hidden" value="CfDJ8Bk85Xolfr9Grn89yhycloJk6bRZQ6oQ7_OabCu-GTRDZRctS4HaRSW2z9tb9Hn7YR90clrqa49vqLJEspapt4bxSttWpaFZ-LZmbnBIX0967aHbGxVEQR0-E6KRk93LW45m42yZB3cEa9HVbYhPCCwyBBqjGJXvXAeH4XkJ_Am9skRaAv38oeKNQw3iJeFNyQ" /><input name="ufprt" type="hidden" value="CfDJ8Bk85Xolfr9Grn89yhycloJaKcgItie4BhmebpWSIY_ZjRy79nIQNCC4rrsfvsbQDbYnbKVgSaKAJelC0iAIURpmMzAF-2dNxbvStzMGVFtDVaJTC1PYYVOS085Ig-IksXZLWWzDyC9d-_TbHpj_WQs" /></form>
+                    </div>
+                
+                
+                
+                
+                <div class="umbraco-forms-form-config umbraco-forms-hidden"
+                     data-id="d9e6d40bafdb48feb95ada218861ef19"
+                     data-serialized-page-button-conditions="{}"
+                     data-serialized-fieldset-conditions="{}"
+                     data-serialized-field-conditions="{}"
+                     data-serialized-fields-not-displayed="{}"
+                     data-trigger-conditions-check-on="change"
+                     data-form-element-html-id-prefix=""
+                     data-disable-validation-dependency-check="false"></div>
+                
+                
+                <script defer="defer" src="/App_Plugins/UmbracoForms/Assets/themes/default/umbracoforms.min.js" type="application/javascript"></script>
+                <link href="/App_Plugins/UmbracoForms/Assets/themes/default/style.min.css" rel="stylesheet" />
+                
+                <p> </p>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                        </div>
+        </div>
+    </div>       
+</div>
+<div id="thank-you-message" class="successsection">
+    <div class="grid-container">
+        <div class="success">
+            <div class="successtxt">
+                <h2>Thank you</h2>
+            </div>
+            <p>For your inquiry. A member of our team will be contacting you soon.</p>
+        </div>
+    </div>
+</div>
+<link rel="stylesheet" href="{{root}}assets/css/infopanel/infopanel.css" media="all">
+<div class="infopanel module">
+    <div class="grid-container">
+        <div class="contentwrap">
+            <h2>Important Information</h2>
+            <ul>
+                <li>Message and data rates may apply. Fees may apply for certain optional services available through Personal Online & Mobile Banking.</li>
+                <li>Coastal States Bank may pay overdrafts at our discretion and reserves the right to terminate this service at any time. You are required to pay a $31 overdraft fee for each overdraft transaction that is paid by the bank. There is a limit of $155 each day in total fees that you can be charged for overdrawing your account. Items not paid will be returned and you will incur a $31 returned item fee. Overdraft service applies to checks, pre-authorized electronic debits, and online banking and bill payment transactions. Additionally, ATM withdrawals and one-time debit card transactions are covered if you choose to opt in to this service for those transactions. Reimbursement of overdraft coverage payments must be made promptly by making a deposit in your account. Overdraft items are generally not covered for accounts that are not in good standing or do not have regular deposits.</li>
+                <li>Fees may apply.</li>
+                <li>Debit card and customer activation required.</li>
+                <li>Credit file monitoring may take several days to begin following activation.</li>
+                <li>Bill must be paid through the premier account for coverage to apply.</li>
+                <li>To reduce the monthly maintenance fee, enroll in eStatements ($2.00 reduction), maintain an average daily balance of $2,500 during the monthly statement cycle ($4.95 reduction) Eliminate the monthly maintenance fee by maintaining a combined average daily balance of $10,000 during the statement cycle in related Local.Checking or related Local. Savings account(s).</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    

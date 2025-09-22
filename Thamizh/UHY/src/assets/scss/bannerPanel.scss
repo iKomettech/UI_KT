@@ -1,0 +1,78 @@
+@import "util/util";
+$white: #ffffff;
+$primary-color: #007041;
+$img: "../../images/";
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+ 
+
+.industriesPanel {
+    // background: url("#{$img}industries/banner.jpg") no-repeat;
+    // width: 1920px;
+    // height: 619px;
+    position: relative;
+    @media (min-width:481px) and (max-width:767px) {
+        height: 243px; 
+    }
+    img {
+        object-fit: contain;
+        object-position: center;
+        width: 100%;
+        height: 100%;
+        
+            @media (min-width:481px) and (max-width:767px) {
+                max-height: 243px;
+                height: 100%;
+                object-fit: cover;
+            }
+        
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        top: 0;
+        height: 100%;
+        background: linear-gradient(90deg, black, transparent);
+        opacity: .8;
+    }
+
+    .indTitle {
+        position: absolute;
+        bottom: 12%;
+        z-index: 1;
+        color: #ffffff;
+
+        @media screen and (max-width:480px) {
+
+            max-width: 365px;
+        }
+
+        @include breakpoint(large) {
+            bottom: 22%;
+        }
+
+        
+        h1 {
+            margin-bottom: 0px;
+            font-weight: 700;
+            color: #ffffff;
+            font-family: 'mundial';
+            font-size: 35px;
+            line-height: 40px;
+
+            @include breakpoint(xlarge) {
+                line-height: 48px;
+                font-size: 55px;
+            }
+        }
+        
+    }
+}

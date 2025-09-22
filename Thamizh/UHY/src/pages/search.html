@@ -1,0 +1,1257 @@
+<div class="header-overlay">
+    <picture>
+        <source media="(min-width:320px) and (max-width:430px)"
+            srcset="{{root}}assets/images/settings/header-overlay-mobile.svg" type="image/jpg">
+        <source media="(min-width:431px) and (max-width:1023px)"
+            srcset="{{root}}assets/images/settings/header-overlay.svg" type="image/jpg">
+        <source media="(min-width:1024px) and (max-width:1279px)"
+            srcset="{{root}}assets/images/settings/header-overlay-tablet.svg" type="image/jpg">
+        <source media="(min-width: 1280px)" srcset="{{root}}assets/images/settings/header-overlay.svg" type="image/jpg">
+        <img src="{{root}}assets/images/settings/header-overlay.svg" alt="UHY header-overlay" />
+    </picture>
+</div>
+
+<link rel="stylesheet" href="{{root}}assets/css/generalContent/generalContent.css">
+
+<div class="generalPanel module">
+    <div class="grid-container">
+        <div class="flex-banner">
+            <div class="rgtBlock ">
+                <div class="bannerContent">
+                    <div class="titleCol">
+                        <h1>Search</h1>
+                    </div>
+                    <div class="resultPanel" style="display: block;">
+                        <div class="grid-container"> 
+                            <div class="resultData">
+                                <div class="flexResult">
+                                    <div class="flxData">
+                                        <a href="#" aria-label="close">Wealth Management</a>
+                                    </div>
+                                    <div class="flxData">
+                                        <a href="#" aria-label="close">Healthcare</a>
+                                    </div>
+                                    <div class="flxData">
+                                        <a href="#" aria-label="close">News</a>
+                                    </div>
+                                    <div class="flxData">
+                                        <a href="#" aria-label="close">Podcast</a>
+                                    </div>
+                                    <div class="flxData">
+                                        <a href="#" aria-label="close">Past 7 Days</a>
+                                    </div>
+                                    <div class="clear">
+                                        <a href="#" aria-label="close">Clear Filter</a>
+                                    </div>
+                                </div>
+                                <div class="noOfResults">
+                                    <p>Showing 4 results out of 100</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bannerPattern">
+        <div class="rightPattern">
+            <img src="../assets/images/insightDetail/insight-pattern.svg" alt="Banner pattern" width="727" height="447"
+                class="lazy">
+        </div>
+    </div>
+</div>
+
+
+<div class="breadcrumbWrapBottom module come-in" data-swiftype-index="false">
+    <div class="grid-container">
+        <ul class="breadcrumbs">
+            <li class="breadcrumb-item ">
+                <a href="/" aria-label="Home">Home</a>
+            </li>
+            <li class="breadcrumb-item ">Search</li>
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+<script>
+    $(document).ready(function () {
+        $('.flxData').on('click', function () {
+            $(this).remove();
+
+        });
+
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $(".faq-cta").click(function () {
+            $(".patternPanel .pattern").toggleClass("active");
+        });
+    });
+</script>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $('.faq-cta').each(function (i, e) {
+            $(this).attr("id", "faq-" + i);
+        });
+
+        $(document).find("a[id^='faq-']").click(function () {
+            console.log($(this));
+            if ($(this).hasClass("active")) {
+                $(this).addClass('active').removeClass('active');
+                $(this).find('i').addClass('active').removeClass('active');
+                $(this).parent().find('.faq-content').slideUp(200);
+                $(this).find('i').removeClass("fa-angle-up").addClass("fa-angle-down");
+            }
+            else {
+                $(this).parent().parent().find(".faq-content").slideUp(200);
+                $(this).parent().parent().find("a").removeClass('active');
+                $(this).parent().parent().find("i").removeClass('active');
+                $(this).parent().parent().find("i").removeClass("fa-angle-up").addClass("fa-angle-down");
+                $(this).removeClass("active").addClass('active');
+                $(this).find('i').removeClass("active").addClass('active');
+                $(this).find('i').removeClass("fa-angle-down").addClass("fa-angle-up");
+                $(this).parent().find('.faq-content').slideDown(250);
+            }
+            var self = this;
+            var faqheight = $("header").height() + 36;
+            setTimeout(function () {
+                theOffset = $(self).offset();
+                $('body,html').animate({
+                    scrollTop: theOffset.top - faqheight
+                });
+            }, 600);
+        });
+    });
+
+
+
+    (function ($) {
+        $.fn.liHarmonica = function (params) {
+            var p = $.extend({
+                currentClass: 'cur', //Класс для выделенного пункта меню
+                onlyOne: true, //true - открытым может быть только один пункт, 
+                //false - число открытых одновременно пунктов не ограничено
+                speed: 500 //Скорость анимации
+            }, params);
+            return this.each(function () {
+                var
+                    el = $(this).addClass('harmonica'),
+                    linkItem = $('ul', el).prev('a');
+                el.children(':last').addClass('last');
+                $('ul', el).each(function () {
+                    $(this).children(':last').addClass('last');
+                });
+                $('ul', el).prev('a').addClass('harFull');
+                el.find('.' + p.currentClass).parents('ul').show().prev('a').addClass(p.currentClass).addClass('harOpen');
+                linkItem.on('click', function () {
+                    if ($(this).next('ul').is(':hidden')) {
+                        $(this).addClass('harOpen');
+                    } else {
+                        $(this).removeClass('harOpen');
+                    }
+                    if (p.onlyOne) {
+                        $(this).closest('ul').closest('ul').find('ul').not($(this).next('ul')).slideUp(p.speed).prev('a').removeClass('harOpen');
+                        $(this).next('ul').slideToggle(p.speed);
+                    } else {
+                        $(this).next('ul').stop(true).slideToggle(p.speed);
+                    }
+                    return false;
+                });
+            });
+        };
+    })(jQuery);
+
+    /*Инициализация плагина*/
+    $(function () {
+        $('.anyClass').liHarmonica({
+            onlyOne: false,
+            speed: 500
+        });
+        $('.anyClass2').liHarmonica({
+            onlyOne: true,
+            speed: 400
+        });
+    });
+
+</script>
+<link rel="stylesheet" href="{{root}}assets/css/insights/insights.css">
+<div class="accordionPanel">
+    <div class="grid-container">
+        <div class="resultPanel" style="display: none;">
+            <div class="grid-container">
+                <div class="resTitle">
+                    <p>Filter Result</p>
+                </div>
+                <div class="resultData">
+                    <div class="flexResult">
+                        <div class="flxData">
+                            <a href="#" aria-label="close">Wealth Management</a>
+                        </div>
+                        <div class="flxData">
+                            <a href="#" aria-label="close">Healthcare</a>
+                        </div>
+                        <div class="flxData">
+                            <a href="#" aria-label="close">News</a>
+                        </div>
+                        <div class="flxData">
+                            <a href="#" aria-label="close">Podcast</a>
+                        </div>
+                        <div class="flxData">
+                            <a href="#" aria-label="close">Past 7 Days</a>
+                        </div>
+                        <div class="clear">
+                            <a href="#" aria-label="close">Clear Filter</a>
+                        </div>
+                    </div>
+                    <div class="noOfResults">
+                        <p>Showing 4 results out of 100</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-container">
+
+            <div class="faq-accordion graypanelbg">
+                <a href="javascript:void(0);" class="faq-cta ">
+                    Filter By
+                    <i class="active fa-angle-up"></i>
+                </a>
+                <div class="faq-content" style="display:none; margin-top: 5px;">
+                    <div class="flexAcc">
+                        <div class="flexAcc1">
+                            <ul class="anyClass2 skinPlank">
+                                <li><a href="#">Services</a>
+                                    <ul style="overflow-y: hidden;">
+                                        <li><a href="#">Audit & Assurance</a>
+
+                                            <ul>
+                                                <li>Highlights</li>
+                                                <li>Any Size, Any Fabric
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Tax</a>
+
+                                            <ul>
+                                                <li>Highlights</li>
+                                                <li>Any Size, Any Fabric
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Advisory</a>
+
+                                            <ul>
+                                                <li><span>Wealth Management</span> <input type="checkbox" name="wm"
+                                                        id="wm"></li>
+                                                <li><span>Business Valuation Services</span> <input type="checkbox"
+                                                        name="wm" id="wm"></li>
+                                                <li><span>Business Valuation Services</span> <input type="checkbox"
+                                                        name="wm" id="wm"></li>
+                                                <li><span>Business Valuation Services</span> <input type="checkbox"
+                                                        name="wm" id="wm"></li>
+                                                <li><span>Business Valuation Services</span> <input type="checkbox"
+                                                        name="wm" id="wm"></li>
+                                                <li><span>Business Valuation Services</span> <input type="checkbox"
+                                                        name="wm" id="wm"></li>
+                                                <li><span>Business Valuation Services</span> <input type="checkbox"
+                                                        name="wm" id="wm"></li>
+                                                <li><span>Business Valuation Services</span> <input type="checkbox"
+                                                        name="wm" id="wm"></li>
+                                                <li>Business Valuation Services</li>
+                                                <li>Business Valuation Services</li>
+                                                <li>Business Valuation Services</li>
+                                                <li>Business Valuation Services</li>
+                                                <li>Business Valuation Services</li>
+                                                <li>Business Valuation Services</li>
+                                                <li>Business Valuation Services</li>
+                                                <li>Business Valuation Services</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="flexAcc1">
+                            <ul class="anyClass2 skinPlank">
+                                <li><a href="#">industries</a>
+                                    <ul>
+                                        <li class="flxBox"> <span>Cannabis</span> <input type="checkbox" name="wm"
+                                                id="wm"></li>
+                                        <li class="flxBox"> <span>Construction</span> <input type="checkbox" name="wm"
+                                                id="wm"></li>
+                                        <li class="flxBox"> <span>Government</span> <input type="checkbox" name="wm"
+                                                id="wm"></li>
+                                        <li class="flxBox"> <span>Healthcare</span> <input type="checkbox" name="wm"
+                                                id="wm"></li>
+                                        <li class="flxBox"> <span>Financial Institutions</span> <input type="checkbox"
+                                                name="wm" id="wm"></li>
+                                        <li class="flxBox"> <span>Not-For-Profit & Higher Education</span> <input
+                                                type="checkbox" name="wm" id="wm"></li>
+                                        <li class="flxBox"> <span>Energy</span> <input type="checkbox" name="wm"
+                                                id="wm"></li>
+                                        <li class="flxBox"> <span>Cannabis</span> <input type="checkbox" name="wm"
+                                                id="wm"></li>
+                                        <li class="flxBox"> <span>Cannabis</span> <input type="checkbox" name="wm"
+                                                id="wm"></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="flexAcc1">
+                            <ul class="anyClass2 skinPlank">
+                                <li><a href="#">Type</a>
+                                    <ul>
+                                        <li class="flxBox"> <span>Articles</span> <input type="checkbox" name="wm"
+                                                id="wm"></li>
+                                        <li class="flxBox"> <span>Videos</span> <input type="checkbox" name="wm"
+                                                id="wm"></li>
+                                        <li class="flxBox"> <span>Podcasts</span> <input type="checkbox" name="wm"
+                                                id="wm"></li>
+                                        <li class="flxBox"> <span>News</span> <input type="checkbox" name="wm" id="wm">
+                                        </li>
+                                        <li class="flxBox"> <span>Case Study</span> <input type="checkbox" name="wm"
+                                                id="wm"></li>
+                                        <li class="flxBox"> <span>Upcoming Events</span> <input type="checkbox"
+                                                name="wm" id="wm"></li>
+                                        <li class="flxBox"> <span>Recordings</span> <input type="checkbox" name="wm"
+                                                id="wm"></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="flexAcc1">
+                            <ul class="anyClass2 skinPlank">
+                                <li><a href="#">Time</a>
+                                    <ul>
+                                        <li class="flxBox"> <span>All Time</span> <input type="checkbox" name="wm"
+                                                id="wm"></li>
+                                        <li class="flxBox"> <span>Past 12 Months</span> <input type="checkbox" name="wm"
+                                                id="wm"></li>
+                                        <li class="flxBox"> <span>Past 30 Days</span> <input type="checkbox" name="wm"
+                                                id="wm"></li>
+                                        <li class="flxBox"> <span>Past 7 Days</span> <input type="checkbox" name="wm"
+                                                id="wm"></li>
+                                        <li class="flxBox"> <span>Past 24 Hours</span> <input type="checkbox" name="wm"
+                                                id="wm"></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="searchContainer">
+                        <form class="" action="/search" method="GET">
+                            <!-- <label for="inputSearch" class="screen-reader-text">search</label> -->
+                            <div class="flexi-row">
+                                <input type="text" class="txtBox" name="q" id="searchInput" value=""
+                                    placeholder="Search for insights by name, industry, or service...">
+
+                            </div>
+                            <div class="reserachLst" style="display: none;">
+                                <p class="match">Search results matching: John</p>
+                                <ul>
+                                    <li><a href="#">John Ferro</a></li>
+                                    <li><a href="#">John Hipperson</a></li>
+                                    <li><a href="#">John Kincaid</a></li>
+                                    <li><a href="#">John Salemi</a></li>
+                                    <li><a href="#">National Valuation practice welcomes new managing
+                                            director John Ferro... <span>In Insights</span></a></li>
+                                </ul>
+                                <div class="bottomBtn">
+                                    <div class="allresult">See All Results</div>
+                                    <a href="#" class="goIcon"><i>Search</i></a>
+                                </div>
+                            </div>
+                            <div class="flex-btn">
+                                <a href="#" class=" submitbtn">Submit</a>
+                                <a href="#" class=" resetbtn">Reset</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<link rel="stylesheet" href="{{root}}assets/css/teamSlidePanel/teamSlidePanel.css">
+<script type="text/javascript" defer>
+    $(document).ready(function () {
+        var swiper = new Swiper(".teamSlider", {
+            slidesPerView: 1,
+            spaceBetween: 5,
+            loop: true,
+            pagination: {
+                el: ".teamSlider .swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".teamSlider .swiper-button-next",
+                prevEl: ".teamSlider .swiper-button-prev",
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 1,
+                    slidesPerGroup: 1,
+                    spaceBetween: 20,
+                },
+                768: {
+                    slidesPerView: 2,
+                    slidesPerGroup: 1,
+                    spaceBetween: 25,
+                },
+                1024: {
+                    slidesPerView: 3,
+                    slidesPerGroup: 1,
+                    spaceBetween: 25,
+                },
+                1360: {
+                    slidesPerView: 4,
+                    spaceBetween: 30,
+                },
+            },
+        });
+    });
+</script>
+<div class="teamsPanel module">
+    <div class="grid-container">
+        <div class="testiTitle">
+            <p>Our Professionals</p>
+        </div>
+        <div class="viewLink">
+            <a href="#" class="viewAll " aria-label="View All">View All</a>
+        </div>
+        <div class="carouselcontainer">
+            <div class="swiper-container   teamSlider ">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="bioBlock">
+                            <div class="imgWrap">
+                                <a href="#" aria-label="John Salemi image">
+                                    <img src="assets/images/industries/sub/john.jpg" alt="John Salemi" class="lazy zoom"
+                                        width="300" height="346"></a>
+                            </div>
+                            <div class="bioSection">
+                                <div class="bioTitle">
+                                    <a href="#" aria-label="John Salemi">
+                                        <p>John Salemi</p>
+                                    </a>
+                                </div>
+                                <div class="bioContent">
+                                    <ul>
+                                        <li>Office Managing Partner, </li>
+                                        <li>Farmington, UHY LLP </li>
+                                        <li>Managing Director, UHY Advisors</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="ctablock">
+                                <ul class="bioSocial">
+                                    <li>
+                                        <a href="#" aria-label="linked-in user" target="_blank">
+                                            <img src="{{root}}assets/images/settings/linkedin-in.svg" alt="linkedin"
+                                                class="lazy imagetoSVG" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" aria-label="linked-in user" target="_blank">
+                                            <img src="{{root}}assets/images/industries/sub/phone-iphone.svg"
+                                                alt="linkedin" class="lazy imagetoSVG" />
+                                        </a>
+                                    </li>
+                                </ul>
+
+                                <span class="goIcon"><a href="#" aria-label="Advisory"><i>Search</i></a></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+
+                        <div class="bioBlock">
+                            <div class="imgWrap">
+                                <a href="#" aria-label="Amber Sutter Image">
+                                    <img src="assets/images/industries/sub/amber.jpg" alt="Amber Sutter"
+                                        class="lazy zoom" width="300" height="346"></a>
+                            </div>
+                            <div class="bioSection">
+                                <div class="bioTitle">
+                                    <a href="#" aria-label="Amber Sutter">
+                                        <p>Amber Sutter </p>
+                                    </a>
+                                </div>
+                                <div class="bioContent">
+                                    <ul>
+                                        <li>Partner, UHY LLP
+                                        </li>
+                                        <li>Managing Director, UHY Advisors</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="ctablock">
+                                <ul class="bioSocial">
+                                    <li>
+                                        <a href="#" aria-label="linked-in user" target="_blank">
+                                            <img src="{{root}}assets/images/settings/linkedin-in.svg" alt="linkedin"
+                                                class="lazy imagetoSVG" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" aria-label="linked-in user" target="_blank">
+                                            <img src="{{root}}assets/images/industries/sub/phone-iphone.svg"
+                                                alt="linkedin" class="lazy imagetoSVG" />
+                                        </a>
+                                    </li>
+                                </ul>
+
+                                <span class="goIcon"><a href="#" aria-label="Advisory"><i>Search</i></a></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+
+                        <div class="bioBlock">
+                            <div class="imgWrap">
+                                <a href="#" aria-label="Alanna Abreu Image">
+                                    <img src="assets/images/industries/sub/alena.jpg" alt="Alanna Abreu"
+                                        class="lazy zoom" width="300" height="346"></a>
+                            </div>
+                            <div class="bioSection">
+                                <div class="bioTitle">
+                                    <a href="#" aria-label="Alanna Abreu">
+                                        <p>Alanna Abreu</p>
+                                    </a>
+                                </div>
+                                <div class="bioContent">
+                                    <ul>
+                                        <li>Principal, UHY Advisors </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="ctablock">
+                                <ul class="bioSocial">
+                                    <li>
+                                        <a href="#" aria-label="linked-in user" target="_blank">
+                                            <img src="{{root}}assets/images/settings/linkedin-in.svg" alt="linkedin"
+                                                class="lazy imagetoSVG" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" aria-label="linked-in user" target="_blank">
+                                            <img src="{{root}}assets/images/industries/sub/phone-iphone.svg"
+                                                alt="linkedin" class="lazy imagetoSVG" />
+                                        </a>
+                                    </li>
+                                </ul>
+
+                                <span class="goIcon"><a href="#" aria-label="Advisory"><i>Search</i></a></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+
+                        <div class="bioBlock">
+                            <div class="imgWrap">
+                                <a href="#" aria-label="Vince Nesline Image">
+                                    <img src="assets/images/industries/sub/vinc.jpg" alt="Vince Nesline"
+                                        class="lazy zoom" width="300" height="346"></a>
+                            </div>
+                            <div class="bioSection">
+                                <div class="bioTitle">
+                                    <a href="#" aria-label="Vince Nesline">
+                                        <p>Vince Nesline</p>
+                                    </a>
+                                </div>
+                                <div class="bioContent">
+                                    <ul>
+                                        <li>Principal, UHY Advisors </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="ctablock">
+                                <ul class="bioSocial">
+                                    <li>
+                                        <a href="#" aria-label="linked-in user" target="_blank">
+                                            <img src="{{root}}assets/images/settings/linkedin-in.svg" alt="linkedin"
+                                                class="lazy imagetoSVG" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" aria-label="linked-in user" target="_blank">
+                                            <img src="{{root}}assets/images/industries/sub/phone-iphone.svg"
+                                                alt="linkedin" class="lazy imagetoSVG" />
+                                        </a>
+                                    </li>
+                                </ul>
+
+                                <span class="goIcon"><a href="#" aria-label="Advisory"><i>Search</i></a></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+
+                        <div class="bioBlock">
+                            <div class="imgWrap">
+                                <a href="#" aria-label="Vince Nesline Image">
+                                    <img src="assets/images/industries/sub/vinc.jpg" alt="Vince Nesline"
+                                        class="lazy zoom" width="300" height="346">
+                                </a>
+                            </div>
+                            <div class="bioSection">
+                                <div class="bioTitle">
+                                    <a href="#" aria-label="Vince Nesline">
+                                        <p>Vince Nesline</p>
+                                    </a>
+                                </div>
+                                <div class="bioContent">
+                                    <ul>
+                                        <li>Principal, UHY Advisors </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="ctablock">
+                                <ul class="bioSocial">
+                                    <li>
+                                        <a href="#" aria-label="linked-in user" target="_blank">
+                                            <img src="{{root}}assets/images/settings/linkedin-in.svg" alt="linkedin"
+                                                class="lazy imagetoSVG" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" aria-label="linked-in user" target="_blank">
+                                            <img src="{{root}}assets/images/industries/sub/phone-iphone.svg"
+                                                alt="linkedin" class="lazy imagetoSVG" />
+                                        </a>
+                                    </li>
+                                </ul>
+
+                                <span class="goIcon"><a href="#" aria-label="Advisory"><i>Search</i></a></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="navBox">
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<link rel="stylesheet" href="{{root}}assets/css/helpCard/helpCard.css">
+<script type="text/javascript" defer>
+    $(document).ready(function () {
+        var swiper = new Swiper(".helpSlider", {
+            slidesPerView: 1,
+            spaceBetween: 5,
+            loop: true,
+            pagination: {
+                el: ".helpSlider .swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".helpSlider .swiper-button-next",
+                prevEl: ".helpSlider .swiper-button-prev",
+            },
+            breakpoints: {
+                // 640: {
+                //     slidesPerView: 2,
+                //     slidesPerGroup: 1,
+                //     spaceBetween: 20,
+                // },
+                768: {
+                    slidesPerView: 2,
+                    slidesPerGroup: 2,
+                    spaceBetween: 10,
+                },
+            },
+        });
+    });
+</script>
+<div class="helpPanel module" id="testCard">
+    <div class="grid-container">
+        <div class="testiTitle">
+            <p>Where We Can Help</p>
+        </div>
+        <div class="mobileHide">
+            <div class="flexBoxs" id="colblock-1">
+                <div class="cardBlock">
+                    <div class="insideCard">
+                        <div class="cardTitle">
+                            <a href="#" aria-label="Audit
+                        & Assurance">
+                                <p>Audit
+                                    & Assurance</p>
+                            </a>
+                        </div>
+                        <div class="cardContent">
+                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et </p>
+                        </div>
+                        <div class="ctablock">
+
+                            <span class="goIcon"><a href="#" aria-label="Advisory"><i>Search</i></a></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cardBlock">
+                    <div class="insideCard">
+                        <div class="cardTitle">
+                            <a href="#" aria-label="Tax">
+                                <p>Tax</p>
+                            </a>
+                        </div>
+                        <div class="cardContent">
+                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et </p>
+                        </div>
+                        <div class="ctablock">
+
+                            <span class="goIcon"><a href="#" aria-label="Advisory"><i>Search</i></a></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cardBlock">
+                    <div class="insideCard">
+                        <div class="cardTitle">
+                            <a href="#" aria-label="Technology,
+                        Risk &
+                        Compliance">
+                                <p>Technology,
+                                    Risk &
+                                    Compliance</p>
+                            </a>
+                        </div>
+                        <div class="cardContent">
+                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et </p>
+                        </div>
+                        <div class="ctablock">
+
+                            <span class="goIcon"><a href="#" aria-label="Advisory"><i>Search</i></a></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cardBlock">
+                    <div class="insideCard">
+                        <div class="cardTitle">
+                            <a href="#" aria-label="Corporate
+                        Finance">
+                                <p>Corporate
+                                    Finance </p>
+                            </a>
+                        </div>
+                        <div class="cardContent">
+                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et </p>
+                        </div>
+                        <div class="ctablock">
+
+                            <span class="goIcon"><a href="#" aria-label="Advisory"><i>Search</i></a></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cardBlock">
+                    <div class="insideCard">
+                        <div class="cardTitle">
+                            <a href="#" aria-label="Audit
+                        & Assurance">
+                                <p>Audit
+                                    & Assurance</p>
+                            </a>
+                        </div>
+                        <div class="cardContent">
+                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et </p>
+                        </div>
+                        <div class="ctablock">
+
+                            <span class="goIcon"><a href="#" aria-label="Advisory"><i>Search</i></a></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cardBlock">
+                    <div class="insideCard">
+                        <div class="cardTitle">
+                            <a href="#" aria-label="Tax">
+                                <p>Tax</p>
+                            </a>
+                        </div>
+                        <div class="cardContent">
+                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et </p>
+                        </div>
+                        <div class="ctablock">
+
+                            <span class="goIcon"><a href="#" aria-label="Advisory"><i>Search</i></a></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cardBlock">
+                    <div class="insideCard">
+                        <div class="cardTitle">
+                            <a href="#" aria-label="Technology,
+                        Risk &
+                        Compliance">
+                                <p>Technology,
+                                    Risk &
+                                    Compliance</p>
+                            </a>
+                        </div>
+                        <div class="cardContent">
+                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et </p>
+                        </div>
+                        <div class="ctablock">
+
+                            <span class="goIcon"><a href="#" aria-label="Advisory"><i>Search</i></a></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cardBlock">
+                    <div class="insideCard">
+                        <div class="cardTitle">
+                            <a href="#" aria-label="Corporate
+                        Finance">
+                                <p>Corporate
+                                    Finance </p>
+                            </a>
+                        </div>
+                        <div class="cardContent">
+                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et </p>
+                        </div>
+                        <div class="ctablock">
+
+                            <span class="goIcon"><a href="#" aria-label="Advisory"><i>Search</i></a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="loadMore">
+                <a href="#testCard_loadmore"  id="testCard_loadmore"  class="ctabtn secondarybtn">Load More</a>
+            </div>
+        </div>
+        <div class="carouselcontainer webHide">
+            <div class="swiper-container helpSlider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="cardBlock">
+                            <div class="insideCard">
+                                <div class="cardTitle">
+                                    <a href="#" aria-label="Aerospace & Defense">
+                                        <p>Aerospace <br>
+                                            & Defense</p>
+                                    </a>
+                                </div>
+                                <div class="cardContent">
+                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                                        tempor
+                                        invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos
+                                        et </p>
+                                </div>
+                                <div class="ctablock">
+
+                                    <span class="goIcon"><a href="#" aria-label="Advisory"><i>Search</i></a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="cardBlock">
+                            <div class="insideCard">
+                                <div class="cardTitle">
+                                    <a href="#" aria-label="Aerospace & Defense">
+                                        <p>Aerospace <br>
+                                            & Defense</p>
+                                    </a>
+                                </div>
+                                <div class="cardContent">
+                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                                        tempor
+                                        invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos
+                                        et </p>
+                                </div>
+                                <div class="ctablock">
+
+                                    <span class="goIcon"><a href="#" aria-label="Advisory"><i>Search</i></a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="cardBlock">
+                            <div class="insideCard">
+                                <div class="cardTitle">
+                                    <a href="#" aria-label="Aerospace & Defense">
+                                        <p>Aerospace <br>
+                                            & Defense</p>
+                                    </a>
+                                </div>
+                                <div class="cardContent">
+                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                                        tempor
+                                        invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos
+                                        et </p>
+                                </div>
+                                <div class="ctablock">
+
+                                    <span class="goIcon"><a href="#" aria-label="Advisory"><i>Search</i></a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="navBox">
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div> 
+<script>
+    $(document).ready(function () {
+        $(".helpPanel").each(function () {
+            var panelId = $(this).attr('id');
+            // alert(panelId);
+            var biovideopanelId = '#' + panelId;
+            // console.log($(biovideopanelId + ' #colblock-1 .cardBlock').length)
+            if ($(biovideopanelId + ' #colblock-1 .cardBlock').length >= 4) {
+                $(biovideopanelId + ' #colblock-1 .cardBlock').hide();
+                $(biovideopanelId + ' #colblock-1 .cardBlock').slice(0, 4).show();
+                if ($(biovideopanelId + ' #colblock-1 .cardBlock').length >= 4) {
+                    $(biovideopanelId + ' #colblock-1 .loadMore').show();
+                    // console.log(biovideopanelId + ' #colblock-1 #'+panelId+'-loadmore');
+                    $(biovideopanelId + '_loadmore').on('click', function (e) {
+                    // $(biovideopanelId + ' #colblock-1 #' + panelId + '_loadmore').on('click', function (e) {
+                        // alert('test');
+                        e.preventDefault();
+                        var target = $(this).attr('href');
+
+                        $('html, body').animate({
+                            scrollTop: $(target).offset().top - $('header').height() - 60
+                        }, 1000);
+
+                        setTimeout(function () {
+                            $(biovideopanelId + ' #colblock-1 .cardBlock:hidden').slice(0, 4).slideDown();
+                            if ($(biovideopanelId + ' #colblock-1 .cardBlock').length == $(biovideopanelId + ' #colblock-1 .cardBlock:visible').length) {
+                                $(biovideopanelId + ' #colblock-1 .loadMore').hide();
+                            }
+                        }, 1000);
+                    });
+                }
+            }
+        });
+    });
+</script> 
+
+
+
+
+
+<!-- industries -->
+<link rel="stylesheet" href="{{root}}assets/css/industryLanding/industryLanding.css">
+
+<div class="cardPanel module">
+    <div class="grid-container">
+        <div class="testiTitle">
+            <p>Latest Insights</p>
+        </div>
+        <div class="flexBox">
+            <div class="colblock">
+                <a href="#" aria-label="news">
+                    <div class="imgWrap">
+                        <img src="assets/images/industries/construction.jpg" alt="Construction" loading="lazy"
+                            class="lazy zoom" width="450" height="178">
+                    </div>
+                    <div class="contentsection">
+                        <div class="col-title">
+                            <p>Construction</p>
+                        </div>
+                        <div class="contentblock">
+                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et</p>
+                        </div>
+                    </div>
+                    <div class="ctablock">
+                        <span class="goIcon"><i>Search</i></span>
+                    </div>
+                </a>
+
+            </div>
+            <div class="colblock">
+                <a href="#" aria-label="news">
+                    <div class="imgWrap">
+                        <img src="assets/images/industries/energy.jpg" alt="Energy" loading="lazy" class="lazy zoom"
+                            width="450" height="178">
+                    </div>
+                    <div class="contentsection">
+                        <div class="col-title">
+                            <p>Energy</p>
+                        </div>
+                        <div class="contentblock">
+                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et</p>
+                        </div>
+                    </div>
+                    <div class="ctablock">
+                        <span class="goIcon"><i>Search</i></span>
+                    </div>
+                </a>
+
+            </div>
+            <div class="colblock">
+                <a href="#" aria-label="news">
+                    <div class="imgWrap">
+                        <img src="assets/images/industries/financial.jpg" alt="Financial Institutions" loading="lazy"
+                            class="lazy zoom" width="450" height="178">
+                    </div>
+                    <div class="contentsection">
+                        <div class="col-title">
+                            <p>Financial Institutions</p>
+                        </div>
+                        <div class="contentblock">
+                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et</p>
+                        </div>
+                    </div>
+                    <div class="ctablock">
+                        <span class="goIcon"><i>Search</i></span>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+        
+        
+        <div class="loadMore">
+            <a href="#testCard_loadmore"  id="testCard_loadmore"  class="ctabtn secondarybtn">Load More</a>
+        </div>
+    </div>
+</div>
+
+<!-- insughts -->
+<div class="latestInsightPanel">
+    <div class="grid-container">
+        <div class="filterPanel">
+        </div>
+        <div class="flexdiv">
+            <div class="testiTitle">
+                <p>Latest Insights</p>
+            </div>
+
+        </div>
+        <div class="colFlex">
+            <div class="lftImageCard">
+                <div class="cardFlex">
+                    <div class="lftCard">
+                        <div class="imgWrap">
+                            <img src="../assets/images/industries/sub/insightVideo.jpg" alt="Video" width="494"
+                                height="288" class="lazy zoom">
+                        </div>
+                    </div>
+                    <div class="rgtCard">
+                        <div class="cardSec">
+                            <div class="flxCol">
+                                <div class="dateCol">
+                                    <p>10/10/24</p>
+                                </div>
+                                <div class="titCol">
+                                    <p>Video</p>
+                                </div>
+                                <div class="durCol">
+                                    <p>1 Min Watch</p>
+                                </div>
+                            </div>
+                            <div class="cardTitle">
+                                <p>Manufacturers Risk Inaccurate Financial Information
+                                    Using Outdated Cost Models</p>
+                            </div>
+                            <div class="cardDesc">
+                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                                    tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+                                    vero
+                                    eos et accusam</p>
+                            </div>
+                            <div class="goIcon">
+                                <i>search</i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="rgtImageCard">
+                <div class="cardFlex">
+                    <div class="lftCard">
+                        <div class="imgWrap">
+                            <img src="../assets/images/industries/sub/insightArticle.jpg" alt="Article" width="494"
+                                height="288" class="lazy zoom">
+                        </div>
+                    </div>
+                    <div class="rgtCard">
+                        <div class="cardSec">
+                            <div class="flxCol">
+                                <div class="dateCol">
+                                    <p>10/10/24</p>
+                                </div>
+                                <div class="titCol">
+                                    <p>Article</p>
+                                </div>
+                                <div class="durCol">
+                                    <p>1 Min Read</p>
+                                </div>
+                            </div>
+                            <div class="cardTitle">
+                                <p>Manufacturers Risk Inaccurate Financial Information
+                                    Using Outdated Cost Models</p>
+                            </div>
+                            <div class="cardDesc">
+                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                                    tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+                                    vero
+                                    eos et accusam</p>
+                            </div>
+                            <div class="goIcon">
+                                <i>search</i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="lftImageCard">
+                <div class="cardFlex">
+                    <div class="lftCard">
+                        <div class="imgWrap">
+                            <img src="../assets/images/industries/sub/insightVideo1.jpg" alt="Video" width="494"
+                                height="288" class="lazy zoom">
+                        </div>
+                    </div>
+                    <div class="rgtCard">
+                        <div class="cardSec">
+                            <div class="flxCol">
+                                <div class="dateCol">
+                                    <p>10/10/24</p>
+                                </div>
+                                <div class="titCol">
+                                    <p>Video</p>
+                                </div>
+                                <div class="durCol">
+                                    <p>1 Min Watch</p>
+                                </div>
+                            </div>
+                            <div class="cardTitle">
+                                <p>Manufacturers Risk Inaccurate Financial Information
+                                    Using Outdated Cost Models</p>
+                            </div>
+                            <div class="cardDesc">
+                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                                    tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+                                    vero
+                                    eos et accusam</p>
+                            </div>
+                            <div class="goIcon">
+                                <i>search</i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="rgtImageCard">
+                <div class="cardFlex">
+                    <div class="lftCard">
+                        <div class="imgWrap">
+                            <img src="../assets/images/industries/sub/insightArticle1.jpg" alt="Article" width="494"
+                                height="288" class="lazy zoom">
+                        </div>
+                    </div>
+                    <div class="rgtCard">
+                        <div class="cardSec">
+                            <div class="flxCol">
+                                <div class="dateCol">
+                                    <p>10/10/24</p>
+                                </div>
+                                <div class="titCol">
+                                    <p>Article</p>
+                                </div>
+                                <div class="durCol">
+                                    <p>1 Min Read</p>
+                                </div>
+                            </div>
+                            <div class="cardTitle">
+                                <p>Manufacturers Risk Inaccurate Financial Information
+                                    Using Outdated Cost Models</p>
+                            </div>
+                            <div class="cardDesc">
+                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                                    tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+                                    vero
+                                    eos et accusam</p>
+                            </div>
+                            <div class="goIcon">
+                                <i>search</i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+        <div class="loadMore">
+            <a href="#testCard_loadmore"  id="testCard_loadmore"  class="ctabtn secondarybtn">Load More</a>
+        </div>
+    </div>
+</div>
+
+
+<link rel="stylesheet" href="{{root}}assets/css/searchpanel/searchpanel.css">
+<div class="otherSearchPanel">
+    <div class="grid-container">
+        <div class="testiTitle">
+            <h2>Other Search Results</h2>
+        </div>
+
+        <div class="loopContain">
+            <div class="loopTitle">
+                <a href="#">Manufacturers Risk Inaccurate Financial Information Using Outdated Cost Models</a>
+            </div>
+            <div class="loopEvent">
+                <p>Locations</p>
+            </div>
+            <div class="loopContent">
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam</p>
+            </div>
+        </div>
+        <div class="loopContain">
+            <div class="loopTitle">
+                <a href="#">Manufacturers Risk Inaccurate Financial Information Using Outdated Cost Models</a>
+            </div>
+            <div class="loopEvent">
+                <p>Locations</p>
+            </div>
+            <div class="loopContent">
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam</p>
+            </div>
+        </div>
+        <div class="loadMore">
+            <a href="#testCard_loadmore"  id="testCard_loadmore"  class="ctabtn secondarybtn">Load More</a>
+        </div>
+    </div>
+</div>

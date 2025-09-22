@@ -1,0 +1,241 @@
+@import "util/util";
+$white: #ffffff;
+$primary-color: #007041;
+$img: "../../images/";
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+.testiTitle {
+    p, h2 {
+        font-size: 25px;
+        line-height: 55px;
+        font-weight: 700;
+        font-family: 'mundial';
+        text-align: center;
+        color: #00362A;
+
+        @include breakpoint(large) {
+            text-align: left;
+            font-size: 48px;
+        }
+    }
+
+    margin-bottom: 25px;
+
+    @include breakpoint(xlarge) {
+        margin-bottom: 40px;
+    }
+} 
+ 
+ 
+ 
+
+.helpPanel {
+    margin-top: 26px;
+    position: relative;
+
+    @include breakpoint(large) {
+        margin-top: 110px;
+    }
+
+      
+    // .helpPanelPattern {
+    //     position: absolute;
+    //     bottom: -40%;
+    //     right: 0;
+    //     z-index: -1;
+    //     min-width: 375px;
+    //     max-height: 410px;
+    //     width: 100%;
+    //     @include breakpoint(medium){
+    //         max-height: 799px;
+    //         max-width: 725px;
+    //         bottom: -58%;
+    //     }
+    //     @include breakpoint(large){
+    //         max-height: 1023px;
+    //         max-width: 1100px;
+    //         bottom: -65%;
+    //     }
+    //     @include breakpoint(llarge){
+    //         max-width: 1451px;
+    //         max-height: 1525px;
+    //         bottom: -73%;}
+    //     // &::after {
+    //     //     content: '';
+    //     //     width: calc(100% - 0px);
+    //     //     background: url('#{$img}industries/sub/helpPattern.svg') no-repeat;
+    //     //     height: calc(100% - 0px);
+    //     //     max-width: 1256px;
+    //     //     max-height: 1322px;
+    //     //     position: absolute;
+    //     //     top: 11%;
+    //     //     z-index: -1;
+    //     //     right: -5.5%;
+    //     // }
+
+    //     img{
+    //         @include breakpoint(large){
+    //             max-width: 1023px;
+    //             max-height: 1100px;
+    //         }
+    //         @include breakpoint(llarge){
+    //             max-width: 1451px;
+    //             max-height: 1525px;
+    //         }
+    //     }
+    // }
+}
+
+.relatedPanel {
+    .grid-container {
+        position: relative;
+
+        .viewLink {
+            position: absolute;
+            // top: 6%;
+            // right: 6%;
+
+            a {
+                font-size: 18px;
+                font-weight: 700;
+                font-family: 'mundial';
+                line-height: 22px;
+                color: #005844;
+                transition: all ease .5s;
+
+                &:hover {
+                    text-decoration: none;
+                    transition: all ease .5s;
+                    background: #005844;
+                    color: #fff;
+                    @include breakpoint(large){
+                        padding-right: 5px;
+                        background: inherit;
+                        color: #005844;
+                    }
+                    &::after {
+                        @media screen and (max-width:1023px) {
+                            background: url(../../images/settings/arrow-white.svg) no-repeat;                            
+                        }
+                    }
+                }
+
+                &::after {
+                    content: '';
+                    display: inline-block;
+                    height: 15px;
+                    vertical-align: middle;
+                    width: 24px;
+                    position: relative;
+                    right: -5px;
+                    top: -2px;
+                    color: #fff;
+                    background: url(../../images/settings/arrow-green.svg) no-repeat;
+                    background-size: contain;
+                }
+            }
+        }
+    }
+}
+
+
+.teamsPanel { 
+
+    .grid-container {
+        position: relative;
+
+        .viewLink {
+            position: absolute;
+            // top: 5%;
+            // right: 6%;
+
+            a {
+                font-size: 18px;
+                font-weight: 700;
+                font-family: 'mundial';
+                line-height: 22px;
+                color: #005844;
+                transition: all ease .5s;
+
+                &:hover {
+                    text-decoration: none;
+                    transition: all ease .5s;
+                    background: #005844;
+                    color: #fff;
+                    @include breakpoint(large){
+                        padding-right: 5px;
+                        background: inherit;
+                        color: #005844;
+                    }
+                    &::after {
+                        @media screen and (max-width:1023px) {
+                            background: url(../../images/settings/arrow-white.svg) no-repeat;                            
+                        }
+                    }
+                }
+
+
+                &::after {
+                    content: '';
+                    display: inline-block;
+                    height: 15px;
+                    vertical-align: middle;
+                    width: 24px;
+                    position: relative;
+                    right: -5px;
+                    top: -2px;
+                    color: #fff;
+                    background: url(../../images/settings/arrow-green.svg) no-repeat;
+                    background-size: contain;
+                }
+            }
+        }
+    }
+}
+
+
+// .contactPanel {
+//     // margin-top: 110px;
+//     position: relative;
+
+//     .contact {
+//         height: 100vh;
+
+//         &::before {
+//             background: #B3CCC5;
+//             content: '';
+//             height: 100vh;
+//             width: 100%;
+//             z-index: -2;
+//             position: absolute;
+//         }
+//     }
+
+//     &::after {
+//         content: '';
+//         background: url('#{$img}industries/sub/contactPattern.svg');
+//         height: calc(100%);
+//         width: calc(100%);
+//         max-width: 986px;
+//         max-height: 987px;
+//         position: absolute;
+//         top: -7.8%;
+//         left: 0;
+//         z-index: -1;
+//     }
+
+// }
+
+
+.parentDiv{
+    position: relative;
+        
+    
+}

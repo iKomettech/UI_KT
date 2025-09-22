@@ -1,0 +1,229 @@
+$primary-color: #007041;
+@import "util/util";
+$img: "../../images/";
+$bgpanel-color: #DCE7E4;
+
+.searchPanel {
+    margin-top: 55px;
+    position: relative;
+    z-index: 99;
+    @include breakpoint(medium){
+        margin-top: 40px;
+    }
+    @include breakpoint(xlarge){
+        margin-top: 55px;
+    }
+    .flexisearch {
+        .containerWrapper {
+            // width: 890px;
+            // margin: 0 auto;
+            position: relative;
+            @include breakpoint(xlarge){
+                margin-top: 3px;
+            }
+
+            .wraps {
+                position: relative;
+                z-index: 99;
+                form {
+                    .flexi-row {
+                        display: flex;
+                        width: 355px;
+                        height: 39px;
+                        margin: 0 auto;
+                        border-radius: 50px;
+                        background: #e4f2f1;
+
+                        @include breakpoint(medium) {
+                            height: 46px;
+                            width: 601px;
+                        }
+
+                        @include breakpoint(xlarge) {
+                            height: 68px;
+                            width: 890px;
+                        }
+
+
+                        &:focus {
+                            outline-color: #000;
+                        }
+
+                        i {
+                            background: url(../../images//settings/search-white.svg), #672046;
+                            background-repeat: no-repeat;
+                            background-position: 9px 9px;
+                            border-radius: 50px;
+                            height: 38px;
+                            background-size: 24px;
+                            width: 42px;
+                            font-size: 0;
+
+                            @include breakpoint(medium) {
+                                width: 50px;
+                                height: 46px;
+                                background-size: 30px;
+                                background-position: 10px 10px;
+                            }
+
+                            @include breakpoint(xlarge) {
+                                width: 70px;
+                                height: 68px;
+                                background-size: 48px;
+                                background-position: 14px 14px;
+                            }
+                        }
+
+                        input {
+                            border-radius: 50px;
+                            font-size: 16px;
+                            line-height: 19px;
+                            background: #E4F2F1;
+                            border: none;
+                            box-shadow: none;
+
+                            &:focus {
+                                outline-color: snow;
+
+                                .flexi-row {
+                                    outline-color: #007041;
+                                }
+                            }
+
+                            // &:focus, &:visited, &:target{
+                            //     // background: #e4f2f1;  
+                            // }
+
+
+                            @include breakpoint(medium) {
+                                height: 46px;
+                                padding-left: 35px;
+                                font-size: 16px;
+                                line-height: 19px;
+                                padding-top: 0;
+                            }
+
+                            @include breakpoint(xlarge) {
+                                height: 68px;
+                                padding-left: 35px;
+                                font-size: 28px;
+                                line-height: 34px;
+                                padding-top: 0;
+                            }
+
+                            &::placeholder {
+                                @include breakpoint(xlarge) {
+                                    font-size: 28px;
+                                    line-height: 34px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+
+            .reserachLst {
+                background: #e4f2f1; 
+                padding-left: 7px;
+                padding-top: 56px;
+                padding-right: 22px;
+                width: 355px;
+                padding-bottom: 50px;
+                // position: relative;
+                top: 0px; 
+                border-radius: 25px;
+                position: absolute;
+                z-index: 19;
+                left: 0;
+                right: 0; 
+                margin: 0 auto;
+                @media (min-width: 640px) {
+                    padding-left: 34px;
+                }
+                @media (min-width: 1200px) {
+                    padding-top: 78px;
+                }
+                @include breakpoint(medium) {
+                    width: 601px;  
+                }
+
+                @include breakpoint(xlarge) {
+                    width: 890px;  
+                }
+
+                .bottomBtn {
+                    display: flex;
+                    flex-wrap: nowrap;
+                    justify-content: space-between;
+                    align-items: center;
+                    background: #672046;
+                    position: absolute;
+                    width: 100%;
+                    left: 0;
+                    bottom: -13px;
+                    border-radius: 0px 0px 24px 24px;
+                    overflow: hidden;
+                    padding-top: 8px;
+                    padding-bottom: 15px;
+                    padding-left: 20px;
+                    padding-right: 0px;
+                    color: #ffffff;
+                    
+
+                    .goIcon {
+                        width: 31px;
+                        height: 31px;
+                        margin-right: 6px;
+                        position: relative;
+                        top:-2px;
+                        i {
+                            background: url('#{$img}/settings/search-go.svg') no-repeat;
+                            background-size: contain;
+                            width: 31px;
+                            height: 31px;
+                            display: block;
+                            position: absolute;
+                            font-size: 0;
+                            top: 6px;
+                            right: 6px;
+                            cursor: pointer;
+                            -webkit-transition: all .45s;
+                            transition: all .45s;
+                            &:hover{
+                                margin-right: 4px;
+                            }
+                        }
+                    }
+                }
+                .match{
+                    font-size: 16px;
+                    line-height: 19px;
+                    color: #8D8D8D;
+                    @media (min-width: 1200px) {
+                            font-size: 18px;
+                            line-height: 30px;
+                    }
+                }
+                ul {
+                    margin: 0;
+
+                    li {
+                        margin-bottom: 10px;
+                        padding-left: 0px;
+
+                        &::before {
+                            content: inherit;
+                        }
+                        font-size: 16px;
+                        line-height: 19px;
+                        @media (min-width: 1200px) {
+                            font-size: 18px;
+                            line-height: 30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

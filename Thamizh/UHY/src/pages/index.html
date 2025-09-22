@@ -1,0 +1,872 @@
+<div class="header-overlay">
+    <picture>
+        <source media="(min-width:320px) and (max-width:430px)" srcset="{{root}}assets/images/settings/header-overlay-mobile.svg" type="image/jpg">
+        <source media="(min-width:431px) and (max-width:1023px)" srcset="{{root}}assets/images/settings/header-overlay.svg" type="image/jpg">
+        <source media="(min-width:1024px) and (max-width:1279px)" srcset="{{root}}assets/images/settings/header-overlay-tablet.svg" type="image/jpg">
+        <source media="(min-width: 1280px)" srcset="{{root}}assets/images/settings/header-overlay.svg" type="image/jpg">
+        <img src="{{root}}assets/images/settings/header-overlay.svg" alt="UHY header-overlay" />
+    </picture>
+</div>
+
+<link rel="stylesheet" href="{{root}}assets/css/herobanner/herobanner.css">
+<script src="{{root}}assets/scripts/herobanner/herobanner.js" defer></script>
+<div class="bannervideosection">
+    <!--Vimeo Video Controls--->
+    <!-- <div class="video-controller">
+        <div class="play-bt play-bt-vimeo" style="display: block;"></div>
+        <div class="pause-bt pause-bt-vimeo" style="display: none;"></div>
+        <div class="mute-bt mute-bt-vimeo"></div>
+    </div> -->
+
+    <!--Youtube Video Controls--->
+    <!-- <div class="video-controller">
+        <div class="play-bt" style="display: block;"></div>
+        <div class="pause-bt" style="display: none;"></div>
+        <div class="mute-bt"></div>
+    </div> -->
+</div>
+<div class="bannerpanel module" >
+    <div class="uhyPattern" style="background: url('{{root}}assets/images/home/uhy-pattern.svg') no-repeat;"></div>
+    <div class="newsPatternTablet" style="background: url('assets/images/news-pattern-tablet.svg') no-repeat;"></div>
+    <div class="uhyPatternMobile" style="background: url('{{root}}assets/images/home/uhy-pattern-mobile.svg') no-repeat;"></div>
+    <div class="homeBanner">
+        <div class="grid-container-fullwidth">
+            <div class="bannerwrap">
+                <div class="imgWrap">
+                    <picture>
+                        <source media="(min-width:320px) and (max-width:430px)" srcset="{{root}}assets/images/home/banner-mobile.jpg" type="image/jpg">
+                        <source media="(min-width: 431px)" srcset="{{root}}assets/images/home/banner.jpg" type="image/jpg">
+                        <img src="{{root}}assets/images/home/banner.jpg" alt="Banner Image" width="1920" height="1080">
+                    </picture>
+                </div>
+                <div class="grid-container">
+                    <div class="content right">
+                        <h1>Providing Tax & Accounting <br>
+                            Strategy with Unrivaled Depth</h1>
+                        <p>We are here for you</p>
+                        <div class="iconBanner">
+                            <i class="banner-icon" style="background: url('{{root}}assets/images/home/double-drodown-icon.svg') no-repeat center;"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Vimeo Video--->
+
+            <!-- <div class="bannerwrap">
+                <div class="imgWrap">
+                    <div class="filter-img onloadVideo">
+                        <figure class="videoPanel vimeovidoepanel video-thumb-image noSpeedBump" data-videoSource="vimeo">
+                            <picture>
+                                <source media="(min-width:320px) and (max-width:430px)" srcset="{{root}}assets/images/home/banner-mobile.jpg" type="image/jpg">
+                                <source media="(min-width: 431px)" srcset="{{root}}assets/images/home/banner.jpg" type="image/jpg">
+                                <img src="{{root}}assets/images/home/banner.jpg" alt="Banner Image" width="1920" height="1080">
+                            </picture>
+                            <div id="ytplayer1" class="vimeo-video-src"  data-videoId="383778646"></div>
+                        </figure>
+                    </div>
+                </div>
+                <div class="grid-container">
+                    <div class="content right">
+                        <h1>Providing Tax & Accounting <br>
+                            Strategy with Unrivaled Depth</h1>
+                        <p>We are here for you</p>
+                        <div class="iconBanner">
+                            <a href="javascript:void(0)" class="banner-icon" style="background: url('{{root}}assets/images/home/double-drodown-icon.svg') no-repeat center;"></a>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+            <!--Youtube Video--->
+
+            <!-- <div class="bannerwrap">
+                <div class="imgWrap">
+                    <div class="filter-img onloadVideo">
+                        <figure class="videoPanel youtubevideopanel video-thumb-image noSpeedBump" data-videoSource="youtube">
+                            <picture>
+                                <source media="(min-width:320px) and (max-width:430px)" srcset="{{root}}assets/images/home/banner-mobile.jpg" type="image/jpg">
+                                <source media="(min-width: 431px)" srcset="{{root}}assets/images/home/banner.jpg" type="image/jpg">
+                                <img src="{{root}}assets/images/home/banner.jpg" alt="Banner Image" width="1920" height="1080">
+                            </picture>
+                            <div id="ytplayer2" class="youtube-video-src"  data-videoId="Vt28CX44SE8"></div>
+                        </figure>
+                    </div>
+                </div>
+                <div class="grid-container">
+                    <div class="content right">
+                        <h1>Providing Tax & Accounting <br>
+                            Strategy with Unrivaled Depth</h1>
+                        <p>We are here for you</p>
+                        <div class="iconBanner">
+                            <a href="javascript:void(0)" class="banner-icon" style="background: url('{{root}}assets/images/home/double-drodown-icon.svg') no-repeat center;"></a>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</div> 
+<link rel="stylesheet" href="{{root}}assets/css/bannertwocolumn/bannertwocolumn.css" media="all">
+<script type="text/javascript" defer>
+    $(document).ready(function () {
+        var swiper = new Swiper(".serviceSlider", {
+            loop:true,
+            spaceBetween:10,
+            navigation: {
+                nextEl: ".serviceSlider .swiper-button-next",
+                prevEl: ".serviceSlider .swiper-button-prev",
+            },
+        });
+    });
+</script>
+<div class="bannertwocolumnpanel module">
+    <div class="grid-container">
+        <div class="flexwrap">
+            <div class="leftWrap">
+                <div class="content">
+                    <h2>find services tailored <br>
+                        to your industry</h2>
+                </div>
+                <div class="sliderwrap">
+                    <div class="swiper serviceSlider">
+                        <div class="flexBox">
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                        </div>
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="box-content">
+                                    <div class="contentWrap">
+                                        <h2>manufacturing & <br>
+                                            distribution</h2>
+                                            <p>We combine the strength of business and financial expertise with a hands-on, "shop floor" approach to solving complex business issues.</p>
+                                    </div>
+                                    <div class="imgWrap">
+                                        <img src="{{root}}assets/images/service-1.jpg" alt="Services" class="" width="550" height="210">
+                                    </div>
+                                    <div class="btnWrap">
+                                        <a href="#" class="ctabtn whitebtn" aria-label="Learn More">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="box-content">
+                                    <div class="contentWrap">
+                                        <h2>manufacturing & <br>
+                                            distribution</h2>
+                                            <p>We combine the strength of business and financial expertise with a hands-on, "shop floor" approach to solving complex business issues.</p>
+                                    </div>
+                                    <div class="imgWrap">
+                                        <img src="{{root}}assets/images/service-1.jpg" alt="Services" class="" width="550" height="210">
+                                    </div>
+                                    <div class="btnWrap">
+                                        <a href="#" class="ctabtn whitebtn" aria-label="Learn More">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="box-content">
+                                    <div class="contentWrap">
+                                        <h2>manufacturing & <br>
+                                            distribution</h2>
+                                            <p>We combine the strength of business and financial expertise with a hands-on, "shop floor" approach to solving complex business issues.</p>
+                                    </div>
+                                    <div class="imgWrap">
+                                        <img src="{{root}}assets/images/service-1.jpg" alt="Services" class="" width="550" height="210">
+                                    </div>
+                                    <div class="btnWrap">
+                                        <a href="#" class="ctabtn whitebtn" aria-label="Learn More">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="box-content">
+                                    <div class="contentWrap">
+                                        <h2>manufacturing & <br>
+                                            distribution</h2>
+                                            <p>We combine the strength of business and financial expertise with a hands-on, "shop floor" approach to solving complex business issues.</p>
+                                    </div>
+                                    <div class="imgWrap">
+                                        <img src="{{root}}assets/images/service-1.jpg" alt="Services" class="" width="550" height="210">
+                                    </div>
+                                    <div class="btnWrap">
+                                        <a href="#" class="ctabtn whitebtn" aria-label="Learn More">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="rightWrap">
+                <div class="content">
+                    <h2>A 360° VIEW OF YOUR BUSINESS</h2>
+                    <p>What Stage is Your Business in?</p>
+                </div>
+                <div class="imgWrap">
+                    <img src="{{root}}assets/images/360view.svg" alt="360 view" class="imagetoSVG" width="685" height="690">
+                </div>
+            </div>
+         </div>       
+    </div>
+</div>
+<link rel="stylesheet" href="{{root}}assets/css/searchpanel/searchpanel.css" media="all">
+<div class="searchPanel module">
+    <div class="grid-container">
+        <div class="flexisearch">
+            <div class="desktopSearch">
+                <div class="containerWrapper">
+                    <div class="wraps">
+                        <form class="" action="/search" method="GET">
+                            <label for="inputSearch" class="screen-reader-text">search</label>
+                            <div class="flexi-row">
+                                <input type="text" class="txtBox" name="q" id="searchInput" value=""
+                                    placeholder="What can we help you find?">
+                                    <div class="insideSearch">
+                                        <i>search</i>
+                                    </div>
+                                <i>search</i>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="reserachLst" style="display: none;">
+                        <p class="match">Search results matching: John</p>
+                        <ul>
+                            <li><a href="#">John Ferro</a></li>
+                            <li><a href="#">John Hipperson</a></li>
+                            <li><a href="#">John Kincaid</a></li>
+                            <li><a href="#">John Salemi</a></li>
+                            <li><a href="#">National Valuation practice welcomes new managing
+                                    director John Ferro... <span>In Insights</span></a></li>
+                        </ul>
+                        <a href="#" >
+                            <div class="bottomBtn">
+                                <div class="allresult">See All Results</div>
+                                <div class="goIcon" ><i>Search</i></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<link rel="stylesheet" href="{{root}}assets/css/trendingpanel/trendingpanel.css" media="all">
+<script type="text/javascript" defer>
+    $(document).ready(function () {
+           var swiper = new Swiper(".insightSlider", {
+        //    slidesPerView: 1,
+        //    spaceBetween: 5,
+           loop:true,
+           pagination: {
+               el: ".insightSlider .swiper-pagination",
+               clickable: true,
+               type:'fraction'
+           },
+           navigation: {
+           nextEl: ".insightSlider .swiper-button-next",
+           prevEl: ".insightSlider .swiper-button-prev",
+       },
+           breakpoints: {
+               370: {
+                   slidesPerView: 1,
+                   spaceBetween: 20,
+               },
+               768: {
+                   slidesPerView: 2,
+                   spaceBetween: 25,
+               },
+               1024: {
+                   slidesPerView: 4,                  
+                   spaceBetween: 25,
+               },
+               1199: {
+                   slidesPerView: 4,
+                   spaceBetween: 40,
+               },
+           },
+       });
+   });
+</script> 
+<div class="trendingPanel module">
+   <div class="grid-container">
+    <h2 class="h2title">Trending Insights</h2>
+       <div class="carouselcontainer">
+           <div class="swiper-container insightSlider">
+               <div class="swiper-wrapper">
+                   <div class="swiper-slide">
+                       <div class="colblock">
+                        <a href="#" aria-label="news">
+                           <div class="imgWrap">
+                               <img data-src="assets/images/home/trend.png" alt="Flexi image" class="lazy zoom" width="327" height="130">
+                           </div>
+                           <div class="contentsection">
+                               <div class="col-title">
+                                   <p>News</p>
+                               </div>
+                               <div class="contentblock">
+                                   <p>Potential Cannabis Reclass Could
+                                       Propel Industry</p>
+                               </div>
+                           </div>
+                           <div class="ctablock">
+                               <span class="goIcon"><i>Search</i></span>
+                           </div>
+                        </a>
+
+                       </div>
+                   </div>
+                   <div class="swiper-slide">
+                       <div class="colblock">
+                        <a href="#" aria-label="In Person Event "> 
+                           <div class="imgWrap">
+                               <img data-src="assets/images/home/in-person.jpg" alt="in person event" class="lazy zoom" width="327" height="130">
+                           </div>
+                           <div class="contentsection">
+                               <div class="col-title">
+                                   <p>In Person Event </p>
+                               </div>
+                               <div class="contentblock">
+                                   <p>Electrified Automotive Supplier 
+                                       Outlook</p>
+                               </div>
+                           </div>
+                           <div class="ctablock">
+                               <span class="goIcon"><i>Search</i></span>
+                           </div>
+                        </a>
+                       </div>
+                   </div>
+                   <div class="swiper-slide">
+                       <div class="colblock">
+                        <a href="#" aria-label="In Person Event "> 
+                           <div class="imgWrap">
+                               <img data-src="assets/images/home/in-person.jpg" alt="in person event" class="lazy zoom" width="327" height="130">
+                           </div>
+                           <div class="contentsection">
+                               <div class="col-title">
+                                   <p>In Person Event </p>
+                               </div>
+                               <div class="contentblock">
+                                   <p>Electrified Automotive Supplier 
+                                       Outlook</p>
+                               </div>
+                           </div>
+                           <div class="ctablock">
+                               <span class="goIcon"><i>Search</i></span>
+                           </div>
+                        </a>
+                       </div>
+                   </div>
+                   <div class="swiper-slide">
+                           <div class="colblock">
+                            <a href="#" aria-label="News">
+                               <div class="imgWrap">
+                                   <img data-src="assets/images/home/news.jpg" alt="Flexi image" class="lazy zoom" width="327" height="130">
+                               </div>
+                               <div class="contentsection">
+                                   <div class="col-title">
+                                       <p>News</p>
+                                   </div>
+                                   <div class="contentblock">
+                                       <p>Dream Bigger Than The Job 
+                                           Description</p>
+                                   </div>
+                               </div>
+                               <div class="ctablock">
+                                   <span class="goIcon"><i>Search</i></span>
+                               </div>
+                            </a>
+                           </div>
+                   </div>
+                   <div class="swiper-slide">
+                           <div class="colblock">
+                            <a href="#" aria-label="event">
+                               <div class="imgWrap">
+                                   <img data-src="assets/images/home/event.jpg" alt="Flexi image" class="lazy zoom" width="327" height="130">
+                               </div>
+                               <div class="contentsection">
+                                   <div class="col-title">
+                                       <p>Event</p>
+                                   </div>
+                                   <div class="contentblock">
+                                       <p>ERP Best Practices - Evaluating The 
+                                           Right System For Your Company 
+                                           and Common Pitfalls To Avoid</p>
+                                   </div>
+                               </div>
+                               <div class="ctablock"> 
+                                   <span class="goIcon"><i>Search</i></span>
+                               </div>
+                            </a>
+                           </div>
+                   </div>
+               </div>
+              <div class="navBox">
+               <div class="swiper-button-next"></div>
+               <div class="swiper-pagination"></div>
+               <div class="swiper-button-prev"></div>
+              </div>
+           </div>
+
+       </div>
+       <div class="viewcta">
+           <a class="ctabtn secondarybtn mt-2">View all</a>
+       </div>
+   </div>
+</div>
+<link rel="stylesheet" href="{{root}}assets/css/inlinevideo/inlinevideo.css" media="all">
+<script src="{{root}}assets/scripts/inlinevideo/custom-video.js" defer></script>
+<link rel="stylesheet" href="{{root}}assets/css/tabpanel/tabpanel.css" media="all">
+<script src="{{root}}assets/scripts/tabpanel/easy-responsive-tabs.js" defer></script>
+<script type="text/javascript" defer>
+$(document).ready(function () {
+        $('.tabpanel').easyResponsiveTabs({
+            type: 'default',        
+            width: 'auto',
+            fit: true,  
+            tabidentify: 'tab_identifier_child', 
+            activate: function(event) { 
+            var $tab = $(this);
+            var $info = $('#tabInfo');
+            var $name = $('span', $info);
+            $name.text($tab.text());
+            $info.show();
+            }
+        });
+        $('.tabpanel .resp-tabs-list .resp-tab-item').click(function () {
+            var getyoutubevalue = $('.tabimagecontent').find('.videoPanel').hasClass('youtubevideopanel');
+            var getvimeovalue = $('.tabimagecontent').find('.videoPanel').hasClass('vimeovideopanel');
+            var this_dataindex;
+            var this_datavimeoindex;
+            if (getyoutubevalue) {
+                var pictureyoutubedata = $('.tabimagecontent').find('.youtubevideopanel');
+                this_dataindex = $(pictureyoutubedata).attr('data-index');
+                if (this_dataindex) {
+                    YoutubeplayerList[this_dataindex].pauseVideo();
+                }
+            }
+            if (getvimeovalue) {
+                var picturevimeodata = $('.tabimagecontent').find('.vimeovideopanel');
+                this_datavimeoindex = $(picturevimeodata).attr('data-index');
+                if (this_datavimeoindex) {
+                    VimeoplayerList[this_datavimeoindex].pause();
+                }
+            }
+        });
+
+        if ($(".tapswiperpanel .swiper .swiper-slide").length > 0) {
+            var swiperCarousel = new Swiper('.tapSlider', {
+                slidesPerView: "1",
+                allowTouchMove: true,
+                preloadImages: false,
+                spaceBetween: 10,
+                lazy:true,
+                loop:false,
+                navigation: {
+                nextEl: '.tapSlider .swiper-button-next',
+                prevEl: '.tapSlider .swiper-button-prev',
+                },
+            });
+            var swiperCarouselContent = new Swiper(".tabContentSlider", {
+                spaceBetween: 10,
+                allowTouchMove: true,
+                preloadImages: false,
+                lazy:true,
+                autoHeight: false,
+                loop:false,
+            });
+            swiperCarousel.controller.control = swiperCarouselContent;
+            swiperCarouselContent.controller.control = swiperCarousel;
+    }
+});
+</script>
+<div class="tabsection module">
+    <div class="newsPattern" style="background: url('assets/images/news-pattern.svg') no-repeat;"></div>
+    <div class="newsPatternMobile" style="background: url('assets/images/news-pattern-mobile.svg') no-repeat;"></div>
+    <div class="newsPatternTablet" style="background: url('assets/images/news-pattern-tablet.svg') no-repeat;"></div>
+    <div class="grid-container">
+        <h2 class="h2title">From the Newsroom</h2>
+    </div>
+    <div class="tabpanel">
+        <div class="grid-container">
+            <div class="tabpasection">
+                <ul class="resp-tabs-list" role="tablist" aria-label="Product Tabs">
+                    <li> 
+                        <p>LIBN 2023 Top 50 Women</p>
+                    </li>
+                    <li>
+                        <p>2023 Reader Rankings Awards</p>
+                    </li>
+                    <li>
+                        <p>Michigan R&D Tax Credit</p>
+                    </li>
+                    <li>
+                        <p>Tax Planning with Pam</p>
+                    </li>
+                </ul>
+                <div class="resp-tabs-container">
+                    <div class="tabblock">
+                        <div class="tabimagecontent">
+                            <div class="tabtext">
+                                <h2>Kerry Santopietro Named LIBN 2023 <br>
+                                    Top 50 Women in Business</h2>
+                                <p>Long Island Business News’ “Top 50 Women in Business” awards recognize Long Island’s top women professionals for their business acumen, mentoring and community involvement. The program’s honorees are selected by a judging committee to represent the most influential women in business, government and the nonprofit fields. Among the 50 women chosen for the 2023 awards was principal Kerry Santopietro.</p>
+                                <a class="ctabtn secondarybtn">Read More</a>
+                            </div>
+                            <div class="tabimage">
+                                <div class="insight-img">
+                                    <figure class="videoPanel vimeovideopanel video-thumb-image noSpeedBump" data-videoSource="vimeo">
+                                        <img data-src="assets/images/executive-leadership.jpg" class="lazy layzeloading zoom" width="644" height="362" alt="LIBN 2023 Top 50 Women" >
+                                        <div id="ytplayer-tab1" class="vimeo-video-src" data-videoid="347119375"> </div>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tabblock">
+                        <div class="tabimagecontent">
+                            <div class="tabtext">
+                                <h2>Kerry Santopietro Named LIBN <br>
+                                    2023 Top 50 Women in Business</h2>
+                                <p>Long Island Business News’ “Top 50 Women in Business” awards recognize Long Island’s top women professionals for their business acumen, mentoring and community involvement. The program’s honorees are selected by a judging committee to represent the most influential women in business, government and the nonprofit fields. Among the 50 women chosen for the 2023 awards was principal Kerry Santopietro.</p>
+                                <a class="ctabtn secondarybtn">Read More</a>
+                            </div>
+                            <div class="tabimage">
+                                <a href="#">
+                                    <img data-src="assets/images/executive-leadership.jpg" class="lazy layzeloading zoom" width="644" height="362" alt="LIBN 2023 Top 50 Women" >
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tabblock">
+                        <div class="tabimagecontent">
+                            <div class="tabtext">
+                                <h2>Kerry Santopietro Named LIBN <br>
+                                    2023 Top 50 Women in Business</h2>
+                                <p>Long Island Business News’ “Top 50 Women in Business” awards recognize Long Island’s top women professionals for their business acumen, mentoring and community involvement. The program’s honorees are selected by a judging committee to represent the most influential women in business, government and the nonprofit fields. Among the 50 women chosen for the 2023 awards was principal Kerry Santopietro.</p>
+                                <a class="ctabtn secondarybtn">Read More</a>
+                            </div>
+                            <div class="tabimage">
+                                <div class="insight-img">
+                                    <figure class="videoPanel youtubevideopanel video-thumb-image noSpeedBump" data-videoSource="youtube">
+                                        <img data-src="assets/images/executive-leadership.jpg" class="lazy layzeloading zoom" width="644" height="362" alt="LIBN 2023 Top 50 Women" >
+                                        <div id="ytplayer-tab2" class="youtube-video-src" data-videoid="Vt28CX44SE8"> </div>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tabblock">
+                        <div class="tabimagecontent">
+                            <div class="tabtext">
+                                <h2>Kerry Santopietro Named LIBN <br>
+                                    2023 Top 50 Women in Business</h2>
+                                <p>Long Island Business News’ “Top 50 Women in Business” awards recognize Long Island’s top women professionals for their business acumen, mentoring and community involvement. The program’s honorees are selected by a judging committee to represent the most influential women in business, government and the nonprofit fields. Among the 50 women chosen for the 2023 awards was principal Kerry Santopietro.</p>
+                                <a class="ctabtn secondarybtn">Read More</a>
+                            </div>
+                            <div class="tabimage">
+                                <a href="#">
+                                    <img data-src="assets/images/executive-leadership.jpg" class="lazy layzeloading zoom" width="644" height="362" alt="LIBN 2023 Top 50 Women" >
+                                </a>
+                            </div>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tapswiperpanel">
+        <div class="grid-container">
+            <div class="swiper tapSlider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="swiper-list">
+                            <p>LIBN 2023 Top 50 Women</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="swiper-list">
+                            <p>2023 Reader Rankings Awards</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="swiper-list">
+                            <p>Michigan R&D Tax Credit</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="swiper-list">
+                            <p>Tax Planning with Pam</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>  
+            <div thumbsSlider="" class="swiper tabContentSlider">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="swiper-content">
+                        <div class="tabblock">
+                            <div class="tabimagecontent">
+                                <div class="tabtitle">Kerry Santopietro Named LIBN <br>
+                                    2023 Top 50 Women in Business</div>
+                                <div class="tabtext">
+                                    <p>Long Island Business News’ “Top 50 Women in Business” awards recognize Long Island’s top women professionals for their business acumen, mentoring and community involvement. The program’s honorees are selected by a judging committee to represent the most influential women in business, government and the nonprofit fields. Among the 50 women chosen for the 2023 awards was principal Kerry Santopietro.</p>
+                                    <div class="ctablock">
+                                        <a class="ctabtn secondarybtn">Read More</a>
+                                    </div>
+                                </div>
+                                <div class="tabimage">
+                                    <div class="insight-img">
+                                        <figure class="videoPanel vimeovideopanel video-thumb-image noSpeedBump" data-videoSource="vimeo">
+                                            <img src="assets/images/executive-leadership.jpg" class="zoom" width="644" height="362" alt="LIBN 2023 Top 50 Women" >
+                                            <div id="ytplayer-tab1Mobile" class="vimeo-video-src" data-videoid="347119375"> </div>
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="swiper-content">
+                        <div class="tabblock">
+                            <div class="tabimagecontent">
+                                <div class="tabtitle">Kerry Santopietro Named LIBN <br>
+                                    2023 Top 50 Women in Business</div>
+                                <div class="tabtext">
+                                    <p>Long Island Business News’ “Top 50 Women in Business” awards recognizeselected by a judging committee to represent the most influential women in business, government and the nonprofit fields. Among the 50 women chosen for the 2023 awards was principal Kerry Santopietro.</p>
+                                    <div class="ctablock">
+                                        <a class="ctabtn secondarybtn">Read More</a>
+                                    </div>
+                                </div>
+                                <div class="tabimage">
+                                    <a href="#">
+                                        <img src="assets/images/executive-leadership.jpg" class="zoom" width="644" height="362" alt="LIBN 2023 Top 50 Women" >
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="swiper-content">
+                        <div class="tabblock">
+                            <div class="tabimagecontent">
+                                <div class="tabtitle">Kerry Santopietro Named LIBN <br>
+                                    2023 Top 50 Women in Business</div>
+                                <div class="tabtext">
+                                    <p>Long Island Business News’ “Top 50 Women in Business” awards recognize Long Island’s top women professionals for their business acumen, mentoring and community involvement. The program’s honorees are selected by a judging committee to represent the most influential women in business, government and the nonprofit fields. Among the 50 women chosen for the 2023 awards was principal Kerry Santopietro.</p>
+                                    <div class="ctablock">
+                                        <a class="ctabtn secondarybtn">Read More</a>
+                                    </div>
+                                </div>
+                                <div class="tabimage">
+                                    <div class="insight-img">
+                                        <figure class="videoPanel youtubevideopanel video-thumb-image noSpeedBump" data-videoSource="youtube">
+                                            <img src="assets/images/executive-leadership.jpg" class="zoom" width="644" height="362" alt="LIBN 2023 Top 50 Women" >
+                                            <div id="ytplayer-tab2Mobile" class="youtube-video-src" data-videoid="Vt28CX44SE8"> </div>
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="swiper-content">
+                        <div class="tabblock">
+                            <div class="tabimagecontent">
+                                <div class="tabtitle">Kerry Santopietro Named LIBN <br>
+                                    2023 Top 50 Women in Business</div>
+                                <div class="tabtext">
+                                    <p>Long Island Business News’ “Top 50 Women in Business” awards recognize Long Island’s top women professionals for their business acumen, mentoring and community involvement. The program’s honorees are selected by a judging committee to represent the most influential women in business, government and the nonprofit fields. Among the 50 women chosen for the 2023 awards was principal Kerry Santopietro.</p>
+                                    <div class="ctablock">
+                                        <a class="ctabtn secondarybtn">Read More</a>
+                                    </div>
+                                </div>
+                                <div class="tabimage">
+                                    <a href="#">
+                                        <img src="assets/images/executive-leadership.jpg" class="zoom" width="644" height="362" alt="LIBN 2023 Top 50 Women" >
+                                    </a>
+                                </div>
+                            </div>
+                        </div>  
+                    </div>
+                  </div>
+                </div>
+              </div>    
+        </div>
+    </div>
+    <!-- <div class="bottomBG">
+        <img src="assets/images/home/follow-bg-red.svg" alt="UHY follow-overlay" />
+    </div> -->
+</div>
+<link rel="stylesheet" href="{{root}}assets/css/followuspanel/followuspanel.css" media="all">
+<div class="followuspanel module">
+    <div class="img-bg"></div>
+    <div class="relativefollow">
+        <a href="#" class="followbtn" aria-label="Follow">Follow Us on LinkedIn</a>
+    </div>
+    <div class="grid-container">
+        <h2 class="h2title">Follow Us on Linkedin</h2>
+
+        <ul class="juicer-feed" data-feed-id="onebrooklynhealth" data-filter="" data-per="3" data-columns="3"
+            data-gutter="45" data-overlay="false"></ul>
+    </div>
+    <script src="https://assets.juicer.io/embed.js" type="4f900f0cacd44592bcd50a0c-text/javascript"></script>
+    <script type="text/javascript" defer>
+        $(window).scroll(lazyLoadJuicer);
+
+        var feed = $('.juicer-feed');
+        var juicerFeedScrollDistance = 0;
+        var juicerLoaded = false;
+
+        if (typeof (feed.offset()) !== "undefined") {
+            juicerFeedScrollDistance = feed.offset().top;
+        }
+
+        lazyLoadJuicer();
+
+        function lazyLoadJuicer() {
+            var scrollDistance = $(window).scrollTop();
+            var windowHeight = $(window).height();
+
+            if ((scrollDistance >= (juicerFeedScrollDistance - windowHeight)) && !juicerLoaded) {
+                $.getScript('//assets.juicer.io/embed-no-jquery.js');
+                $('head').append('<link rel="stylesheet" type="text/css" href="//assets.juicer.io/embed.css">');
+                juicerLoaded = false;
+            }
+        };
+
+    </script>
+</div>
+
+
+<link rel="stylesheet" href="{{root}}assets/css/inlinevideo/inlinevideo.css" media="all">
+<script src="{{root}}assets/scripts/inlinevideo/custom-video.js" defer></script>
+<link rel="stylesheet" href="{{root}}assets/css/nextmove/nextmove.css" media="all">
+<script type="text/javascript">
+    $(document).ready(function () {
+        if ($(".nextmovepanel .swiper .swiper-slide").length >= 1) {
+            var swiperCarousel = new Swiper('.carouselSlider', {
+                spaceBetween: 30,
+                loop: true,
+                preventClicks: true,
+                simulateTouch: false,
+                preloadImages: false,
+                lazy: true,
+                pagination: {
+                    el: '.nextmovepanel .flexBox .swiper-pagination',
+                    clickable: true
+                },
+                navigation: {
+                    nextEl: '.nextmovepanel .flexBox .swiper-button-next',
+                    prevEl: '.nextmovepanel .flexBox .swiper-button-prev',
+                },
+                on: {
+                    slideChange: function () {
+                        var getyoutubevalue = $('.nextmovepanel .swiper-slide-active').find('figure').hasClass('youtubevideopanel');
+                        var getvimeovalue = $('.nextmovepanel .swiper-slide-active').find('figure').hasClass('vimeovideopanel');
+                        var this_dataindex;
+                        var this_datavimeoindex;
+                        if (getyoutubevalue) {
+                            var pictureyoutubedata = $('.nextmovepanel .swiper-slide-active').find('figure');
+                            this_dataindex = $(pictureyoutubedata).attr('data-index');
+                            if (this_dataindex) {
+                                YoutubeplayerList[this_dataindex].pauseVideo();
+                            }
+                        }
+                        if (getvimeovalue) {
+                            var picturevimeodata = $('.nextmovepanel .swiper-slide-active').find('figure');
+                            this_datavimeoindex = $(picturevimeodata).attr('data-index');
+                            if (this_datavimeoindex) {
+                                VimeoplayerList[this_datavimeoindex].pause();
+                            }
+                        }
+                    },
+                },
+            });
+        }
+    });
+</script>
+<div class="nextmovepanel module">
+    <div class="grid-container">
+        <h2 class="h2title">Your Next Move?</h2>
+    </div>
+    <div class="cusBg">
+        <div class="grid-container">
+            <div class="flexWrap">
+                <div class="wrapcontent">
+                    <h2 class="h2title">Flexibility </h2>
+                    <p>Isn’t that what we all want? Whether you choose to work from home, from one of our offices, or a
+                        little of each, we’ve got the right work environment to meet everyone’s needs. Join us!
+                        Life@UHY.</p>
+                    <a class="ctabtn secondarybtn mt-1">Current Open Positions</a><br>
+                    <a class="ctabtn secondarybtn mt-2">Our Locations</a>
+                </div>
+                <div class="crslWrap">
+                    <div class="contentwrap">
+                        <div class="flexBox">
+                            <a href="javascript:void(0)" class="swiper-button-prev"></a>
+                            <div class="swiper-pagination"></div>
+                            <a href="javascript:void(0)" class="swiper-button-next"></a>
+                        </div>
+                        <div class="swiper carouselSlider">
+                            <div class="swiper-wrapper">
+                                <input type="hidden" class="hdnAwardsSliderDelay" value="10000" />
+
+                                <div class="swiper-slide">
+                                    <div class="withoutImageBlock">
+                                        <div class="insidewrap"> 
+                                                <img src="assets/images/flexi.jpg" loading="lazy" class=""
+                                                    alt="Flexi" width="697" height="391">
+                                                <div class="inside-title">
+                                                    <p>Life@UHY</p>
+                                                </div> 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="withImageBlock">
+                                        <div class="insidewrap">
+                                            <figure class="videoPanel vimeovideopanel video-thumb-image noSpeedBump"
+                                                data-videoSource="vimeo">
+                                                <img src="assets/images/flexi.jpg" loading="lazy" class=""
+                                                    alt="Flexi" width="697" height="391">
+                                                <div id="ytplayer-11" class="vimeo-video-src" data-videoid="347119375">
+                                                </div>
+                                            </figure>
+                                            <div class="inside-title">
+                                                <p>Life@UHY</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="withImageBlock">
+                                        <div class="insidewrap">
+                                            <figure class="videoPanel youtubevideopanel video-thumb-image noSpeedBump"
+                                                data-videoSource="youtube">
+                                                <img src="assets/images/flexi.jpg" loading="lazy " class=""
+                                                    alt="Flexi" width="697" height="391">
+                                                <div id="ytplayer-232" class="youtube-video-src"
+                                                    data-videoId="Vt28CX44SE8">
+                                            </figure>
+                                            <div class="inside-title">
+                                                <p>Life@UHY</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

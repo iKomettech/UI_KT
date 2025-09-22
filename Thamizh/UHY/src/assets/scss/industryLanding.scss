@@ -1,0 +1,208 @@
+@import "util/util";
+$white: #ffffff;
+$primary-color: #007041;
+$img: "../../images/";
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+$mediumbluebgpanel: #0B3D71;
+
+
+
+
+
+
+.cardPanel {
+    margin-top: 60px;
+
+    @include breakpoint(large) {
+        margin-top: 110px;
+    }
+
+    .flexBox {
+        display: grid;
+        max-width: 100%;
+        max-height: 100%;
+        flex-direction: column;
+        height: unset;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-items: center;
+        gap: 45px;
+        row-gap: 45px;
+        grid-template-columns: repeat(1, 1fr);
+
+        @include breakpoint(medium) {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 35px;
+        }
+
+        @include breakpoint(large) {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 35px;
+        }
+
+        @include breakpoint(llarge) {
+            grid-template-columns: repeat(3, 1fr);
+            justify-items: inherit;
+            grid-row-gap: 75px;
+            grid-column-gap: 45px;
+        }
+
+        .colblock {
+            position: relative;
+            height: 100%;
+            border-radius: 16px;
+            // overflow: hidden;
+            background: #fff;
+            // border: 1px solid #015844;
+            // filter: drop-shadow(0 3px 20px rgba(0, 0, 0, .25%));
+            box-shadow: 0 3px 20px rgba(0, 0, 0, .25%);
+            width: 100%;
+            max-width: 450px;
+            // @include breakpoint(small only){
+
+            // width: 278px;
+            // }
+            // @media (min-width:640px) and (max-width:767px) {
+            //     width: 281px;
+            // }
+
+            // @include breakpoint(medium) {
+            //     height: 281px;
+            // }
+ 
+
+            a {
+                text-decoration: none;
+                height: 100%;
+                width: 100%;
+                display: block;
+
+                .ctablock {
+                    background: #DCE7E4;
+                    position: absolute;
+                    width: 100%;
+                    left: 0;
+                    height: 68px;
+                    bottom: 0px;
+                    border-radius: 0px 0px 15px 15px;
+                    overflow: hidden;
+                    padding-top: 6px;
+                    transition: all .2s ease;
+
+                    @include breakpoint(medium) {
+                        height: 68px;
+                        padding-top: 0;
+                    }
+
+                    .goIcon {
+                        width: 35px;
+                        height: 35px;
+                        margin-right: 3px;
+
+                        @include breakpoint(medium) {
+                            margin-right: 6px;
+                            width: 33px;
+                            height: 33px;
+                        }
+
+                        i {
+                            background: url('#{$img}industries/search-go.svg') no-repeat;
+                            background-size: contain;
+                            width: 35px;
+                            height: 35px;
+                            display: block;
+                            position: absolute;
+                            font-size: 0;
+                            top: 19px;
+                            right: 19px;
+                            cursor: pointer;
+                            transition: all .45s;
+
+                            @include breakpoint(medium) {
+                                width: 33px;
+                                height: 33px;
+                            }
+
+                            &:hover {
+                                margin-right: 4px;
+                            }
+                        }
+                    }
+
+                }
+
+                .imgWrap {
+                    overflow: hidden;
+                    // max-height: 130px;
+                    border-radius: 15px 15px 0 0;
+
+                    img {
+                        width: 100%;
+                    }
+                }
+
+                .contentsection {
+                    position: relative;
+                    text-align: left;
+                    padding: 20px 15px 75px 15px;
+
+                    @include breakpoint(large) {
+                        padding: 33px 21px 80px 21px;
+                    }
+
+                    .col-title {
+
+                        p,
+                        h3 {
+                            font-size: 25px;
+                            line-height: 34px;
+                            padding-bottom: 6px;
+                            font-weight: normal;
+                            color: #000;
+                           
+
+                            @include breakpoint(llarge) {
+                                font-size: 38px;
+                                line-height: 38px;
+                            }
+                        }
+
+                        margin-bottom: 15px;
+                    }
+
+                    .contentblock {
+                        max-width: 394px;
+
+                        p {
+                            font-size: 18px;
+                            font-family: 'mundial';
+                            line-height: 24px; 
+                        }
+                    }
+
+
+                }
+            }
+
+            &:hover {
+                .ctablock {
+                    background: #B3CCC5;
+                    transition: all .2s ease;
+                }
+
+                a {
+                    color: inherit;
+                }
+            }
+        }
+    }
+}

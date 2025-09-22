@@ -1,0 +1,639 @@
+@import "util/util";
+$white: #ffffff;
+$primary-color: #007041;
+$img: "../../images/";
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+.testiTitle {
+
+    p,
+    h2 {
+        font-size: 25px;
+        line-height: 36px;
+        font-weight: 700;
+        font-family: 'mundial';
+        text-align: center;
+        color: #00362A;
+
+        @include breakpoint(large) {
+            line-height: 55px;
+            text-align: left;
+            font-size: 48px;
+        }
+    }
+
+    margin-bottom: 25px;
+
+    @include breakpoint(xlarge) {
+        margin-bottom: 40px;
+    }
+}
+
+
+
+.locatPanel {
+    margin-top: 70px;
+    position: relative;
+
+    @include breakpoint(large) {
+        margin-top: 90px;
+    }
+
+    @include breakpoint(xlarge) {
+        margin-top: 110px;
+    }
+
+    .locations {
+        .locatTitle {
+            h4 {
+                font-size: 30px;
+                line-height: 34px;
+                font-weight: 400;
+                color: #015844;
+
+                @include breakpoint(large) {
+                    font-size: 38px;
+                    line-height: 38px;
+                }
+            }
+
+            margin-bottom: 20px;
+
+            @include breakpoint(medium) {
+                margin-bottom: 30px;
+            }
+
+            @include breakpoint(large) {
+                margin-bottom: 55px;
+            }
+        }
+
+        .locFlex {
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            row-gap: 20px;
+
+            .locatCard {
+
+                position: relative;
+                border-radius: 16px;
+                background: #fff;
+                box-shadow: 0 3px 20px rgba(22, 22, 22, 0.25);
+                width: 100%;
+                // margin-right: 1.4%;
+                overflow: hidden;
+
+                @media screen and (max-width:649px) {
+                    max-width: 450px;
+                    margin: 0 auto;
+
+                }
+
+                @media (min-width:650px) and (max-width:1023px) {
+                    width: 49%;
+                    margin-right: 2%;
+                }
+
+                @include breakpoint(large) {
+                    width: 31.2%;
+                    margin-right: 1.4%;
+                }
+
+                &:nth-child(2n+2) {
+                    @media (min-width:650px) and (max-width:1023px) {
+                        margin-right: 0;
+                    }
+                }
+
+                .inLocCard {
+
+                    .locTopImg {
+                        img {
+                            width: 100%;
+                        }
+                    }
+
+                    .locMidContent {
+
+                        padding: 10px 15px 75px;
+
+                        @include breakpoint(medium) {
+                            padding: 20px 15px 75px;
+                        }
+
+                        @include breakpoint(large) {
+                            padding: 29px 23px 85px;
+                        }
+
+                        .cityName {
+                            h5 {
+                                font-size: 24px;
+                                line-height: 30px;
+                                font-weight: 400;
+                                color: #015844;
+
+                                @include breakpoint(medium) {
+                                    font-size: 27px;
+                                    line-height: 32px;
+
+                                }
+
+                                @include breakpoint(llarge) {
+                                    font-size: 32px;
+                                }
+                            }
+
+                            @include breakpoint(large) {
+                                margin-bottom: 15px;
+                            }
+                        }
+
+                        .address {
+                            p {
+                                font-size: 16px;
+                                line-height: 20px;
+                                font-weight: 400;
+                                color: #000;
+
+                                @include breakpoint(large) {
+                                    font-size: 18px;
+                                    line-height: 24px;
+                                }
+                            }
+
+                            @include breakpoint(large) {
+                                margin-bottom: 25px;
+                            }
+                        }
+
+                        .phoneNumber {
+
+                            span,
+                            a {
+                                font-size: 16px;
+                                line-height: 20px;
+                                font-weight: 400;
+                                color: #000;
+
+                                @include breakpoint(large) {
+                                    font-size: 18px;
+                                    line-height: 24px;
+                                }
+                                :not(:hover){
+                                    
+                                text-decoration: none;
+                                }
+
+                            }
+
+                            @include breakpoint(large) {
+                                margin-bottom: 30px;
+                            }
+                        }
+                    }
+
+                    .ctablock {
+                        background: #DCE7E4;
+                        position: absolute;
+                        width: 100%;
+                        left: 0;
+                        height: 55px;
+                        bottom: 0px;
+                        border-radius: 0px 0px 15px 15px;
+                        overflow: hidden;
+                        padding-top: 6px;
+                        transition: all .2s ease;
+
+                        @include breakpoint(large) {
+                            height: 68px;
+                            padding-top: 0;
+                        }
+
+                        .goIcon {
+                            width: 35px;
+                            height: 35px;
+                            margin-right: 3px;
+
+                            @include breakpoint(medium) {
+                                margin-right: 6px;
+                                width: 33px;
+                                height: 33px;
+                            }
+
+                            i {
+                                background: url('#{$img}industries/search-go.svg') no-repeat;
+                                background-size: contain;
+                                width: 35px;
+                                height: 35px;
+                                display: block;
+                                position: absolute;
+                                font-size: 0;
+                                top: 9px;
+                                right: 19px;
+                                cursor: pointer;
+                                transition: all .45s;
+
+                                @include breakpoint(medium) {
+                                    width: 33px;
+                                    height: 33px;
+                                }
+
+                                @include breakpoint(large) {
+                                    top: 19px;
+                                }
+
+                                &:hover {
+                                    margin-right: 4px;
+                                }
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+
+
+        +.locations {
+            margin-top: 40px;
+
+            @include breakpoint(large) {
+                margin-top: 90px;
+            }
+        }
+    }
+
+    .locatFilter {
+        max-width: 330px;
+        position: relative;
+        right: 0;
+        margin-left: auto;
+        margin-bottom: 25px;
+
+        @include breakpoint(large) {
+            margin-bottom: inherit;
+            top: 35px;
+        }
+
+        .selectbox {
+
+            .ui-button.ui-selectmenu-button {
+                height: 42px;
+                border-radius: 25px;
+                padding: 9px 20px;
+                border: #004B30 2px solid;
+
+                .ui-selectmenu-text {
+                    line-height: 24px;
+                    font-size: 20px;
+                    font-weight: 700;
+                    color: #004B30;
+                }
+            }
+        }
+    }
+}
+
+.ui-selectmenu-menu {
+    .ui-menu {
+        height: 250px;
+        border: 2px solid #004B30;
+        border-radius: 0 0px 24px 24px;
+        padding-top: 50px;
+        padding-bottom: 28px;
+
+        .ui-selectmenu-open {
+            display: block;
+            overflow: hidden;
+            border-radius: 24px;
+            margin-top: -48px;
+        }
+
+        .ui-menu-item-wrapper {
+            font-size: 18px;
+            line-height: 22px;
+            color: #004B30;
+        }
+
+        .ui-state-active,
+        .ui-widget-content .ui-state-active {
+            border: inherit;
+            background: inherit !important;
+        }
+    }
+}
+
+.ui-selectmenu-open {
+    overflow: hidden;
+    border-radius: 24px;
+    margin-top: -48px;
+}
+
+.ui-selectmenu-button-closed::after {
+    background: url('#{$img}industries/sub/icon-top.svg') no-repeat;
+    width: 20px;
+    transform: rotate(180deg);
+    transition: all .5s ease-in-out;
+}
+
+.ui-selectmenu-button-open::after {
+    background: url('#{$img}industries/sub/icon-top.svg') no-repeat;
+    width: 20px;
+    transform: rotate(0deg);
+    transition: all .5s ease-in-out;
+}
+
+
+
+.locationdetailspanel {
+    margin-top: 67px;
+
+    .flexContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 35px;
+
+        @include breakpoint(large) {
+            flex-direction: row;
+            gap: 10px;
+        }
+
+        .lftBlock {
+            width: 100%;
+
+            @include breakpoint(large) {
+                width: 56%;
+            }
+
+            .locTitle {
+
+                p,
+                h2 {
+                    font-size: 25px;
+                    line-height: 36px;
+                    font-weight: 700;
+                    font-family: 'mundial';
+                    text-align: left;
+                    color: #00362A;
+
+                    @include breakpoint(large) {
+                        line-height: 75px;
+                        text-align: left;
+                        font-size: 48px;
+                    }
+                }
+            }
+
+            .detailLoc {
+                @include breakpoint(xlarge) {
+                    max-width: 720px;
+                }
+
+                // .locTitle{
+                //     p, h2 {
+                //         font-size: 25px;
+                //         line-height: 36px;
+                //         font-weight: 700;
+                //         font-family: 'mundial';
+                //         text-align: center;
+                //         color: #00362A;
+
+                //         @include breakpoint(large) {
+                //             line-height: 75px;
+                //             text-align: left;
+                //             font-size: 48px;
+                //         }
+                //     }
+                // }
+
+                .addDet {
+                    p {
+                        font-size: 18px;
+                        line-height: 24px;
+                        font-weight: 400;
+
+                        @include breakpoint(medium) {
+                            font-size: 28px;
+                            line-height: 37px;
+                        }
+                        a{
+                            &:not(:hover){
+                                text-decoration: none;
+                            }
+                        }
+
+                        +p {
+                            margin-top: 12px;
+                        }
+                    }
+                }
+
+            }
+
+            .locTag {
+                margin-top: 25px;
+
+                @include breakpoint(large) {
+                    margin-top: 35px;
+                }
+
+                @include breakpoint(llarge) {
+                    margin-top: 55px;
+                }
+
+                .flex-tags {
+                    display: flex;
+                    gap: 10px;
+                    margin-top: 20px;
+                    flex-wrap: wrap;
+
+                    @include breakpoint(xlarge) {
+                        // margin-top: 90px;
+                    }
+
+                    .flexDiv {
+                        .btnComp {
+                            padding: 6px 10px;
+                            background: #fff;
+                            filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.25));
+                            border-radius: 5px;
+
+                            @include breakpoint(large) {
+                                padding: 10px 14px;
+                            }
+
+                            span {
+                                font-size: 18px;
+                                font-weight: 200;
+                                letter-spacing: -.8px;
+                                font-family: 'mundial';
+                                color: #015844;
+
+                                @include breakpoint(large) {
+                                    font-size: 18px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+
+                .tagFlex {
+                    display: flex;
+                    align-items: center;
+                    margin-left: -12px;
+                    filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.25));
+                    border-radius: 3px;
+                    height: 47px;
+                    margin-top: -3px;
+                    @include breakpoint(large){
+                        margin-top: 0;
+                    }
+                    .pentagon {
+                        position: relative;
+                        width: 37px;
+                        height: 17px;
+                        transform: rotate(270deg);
+                        border-width: 0px 11px 17px;
+                        border-style: solid;
+                        border-color: #007041 transparent;
+
+                        @include breakpoint(large) {
+                            width: 46.5px;
+                            height: 20px;
+                            border-width: 0px 15px 20px;
+
+                        }
+
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            height: 15px;
+                            width: 15px;
+                            background: rgb(255, 255, 255);
+                            filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.25));
+                            border-radius: 15px;
+                            left: 9.08%;
+                            top: 7px;
+                        }
+                    }
+
+                    .price-tag {
+                        font-size: 18px;
+                        color: #fff;
+                        background: #007041;
+                        padding: 0 11px 3px 14px;
+                        border-radius: 0px 5px 5px 2px;
+                        font-weight: 700;
+                        margin-left: -10px;
+                        line-height: 32px;
+
+                        @include breakpoint(large) {
+                            font-size: 24px;        
+                            line-height: 42px;
+                            padding: 0px 20px 6px 21px;
+                            margin-left: -14px;
+
+                        }
+                    }
+
+                    .price-tag1 {
+                        font-size: 18px;
+                        color: #fff;
+                        background: #007041;
+                        padding: 0 11px 3px 14px;
+                        border-radius: 0px 5px 5px 2px;
+                        font-weight: 700;
+                        margin-left: -10px;
+                        line-height: 32px;
+
+                        @include breakpoint(large) {
+                            font-size: 24px;
+                            line-height: 42px;
+                            padding: 0px 20px 6px 21px;
+                            margin-left: -14px;
+
+                        }
+                    }
+
+
+                }
+            }
+
+            .locAwards {
+                margin-top: 48px;
+
+                .awdImg {
+                    margin-top: 20px;
+                }
+            }
+
+
+        }
+
+        .rgtBlock {
+            width: 100%;
+
+            @include breakpoint(large) {
+                width: 44%;
+            }
+
+            .formContent {
+                background: #A9C8D0;
+                border-radius: 20px;
+                padding: 32px 20px 25px;
+                margin-top: 5px;
+
+                @include breakpoint(xlarge) {
+                    max-width: 100%;
+                }
+
+                .formTitle {
+                    p {
+                        b {
+                            font-size: 28px;
+                            font-family: 'mundial';
+                            line-height: 38px;
+                            color: #01362A;
+                        }
+                    }
+                }
+
+                .formDesc {
+                    padding-top: 19px;
+
+                    p {
+                        font-size: 18px;
+                        font-weight: 400;
+                        line-height: 24px;
+                        font-family: 'mundial';
+                        color: #000;
+                    }
+                }
+
+            }
+        }
+    }
+
+
+}
+
+
+.positionPanel {
+    margin-top: 70px;
+    padding: 50px;
+    background: #DCE7E4;
+
+    @include breakpoint(xlarge) {
+        margin-top: 110px;
+    }
+}

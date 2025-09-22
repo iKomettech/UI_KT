@@ -1,0 +1,196 @@
+@import "util/util";
+$white: #ffffff;
+$primary: #007041;
+$primary-color: #007041;
+$img: "../../images/";
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+.testiTitle {
+
+    p,
+    h2 {
+        font-size: 25px;
+        line-height: 32px;
+        font-weight: 700;
+        font-family: 'mundial';
+        text-align: center;
+        color: #00362A;
+
+        @include breakpoint(large) {
+            text-align: left;
+            font-size: 48px;
+            line-height: 55px;
+        }
+    }
+
+    margin-bottom: 20px;
+
+    @include breakpoint(xlarge) {
+        margin-bottom: 40px;
+    }
+}
+
+
+.invoicePortalPanel {
+    background: #DCE7E4;
+    margin-top: 70px;
+    padding-bottom: 50px;
+
+    @include breakpoint(large) {
+        margin-top: 110px;
+        padding-bottom: 70px;
+    }
+
+    .flexParent {
+        display: flex;
+        flex-direction: column;
+
+        @include breakpoint(large) {
+            flex-direction: row;
+        }
+
+        .lftImg {
+            width: 100%;
+
+            @include breakpoint(large) {
+                width: 48.5%;
+            }
+
+            @include breakpoint(llarge) {
+                width: 44.5%;
+            }
+
+            .imgBlock {
+                border-right: 15px solid transparent;
+                border-bottom: 15px solid transparent;
+                border-radius: 0 0 73px 0;
+                overflow: hidden;
+                background: linear-gradient(225deg, #ffffff, #DFE9E6) border-box;
+                -webkit-mask:
+                    /*4*/
+                    linear-gradient(transparent 0 0) padding-box, linear-gradient(#fff 0 0);
+                -webkit-mask-composite: xor;
+                mask-composite: exclude;
+                margin-right: 3%;
+
+                @include breakpoint(large) {
+                    border-right: 25px solid transparent;
+                    border-bottom: 25px solid transparent;
+                    border-radius: 0 0 180px 0;
+                    margin-right: inherit;
+                }
+
+                img {
+                    width: 100%;
+                }
+            }
+        }
+
+        .rghtContent {
+            width: 100%;
+
+            @include breakpoint(large) {
+                width: 50%;
+            }
+
+            @include breakpoint(xxlarge) {
+                width: 40%;
+            }
+
+            .insideBlock {
+                margin-left: 3%;
+                margin-right: 3%;
+                padding-top: 5%;
+                @include breakpoint(large) {
+                    margin-left: 10%;
+                    margin-right: inherit;
+                    padding-top: 3%;
+                }
+
+                @include breakpoint(llarge) {
+                    padding-top: 10%;
+                }
+ 
+                    h3 {
+                        font-size: 31px;
+                        line-height: 36px;
+                        font-weight: 700;
+                        @include breakpoint(medium){
+                            font-size: 36px;
+                            line-height: 43px;}
+
+                        @include breakpoint(large only) {
+                            font-size: 28px;
+                            line-height: 33px;
+                        }
+                    } 
+                    h4 {
+                        font-size: 24px;
+                        font-weight: 600;
+                        line-height: 29px;
+
+                        @include breakpoint(large only) {
+                            font-size: 20px;
+                            line-height: 24px;
+                        }
+                    } 
+
+                .secondarybtn {
+                    &::after {
+                        content: inherit;
+                    }
+
+                    +.secondarybtn {
+                        margin-left: 15px;
+                    }
+                }
+ 
+                    p {
+                        font-size: 18px;
+                        line-height: 24px;
+
+                        @include breakpoint(large only) {
+                            font-size: 17px;
+                            line-height: 21px;
+                        }
+                    }
+
+                    ol {
+                        margin-left: 1rem;
+
+                        li {
+                            font-size: 18px;
+                            line-height: 24px;
+                            margin-bottom: 0;
+                            @include breakpoint(large only){
+                                font-size: 17px;
+                                line-height: 21px;
+                            }
+                        }
+                    } 
+
+                .btnProps {
+                    margin-bottom: 20px;
+                    margin-top: 20px;
+                    @include breakpoint(medium only){
+                        margin-top: 30px;
+                        margin-bottom: 30px;
+                    }
+
+                    @include breakpoint(llarge) {
+                        margin-top: 28px;
+                        margin-bottom: 49px;
+                    }
+                }
+            }
+        }
+
+    }
+}

@@ -1,0 +1,143 @@
+        
+@import "util/util";
+$white: #ffffff;
+$primary-color: #007041;
+$img: "../../images/";
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+.btnPanel {
+    background: #DCE7E4;
+    padding: 25px 0;
+    margin-top: 70px;
+    @include breakpoint(large) {
+        padding: 60px 0;
+        margin-top: 90px;
+    }
+
+    @include breakpoint(xlarge){
+        margin-top: 110px;
+    }
+    .centerAlignText{
+        h3 {
+            font-size: 24px;
+            line-height: 32px;
+            font-family: 'mundial';
+            font-weight: 700;
+            color: #00362A;
+            text-align: center;
+
+            @include breakpoint(large) {
+                font-size: 48px;
+                line-height: 52px;
+                margin-bottom: 60px;
+            }
+        }
+    }
+
+    .flexGrid {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 15px;
+        @include breakpoint(medium){
+            flex-direction: row;
+            gap: 75px;
+        }
+        @include breakpoint(xxlarge){
+            gap: 15px;
+            
+        }
+        .btTitle, .singleBtn {
+            @include breakpoint(large){
+                // max-width: 495px;
+                width: 100%;
+            }
+            @include breakpoint(xxlarge){
+                // max-width: 495px;
+                width: 39%;
+            }
+            h3 {
+                font-size: 25px;
+                line-height: 32px;
+                font-family: 'mundial';
+                font-weight: 700;
+                color: #00362A;
+                text-align: center;
+
+                @include breakpoint(llarge) {
+                    font-size: 48px;
+                    line-height: 52px;
+                    margin-bottom: 95px;
+                }
+            }
+            .btns {
+                margin: 35px 0 20px;
+                text-align: center;
+                .specificBtn {
+                    padding: 10px 50px 15px;
+                    background: #298A7F;
+                    // border: 1px solid #298A7F;
+                    color: #ffffff;
+                    border-radius: 56px;
+                    text-decoration: none;
+                    font-size: 22px;
+                    line-height: 26px;
+                    font-weight: 600;
+                    display: inline-block;    
+                    min-width: 340px;
+                    @include breakpoint(medium){
+                        padding: 10px 30px 15px;
+                        min-width: 304px;
+                    }
+                    @include breakpoint(large){
+                        padding:16px 50px  20px;
+                        min-width: 495px;
+                    }
+                    @include breakpoint(llarge){
+                        font-size: 38px;
+                        line-height: 38px;
+                        padding: 19px 50px 25px;
+                    }
+                    &:hover{
+                        background: #28A497;
+                    }
+                }
+            }
+        }         
+        .singleBtn{
+            @include breakpoint(xxlarge){
+                width: 100% !important;
+            }
+        } 
+    }
+    .flexOneLine{
+        display: flex;
+        justify-content: center;  .btTitle {
+            @include breakpoint(large){
+                max-width: 495px;
+                width: 100%;
+            }
+            h3 {
+                font-size: 25px;
+                line-height: 32px;
+                font-family: 'mundial';
+                font-weight: 700;
+                color: #00362A;
+                text-align: center;
+
+                @include breakpoint(large) {
+                    font-size: 48px;
+                    line-height: 52px;
+                    margin-bottom: 95px;
+                }
+            }
+        }
+    }
+}

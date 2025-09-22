@@ -1,0 +1,611 @@
+<link rel="stylesheet" href="{{root}}assets/css/bannerPanel/bannerPanel.css">
+<div class="header-overlay">
+    <picture>
+        <source media="(min-width:320px) and (max-width:430px)"
+            srcset="{{root}}assets/images/settings/header-overlay-mobile.svg" type="image/jpg">
+        <source media="(min-width:431px) and (max-width:1023px)"
+            srcset="{{root}}assets/images/settings/header-overlay.svg" type="image/jpg">
+        <source media="(min-width:1024px) and (max-width:1279px)"
+            srcset="{{root}}assets/images/settings/header-overlay-tablet.svg" type="image/jpg">
+        <source media="(min-width: 1280px)" srcset="{{root}}assets/images/settings/header-overlay.svg" type="image/jpg">
+        <img src="{{root}}assets/images/settings/header-overlay.svg" alt="UHY header-overlay" />
+    </picture>
+</div>
+
+<div class="industriesPanel module come-in">
+    <picture>
+        <source media="(min-width:320px) and (max-width:480px)" srcset="../assets/images/about/banner-mobile.jpg"
+            type="image/jpg">
+        <img src="../assets/images/about/banner.jpg" width="1920" height="554" alt="banner" loading="lazy" class="lazy">
+    </picture>
+    <div class="grid-container">
+        <div class="indTitle">
+            <h1>About UHY</h1>
+        </div>
+    </div>
+</div>
+
+
+<div class="breadcrumbWrapBottom module come-in " data-swiftype-index="false">
+    <div class="grid-container">
+        <ul class="breadcrumbs">
+            <li class="breadcrumb-item ">
+                <a href="/" aria-label="Home">Home</a>
+            </li>
+            <li class="breadcrumb-item ">About UHY</li>
+        </ul>
+    </div>
+</div>
+
+
+<link rel="stylesheet" href="{{root}}assets/css/aboutUs/aboutUs.css">
+<div class="whyUHYPanel">
+    <div class="grid-container">
+        <div class="disFlex">
+            <div class="cntArea">
+                <div class="uhyTitle">
+                    <h2><span style="color: #43B02A;">WHY</span> <span style="color: #215647;">UHY</span></h2>
+                </div>
+                <div class="uhySubTitle">
+                    <h3>We deliver a 360° <br>
+                        view of your business.</h3>
+                </div>
+                <div class="uhyContent">
+                    <p>UHY works collaboratively to develop
+                        flexible, innovative solutions that meet
+                        our clients’ business challenges.</p>
+                </div>
+            </div>
+            <div class="counterArea">
+                <div class="int-flex-area">
+                    <div class="int-grids op-1">
+                        <h2>
+                            <span>TOP </span> <span class="count">30</span>
+                        </h2>
+                        <p><span>Largest U.S. Accounting Firm</span></p>
+                    </div>
+                    <div class="int-grids op-2">
+                        <h2>
+                            <span class="count">40</span><span>+</span>
+                        </h2>
+                        <p><span>Offices</span></p>
+                    </div>
+                    <div class="int-grids op-3">
+                        <h2><span class="count">1800</span><span>+</span></h2>
+                        <p><span>Employees</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="uhyPattern">
+            <div class="insidePatter">
+                <img src="../assets/images/about/uhyPattern.svg" alt="UHY WHY Pattern" loading="lazy" width="1432"
+                    height="1012">
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        function isVisible(element) {
+
+            var $el = $(element),
+
+                $win = $(window),
+
+                viewport_top = $win.scrollTop(),
+
+                viewport_bottom = viewport_top + $win.height(),
+
+                el_top = $el.offset().top,
+
+                el_bottom = el_top + $el.height();
+
+            return ((el_bottom <= viewport_bottom) && (el_top >= viewport_top));
+
+        }
+
+        function countUp() {
+
+            var $this = $(this);
+
+            var num = $this.text();
+
+            var decimal = 0;
+
+            if (num.indexOf(".") > 0) { // if number is Decimal
+
+                decimal = num.toString().split(".")[1].length;
+
+            }
+
+            $this
+
+                .prop("Counter", 0.0)
+
+                .animate(
+
+                    {
+
+                        Counter: $this.text()
+
+                    },
+
+                    {
+
+                        duration: 2000,
+
+                        easing: "swing",
+
+                        step: function (now) {
+
+                            $this.text(parseFloat(now).toFixed(decimal));
+
+                        }
+
+                    }
+
+                );
+
+        }
+
+        $(window).scroll(function () {
+
+            if ($(".whyUHYPanel").length > 0) {
+
+                if (isVisible($('.count'))) {
+
+                    if ($('.count').hasClass('counter-loaded')) return;
+
+                    $('.count').addClass('counter-loaded');
+
+                    $('.count').each(countUp);
+
+                }
+
+            }
+
+        });
+    });
+</script>
+
+<link rel="stylesheet" href="{{root}}assets/css/dei/dei.css">
+<div class="activitiesPanel">
+    <div class="grid-container">
+        <div class="activity">
+            <div class="flexActivity">
+                <div class="imgActivity">
+                    <div class="clipImg">
+                        <div class="imgBlock leftFirst">
+                            <img src="{{root}}assets/images/dei/adt.jpg" alt="Attract Diverse Talent " width="720"
+                                height="461">
+                        </div>
+                    </div>
+                </div>
+                <div class="contentActivity">
+                    <div class="insideContent">
+                        <div class="titleCon">
+                            <h2>Our Purpose</h2>
+                        </div>
+                        <div class="descCont">
+                            <p>Lorem Ipsum is simply dummy text of the<br>
+                                printing and typesetting industry. Lorem Ipsum<br>
+                                has been the industry’s standard dummy text<br>
+                                ever since the 1500s, when an unknown printer<br>
+                                took a galley of type and scrambled it to make<br>
+                                a type specimen book.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flexActivity">
+                <div class="imgActivity">
+                    <div class="clipImg">
+                        <div class="imgBlock rightLast">
+                            <img src="{{root}}assets/images/dei/soc.jpg" alt="Strengthen Our Communities " width="720"
+                                height="462">
+                        </div>
+                    </div>
+                </div>
+                <div class="contentActivity">
+                    <div class="insideContent">
+                        <div class="titleCon">
+                            <h2>Our Mission</h2>
+                        </div>
+                        <div class="descCont">
+                            <p>Lorem Ipsum is simply dummy text of the<br>
+                                printing and typesetting industry. Lorem Ipsum<br>
+                                has been the industry’s standard dummy text<br>
+                                ever since the 1500s, when an unknown printer<br>
+                                took a galley of type and scrambled it to make<br>
+                                a type specimen book.</p>
+                            <!-- <ul>
+                                <li>Lorem Ipsum tah</li>
+                                <li>Lorem Ipsum tah</li>
+                                <li>Lorem Ipsum tah</li>
+                                <li>Lorem Ipsum tah</li>
+                                <li>Lorem Ipsum tah</li>
+                            </ul> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mapPanel">
+    <div class="grid-container">
+
+        <div class="flexRow">
+            <div class="lftBlock">
+
+                <div class="mapTitle">
+                    <h2>An Independent Member <br>
+                        of UHY International</h2>
+                </div>
+                <div class="mapImg">
+                    <img src="../assets/images/about/map.png" alt="Map" width="1060" height="532" class="lazy">
+                </div>
+            </div>
+            <div class="counterSection">
+                <div class="int-flex-area">
+                    <div class="int-grids op-1">
+                        <h2>
+                            <span class="count">330</span><span>+ </span>
+                        </h2>
+                        <p><span>Business Centers
+                            </span></p>
+                    </div>
+                    <div class="int-grids op-2">
+                        <h2>
+                            <span class="count">100</span><span>+</span>
+                        </h2>
+                        <p><span>Countries</span></p>
+                    </div>
+                </div>
+                <div class="description">
+                    <p>UHY Advisors and UHY LLP are member firms of UHY International, one of the world’s largest professional service firm organizations.
+                    </p>
+                    <p>Members of the UHY International network can be found in over 330 business centers across more than 100 countries around the world.
+                    </p>
+                    <p>As a member firm of UHY International, one of the top global accounting networks, we have access to resources in virtually every industry and service line in all the major global business centers. </p>
+
+                    <a href="#" class="ctabtn secondarybtn mt-1">UHY Global Directory</a>
+                    <a href="#" class="ctabtn secondarybtn mt-2">UHY International</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="ourHistoryPanel">
+    <div class="grid-container">
+        <div class="testiTitle">
+            <h2>Our History</h2>
+        </div>
+        <div class="historyContainer">
+            <div class="overBox">
+                <div class="imgBox">
+                    <div class="radiusImg">
+                        <img src="../assets/images/about/round-pen.png" alt="pen img" class="lazy zoom" width="588" height="588">
+                    </div>
+                </div>
+
+                <div class="contentBox">
+                    <div class="radiusBox">
+                        <div class="insideContent">
+                            <p>
+                                We know what we’re doing. We have deep roots in spotting and nurturing growth opportunities that goes back decades. Today, we are a global provider of exceptional service and part of one of the largest accounting, tax and consulting networks in the world. We’re dedicated to serving clients ranging from the dynamic middle-market to Fortune 500 companies. We believe that having a strong entrepreneurial mindset is key to growth, and we bring that mindset to every client experience.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="historyPattern">
+                <div class="historyTopPattern">
+                    <div class="hisTop">
+                        <picture>
+                            <source media="(min-width:320px) and (max-width:767px)"
+                                srcset="{{root}}assets/images/about/topHistory-mobile.svg" type="image/jpg">
+                        <img src="../assets/images/about/top-history.svg" width="1240" height="931" alt="top pattern">
+                        </picture>
+                    </div>
+                </div>
+                <div class="historyBottomPattern">
+                    <div class="hisBot">
+                        <img src="../assets/images/about/bottom-history.svg" width="992" height="731" alt=" bottom pattern">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<link rel="stylesheet" href="{{root}}assets/css/timelinepanel/timelinepanel.css" media="all">
+<script src="../assets/scripts/global/timelinepanel.js" defer></script>
+<div class="timelinepanel">
+    <div class="historyModule">
+        <div class="grid-container">
+            <div class="grey">
+                <div class="historyBlock">
+                    <div class="decade-wrapper" id="decade-wrapper">
+                        <ul class="tabs">
+                            <li><a href="#1990">Pre 1990's</a></li>
+                            <li><a href="#1991">1991 - 1995 </a></li>
+                            <li><a href="#1996">1996 - 2000 </a></li>
+                            <li><a href="#2001">2001 - 2005</a></li>
+                            <li><a href="#2006">2006 - 2010</a></li>
+                            <li><a href="#2018">2011 - 2015 </a></li>
+                            <li class="active"><a href="#2016">2016 - 2020 </a></li>
+                            <li><a href="#2017">2021 - 2024</a></li>
+                        </ul>
+                        <select class="decade-year-dropdown" id="timeline_dropdown">
+                            <option value="2016" selected>2007 - 2010</option>
+                            <option value="2017">2011 - 2016</option>
+                            <option value="2018">2017 - 2023</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grid-container">
+            <div class="timeline-wrapper">
+                <ul class="timeline invert-order active" id="2016">
+                    <li class="">
+                        <div class="timeline-badge primary">
+                            <a href="javascript:void(0);">
+                                <i class="timelineWrapper"></i>
+                                <span class="screen-reader-text">Timeline invert</span>
+                            </a>
+                        </div>
+                        <div class="timeline-panel is-hidden">
+                            <div class="timeline-heading">
+                                <div class="imgsec">
+                                    <img src="assets/images/about/timeline/uhy.jpg" alt="timeline" class="" with="401"
+                                        height="254" />
+                                </div>
+                            </div>
+                            <div class="timeline-body">
+                                <div class="contentBlock">
+                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-badge primary">
+                            <a href="javascript:void(0);">
+                                <i class="timelineWrapper"></i>
+                                <span class="screen-reader-text">Timeline invert</span>
+                            </a>
+                        </div>
+                        <div class="timeline-panel is-hidden">
+                            <div class="timeline-heading">
+                                <div class="imgsec">
+                                    <img src="assets/images/about/timeline/fifth-annual-report.jpg" alt="timeline"
+                                        class="" with="401" height="254" />
+                                </div>
+                            </div>
+                            <div class="timeline-body">
+                                <div class="contentBlock">
+                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="">
+                        <div class="timeline-badge primary">
+                            <a href="javascript:void(0);">
+                                <i class="timelineWrapper"></i>
+                                <span class="screen-reader-text">Timeline invert</span>
+                            </a>
+                        </div>
+                        <div class="timeline-panel is-hidden">
+                            <div class="timeline-heading">
+                                <div class="imgsec">
+                                    <img src="assets/images/about/timeline/teams.jpg" alt="timeline" class="" with="401"
+                                        height="254" />
+                                </div>
+                            </div>
+                            <div class="timeline-body">
+                                <div class="contentBlock">
+                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-badge primary">
+                            <a href="javascript:void(0);">
+                                <i class="timelineWrapper"></i>
+                                <span class="screen-reader-text">Timeline invert</span>
+                            </a>
+                        </div>
+                        <div class="timeline-panel is-hidden">
+                            <div class="timeline-heading">
+                                <div class="imgsec">
+                                    <img src="assets/images/about/timeline/first-annual-report.jpg" alt="timeline"
+                                        class="" with="401" height="254" />
+                                </div>
+                            </div>
+                            <div class="timeline-body">
+                                <div class="contentBlock">
+                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <div class="clearfix" style="float: none;"></div>
+                </ul>
+                <ul class="timeline invert-order" id="2017">
+                    <li class="">
+                        <div class="timeline-badge primary">
+                            <a href="javascript:void(0);">
+                                <i class="timelineWrapper"></i>
+                                <span class="screen-reader-text">Timeline invert</span>
+                            </a>
+                        </div>
+                        <div class="timeline-panel is-hidden">
+                            <div class="timeline-heading">
+                                <div class="imgsec">
+                                    <img src="assets/images/timeline/timeline-1.jpg" alt="timeline" class="" with="401"
+                                        height="254" />
+                                </div>
+                            </div>
+                            <div class="timeline-body">
+                                <div class="contentBlock">
+                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-badge primary">
+                            <a href="javascript:void(0);">
+                                <i class="timelineWrapper"></i>
+                                <span class="screen-reader-text">Timeline invert</span>
+                            </a>
+                        </div>
+                        <div class="timeline-panel is-hidden">
+                            <div class="timeline-heading">
+                                <div class="imgsec">
+                                    <img src="assets/images/timeline/timeline-1.jpg" alt="timeline" class="" with="401"
+                                        height="254" />
+                                </div>
+                            </div>
+                            <div class="timeline-body">
+                                <div class="contentBlock">
+                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="">
+                        <div class="timeline-badge primary">
+                            <a href="javascript:void(0);">
+                                <i class="timelineWrapper"></i>
+                                <span class="screen-reader-text">Timeline invert</span>
+                            </a>
+                        </div>
+                        <div class="timeline-panel is-hidden">
+                            <div class="timeline-heading">
+                                <div class="imgsec">
+                                    <img src="assets/images/timeline/timeline-1.jpg" alt="timeline" class="" with="401"
+                                        height="254" />
+                                </div>
+                            </div>
+                            <div class="timeline-body">
+                                <div class="contentBlock">
+                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-badge primary">
+                            <a href="javascript:void(0);">
+                                <i class="timelineWrapper"></i>
+                                <span class="screen-reader-text">Timeline invert</span>
+                            </a>
+                        </div>
+                        <div class="timeline-panel is-hidden">
+                            <div class="timeline-heading">
+                                <div class="imgsec">
+                                    <img src="assets/images/timeline/timeline-1.jpg" alt="timeline" class="" with="401"
+                                        height="254" />
+                                </div>
+                            </div>
+                            <div class="timeline-body">
+                                <div class="contentBlock">
+                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <div class="clearfix" style="float: none;"></div>
+                </ul>
+                <ul class="timeline invert-order" id="2018">
+                    <li class="">
+                        <div class="timeline-badge primary">
+                            <a href="javascript:void(0);">
+                                <i class="timelineWrapper"></i>
+                                <span class="screen-reader-text">Timeline invert</span>
+                            </a>
+                        </div>
+                        <div class="timeline-panel is-hidden">
+                            <div class="timeline-heading">
+                                <div class="imgsec">
+                                    <img src="assets/images/timeline/timeline-1.jpg" alt="timeline" class="" with="401"
+                                        height="254" />
+                                </div>
+                            </div>
+                            <div class="timeline-body">
+                                <div class="contentBlock">
+                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-badge primary">
+                            <a href="javascript:void(0);">
+                                <i class="timelineWrapper"></i>
+                                <span class="screen-reader-text">Timeline invert</span>
+                            </a>
+                        </div>
+                        <div class="timeline-panel is-hidden">
+                            <div class="timeline-heading">
+                                <div class="imgsec">
+                                    <img src="assets/images/timeline/timeline-1.jpg" alt="timeline"
+                                        class="lazy layzeloading" with="401" height="254" />
+                                </div>
+                            </div>
+                            <div class="timeline-body">
+                                <div class="contentBlock">
+                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="">
+                        <div class="timeline-badge primary">
+                            <a href="javascript:void(0);">
+                                <i class="timelineWrapper"></i>
+                                <span class="screen-reader-text">Timeline invert</span>
+                            </a>
+                        </div>
+                        <div class="timeline-panel is-hidden">
+                            <div class="timeline-heading">
+                                <div class="imgsec">
+                                    <img src="assets/images/timeline/timeline-1.jpg" alt="timeline"
+                                        class="lazy layzeloading" with="401" height="254" />
+                                </div>
+                            </div>
+                            <div class="timeline-body">
+                                <div class="contentBlock">
+                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <div class="clearfix" style="float: none;"></div>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

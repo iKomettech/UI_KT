@@ -1,0 +1,270 @@
+@import "util/util";
+$white: #ffffff;
+$primary-color: #007041;
+$img: "../../images/";
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+.testiTitle {
+ 
+    h2 {
+        font-size: 25px;
+        line-height: 55px;
+        font-weight: 700;
+        font-family: 'mundial';
+        text-align: center;
+        color: #00362A;
+
+        @include breakpoint(large) {
+            text-align: left;
+            font-size: 48px;
+        }
+    }
+
+    margin-bottom: 25px;
+
+    @include breakpoint(xlarge) {
+        margin-bottom: 40px;
+    }
+}
+
+
+.contactPanel {
+    margin-top: 30px;
+    position: relative;
+
+    .testiTitle {
+        position: relative;
+        z-index: 11;
+    }
+
+    @include breakpoint(large) {
+        margin-top: 86px;
+    }
+
+    .contact {
+        // height: 100vh;
+        background: #B3CCC5;
+
+        @include breakpoint(large) {
+            min-height: 817px;
+        }
+
+        // &::before {
+        //     background: #B3CCC5;
+        //     content: '';
+        //     height: 100vh;
+        //     width: 100%;
+        //     z-index: -2;
+        //     position: absolute;
+        // }
+        .rightForm {
+            width: 100%;
+            padding: 25px 0;
+
+            @include breakpoint(large) {
+                padding: 0;
+                width: 39%;
+                margin-left: auto;
+                position: relative;
+                z-index: 1;
+            }
+            @include breakpoint(llarge){
+                width: 50%;
+            }
+
+            iframe {
+
+                background: #DCE7E4;
+                padding: 25px 10px;
+                border-radius: 20px;
+                box-shadow: 0 3px 20px rgba(0, 0, 0, .16);
+
+                @include breakpoint(large) {
+                    padding: 20px;
+                    border-radius: 38px;
+                    margin-top: -90px;
+                }
+
+                @include breakpoint(llarge) {
+                    padding: 50px;
+                    margin-top: -90px;
+                }
+            }
+        }
+    }
+
+    .patternPanel {
+        @media screen and (max-width:1023px) {
+            display: none;
+        }
+
+        @include breakpoint(llarge) {
+            display: block;
+        }
+
+        position: absolute;
+        top: 0;
+        max-height: 987px;
+        height: 100%;
+        width: 100%;
+        max-width: 986px;
+
+        .pattern {
+            position: absolute;
+            top: -9%;
+            z-index: 0;
+        }
+
+        // &::after{
+        //     // content: '';
+        //     background: url('#{$img}industries/sub/contactPattern.svg');
+        //     height: calc(100%);
+        //     width: calc(100%);
+        //     max-width: 986px;
+        //     max-height: 987px;
+        //     position: absolute;
+        //     top: -7.8%;
+        //     left: 0;
+        //     z-index: -1;
+        // }
+    }
+
+
+    .contact-us {
+        background: #ffffff;
+
+        @include breakpoint(large) {
+            min-height: 817px;
+        }
+
+        // &::before {
+        //     background: #B3CCC5;
+        //     content: '';
+        //     height: 100vh;
+        //     width: 100%;
+        //     z-index: -2;
+        //     position: absolute;
+        // }
+        .rightForm {
+            width: 100%;
+            padding: 25px 0;
+
+            @include breakpoint(large) {
+                padding: 0;
+                width: 61%;
+                margin-left: auto;
+                position: relative;
+                z-index: 1;
+            }
+
+            iframe {
+
+                background: #DCE7E4;
+                padding: 25px 10px;
+                border-radius: 20px;
+                box-shadow: 0 3px 20px rgba(0, 0, 0, .16);
+
+                @include breakpoint(large) {
+                    padding: 50px;
+                    border-radius: 38px;
+                }
+
+                @include breakpoint(llarge) {
+                    margin-top: 70px;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+.verifyPanel{
+    margin-top: 70px;
+
+    @include breakpoint(large){
+        margin-top: 90px;
+    }
+    @include breakpoint(xlarge){
+        margin-top: 110px;}
+    .flexVault{
+        display: flex;
+        gap: 20px;
+        flex-direction: column;
+        align-items: center;
+        @include breakpoint(medium){
+            flex-direction: row;
+            gap: 25px;
+            align-items: inherit;
+        }
+        @include breakpoint(llarge){
+            gap: 70px;
+        }
+        .imgSec{
+            max-width: 570px;
+            width: 100%;
+            margin: 0 auto;
+            @include breakpoint(medium){
+                max-width: inherit;
+                width: 40%;
+                margin: inherit;
+            }
+            @include breakpoint(llarge){
+                width: inherit;
+            }
+            img{
+                width: 100%;
+            }
+        }
+        .contentSec{
+            margin-top: 10px;
+            text-align: center;
+            @include breakpoint(medium){
+                text-align: inherit;
+            }
+            h4{
+                font-size: 25px;
+                line-height: 29px;
+                font-weight: 700;
+                font-family: 'mundial';
+                color: #00362A;
+                @include breakpoint(large){    
+                    font-size: 38px;
+                    line-height: 38px;}
+                @include breakpoint(llarge){                        
+                font-size: 48px;
+                line-height: 52px;
+                margin-bottom: 2px;
+                }
+            }
+            p{
+                font-size: 18px;
+                line-height: 24px;
+                @include breakpoint(large){
+                    font-size: 24px;
+                    line-height: 28px;}
+                @include breakpoint(llarge){
+                    font-size: 28px;
+                    line-height: 38px;}
+            }
+            .mt-2{
+                margin-top: 15px;
+                @include breakpoint(large){
+                    margin-top: 25px;}
+            }
+            .ctabtn.secondarybtn{
+                &::after{
+                    content: inherit;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,164 @@
+@import "util/util";
+$white: #ffffff;
+$primary-color: #007041;
+$img: "../../images/";
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+
+.templatePattern {
+    position: relative;
+
+    // Top 
+    .topZero {
+        top: 0 !important;
+        z-index: -1;
+    }
+    .topPattern {
+        display: none;
+        position: absolute;
+        max-height: 1524px;
+        max-width: 1451px;
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0%;
+
+        &.right {
+            right: 0;   
+            left: inherit;
+        }
+
+        @include breakpoint(large) {
+            display: block;
+            top: 480px;
+        }
+        @include breakpoint(xlarge){
+            top: 580px;
+        }
+
+        .topRight {
+            position: absolute;
+            z-index: -1;
+
+            @include breakpoint(large) {
+                display: block;
+                max-height: 1023px;
+                max-width: 1100px;
+                min-width: 980px;
+                width: 100%;
+                top: 0;
+                right: -10%;
+            }
+
+            @include breakpoint(llarge) {
+                max-width: 1451px;
+                max-height: 1525px;
+                right: -13%;
+                top: 0;
+            }
+            @include breakpoint(xlarge) { 
+                right: -11%;
+                top: 0;
+            }
+        }
+        .topLeft {
+            position: absolute;
+            z-index: -1;
+
+            @include breakpoint(large) {
+                display: block;
+                max-height: 1023px;
+                max-width: 1100px;
+                min-width: 980px;
+                width: 100%;
+                top: 0;
+                // top: -30%;
+                left: -10%;
+            }
+
+            @include breakpoint(llarge) {
+                max-width: 1451px;
+                max-height: 1525px;
+                left: -13%;
+                top: 0;
+                // top: -37%;
+            }
+        }
+    }
+ 
+
+    // Bottom 
+    .bottomPattern {
+        display: none;
+        position: absolute;
+        max-height: 1524px;
+        max-width: 1451px;
+        height: 100%;
+        width: 100%;
+        left: 0;
+        bottom: 0%;
+        z-index: -1;
+
+        @include breakpoint(large) {
+            display: block;
+        }
+
+        &.right{
+            left: inherit;
+            right: 0;
+        }
+
+        .bottomLeft {
+            position: absolute;
+            z-index: -1;
+
+            @include breakpoint(large) {
+                display: block;
+                max-height: 1023px;
+                max-width: 1100px;
+                min-width: 980px;
+                width: 100%;
+                bottom: -10%;
+                left: -10%;
+            }
+
+            @include breakpoint(llarge) {
+                max-width: 1451px;
+                max-height: 1525px;
+                left: -13.5%;
+                bottom: -13.5%;
+            }
+        }
+        
+        .bottomRight {
+            position: absolute;
+            z-index: -1;
+
+            @include breakpoint(large) {
+                display: block;
+                max-height: 1023px;
+                max-width: 1100px;
+                min-width: 980px;
+                width: 100%;
+                bottom: -10%;
+                right: -10%;
+            }
+
+            @include breakpoint(llarge) {
+                max-width: 1451px;
+                max-height: 1525px;
+                right: -13.5%;
+                bottom: -13.5%;
+            }
+        }
+    }
+
+   
+}

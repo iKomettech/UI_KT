@@ -1,0 +1,127 @@
+@import "util/util";
+$white: #ffffff;
+$primary-color: #007041;
+$img: "../../images/";
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+.testiTitle {
+    p, h2 {
+        font-size: 25px;
+        line-height: 55px;
+        font-weight: 700;
+        font-family: 'mundial';
+        text-align: center;
+        color: #00362A;
+
+        @include breakpoint(large) {
+            text-align: left;
+            font-size: 48px;
+        }
+    }
+
+    margin-bottom: 25px;
+
+    @include breakpoint(xlarge) {
+        margin-bottom: 40px;
+    }
+}
+
+.parentDiv{
+    position: relative;
+        .pattern{
+            display: none;
+            position: absolute;    
+            top: 20%;
+            min-width: 501px;
+            left: -19%;
+            z-index: -1;
+            z-index: -1;
+            @include breakpoint(medium){
+                display: block;
+                top: -5%;
+                left: -5%;
+            } 
+            @include breakpoint(medium){
+                top: -18%;
+                left: -5%; 
+            }
+            @include breakpoint(llarge){
+                top: -34%;
+                left: -10%;
+            }
+            img{
+               width: 100%;
+               height: 100%;
+               @include breakpoint(large){ 
+                max-width: 1023px;
+                max-height: 1100px;}
+                @include breakpoint(xlarge){
+                    max-width: 1451px;
+                    max-height: 1525px;
+                }
+            }
+        }
+    
+}
+.helpPanel {
+    margin-top: 26px;
+    position: relative;
+    @include breakpoint(large){
+        margin-top: 110px;
+    }
+
+    
+    .pattern {
+        position: absolute;
+        bottom: -40%;
+        right: 0;
+        z-index: -1;
+        min-width: 375px;
+        max-height: 410px;
+        width: 100%;
+        @include breakpoint(medium){
+            max-height: 799px;
+            max-width: 725px;
+            bottom: -58%;
+        }
+        @include breakpoint(large){
+            max-height: 1023px;
+            max-width: 1100px;
+            bottom: -65%;
+        }
+        @include breakpoint(llarge){
+            max-width: 1451px;
+            max-height: 1525px;
+            bottom: -73%;}
+        // &::after {
+        //     content: '';
+        //     width: calc(100% - 0px);
+        //     background: url('#{$img}industries/sub/helpPattern.svg') no-repeat;
+        //     height: calc(100% - 0px);
+        //     max-width: 1256px;
+        //     max-height: 1322px;
+        //     position: absolute;
+        //     top: 11%;
+        //     z-index: -1;
+        //     right: -5.5%;
+        // }
+
+        img{
+            @include breakpoint(large){
+                max-width: 1023px;
+                max-height: 1100px;
+            }
+            @include breakpoint(llarge){
+                max-width: 1451px;
+                max-height: 1525px;
+            }
+        }
+    }
+}

@@ -1,0 +1,432 @@
+@import "util/util";
+$white: #ffffff;
+$primary-color: #007041;
+$img: "../../images/";
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+.bannerpanel {
+    position: relative;
+    width: 100vw;
+    @media (max-width: 430px) {
+        margin-top: 32px;
+    }
+    @include breakpoint(medium only) {
+        margin-top: 24px;
+    }
+    @media (min-width:768px) and (max-width:800px){
+        margin-top: 14px;
+    }
+    @media (min-width:801px) and (max-width:900px){
+        margin-top: 20px;
+    }
+    .uhyPattern{
+        background-position: 0px 22.5% !important;
+        background-size: cover !important;
+        background-repeat: no-repeat;
+        top: 0;
+        right: -96px;
+        max-width: 1641px;
+        width: 100%;
+        max-height: 1182px;
+        height: 100%;
+        position: absolute;    opacity: 0.5;
+        @media (min-width:1024px) and (max-width:1279px){
+            background-position: 0px 32.5% !important;
+            background-size: cover !important;
+            background-repeat: no-repeat;
+            top: 0;
+            right: -75px;
+            max-width: 936px;
+            width: 100%;
+            max-height: 675px;
+            height: 100%;
+            position: absolute;  opacity: 0.5;
+        }
+        @media (max-width:767px){
+            right: -85px;
+            display: none;
+        }
+    }
+    .uhyPatternMobile{
+        background-size: cover !important;
+        background-repeat: no-repeat;
+        top: 0;
+        right: -12px;
+        max-width: 417px;
+        width: 100%;
+        max-height: 376px;
+        height: 100%;
+        position: absolute;
+        display: none;
+        @media (max-width:767px){
+            display: block;    opacity: 0.5;
+        }
+    }
+    .homeBanner {
+        .bannerwrap {
+            .grid-container{
+                max-width: 1440px;
+                width: 100%;
+                margin: 0 auto;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                @media (max-width: 1480px){
+                    left:-45px;
+                }
+                @media (max-width: 1359px){
+                    left:-105px;
+                }
+                @media (max-width: 1279px){
+                  left:-70px;
+                }
+                @media (max-width: 1023px){
+                  left:-60px;
+                }
+                @media (max-width: 767px){
+                    left:0px;
+                    max-width: 100%;
+                }
+                .content {
+                    &.right {
+                        position: absolute;
+                        top: 0;
+                        right: 0px;
+                        width: 100%;
+                        max-width: 100%;
+                        @media (max-width:767px) {
+                            margin-top: 28px;
+                        }
+                        @include breakpoint(medium) {
+                            max-width: 670px;
+                            margin-top: -28px;
+                        }
+                        @include breakpoint(large) {
+                            max-width: 955px;
+                            margin-top: -28px;
+                        }
+
+                        @include breakpoint(xlarge) {
+                            max-width: 955px;
+                            right: 12px;
+                            margin-top: 0;
+                        }
+                        @media (min-width:1280px) and (max-width:1360px){
+                            right: 12px;
+                            margin-top: 0;
+                        }
+                        @media (min-width:1280px) and (max-width:1300px){
+                            margin-top: -20px;
+                        }
+                        h1 {
+                            font-weight: 900;
+                            color: #C6FCF8;
+                            font-size: 30px;
+                            line-height: 37px;
+                            letter-spacing: -1.4px;
+                            text-align: center;
+                            text-shadow: 0px 3px 10px rgba(0,0,0,0.25);
+                            @media (max-width:430px) {
+                                max-width: 250px;
+                                margin-left: auto;
+                                margin-right: auto;
+                                margin-bottom: 16px;
+                                font-size: 35px;
+                            }
+                            @include breakpoint(medium) {
+                                text-align: right;
+                                letter-spacing: -1.6px;
+                                font-size: 40px;
+                                line-height: 46px;
+                            }
+                            @include breakpoint(large) {
+                                font-size: 41px;
+                                line-height: 46px;
+                                letter-spacing: -1.8px;
+                                margin-bottom: 28px;
+                            }
+
+                            @include breakpoint(xlarge) {
+                                font-size: 72px;
+                                line-height: 80px;
+                                margin-bottom: 56px;
+                                letter-spacing: -2.8px;
+                            }
+                            @media (min-width:1280px) and (max-width:1360px){
+                                font-size: 50px;
+                                line-height: 55px;
+                                letter-spacing: -2.8px;
+                                margin-bottom: 38px;
+                            }
+                        }
+
+                        p {
+                            font-size: 20px;
+                            line-height: 26px;
+                            font-weight: 700;
+                            color: #3BDBD0;
+                            letter-spacing: -0.8px;
+                            text-transform: uppercase;
+                            text-align: center;
+                            text-shadow: 0px 3px 10px rgba(0,0,0,0.25);
+                            @include breakpoint(medium) {
+                                letter-spacing: -0.5px;
+                                text-align: right;
+                                font-size: 30px;
+                            }
+                            @include breakpoint(large) {
+                                font-size: 35px;
+                                line-height: 28px;
+                                margin-bottom: 34px;
+                                margin-right: 0px;
+                                letter-spacing: -1.6px;
+                            }
+                            @include breakpoint(xlarge) {
+                                font-size: 62px;
+                                line-height: 51px;
+                                margin-bottom: 44px;
+                                margin-right: 2px;
+                                letter-spacing: -2.5px;
+                            }
+                            @media (min-width:1280px) and (max-width:1360px){
+                                font-size: 42px;
+                                line-height: 51px;
+                                letter-spacing: -2.8px;
+                                margin-right: 2px;
+                            }
+                        }
+                        .iconBanner{
+                            max-width: 480px;
+                            width: 100%;
+                            float: right;
+                            display: none;
+                            position: relative;
+                            @include breakpoint(xlarge) {
+                                max-width: 540px;
+                                display: block;
+                            }
+                            @media (min-width:1280px) and (max-width:1360px){
+                                display: block;
+                            }
+                            @media (min-width:1620px) {
+                                max-width: 625px;
+                            }
+                
+                            @media (min-width:1700px) {
+                                max-width: 645px;
+                                top: 35px;
+                            }
+                
+                            @media (min-width:1800px) {
+                                max-width: 685px;
+                            }
+                            .banner-icon{
+                                background-repeat: no-repeat;
+                                background-size: contain;
+                                width: 49px;
+                                height: 42px;
+                                display: block;
+                                margin: 0 auto;
+                                animation: arrow-pulse-down 1700ms linear infinite;
+                                position: relative;
+                                cursor: pointer;
+                            }
+                        }
+                        
+                    }
+                }
+            }
+
+            .imgWrap {
+                max-width: 100%;
+                width: 100%;
+                height: 100%;
+                max-height: 1157px;
+                @media (max-width: 490px){
+                    min-height: 624px;
+                    max-height: 624px;
+                    overflow: hidden;
+                }
+                @media (min-width:431px) and (max-width:1023px) {
+                    margin-top: 20px;
+                }
+                // @media (max-width: 767px){
+                //     min-height: 624px;
+                //     max-height: 624px;
+                //     overflow: hidden;
+                // }
+                &::before{
+                    @media (max-width: 767px){
+                        content: '';
+                        background: linear-gradient(180deg, rgba(5,10,42,0) 0%, rgba(5,10,42,0.43) 100%);
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                img{
+                    object-fit: cover;
+                    width: 100%;
+                    height: 100%;
+                    object-position: top;
+                    @media (max-width: 490px){
+                        height: 624px;
+                    }
+                    // @media (max-width: 767px){
+                    //     height: 624px;
+                    // }
+                }
+                .filter-img {
+                    .videoPanel{
+                        iframe {
+                            display: none;
+                        }
+                        &.loaded {
+                            iframe {
+                                display: block;
+                                visibility: visible;
+                                opacity: 1;
+                                left: 50%;
+                                top: 50%;
+                                transform: translate(-50%, -50%);
+                                border-radius: 0;
+                                height: 100%;
+                                width: 100%;
+                                position: absolute;
+                                z-index: 0;
+                                pointer-events: none;
+                                @media (max-width:767px) {
+                                    width: 300%;
+                                }
+                            }
+                        }
+                        &.youtubevideopanel{
+                            &.loaded {
+                                iframe {
+                                    @media (min-width:430px) {
+                                        transform: translate(-50%, -49.95%);
+                                    }
+                                }
+                            }
+                        }
+                    }                        
+                }
+            }
+        }
+    }
+}
+.bannervideosection{
+    .video-controller {
+        position: absolute;
+        right: 10px;
+        top:58px;
+        z-index: 9;
+        @include breakpoint(large) {
+            top:95px;
+            right: 10px;
+        }
+        @media (min-width:1024px) and (max-width:1279px){
+            top: 72px;
+            right: 5px;
+        }
+        @media screen and (min-width: 1700px) {
+            right: 20px;
+        }
+        .play-bt, .pause-bt, .play-bt-vimeo, .pause-bt-vimeo {
+            display: block;
+            background: url(#{$img}home/video-play.svg) no-repeat;
+            background-size: contain;
+            width: 21px;
+            height: 21px;
+            cursor: pointer;
+            margin-bottom: 9px;
+            @include breakpoint(large) {
+                width: 40px;
+                height: 40px;
+                margin-bottom: 19px;
+            }
+            @media (min-width:1024px) and (max-width:1279px){
+                width: 24px;
+                height: 24px;
+                margin-bottom: 8px;
+            }
+        }
+        .pause-bt, .pause-bt-vimeo {
+            background: url(#{$img}/home/video-pause.svg) no-repeat;
+            background-size: contain;
+        }
+        .mute-bt, .mute-bt-vimeo {
+            background: url(#{$img}home/video-mute.svg) no-repeat;
+            background-size: contain;
+            width: 21px;
+            height: 21px;
+            cursor: pointer;
+            margin-bottom: 9px;
+            @include breakpoint(large) {
+                width: 40px;
+                height: 40px;
+                margin-bottom: 19px;
+            }
+            @media (min-width:1024px) and (max-width:1279px){
+                width: 24px;
+                height: 24px;
+                margin-bottom: 8px;
+            }
+            &.mute {
+                background: url(#{$img}home/video-unmute.svg) no-repeat;
+                background-size: contain;
+                cursor: pointer;
+            }
+        }
+        .p-none{
+            pointer-events: none;
+            border-radius:50%;
+        }
+    }
+}
+.alertHeader ~ .main .bannervideosection {
+    top: -60px;
+    position: relative;
+    @media (max-width:1279px){
+        top: -14px;
+    }
+}
+
+.firefox{
+    .bannerpanel .homeBanner .bannerwrap .grid-container .content.right{
+        @include breakpoint(medium) {
+            max-width: 501px;
+        }
+        @include breakpoint(large) {
+            max-width: 956px;
+        }                  
+    }
+}
+
+@keyframes arrow-pulse-down {
+    0% {
+        bottom: 20px;
+        opacity: 0;
+    }
+    25% {
+        opacity: .25;
+    }
+    50% {
+        opacity: .5;
+    }
+    75% {
+        opacity: .75;
+    }
+    100% {
+        bottom: 10px;
+        opacity: 1;
+    }
+}

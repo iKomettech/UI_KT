@@ -1,0 +1,129 @@
+@import "util/util";
+$white: #ffffff;
+$primary-color: #007041;
+$img: "../../images/";
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+
+.authorPanel {
+    background-color: #DCE7E4;
+    padding: 10px 0 25px;
+    @include breakpoint(xlarge) {
+        // margin-top: 107px;
+        padding: 29px 0 45px;
+        margin-bottom: 110px;
+    }
+
+    .authTitle {
+        p, h2 {
+            text-align: center;
+            @include breakpoint(large){
+                text-align: left;
+            } 
+                font-size: 33px;
+                font-family: 'mundial';
+                line-height: 75px;
+                color: #00362A;
+                @include breakpoint(large){
+                    font-size: 48px;} 
+        }
+
+        @include breakpoint(large) {
+            margin-bottom:30px;
+        }
+        @include breakpoint(xlarge) {
+            margin-bottom:49px;
+        }
+    }
+
+    .authDetail {
+        display: flex;
+        gap: 13px;
+        flex-direction: column;
+        align-items: center;
+        @include breakpoint(large){
+            flex-direction: row;
+            align-items: inherit;
+        }
+        .lftBlock {
+            // width: 100%;
+            @include breakpoint(large){
+                width: 25%;
+            }
+            @include breakpoint(large only){
+                margin-right: 2%;
+            }
+            .imgBlock {
+                background: #fff;
+                padding: 12px;
+                border-radius: 15px;
+                max-width: 280px;
+                filter: drop-shadow(0px 3px 10px rgba(0, 0, 0, 0.25));
+
+                .insideImg {
+                    overflow: hidden;
+                    border-radius: 6px;
+                }
+            }
+        }
+
+        .rgtBlock {
+            width: 100%;
+            @include breakpoint(large){
+                width: 75%;
+                margin-top: 5px;
+            }
+            .authDesc {
+                .authName {
+                    p, h3 {
+                        font-size: 25px;
+                        line-height: 34px;
+                        font-family: 'mundial';
+                        font-weight: 700;
+                        color: #015844;
+                        @include breakpoint(large){
+                            font-size: 38px;
+                            line-height: 38px;}
+                    }
+                    margin-bottom: 12px;
+                }
+
+                .authPosition {
+                    p {
+                        font-size: 18px;
+                        font-weight: 600;
+                        font-family: 'mundial';
+                        line-height: 22px;
+                        color: #000;
+                    }
+                    margin-bottom: 5px;
+                    @include breakpoint(xlarge){
+                        margin-bottom: 11px;
+                    }
+                }
+
+                .descAuth {
+                    p {
+                        font-size: 18px;
+                        font-family: 'mundial';
+                        font-weight: normal;
+                        line-height: 24px;
+                        color: #000;
+                    }
+                    margin-bottom: 18px;
+                    @include breakpoint(xlarge){
+                        max-width: 849px;
+                        margin-bottom: 35px;
+                    }
+                }
+            }
+        }
+    }
+}

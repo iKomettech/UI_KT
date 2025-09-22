@@ -1,0 +1,2362 @@
+@import "util/util";
+$white: #ffffff;
+$primary: #007041;
+$primary-color: #007041;
+$img: "../../images/";
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+.testiTitle {
+    p, h2 {
+        font-size: 25px;
+        line-height: 32px;
+        font-weight: 700;
+        font-family: 'mundial';
+        text-align: center;
+        color: #00362A;
+
+        @include breakpoint(large) {
+            text-align: left;
+            font-size: 48px;
+            line-height: 55px;
+        }
+    }
+
+    margin-bottom: 20px;
+
+    @include breakpoint(xlarge) {
+        margin-bottom: 40px;
+    }
+}
+
+
+.divParent {
+    position: relative;
+
+
+}
+
+
+.featurePanel{
+    position: relative;
+    .grid-container{
+        position: relative;
+    .feature{
+        .carouselcontainer{
+            .featSlider{
+                .cardBlock {
+                    position: relative;
+                    padding: 122px 0 0;
+            
+                    @include breakpoint(large) {
+                        padding: 33px 0 30px;
+                    }
+            
+                    .flexdiv {
+                        display: flex;
+                        flex-direction: column;
+                        background: #fff;
+                        filter: drop-shadow(0px 3px 20px rgba(0, 0, 0, .16));
+                        position: relative;
+                        border-radius: 20px;
+            
+                        @include breakpoint(large) {
+                            flex-direction: row;
+                            background: linear-gradient(270deg, #fff 85%, transparent 80%);
+                            border-radius: 30px;
+                        }
+            
+                        @include breakpoint(xlarge) {
+            
+                            background: linear-gradient(270deg, #fff 80%, transparent 80%);
+                        }
+            
+                        .lftBlock {
+                            width: 100%;
+            
+                            @include breakpoint(large) {
+            
+                                width: 35%;
+                            }
+            
+                            @include breakpoint(xlarge) {
+            
+                                width: 33.6%;
+                            }
+            
+                            .imgCard {
+                                position: absolute;
+                                top: -115px;
+                                left: 50%;
+                                max-width: 237px;
+                                background: #fff;
+                                padding: 10px;
+                                width: 100%;
+                                border-radius: 50%;
+                                overflow: hidden;
+                                transform: translate(-50%, 0);
+            
+                                @include breakpoint(large) {
+                                    left: -10px;
+                                    top: -30px;
+                                    max-width: 345px;
+                                    padding: 15px;
+                                    transform: inherit;
+                                    z-index: -1;
+                                }
+            
+                                @include breakpoint(llarge) {
+                                    left: 0;
+                                    top: -34px;
+                                    max-width: 405px;
+                                    padding: 20px;
+                                }
+            
+                                @include breakpoint(xlarge) {
+                                    left: 0;
+                                    top: -62px;
+                                    max-width: 450px;
+                                    padding: 25px;
+                                }
+            
+                                .imgWrap {
+                                    border-radius: 50%;
+                                    overflow: hidden;
+                                    filter: drop-shadow(0px 3px 10px rgba(0, 0, 0, .25));
+            
+                                    img {
+                                        width: 100%;
+                                    }
+                                }
+                            }
+                        }
+            
+                        .rgtBlock {
+                            width: 100%;
+            
+                            @include breakpoint(large) {
+                                width: 65%;
+                            }
+            
+                            .cardSec {
+                                padding: 130px 15px 20px;
+                                // text-align: center;
+            
+                                @include breakpoint(large) {
+                                    text-align: left;
+                                    padding: 15px 10px 15px 0;
+                                    max-width: 615px;
+                                }
+            
+                                @include breakpoint(llarge) {
+                                    max-width: 715px;
+                                }
+            
+                                @include breakpoint(xlarge) {
+                                    padding: 28px 10px 21px 0;
+                                    max-width: 765px;
+                                }
+            
+                                .flxCol {
+                                    display: flex;
+                                    gap: 14px;
+                                    align-items: center;
+                                    margin-bottom: 2px;
+                                    justify-content: center;
+            
+                                    @include breakpoint(large) {
+                                        justify-content: flex-start;
+                                        margin-bottom: 6px;
+                                    }
+            
+                                    .dateCol {
+                                        p {
+                                            font-size: 15px;
+                                            font-family: 'mundial';
+                                            line-height: 18px;
+                                            color: #000;
+                                            font-weight: normal;
+                                        }
+                                    }
+            
+                                    .secTit {
+                                        p {
+                                            font-size: 17px;
+                                            font-family: 'mundial';
+                                            line-height: 20px;
+                                            color: #55973B;
+                                            font-weight: 700;
+                                        }
+                                    }
+                                }
+            
+                                .cardTitle {
+                                    p, a {
+                                        font-family: 'mundial';
+                                        font-size: 20px;
+                                        line-height: 24px;
+                                        font-weight: 600;
+                                        color: #000;
+                                        margin-bottom: 15px;
+                                        text-align: center;
+                                        display: block;
+                                        @include breakpoint(large) {
+                                            text-align: left;
+                                            font-size: 18px;
+                                            line-height: 22px;
+                                        }
+            
+                                        @include breakpoint(llarge) {
+                                            font-size: 28px;
+                                            line-height: 33px;
+                                            margin-bottom: 11px;
+                                        }
+                                    }
+                                    @include breakpoint(small only){
+                                        margin-bottom: 18px;
+                                    }
+                                }
+            
+                                .cardDesc {
+                                    p {
+                                        margin-bottom: 32px;
+                                        font-weight: 400;
+                                        font-size: 18px;
+                                        line-height: 24px;
+                                        font-family: 'mundial';
+            
+                                        @include breakpoint(large) {
+                                            font-size: 15px;
+                                            line-height: 20px;
+                                            margin-bottom: 22px;
+                                        }
+            
+                                        @include breakpoint(llarge) {
+                                            margin-bottom: 26px;
+                                            font-size: 18px;
+                                            line-height: 24px;
+                                        }
+            
+                                        +p{
+                                            display: none;
+                                        }
+                                    }
+                                }
+            
+                                .goIcon {
+                                    margin-right: 2px;
+                                    width: 35px;
+                                    height: 35px;
+                                    float: right;
+                                    margin-bottom: 15px;
+            
+                                    @include breakpoint(large) {
+                                        float: inherit;
+                                    }
+            
+                                    @include breakpoint(llarge) {
+                                        margin-right: 6px;
+                                        width: 45px;
+                                        height: 45px;
+                                        margin-bottom: 0;
+                                    }
+            
+                                    i {
+                                        background: url('#{$img}industries/search-go.svg') no-repeat;
+                                        background-size: contain;
+                                        width: 35px;
+                                        height: 35px;
+                                        display: block;
+                                        // position: absolute;
+                                        font-size: 0;
+                                        bottom: 10px;
+                                        right: 10px;
+                                        cursor: pointer;
+                                        transition: all .45s;
+            
+                                        @include breakpoint(llarge) {
+                                            width: 45px;
+                                            height: 45px;
+                                        }
+                                    }
+                                }
+            
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }}
+}
+
+
+.featureInsightsPanel {
+    margin-top: 71px;
+    background: #DCE7E4;
+    padding: 27px 0 25px;
+
+    @include breakpoint(large) {}
+
+    @include breakpoint(large) {
+        margin-top: 70px;
+
+        padding: 28px 0 70px;
+    }
+
+    .testiTitle {
+        p, h2 {
+            font-size: 25px;
+            line-height: 32px;
+            font-weight: 700;
+            font-family: 'mundial';
+            text-align: center;
+            color: #00362A;
+
+            @include breakpoint(large) {
+                text-align: left;
+                font-size: 48px;
+                line-height: 75px;
+            }
+        }
+
+        margin-bottom: 20px;
+
+        @include breakpoint(xlarge) {
+            margin-bottom: 73px;
+        }
+    }
+
+    .cardBlock {
+        position: relative;
+        padding: 122px 0 0;
+
+        @include breakpoint(large) {
+            padding: 33px 0 30px;
+        }
+
+        .flexdiv {
+            display: flex;
+            flex-direction: column;
+            background: #fff;
+            filter: drop-shadow(0px 3px 20px rgba(0, 0, 0, .16));
+            position: relative;
+            border-radius: 20px;
+
+            @include breakpoint(large) {
+                flex-direction: row;
+                background: linear-gradient(270deg, #fff 85%, transparent 80%);
+                border-radius: 30px;
+            }
+
+            @include breakpoint(xlarge) {
+
+                background: linear-gradient(270deg, #fff 80%, transparent 80%);
+            }
+
+            .lftBlock {
+                width: 100%;
+
+                @include breakpoint(large) {
+
+                    width: 35%;
+                }
+
+                @include breakpoint(xlarge) {
+
+                    width: 33.6%;
+                }
+
+                .imgCard {
+                    position: absolute;
+                    top: -115px;
+                    left: 50%;
+                    max-width: 237px;
+                    background: #fff;
+                    padding: 10px;
+                    width: 100%;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    transform: translate(-50%, 0);
+
+                    @include breakpoint(large) {
+                        left: -10px;
+                        top: -30px;
+                        max-width: 345px;
+                        padding: 15px;
+                        transform: inherit;
+                        z-index: -1;
+                    }
+
+                    @include breakpoint(llarge) {
+                        left: 0;
+                        top: -34px;
+                        max-width: 405px;
+                        padding: 20px;
+                    }
+
+                    @include breakpoint(xlarge) {
+                        left: 0;
+                        top: -62px;
+                        max-width: 450px;
+                        padding: 25px;
+                    }
+
+                    .imgWrap {
+                        border-radius: 50%;
+                        overflow: hidden;
+                        filter: drop-shadow(0px 3px 10px rgba(0, 0, 0, .25));
+
+                        img {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+
+            .rgtBlock {
+                width: 100%;
+
+                @include breakpoint(large) {
+                    width: 65%;
+                }
+
+                .cardSec {
+                    padding: 130px 15px 20px;
+                    // text-align: center;
+
+                    @include breakpoint(large) {
+                        text-align: left;
+                        padding: 15px 10px 15px 0;
+                        max-width: 615px;
+                    }
+
+                    @include breakpoint(llarge) {
+                        max-width: 715px;
+                    }
+
+                    @include breakpoint(xlarge) {
+                        padding: 28px 10px 21px 0;
+                        max-width: 765px;
+                    }
+
+                    .flxCol {
+                        display: flex;
+                        gap: 14px;
+                        align-items: center;
+                        margin-bottom: 2px;
+                        justify-content: center;
+
+                        @include breakpoint(large) {
+                            justify-content: flex-start;
+                            margin-bottom: 6px;
+                        }
+
+                        .dateCol {
+                            p {
+                                font-size: 15px;
+                                font-family: 'mundial';
+                                line-height: 18px;
+                                color: #000;
+                                font-weight: normal;
+                            }
+                        }
+
+                        .secTit {
+                            p {
+                                font-size: 17px;
+                                font-family: 'mundial';
+                                line-height: 20px;
+                                color: #55973B;
+                                font-weight: 700;
+                            }
+                        }
+                    }
+
+                    .cardTitle {
+                        p, a {
+                            font-family: 'mundial';
+                            font-size: 20px;
+                            line-height: 24px;
+                            font-weight: 600;
+                            color: #000;
+                            margin-bottom: 15px;
+                            text-align: center;
+                            display: block;
+                            @include breakpoint(large) {
+                                text-align: left;
+                                font-size: 18px;
+                                line-height: 22px;
+                            }
+
+                            @include breakpoint(llarge) {
+                                font-size: 28px;
+                                line-height: 33px;
+                                margin-bottom: 11px;
+                            }
+                        }
+                        @include breakpoint(small only){
+                            margin-bottom: 18px;
+                        }
+                    }
+
+                    .cardDesc {
+                        p {
+                            margin-bottom: 32px;
+                            font-weight: 400;
+                            font-size: 18px;
+                            line-height: 24px;
+                            font-family: 'mundial';
+
+                            @include breakpoint(large) {
+                                font-size: 15px;
+                                line-height: 20px;
+                                margin-bottom: 22px;
+                            }
+
+                            @include breakpoint(llarge) {
+                                margin-bottom: 26px;
+                                font-size: 18px;
+                                line-height: 24px;
+                            }
+
+                            +p{
+                                display: none;
+                            }
+                        }
+                    }
+
+                    .goIcon {
+                        margin-right: 2px;
+                        width: 35px;
+                        height: 35px;
+                        float: right;
+                        margin-bottom: 15px;
+                        margin-top: 15px;
+
+                        @include breakpoint(large) {
+                            float: inherit;
+                            margin-top: inherit;
+                        }
+
+                        @include breakpoint(llarge) {
+                            margin-right: 6px;
+                            width: 45px;
+                            height: 45px;
+                            margin-bottom: 0;
+                        }
+
+                        i {
+                            background: url('#{$img}industries/search-go.svg') no-repeat;
+                            background-size: contain;
+                            width: 35px;
+                            height: 35px;
+                            display: block;
+                            // position: absolute;
+                            font-size: 0;
+                            bottom: 10px;
+                            right: 10px;
+                            cursor: pointer;
+                            transition: all .45s;
+
+                            @include breakpoint(llarge) {
+                                width: 45px;
+                                height: 45px;
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+
+    
+}
+
+.patternPanel {
+    position: absolute;
+    top: 0;
+    max-width: 1450px;
+    width: 100%;
+    max-height: 1524px;
+    height: 100%;
+    right: 0;
+    z-index: -1;
+
+    .pattern {
+        position: absolute;
+        top: -34%;
+        right: -13%;
+        z-index: -11;
+
+    }
+}
+
+
+.resultPanel {
+    margin-bottom: 34px;
+
+    .resTitle {
+        p {
+            font-size: 48px;
+            line-height: 70px;
+            font-weight: 700;
+            font-family: 'mundial';
+            color: #00362A;
+        }
+    }
+
+    .resultData {
+        .flexResult {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            row-gap: 5px;
+            margin-bottom: 10px;
+
+            .flxData {
+                a {
+                    font-size: 18px;
+                    line-height: 20px;
+                    font-family: 'mundial';
+                    font-weight: 400;
+                    color: #000;
+                    text-decoration: none;
+                    @include breakpoint(large){
+                        font-size: 24px;
+                        line-height: 29px;}
+
+                    &::after {
+                        content: '';
+                        background: url('#{$img}industries/sub/closeIcon.svg') no-repeat;
+                        background-size: contain;
+                        display: inline-block;
+                        width: 15px;
+                        height: 15px;
+                        margin-left: 5px;
+
+                    }
+                }
+            }
+
+            .clear {
+                a {
+                    font-size: 18px;
+                    line-height: 20px;
+                    font-family: 'mundial';
+                    font-weight: 400;
+                    color: #007041;
+                    text-decoration: none;
+                    border-bottom: 1px solid #007041;
+                    @include breakpoint(large){
+                        font-size: 24px;
+                        line-height: 29px;}
+                }
+            }
+        }
+
+        .noOfResults {
+            p {
+                font-size: 18px;
+                line-height: 20px;
+                font-weight: 400;
+                font-size: 'mundial';
+                color: #007041;
+                
+                @include breakpoint(large){
+                    font-size: 24px;
+                    line-height: 29px;}
+            }
+        }
+    }
+}
+
+.accordionPanel {
+    margin-top: 24px;
+
+    @include breakpoint(llarge) {
+        margin-top: 80px;
+    }
+
+    .faq-accordion {
+        a {
+            font-family: 'mundial';
+            font-weight: 700;
+            color: #01362A;
+            text-decoration: none;
+            font-size: 20px;
+            line-height: 75px;
+
+            @include breakpoint(large) {
+                font-size: 28px;
+                line-height: 75px;
+            }
+
+            &.faq-cta {
+                &::after {
+                    content: '';
+                    height: 10px;
+                    width: 15px;
+                    background: url('#{$img}industries/sub/icon-top.svg') no-repeat;
+                    background-size: contain;
+                    position: relative;
+                    display: inline-block;
+                    vertical-align: middle;
+                    margin-left: 5px;
+                    transition: .2s all ease;
+                    transform: rotate(180deg);
+
+                    @include breakpoint(large) {
+                        height: 15px;
+                        width: 22px;
+                    }
+                }
+            }
+
+            &.active {
+                &::after {
+                    transition: .2s all ease;
+                    transform: rotate(0deg);
+                    height: 13px;
+
+                    @include breakpoint(large) {
+                        height: 19px;
+                    }
+                }
+
+            }
+        }
+
+        .faq-content {
+            background: #E4F1F1;
+            border-radius: 15px;
+            padding: 25px 28px;
+
+            @include breakpoint(llarge) {
+                padding: 52px 55px;
+            }
+
+            // padding: 52px 55px;
+
+            .flexAcc {
+                display: flex;
+                flex-direction: column;
+                row-gap: 25px;
+
+                @include breakpoint(large) {
+                    justify-content: space-between;
+                    flex-direction: row;
+                }
+
+
+
+                .flexAcc1 {
+                    width: 100%;
+                    max-height: 320px;
+                    overflow: hidden;
+
+                    @include breakpoint(large) {
+                        width: 22.5%;
+                        max-height: 320px;
+                        overflow: hidden;
+                        // background: #ffffff;
+                    }
+                }
+
+                .skinPlank,
+                .skinPlank ul {
+                    margin: 0;
+                    padding: 0;
+                    list-style: none;
+                }
+
+                .skinPlank ul {
+                    display: none;
+                    background: #fff;
+
+                    &::before {
+                        content: inherit;
+                    }
+
+                    //zoom:1
+                }
+
+                .skinPlank li {
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                    display: block;
+
+                    &::before {
+                        content: inherit;
+                    }
+
+                    //zoom:1;
+                    .last {
+                        padding-bottom: 5px !important;
+                    }
+                }
+
+                .skinPlank {
+                    a {
+                        font: 700 24px / 33px 'mundial';
+                        color: #007041;
+                        background: #ffffff;
+                        padding: 6px 25px 6px 10px;
+                        display: block;
+                        text-decoration: none;
+                        -webkit-transition: all 0.3s ease;
+                        -moz-transition: all 0.3s ease;
+                        -o-transition: all 0.3s ease;
+                        -ms-transition: all 0.3s ease;
+                        transition: all 0.3s ease;
+                        position: relative;
+                    }
+
+                    .harOpen {
+                        border-bottom: 1px solid #007041;
+                        color: #007041;
+                        padding: 8px 25px 3px 10px;
+                    }
+                }
+                .no-height {
+                    height: inherit !important;
+                }
+
+                .skinPlank a:hover,
+                .skinPlank a.cur {
+                    background: #ffffff
+                }
+
+                .skinPlank ul li {
+
+                    // border-top:1px solid #007041;
+                    &::before {
+                        content: inherit;
+                    }
+                    ul{
+                        .flxBox { 
+                        padding: 11px 15px 0px 10px;
+                        }
+                    }
+                }
+
+                .skinPlank ul {
+                    a {
+                        font: 600 18px / 20px 'mundial';
+                        color: #000000; 
+                        padding: 11px 25px 0px 10px;
+                        background: #ffffff;
+                        box-shadow: none;
+                        display: block;
+                        text-decoration: none;
+                        margin-bottom: 2px;
+                        z-index: 1;
+                    }
+
+                    li {
+                        .harOpen {
+                            margin-bottom: 0;
+                            padding-bottom: 10px;
+                        }
+                    }
+
+                    
+
+                    .flxBox {
+                        display: flex;
+                        justify-content: space-between;
+                        padding: 11px 25px 0px 10px;
+                        margin-bottom: 4px;
+
+                        span {
+                            max-width: 240px;
+                            font: 600 18px / 20px 'mundial';
+                            color: #000000;
+                            background: #ffffff;
+                        }
+
+                        [type='checkbox'] {
+                            margin-bottom: 0;
+                        }
+
+                        input[type=checkbox] {
+                            position: relative;
+                            cursor: pointer;
+                            height: 16px;
+                        }
+
+                        input[type=checkbox]:before {
+                            content: "";
+                            display: block;
+                            position: absolute;
+                            width: 16px;
+                            height: 16px;
+                            border-radius: 0 !important;
+                            top: 0;
+                            left: 0;
+                            border: 2px solid #555555;
+                            border-radius: 3px;
+                            background-color: white;
+                        }
+
+                        input[type=checkbox]:checked:after {
+                            content: "";
+                            display: block;
+                            width: 5px;
+                            height: 10px;
+                            border: solid black;
+                            border-width: 0 2px 2px 0;
+                            -webkit-transform: rotate(45deg);
+                            -ms-transform: rotate(45deg);
+                            transform: rotate(45deg);
+                            position: absolute;
+                            top: 2px;
+                            left: 6px;
+                        }
+                    }
+
+                    background: #fff;
+                    height: 275px;
+                    overflow-y: auto;
+                    z-index: 9;
+
+                    &::-webkit-scrollbar {
+                        width: 9px;
+                        background: #93B2A9;
+                    }
+
+                    &::-webkit-scrollbar-thumb {
+                        border-radius: 0px;
+                        background: #007041;
+                        height: 2px;
+                    }
+
+                    ul {    
+                        height: auto;
+                        max-height: 170px;
+                        margin-top: -2px;
+                        border-bottom: 1px solid #007041;
+                    }
+                }
+
+                .skinPlank ul a.cur {
+                    color: #000;
+                    background: #ffffff;
+                }
+
+                .skinPlank ul a:hover {
+                    background: #ffffff
+                } 
+                .skinPlank ul ul li {
+                    // border-top:1px solid #007041;    
+                    // padding: 13px 8px 0 10px;
+                    // font-size: 16px;
+                    // line-height: 19px;
+                    // color: #000;
+                    // display: flex;
+                    // justify-content: space-between;
+
+                    [type='checkbox'] {
+                        margin-bottom: 0;
+                        position: relative;
+                        cursor: pointer;
+                        height: 16px;
+
+                        &::before {
+                            content: "";
+                            display: block;
+                            position: absolute;
+                            width: 16px;
+                            height: 16px;
+                            border-radius: 0 !important;
+                            top: 0;
+                            left: 0;
+                            border: 2px solid #555555;
+                            border-radius: 3px;
+                            background-color: white;
+                        }
+                    
+                    }
+                    input[type='checkbox']:checked:after {
+                        content: "";
+                        display: block;
+                        width: 5px;
+                        height: 10px;
+                        border: solid black;
+                        border-width: 0 2px 2px 0;
+                        -webkit-transform: rotate(45deg);
+                        -ms-transform: rotate(45deg);
+                        transform: rotate(45deg);
+                        position: absolute;
+                        top: 2px;
+                        left: 6px;
+                    }
+
+                    &::before {
+                        content: inherit;
+                    }
+
+
+                }
+
+                // .skinPlank ul ul a,
+                // .skinPlank ul ul a.cur {
+                //     background: #CED3D9
+                // }
+
+                // .skinPlank ul ul a:hover {
+                //     background: #c0c5cc
+                // }
+
+                .skinPlank a.harFull:before {
+                    //zoom:1;
+                    content: '';
+                    width: 15px;
+                    background: url(../../images/industries/sub/icon-top.svg) no-repeat;
+                    background-size: contain;
+                    height: 14px;
+                    border: 0;
+                    display: inline-block;
+                    filter: brightness(0.1);
+                    margin: 10px 0 0 10px;
+                    position: absolute;
+                    top: 6px;
+                    right: 22px;
+                    transform: rotate(180deg);
+                    transition: .2s ease;
+                }
+
+                .skinPlank a.harFull.harOpen:before {
+                    transform: rotate(0deg);
+                    transition: .2s ease;
+                }
+
+                .skinPlank ul a.harFull.harOpen:before {
+                    transform: rotate(0deg);
+                    filter: inherit;
+                }
+
+                .skinPlank ul a.harFull:before {
+                    //zoom:1;
+                    content: '';
+                    border-left-color: #7d7d7d;
+                    margin-top: 4px;
+                }
+
+                /*skin Clear [.skinClear]*/
+                .skinClear,
+                .skinClear ul {
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                    font: 14px/1.2em Arial, Helvetica, sans-serif
+                }
+
+                .skinClear ul {
+                    display: none;
+                    margin: 0 0 0 10px;
+                    //zoom:1
+                }
+
+                .skinClear li {
+                    list-style: none;
+                }
+
+                .skinClear a {
+                    color: #888;
+                    display: block;
+                    position: relative;
+                    text-decoration: none;
+                    padding: 1px 0 1px 9px;
+                }
+
+                .skinClear a:before {
+                    //zoom:1;
+                    content: '';
+                    width: 0;
+                    height: 0;
+                    border: 0;
+                    border-top: 3px solid transparent;
+                    border-left: 4px solid #ccc;
+                    border-bottom: 3px solid transparent;
+                    display: inline-block;
+                    position: absolute;
+                    top: 5px;
+                    left: 0px;
+                    margin: 0 4px 0 0;
+                }
+
+                .skinClear a.harFull.harOpen:before {
+                    border: 0;
+                    border-left: 3px solid transparent;
+                    border-top: 4px solid #000;
+                    border-right: 3px solid transparent;
+                    top: 7px;
+                }
+
+                .skinClear a.harFull:before {
+                    border: 0;
+                    border-top: 3px solid transparent;
+                    border-left: 4px solid #000;
+                    border-bottom: 3px solid transparent;
+                    top: 5px;
+                }
+
+                .skinClear a:hover {
+                    text-decoration: underline;
+                }
+
+                .skinClear a.cur {
+                    color: #000
+                }
+
+                .skinClear a.harOpen {
+                    color: #000
+                }
+
+                .flex-div {
+                    display: flex;
+                }
+
+            }
+
+            .searchContainer {
+                margin-top: 20px;
+
+                @include breakpoint(large) {
+                    margin-top: 32px;
+                }
+
+                .flexi-row {
+                    input {
+                        max-width: 890px;
+                        height: 40px;
+                        margin: 0 auto;
+                        border-radius: 50px;
+                        font-size: 16px;
+                        line-height: 19px;
+                        color: #C7C7C7;
+                        font-family: 'mundial';
+                        padding: 5px 20px;
+                        &::placeholder{
+                            color: #C7C7C7;}
+
+                        @include breakpoint(large) {
+                            font-size: 28px;
+                            line-height: 34px;
+                            height: 68px;
+                            padding: 5px 44px;
+                        }
+                    }
+
+
+                }
+
+                .reserachLst {
+                    background: #ffffff;
+                    padding-left: 7px;
+                    padding-top: 25px;
+                    padding-right: 22px;
+                    // width: 355px;
+                    padding-bottom: 50px;
+                    position: relative;
+                    top: 0px;
+                    border-radius: 25px;
+                    // position: absolute;
+                    z-index: 19;
+                    left: 0;
+                    right: 0;
+                    margin: 0 auto;
+
+                    @media (min-width: 640px) {
+                        padding-left: 34px;
+                    }
+
+                    @media (min-width: 1200px) {
+                        padding-top: 78px;
+                    }
+
+                    @include breakpoint(medium) {
+                        max-width: 890px;
+                    }
+
+                    @include breakpoint(xlarge) {
+                        // width: 890px;
+                    }
+
+                    .bottomBtn {
+                        display: flex;
+                        flex-wrap: nowrap;
+                        justify-content: space-between;
+                        align-items: center;
+                        background: #672046;
+                        position: absolute;
+                        width: 100%;
+                        left: 0;
+                        bottom: -13px;
+                        border-radius: 0px 0px 24px 24px;
+                        overflow: hidden;
+                        padding-top: 8px;
+                        padding-bottom: 15px;
+                        padding-left: 20px;
+                        padding-right: 0px;
+                        color: #ffffff;
+
+
+                        .goIcon {
+                            width: 31px;
+                            height: 31px;
+                            margin-right: 6px;
+                            position: relative;
+                            top: -2px;
+
+                            i {
+                                background: url('#{$img}/settings/search-go.svg') no-repeat;
+                                background-size: contain;
+                                width: 31px;
+                                height: 31px;
+                                display: block;
+                                position: absolute;
+                                font-size: 0;
+                                top: 6px;
+                                right: 6px;
+                                cursor: pointer;
+                                -webkit-transition: all .45s;
+                                transition: all .45s;
+
+                                &:hover {
+                                    margin-right: 4px;
+                                }
+                            }
+                        }
+                    }
+
+                    .match {
+                        font-size: 16px;
+                        line-height: 19px;
+                        color: #8D8D8D;
+
+                        @media (min-width: 1200px) {
+                            font-size: 18px;
+                            line-height: 30px;
+                        }
+                    }
+
+                    ul {
+                        margin: 0;
+
+                        li,
+                        li>a {
+                            margin-bottom: 10px;
+                            padding-left: 0px;
+
+                            &::before {
+                                content: inherit;
+                            }
+
+                            font-size: 16px;
+                            line-height: 19px;
+
+                            @media (min-width: 1200px) {
+                                font-size: 18px;
+                                line-height: 30px;
+                            }
+                        }
+                    }
+                }
+
+                .flex-btn {
+                    max-width: 242px;
+                    margin: 0 auto;
+                    margin-top: 25px;
+                    display: flex;
+                    justify-content: space-evenly;
+
+                    @include breakpoint(medium) {
+                        justify-content: space-between;
+                        margin-top: 35px;
+                    }
+
+                    .submitbtn {
+                        font-size: 17px;
+                        line-height: 24px;
+                        font-weight: 700;
+                        padding: 5px 15px;
+                        height: 38px;
+                        border-radius: 50px;
+                        border: 2px solid #015844;
+                        color: #015844;
+
+                        @include breakpoint(medium) {
+                            font-size: 20px;
+                            padding: 7px 25px;
+                            height: 42px;
+                        }
+                    }
+
+                    .resetbtn {
+                        font-size: 17px;
+                        line-height: 24px;
+                        font-weight: 700;
+                        padding: 5px 15px;
+                        height: 38px;
+                        border-radius: 50px;
+                        border: 2px solid #015844;
+                        color: #015844;
+
+                        @include breakpoint(medium) {
+                            font-size: 20px;
+                            padding: 7px 25px;
+                            height: 42px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.latestInsightPanel {
+    margin-top: 53px;
+    position: relative;
+
+    @include breakpoint(large) {
+        margin-top: 24px;
+    }
+
+    .testiTitle {
+        p {
+            font-size: 25px;
+            line-height: 32px;
+            font-weight: 700;
+            font-family: 'mundial';
+            text-align: center;
+            color: #00362A;
+
+            @include breakpoint(large) {
+                text-align: left;
+                font-size: 48px;
+                line-height: 55px;
+            }
+        }
+
+        margin-bottom: 20px;
+
+        @include breakpoint(llarge) {
+            margin-bottom: 35px;
+        }
+    }
+
+    .flexdiv {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+
+        @include breakpoint(large) {
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .viewPagination {
+            margin-bottom: 26px;
+
+            .flexPage {
+                display: flex;
+                align-items: center;
+                gap: 0px;
+                flex-direction: column;
+
+                @include breakpoint(medium) {
+                    gap: 5px;
+                    flex-direction: row;
+                }
+
+                @include breakpoint(large) {
+                    gap: 10px;
+                }
+
+                .descPage {
+                    p {
+                        font-size: 16px;
+                        line-height: 19px;
+                        font-weight: 400;
+                        font-family: 'mundial';
+
+                        @include breakpoint(large) {
+                            font-size: 20px;
+                            line-height: 24px;
+                        }
+                    }
+                }
+
+                .pageCount {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    margin-left: 0;
+
+                    li {
+                        width: 35px;
+                        height: 35px;
+                        background: #B3CCC5;
+                        border-radius: 50%;
+                        padding-left: 0;
+                        text-align: center;
+                        margin-bottom: 0;
+                        align-items: center;
+
+                        @include breakpoint(large) {
+                            width: 48px;
+                            height: 48px;
+                        }
+
+                        a {
+                            font-size: 20px;
+                            line-height: 32px;
+                            font-weight: 400;
+                            font-family: 'mundial';
+                            color: #01362A;
+                            text-decoration: none;
+                            display: block;
+
+                            @include breakpoint(large) {
+                                font-size: 35px;
+                                line-height: 42px;
+                            }
+                        }
+
+                        &::before {
+                            content: inherit;
+                        }
+
+                        &:hover {
+                            background: #01362A;
+
+                            a {
+                                color: #fff;
+                            }
+                        }
+                    }
+
+                    .active {
+                        background: #01362A;
+
+                        a {
+                            color: #fff;
+                            background: transparent;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .colFlex {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+
+        @include breakpoint(large) {
+            gap: 50px;
+        }
+
+
+
+        .lftImageCard{
+            border-radius: 15px;
+            @include breakpoint(large) {
+                border-radius: 15px 30px 30px 15px;
+            }
+        }
+        .rgtImageCard{
+            border-radius: 15px;
+            @include breakpoint(large) {
+                border-radius:30px 15px 15px 30px  ;
+            }
+
+        }
+        .lftImageCard,
+        .rgtImageCard {
+            background: #fff;
+            filter: drop-shadow(0 3px 10px rgba(0, 0, 0, .16));
+            // border-radius: 15px;
+            overflow: hidden;
+
+            @include breakpoint(large) {
+                // border-radius: 30px;
+            }
+
+            .cardFlex {
+                display: flex;
+                flex-direction: column;
+
+                @include breakpoint(large) {
+                    flex-direction: row;
+                }
+
+                .lftCard {
+                    width: 100%;
+                    position: relative;
+
+                    @include breakpoint(large) {
+                        width: 45%;
+                    }
+
+                    @include breakpoint(large) {
+                        width: 49%;
+                    }
+
+                    @include breakpoint(xlarge) {
+                        width: 34.3%;
+                    }
+
+                    .imgWrap {
+                        overflow: hidden;
+
+                        img {
+                            width: 100%;
+                        }
+                    }
+                    .video-image {
+                        height: 100%;
+
+                        &.loaded {
+                            display: block;
+                            visibility: visible;
+                            opacity: 1;
+
+                            &::before,
+                            &::after {
+                                display: none;
+                            }
+
+                            iframe {
+                                display: block;
+                                visibility: visible;
+                                opacity: 1;
+                            }
+                        }
+
+                        iframe {
+                            display: none;
+                            opacity: 0;
+                            visibility: hidden;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            right: 0;
+                            bottom: 0;
+                            width: 100%;
+                            height: 100%; 
+                        }
+
+                        &.loading {
+                            &:before {
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                content: "";
+                                border-radius: 100%;
+                                border: 5px solid;
+                                border-top-color: $secondary-color;
+                                border-bottom-color: $primary-color;
+                                border-left-color: $secondary-color;
+                                border-right-color: $primary-color;
+                                -webkit-animation: spin 1s ease-in-out infinite;
+                                animation: spin 1s ease-in-out infinite;
+                                -webkit-animation-delay: -0.8s;
+                                animation-delay: -0.8s;
+                                width: 60px;
+                                height: 60px;
+                                margin: -29px 0 0 -26px;
+                                -webkit-transition: none;
+                                transition: none;
+                                background-image: none;
+                            }
+
+                            &::after {
+                                content: "";
+                                display: block;
+                                height: 100%;
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                z-index: 1;
+                                background-color: rgba(37, 32, 32, 0.4);
+                                background-image: none;
+                                margin: 0px;
+                                -webkit-transition: none;
+                                transition: none;
+                                transition: none;
+                            }
+                        }
+
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            top: 0;
+                            bottom: 0;
+                            left: 0;
+                            right: 0;
+                            margin: auto;
+                            width: 45px;
+                            height: 45px;
+                            background-image: url("#{$img}/settings/play-icon.svg");
+                            background-size: cover;
+                            background-repeat: no-repeat;
+                            cursor: pointer;
+                            -webkit-transition: all 0.3s;
+                            transition: all 0.3s;
+                            z-index: 9;
+
+                            @include breakpoint(medium) {
+                                width: 65px;
+                                height: 65px;
+                            }
+
+                            @include breakpoint(large) {
+                                width: 90px;
+                                height: 90px;
+                            }
+
+                            @include breakpoint(xlarge) {
+                                width: 110px;
+                                height: 110px;
+                            }
+                        }
+
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                            top: 0;
+                            bottom: 0;
+                            left: 0;
+                            right: 0;
+                            background-color: rgba(0, 0, 0, 0.20);
+                        }
+
+                        &:hover {
+                            &::before {
+                                transform: scale(0.85);
+                            }
+
+                            &::after {
+                                opacity: 0;
+                            }
+
+                        }
+                    }
+                    &:hover{
+                        .video-image{
+                            &::after{
+                                content: unset;
+                            }
+                        }
+                    }
+                }
+
+                .rgtCard {
+                    width: 100%;
+
+                    @include breakpoint(large) {
+                        width: 65.7%;
+                    }
+
+                    .cardSec {
+                        padding: 7px 10px 15px;
+
+                        @include breakpoint(large only) {
+                            padding: 35px 10px 7px 30px;
+                        }
+
+                        @include breakpoint(llarge) {
+                            padding: 25px 50px 15px;
+                        }
+
+                        .flxCol {
+                            display: flex;
+                            gap: 20px;
+                            align-items: center;
+                            margin-bottom: 2px;
+                            justify-content: center;
+
+                            @include breakpoint(large only) {
+                                justify-content: flex-start;
+                                margin-bottom: 10px;
+                            }
+
+                            @include breakpoint(llarge) {
+                                justify-content: flex-start;
+                                margin-bottom: 5px;
+                            }
+
+                            .dateCol {
+                                p {
+                                    font-size: 16px;
+                                    line-height: 19px;
+                                    font-family: 'mundial';
+                                    color: #000;
+                                    font-weight: normal;
+
+                                    @include breakpoint(large only) {
+                                        font-size: 19px;
+                                        line-height: 20px;
+                                        margin-bottom: 0;
+                                    }
+
+                                    @include breakpoint(llarge) {
+                                        font-size: 20px;
+                                        line-height: 24px;
+                                    }
+                                }
+                            }
+
+                            .titCol {
+                                p, a {
+                                    font-size: 16px;
+                                    font-family: 'mundial';
+                                    line-height: 19px;
+                                    color: #55973B;
+                                    font-weight: 700;
+                                    text-decoration: none;
+                                    @include breakpoint(large only) {
+                                        font-size: 19px;
+                                        line-height: 20px;
+                                        margin-bottom: 0;
+                                    }
+
+                                    @include breakpoint(llarge) {
+                                        font-size: 20px;
+                                        line-height: 24px;
+                                    }
+                                    &:hover{
+                                        text-decoration: underline;
+                                    }
+                                }
+                            }
+
+                            .durCol {
+                                p {
+                                    font-size: 16px;
+                                    font-family: 'mundial';
+                                    line-height: 20px;
+                                    color: #000;
+                                    font-weight: normal;
+
+                                    @include breakpoint(large only) {
+                                        font-size: 19px;
+                                        line-height: 20px;
+                                        margin-bottom: 0;
+                                    }
+
+                                    @include breakpoint(llarge) {
+                                        font-size: 20px;
+                                    }
+                                }
+                            }
+                        }
+
+                        .cardTitle {
+                            margin: 0 20.5px;
+
+                            @include breakpoint(small only) {
+                                margin-bottom: 13px;
+                            }
+
+                            @include breakpoint(large) {
+                                margin: inherit;
+                                // word-wrap: break-word;
+                                // display: -webkit-box;
+                                // -webkit-box-orient: vertical;
+                                // -webkit-line-clamp: 2;
+                                // overflow: hidden;
+                                margin-bottom: 5px;
+                            }
+
+                            @include breakpoint(llarge) {
+                                max-width: 700px;
+                                margin: inherit;
+                            }
+
+                            p, a {
+                                font-size: 20px;
+                                line-height: 24px;
+                                font-weight: 600;
+                                font-family: 'mundial';
+                                text-align: center;
+
+                                @include breakpoint(large only) {
+                                    text-align: left;
+                                    font-size: 20px;
+                                    line-height: 24px;
+                                    margin-bottom: 12px;
+                                }
+
+                                @include breakpoint(large) {
+                                    margin: inherit;
+                                    // word-wrap: break-word;
+                                    // display: -webkit-box;
+                                    // -webkit-box-orient: vertical;
+                                    // -webkit-line-clamp: 2;
+                                    // overflow: hidden;
+                                }
+
+                                @include breakpoint(llarge) {
+                                    text-align: left;
+                                    font-size: 24px;
+                                    line-height: 29px;
+                                    margin-bottom: 9px;
+                                }
+
+                            }
+                        }
+
+                        .cardDesc {
+                            @include breakpoint(llarge) {
+                                max-width: 769px;
+                            }
+
+                            p {
+                                font-size: 18px;
+                                font-weight: 400;
+                                line-height: 24px;
+                                font-family: 'mundial';
+                                @include breakpoint(large){
+                                    // word-wrap: break-word;
+                                    // display: -webkit-box;
+                                    // -webkit-box-orient: vertical;
+                                    // -webkit-line-clamp: 2;
+                                    // overflow: hidden;
+                                }
+                                @include breakpoint(llarge) {
+                                    margin-bottom: 20px;
+                                }
+                                +p{
+                                    // display: none;
+                                }
+                            }
+                        }
+
+                        .goIcon {
+                            margin-right: 2px;
+                            width: 35px;
+                            height: 35px;
+                            float: right;
+                            margin-bottom: 15px;
+                            transition: all ease-in-out .2s;
+
+                            // @include breakpoint(large only) {
+                            //     margin-bottom: 8px;
+                            // }
+                            @include breakpoint(large){
+                                float: inherit;}
+
+                            @include breakpoint(llarge) {
+                                margin-bottom: 0px;
+
+                                float: inherit;
+                            }
+
+                            @include breakpoint(llarge) {
+                                margin-right: 6px;
+                                width: 45px;
+                                height: 45px; 
+                            }
+
+                            i {
+                                background: url('#{$img}industries/search-go.svg') no-repeat;
+                                background-size: contain;
+                                width: 35px;
+                                height: 35px;
+                                display: block;
+                                // position: absolute;
+                                font-size: 0;
+                                bottom: 10px;
+                                right: 10px;
+                                cursor: pointer;
+                                transition: all .45s;
+
+                                @include breakpoint(llarge) {
+                                    width: 45px;
+                                    height: 45px;
+                                }
+                            }
+                            &:hover{
+                                padding-left: 5px;
+                                transition: all ease-in-out .2s;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .rgtImageCard {
+            .cardFlex {
+
+                @include breakpoint(large) {
+                    flex-direction: row-reverse;
+                }
+            }
+
+            // background: #fff;
+            // filter: drop-shadow(0 3px 10px rgba(0, 0, 0, .16));
+            // border-radius: 30px;
+            // overflow: hidden;
+
+            // .cardFlex {
+            //     display: flex;
+            //     flex-direction: row-reverse;
+
+            //     .lftCard {
+            //         width: 100%;
+
+            //         @include breakpoint(large) {
+            //             width: 34.3%;
+            //         }
+
+            //         .imgWrap {
+            //             overflow: hidden;
+            //         }
+            //     }
+
+            //     .rgtCard {
+            //         width: 100%;
+
+            //         @include breakpoint(large) {
+            //             width: 65.7%;
+            //         }
+
+            //         .cardSec {
+            //             padding: 22px 50px 15px;
+
+            //             .flxCol {
+            //                 display: flex;
+            //                 gap: 20px;
+            //                 align-items: center;
+            //                 margin-bottom: 2px;
+            //                 justify-content: center;
+
+            //                 @include breakpoint(large) {
+            //                     justify-content: flex-start;
+            //                     margin-bottom: 3px;
+            //                 }
+
+            //                 .dateCol {
+            //                     p {
+            //                         font-size: 20px;
+            //                         font-family: 'mundial';
+            //                         line-height: 24px;
+            //                         color: #000;
+            //                         font-weight: normal;
+            //                     }
+            //                 }
+
+            //                 .titCol {
+            //                     p {
+            //                         font-size: 20px;
+            //                         font-family: 'mundial';
+            //                         line-height: 24px;
+            //                         color: #55973B;
+            //                         font-weight: 700;
+            //                     }
+            //                 }
+
+            //                 .durCol {
+            //                     p {
+            //                         font-size: 20px;
+            //                         font-family: 'mundial';
+            //                         line-height: 38px;
+            //                         color: #000;
+            //                         font-weight: normal;
+            //                     }
+            //                 }
+            //             }
+
+            //             .cardTitle {
+            //                 max-width: 586px;
+
+            //                 p {
+            //                     font-size: 24px;
+            //                     font-weight: 600;
+            //                     line-height: 29px;
+            //                     font-family: 'mundial';
+
+            //                     @include breakpoint(llarge) {
+            //                         margin-bottom: 12px;
+            //                     }
+            //                 }
+            //             }
+
+            //             .cardDesc {
+
+            //                 @include breakpoint(xlarge){
+            //                     max-width: 769px;                                
+            //                 }
+
+            //                 p {
+            //                     font-size: 18px;
+            //                     font-weight: 400;
+            //                     line-height: 24px;
+            //                     font-family: 'mundial';
+
+
+            //                     @include breakpoint(llarge) {
+            //                         margin-bottom: 32px;
+            //                     }
+            //                 }
+            //             }
+
+            //             .goIcon {
+            //                 margin-right: 2px;
+            //                 width: 35px;
+            //                 height: 35px;
+            //                 float: right;
+            //                 margin-bottom: 15px;
+
+            //                 @include breakpoint(large) {
+
+            //                     float: inherit;
+            //                 }
+
+            //                 @include breakpoint(llarge) {
+            //                     margin-right: 6px;
+            //                     width: 45px;
+            //                     height: 45px;
+            //                     margin-bottom: 0;
+            //                 }
+
+            //                 i {
+            //                     background: url('#{$img}industries/search-go.svg') no-repeat;
+            //                     background-size: contain;
+            //                     width: 35px;
+            //                     height: 35px;
+            //                     display: block;
+            //                     // position: absolute;
+            //                     font-size: 0;
+            //                     bottom: 10px;
+            //                     right: 10px;
+            //                     cursor: pointer;
+            //                     transition: all .45s;
+
+            //                     @include breakpoint(llarge) {
+            //                         width: 45px;
+            //                         height: 45px;
+            //                     }
+            //                 }
+            //             }
+            //         }
+            //     }
+            // }
+        }
+    }
+
+    
+    .paginate {
+        margin-top: 58px;
+
+        @include breakpoint(small only) {
+            max-width: 345px;
+        }
+
+        .item {
+            .simple-pagination {
+                display: flex;
+                margin-left: 0;
+                gap: 10px;
+
+                @include breakpoint(small only) {
+                    justify-content: space-between;
+                    gap: 3px;
+                }
+
+                li {
+                    font-size: 16px;
+                    line-height: 19px;
+                    font-family: 'mundial';
+                    font-weight: 400;
+                    padding: 0px;
+                    min-width: 23px;
+                    text-align: center;
+
+                    @include breakpoint(medium){
+                        font-size: 20px;
+                        line-height: 24px;
+                        padding: 0px;
+                        min-width: 27px;
+                    }
+
+                    &:not(:nth-child(-n+2)):not(:nth-last-child(-n+2)):not(.pages):hover {
+
+
+
+                        // width: 27px;
+                        // height: 27px;
+                        padding: 0px;
+                        border-radius: 15px;
+                        background-color: #01362A;
+                        text-align: center; 
+                        // @include breakpoint(medium){ 
+                        //     padding: 0 8px; 
+                        // }
+
+                        a {
+                            color: #fff;
+                        }
+                    }
+
+
+                    a {
+                        text-decoration: none;
+
+                        .prevbtn,
+                        .nextbtn {
+                            background: #DCE7E4;
+                            border-radius: 20px;
+                            padding: 3px 8px 5px;
+                            font-size: 16px;
+                            line-height: 21px;
+                            @include breakpoint(medium){
+                                padding: 3px 15px 5px;}
+
+                            @include breakpoint(large) {
+                                font-size: 20px;
+                                line-height: 24px;
+                            }
+
+                            &:hover {
+                                background: #007041;
+                                color: #fff;
+                            }
+                        }
+
+
+                    }
+
+                    .prevIcon,
+                    .nextIcon {
+                        i {
+                            background: url('#{$img}industries/sub/prev.svg') no-repeat;
+                            background-size: contain;
+                            width: 19px;
+                            height: 19px;
+                            display: block;
+                            font-size: 0;
+                            bottom: 10px;
+                            right: 10px;
+                            cursor: pointer;
+                            transition: all .45s;
+
+                            @include breakpoint(medium) {
+                                width: 24px;
+                                height: 24px;}
+                            @include breakpoint(large) {
+                                width: 27px;
+                                height: 27px;
+                            }
+                        }
+                    }
+
+                    .nextIcon {
+                        i {
+                            background: url('#{$img}industries/sub/next.svg') no-repeat;    
+                            background-size: contain;
+                        }
+                    }
+
+                    &::before {
+                        content: inherit;
+                    }
+
+                }
+
+                .active {
+                    // width: 27px;
+                    // height: 27px;
+                    padding: 0px;
+                    border-radius: 15px;
+                    background-color: #01362A;
+                    text-align: center;
+                    @include breakpoint(medium){
+                        padding: 0px;}
+
+                    a {
+                        color: #fff;
+                        background-color: transparent;
+                    }
+                }
+
+
+            }
+
+
+        }
+    }
+}
+
+
+
+.job-panel {
+    margin-top: 110px;
+    margin-bottom: 60px;
+
+    .job-title {
+        font-size: 80px;
+        font-weight: 800;
+        line-height: 1.2;
+        color: $primary;
+        padding-top: 25px;
+        padding-bottom: 20px;
+        text-transform: uppercase;
+    }
+
+    .accordion {
+        // border: 1px solid #ccc;
+        border-radius: 4px;
+        overflow: hidden;
+
+        .accordion-item {
+            margin-bottom: 15px;
+
+            .accordion-header {
+                background-color: $primary;
+                padding: 12px 7px 13px 56px;
+                border-radius: 10px;
+                cursor: pointer;
+
+                .flexi {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    h1 {
+                        font-size: 40px;
+                        color: #fff;
+                        font-weight: 800;
+                    }
+
+                    p {
+                        color: #fff;
+
+                        .flx {
+                            display: flex;
+                            justify-content: space-between;
+
+                            span {
+                                font-size: 17.5px;
+                            }
+
+                            img {
+                                filter: invert(1);
+                                transform: scale(0.8);
+                            }
+                        }
+                    }
+                }
+
+            }
+
+            .accordion-content {
+                padding: 30px 55px;
+                background: #000;
+                color: #fff;
+                display: none;
+                height: auto;
+                transition: all .5s ease;
+            }
+
+            // .active {
+            //     display: block;
+            //   }
+        }
+    }
+
+
+
+}
+
+
+
+
+
+h2,
+hr {
+    clear: both
+}
+
+/*plugin css*/
+
+/*skin Plank [.skinPlank]*/
+
+
+
+
+
+.ladder {
+    margin: 1em 0;
+
+    ul {
+        font-weight: bold;
+        color: yellow;
+        margin: 0;
+        line-height: 1.1;
+
+        ul {
+            li {
+                height: auto;
+                max-height: 4em;
+                padding: 0;
+                transition: max-height .3s 0 ease-in;
+                overflow: visible;
+            }
+        }
+
+        .collapse {
+            li {
+                height: 0;
+                max-height: 0;
+                overflow: hidden;
+            }
+        }
+    }
+
+    li {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    a {
+        text-decoration: none;
+        padding: .5em 1em;
+        display: block;
+        background: blue;
+        border-top: 1px solid gray;
+
+        &:link,
+        &:visited {
+            color: yellow;
+        }
+
+        &:hover {
+            background: blue;
+            color: yellow;
+        }
+    }
+}
+#industryListItemId{
+    .flxBox{
+        padding: 11px 15px 0px 10px;
+    }
+}

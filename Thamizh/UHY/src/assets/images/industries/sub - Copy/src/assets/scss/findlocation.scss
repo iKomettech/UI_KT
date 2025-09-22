@@ -1,0 +1,107 @@
+@import "util/util";
+$white: #ffffff;
+$primary-color: #007041;
+$bgpanel-color:#dce7e4;
+$black:#000000;
+$img: "../../images";
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+.findlocationPannel {
+  background: $bgpanel-color;
+  padding-top: 24px;
+  padding-bottom: 30px;
+  margin-top:90px;
+  @include breakpoint(medium){
+    padding-top: 44px;
+    padding-bottom: 58px;
+    margin-top: 115px;
+  }
+  @include breakpoint(llarge){
+    padding-top: 34px;
+    padding-bottom: 49px;
+    margin-top: 110px;
+  }
+  .wraps{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    justify-content: center; 
+    align-items: center;
+    max-width: 100%;
+    padding: 0 18px;
+    @include breakpoint(medium){
+      flex-wrap: nowrap;
+      max-width: 894px;
+      padding: 0;
+    }
+    .secondarybtn{
+      &::after{
+        display: none;
+      }
+    }
+  }
+  h3  { 
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 30px;
+    text-align: center;
+    max-width: 100%;
+    width: 100%;
+    margin-bottom: 8px; 
+    color: #00362A;
+    @include breakpoint( small only){
+      margin-bottom: 17px;
+    }
+    @include breakpoint(medium){
+      color: #00362A;
+      font-size: 35px;
+      line-height: 42px;
+      max-width: 340px;
+      padding-left: 0;
+      margin-bottom: 0;
+      margin-right: 20px;
+    }
+    @include breakpoint(large){
+      margin-right: 48px;
+    }
+    @include breakpoint(llarge){
+      font-size: 48px;
+      line-height: 58px;
+      max-width: 463px;
+      margin-right: 50px;
+    }
+  }
+form {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+  .form-group {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    margin-right: 15px;
+    @include breakpoint(medium){
+      max-width: 554px;
+      margin-right: 20px;
+    }
+  }
+  }
+
+}
+
+.firefox{
+  .findlocationPannel h3{
+    @include breakpoint(llarge){
+      max-width: 464px;
+    }
+  }
+}

@@ -1,0 +1,130 @@
+@import "util/util";
+$white: #ffffff;
+$primary-color: #004986;
+$secondary-color: #B58412;
+$img: "../../images";
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+.insight-img{
+    position: relative;
+    cursor: pointer;
+    height: 100%;
+    .video-thumb-image{
+        height: 100%;
+        &.loaded{
+            display: block;
+            visibility: visible;
+            opacity: 1;
+            &::before, &::after{
+                display: none;
+            }
+            iframe {
+                display: block;
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+        iframe{
+            display: none;
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+    }
+    &.loading{
+        &:before{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            content: "";
+            border-radius: 100%;
+            border: 5px solid;
+            border-top-color: $secondary-color;
+            border-bottom-color: $primary-color;
+            border-left-color: $secondary-color;
+            border-right-color: $primary-color;
+            -webkit-animation: spin 1s ease-in-out infinite;
+            animation: spin 1s ease-in-out infinite;
+            -webkit-animation-delay: -0.8s;
+            animation-delay: -0.8s;
+            width: 60px;
+            height: 60px;
+            margin: -29px 0 0 -26px;
+            -webkit-transition: none;
+            transition: none;
+            background-image: none;
+        }
+        &::after{
+            content: "";
+            display: block;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1;
+            background-color: rgba(37, 32, 32, 0.4);
+            background-image: none;
+            margin: 0px;
+            -webkit-transition: none;
+            transition: none;
+            transition: none;
+        }
+    }
+    &::before{
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 62px;
+        height: 62px;
+        background-image: url("#{$img}/settings/play-icon.svg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+        z-index: 9;
+        @include breakpoint(large){
+            width: 85px;
+            height: 85px;
+        }
+    }
+    &::after{
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(0, 0, 0, 0.20);
+  }
+  &:hover{
+      &::before{
+          transform: scale(0.85);
+      } 
+      &::after{
+          opacity: 0;
+      }
+      img{
+          transform: scale(1.2);
+      }
+  }
+    }
+}

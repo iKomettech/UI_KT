@@ -1,0 +1,116 @@
+@import "util/util";
+$white: #ffffff;
+$black:#000000;
+$primary-color: #007041;
+$img: "../../images";
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+.page404Wrap {
+    text-align: center;
+    padding-top: 45px;
+    background-color:#dce7e4;
+    @include breakpoint(medium) {
+      padding-top: 90px;
+    }
+    @include breakpoint(llarge) {
+      padding-top: 140px;
+    }
+    .blueBg {
+      margin: 0px auto;
+      width: 100%;
+      background-color:#dce7e4;
+      text-align: center;
+      padding: 68px 0px 76px 0px;
+      @include breakpoint(large only) {
+        max-width: 100%;
+        padding: 0px 30px 40px 30px;
+      }
+      @include breakpoint(medium only) {
+        max-width: 100%;
+        padding: 0px 30px 30px 30px;
+      }
+      @include breakpoint(small only) {
+        max-width: 100%;
+        padding: 0px 20px 30px 20px;
+      }
+      .pt-0{
+       margin-top:0px;
+      }
+    }
+    h1 {
+      color: $primary-color;
+      font-weight: 700;
+      font-size: 50px;
+      line-height:40px;
+      padding-bottom: 15px;
+      padding-top: 36px;
+      @include breakpoint(medium) {
+        font-size: 80px;
+        line-height:65px;
+      }
+      @include breakpoint(large) {
+        font-size: 100px;
+        line-height:95px;
+      }
+      @include breakpoint(xlarge) {
+        font-size: 150px;
+      }
+    }
+    h3 {
+      margin-top: 0px;
+      font-size: 30px;
+      line-height:35px;
+      color: $primary-color;
+      text-transform: uppercase;
+      font-weight: 700;
+      @include breakpoint(medium) {
+        font-size: 60px;
+        line-height:65px;
+      }
+      @include breakpoint(large) {
+        font-size: 70px;
+        line-height:95px;
+      }
+      @include breakpoint(xlarge) {
+        font-size: 80px;
+      }
+    }
+  
+    p{
+      color:$black;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 25px;
+      max-width: 1236px;
+      margin: 0 auto;
+      padding-top: 20px;
+      @include breakpoint(medium) {
+        font-size: 20px;
+        line-height: 25px;
+      }
+      @include breakpoint(large) {
+        font-size: 25px;
+        line-height: 30px;
+        padding-top: 30px;
+      }
+      @include breakpoint(xlarge) {
+        font-size: 36px;
+        line-height: 45px;
+        padding-top: 60px;
+      }
+      a {
+        font-weight:600;
+        text-decoration: none;
+      }
+    }
+  
+    
+  }
+  
