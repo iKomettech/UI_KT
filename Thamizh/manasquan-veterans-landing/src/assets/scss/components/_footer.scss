@@ -1,0 +1,145 @@
+footer {
+    &.tworow {
+        margin: 0px 0 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        position: relative;
+        padding-top: 30px;
+        ul {
+            margin-left: 0;
+            margin-top: 0;
+        }
+        @include breakpoint(large) {
+            padding-top: 70px;
+        }
+    }
+    .footersec {
+        padding: 21px 0px 35px;
+        width: 100%;
+        @include breakpoint(medium) {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 50px 0px 40px;
+            @include breakpoint(large) {
+                flex-wrap: wrap;
+                padding: 71px 0px 72px;
+                justify-content: space-between;
+            }
+        }
+    }
+    .primaryfooter {
+        width: 100%;
+        display: flex;
+        flex-wrap: nowrap;
+        @media (min-width:1600px){
+            margin-left: 5px;
+        }
+        .column-1 {
+            width: 100%;
+            max-width: 50%;
+            .fLogo{
+                max-width: 100%;
+                padding-bottom: 25px;
+                @include breakpoint(small only) {
+                    padding-bottom: 15px;
+                }
+                img{
+                    @include breakpoint(small only) {
+                        max-width: 133px;
+                    }
+                }
+            }
+            .fdicLogo{
+                padding-top: 15px;
+                padding-left: 14px;
+                @include breakpoint(small only){
+                    width: 150px;
+                }
+            }
+        }
+        .column-2{
+            width: 100%;
+            max-width: 50%;
+            .shoulderLogo{
+                position: relative;
+                @media (min-width:320px) and (max-width:1360px){
+                    position: unset;
+                }
+                img{
+                    position: absolute;
+                    top: 0px;
+                    right: 10px;
+                    @media (min-width:320px) and (max-width:1360px){
+                        top: unset !important;
+                        bottom: 0;
+                    }
+                    @media (min-width:320px) and (max-width:520px){
+                        bottom: 70px;
+                        width: 40%;
+                    }
+                    @media (min-width:521px) and (max-width:1280px){
+                        width: 50%;
+                    }
+                    @include breakpoint(large){
+                        top: -100px;
+                        right: 0px;
+                    }
+                }
+            }
+        }
+    }
+    .secondaryfooter {
+        background: $primary-color;
+        padding-top: 26px;
+        padding-bottom: 18px;
+        @include breakpoint(large) {
+            padding-top: 55px;
+            padding-bottom: 34px;
+        }
+        @media (min-width: 768px) and (max-width: 1279px) {
+            padding-top: 36px;
+            padding-bottom: 40px;
+        }
+        .grid-container{
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            @include breakpoint(small only) {
+                justify-content: center;
+            }
+            @include breakpoint(large) {
+                flex-wrap: nowrap;
+                align-items: flex-end;
+            }
+            @media (min-width: 768px) and (max-width: 1279px) {
+                flex-wrap: wrap;
+            }
+        .column-1 {
+            width: 100%;
+            max-width: 100%;
+            ul{
+                width: 100%;
+                display: flex;
+                flex-wrap: nowrap;
+                align-items: center;
+                li{
+                    color: $white;
+                    font-size: 12px;
+                    line-height: 18px;
+                    position: relative;
+                    left: 0px;
+                    @include breakpoint(small only) {
+                        font-size: 10px;
+                    }
+                    @include breakpoint(large) {
+                        font-size: 13.2px;
+                    }
+                }
+            }
+        }
+    }
+}
+}

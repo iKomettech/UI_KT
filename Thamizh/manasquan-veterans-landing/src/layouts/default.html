@@ -1,0 +1,171 @@
+{{!-- This is the base layout for your project, and will be used on every page unless specified. --}}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manasquan Bank | Vets Landing</title>
+    <meta name="title" content="Manasquan Bank | Vets Landing" />
+    <meta name="description" content="You’ve served your country honorably. Now you’re ready for your next challenge." />
+    <link rel="shortcut icon" type="image/x-icon" href="{{root}}assets/images/favicon.ico">         
+    <link rel="stylesheet" href="{{root}}assets/css/global/font.css">
+    <link rel="stylesheet" href="{{root}}assets/css/global/jquery-ui.min.css">
+    <link rel="stylesheet" href="{{root}}assets/css/global/owl.carousel.css" />
+    <link rel="stylesheet" href="{{root}}assets/css/global/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="{{root}}assets/css/global/swiper.min.css" />
+    <link rel="stylesheet" href="{{root}}assets/css/global/style.css" media="all">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="skiptocontent"><a href="#maincontent" alt="skip to main content">skip to main content</a></div>
+    <div class="loaderBlock">
+        <div class="svgAnimation">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="50" />
+            </svg>
+        </div>
+        <div class="loaderWrap">
+            <img src="{{root}}assets/images/manasquan-logo.svg" alt="Manasquan Bank Loader" width="256"/>
+        </div>
+    </div>
+    <div class="sitewrap">
+        <header class="sticky module">
+            <div class="grid-container">
+                <div class="headerblock">
+                    <div class="logoblock">
+                        <div class="medal-logo">
+                            <img src="{{root}}assets/images/we-hire-vets-medal-header.png" alt="Manasquan Medal Logo" width="81" height="202" />
+                        </div>
+                        <div class="logo">
+                            <a href="index.html">
+                                <img src="{{root}}assets/images/manasquan-logo.svg" alt="Manasquan Bank Header Logo" width="230" height="60" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="headerMainWrapper">
+                        <div class="headerWrapper">
+                            <div class="hamburger">
+                                <a href="#" class="mhamburger" title="Mobile hamburger">
+                                    <span></span>
+                                </a>
+                            </div>
+                            <div class="header-menu">
+                                <ul class="mainMenu">
+                                    <li class="dropdownMenu">
+                                        <a class="first-level-link" href="#ourmission">Our Mission</a>
+                                   </li>
+                                    <li class="dropdownMenu">
+                                        <a class="first-level-link" href="#workpanel">Reasons to work with us</a>
+                                    </li>
+                                    <li class="dropdownMenu">
+                                        <a class="first-level-link" href="#jobpanel">Job Opportunities</a>
+                                    </li>
+                                    <li class="dropdownMenu">
+                                        <a class="first-level-link" href="#testipanel">Testimonials</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="dropdownMenu applycta">
+                                <a class="ctabtn secondarybtn" href="#">Apply</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-wrapper">
+                <nav role="navigation">
+                    <div class="nav-toggle">
+                        <span class="nav-back"></span>
+                        <span class="nav-close"></span>
+                    </div>
+                    <div class="menu-section">
+                        <ul class="topmeu">
+                            <li class="">
+                                <a href="#ourmission">Our Mission </a>
+                            </li>
+                            <li class="">
+                                <a href="#workpanel">Reasons to work with us</a>
+                            </li>
+                            <li class="">
+                                <a href="#jobpanel">Job Opportunities</a>
+                            </li>
+                            <li class="">
+                                <a href="#testipanel">Testimonials</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <div class="stickyEmpty">
+        </div>
+        <div class="main" id="maincontent">
+        {{!-- Pages you create in the src/pages/ folder are inserted here when the flattened page is created. --}} {{>
+        body}}
+        </div>
+        <footer class="tworow module">
+            <div class="grid-container">
+                <div class="footersec">
+                    <div class="primaryfooter">
+                        <div class="column-1">
+                            <div class="fLogo">
+                                <a href="#"><img src="{{root}}assets/images/manasquan-logo.svg" alt="Manasquan Bank Footer" width="597" height="156" /></a>
+                            </div>
+                            <div class="fdicLogo">
+                                <img src="{{root}}assets/images/FDCI-EHL-footer-logo.png" alt="Manasquan FDCI EHIL" width="266" height="96" />
+                            </div>
+                        </div>
+                        <div class="column-2">
+                            <div class="shoulderLogo">
+                                <img src="{{root}}assets/images/footer-soldier-image.png" alt="Manasquan Footer Soldier" width="668" height="586" />
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+            <div class="secondaryfooter">
+                <div class="grid-container">
+                    <div class="column-1">
+                        <ul class="footerlinks copyright"> 
+                            <li>Copyright © <span id="copyright-year"></span> Manasquan Bank 2221 Landmark Place, Wall NJ 08736</li>
+                        </ul>
+                    </div>
+                </div> 
+            </div>
+        </footer>
+    </div>
+</body>
+
+
+<div class="paginacontainer">
+    <div class="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 118.041;"></path>
+        </svg>
+    </div>
+
+</div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.11/jquery.lazy.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".lazy").Lazy({
+                afterLoad: function (element) {
+                    $("img").removeClass("layzeloading");
+                }
+            });
+        });
+</script>
+
+<script src="{{root}}assets/scripts/global/nprogress.js" defer></script>
+<script src="{{root}}assets/scripts/global/jquery-ui.min.js" defer></script>
+<script src="{{root}}assets/scripts/global/imagetoSVG.js" defer></script>
+<script src="{{root}}assets/scripts/global/custom.js" defer></script>
+<script src="{{root}}assets/scripts/global/swiper.min.js" defer></script>
+<script src="{{root}}assets/scripts/global/owl.carousel.min.js" defer></script>
+</body>
+</html>
