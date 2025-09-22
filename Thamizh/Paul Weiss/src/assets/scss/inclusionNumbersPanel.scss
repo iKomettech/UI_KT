@@ -1,0 +1,564 @@
+@import "util/util";
+$img: "../../images/";
+$bgpanel-color: #B9C8DA;
+$mediumbluebgpanel: #0B3D71;
+$white: #ffffff;
+$bgpanel-color: #B9C8DA;
+$mediumbluebgpanel: #0B3D71;
+$medium-color: #0B3D71;
+$primarybgcolor: #001F3F;
+$breakpoints: (
+  small: 0,
+  medium: 768px,
+  large: 1024px,
+  llarge: 1280px,
+  xlarge: 1360px,
+  xxlarge: 1440px,
+);
+
+
+
+.inclusionNumbersPanel {
+  margin-top: calc(clamp(1.25rem, 7.937vw - 0.699rem, 4.375rem));
+  // padding: 20px 0;
+  padding-top: calc(clamp(1.25rem, 11.111vw - 1.479rem, 5.625rem));
+  padding-bottom: calc(clamp(1.25rem, 13.175vw - 1.986rem, 6.438rem));
+
+  @include breakpoint(large) {
+    margin-top: calc(clamp(4.375rem, 2.557vw + 2.739rem, 5.5rem));
+    
+    padding-top: calc(clamp(5.625rem, 8.523vw + 0.17rem, 9.375rem));
+    padding-bottom: calc(clamp(6.438rem, 6.676vw + 2.165rem, 9.375rem));
+  }
+  position: relative;
+  z-index: 9;
+  color:white;
+  background-color:$primarybgcolor;
+
+  .grid-container {
+    .flex-box {
+      border-top: 10px solid $medium-color;
+
+
+      .flexWrap {
+        padding-bottom: calc(clamp(0rem, 10.476vw - 2.573rem, 4.125rem));
+
+        @include breakpoint(medium) {
+          display: flex;
+          // padding-bottom: 25px;
+          align-items: center;
+          justify-content: space-between;
+        }
+
+        @include breakpoint(large) {
+          padding-bottom: calc(clamp(4.125rem, 0.852vw + 3.58rem, 4.5rem));
+        }
+
+        // @include breakpoint(llarge) {
+        //   padding-bottom: 72px;
+        // }
+
+        .wraptitle {
+          width: 100%;
+
+          h2 {
+            text-align: left;
+            margin-top: calc(clamp(0.625rem, 2.381vw + 0.04rem, 1.563rem));   
+            line-height: 100%;
+            letter-spacing: -0.05em;
+            color: $white;
+            font-size: clamp(55px, calc(55px + (64 - 55) * ((100vw - 393px) / (1024 - 393))), 64px) ;
+            @include breakpoint(large) {                         
+              // margin-top: 25px; 
+              font-size: clamp(64px, calc(64px + (85 - 64) * ((100vw - 1024px) / (1728 - 1024))), 85px) ;
+            }
+          }
+
+          // @media (min-width: 767px) {
+          //   width: 353px;
+          // }
+
+          // @include breakpoint(large) {
+          //   width: 285px;
+          // }
+
+          @include breakpoint(medium) {
+            width: 51%;
+          }
+
+          @include breakpoint(large) {
+            width: 45%;
+          }
+
+        }
+
+        .flxcontentwrap {
+          display: none;
+          width: 49%;
+          margin-top: 36px;
+          padding-left: 10px;
+
+          @include breakpoint(medium) {
+            display: block;
+            padding-left: 30px;
+          }
+
+          @include breakpoint(large) {
+            width: 55%;
+            padding-left: 10px;
+          }
+
+
+          @include breakpoint(large) {
+            margin-top: calc(clamp(1.438rem, 0.994vw + 0.801rem, 1.875rem));
+            padding-left: calc(clamp(0.5rem, 0.568vw + 0.136rem, 0.75rem));
+            max-width: 46%;
+          }
+
+          @include breakpoint(llarge) {
+            max-width: 49%;
+          //   margin-top: 30px;
+          //   padding-left: 12px;
+          }
+
+          p {
+            font-family: "UntitledSerif";
+            font-style: normal;
+            font-weight: 400;            
+            font-size: clamp(18px, calc(18px + (22 - 18) * ((100vw - 393px) / (1360 - 393))), 22px) ;
+            line-height: 123.6%;
+            /* or 27px */
+            letter-spacing: -0.01em;
+            word-break: break-word;       
+          }
+        }
+
+      }
+    }
+
+    .dis-flex {
+      justify-content: space-between;
+
+      @include breakpoint(medium) {
+        display: block;
+      }
+
+      @include breakpoint(llarge only) {
+        gap: 15px;
+      }
+
+      @include breakpoint(llarge) {
+        display: flex;
+      }
+
+    }
+
+    .dis-flex {
+      .leftListItems {
+        display: flex;
+        justify-content: center;
+        padding: 0px 0px;
+        margin: 0 0;
+        flex-wrap: wrap;
+        position: relative;
+
+        // z-index: 10;
+        @include breakpoint(large) {
+          width: 100%;
+          max-width: 81.5%;
+        }
+
+        @include breakpoint(llarge) {
+          width: 100%;
+          max-width: 50.6%;
+          margin-right: 2.4%;
+
+        }
+
+        @include breakpoint(xxlarge) {
+          width: 45.6%;
+          max-width: 45.6%;
+          margin-right: 6.4%;
+        }
+
+        .parent {
+          width: 100%;
+
+          .counter-col {
+            max-width: 100%;
+            display: flex;
+            width: 100%;
+            border-top: 3px solid $medium-color;
+
+            &:first-child {
+              margin-bottom: calc(clamp(0.5rem, 9.524vw - 1.839rem, 4.25rem));
+
+              // @include breakpoint(medium) {
+              //   margin-bottom: 68px;
+              // }
+            }
+
+            &:nth-child(2) {
+              margin-bottom: calc(clamp(0.625rem, 7.619vw - 1.246rem, 3.625rem));
+
+              // @include breakpoint(medium) {
+              //   margin-bottom: 55px;
+              // }
+
+              // @include breakpoint(large) {
+              //   margin-bottom: 58px;
+              // }
+
+              @include breakpoint(xxlarge) {
+                margin-bottom: 55px;
+              }
+            }
+
+
+            p {
+              font-weight: bold;
+              text-decoration: none;
+              word-break: break-word;
+              font-size: calc(clamp(0.875rem, 1.27vw + 0.563rem, 1.375rem));
+              line-height: 27px;
+              font-weight: 700;
+              letter-spacing: 0.5px;            
+              @include breakpoint(small only) {
+                font-size: 14px;
+                line-height: 16px;
+                font-weight: 400;
+              }
+            }
+
+            .count-digit {
+              font-size: calc(clamp(3.438rem, 26.19vw - 2.996rem, 13.75rem)); 
+              line-height: 80%;
+              margin-top: calc(clamp(0.25rem, 0.317vw + 0.172rem, 0.375rem));
+              font-family: "UntitledSerif";
+              color: white;
+              text-transform: uppercase;
+              text-align: left;
+              width: auto;
+              letter-spacing: -2px;
+              font-weight: 700;
+              position: relative;
+
+              @include breakpoint(medium) {
+                // font-size: 170px;
+                font-family: "UntitledSerif";
+                font-weight: 400;
+                // margin-top: 6px;
+                width: 50%;
+              }
+
+              @include breakpoint(large) {
+                // font-size: 220px;
+                line-height: 157.8px;
+                letter-spacing: -12.3px;
+                width: 50%;
+
+              }
+
+              // @include breakpoint(xlarge){
+              //   margin-top: 0;
+              //   margin-bottom: 24px;
+
+              // }
+              // @include breakpoint(llarge only){
+              //   width: 330px;
+              //   max-width: 330px;
+              //   font-size: 140px;
+
+              // }
+              // @include breakpoint(xlarge only){
+              //   width: 420px;
+              //   max-width: 420px;
+              //   font-size: 170px;
+              // }
+
+            }
+
+            .content {
+              width: calc(clamp(12.5rem, 15.873vw + 8.601rem, 18.75rem));
+              max-width: calc(clamp(12.5rem, 15.873vw + 8.601rem, 18.75rem));
+              display: grid;
+              margin-top: calc(clamp(0.25rem, 2.063vw - 0.257rem, 1.063rem));
+              justify-content: space-between;
+              align-content: space-between;
+              padding-top: 8px;
+              // @include breakpoint(small only) {
+              //   width: 200px;
+              //   max-width: 200px;
+              //   margin-top: 4px;
+              // }
+
+              @include breakpoint(large) {
+                width: calc(clamp(17.625rem, -3.409vw + 19.807rem, 16.125rem));
+                max-width: calc(clamp(17.625rem, -3.409vw + 19.807rem, 16.125rem));
+                padding-top: 0px;
+              }
+
+              // @include breakpoint(llarge) {
+              //   width: 285px;
+              //   max-width: 285px;
+              // }
+
+              p {
+                letter-spacing: -0.01em;
+                color: #FFFFFF;
+                font-family: 'UntitledSerif';
+                font-style: normal;
+                font-weight: 700;
+                line-height: 115%;
+                font-size: clamp(14px, calc(14px + (18 - 14) * ((100vw - 393px) / (768 - 393))), 18px) ;
+                @include breakpoint(medium) {
+                  // font-size: 18px;
+                  font-size: clamp(18px, calc(18px + (22 - 18) * ((100vw - 768px) / (1024 - 768))), 22px) ;
+                }
+              }
+            }
+
+            .plus::after {
+              content: "";
+              position: absolute;
+              background: url('#{$img}settings/percentage.svg') no-repeat;
+              width: 100%;
+              background-size: contain;
+              height: 25px;
+              top: 16px;
+              z-index: 11;
+              margin-left: 5px;
+              @include breakpoint(small only) {
+                content: '%';
+                font-family: 'ABCDiatype';
+                font-size: 80%;
+                background: none;
+                top:6%;
+              }
+              @include breakpoint(medium) {
+                top: 34px;
+                height: calc(clamp(5rem, 11.765vw - 0.647rem, 6.875rem));
+              }
+
+              @include breakpoint(large) {
+                top: inherit;
+                bottom: 0;
+                // height: 110px;
+              }
+              @include breakpoint(llarge) {
+                 width: calc(clamp(4.688rem, 8.036vw - 1.741rem, 6.938rem));
+                 margin-left: 9px;
+                 height: calc(clamp(4.688rem, 8.036vw - 1.741rem, 6.938rem));
+                 top:50px;
+              }
+              @include breakpoint(xxlarge) {
+                margin-left: 5px;
+              }
+              // @media (min-width: 800px) {
+              //   margin-left: 5px;
+              //   font-size: 150px;
+              //   line-height: 116.6%;
+              // }
+            }
+          }
+        }
+      }
+
+      .rightBoxList {
+        margin-top: calc(clamp(2.188rem, 7.46vw + 0.355rem, 5.125rem));
+        width: 100%;
+
+        // @include breakpoint(large) {
+        //   margin-top: 82px;
+        // }
+
+        @include breakpoint(llarge) {
+          width: 45%;
+          margin-top: 0;
+        }
+
+        @include breakpoint(xxlarge) {
+          width: 48%;
+        }
+
+        .insteadCard {
+          padding: 19px 20px 36px;
+          background: $mediumbluebgpanel;
+          margin-bottom: 20px;
+
+          @include breakpoint(large) {
+            // padding: 15px 20px 20px;
+            padding-top: calc(clamp(0.938rem, 1.42vw + 0.028rem, 1.563rem));
+            padding-bottom: calc(clamp(1.25rem, 0.71vw + 0.795rem, 1.563rem));
+            padding-inline: calc(clamp(1.25rem, 2.557vw - 0.386rem, 2.375rem));
+
+          }
+
+          // @include breakpoint(llarge) {
+          //   padding: 25px 38px;
+          // }
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          .vsdigit {
+            text-align: left;
+
+            @include breakpoint(medium) {
+              max-width: 618px;
+              width: 100%;
+              margin: 0 auto;
+            }
+
+            .flex-dis {
+              position: relative;
+              border-bottom: 3px solid #001F3F;
+
+              p {
+                font-family: 'UntitledSerif';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 45px;
+                line-height: 100%;
+                text-align: left;
+                color: #FFFFFF;
+                margin-bottom: 12px;
+                font-size: clamp(45px, calc(45px + (55 - 45) * ((100vw - 393px) / (1024 - 393))), 55px) ;
+
+                @include breakpoint(large) {                 
+                  margin-bottom: 10px;
+                }
+
+                .digit-val {
+                  font-family: 'UntitledSerif';
+                  font-style: normal;
+                  font-weight: 400;
+                  font-size: 45px;
+                  line-height: 100%;
+                  /* or 100px */
+                  color: #FFFFFF;
+                  margin-right: calc(clamp(1.875rem, 5.714vw + 0.471rem, 4.125rem));
+                  position: relative;
+
+                  // @include breakpoint(medium) {
+                  //   margin-right: 40px;
+                  // }
+
+                  @include breakpoint(large) {
+                    // margin-right: 66px;
+                    font-size: 100px;
+                  }
+
+                  &:nth-child(2) {
+                    margin-left: 3px;
+                  }
+                }
+
+                .plus::after {
+                  content: "";
+                  position: absolute;
+                  background: url('#{$img}settings/percentage.svg') no-repeat;
+                  width: 100%;
+                  background-size: contain;
+                  height: calc(clamp(1.125rem, 1.872vw + 0.665rem, 1.563rem));
+                  bottom: 10px;
+                  z-index: 111;
+                  margin-left: 2px;
+                  z-index: 111;
+
+                  @include breakpoint(medium) {
+                    top: 55px;
+                  top: 20px;
+                  margin-left: 5px;
+                  //   height: 80px;
+                  }
+
+                  @include breakpoint(large) {
+                    top: inherit;
+                    bottom: 20px;
+                    height: calc(clamp(1.563rem, 9.804vw - 3.143rem, 3.125rem));
+                    // height: 50px;
+                  }
+                  @include breakpoint(llarge) {
+                    bottom: 26px;
+                  }
+                }
+              }
+            }
+
+            .content {
+              margin-bottom: 5px;
+              margin-top: 27px;
+
+              @include breakpoint(llarge) {
+                margin-bottom: 5px;
+                margin-top: 22px;
+              }
+
+              p {
+                font-family: 'UntitledSerif';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 116.6%;
+                letter-spacing: -0.01em;
+                color: #FFFFFF;
+                margin-bottom: 0;
+                font-size: clamp(14px, calc(14px + (22 - 14) * ((100vw - 393px) / (1024 - 393))), 22px) ;
+              }
+            }
+          }
+        }
+
+        .insteadContent {
+          margin-top: calc(clamp(1.313rem, 0.635vw + 1.157rem, 1.563rem));
+
+          // @include breakpoint(medium) {
+
+          //   margin-top: 25px;
+          // }
+
+          p {
+            font-family: 'ABCDiatype';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 100%;
+            /* identical to box height, or 20px */
+            letter-spacing: -0.025em;
+            color: #FFFFFF;
+            font-size: clamp(14px, calc(14px + (18 - 14) * ((100vw - 393px) / (1024 - 393))), 18px) ;
+            @include breakpoint(large) {            
+            font-size: clamp(18px, calc(18px + (20 - 18) * ((100vw - 1024px) / (1728 - 1024))), 20px) ;
+            }
+          
+            +p {
+              margin-top: 20px;
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+}
+
+.inclusionNumbersPanel .grid-container .dis-flex .leftListItems .parent .counter-col .count-digit{
+  font-size: clamp(55px, calc(55px + (220 - 55) * ((100vw - 393px) / (1023 - 393))), 197px);
+  @include breakpoint(large) {
+      font-size: clamp(220px, calc(220px + (220 - 220) * ((100vw - 1024px) / (1728 - 1024))), 220px);
+  }
+  @include breakpoint(llarge) {
+      font-size:  clamp(7.5rem, calc(-10.3971rem + 22.3714vw), 13.75rem) ;
+  }
+}
+
+.inclusionNumbersPanel .grid-container .dis-flex .leftListItems .parent .counter-col .count-digit{
+  font-size: clamp(55px, calc(55px + (220 - 55) * ((100vw - 393px) / (1023 - 393))), 197px);
+  @include breakpoint(llarge) {
+      font-size:  clamp(7.5rem, calc(-10.3971rem + 22.3714vw), 13.75rem) ;
+  }
+}

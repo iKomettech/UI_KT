@@ -1,0 +1,134 @@
+@import "util/util";
+$img: "../../images/";
+$bgpanel-color: #B9C8DA;
+$mediumbluebgpanel: #0B3D71;
+$white: #ffffff;
+$primary-color: #0B3D71;
+$secondary-color: #B9C8DA;
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+.diversityPanel {
+    margin-top: 34px;
+    // padding: 1px 0 15px;
+    background: #F1F4F8;
+    padding-top: calc(clamp(2.5rem, 8.254vw + 0.473rem, 5.75rem));
+    padding-bottom: calc(clamp(0.938rem, 12.54vw - 2.143rem, 5.875rem));
+    @include breakpoint(medium) {
+        margin-top: 100px;
+        // padding: 92px 0 94px;
+    }
+    @include breakpoint(large) {
+        // margin-top: 144px;
+        // padding: 150px 0 140px;
+        padding-top: calc(clamp(5.75rem, 8.239vw + 0.477rem, 9.375rem));
+        padding-bottom: calc(clamp(5.875rem, 6.534vw + 1.693rem, 8.75rem));
+    }
+    .grid-container {
+        .flex-box {
+            border-top: 10px solid $mediumbluebgpanel;
+
+            @include breakpoint(small only) {
+                margin-top: 20px;
+            }
+
+            .flexWrap {
+                padding-bottom: clamp(26px, calc(26px + (27 - 26) * ((100vw - 393px) / (1024 - 393))), 27px);
+                @include breakpoint(medium){
+                    padding-bottom: 27px;
+                }
+
+                @include breakpoint(large) {
+                    padding-bottom: clamp(27px, calc(27px + (46 - 27) * ((100vw - 1024px) / (1728 - 1024))), 46px);
+                }
+
+                .wraptitle {
+                    width: 100%;
+
+                    h2 {
+                        text-align: left;
+                        margin-top: clamp(10px, calc(10px + (15 - 10) * ((100vw - 393px) / (1024 - 393))), 15px);
+                        font-size: clamp(55px, calc(55px + (64 - 55) * ((100vw - 393px) / (1024 - 393))), 64px) ;
+                        line-height: 100%;
+                        letter-spacing: -0.04em;
+
+                        @include breakpoint(large) {
+                            font-size: clamp(64px, calc(64px + (85 - 64) * ((100vw - 1024px) / (1728 - 1024))), 85px) ;
+                            // margin-top: 15px;
+                            letter-spacing: -0.05em;
+                        }
+                    }
+
+                }
+            }
+        }
+
+        .contentWrap {
+            max-width: 1120px;
+            width: 100%;
+
+            p {
+                font-family: 'UntitledSerif';
+                font-size: clamp(18px, calc(18px + (22 - 18) * ((100vw - 393px) / (1024 - 393))), 22px) ;
+                line-height: 123.6%;
+                letter-spacing: -0.01em;
+                @include breakpoint(large) {
+                    font-size: clamp(22px, calc(22px + (27 - 22) * ((100vw - 1024px) / (1728 - 1024))), 27px) ;
+                }
+                
+            }
+        }
+
+        .videoSection {
+            @include breakpoint(small only){
+                margin-inline: -20px;
+            }
+            .videoContainer { 
+                .video-container{
+                position: relative;
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                margin-top: clamp(35px, calc(35px + (58 - 35) * ((100vw - 393px) / (1024 - 393))), 58px);
+                @include breakpoint(large){
+                    margin-top: clamp(58px, calc(58px + (65 - 58) * ((100vw - 1024px) / (1728 - 1024))), 65px)  !important;
+                }
+                @include breakpoint(llarge){
+                    max-width: 1104px;
+                    margin: 0 auto;
+                    // margin-top: 65px;
+                }
+ 
+                    p {
+                        font-family: 'ABCDiatype';
+                        font-style: normal;
+                        font-size: clamp(16px, calc(16px + (20 - 16) * ((100vw - 393px) / (1024 - 393))), 20px) ;
+                        line-height: 100%;
+                        text-align: center;
+                        letter-spacing: -0.025em;
+                        margin-top: 0px;              
+                        @include breakpoint(large){
+                            margin-top: clamp(0px, calc(0px + (16 - 0) * ((100vw - 1024px) / (1728 - 1024))), 16px) ;
+                           
+                        }
+                    } 
+
+                .story-detail-video {
+                    video {
+                        position: relative;
+                        left: 0px;
+                    }
+                }
+            }}
+        }
+    }
+}
+.bc-iframe, .bc-iframe body, .bc-player-HJR1vW8Ab_default, .bc-player-HJR1vW8Ab_default .vjs-poster {
+    background-color: #f1f4f8;
+}

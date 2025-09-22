@@ -1,0 +1,299 @@
+$primary-color: #001F3F;
+$secondary-color: #B9C8DA;
+@import "util/util";
+$img: "../../images/";
+$bgpanel-color: #B9C8DA;
+$mediumbluebgpanel: #0B3D71;
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+
+
+.careerinsights {
+    margin-top: calc(clamp(2.25rem, 8.539vw + 0.153rem, 9.375rem));
+
+    .dis-flex {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        // padding-top: calc(clamp(2.5rem, 8.09vw + 0.513rem, 9.25rem));
+        // padding-bottom: calc(clamp(2.5rem, 8.09vw + 0.513rem, 9.25rem));     
+        .boxWrap {
+            width: 100%;
+            max-width: 100%;
+            position: relative;
+            border-top: 10px solid #B9C8DA;
+            &:first-child {
+                @include breakpoint(small only) {
+                    margin-bottom: 20px;
+                }
+            }
+
+            @include breakpoint(medium) {
+                width: 49.3%;
+            }
+
+            background-color: white;
+
+            .imgWrap {
+                width: 100%;
+                overflow: hidden;
+                position: relative;
+
+                &:hover {
+                    transition: all 0.75s;
+
+                    img {
+                        transform: scale(1.1);
+                    }
+
+                    // &::after {
+                    //     visibility: hidden;
+                    //     opacity: 0;
+                    // }
+                }
+
+                a:after {
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    opacity: 1;
+                    visibility: visible;
+                    transition: opacity 0.5s ease-out;
+                    background: linear-gradient(90deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+                    cursor: pointer;
+                }
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                    position: relative;
+                    min-height: 100%;
+                    max-width: 100%;
+                }
+
+                .top-left {
+                    z-index: 9;
+                    left: calc(clamp(1.25rem, 1.124vw + 0.974rem, 1.0rem));
+                    h2 {
+                        color: white;
+                        padding: 0px;
+
+                        // @include breakpoint(small only) {
+                        //     display: none;
+                        // }
+                        @include breakpoint(medium only) {
+                            font-size: 50px;
+                        }
+                        @include breakpoint(medium) {
+                            letter-spacing: -0.02em;
+                        }
+
+                        @include breakpoint(large) {
+                            padding: 6px 12px;
+                        }
+                    }
+
+                    position: absolute;
+                    top: 0px;                  
+                    padding-top: calc(clamp(0.938rem, 0.749vw + 0.754rem, 1.563rem));
+                    padding-bottom: calc(clamp(0.938rem, 0.749vw + 0.754rem, 1.563rem));                   
+
+                }
+            }
+
+            // .contentwrap {
+
+            //     @include breakpoint(small only) {
+            //         padding: 21px 20px 60px 20px;
+            //     }
+
+
+            //     .top-left {
+            //         h3 {
+            //             display: none;
+
+            //             @include breakpoint(small only) {
+            //                 display: block;
+            //                 color: $primary-color;
+            //                 font-size: clamp(25px, calc(25px + (25 - 25) * ((100vw - 393px) / (1023 - 393))), 25px);
+            //                 line-height: 100%;
+            //                 font-family: "ABCDiatype";
+            //                 font-weight: 700;
+            //                 padding-bottom: 15px;
+            //                 margin-bottom: 16px;
+            //                 border-bottom: 3px solid #b9c8da;
+            //             }
+            //         }
+            //     }
+
+            //     @include breakpoint(medium) {
+            //         padding: 18px 30px 68px 13px;
+            //     }
+
+            //     @include breakpoint(llarge) {
+            //         padding: 18px 35px 81px;
+            //         padding-right: 34px;
+            //     }
+
+            //     .content-list {
+            //         display: flex;
+            //         position: relative;
+            //         border-top: 2px solid $secondary-color;
+            //         justify-content: space-between;
+            //         padding-bottom: 25px;
+
+            //         @include breakpoint(small only) {
+            //             padding-bottom: 13px;
+            //         }
+
+            //         &:last-child {
+            //             padding-bottom: 0px;
+            //         }
+
+            //         a {
+            //             font-weight: 400;
+            //             color: $primary-color;
+            //             word-break: break-word;
+            //             position: unset;
+            //             margin-top: 0px;
+            //             padding-top: 5px;
+            //             max-width: 574px;
+            //             width: 574px;
+            //             cursor: pointer;
+
+            //             font-size: clamp(18px, calc(18px + (22 - 18) * ((100vw - 393px) / (1023 - 393))), 22px);
+
+
+            //             @include breakpoint(small only) {
+            //                 padding-right: 20px;
+            //                 // font-size: 18px;
+            //             }
+
+            //             @include breakpoint(medium only) {
+            //                 padding-right: 20px;
+            //             }
+
+            //             &:hover {
+            //                 transition: all 0.55s;
+
+            //                 &:after {
+            //                     right: -15px;
+            //                     transition: all 0.55s;
+            //                 }
+            //             }
+
+            //             &:after {
+            //                 @include breakpoint(small only) {
+            //                     display: none;
+            //                 }
+
+            //                 right:-5px;
+            //                 top:5px;
+            //             }
+            //         }
+            //     }
+
+            //     p {
+            //         font-family: "UntitledSerif";
+            //         line-height: 116.6%;
+            //         // line-height: 100%;
+            //         margin-bottom: 0px;
+            //         color: $primary-color;
+            //         word-break: break-word;
+            //         letter-spacing: -0.01em;
+            //         font-size: clamp(18px, calc(18px + (18 - 18) * ((100vw - 393px) / (1023 - 393))), 18px);
+
+            //         @include breakpoint(llarge) {
+            //             font-size: clamp(18px, calc(18px + (22 - 18) * ((100vw - 1024px) / (1728 - 1024))), 22px); 
+            //             // max-width: 486px;
+            //         }
+
+            //     }
+            // }
+
+            .moreBtn {
+                position: absolute;
+                bottom: 42px;
+                left: calc(clamp(1.25rem, 1.124vw + 0.974rem, 2.188rem));             
+
+                .learnmore {
+                    text-decoration: none;
+                    //color: $primary-color;
+                    font-weight: 700;
+                    // font-size: 18px;
+                    top: 23px;
+                    transition: all 0.55s;
+                    position: relative;
+                    letter-spacing: -0.2px;
+                    display: inline-block;
+                    transition: all 0.55s;
+                    margin-top: 0;
+                    font-family: 'ABCDiatype';
+                    // line-height: 107.6%;
+                    //line-height: 100%;
+                    transition: all ease-in-out .2s;
+                    font-weight: 700;
+                    //font-size: 40px;
+                    line-height: 107.6%;
+                    color: #ffffff;
+                    @include breakpoint(small only) {
+                        padding-left: 0px !important;
+                    }
+
+                    font-size: clamp(24px, calc(24px + (30 - 24) * ((100vw - 393px) / (1023 - 393))), 24px);
+
+                    @include breakpoint(large) {
+                        font-size: clamp(30px, calc(30px + (40 - 30) * ((100vw - 1024px) / (1728 - 1024))), 40px); 
+                    }
+
+                    &:hover {
+                        padding-left: 7px;
+                        transition: all ease-in-out .2s;
+                    }
+
+                    &:after {
+                        background: url(#{$img}/settings/career-arrow-white.svg) no-repeat;
+                        content: "";
+                        display: inline-block;
+                        vertical-align: middle;
+                        padding-left: 0px;
+                        width: 21px;
+                        position: absolute;
+                        padding-left: 0px;
+                        cursor: pointer;
+                        right: -28px;
+                        height: 14px;
+                        top: 5px;
+                        background-size: contain;
+                        transition: all 0.55s;
+
+                        @include breakpoint(large) {
+                            width: calc(clamp(1.875rem, 1.705vw + 0.784rem, 2.625rem));
+                            right: -54px;
+                            height: 31px;
+                            top: 5px;
+                        }
+
+                        @include breakpoint(xlarge) {
+                            right: -64px;
+                        }
+
+                    }
+                }
+            }
+        }
+
+    }
+}

@@ -1,0 +1,408 @@
+@import "util/util";
+$img: "../../images/";
+$bgpanel-color: #B9C8DA;
+$mediumbluebgpanel: #0B3D71;
+$white: #ffffff;
+$primary-color: #0B3D71;
+$secondary-color: #B9C8DA;
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+.workingPanel {
+    margin-top: 40px;
+
+    @include breakpoint(large) {
+        margin-top: 90px;
+    }
+
+    @include breakpoint(llarge) {
+        margin-top: 150px;
+    }
+
+    .grid-container {
+        .flex-box {
+            border-top: 10px solid $mediumbluebgpanel;
+
+            @include breakpoint(small only) {
+                margin-top: 20px;
+            }
+
+            .flexWrap {
+                padding-bottom: clamp(25px, calc(25px + (32 - 25) * ((100vw - 393px) / (1024 - 393))), 32px);
+
+                // @include breakpoint(medium) {
+                //     padding-bottom: 32px;
+                // }
+
+                @include breakpoint(large) {
+                    padding-bottom: clamp(32px, calc(32px + (46 - 32) * ((100vw - 1024px) / (1728 - 1024))), 46px);
+                }
+
+                .wraptitle {
+                    width: 100%;
+
+                    h2 {
+                        text-align: left;
+                        margin-top:  clamp(10px, calc(10px + (15 - 10) * ((100vw - 393px) / (1024 - 393))), 15px);
+                        font-size: clamp(55px, calc(55px + (64 - 55) * ((100vw - 393px) / (1024 - 393))), 64px) ;
+                        line-height: 100%;
+                        letter-spacing: -0.05em;
+
+                        @include breakpoint(large) {
+                            font-size: clamp(64px, calc(64px + (85 - 64) * ((100vw - 1024px) / (1728 - 1024))), 85px) ;
+                            // margin-top: 15px;
+                        }
+                    }
+
+                }
+            }
+        }
+
+        .contentWrap {
+            max-width: 1120px;
+            width: 100%;
+
+            p {
+                font-family: 'UntitledSerif';
+                font-size: clamp(18px, calc(18px + (22 - 18) * ((100vw - 393px) / (1024 - 393))), 22px) ;
+                line-height: 123.6%;
+                letter-spacing: -0.01em;
+
+                @include breakpoint(large) {
+                    font-size: clamp(22px, calc(22px + (27 - 22) * ((100vw - 1024px) / (1728 - 1024))), 27px) ;
+                }
+
+                +p {
+                    margin-top:  clamp(23px, calc(23px + (25 - 23) * ((100vw - 393px) / (1024 - 393))), 25px);
+
+                    // @include breakpoint(large) {
+
+                    //     margin-top: 25px;
+                    // }
+                }
+            }
+
+            h3 {
+                font-family: 'UntitledSerif';
+                font-style: normal;
+                font-weight: 700;
+                font-size: clamp(20px, calc(20px + (25 - 20) * ((100vw - 393px) / (768 - 393))), 25px) ;
+                line-height: 97.1%;
+                /* or 29px */
+                letter-spacing: -0.025em;
+                max-width: 1120px;
+
+                @include breakpoint(medium) {
+                    font-size: clamp(25px, calc(25px + (30 - 25) * ((100vw - 768px) / (1728 - 768))), 30px) ;       
+                }              
+
+                @include breakpoint(large only) {
+                    margin-bottom: 14px;
+                }
+
+                +p {
+                    margin-top:  clamp(13px, calc(13px + (25 - 13) * ((100vw - 393px) / (1024 - 393))), 25px);
+
+                    // @include breakpoint(large) {
+                    //     margin-top: 25px;
+                    // }
+                }
+            }
+
+            a {
+                font-family: 'UntitledSerif';
+                font-style: normal;
+                font-weight: 700;
+                font-size: clamp(18px, calc(18px + (20 - 18) * ((100vw - 393px) / (1024 - 393))), 20px) ;
+                line-height: 97.1%;
+                /* or 24px */
+                letter-spacing: -0.025em;
+                display: block;
+                margin-top: 40px;
+                transition: all ease-in-out .5s;
+
+                @include breakpoint(large) {
+                    margin-top: 40px;
+                    font-size: clamp(20px, calc(20px + (25 - 20) * ((100vw - 1024px) / (1728 - 1024))), 25px) ;
+                }
+
+                &::after {
+                    content: '';
+                    position: relative;
+                    right: -24px;
+                    background: url('#{$img}settings/arrow-blue.svg') no-repeat;
+                    width: 27px;
+                    display: inline-block;
+                    height: 15px;
+                }
+
+                &:hover {
+                    padding-left: 10px;
+                    transition: all ease-in-out .5s;
+                }
+            }
+
+            ul {
+                margin-top:  clamp(12px, calc(12px + (38 - 12) * ((100vw - 393px) / (1024 - 393))), 38px);
+                margin-left: 0;
+
+                @include breakpoint(large) {
+                    margin-top:  clamp(0px, calc(0px + (15 - 0) * ((100vw - 393px) / (1024 - 393))), 15px);
+                }
+
+                @include breakpoint(llarge) {
+                    // margin-left: 15px;
+                    margin-top: 32px;
+                }
+
+                li {
+                    font-family: 'UntitledSerif';
+                    font-style: normal;
+                    font-size: clamp(18px, calc(18px + (22 - 18) * ((100vw - 393px) / (1024 - 393))), 22px) ;
+                    line-height: 123.6%;
+                    letter-spacing: -0.01em;
+                    word-break: break-word;
+                    position: relative;
+                    padding-left: 45px;
+                    margin-bottom:  clamp(12px, calc(12px + (21 - 12) * ((100vw - 393px) / (1024 - 393))), 21px);
+
+                    @include breakpoint(large) {
+                        font-size: clamp(22px, calc(22px + (27 - 22) * ((100vw - 1024px) / (1728 - 1024))), 27px) ;
+                        // margin-bottom: 1.2rem;
+                    }
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 8px;
+                        left: 0;
+                        background: url('#{$img}settings/squareBullet.svg') no-repeat;
+                        height: 18px;
+                        width: 18px;
+                    }
+                }
+            }
+
+            &.mtimg {
+                margin-top:  clamp(35px, calc(35px + (65 - 35) * ((100vw - 393px) / (1024 - 393))), 65px);
+
+                @include breakpoint(large) {
+                    margin-top:  clamp(65px, calc(65px + (95 - 65) * ((100vw - 1024px) / (1728 - 1024 ))), 95px);
+                }
+
+                // @include breakpoint(llarge) {
+                //     margin-top: 95px;
+                // }
+            }
+        }
+
+        .familynetworkPanel {
+            margin-top:  clamp(37px, calc(37px + (70 - 37) * ((100vw - 393px) / (1024 - 393))), 90px);
+
+            @include breakpoint(small only) {
+                margin-inline: -20px;
+            }
+
+            // @include breakpoint(medium) {
+            //     margin-top: 25px;
+            // }
+
+            @include breakpoint(large) {
+                margin-top:  clamp(70px, calc(70px + (92 - 70) * ((100vw - 1024px) / (1728 - 1024))), 92px);
+                margin-left: -25px;
+                margin-right: -25px;
+            }
+
+            @include breakpoint(llarge) {
+                // margin-top: 92px;
+                margin-left: 0;
+                margin-right: 0;
+            }
+
+            .twoColumn {
+                @include breakpoint(medium) {
+                    display: flex;
+                }
+
+                .imgWrap {
+                    @include breakpoint(medium) {
+                        width: 55%;
+                    }
+
+                    @include breakpoint(large) {
+                        width: 66%;
+                        min-height: 362px;
+                    }
+
+                    @include breakpoint(xlarge) {
+                        width: 49%;
+                    }
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+
+                .contentData {
+                    background: #001F3F;
+                    padding: 35px 20px 25px;
+
+                    @include breakpoint(medium) {
+                        width: 45%;
+                        padding: 20px;
+                    }
+
+                    @include breakpoint(large) {
+                        width: 34%;
+                        // padding: 20px;
+                        padding-top:  clamp(20px, calc(20px + (75 - 20) * ((100vw - 1024px) / (1728 - 1024))), 75px);
+                        padding-inline: clamp(20px, calc(20px + (45 - 20) * ((100vw - 1024px) / (1728 - 1024))), 45px);
+                        padding-bottom: clamp(0px, calc(0px + (20 - 0) * ((100vw - 1024px) / (1728 - 1024))), 20px);
+                    }
+
+                    @include breakpoint(xlarge) {
+                        width: 51%;
+                        // padding: 35px 45px 20px;
+                    }
+
+                    // @include breakpoint(xxlarge){
+                    //     padding: 75px 45px 20px;}
+
+                    h4 {
+                        font-family: 'UntitledSerif';
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: clamp(20px, calc(20px + (25 - 20) * ((100vw - 393px) / (768 - 393))), 25px) ;
+                        line-height: 97.1%;
+                        /* or 29px */
+                        letter-spacing: -0.025em;
+                        color: #FFFFFF;
+
+                        @include breakpoint(small only) {
+                            margin-bottom: 12px;
+                        }
+                        @include breakpoint(medium) {
+                            font-size: 20px;
+                            margin-bottom: 4px;
+                        }
+
+                        @include breakpoint(large) {
+                            font-size: clamp(25px, calc(25px + (30 - 25) * ((100vw - 1024px) / (1728 - 1024))), 30px) ;  
+                            margin-bottom: clamp(4px, calc(4px + (20 - 4) * ((100vw - 1024px) / (1728 - 1024))), 20px);
+                        }
+
+                        // @include breakpoint(llarge) {                    
+                        //     margin-bottom: 20px;
+                        // }
+                    }
+
+                    p {
+                        font-family: 'UntitledSerif';
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: clamp(18px, calc(18px + (21 - 18) * ((100vw - 393px) / (1023 - 393))), 21px) ;
+                        line-height: 123.6%;
+                        /* or 33px */
+                        letter-spacing: -0.01em;
+                        color: #FFFFFF;
+
+                        // @include breakpoint(medium) {
+                        //     font-size: clamp(15px, calc(15px + (21 - 15) * ((100vw - 768px) / (1024 - 768))), 21px);
+                        // }
+
+                        @include breakpoint(large) {
+                            font-size: clamp(22px, calc(22px + (27 - 22) * ((100vw - 1024px) / (1728 - 1024))), 27px) ;
+                        }
+                    }
+                }
+            }
+
+            .quatePanel {
+                background: $bgpanel-color;
+                // padding: 35px 40px;
+                padding-block: clamp(35px, calc(35px + (92 - 35) * ((100vw - 393px) / (1024 - 393))), 92px) ;
+                padding-inline: clamp(40px, calc(40px + (94 - 40) * ((100vw - 393px) / (1024 - 393))), 94px);
+
+                @include breakpoint(large) {
+                    // padding: 92px 94px;
+                    padding-block: clamp(92px, calc(92px + (115 - 92) * ((100vw - 1024px) / (1728 - 1024))), 115px);
+                    padding-inline: clamp(94px, calc(94px + (150 - 94) * ((100vw - 1024px) / (1728 - 1024))), 150px);
+                }
+
+                // @include breakpoint(llarge) {
+                //     padding: 115px 150px;
+                // }
+
+                .contentwrap {
+                    .content {
+                        h3 {
+                            font-family: 'UntitledSerif';
+                            font-style: normal;
+                            font-weight: 400;
+                            font-size: clamp(30px, calc(30px + (40 - 30) * ((100vw - 393px) / (1024 - 393))), 40px) ;
+                            line-height: 100%;
+                            letter-spacing: -0.015em;
+                            text-align: center;
+
+                            @include breakpoint(medium) {
+                                font-size: 33px;
+                            }
+
+                            @include breakpoint(large) {
+                                font-size: clamp(40px, calc(40px + (55 - 40) * ((100vw - 1024px) / (1728 - 1024))), 55px) ;
+                                
+                            }
+
+                            @include breakpoint(llarge) {
+                                text-align: left;
+                                
+                            }
+                        }
+
+                        p {
+                            font-family: 'ABCDiatype';
+                            font-style: normal;
+                            font-weight: 400;
+                            font-size: clamp(14px, calc(14px + (20 - 14) * ((100vw - 393px) / (1024 - 393))), 20px) ;
+                            line-height: 123.6%;
+                            /* or 25px */
+                            letter-spacing: -0.015em;
+                            color: #001F3F;
+                            margin: 13px 0 0 8px;
+                            margin-top: clamp(13px, calc(13px + (25 - 13) * ((100vw - 393px) / (1023 - 393))), 25px);
+                            margin-left: 8px;
+                            text-align: center;
+
+                            // @include breakpoint(medium) {
+                            //     margin: 25px 0 0 8px;
+                            // }
+
+                            @include breakpoint(large only) {
+                                margin: 30px 0 0 20px;
+                            }
+                            @include breakpoint(llarge) {
+                                text-align: left;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+
+
+.Windows .workingPanel .grid-container .familynetworkPanel .twoColumn .contentData {
+    @media (min-width:1024px) and (max-width:1040px) {
+        padding: 20px 20px 0px;
+    }
+}

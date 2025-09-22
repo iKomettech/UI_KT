@@ -1,0 +1,232 @@
+@import "util/util";
+$white: #ffffff;
+$primary-color: #001F3F;
+$secondary-color: #B9C8DA;
+@import "util/util";
+$img: "../../images/";
+$bgpanel-color: #B9C8DA;
+$mediumbluebgpanel: #0B3D71;
+$white: #ffffff;
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+.contactPanel {
+    @include breakpoint(medium) {
+        padding-top: 80px;
+    }
+
+    @include breakpoint(large) {
+        padding-top: 75px;
+    }
+
+    .flex-box {
+        border-top: 10px solid $bgpanel-color;
+
+        @include breakpoint(small only) {
+            margin-top: 40px;
+        }
+
+        .flexWrap {
+            padding-bottom: 15px;
+
+            @include breakpoint(medium) {
+                display: flex;
+                // padding-bottom: 15px;
+            }
+
+            @include breakpoint(large) {
+                padding-bottom: calc(clamp(0.938rem, 7.102vw - 3.608rem, 4.063rem));
+            }
+        }
+    }
+
+    .flexLoc {
+        margin-top: calc(clamp(0.813rem, 5.873vw - 0.63rem, 3.125rem));
+
+        @include breakpoint(medium) {
+            display: flex;
+        }
+
+        @include breakpoint(large) {
+            margin-top: calc(clamp(3.125rem, 2.131vw + 1.761rem, 4.063rem));
+        }
+
+        // @include breakpoint(llarge) {
+        //     margin-top: 65px;
+        // }
+
+        .desLeft,
+        .desRight {
+            .contactData {
+                margin-top: 37px;
+
+                @include breakpoint(medium) {
+                    margin-top: 35px;
+                }
+
+                @include breakpoint(large) {
+                    margin-top: calc(clamp(2.188rem, 2.415vw + 0.642rem, 3.25rem));
+                }
+
+                &:first-child {
+                    margin-top: 0;
+                }
+
+                h2 {
+                    font-weight: 700;
+                    font-size: clamp(40px, calc(40px + (45 - 40) * ((100vw - 393px) / (1023 - 393))), 45px);
+                    line-height: 100%;
+                    letter-spacing: -0.05em;
+                    color: #001F3F;
+
+                    @include breakpoint(small only) {
+                        margin-bottom: 12px;
+                    }
+
+                    @include breakpoint(medium) {
+                        // font-size: 34px; 
+                        margin-bottom: calc(clamp(0.625rem, 1.961vw - 0.316rem, 0.938rem));
+                    }
+
+                    @include breakpoint(large) {
+                        font-size: clamp(45px, calc(45px + (60 - 45) * ((100vw - 1024px) / (1728 - 1024))), 60px);
+                        line-height: 100%;
+                        // margin-bottom: 15px;
+                    }
+
+                    @include breakpoint(xxlarge) { 
+                        line-height: 100%;
+                        margin-bottom: 11px;
+                    }
+
+
+                }
+
+                .detail {
+                    h3 {
+                        font-family: 'UntitledSerif';
+                        font-weight: 700;
+                        font-size: clamp(30px, calc(30px + (40 - 30) * ((100vw - 393px) / (1023 - 393))), 40px);
+                        line-height: 97.1%;
+                        letter-spacing: -0.025em;
+                        padding-bottom: 10px;
+                        margin-top: calc(clamp(1.313rem, 0.794vw + 1.118rem, 1.625rem));
+
+                        color: #001F3F;
+
+                        @include breakpoint(medium) {
+                            // font-size: 27px;
+                        }
+
+                        @include breakpoint(large) {
+                            // margin-top: 26px;
+                            padding-bottom: 5px;
+                            // font-size: 40px;
+                        }
+
+
+                    }
+
+                    .insidedetail {
+                        +.insidedetail {
+                            margin-top: calc(clamp(1.25rem, 1.746vw + 0.821rem, 1.938rem));
+
+                            // @include breakpoint(large) {
+                            //     margin-top: 31px;
+                            // }
+                        }
+                    }
+
+                    +.detail {
+                        margin-top: 35px;
+                    }
+                }
+
+                p,
+                a,
+                ul>li {
+                    font-family: 'ABCDiatype';
+                    font-size: clamp(18px, calc(18px + (22 - 18) * ((100vw - 393px) / (1728 - 393))), 22px);
+                    line-height: 116.6%;
+                    color: #001F3F;
+                    word-break: break-word;
+
+                    @include breakpoint(small only) {
+                        margin-bottom: 7px;
+                    }
+
+                    @include breakpoint(llarge) {
+                        // font-size: 22px; 
+                    }
+
+                    text-decoration: none;
+                }
+
+            }
+
+            .borderBottom {
+                padding-bottom: calc(clamp(2rem, 2.063vw + 1.493rem, 2.813rem));
+                border-bottom: 3px solid #B9C8DA;
+
+                // @include breakpoint(large) {
+                //     padding-bottom: 45px;
+                // }
+
+                p {
+                    font-family: 'UntitledSerif';
+                    @include breakpoint(llarge){
+                        max-width: 570px;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        .desLeft {
+            width: 100%;
+
+            @include breakpoint(medium) {
+                width: 47%;
+                margin-right: 7%;
+            }
+
+            @include breakpoint(large) {
+
+                width: 43%;
+                margin-right: 14%;
+            }
+        }
+
+        .desRight {
+            @include breakpoint(small only) {
+                margin-top: 30px;
+            }
+
+            @include breakpoint(large) {
+                margin-top: 5px;
+            }
+
+            width: 100%;
+
+            @include breakpoint(medium) {
+                width: 46%;
+            }
+
+            @include breakpoint(large) {
+                width: 40%;
+            }
+
+            .contactData {
+                @include breakpoint(large) {
+                    margin-top: 42px;
+                } 
+            }
+        }
+    }
+}

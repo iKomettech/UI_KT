@@ -1,0 +1,824 @@
+<link rel="stylesheet" href="{{root}}assets/css/lawyerspanel/lawyerspanel.css">
+
+
+<div class="lawyerspaneltitle">
+    <div class="grid-container">
+        <div class="lawyer-title">
+            <h1>Lawyers</h1>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    (function ($) {
+        $.fn.liHarmonica = function (params) {
+            var p = $.extend({
+                currentClass: 'cur',
+                onlyOne: true,
+                speed: 500
+            }, params);
+            return this.each(function () {
+                var
+                    el = $(this).addClass('harmonica'),
+                    linkItem = $('ul', el).prev('a');
+                el.children(':last').addClass('last');
+                $('ul', el).each(function () {
+                    $(this).children(':last').addClass('last');
+                });
+                $('ul', el).prev('a').addClass('harFull');
+                el.find('.' + p.currentClass).parents('ul').show().prev('a').addClass(p.currentClass).addClass('harOpen');
+                linkItem.on('click', function () {
+                    if ($(this).next('ul').is(':hidden')) {
+                        $(this).addClass('harOpen');
+                    } else {
+                        $(this).removeClass('harOpen');
+                    }
+                    if (p.onlyOne) {
+                        $('.harmonica .harFull.harOpen').not(this).removeClass('harOpen').next().hide();
+                        $(this).closest('ul').closest('ul').find('ul').not($(this).next('ul')).slideUp(p.speed).prev('a').removeClass('harOpen');
+                        $(this).next('ul').slideToggle(p.speed);
+                    } else {
+                        $(this).next('ul').stop(true).slideToggle(p.speed);
+                    }
+                    return false;
+                });
+            });
+        };
+    })(jQuery);
+    $('body').bind('click', function (e) {
+        $('.harmonica .harFull.harOpen').not(this).removeClass('harOpen').next().hide();
+    });
+    $(function () {
+        $('.anyClass').liHarmonica({
+            onlyOne: false,
+            speed: 500
+        });
+        $('.anyClass2').liHarmonica({
+            onlyOne: true,
+            speed: 400
+        });
+    });
+
+    function removeChip(button) {
+        const chip = button.parentElement;
+        chip.remove();
+    }
+
+    $(document).click(function (e) {
+        if (!$(e.target).closest('.flexAcc1').length) {
+            $('.flexAcc1').removeClass('harOpen');
+        }
+    });
+
+</script>
+
+<div class="divresult">
+    <div class="filterPanel">
+        <div class="grid-container">
+            <div class="filter-content">
+                <div class="alphapetOrder">
+                    <div class="alphaTitle">
+                        <p>Browse by Last Name</p>
+                    </div>
+                    <div class="flexAlpha">
+                        <ul>
+                            <li>
+                                <a data-letter="A" href="#">A</a>
+                            </li>
+                            <li>
+                                <a class="active" data-letter="B" href="#">B</a>
+                            </li>
+                            <li>
+                                <a data-letter="C" href="#">C</a>
+                            </li>
+                            <li>
+                                <a data-letter="D" href="#">D</a>
+                            </li>
+                            <li>
+                                <a data-letter="E" href="#">E</a>
+                            </li>
+                            <li>
+                                <a data-letter="F" href="#">F</a>
+                            </li>
+                            <li>
+                                <a data-letter="G" href="#">G</a>
+                            </li>
+                            <li>
+                                <a data-letter="H" href="#">H</a>
+                            </li>
+                            <li>
+                                <a data-letter="I" href="#">I</a>
+                            </li>
+                            <li>
+                                <a data-letter="J" href="#">J</a>
+                            </li>
+                            <li>
+                                <a data-letter="K" href="#">K</a>
+                            </li>
+                            <li>
+                                <a data-letter="L" href="#">L</a>
+                            </li>
+                            <li>
+                                <a data-letter="M" href="#">M</a>
+                            </li>
+                            <li>
+                                <a data-letter="N" href="#">N</a>
+                            </li>
+                            <li>
+                                <a data-letter="O" href="#">O</a>
+                            </li>
+                            <li>
+                                <a data-letter="P" href="#">P</a>
+                            </li>
+                            <li>
+                                <a data-letter="Q" href="#">Q</a>
+                            </li>
+                            <li>
+                                <a data-letter="R" href="#">R</a>
+                            </li>
+                            <li>
+                                <a data-letter="S" href="#">S</a>
+                            </li>
+                            <li>
+                                <a data-letter="T" href="#">T</a>
+                            </li>
+                            <li>
+                                <a data-letter="U" href="#">U</a>
+                            </li>
+                            <li>
+                                <a data-letter="V" href="#">V</a>
+                            </li>
+                            <li>
+                                <a data-letter="W" href="#">W</a>
+                            </li>
+                            <li>
+                                <a data-letter="X" href="#">X</a>
+                            </li>
+                            <li>
+                                <a data-letter="Y" href="#">Y</a>
+                            </li>
+                            <li>
+                                <a data-letter="Z" href="#">Z</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="advcontent">
+                    <div class="searchContainer">
+                        <form class="" action="/search" method="GET">
+                            <div class="flexi-row">
+                                <input type="text" class="txtBox" name="q" id="searchInput" value=""
+                                    placeholder="Search by name or keyword">
+                                <button type="button" name="searchbutton" class="submit">
+                                    <i>Search</i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="flexAcc">
+                        <div class="flexAcc1">
+                            <ul class="anyClass2 skinPlank">
+                                <li><a href="#">All Positions</a>
+                                    <ul>
+                                        <li><a href="#">Managing Partner - China Practice</a></li>
+                                        <li><a href="#">Of Counsel</a></li>
+                                        <li><a href="#">Partner</a></li>
+                                        <li><a href="#">Practice Management Associate</a></li>
+                                        <li><a href="#">Practice Management Counsel</a></li>
+                                        <li><a href="#">Pro Bono Attorney</a></li>
+                                        <li><a href="#">Senior Staff Attorney</a></li>
+                                        <li><a href="#">Special Counsel</a></li>
+                                        <li><a href="#">Positions</a></li>
+                                        <li><a href="#">Positions</a></li>
+                                        <li><a href="#">Positions</a></li>
+                                        <li><a href="#">Positions</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="flexAcc1">
+                            <ul class="anyClass2 skinPlank">
+                                <li><a href="#">All Practices</a>
+                                    <ul>
+                                        <li>All Practices</li>
+                                        <li><a href="#">Antitrust</a></li>
+                                        <li><a href="#">Artificial Intelligence</a></li>
+                                        <li><a href="#">Capital Markets</a></li>
+                                        <li><a href="#">Corporate</a></li>
+                                        <li><a href="#">Corporate Governance</a></li>
+                                        <li><a href="#" class="disable">Cryptocurrency & Blockchain</a></li>
+                                        <li><a href="#" class="disable">Executive Compensation</a></li>
+                                        <li><a href="#">Practices</a></li>
+                                        <li><a href="#">Practices</a></li>
+                                        <li><a href="#">Practices</a></li>
+                                        <li><a href="#">Practices</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="flexAcc1">
+                            <ul class="anyClass2 skinPlank">
+                                <li><a href="#">All Industries</a>
+                                    <ul>
+                                        <li><a href="#">All Industries</a></li>
+                                        <li><a href="#">Antitrust</a></li>
+                                        <li><a href="#">Corporate</a></li>
+                                        <li><a href="#">Entertainment</a></li>
+                                        <li><a href="#">Finance</a></li>
+                                        <li><a href="#">Insurance</a></li>
+                                        <li><a href="#">Media, Sports Entertainment</a></li>
+                                        <li><a href="#">Real Estate</a></li>
+                                        <li><a href="#">Industries</a></li>
+                                        <li><a href="#">Industries</a></li>
+                                        <li><a href="#">Industries</a></li>
+                                        <li><a href="#">Industries</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="flexAcc">
+                        <div class="flexAcc1">
+                            <ul class="anyClass2 skinPlank">
+                                <li><a href="#">All Offices</a>
+                                    <ul>
+                                        <li><a href="#">All Offices</a></li>
+                                        <li><a href="#">Beijing</a></li>
+                                        <li><a href="#">Hong Kong</a></li>
+                                        <li><a href="#">London</a></li>
+                                        <li><a href="#">Los Angeles</a></li>
+                                        <li><a href="#">San Francisco</a></li>
+                                        <li><a href="#">Toronto</a></li>
+                                        <li><a href="#">Offices</a></li>
+                                        <li><a href="#">Offices</a></li>
+                                        <li><a href="#">Offices</a></li>
+                                        <li><a href="#">Offices</a></li>
+                                        <li><a href="#">Offices</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="flexAcc1">
+                            <ul class="anyClass2 skinPlank">
+                                <li><a href="#">All Schools</a>
+                                    <ul>
+                                        <li><a href="#">All Schools</a></li>
+                                        <li><a href="#">Acadia University</a></li>
+                                        <li><a href="#">Adelphi University</a></li>
+                                        <li><a href="#">American University</a></li>
+                                        <li><a href="#">American University of Beirut</a></li>
+                                        <li><a href="#">American University; Washington College of Law</a></li>
+                                        <li><a href="#">Amherst College</a></li>
+                                        <li><a href="#">Schools</a></li>
+                                        <li><a href="#">Schools</a></li>
+                                        <li><a href="#">Schools</a></li>
+                                        <li><a href="#">Schools</a></li>
+                                        <li><a href="#">Schools</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="searchcontent">
+                        <div class="searchwrap">
+                            <p>Search results for:</p>
+                        </div>
+                        <div class="resultswrap">
+                            <div class="chip">
+                                <span>"Matt"</span>
+                                <button class="close-btn" onclick="removeChip(this)">×</button>
+                            </div>
+                            <div class="chip">
+                                <span>Partner</span>
+                                <button class="close-btn" onclick="removeChip(this)">×</button>
+                            </div>
+                            <div class="chip">
+                                <span>Antitrust</span>
+                                <button class="close-btn" onclick="removeChip(this)">×</button>
+                            </div>
+                            <div class="chip">
+                                <span>New York</span>
+                                <button class="close-btn" onclick="removeChip(this)">×</button>
+                            </div>
+                            <div class="chip">
+                                <span>Acadia University</span>
+                                <button class="close-btn" onclick="removeChip(this)">×</button>
+                            </div>
+                        </div>
+
+                        <!-- Last Name Filter -->
+
+                        <!-- <div class="resultswrap">
+                    <div class="chip">
+                        <span>Last Name: B</span>
+                        <button class="close-btn" onclick="removeChip(this)">×</button>
+                    </div>
+                </div> -->
+                        <div class="resetwrap">
+                            <button class="ctabutton">Reset Search</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="flexdivsection">
+        <div class="grid-container">
+            <div class="flexdiv">
+                <div class="testiTitle">
+                    <p>Viewing 12 of 1216</p>
+                </div>
+                <div class="viewPagination">
+                    <div class="flexPage">
+                        <div class="descPage">
+                            <p>View per page</p>
+                        </div>
+                        <ul class="pageCount" id="pagination">
+                            <li class="pageNo active"><a href="" title="listView">12</a></li>
+                            <li class="pageNo"><a href="" title="listView">24</a></li>
+                            <li class="pageNo"><a href="" title="listView">48</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="findAProfessionalPanel">
+        <div class="grid-container">
+            <div class="flexWrapTeam">
+                <div class="outBio">
+                    <div class="bioBlock">
+                        <div class="imgWrap">
+                            <a href="#" aria-label="Matthew W. Abbot">
+                                <img src="assets/images/lawyer/abbot.jpg" alt="Matthew W. Abbot" class="lazy zoom"
+                                    width="345" height="336"></a>
+                        </div>
+                        <div class="bioSection">
+                            <div class="bioTitle">
+                                <a href="#" aria-label="Matthew W. Abbot">
+                                    <p>Matthew W. Abbot</p>
+                                </a>
+                            </div>
+                            <div class="bioContent">
+                                <p class="position">Partner</p>
+                                <ul>
+                                    <li>Washington</li>
+                                    <li>London</li>
+                                    <li>New York</li>
+                                </ul>
+                                <p><a href="tel:+1-212-373-3402">Tel: +1-212-373-3402</a></p>
+                                <p><a href="mailto:mabbott@paulweiss.com">mabbott@paulweiss.com</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="outBio">
+                    <div class="bioBlock">
+                        <div class="imgWrap">
+                            <a href="#" aria-label="Eyitayo “Tee” St. Matthew-Daniel">
+                                <img src="assets/images/lawyer/eyitayo.jpg" alt="Eyitayo “Tee” St. Matthew-Daniel"
+                                    class="lazy zoom" width="345" height="336"></a>
+                        </div>
+                        <div class="bioSection">
+                            <div class="bioTitle">
+                                <a href="#" aria-label="Eyitayo “Tee” St. Matthew-Daniel">
+                                    <p>Eyitayo “Tee” St. Matthew-Daniel</p>
+                                </a>
+                            </div>
+                            <div class="bioContent">
+                                <p class="position">Partner</p>
+                                <ul>
+                                    <li>Washington</li>
+                                    <li>London</li>
+                                    <li>New York</li>
+                                </ul>
+                                <p><a href="tel:+1-212-373-3402">Tel: +1-212-373-3402</a></p>
+                                <p><a href="mailto:tstmatthewdaniel@paulweiss.com">tstmatthewdaniel@paulweiss.com</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="outBio">
+                    <div class="bioBlock">
+                        <div class="imgWrap">
+                            <a href="#" aria-label="Jarryd E. Anderson">
+                                <img src="assets/images/lawyer/jarryd.jpg" alt="Jarryd E. Anderson" class="lazy zoom"
+                                    width="345" height="336"></a>
+                        </div>
+                        <div class="bioSection">
+                            <div class="bioTitle">
+                                <a href="#" aria-label="Jarryd E. Anderson">
+                                    <p>Jarryd E. Anderson</p>
+                                </a>
+                            </div>
+                            <div class="bioContent">
+                                <p class="position">Partner</p>
+                                <ul>
+                                    <li>Washington</li>
+                                    <li>London</li>
+                                    <li>New York</li>
+                                </ul>
+                                <p><a href="tel:+1-212-373-3402">Tel: +1-212-373-3402</a></p>
+                                <p><a href="mailto:janderson@paulweiss.com">janderson@paulweiss.com</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="outBio">
+                    <div class="bioBlock">
+                        <div class="imgWrap">
+                            <a href="#" aria-label="Kanesh Balasubramaniam">
+                                <img src="assets/images/lawyer/kanesh.jpg" alt="Kanesh Balasubramaniam"
+                                    class="lazy zoom" width="345" height="336"></a>
+                        </div>
+                        <div class="bioSection">
+                            <div class="bioTitle">
+                                <a href="#" aria-label="Kanesh Balasubramaniam">
+                                    <p>Kanesh Balasubramaniam</p>
+                                </a>
+                            </div>
+                            <div class="bioContent">
+                                <p class="position">Partner</p>
+                                <ul>
+                                    <li>Washington</li>
+                                    <li>London</li>
+                                    <li>New York</li>
+                                </ul>
+                                <p><a href="tel:+1-212-373-3402">Tel: +1-212-373-3402</a></p>
+                                <p><a href="mailto:kbalas@paulweiss.com">kbalas@paulweiss.com</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="outBio">
+                    <div class="bioBlock">
+                        <div class="imgWrap">
+                            <a href="#" aria-label="Matthew W. Abbot">
+                                <img src="assets/images/lawyer/abbot.jpg" alt="Matthew W. Abbot" class="lazy zoom"
+                                    width="345" height="336"></a>
+                        </div>
+                        <div class="bioSection">
+                            <div class="bioTitle">
+                                <a href="#" aria-label="Matthew W. Abbot">
+                                    <p>Matthew W. Abbot</p>
+                                </a>
+                            </div>
+                            <div class="bioContent">
+                                <p class="position">Partner</p>
+                                <ul>
+                                    <li>Washington</li>
+                                    <li>London</li>
+                                    <li>New York</li>
+                                </ul>
+                                <p><a href="tel:+1-212-373-3402">Tel: +1-212-373-3402</a></p>
+                                <p><a href="mailto:mabbott@paulweiss.com">mabbott@paulweiss.com</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="outBio">
+                    <div class="bioBlock">
+                        <div class="imgWrap">
+                            <a href="#" aria-label="Eyitayo “Tee” St. Matthew-Daniel">
+                                <img src="assets/images/lawyer/eyitayo.jpg" alt="Eyitayo “Tee” St. Matthew-Daniel"
+                                    class="lazy zoom" width="345" height="336"></a>
+                        </div>
+                        <div class="bioSection">
+                            <div class="bioTitle">
+                                <a href="#" aria-label="Eyitayo “Tee” St. Matthew-Daniel">
+                                    <p>Eyitayo “Tee” St. Matthew-Daniel</p>
+                                </a>
+                            </div>
+                            <div class="bioContent">
+                                <p class="position">Partner</p>
+                                <ul>
+                                    <li>Washington</li>
+                                    <li>London</li>
+                                    <li>New York</li>
+                                </ul>
+                                <p><a href="tel:+1-212-373-3402">Tel: +1-212-373-3402</a></p>
+                                <p><a href="mailto:tstmatthewdaniel@paulweiss.com">tstmatthewdaniel@paulweiss.com</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="outBio">
+                    <div class="bioBlock">
+                        <div class="imgWrap">
+                            <a href="#" aria-label="Jarryd E. Anderson">
+                                <img src="assets/images/lawyer/jarryd.jpg" alt="Jarryd E. Anderson" class="lazy zoom"
+                                    width="345" height="336"></a>
+                        </div>
+                        <div class="bioSection">
+                            <div class="bioTitle">
+                                <a href="#" aria-label="Jarryd E. Anderson">
+                                    <p>Jarryd E. Anderson</p>
+                                </a>
+                            </div>
+                            <div class="bioContent">
+                                <p class="position">Partner</p>
+                                <ul>
+                                    <li>Washington</li>
+                                    <li>London</li>
+                                    <li>New York</li>
+                                </ul>
+                                <p><a href="tel:+1-212-373-3402">Tel: +1-212-373-3402</a></p>
+                                <p><a href="mailto:janderson@paulweiss.com">janderson@paulweiss.com</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="outBio">
+                    <div class="bioBlock">
+                        <div class="imgWrap">
+                            <a href="#" aria-label="Kanesh Balasubramaniam">
+                                <img src="assets/images/lawyer/kanesh.jpg" alt="Kanesh Balasubramaniam"
+                                    class="lazy zoom" width="345" height="336"></a>
+                        </div>
+                        <div class="bioSection">
+                            <div class="bioTitle">
+                                <a href="#" aria-label="Kanesh Balasubramaniam">
+                                    <p>Kanesh Balasubramaniam</p>
+                                </a>
+                            </div>
+                            <div class="bioContent">
+                                <p class="position">Partner</p>
+                                <ul>
+                                    <li>Washington</li>
+                                    <li>London</li>
+                                    <li>New York</li>
+                                </ul>
+                                <p><a href="tel:+1-212-373-3402">Tel: +1-212-373-3402</a></p>
+                                <p><a href="mailto:kbalas@paulweiss.com">kbalas@paulweiss.com</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="outBio">
+                    <div class="bioBlock">
+                        <div class="imgWrap">
+                            <a href="#" aria-label="Matthew W. Abbot">
+                                <img src="assets/images/lawyer/abbot.jpg" alt="Matthew W. Abbot" class="lazy zoom"
+                                    width="345" height="336"></a>
+                        </div>
+                        <div class="bioSection">
+                            <div class="bioTitle">
+                                <a href="#" aria-label="Matthew W. Abbot">
+                                    <p>Matthew W. Abbot</p>
+                                </a>
+                            </div>
+                            <div class="bioContent">
+                                <p class="position">Partner</p>
+                                <ul>
+                                    <li>Washington</li>
+                                    <li>London</li>
+                                    <li>New York</li>
+                                </ul>
+                                <p><a href="tel:+1-212-373-3402">Tel: +1-212-373-3402</a></p>
+                                <p><a href="mailto:mabbott@paulweiss.com">mabbott@paulweiss.com</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="outBio">
+                    <div class="bioBlock">
+                        <div class="imgWrap">
+                            <a href="#" aria-label="Eyitayo “Tee” St. Matthew-Daniel">
+                                <img src="assets/images/lawyer/eyitayo.jpg" alt="Eyitayo “Tee” St. Matthew-Daniel"
+                                    class="lazy zoom" width="345" height="336"></a>
+                        </div>
+                        <div class="bioSection">
+                            <div class="bioTitle">
+                                <a href="#" aria-label="Eyitayo “Tee” St. Matthew-Daniel">
+                                    <p>Eyitayo “Tee” St. Matthew-Daniel</p>
+                                </a>
+                            </div>
+                            <div class="bioContent">
+                                <p class="position">Partner</p>
+                                <ul>
+                                    <li>Washington</li>
+                                    <li>London</li>
+                                    <li>New York</li>
+                                </ul>
+                                <p><a href="tel:+1-212-373-3402">Tel: +1-212-373-3402</a></p>
+                                <p><a href="mailto:tstmatthewdaniel@paulweiss.com">tstmatthewdaniel@paulweiss.com</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="outBio">
+                    <div class="bioBlock">
+                        <div class="imgWrap">
+                            <a href="#" aria-label="Jarryd E. Anderson">
+                                <img src="assets/images/lawyer/jarryd.jpg" alt="Jarryd E. Anderson" class="lazy zoom"
+                                    width="345" height="336"></a>
+                        </div>
+                        <div class="bioSection">
+                            <div class="bioTitle">
+                                <a href="#" aria-label="Jarryd E. Anderson">
+                                    <p>Jarryd E. Anderson</p>
+                                </a>
+                            </div>
+                            <div class="bioContent">
+                                <p class="position">Partner</p>
+                                <ul>
+                                    <li>Washington</li>
+                                    <li>London</li>
+                                    <li>New York</li>
+                                </ul>
+                                <p><a href="tel:+1-212-373-3402">Tel: +1-212-373-3402</a></p>
+                                <p><a href="mailto:janderson@paulweiss.com">janderson@paulweiss.com</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="outBio">
+                    <div class="bioBlock">
+                        <div class="imgWrap">
+                            <a href="#" aria-label="Kanesh Balasubramaniam">
+                                <img src="assets/images/lawyer/kanesh.jpg" alt="Kanesh Balasubramaniam"
+                                    class="lazy zoom" width="345" height="336"></a>
+                        </div>
+                        <div class="bioSection">
+                            <div class="bioTitle">
+                                <a href="#" aria-label="Kanesh Balasubramaniam">
+                                    <p>Kanesh Balasubramaniam</p>
+                                </a>
+                            </div>
+                            <div class="bioContent">
+                                <p class="position">Partner</p>
+                                <ul>
+                                    <li>Washington</li>
+                                    <li>London</li>
+                                    <li>New York</li>
+                                </ul>
+                                <p><a href="tel:+1-212-373-3402">Tel: +1-212-373-3402</a></p>
+                                <p><a href="mailto:kbalas@paulweiss.com">kbalas@paulweiss.com</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="outBio">
+                    <div class="bioBlock">
+                        <div class="imgWrap">
+                            <a href="#" aria-label="Matthew W. Abbot">
+                                <img src="assets/images/lawyer/abbot.jpg" alt="Matthew W. Abbot" class="lazy zoom"
+                                    width="345" height="336"></a>
+                        </div>
+                        <div class="bioSection">
+                            <div class="bioTitle">
+                                <a href="#" aria-label="Matthew W. Abbot">
+                                    <p>Matthew W. Abbot</p>
+                                </a>
+                            </div>
+                            <div class="bioContent">
+                                <p class="position">Partner</p>
+                                <ul>
+                                    <li>Washington</li>
+                                    <li>London</li>
+                                    <li>New York</li>
+                                </ul>
+                                <p><a href="tel:+1-212-373-3402">Tel: +1-212-373-3402</a></p>
+                                <p><a href="mailto:mabbott@paulweiss.com">mabbott@paulweiss.com</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="outBio">
+                    <div class="bioBlock">
+                        <div class="imgWrap">
+                            <a href="#" aria-label="Eyitayo “Tee” St. Matthew-Daniel">
+                                <img src="assets/images/lawyer/eyitayo.jpg" alt="Eyitayo “Tee” St. Matthew-Daniel"
+                                    class="lazy zoom" width="345" height="336"></a>
+                        </div>
+                        <div class="bioSection">
+                            <div class="bioTitle">
+                                <a href="#" aria-label="Eyitayo “Tee” St. Matthew-Daniel">
+                                    <p>Eyitayo “Tee” St. Matthew-Daniel</p>
+                                </a>
+                            </div>
+                            <div class="bioContent">
+                                <p class="position">Partner</p>
+                                <ul>
+                                    <li>Washington</li>
+                                    <li>London</li>
+                                    <li>New York</li>
+                                </ul>
+                                <p><a href="tel:+1-212-373-3402">Tel: +1-212-373-3402</a></p>
+                                <p><a href="mailto:tstmatthewdaniel@paulweiss.com">tstmatthewdaniel@paulweiss.com</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="outBio">
+                    <div class="bioBlock">
+                        <div class="imgWrap">
+                            <a href="#" aria-label="Jarryd E. Anderson">
+                                <img src="assets/images/lawyer/jarryd.jpg" alt="Jarryd E. Anderson" class="lazy zoom"
+                                    width="345" height="336"></a>
+                        </div>
+                        <div class="bioSection">
+                            <div class="bioTitle">
+                                <a href="#" aria-label="Jarryd E. Anderson">
+                                    <p>Jarryd E. Anderson</p>
+                                </a>
+                            </div>
+                            <div class="bioContent">
+                                <p class="position">Partner</p>
+                                <ul>
+                                    <li>Washington</li>
+                                    <li>London</li>
+                                    <li>New York</li>
+                                </ul>
+                                <p><a href="tel:+1-212-373-3402">Tel: +1-212-373-3402</a></p>
+                                <p><a href="mailto:janderson@paulweiss.com">janderson@paulweiss.com</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="outBio">
+                    <div class="bioBlock">
+                        <div class="imgWrap">
+                            <a href="#" aria-label="Kanesh Balasubramaniam">
+                                <img src="assets/images/lawyer/kanesh.jpg" alt="Kanesh Balasubramaniam"
+                                    class="lazy zoom" width="345" height="336"></a>
+                        </div>
+                        <div class="bioSection">
+                            <div class="bioTitle">
+                                <a href="#" aria-label="Kanesh Balasubramaniam">
+                                    <p>Kanesh Balasubramaniam</p>
+                                </a>
+                            </div>
+                            <div class="bioContent">
+                                <p class="position">Partner</p>
+                                <ul>
+                                    <li>Washington</li>
+                                    <li>London</li>
+                                    <li>New York</li>
+                                </ul>
+                                <p><a href="tel:+1-212-373-3402">Tel: +1-212-373-3402</a></p>
+                                <p><a href="mailto:kbalas@paulweiss.com">kbalas@paulweiss.com</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="paginationpanels">
+                <ul>
+                    <li class="prev-arrow disable">
+                        <a aria-label="Goto Page 1" data-page="1" href="?page=1"></a>
+                    </li>
+                    <li class="prev disable">
+                        <a aria-label="Goto Page 1" data-page="1" href="?page=1">Prev</a>
+                    </li>
+                    <li class="active">
+                        <a data-page="1" aria-label="Goto Page 1" href="#">1</a>
+                    </li>
+                    <li>
+                        <a data-page="2" aria-label="Goto Page 2" href="#">2</a>
+                    </li>
+                    <li>
+                        <a data-page="3" aria-label="Goto Page 3" href="#">3</a>
+                    </li>
+                    <li>
+                        <a data-page="4" aria-label="Goto Page 4" href="#">4</a>
+                    </li>
+                    <li>
+                        <a data-page="4" aria-label="Goto Page 5" href="#">5</a>
+                    </li>
+                    <li>
+                        <a data-page="4" aria-label="Goto Page 6" href="#">6</a>
+                    </li>
+                    <li>
+                        <a data-page="4" aria-label="Goto Page 7" href="#">7</a>
+                    </li>
+                    <li>
+                        <a data-page="4" aria-label="Goto Page 7" href="#">8</a>
+                    </li>
+                    <li>
+                        <a data-page="4" aria-label="Goto Page 7" href="#">9</a>
+                    </li>
+                    <li>
+                        <a data-page="4" aria-label="Goto Page 7" href="#">10</a>
+                    </li>
+                    <li class="pages">...</li>
+                    <li>
+                        <a data-page="4" aria-label="Goto Page 7" href="#">104</a>
+                    </li>
+                    <li class="next">
+                        <a data-page="2" aria-label="Goto Page 2" href="#">Next</a>
+                    </li>
+                    <li class="next-arrow">
+                        <a aria-label="Goto Page" data-page="1" href="#"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

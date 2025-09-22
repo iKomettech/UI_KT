@@ -1,0 +1,191 @@
+@import "util/util";
+$img: "../../images/";
+$bgpanel-color: #B9C8DA;
+$mediumbluebgpanel: #0B3D71;
+$white: #ffffff;
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+.alumnicontentpanel {
+    margin-top: calc(clamp(2.5rem, 8.73vw + 0.356rem, 5.938rem));
+ 
+
+    @include breakpoint(large) {
+        margin-top: calc(clamp(5.938rem, 7.102vw + 1.392rem, 9.063rem));
+    }
+ 
+
+    .grid-container {
+        .twoColumn {
+            @include breakpoint(large) {
+                display: flex;
+            }
+
+            @include breakpoint(llarge) {
+                gap: 50px;
+            }
+
+            .contentwrap {
+                width: 100%;
+
+                @include breakpoint(large only) {
+                    width: 60%;
+                    margin-right: 2%;
+                }
+
+                @include breakpoint(llarge) {
+                    max-width: 855px;
+                    width: 100%;
+                }
+
+                p {
+                    font-family: 'UntitledSerif';
+                    font-style: normal;
+                    font-weight: 400;
+                    letter-spacing: -0.01em;
+                    word-break: break-word;
+
+                    line-height: 123.6%;
+
+                    font-size: clamp(18px, calc(18px + (22 - 18) * ((100vw - 393px) / (1023 - 393))), 22px);
+
+                    @include breakpoint(large) {
+                        font-size: clamp(22px, calc(22px + (27 - 22) * ((100vw - 1024px) / (1728 - 1024))), 27px);
+                    }
+
+                    letter-spacing: -0.01em;
+
+
+                    +p {
+                        margin-top: 30px;
+                    }
+                }
+
+                .alumnibtn {
+                    margin-top: calc(clamp(2.188rem, 0vw + 2.188rem, 2.188rem));
+
+                    @include breakpoint(large) {
+                        margin-top: calc(clamp(2.188rem, 1.705vw + 1.097rem, 2.938rem));
+
+                    }
+
+                    .alumniCta {
+                        display: inline-block;
+                        max-width: calc(clamp(22rem, 3.492vw + 21.142rem, 23.375rem));
+                        width: 100%;
+                        background: #0B3D71;
+                        font-style: normal;
+                        font-weight: 700;
+                        /* or 24px */
+                        letter-spacing: -0.025em;
+                        color: #FFFFFF;
+                        // padding: 19px 20px 15px;
+                        padding-top: calc(clamp(1.188rem, 0.635vw + 1.032rem, 1.438rem));
+                        padding-inline: calc(clamp(1.25rem, 2.222vw + 0.704rem, 2.125rem));
+                        padding-bottom: calc(clamp(0.938rem, 0.159vw + 0.899rem, 1rem));
+                        transition: all ease-in-out .5s;
+                        position: relative;
+                        font-size: calc(clamp(1.25rem, 0vw + 1.25rem, 1.25rem));
+                        line-height: 97.1%;
+                        letter-spacing: -0.025em;
+
+                        // @include breakpoint(medium) {
+                        //     max-width: 374px;
+
+                        //     // padding: 23px 34px 16px;
+                        // }
+
+                        @include breakpoint(large) {
+                            font-size: calc(clamp(1.25rem, 0.71vw + 0.795rem, 1.563rem));
+                            line-height: 97.1%;
+                        }
+
+                        &:hover {
+                            background: $bgpanel-color;
+                            text-decoration: none;
+                            color: #0B3D71;
+
+                            &::after {
+                                background: url('#{$img}settings/share-shape.svg') no-repeat;
+
+                            }
+                        }
+
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            right: calc(clamp(1.25rem, 3.016vw + 0.509rem, 2.438rem));
+                            top: calc(clamp(1rem, 0.952vw + 0.766rem, 1.375rem));
+                            height: 20px;
+                            width: 20px;
+                            background: url('#{$img}settings/share.svg') no-repeat;
+                            transition: all ease-in-out .5s;
+
+                            // @include breakpoint(medium) {
+                            //     right: 39px;
+                            //     top: 22px;
+                            // }
+                        }
+                    }
+                }
+            }
+
+            .imgwrap {
+                margin-top: calc(clamp(1.875rem, 1.587vw + 1.485rem, 2.5rem));                
+                 @media screen and (max-width: 530px) {
+                    margin-inline: -20px;
+                 }
+
+                 @media screen and (max-width: 1023px) {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    // margin-top: 30px;
+                }
+
+                @include breakpoint(large only) {
+                    width: 50%;
+                }
+
+                img {
+
+                    filter: grayscale(1);                }
+
+                @include breakpoint(large) {
+                    margin-top: calc(clamp(0.438rem, 0vw + 0.438rem, 0.438rem));
+                }
+
+                p {
+                    font-family: 'ABCDiatype';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: calc(clamp(1rem, 0.317vw + 0.922rem, 1.125rem));
+                    line-height: 100%;
+                    /* or 20px */
+                    letter-spacing: -0.025em;
+                    color: #001F3F;
+                    word-break: break-word;
+                    max-width: 441px;
+                    margin-inline: 20px;
+                    margin-top: 19px;
+
+                    @include breakpoint(medium) {
+                        max-width: 441px;
+                        margin-inline: inherit;
+                        margin-top: 12px;
+                    }
+
+                    @include breakpoint(large) {
+                        font-size: calc(clamp(1.125rem, 0.284vw + 0.943rem, 1.25rem));
+                    }
+                }
+            }
+        }
+    }
+}

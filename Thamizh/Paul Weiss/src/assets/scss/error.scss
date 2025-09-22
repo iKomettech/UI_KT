@@ -1,0 +1,100 @@
+$primary-color: #001F3F;
+$secondary-color:#B9C8DA;
+@import "util/util";
+$img: "../../images/";
+$bgpanel-color: #B9C8DA;
+$lightbluebgpanel :#F5F7FB;
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+.page404Wrap {
+    padding-top: 45px;
+    .contentwrap{
+      border-top: 10px solid #B9C8DA;
+        padding-top: calc(clamp(0.625rem, 2.857vw - 0.077rem, 1.75rem));
+        padding-bottom: 2px;
+        @include breakpoint(large) { 
+            padding-top: 28px;
+            padding-bottom: 0;
+        }
+        @include breakpoint(xxlarge) { 
+            padding-top: 22px;
+        }
+        .content{
+          max-width: 1060px;
+        }
+    }
+    .ctawrap{
+        margin-top: clamp(55px, calc(55px + (110 - 55) * ((100vw - 393px) / (1728 - 393))), 110px);
+       .allresult{
+          margin-bottom: 25px;
+       }
+    }
+    h1{
+      font-style: normal;
+      font-weight: 700; 
+      letter-spacing: -0.03em;
+      margin-bottom: calc(clamp(1.875rem, 2.381vw + 1.29rem, 2.813rem));
+      font-size: clamp(55px, calc(55px + (64 - 55) * ((100vw - 393px) / (1023 - 393))), 64px);
+      font-weight: 700;
+      line-height: 100%;
+      letter-spacing: clamp(-2.75px, calc(-2.75px + (-4.25 + 2.75) * ((100vw - 393px) / (1728 - 393))), -4.25px);
+  
+      // @include breakpoint(medium) {
+      
+      //     margin-bottom: 45px;
+      // }
+      @include breakpoint(large) { 
+        font-size: clamp(64px, calc(64px + (90 - 64) * ((100vw - 1024px) / (1728 - 1024))), 90px); 
+        margin-bottom: calc(clamp(2.813rem, 2.841vw + 0.994rem, 4.063rem));
+        margin-top: calc(clamp(0rem, 0.71vw - 0.455rem, 0.313rem));
+      }
+      @include breakpoint(xxlarge) {   
+          margin-left: -8px;
+          // margin-top: 5px;
+          // margin-bottom: 65px;
+      }
+    }
+    h3 {
+      margin-top: 0px;
+      font-size: clamp(30px, calc(30px + (60 - 30) * ((100vw - 393px) / (767 - 393))), 60px);
+      line-height:126.6%;
+      color: $primary-color;
+      text-transform: uppercase;
+      font-weight: 700;
+      @include breakpoint(medium) {
+        font-size: clamp(60px, calc(60px + (70 - 60) * ((100vw - 768px) / (1023 - 768))), 70px); 
+      }
+      @include breakpoint(large) {
+        font-size: clamp(70px, calc(70px + (90 - 70) * ((100vw - 1024px) / (1728 - 1024))), 90px); 
+      }
+    }
+  
+    p{
+      font-family: 'UntitledSerif'; 
+      font-style: normal;
+      font-weight: 400; 
+      line-height: 123.6%;
+      letter-spacing: -0.01em;
+      
+    font-size: clamp(18px, calc(18px + (22 - 18) * ((100vw - 393px) / (1023 - 393))), 22px);
+
+    @include breakpoint(large) {
+        font-size: clamp(22px, calc(22px + (27 - 22) * ((100vw - 1024px) / (1728 - 1024))), 27px);
+    }
+
+      a {
+        font-weight:600;
+        text-decoration: none;
+      }
+    }
+  
+    
+  }
+ 

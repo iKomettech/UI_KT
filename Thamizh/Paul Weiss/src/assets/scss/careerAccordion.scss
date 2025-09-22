@@ -1,0 +1,420 @@
+$primary-color: #001F3F;
+$secondary-color: #B9C8DA;
+@import "util/util";
+$img: "../../images/";
+$bgpanel-color: #B9C8DA;
+$mediumbluebgpanel: #0B3D71;
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+
+.careerJudicial {
+    margin-top: 40px;
+
+    @include breakpoint(medium) {
+        margin-top: 65px;
+    }
+
+    @include breakpoint(large) {
+        margin-top: 95px;
+    }
+
+    @include breakpoint(llarge) {
+        margin-top: 82px;
+    }
+
+    .grid-container {
+
+        .accordion {
+            margin-top: 0px;
+
+            @include breakpoint(small only) {
+                margin-inline: -20px;
+            }
+
+            .list-collapse {
+                list-style: none;
+                padding: 0;
+                font-size: clamp(20px, calc(20px + (20 - 20) * ((100vw - 393px) / (1728 - 393))), 20px);
+                margin-bottom: 20px;
+                margin-left: 0;
+
+                @include breakpoint(small only) {
+                    margin-bottom: 20px;
+                }
+
+                @include breakpoint(medium only) {
+                    margin-bottom: 20px;
+                }
+
+                > li{
+                    &::before{
+                        display: none;
+                    }
+                }
+
+                li {
+
+                    margin-bottom: 20px;
+                    padding-left: 0;
+
+                    @include breakpoint(large) {
+                        margin-bottom: 30px;
+                    }
+
+                    @include breakpoint(llarge) {
+                        margin-bottom: 50px;
+                    }
+
+                    .header {
+                        a {
+                            position: relative;
+                            background: $bgpanel-color;
+                            color: $primary-color;
+                            padding: 17px 24px 14px 20px;
+                            display: block;
+                            text-decoration: none;
+                            -webkit-transition: all 0.3s ease;
+                            -moz-transition: all 0.3s ease;
+                            -o-transition: all 0.3s ease;
+                            -ms-transition: all 0.3s ease;
+                            transition: all 0.3s ease;
+                            position: relative;
+                            font-size: clamp(25px, calc(25px + (30 - 25) * ((100vw - 393px) / (1023 - 393))), 30px);
+                            font-weight: 400;
+                            line-height: 97.1%;
+                            /* identical to box height, or 39px */
+                            letter-spacing: -0.025em;
+                            font-family: 'UntitledSerif';
+
+
+                            @include breakpoint(large) {
+                                font-size: clamp(30px, calc(30px + (40 - 30) * ((100vw - 1024px) / (1728 - 1024))), 40px);
+                                padding: 21px 24px 18px 24px;
+                            }
+
+                            @include breakpoint(llarge) {
+                                padding: 30.5px 24px 27.5px 26px;
+                            }
+
+                            &::before,
+                            i {
+                                content: "";
+                                width: 20px;
+                                background: url(#{$img}settings/icon-top-blue.svg) no-repeat;
+                                background-size: contain;
+                                height: 12px;
+                                border: 0;
+                                display: inline-block;
+                                margin: 10px 0 0 10px;
+                                position: absolute;
+                                top: 15px;
+                                right: 34px;
+                                transition: 0.2s ease;
+                                transform: rotate(180deg);
+
+                                @include breakpoint(large) {
+                                    top: 16px;
+                                    height: 18px;
+                                    width: 31px;
+                                    right: 47px;
+                                }
+
+                                @include breakpoint(llarge) {
+                                    top: 28px;
+                                    right: 36px;
+                                    height: 20px;
+                                    width: 35px;
+                                }
+                            }
+
+                            &.filter-selected {
+                                background: $mediumbluebgpanel;
+                                color: #ffffff;
+                                font-weight: 700;
+                                &::before,
+                                i {
+                                    transform: rotate(360deg);
+                                    transition: 0.2s ease;
+                                    background: url(#{$img}settings/icon-top-white.svg) no-repeat;
+                                    background-size: cover;
+                                    top:13px;
+                                    @include breakpoint(large) {
+                                        top: 14px;
+                                        right: 48px;
+                                    }
+
+                                    @include breakpoint(llarge) {
+                                        top: 25px;
+                                        right: 38px;
+                                    }
+                                }
+                            }
+
+                            i {
+                                &.filter-selected {
+                                    transform: rotate(360deg);
+                                    // transition: 0.2s ease;
+                                    top: 7px;
+                                }
+                            }
+                        }
+                    }
+
+                    .content {
+                        display: none;
+                        overflow: auto;
+                        max-height: auto;
+                        padding-left: 20px;
+                        padding-top: 40px;
+                        padding-bottom: 31px;
+                        padding-right: 20px;
+                        background: #f1f4f8;
+                        position: relative;
+                        @include breakpoint(large) {
+                            padding-top: 52px;
+                            padding-left: 35px;
+                            padding-bottom: 43px;
+                            padding-right: 35px;
+                        }
+
+                        @include breakpoint(llarge) {
+                            padding-left: 36px;
+                            padding-top: 52px;
+                            padding-bottom: 43px;
+                            padding-right: 30px;
+                        }
+
+                        .insideTopContent {
+                            max-width: 1120px;
+                            width: 100%;
+
+                            p {
+                                font-family: 'ABCDiatype';
+                                font-style: normal;
+                                font-weight: 400;
+                                font-size: clamp(18px, calc(18px + (20 - 18) * ((100vw - 393px) / (1023 - 393))), 20px);
+                                line-height: 100%;
+                                letter-spacing: -0.025em;
+                                @include breakpoint(large) {
+                                    // font-size: 20px;
+                                }
+
+                                a {
+                                    text-decoration: underline;
+                                }
+
+                                +p {
+                                    margin-top: 24px;
+                                }
+                            }
+
+                            ul {
+                                margin-left: 0rem;
+
+                                li {
+                                    font-family: 'ABCDiatype';
+                                    font-style: normal;
+                                    font-weight: 700;
+                                    font-size: clamp(20px, calc(20px + (20 - 20) * ((100vw - 393px) / (1728 - 393))), 20px);
+                                    line-height: 116.6%;
+                                    /* or 23px */
+                                    letter-spacing: -0.025em;
+                                    color: #001F3F;
+
+                                    a {
+                                        font-size: clamp(20px, calc(20px + (20 - 20) * ((100vw - 393px) / (1728 - 393))), 20px);
+                                        font-weight: 400;
+                                        transition: all 0.75s;
+                                        text-decoration: none;
+
+                                        @include breakpoint(large) {
+                                            font-size: clamp(20px, calc(20px + (20 - 20) * ((100vw - 393px) / (1728 - 393))), 20px);
+                                        }
+
+                                    }
+                                }
+                            }
+                        }
+
+                        hr {
+
+                            max-width: 1120px;
+                            margin-left: 0;
+                            margin-block: 39px;
+                            border-bottom: 3px solid;
+                            @include breakpoint(large) {
+                                margin-block: 54px;
+                            }
+                        }
+
+                        .infoBlock {
+                            margin-top: 35px;                           
+
+                            .nameBlock {
+                                p {
+                                    font-family: 'ABCDiatype';
+                                    font-style: normal;
+                                    font-weight: 700;
+                                    font-size: clamp(22px, calc(22px + (25 - 22) * ((100vw - 393px) / (1023 - 393))), 25px);
+                                    line-height: 97.1%;
+                                    letter-spacing: -0.025em;
+                                }
+                            }
+
+                            .positionBlock {
+                                margin-top: 17px;        
+                                p {
+                                    font-family: 'ABCDiatype';
+                                    font-style: normal;
+                                    font-weight: 700;
+                                    font-size: clamp(18px, calc(18px + (20 - 18) * ((100vw - 393px) / (1023 - 393))), 20px);
+                                    line-height: 100%;
+                                    letter-spacing: -0.025em;
+                                    color: #0B3D71;
+                                }
+                            }
+
+                            .blockAddress {
+                                p {
+                                    font-family: 'ABCDiatype';
+                                    font-style: normal;
+                                    font-weight: 400;
+                                    font-size: clamp(18px, calc(18px + (20 - 18) * ((100vw - 393px) / (1023 - 393))), 20px);
+                                    line-height: 116.6%;
+                                    /* or 23px */
+                                    letter-spacing: -0.025em;
+                                    color: #0B3D71;                                    
+                                }
+                            }
+
+                            .emailBlock {
+                                margin-top: 20px;
+
+                                @include breakpoint(large) {
+                                    margin-top: 18px;
+                                }
+
+                                @include breakpoint(llarge) {
+                                    margin-top: 17px;
+                                }
+
+                                p,
+                                a {
+                                    font-family: 'ABCDiatype';
+                                    font-style: normal;
+                                    font-weight: 400;
+                                    font-size: clamp(18px, calc(18px + (20 - 18) * ((100vw - 393px) / (1023 - 393))), 20px);
+                                    line-height: 116.6%;
+                                    color: #0B3D71;                           
+                                    letter-spacing: -0.025em;
+                                }
+                            }
+                        }
+
+
+
+                        .insideBottomContent {
+                            max-width: 1120px;
+                            width: 100%;
+
+                            p {
+                                font-family: 'ABCDiatype';
+                                font-style: normal;
+                                font-weight: 400;
+                                font-size: clamp(18px, calc(18px + (20 - 18) * ((100vw - 393px) / (1023 - 393))), 20px);
+                                line-height: 116.6%;
+                                letter-spacing: -0.025em;
+                                a {
+                                    text-decoration: underline;
+                                }
+
+                                +p {
+                                    margin-top: calc(clamp(1.125rem, 0.449vw + 1.015rem, 1.5rem))
+                                }
+                            }
+
+                            ul {
+                                margin-left: 0rem;
+                                margin-top: calc(clamp(1.25rem, 1.124vw + 0.974rem, 2.188rem));                            
+
+                                li {
+                                    font-family: 'ABCDiatype';
+                                    font-style: normal;
+                                    font-weight: 400;
+                                    font-size: clamp(18px, calc(18px + (20 - 18) * ((100vw - 393px) / (1023 - 393))), 20px);
+                                    line-height: 116.6%;
+                                    /* or 23px */
+                                    letter-spacing: -0.025em;
+                                    color: #001F3F;
+                                    position: relative;
+                                    padding-left: 40px;
+                                    margin-bottom: 34px;
+
+                                    // @include breakpoint(large) {
+                                    //     font-size: 20px;
+                                    // }
+                                   
+
+                                    a {
+                                        font-size: clamp(18px, calc(18px + (20 - 18) * ((100vw - 393px) / (1023 - 393))), 20px);
+                                        font-weight: 400;
+                                        transition: all 0.75s;
+                                        text-decoration: none;
+
+                                        // @include breakpoint(large) {
+                                        //     font-size: 20px;
+                                        // }
+
+                                    }
+
+                                    &:last-child {
+                                        margin-bottom: 0;
+                                    }
+
+                                    &::before {
+                                        content: '';
+                                        position: absolute;
+                                        top: 3px;
+                                        left: 0;
+                                        background: url('#{$img}settings/squareBullet.svg') no-repeat;
+                                        background-size: contain;
+                                        height: 18px;
+                                        width: 18px;
+                                        transform: rotate(0deg);
+                                    }
+                                }
+                            }
+
+                            h3 {
+                                font-family: 'ABCDiatype';
+                                font-style: normal;
+                                font-weight: 700;
+                                font-size: clamp(22px, calc(22px + (27 - 22) * ((100vw - 393px) / (1023 - 393))), 27px);
+                                line-height: 116.6%;
+                                letter-spacing: -0.01em;
+                                margin-top: calc(clamp(2.188rem, 0.375vw + 2.096rem, 2.5rem));
+                                margin-bottom: 0.938rem;
+                                color: #001F3F;                              
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+.MacOS .careerJudicial .grid-container .accordion .list-collapse li .header a,
+.MacOS .careerJudicial .grid-container .accordion .list-collapse li .header a.filter-selected::before,
+.MacOS .careerJudicial .grid-container .accordion .list-collapse li .header a.filter-selected i,
+.MacOS .careerJudicial .grid-container .accordion .list-collapse li .header a.filter-selected {
+    transition: inherit;
+}

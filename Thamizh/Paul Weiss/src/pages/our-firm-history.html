@@ -1,0 +1,757 @@
+<link rel="stylesheet" href="{{root}}assets/css/subbanner/subbanner.css" media="all">
+<div class="subannerPanel ourfirmbannerpanel mt-140 module">
+    <picture>
+        <source media="(min-width:320px) and (max-width:480px)"
+            srcset="{{root}}assets/images/our-firm/mobile-banner.jpg" type="image/jpg">
+        <img src="{{root}}assets/images/our-firm/banner.jpg" width="1920" height="825" alt="banner" loading="lazy"
+            class="lazy">
+    </picture>
+    <div class="grid-container">
+        <div class="contentwrapper">
+            <div class="innerwrap">
+                <div class="contwrap">
+                    <div class="content">
+                        <h1 class="active"><a href="#">Our Firm</a></h1>
+                        <div class="h1"><a href="#">Inclusion</a></div>
+                        <div class="h1"><a href="#">Alumni</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="ourfirm">
+    <div class="mobile">
+        <div class="set">
+            <a href="javscript:void(0);" class="acclaw">
+                History
+            </a>
+            <div class="accordioncontent">
+                <div class="listwrap">
+                    <ul>
+                        <li class=""><a href="#">About Paul, Weiss</a></li>
+                        <li class="active"><a href="#">History</a></li>
+                        <li class=""><a href="#">Sustainability</a></li>
+                        <li class=""><a href="#">Business Professionals / Our Leaders</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="linkspanel" id="targetPanel">
+    <div class="grid-container">
+        <ul>
+            <li class=""><a href="our-firm-about.html#targetPanel">About Paul, Weiss</a></li>
+            <li class="active"><a href="our-firm-history.html#targetPanel">History</a></li>
+            <li class=""><a href="our-firm-sustainability.html#targetPanel">Sustainability</a></li>
+            <li class=""><a href="our-firm-leaders.html#targetPanel">Business Professionals / Our Leaders</a></li>
+        </ul>
+    </div>
+</div>
+<link rel="stylesheet" href="{{root}}assets/css/firmcontentpanel/firmcontentpanel.css" media="all">
+<div class="firmcontentpanel module">
+    <div class="grid-container">
+        <div class="contentwrap">
+            <p>History Paul, Weiss, Rifkind, Wharton & Garrison LLP, together with its predecessor firms, has been a
+                presence in New York City for nearly 150 years and a part of the international legal community for more
+                than fifty years.</p>
+        </div>
+    </div>
+</div>
+<link rel="stylesheet" href="{{root}}assets/css/timelinepanel/timelinepanel.css" media="all">
+<script type="text/javascript" defer>
+    $(document).ready(function () {
+        var mainSwiper = new Swiper(".main-swiper", {
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev"
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                type: "progressbar"
+            },
+            loop: false,
+            effect: "slide",
+            spaceBetween: 30,
+            on: {
+                init: function () {
+                    $(".swiper-pagination-custom .swiper-pagination-switch").removeClass("active");
+                    $(".swiper-pagination-custom .swiper-pagination-switch").eq(0).addClass("active");
+                },
+                slideChangeTransitionStart: function () {
+                    $(".swiper-pagination-custom .swiper-pagination-switch").removeClass("active");
+                    $(".swiper-pagination-custom .swiper-pagination-switch").eq(mainSwiper.realIndex).addClass("active");
+                }
+            },
+            thumbs: {
+                swiper: {
+                    el: '.thumb-swiper',
+                    slidesPerView: 3,
+                    spaceBetween: 0,
+                    freeMode: true,
+                    watchSlidesVisibility: true,
+                    watchSlidesProgress: true,
+                }
+            }
+        });
+        var thumbSwiper = new Swiper('.thumb-swiper', {
+            spaceBetween: 10,
+            slidesPerView: 3,
+            freeMode: true,
+            watchSlidesVisibility: true,
+            watchSlidesProgress: true,
+        });
+        $(".swiper-pagination-custom .swiper-pagination-switch").click(function () {
+            thumbSwiper.slideTo($(this).index());
+            $(".swiper-pagination-custom .swiper-pagination-switch").removeClass("active");
+            $(this).addClass("active");
+        });
+    });
+
+    $(document).ready(function () {
+        var getId;
+        $('.history-content .history-body .contentwrap').hide();
+        function openModal() {
+            $('.history-content').show();
+            $('.history-content .history-body .contentwrap').css('display', 'block');
+            $('.history-overlay').fadeIn();
+            $(".history-content").animate({
+                right: "0px"
+            }, 600);
+            $('body').css('overflow', 'hidden');
+            if (getId) {
+                $('.history-content .history-body .contentwrap').each(function () {
+                    var currentId = $(this).attr('id');
+                    if (currentId === getId) {
+                        $(this).show();
+                    } else {
+                        $(this).hide();
+                    }
+                });
+            }
+        }
+        function closeModal() {
+            $('.history-overlay').fadeOut();
+            $(".history-content").animate({
+                right: "-100%"
+            }, 600);
+            $('body').css('overflow', 'inherit');
+
+        }
+        $('.open-modal-btn').on('click', function (event) {
+            event.preventDefault();
+            getId = $(this).attr('id');
+            openModal();
+            contentHeight();
+            
+        });
+        $('.history-close').on('click', function () {
+            closeModal();
+        });
+        $('.history-overlay').on('click', function (event) {
+            if ($(event.target).is('.history-overlay')) {
+                closeModal();
+            }
+        });
+        function contentHeight() {
+            var winHeight = $(window).height();
+            // var topWrapHeight = $('.history-content .history-body .contentwrap .topwrap').outerHeight();
+            var topWrapHeight = 0;
+            $('.history-content .history-body .contentwrap .topwrap').each(function () {
+                topWrapHeight += $(this).outerHeight();
+            });
+            var scrollContentWrapHeight = winHeight - topWrapHeight;
+            $('.scrollcontentwrap').css('height', scrollContentWrapHeight);
+        }
+        $(window).resize(contentHeight);
+
+    });
+    document.addEventListener('DOMContentLoaded', () => {
+        const button = document.querySelector('.dropdown-toggle');
+        const ul = document.querySelector('.timelinetab-links');
+
+        button.addEventListener('click', () => {
+            const isOpen = ul.classList.contains('open');
+            ul.style.maxHeight = isOpen ? '0px' : ul.scrollHeight + 'px';
+            ul.classList.toggle('open');
+            button.classList.toggle('active');
+        });
+
+        ul.addEventListener('click', (event) => {
+            if (event.target.tagName === 'LI') {
+                document.querySelectorAll('.timelinetab-links li').forEach(li => {
+                    li.classList.remove('active');
+                });
+                event.target.classList.add('active');
+                button.textContent = event.target.textContent;
+                ul.style.maxHeight = '0px';
+                ul.classList.remove('open');
+                button.classList.remove('active');
+            }
+        });
+        $('.scrollcontentwrap').on('scroll', function () {
+            var scrollTop = $(this).scrollTop();
+            if (scrollTop >= 50) {
+                $(this).addClass('scrollPos');
+                $('.topwrap').addClass('adjusedWidth');
+
+            } else {
+                $(this).removeClass('scrollPos');
+                $('.topwrap').removeClass('adjusedWidth');
+            }
+        });
+
+    });
+
+
+</script>
+<!-- <link rel="stylesheet" href="https://buzinas.github.io/simple-scrollbar/simple-scrollbar.css">
+<script src="https://buzinas.github.io/simple-scrollbar/simple-scrollbar.min.js"></script> -->
+<div class="timelinepanel module">
+    <div class="timelinebg">
+        <style type="text/css">
+            @media screen and (min-width: 320px) {
+                .timelinebg {
+                    background: url('{{root}}assets/images/our-firm/history-mobile.jpg') no-repeat center;
+                    background-size: cover;
+                }
+            }
+
+            @media only screen and (min-width:481px) {
+                .timelinebg {
+                    background: url('{{root}}assets/images/our-firm/history-bg.jpg') no-repeat center;
+                    background-size: cover;
+                }
+            }
+        </style>
+    </div>
+    <div class="grid-container">
+        <div class="contentwrap">
+            <h2>Timeline</h2>
+            <div class="historymodule">
+                <div class="swiper-container-wrapper swiper-container-wrapper--timeline">
+                    <div class="periodcontent">
+                        <div thumbsSlider="" class="swiper thumb-swiper">
+                            <div class="swiper-wrapper swiper-pagination-custom">
+                                <div class="swiper-slide">
+                                    <div class="swiper-pagination-switch first active">
+                                        <span class='switch-title'>1875 - 1910</span>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="swiper-pagination-switch">
+                                        <span class='switch-title'>1910 - 1950</span>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="swiper-pagination-switch">
+                                        <span class='switch-title'>1950 - 2000</span>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="swiper-pagination-switch">
+                                        <span class='switch-title'>2000 - Present</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination swiper-pagination-progressbar swiper-pagination-horizontal"></div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+                    <div class="swiper main-swiper swiper-container swiper-container--timeline">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide" id="timeline-1">
+                                <div class="historycontentimagepanel">
+                                    <div class="historywrap">
+                                        <div class="ctentwrap">
+                                            <div class="flexwrap">
+                                                <div class="imgwrap">
+                                                    <img src="{{root}}assets/images/our-firm/wf-image-placeholder.jpg"
+                                                        width="413" height="415" alt="rifkind photo" class="lazy">
+                                                </div>
+                                                <div class="contwrap">
+                                                    <p>Enduring in heritage, eclectic in personality, enterprising in
+                                                        practice, and most famously ecumenical in attitudes, Paul,
+                                                        Weiss, Rifkind, Wharton & Garrison sought to become a different
+                                                        kind of law firm. The goal, Simon Rifkind wrote in 1963 in
+                                                        the Statement of Firm Principles, is “to achieve the highest
+                                                        order of excellence in the practice of the art, the science and
+                                                        the profession of the law; through such practice to earn a
+                                                        living and to derive the stimulation and pleasure of worthwhile
+                                                        adventure; and in all things to govern ourselves as members of a
+                                                        free democratic society with responsibilities both to our
+                                                        profession and our country.” The firm’s governance is dedicated
+                                                        to the principle of one partner/one vote, no matter seniority or
+                                                        client appeal, and to universal service in all aspects of firm
+                                                        administration, with attendant transparency in firm management
+                                                        and collegiality in firm culture. Its partners are committed
+                                                        to providing excellence in the rendition of legal services at
+                                                        the pinnacle of the profession while remaining actively engaged
+                                                        in matters of social consequence. To this end, the firm seeks to
+                                                        attract lawyers reflecting a wide variety of religious,
+                                                        political, ethnic, cultural, gender, sexual orientation and
+                                                        social backgrounds characteristic of the city of its home.</p>
+                                                    <div class="allresult">
+                                                        <a href="javascript:void(0)" aria-label="Continue Reading"
+                                                            class="view-all open-modal-btn"> Continue Reading... </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide" id="timeline-2">
+                                <div class="historycontentimagepanel">
+                                    <div class="historywrap">
+                                        <div class="ctentwrap">
+                                            <div class="flexwrap">
+                                                <div class="contwrap fullcontent">
+                                                    <p>Enduring in heritage, eclectic in personality, enterprising in
+                                                        practice, and most famously ecumenical in attitudes, Paul,
+                                                        Weiss, Rifkind, Wharton & Garrison sought to become a different
+                                                        kind of law firm. The goal, Simon Rifkind wrote in 1963 in
+                                                        the Statement of Firm Principles, is “to achieve the highest
+                                                        order of excellence in the practice of the art, the science and
+                                                        the profession of the law; through such practice to earn a
+                                                        living and to derive the stimulation and pleasure of worthwhile
+                                                        adventure; and in all things to govern ourselves as members of a
+                                                        free democratic society with responsibilities both to our
+                                                        profession and our country.” The firm’s governance is dedicated
+                                                        to the principle of one partner/one vote, no matter seniority or
+                                                        client appeal, and to universal service in all aspects of firm
+                                                        administration, with attendant transparency in firm management
+                                                        and collegiality in firm culture. Its partners are committed
+                                                        to providing excellence in the rendition of legal services at
+                                                        the pinnacle of the profession while remaining actively engaged
+                                                        in matters of social consequence. To this end, the firm seeks to
+                                                        attract lawyers reflecting a wide variety of religious,
+                                                        political, ethnic, cultural, gender, sexual orientation and
+                                                        social backgrounds characteristic of the city of its home.</p>
+                                                    <div class="allresult">
+                                                        <a href="javascript:void(0)" aria-label="Continue Reading"
+                                                            class="view-all"> Continue Reading... </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide" id="timeline-3">
+                                <div class="historycontentimagepanel">
+                                    <div class="historywrap">
+                                        <div class="ctentwrap">
+                                            <div class="flexwrap">
+                                                <div class="contwrap fullcontent">
+                                                    <p>Enduring in heritage, eclectic in personality, enterprising in
+                                                        practice, and most famously ecumenical in attitudes, Paul,
+                                                        Weiss, Rifkind, Wharton & Garrison sought to become a different
+                                                        kind of law firm. The goal, Simon Rifkind wrote in 1963 in
+                                                        the Statement of Firm Principles, is “to achieve the highest
+                                                        order of excellence in the practice of the art, the science and
+                                                        the profession of the law; through such practice to earn a
+                                                        living and to derive the stimulation and pleasure of worthwhile
+                                                        adventure; and in all things to govern ourselves as members of a
+                                                        free democratic society with responsibilities both to our
+                                                        profession and our country.” The firm’s governance is dedicated
+                                                        to the principle of one partner/one vote, no matter seniority or
+                                                        client appeal, and to universal service in all aspects of firm
+                                                        administration, with attendant transparency in firm management
+                                                        and collegiality in firm culture. Its partners are committed
+                                                        to providing excellence in the rendition of legal services at
+                                                        the pinnacle of the profession while remaining actively engaged
+                                                        in matters of social consequence. To this end, the firm seeks to
+                                                        attract lawyers reflecting a wide variety of religious,
+                                                        political, ethnic, cultural, gender, sexual orientation and
+                                                        social backgrounds characteristic of the city of its home.</p>
+                                                    <div class="allresult">
+                                                        <a href="javascript:void(0)" aria-label="Continue Reading"
+                                                            class="view-all"> Continue Reading... </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide" id="timeline-4">
+                                <div class="historycontentimagepanel">
+                                    <div class="historywrap">
+                                        <div class="ctentwrap">
+                                            <div class="flexwrap">
+                                                <div class="imgwrap">
+                                                    <img src="{{root}}assets/images/our-firm/wf-image-placeholder.jpg"
+                                                        width="413" height="415" alt="rifkind photo" class="lazy">
+                                                </div>
+                                                <div class="contwrap">
+                                                    <p>Enduring in heritage, eclectic in personality, enterprising in
+                                                        practice, and most famously ecumenical in attitudes, Paul,
+                                                        Weiss, Rifkind, Wharton & Garrison sought to become a different
+                                                        kind of law firm. The goal, Simon Rifkind wrote in 1963 in
+                                                        the Statement of Firm Principles, is “to achieve the highest
+                                                        order of excellence in the practice of the art, the science and
+                                                        the profession of the law; through such practice to earn a
+                                                        living and to derive the stimulation and pleasure of worthwhile
+                                                        adventure; and in all things to govern ourselves as members of a
+                                                        free democratic society with responsibilities both to our
+                                                        profession and our country.” The firm’s governance is dedicated
+                                                        to the principle of one partner/one vote, no matter seniority or
+                                                        client appeal, and to universal service in all aspects of firm
+                                                        administration, with attendant transparency in firm management
+                                                        and collegiality in firm culture. Its partners are committed
+                                                        to providing excellence in the rendition of legal services at
+                                                        the pinnacle of the profession while remaining actively engaged
+                                                        in matters of social consequence. To this end, the firm seeks to
+                                                        attract lawyers reflecting a wide variety of religious,
+                                                        political, ethnic, cultural, gender, sexual orientation and
+                                                        social backgrounds characteristic of the city of its home.</p>
+                                                    <div class="allresult">
+                                                        <a href="javascript:void(0)" aria-label="Continue Reading"
+                                                            class="view-all"> Continue Reading... </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="historymobilepanel">
+                <div class="mobiletimeline">
+                    <button class="dropdown-toggle">1875 - 1910</button>
+                    <ul class="timelinetab-links">
+                        <li class="active" data-value="1875-1910">1875 - 1910</li>
+                        <li data-value="1910-1950">1910 - 1950</li>
+                        <li data-value="1950-2000">1950 - 2000</li>
+                        <li data-value="2000-Present">2000 - Present</li>
+                    </ul>
+                </div>
+                <div class="mobilehistorywrap">
+                    <div class="flexwrap">
+                        <div class="imgwrap">
+                            <img src="assets/images/our-firm/wf-image-placeholder.jpg" width="413" height="415"
+                                alt="rifkind photo" class="lazy">
+                        </div>
+                        <div class="contwrap">
+                            <p>Enduring in heritage, eclectic in personality, enterprising in practice, and most
+                                famously ecumenical in attitudes, Paul, Weiss, Rifkind, Wharton & Garrison sought to
+                                become a different kind of law firm. The goal, Simon Rifkind wrote in 1963 in the
+                                Statement of Firm Principles, is “to achieve the highest order of excellence in the
+                                practice of the art, the science and the profession of the law; through such practice to
+                                earn a living and to derive the stimulation and pleasure of worthwhile adventure; and in
+                                all things to govern ourselves as members of a free democratic society with
+                                responsibilities both to our profession and our country.” The firm’s governance is
+                                dedicated to the principle of one partner/one vote, no matter seniority or client
+                                appeal, and to universal service in all aspects of firm administration, with attendant
+                                transparency in firm management and collegiality in firm culture. Its partners are
+                                committed to providing excellence in the rendition of legal services at the pinnacle of
+                                the profession while remaining actively engaged in matters of social consequence. To
+                                this end, the firm seeks to attract lawyers reflecting a wide variety of religious,
+                                political, ethnic, cultural, gender, sexual orientation and social backgrounds
+                                characteristic of the city of its home.</p>
+                            <div class="allresult">
+                                <a href="javascript:void(0)" aria-label="Continue Reading"
+                                    class="view-all open-modal-btn"> Continue Reading... </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="history-overlay"></div>
+<div class="history-content">
+    <span class="history-close">
+        <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="46" height="46" fill="#0B3D71" />
+            <path d="M30 16L16 30M30 30L16 16" stroke="white" stroke-width="2" stroke-linecap="square" />
+        </svg>
+    </span>
+    <div class="history-body">
+        <div class="contentwrap" id="timeline-1">
+            <div class="flexwrap topwrap">
+                <div class="imgwrap">
+                    <img src="{{root}}assets/images/our-firm/wf-image-placeholder.jpg" width="423" height="421"
+                        alt="rifkind photo" class="lazy">
+                </div>
+                <div class="headwrap">
+                    <h2>1950 - <br> Present</h2>
+                </div>
+            </div>
+            <div class="scrollcontentwrap">
+                <div class="scrollleft" ss-container>
+                    <p>Of the six women who have served or are currently serving on the U.S. Supreme Court, three began
+                        their careers as summer associates at Paul, Weiss.</p>
+                    <p>The firm was the first major New York City firm to break down the barrier of Jews practicing with
+                        Gentiles, the first to hire a Black associate, the first to hire a Black female associate, the
+                        first to make a woman a partner, the first to move its offices to midtown Manhattan, and the
+                        first to open a full-service office on mainland China.</p>
+                    <p>Enduring in heritage, eclectic in personality, enterprising in practice, and most famously
+                        ecumenical in attitudes, Paul, Weiss, Rifkind, Wharton & Garrison sought to become a different
+                        kind of law firm. The goal, Simon Rifkind wrote in 1963 in the Statement of Firm Principles, is
+                        “to achieve the highest order of excellence in the practice of the art, the science and the
+                        profession of the law; through such practice to earn a living and to derive the stimulation and
+                        pleasure of worthwhile adventure; and in all things to govern ourselves as members of a free
+                        democratic society with responsibilities both to our profession and our country.” The firm’s
+                        governance is dedicated to the principle of one partner/one vote, no matter seniority or client
+                        appeal, and to universal service in all aspects of firm administration, with attendant
+                        transparency in firm management and collegiality in firm culture. Its partners are committed
+                        to providing excellence in the rendition of legal services at the pinnacle of the profession
+                        while remaining actively engaged in matters of social consequence. To this end, the firm seeks
+                        to attract lawyers reflecting a wide variety of religious, political, ethnic, cultural, gender,
+                        sexual orientation and social backgrounds characteristic of the city of its home.
+                    </p>
+                    <p>The firm’s partners and counsel have included a two-time Democratic presidential nominee (Adlai
+                        E. Stevenson), an Associate Justice of the U.S. Supreme Court (Arthur J. Goldberg), a Counsel to
+                        the President (Theodore C. Sorensen), and appointees in the administrations of sixteen
+                        consecutive U.S. Presidents, from Herbert Hoover to Joseph Biden.
+                    </p>
+                    <p>Among its ranks have appeared a U.S. Senator; two U.S. Attorneys General; a U.S. Secretary of
+                        Labor; a U.S. Secretary of Homeland Security; an Acting U.S. Treasury Secretary; a U.S.
+                        Undersecretary of State; a U.S. Undersecretary of Commerce; the first chair of the National
+                        Labor Relations Board; a chair of the Federal Communications Commission; a Commissioner of
+                        Internal Revenue; a chair of the Federal Trade Commission; the General Counsel of the U.S.
+                        Department of Defense; the first General Counsel of the Peace Corps; two persons named Special
+                        Masters by the U.S. Supreme Court; a chief judge of a federal circuit; three federal district
+                        judges; a member of the New York Court of Appeals; a longtime Justice of the First Department’s
+                        Appellate Division; a U.S. Bankruptcy Judge; a Chancellor and a Vice Chancellor of the Delaware
+                        Chancery Court; a lead prosecutor in the Nuremberg war crimes trials; a chief counsel to the
+                        U.S. House Subcommittee investigating the Internal Revenue Service; a chief counsel to the U.S.
+                        Senate Committee investigating the Iran-Contra Affair; three U.N. Ambassadors; and assorted
+                        envoys on U.S. missions overseas.</p>
+                    <figure>
+                        <img src="{{root}}assets/images/our-firm/carolynagger.jpg" width="945" height="645"
+                            alt="rifkind photo" class="lazy">
+                        <figcaption>Carolyn Agger, first Paul, Weiss woman lawyer elected to partnership in 1949,
+                            testifying at Special House Committee hearing on National Labor Relations Board. Agger was
+                            the first female to be elected partner in a major New York City law firm. (Source:
+                            International News Photo)</figcaption>
+                    </figure>
+                    <p>The firm and its lawyers participated in efforts to free the Scottsboro Boys by winning reversal
+                        of their conviction in the U.S. Supreme Court; to save the Jews of Europe from the Holocaust by
+                        changing American policy toward immigration; to ease the suffering of those who escaped that
+                        horror by providing refuge in America; to break racial segregation by plotting the attack on
+                        Plessy v. Ferguson and later working on the briefs in Brown v. Board of Education; to assure
+                        U.S. publication of D.H. Lawrence’s Lady Chatterley’s Lover by challenging restrictions on its
+                        import; to establish the principle of one-person one-vote by cracking Georgia’s county-unit
+                        rule; to bring free Shakespeare to Central Park by overcoming Robert Moses’s efforts to stop it;
+                        to resist the death penalty by defending scores condemned to die and obtaining a historic
+                        victory in the U.S. Supreme Court forbidding execution of the mentally disabled; to protect a
+                        woman’s right to choose by fighting attacks on Roe v. Wade; to introduce educational public
+                        television to the airways by forming the Public Broadcasting System; to defend the teaching of
+                        evolution in the public schools by persuading the U.S. Supreme Court to strike down Louisiana’s
+                        Creationism Act; to start the Gateway National Park system by setting up its first beachhead; to
+                        battle ethnic cleansing of Muslims in Bosnia by supplying an American forum for its victims to
+                        testify against Radovan Karadzic; to rescue the NAACP Legal Defense Fund from near-death at the
+                        hands of Southern Senators bent on its demise; to conceive and implement the Times Square TKTS
+                        booth by inventing the Theater Development Fund; to obtain needed drugs for victims of AIDS by
+                        fighting FDA resistance to granting approvals; to defeat apartheid and introduce democracy in
+                        South Africa by founding the South Africa Free Election Fund; to fight discrimination against
+                        gays and lesbians by arguing the first legal test on gay marriage in New York and then
+                        prevailing in the U.S. Supreme Court in the Windsor case establishing a constitutional right for
+                        gays and lesbians to marry; to promote sane and stricter gun control legislation; and to save
+                        the City of New York from bankruptcy by representing the City in its darkest hour.</p>
+                    <p>The firm’s clients have included the largest financial institutions in the world, and the earth’s
+                        neediest citizens. In between are names, by way of tiny sample, such as Spiro T. Agnew, Julie
+                        Andrews, Kofi Annan, Brooke Astor, the Berrigan Brothers, Andy Capp, Hugh L. Carey, Lucia Chase,
+                        Joan Ganz Clooney, William Sloan Coffin, Willem de Kooning, William O. Douglas, Pierre DuPont,
+                        Leo Durocher, Philo Farnsworth, Federico Fellini, Marshall Field III, Curt Flood, Jane Fonda,
+                        Henry Ford, Jr., Otto Frank, Anna Freud, Hugh Hefner, Leona Helmsley, Don Henley, Anita F. Hill,
+                        Langston Hughes, Hubert H. Humphrey, Steve Jobs, Madame Chiang Kai-shek, Robert F. Kennedy,
+                        Calvin Klein, John Lennon, Lewis “Scooter” Libby, Nelson Mandela, Thurgood Marshall, John
+                        McEnroe, Golda Meir, Marilyn Monroe, Vladimir Nabokov, Joe Namath, Paul Newman, Jacqueline
+                        Kennedy Onassis, William S. Paley, Joseph Papp, I.M. Pei, Cole Porter, Charles Revson, David
+                        Rockefeller, Steve Ross, Mark Rothko, Anwar Sadat, Dorothy Schiff, Richard Serra, Paul Simon,
+                        Stephen Sondheim, Eliot Spitzer, Jessica Tandy, Donatella Versace, Robert Vesco, Andy Warhol,
+                        Lord Andrew Lloyd Webber, Jock Whitney and August Wilson.</p>
+                    <div class="flexwrap">
+                        <div class="imgwrap">
+                            <img src="{{root}}assets/images/our-firm/frame.jpg" width="308" height="448"
+                                alt="rifkind photo" class="lazy">
+                        </div>
+                        <div class="ctwrap">
+                            <p>The firm is credited with bringing the first purely environmental law case in the country
+                                – a 1963 action successfully stopping a proposed power plant on landmark Storm King
+                                Mountain in the Hudson River Valley – and championed representations pro bono
+                                publico decades before the term entered the lexicon of major law firms. Its members have
+                                headed the Legal Aid Society, the NAACP Legal Defense Fund, the National Urban League,
+                                the Anti-Defamation League, the American Jewish Committee, the Council on Foreign
+                                Relations, the Educational Alliance, the United Negro College Fund, the Natural
+                                Resources Defense Council, The Alliance for the Arts, Citizens for Clean Air, U.N.
+                                Watch, the American College of Trial Lawyers, the American College of Real Estate
+                                Lawyers, the American Council on Race Relations, the Greater New York Community Council,
+                                New York Lawyers for the Public Interest, the New York State Bar Association and the New
+                                York City Bar Association. Few matters of national, state or local significance, and
+                                today increasingly of international moment, have occurred without touching its halls. In
+                                his posthumously published autobiography, one of its most storied partners, Arthur L.
+                                Liman, knowledgably wrote that “[e]very economical and social upheaval in the country
+                                has found its way into our office.” </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<link rel="stylesheet" href="{{root}}assets/css/partnercontentpanel/partnercontentpanel.css" media="all">
+<div class="partnercontentpanel">
+    <div class="grid-container">
+        <div class="contentwrap">
+            <h2>Our Name Partners</h2>
+            <p>The stories of the firm’s five name partners are 20th century chronicles with sustaining relevance. They
+                include a man who could not find a job as a lawyer for five years after law school and then, while still
+                in his forties, became the best known and most influential tax lawyer in the country, after which this
+                reserved Welsh Episcopalian became the most vocal inside critic of the U.S. Government’s treatment of
+                Holocaust victims. A second, a wealthy member of New York’s German Jewish aristocracy, spent much of his
+                life defending the poor, the Black, and the mentally ill while building and for a time leading both the
+                NAACP’s Legal Committee and the New School of Social Research. Another first stepped on American soil in
+                1910 at the age of nine knowing not a syllable of English, a refugee from a Russian shtetl, and at age
+                45 was awarded the Presidential Medal of Freedom; served in every branch and at every level of
+                government; and was recognized as the finest trial lawyer of his time. A fourth spent a bedridden youth
+                reading plays, and sixty years later was given an honorary Tony Award for his contributions to the legal
+                foundations of the 20th century American theater, while creating a prodigious output of essays and books
+                on economics, political philosophy, and social science. The fifth, deeply rooted in the abolitionist
+                movement of the 19th century, became a 20th century leader in civil rights and civil liberties, headed
+                the National War Labor Board during World War II, and then defended J. Robert Oppenheimer and Arthur
+                Miller from the witch-hunts of the McCarthy era. If, as Emerson said, history is properly biography,
+                even a brief summary of these five lives gives a taste of the history of Paul, Weiss, Rifkind, Wharton &
+                Garrison.</p>
+        </div>
+    </div>
+</div>
+
+<link rel="stylesheet" href="{{root}}assets/css/tabphorizonpanel/tabphorizonpanel.css" media="all">
+<script type="text/javascript" defer>
+    $(document).ready(function () {
+        function handleTabClick() {
+            var tabId = $(this).data('tab');
+            $('.tab-links li').removeClass('active');
+            $('.tab-pane').removeClass('active');
+            $(this).addClass('active');
+            $('#' + tabId).addClass('active');
+            $('.dropdown-toggle').text($(this).text());
+        }
+        function handleDropdownToggle() {
+            $('.dropdown-menu').toggle();
+        }
+        function handleDropdownItemClick() {
+            var tabId = $(this).data('tab');
+            $('.tab-links li').removeClass('active');
+            $('.tab-pane').removeClass('active');
+            $('.tab-links li[data-tab="' + tabId + '"]').addClass('active');
+            $('#' + tabId).addClass('active');
+            $('.dropdown-toggle').text($(this).text());
+            $('.dropdown-menu').hide();
+        }
+        $('.tab-links li').on('click', handleTabClick);
+        $('.dropdown-toggle').on('click', handleDropdownToggle);
+        $('.dropdown-menu li').on('click', handleDropdownItemClick);
+        $(document).on('click', function (event) {
+            if (!$(event.target).closest('.custom-dropdown').length) {
+                $('.dropdown-menu').hide();
+            }
+        });
+        function adjustLayout() {
+            if ($(window).width() <= 768) {
+                $('.tab-links').hide();
+                $('.custom-dropdown').show();
+            } else {
+                $('.tab-links').show();
+                $('.custom-dropdown').hide();
+            }
+        }
+        $(window).on('resize', adjustLayout);
+        adjustLayout();
+    });
+</script>
+<div class="tabphorizonpanel">
+    <div class="grid-container">
+        <div class="tabHorizontal">
+            <div class="custom-dropdown">
+                <button class="dropdown-toggle">Paul</button>
+                <ul class="dropdown-menu">
+                    <li data-tab="tab1">Paul</li>
+                    <li data-tab="tab2">Weiss</li>
+                    <li data-tab="tab3">Rifkind</li>
+                    <li data-tab="tab4">Wharton</li>
+                    <li data-tab="tab5">Garrison</li>
+                </ul>
+            </div>
+            <ul class="tab-links">
+                <li class="active" data-tab="tab1">Paul</li>
+                <li data-tab="tab2">Weiss</li>
+                <li data-tab="tab3">Rifkind</li>
+                <li data-tab="tab4">Wharton</li>
+                <li data-tab="tab5">Garrison</li>
+            </ul>
+            <div class="tab-content">
+                <div id="tab1" class="tab-pane active">
+                    <div class="flexwrap">
+                        <div class="descwrap">
+                            <p><b>Louis Stix Weiss (1927-50),</b> his friend Eleanor Roosevelt wrote, led a “radiant
+                                life” as a social reformer, educator and fighter for civil rights. He was born on
+                                February 7, 1894 in New York City, the second son and third child of Samuel and Carrie
+                                Stix Weiss. He was graduated from the Horace Mann School, earned his Phi Beta Kappa key
+                                at Yale College (1915), and, following the war, obtained his law degree from Columbia
+                                Law School (1920), where he served on the Columbia Law Review. After a brief association
+                                with Simpson Thacher & Bartlett, in 1923 he formed Weiss & Wharton with his law school
+                                classmate John F. Wharton. Four years later, Louis merged his two-person firm into the
+                                practice his father Sam had started and his brother William had continued, thereby
+                                creating Cohen, Cole, Weiss & Wharton. Weiss and Wharton were together determined to
+                                build a firm of substantial character that aggressively disregarded the then-axiomatic
+                                circumstance that Jews and Gentiles neither practiced together nor attracted clients of
+                                their respective creeds, an endeavor that ultimately transformed the cultural norms of
+                                the New York legal community. Weiss’s law practice was heavily invested in his
+                                relationship with Marshall Field III, scion of the Chicago retailing empire, whose
+                                complex personal finances Weiss succeeded in protecting. From these endeavors, Weiss
+                                became central to Field Enterprises, the Field Foundation, as well as Field’s collateral
+                                interests, which included ownership of the Chicago Sun, for which Weiss devised an
+                                antitrust assault on the A.P.’s then-exclusionary policies, which the Supreme Court
+                                ultimately outlawed in Associated Press v. United States, 326 U.S. 1 (1945).
+                            </p>
+                        </div>
+                        <div class="imgwrap">
+                            <img src="{{root}}assets/images/our-firm/icon-image.jpg" width="371" height="447"
+                                alt="rifkind photo" class="lazy">
+                        </div>
+                        <div class="ctwrap">
+                            <p>Deeply engaged in mental health care issues, Weiss was general counsel of both the
+                                American Psychoanalytic Association and the New York Psychoanalytic Institute. A
+                                director of the American Council on Race Relations, Weiss also served for years on
+                                NAACP’s National Legal Committee, succeeding Thurgood Marshall’s mentor, Howard Law
+                                School Dean Charles H. Houston, as its chair. With Eleanor Roosevelt, he was a founding
+                                director and vice president of the U.S. Committee for the Care of European Children
+                                during World War II, to relocate refugees from that troubled continent. He was a
+                                founding trustee of the National Opinion Research Center, still one of the largest and
+                                most respected social research centers in the country. He was a longtime trustee and
+                                chairman of the board of the New School of Social Research. He was the firm’s prime
+                                visionary, persuading his partners to hoard profits as capital for use in attracting
+                                talent to build a full-service firm to compete with New York’s finest, and then
+                                personally recruiting Paul, Rifkind, and Garrison to join his growing firm. He also
+                                convinced them to leave the environs of Wall Street, then headquarters of every
+                                significant firm in the city, to open offices in midtown Manhattan, today home to most
+                                large law firms. Weiss never made the move from 61 Broadway to 575 Madison Avenue: On
+                                November 13, 1950, at age 56, Louis Weiss died suddenly in his New York City home of a
+                                heart attack. In the Chicago Defender, then the Nation’s largest and most influential
+                                Black weekly, longtime NAACP Executive Secretary Walter White called Weiss “one of a
+                                select group to whom whatever freedom Negro Americans and other minorities have won
+                                during recent years was due.”</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="tab2" class="tab-pane">Content for Tab 2</div>
+                <div id="tab3" class="tab-pane">Content for Tab 3</div>
+                <div id="tab4" class="tab-pane">Content for Tab 4</div>
+                <div id="tab5" class="tab-pane">Content for Tab 5</div>
+            </div>
+        </div>
+    </div>
+</div>

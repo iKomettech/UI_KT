@@ -1,0 +1,165 @@
+$primary-color: #001F3F;
+$secondary-color: #B9C8DA;
+@import "util/util";
+$img: "../../images/";
+$bgpanel-color: #B9C8DA;
+$mediumbluebgpanel: #0B3D71;
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+
+
+.businessContent {
+    margin-top: calc(clamp(2.5rem, 2.622vw + 1.856rem, 4.688rem)); 
+    .grid-container {
+        .contentWrappper {
+            max-width: 1120px;
+            width: 100%;
+
+            h3 {
+                font-family: 'ABCDiatype';
+                font-style: normal;
+                font-weight: 700;
+                /* or 58px */
+                letter-spacing: -0.025em;
+                color: #001F3F;
+                margin-bottom: calc(clamp(2rem, -1.124vw + 2.276rem, 1.063rem));
+                font-size: clamp(40px, calc(40px + (50 - 40) * ((100vw - 393px) / (1023 - 393))), 50px);
+                line-height: 100%;
+                @include breakpoint(large) {
+                    font-size: clamp(50px, calc(50px + (60 - 50) * ((100vw - 1024px) / (1728 - 1024))), 60px);                    
+                }
+            }
+
+            p {
+                font-family: 'UntitledSerif';
+                font-style: normal;
+                font-weight: 400; 
+                line-height: 123.6%;
+                // line-height: 100%;
+                letter-spacing: -0.01em;
+                color: #001F3F;
+
+                font-size: clamp(18px, calc(18px + (22 - 18) * ((100vw - 393px) / (1023 - 393))), 22px);
+
+                @include breakpoint(large) {
+                    font-size: clamp(22px, calc(22px + (27 - 22) * ((100vw - 1024px) / (1728 - 1024))), 27px);
+                }
+                +p {
+                    margin-top:calc(clamp(1.25rem, 0.824vw + 1.048rem, 1.938rem));                    
+                }
+            }
+        }
+
+
+    }
+}
+
+.joinTeamPanel {
+    margin-top:calc(clamp(2.5rem, 5.693vw + 1.102rem, 7.25rem));
+    .jointeam {
+        max-width: 1120px;
+        padding: 40px 20px 32px;
+        background: $bgpanel-color;
+        padding-bottom: calc(clamp(2rem, 4.494vw + 0.896rem, 5.75rem));
+        padding-top: calc(clamp(2.5rem, 4.494vw + 1.396rem, 6.25rem));
+        padding-left: calc(clamp(1.25rem, 4.494vw + 0.146rem, 5rem));
+        padding-right: calc(clamp(1.25rem, 4.494vw + 0.146rem, 5rem));      
+        .teamTitle {
+            border-top: 10px solid $mediumbluebgpanel;
+
+            h2 {
+                font-family: 'ABCDiatype';
+                font-style: normal;
+                font-weight: 700;
+                line-height: 100%;
+                letter-spacing: -0.05em;
+                color: #001F3F;
+                margin-top: 16px;
+                font-size: clamp(40px, calc(40px + (64 - 40) * ((100vw - 393px) / (1023 - 393))), 64px);
+                line-height: 100%;
+                @include breakpoint(large) {
+                    font-size: clamp(64px, calc(64px + (85 - 64) * ((100vw - 1024px) / (1728 - 1024))), 85px);
+                }
+            }
+        }
+
+        .joinMoreCta {
+            margin-top: calc(clamp(2.188rem, 2.547vw + 1.562rem, 4.313rem));          
+
+            a {
+                display: inline-block;
+                width: 100%;
+                background: $mediumbluebgpanel;
+                font-family: 'ABCDiatype';
+                font-style: normal;
+                font-weight: 700;
+                font-size: clamp(20px, calc(20px + (25 - 20) * ((100vw - 393px) / (1023 - 393))), 25px);
+                line-height: 100%;
+                /* or 24px */
+                letter-spacing: -0.025em;
+                color: #FFFFFF;
+                padding: 20px 21px 15px;
+                transition: all ease-in-out .5s;
+                margin-top: 0;          
+                &:hover {
+                    background: $primary-color;
+                    text-decoration: none;
+                    transition: all ease-in-out .5s;
+                }
+                &::after{
+                    content: unset;
+                }
+            }
+        }
+
+        a {
+            font-family: 'UntitledSerif';
+            font-style: normal;
+            font-weight: 700;
+            font-size: clamp(20px, calc(20px + (27 - 20) * ((100vw - 393px) / (1023 - 393))), 27px);
+            line-height: 123.6%;
+            letter-spacing: -0.01em;
+            color: #001F3F;
+            position: relative;
+            display: inline-block;
+            margin-top: 16px;
+            &::after {
+                content: '';
+                position: relative;
+                right: -10px;
+                background: url("#{$img}settings/agencyarrow.svg") no-repeat;
+                background-size: contain;
+                display: inline-block;
+                height: 17px;
+                width: 25px;
+                top: 3px;
+                @include breakpoint(large) {
+                    top: 0px;
+                }
+                @include breakpoint(llarge) {
+                    height: 19px;
+                    top: 4px;
+                    // right: -8px;
+                    width: 19px;
+                }
+            }
+        }
+    }
+
+    +.businessContent {
+        @include breakpoint(large) {
+            margin-top: 100px;
+        }
+
+        @include breakpoint(llarge) {
+            margin-top: 126px;
+        }
+    }
+}

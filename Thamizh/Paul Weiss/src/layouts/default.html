@@ -1,0 +1,436 @@
+{{!-- This is the base layout for your project, and will be used on every page unless specified. --}}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paul, Weiss</title>
+    <meta name="title" content="Paul, Weiss" />
+    <meta name="description"
+        content="The right CPA firm makes all the difference. Find out more about our “Next Level of Service” philosophy." />
+    <link rel="shortcut icon" type="image/x-icon" href="{{root}}assets/images/settings/favicon.ico">
+    <link rel="stylesheet" href="{{root}}assets/css/global/font.css">
+    <link rel="stylesheet" href="{{root}}assets/css/global/jquery-ui.min.css">
+    <link rel="stylesheet" href="{{root}}assets/css/global/style.css" media="all">
+    <link rel="stylesheet" href="{{root}}assets/css/global/swiper.min.css" media="all">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="{{root}}assets/css/searchpanel/searchpanel.css" media="all">
+</head>
+
+<body>
+    <div id="skiptocontent"><a href="#maincontent" alt="skip to main content">skip to main content</a></div>
+    <!-- <div class="loaderBlock">
+        <div class="svgAnimation">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="50" />
+            </svg>
+        </div>
+        <div class="loaderWrap">
+            <img src="{{root}}assets/images/settings/loader_image.svg" alt="Paul Weiss Bank" width="256" />
+        </div>
+    </div> -->
+    <div class="sitewrap">
+        <header class="sticky module">
+            <!-- <div class="alertsPannel">
+            <div class="grid-container-full">
+                <div class="alertsWrap">
+                <div class="wrap">
+                    <p>Lorem ipsum dolor sit amet consectetur. In quam consequat hendrerit accumsan gravida consequat consectetur leo. Adipiscing in suscipit molestie ullamcorper sed posuere turpis nulla. Hac enim imperdiet a ut vitae nec faucibus. Aenean ultrices ullamcorper id facilisis ac duis elementum. Velit dolor elit risus id augue porttitor scelerisque dui. Sollicitudin lobortis aenean consequat pharetra. Elit at tincidunt nunc eu.</p>
+                    <a href="javascript:void(0)" class="close-alerts alertsPannelClose">
+                        <i></i>
+                        <span class="screen-reader-text">
+                        Close
+                        </span>
+                    </a>
+                </div>
+                </div>
+            </div>
+        </div> -->
+        
+            <div class="leftmove">
+                <div class="logo">
+                    <a href="index.html">
+                        <picture>
+                            <source media="(min-width:320px) and (max-width:849px)"
+                                srcset="{{root}}assets/images/settings/mobile_logo.svg" type="image/jpg">
+                            <img src="{{root}}assets/images/settings/pw_logo.svg" alt="Paul Weiss " width="140"
+                                height="140" />
+                        </picture>
+                    </a>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="headerMainWrapper toprightcta">
+                    <div class="secondary-nav">
+                        <ul class="mainmenu">
+                            <li><a href="#">insights</a></li>
+                            <li><a href="#">Our firm</a></li>
+                            <li><a href="#">alumni</a></li>
+                        </ul>
+                    </div>
+                    <div class="headerWrapper">
+                        <div class="header-menu">
+                            <ul class="mainMenu">
+                                <li class="dropdownMenu menu-mega-blog"><a href="#" class="first-level-link">Lawyers</a>
+                                </li>
+                                <li class="dropdownMenu">
+                                    <a class="first-level-link" href="#">Practices</a>
+                                </li>
+                                <li class="dropdownMenu"><a class="first-level-link" href="#industries">Industries</a>
+                                </li>
+                                <li class="dropdownMenu"><a class="first-level-link" href="#">Offices</a>
+                                </li>
+                                <li class="dropdownMenu"><a class="first-level-link" href="#">Careers</a>
+                                </li>
+                                <li class="menusearchBlock">
+                                    <div class="desktopSearch">
+                                        <div class="containerWrapper">
+                                            <div class="wraps">
+                                                <form class="" action="/search" method="GET">
+                                                    <label for="inputSearch" class="screen-reader-text">search</label>
+                                                    <div class="flexi-row">
+                                                        <input type="text" class="txtBox submit" name="q"
+                                                            id="searchInput" value="" placeholder="Search">
+                                                        <button type="button" name="searchbutton" class="submit">
+                                                            <i>Search</i>
+                                                        </button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="reserachLst" style="display: none;">
+                                                <div class="searchresult">
+                                                    <div class="searchlist" role="heading" aria-level="1">
+                                                        <a href="#">Matthew W. Abbott (Lawyer)</a>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#">Partner</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">New York</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="searchlist" role="heading" aria-level="1">
+                                                        <a href="#">Edward T. Ackerman (Lawyer)</a>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#">Partner</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">New York</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="searchlist" role="heading" aria-level="1">
+                                                        <a href="#">Andrew Finch and Tee St. Matthew-Daniel to
+                                                            Discuss Merger at the American Bar
+                                                            Association’s 2024 Antitrust Spring Meeting
+                                                            (Awards)</a>
+                                                    </div>
+                                                    <div class="searchlist" role="heading" aria-level="1">
+                                                        <a href="#">Delaware Court of Chancery Holds That Activision
+                                                            Merger Approval Process Violated DGCL
+                                                            (Publications)</a>
+                                                    </div>
+                                                </div>
+                                                <div class="bottomBtn">
+                                                    <div class="allresult"> <a href="#" aria-label="view-all"> View All
+                                                            Results</a></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="headerWrapper">
+                        <div class="hamburger">
+                            <a href="#" class="mhamburger" title="Mobile hamburger">
+                                <span></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="nav-wrapper">
+                <nav role="navigation">
+                    <div class="menu-section">
+                        <ul class="topmeu">
+                            <li class="">
+                                <a href="#">Lawyers
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="#">Practices
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="#">Industries
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="#">Offices
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="#">Careers
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="#">Insights
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="#">Our Firm
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="#">Alumni
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="searchBoxMobile">
+                            <li class="menusearchBlock">
+
+                                <div class="desktopSearch">
+                                    <div class="containerWrapper">
+                                        <div class="wraps">
+                                            <form class="" action="/search" method="GET">
+                                                <label for="inputSearchMobile" class="screen-reader-text">search</label>
+                                                <input type="text" class="txtBox" name="q" id="inputSearchMobile"
+                                                    value="" placeholder="Search">
+                                                <i class="searchIcon">search</i>
+                                                <i class="closeIcon">search</i>
+                                            </form>
+                                        </div>
+                                        <div class="rserachLst" style="display: none;">
+                                            <div class="contentSearch">
+                                                <div class="searchresult">
+                                                    <div class="searchlist" role="heading" aria-level="1">
+                                                        <a href="#">Matthew W. Abbott (Lawyer)</a>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#">Partner</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">New York</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="searchlist" role="heading" aria-level="1">
+                                                        <a href="#">Edward T. Ackerman (Lawyer)</a>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#">Partner</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">New York</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="searchlist" role="heading" aria-level="1">
+                                                        <a href="#">Andrew Finch and Tee St. Matthew-Daniel to
+                                                            Discuss Merger at the American Bar
+                                                            Association’s 2024 Antitrust Spring Meeting
+                                                            (Awards)</a>
+                                                    </div>
+                                                    <div class="searchlist" role="heading" aria-level="1">
+                                                        <a href="#">Delaware Court of Chancery Holds That Activision
+                                                            Merger Approval Process Violated DGCL
+                                                            (Publications)</a>
+                                                    </div>
+                                                </div>
+                                                <div class="bottomBtn">
+                                                    <div class="allresult"> <a href="#" aria-label="view-all"> View All
+                                                            Results</a></div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <div class="stickyEmpty">
+        </div>
+        <div class="main" id="maincontent">
+            {{!-- Pages you create in the src/pages/ folder are inserted here when the flattened page is created. --}}
+            {{>
+            body}}
+        </div>
+
+        <footer class="threerow module primarybgcolor">
+            <div class="foot-custom">
+                <div class="footer-grid-container">
+                    <div class="footersec">
+                        <div class="column-1">
+                            <div class="footer-logo">
+                                <img src="assets/images/settings/logo.svg" alt="paul Weiss" width="120" height="64">
+                            </div>
+                            <div class="subscribeCta">
+                                <div class="twoCta">
+                                    <ul>
+                                        <li><a href="#" aria-label="contact us">Contact Us</a></li>
+                                        <li><a href="#" aria-label="Subscription Preferences">Subscription
+                                                Preferences</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="socialLnkpanel">
+                                <ul class="sociallinks">
+                                    <li>
+                                        <a href="#" aria-label="linkedin" target="_blank">
+                                            <img src="{{root}}assets/images/settings/linkedin-in.svg" alt="linkedin"
+                                                class="lazy imagetoSVG" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" aria-label="linkedin" target="_blank">
+                                            <img src="{{root}}assets/images/settings/x.svg" alt="linkedin"
+                                                class="lazy imagetoSVG" />
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#" aria-label="Facebook" target="_blank">
+                                            <img src="{{root}}assets/images/settings/facebook.svg" alt="Facebook"
+                                                class="lazy imagetoSVG" />
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="primaryfooter">
+                            <div class="column-2">
+                                <p class="menutitle" role="heading" aria-level="1">About the Firm</p>
+                                <ul>
+                                    <li><a href="#">Principles</a></li>
+                                    <li><a href="#">History</a></li>
+                                    <li><a href="#">Community</a></li>
+                                    <li><a href="#">Business Professionals / Leaders</a></li>
+                                    <li><a href="#">Diversity, Equity, & Inclusion</a></li>
+                                    <li><a href="#">Women</a></li>
+                                    <li><a href="#">Pro Bono</a></li>
+                                    <li><a href="#">Alumni</a></li>
+
+                                </ul>
+                            </div>
+                            <div class="column-3">
+                                <p class="menutitle" role="heading" aria-level="1">Locations</p>
+                                <ul>
+                                    <li><a href="#">New York</a></li>
+                                    <li><a href="#">Beijing</a></li>
+                                    <li><a href="#">Hong Kong</a></li>
+                                    <li><a href="#">London</a></li>
+                                    <li><a href="#">Los Angeles</a></li>
+                                    <li><a href="#">San Francisco</a></li>
+                                    <li><a href="#">Tokyo</a></li>
+                                    <li><a href="#">Toronto</a></li>
+                                    <li><a href="#"> Washington, D.C.</a></li>
+                                    <li><a href="#">Wilmington</a></li>
+                                </ul>
+                            </div>
+                            <div class="column-4">
+                                <p class="menutitle" role="heading" aria-level="1">News & Insights</p>
+                                <ul>
+                                    <li><a href="#">Awards</a></li>
+                                    <li><a href="#">Client News</a></li>
+                                    <li><a href="#">Client Memos</a></li>
+                                    <li><a href="#">Events</a></li>
+                                    <li><a href="#">Firm News</a></li>
+                                    <li><a href="#">Podcasts</a></li>
+                                    <li><a href="#">Publications</a></li>
+                                    <li><a href="#">Videos</a></li>
+                                </ul>
+                            </div>
+                            <div class="column-5">
+                                <p class="menutitle" role="heading" aria-level="1">Policies & Notices</p>
+                                <ul>
+                                    <li><a href="#">Legal Notice</a></li>
+                                    <li><a href="#">Privacy Policy</a></li>
+                                    <li><a href="#">Cookies</a></li>
+                                    <li><a href="#">UK Modern Slavery Act</a></li>
+                                    <li><a href="#">Transparency In Coverage</a></li>
+                                    <li><a href="#">Site Map</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="secondaryfooter">
+                <div class="footer-grid-container">
+                    <div class="flexRow">
+                        <div class="copyRights">
+                            <p>© <span id="copyright-year"></span> PAUL, WEISS, RIFKIND, WHARTON & GARRISON LLP</p>
+                        </div>
+                        <div class="createrRight">
+                            <p>This web site contains attorney advertising. Prior results do not guarantee a similar
+                                outcome.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+
+<div class="paginacontainer">
+    <div class="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"
+                style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 118.041;">
+            </path>
+        </svg>
+    </div>
+</div> 
+<script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.11/jquery.lazy.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".lazy").Lazy({
+            afterLoad: function (element) {
+                $("img").removeClass("layzeloading");
+            }
+        });
+    });
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#copyright-year').text(new Date().getFullYear());
+        $('#copyright-year-notfound').text(new Date().getFullYear());
+        setTimeout(function () {
+            if ($('.popUpWrapper').length > 0) {
+                $('html').addClass('popUpOpen');
+                setTimeout(function () {
+                    $('.popupWrap .wrap,.popUpWrapper').addClass('Open');
+                }, 100);
+            }
+        }, 1000);
+        $('.popUpWrapper .popup-close').click(function () {
+            $('html').removeClass('popUpOpen');
+            $('.popupWrap .wrap,.popUpWrapper').removeClass('Open');
+        });
+    });
+</script>
+<script src="{{root}}assets/scripts/global/nprogress.js" defer></script>
+<script src="{{root}}assets/scripts/global/jquery-ui.min.js" defer></script>
+<script src="{{root}}assets/scripts/global/imagetoSVG.js" defer></script>
+<script src="{{root}}assets/scripts/global/swiper.min.js" defer></script>
+<script src="{{root}}assets/scripts/global/custom.js" defer></script>
+
+</body>
+
+</html>

@@ -1,0 +1,309 @@
+@import "util/util";
+$img: "../../images/";
+$bgpanel-color: #B9C8DA;
+$mediumbluebgpanel: #0B3D71;
+$white: #ffffff;
+$primary-color: #0B3D71;
+$secondary-color: #B9C8DA;
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+.scholarshipPanel {
+    margin-top: 40px;
+
+    @include breakpoint(medium) {
+        margin-top: 70px;
+    }
+
+    @include breakpoint(large) {
+        margin-top: 90px;
+    }
+
+    @include breakpoint(llarge) {
+        margin-top: 150px;
+    }
+
+    .grid-container {
+        .flex-box {
+            border-top: 10px solid $bgpanel-color;
+
+
+            .flexWrap {
+                padding-bottom: 27px;
+
+                @include breakpoint(medium) {
+                    padding-bottom: 24px;
+                }
+
+                @include breakpoint(large) {
+                    padding-bottom: clamp(24px, calc(24px + (46 - 24) * ((100vw - 1024px) / (1728 - 1024))), 46px);
+                }
+
+                .wraptitle {
+                    width: 100%;
+
+                    h2 {
+                        text-align: left;
+                        margin-top: clamp(10px, calc(10px + (22 - 10) * ((100vw - 393px) / (1024 - 393))), 22px);
+                        line-height: 100%;
+                        letter-spacing: -0.05em;
+                        font-size: clamp(55px, calc(55px + (64 - 55) * ((100vw - 393px) / (1024 - 393))), 64px);
+
+                        @include breakpoint(large) {
+                            font-size: clamp(64px, calc(64px + (85 - 64) * ((100vw - 1024px) / (1728 - 1024))), 85px);
+                        }
+                        @include breakpoint(llarge){
+                            margin-top: 15px;}
+                    }
+
+                }
+            }
+        }
+
+        .contentWrap {
+            max-width: 1120px;
+            width: 100%;
+
+            p {
+                font-family: 'UntitledSerif';
+                font-size: clamp(18px, calc(18px + (22 - 18) * ((100vw - 393px) / (1024 - 393))), 22px);
+                line-height: 123.6%;
+                /* or 33px */
+                letter-spacing: -0.01em;
+
+                @include breakpoint(large) {
+                    font-size: clamp(22px, calc(22px + (27 - 22) * ((100vw - 1024px) / (1728 - 1024))), 27px);
+                }
+
+                +p {
+                    margin-top: 24px;
+                }
+
+                +h3 {
+                    margin-top: clamp(29px, calc(29px + (60 - 29) * ((100vw - 393px) / (1024 - 393))), 60px);
+
+                    // @include breakpoint(large) {
+                    //     margin-top: 60px;
+                    // }
+                }
+            }
+
+            h3 {
+                font-family: 'UntitledSerif';
+                font-style: normal;
+                font-weight: 700;
+                line-height: 97.1%;
+                /* or 29px */
+                letter-spacing: -0.025em;
+                max-width: 1120px;
+                font-size: clamp(20px, calc(20px + (25 - 20) * ((100vw - 393px) / (768 - 393))), 25px);
+
+                @include breakpoint(medium) {
+                    font-size: clamp(25px, calc(25px + (30 - 25) * ((100vw - 768px) / (1728 - 768))), 30px);
+                }
+
+                +p {
+                    margin-top: clamp(12px, calc(12px + (28 - 12) * ((100vw - 393px) / (1024 - 393))), 28px);
+
+                    // @include breakpoint(medium) {
+                    //     margin-top: 28px;
+                    // }
+
+                    @include breakpoint(large) {
+                        margin-top: clamp(28px, calc(28px + (36 - 28) * ((100vw - 1024px) / (1728 - 1024))), 36px);
+                    }
+                }
+            }
+
+            &.mt-pipe {
+                margin-top: clamp(36px, calc(36px + (65 - 36) * ((100vw - 393px) / (1024 - 393))), 65px);
+
+                @include breakpoint(large) {
+                    margin-top: clamp(65px, calc(65px + (70 - 65) * ((100vw - 1024px) / (1728 - 1024))), 70px);
+                }
+
+                // @include breakpoint(llarge) {
+                //     margin-top: 70px;
+                // }
+            }
+        }
+
+        .twoColumn {
+            margin-top: clamp(31px, calc(31px + (50 - 31) * ((100vw - 393px) / (1024 - 393))), 50px);
+
+            // @include breakpoint(medium) {
+            //     margin-top: 38px;
+            // }
+
+            // @include breakpoint(large) {
+            //     margin-top: 50px;
+            // }
+
+            @include breakpoint(llarge) {
+                margin-top: 38px;
+            }
+
+            h3 {
+                font-family: 'UntitledSerif';
+                font-style: normal;
+                font-weight: 700;
+                line-height: 97.1%;
+                /* or 29px */
+                letter-spacing: -0.025em;
+                max-width: 1120px;
+                font-size: clamp(20px, calc(20px + (25 - 20) * ((100vw - 393px) / (768 - 393))), 25px);
+
+                @include breakpoint(medium) {
+                    font-size: clamp(25px, calc(25px + (30 - 25) * ((100vw - 768px) / (1728 - 768))), 30px);
+                }
+            }
+
+            .flexCol {
+                display: flex;
+                margin-top: clamp(11px, calc(11px + (28 - 11) * ((100vw - 393px) / (1024 - 393))), 28px);
+
+                @include breakpoint(large) {
+                    margin-top: clamp(28px, calc(28px + (36 - 28) * ((100vw - 1024px) / (1728 - 1024))), 36px);
+                }
+
+                // @include breakpoint(llarge) {
+                //     margin-top: 36px;
+                // }
+
+                .contentWrap {
+                    max-width: inherit;
+
+                    p {
+                        width: 100%;
+
+                        @include breakpoint(llarge) {
+                            width: 73%;
+                        }
+
+                        @include breakpoint(large only) {
+                            &:nth-child(3) {
+                                margin-top: 75px;
+                            }
+                        }
+
+                        +p {
+                            @include breakpoint(small only) {
+                                margin-top: 23px;
+                            }
+                        }
+
+                        &:last-child {
+                            @include breakpoint(large only) {
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+
+                    a {
+                        @include breakpoint(small only) {
+                            font-family: 'ABCDiatype';
+                            font-style: normal;
+                            font-weight: 700;
+                            font-size: 20px;
+                            line-height: 97.1%;
+                            letter-spacing: -0.025em;
+                            display: block;
+                            color: #001F3F;
+                            margin-top: 38px;
+                            transition: all ease-in-out .5s;
+                            background: #B9C8DA;
+                            padding: 20px 20px 15px;
+                            text-decoration: none;
+                        }
+
+                        @include breakpoint(medium) {
+                            // margin-top: 44px;                          
+                            font-family: 'UntitledSerif';
+                            font-style: normal;
+                            font-weight: 700;
+                            line-height: 97.1%;
+                            /* or 24px */
+                            letter-spacing: -0.025em;
+                            display: block;
+                            margin-top: 40px;
+                            transition: all ease-in-out .5s;
+                            font-size: clamp(18px, calc(18px + (25 - 18) * ((100vw - 768px) / (1728 - 768))), 25px);
+                        }
+
+                        @include breakpoint(llarge) {
+                            margin-top: 40px;
+
+                        }
+
+                        &::after {
+                            @include breakpoint(medium) {
+                                content: '';
+                                position: relative;
+                                right: -24px;
+                                background: url('#{$img}settings/arrow-blue.svg') no-repeat;
+                                width: 27px;
+                                display: inline-block;
+                                height: 15px;
+                            }
+                        }
+
+                        &:hover {
+                            @include breakpoint(medium) {
+                                padding-left: 10px;
+                                transition: all ease-in-out .5s;
+                            }
+                        }
+                    }
+                }
+
+                .imgWrap {
+                    margin-top: 8px;
+                    float: right;
+                    margin-right: -6px;
+
+                    @include breakpoint(large) {
+                        margin-right: -13px;
+                    }
+
+                    @include breakpoint(llarge) {
+                        margin-right: -6px;
+                    }
+
+                    &.scholarImg {
+                        display: none;
+
+                        @include breakpoint(medium) {
+                            display: block;
+                        }
+                    }
+                }
+
+                .mobileViewScholar {
+                    margin-top: 35px;
+                    margin-inline: -20px;
+
+                    @include breakpoint(medium) {
+                        display: none;
+                    }
+
+                    .imgWrap {
+                        margin-top: 8px;
+                        float: inherit;
+                        margin-right: inherit;
+                        text-align: center;
+
+                        &.scholarImg {
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,69 @@
+@import "util/util";
+$img: "../../images/";
+$bgpanel-color: #B9C8DA;
+$mediumbluebgpanel:#0B3D71;
+$white:#ffffff;
+$primary-color: #0B3D71;
+$secondary-color: #B9C8DA;
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+.partnercontentpanel{
+    margin-top: 38px;
+    @include breakpoint(medium) {
+        padding-top: 50px;
+    }
+    @include breakpoint(llarge) {
+        padding-top: 105px;
+    }
+    .grid-container{
+        .contentwrap{
+            border-top: 10px solid #B9C8DA;
+            h2{
+                font-style: normal;
+                font-weight: 700;
+                //font-size: 55px;
+                line-height: 100%;
+                letter-spacing: -0.05em;
+                padding-top: calc(clamp(0.875rem, 2.222vw + 0.329rem, 1.75rem));
+                padding-bottom: calc(clamp(1.375rem, 1.746vw + 0.946rem, 2.063rem));
+                font-size: clamp(55px, calc(55px + (64 - 55) * ((100vw - 393px) / (1023 - 393))), 64px);
+                @include breakpoint(large) {
+                    //font-size: 64px; 
+                    font-size: clamp(64px, calc(64px + (85 - 64) * ((100vw - 1024px) / (1728 - 1024))), 85px);
+                    // padding-top: 28px;
+                    padding-bottom: calc(clamp(2.063rem, 0.142vw + 1.972rem, 2.125rem));
+                }
+                @include breakpoint(llarge) {
+                    //font-size: 85px; 
+                    padding-top: 20px;
+                    // padding-bottom: 34px;
+                }
+            }
+            p{
+                font-family: 'UntitledSerif';
+                font-style: normal;
+                font-weight: 400;
+                font-size: clamp(18px, calc(18px + (22 - 18) * ((100vw - 393px) / (1023 - 393))), 22px);
+                line-height: 123%;
+                letter-spacing: -0.01em;
+                word-break: break-word;
+                @include breakpoint(large) {
+                    // font-size: 22px;
+                    // line-height: 123%;
+                    font-size: clamp(22px, calc(22px + (27 - 22) * ((100vw - 1024px) / (1728 - 1024))), 27px);
+                }
+                // @include breakpoint(llarge) {
+                //     font-size: 27px;
+                //     line-height: 33px;
+                // }
+            }
+        }
+    }
+}

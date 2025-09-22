@@ -1,0 +1,150 @@
+$primary-color: #001F3F;
+$secondary-color: #B9C8DA;
+@import "util/util";
+$img: "../../images/";
+$bgpanel-color: #B9C8DA;
+$mediumbluebgpanel: #0B3D71;
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+.bannerpanel {
+    position: relative;
+    margin-top: -3px;
+    width: 100vw;
+
+    .homeBanner {
+        .bannerwrap {
+            .grid-container {
+                max-width: 1440px;
+                width: 100%;
+                margin: 0 auto;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+
+                @include breakpoint(small) {
+                    padding: 0px !important;                    
+                }
+
+                @media (max-width: 1480px) {
+                    left: -45px;
+                }
+
+                @media (max-width: 1279px) {
+                    left: -70px;
+                }
+
+                @media (max-width: 1023px) {
+                    left: -60px;
+                }
+
+                @media (max-width: 767px) {
+                    left: 0px;
+                    max-width: 100%;
+                }
+
+                .content {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: flex-end;
+
+                    &.right {
+                        position: absolute;
+                        width: 100%;
+                        max-width: 100%;
+
+                        @include breakpoint(small) {
+                            margin-bottom: calc(clamp(1.25rem, 4.762vw + 0.08rem, 3.125rem));
+                            bottom: 0px;
+                        }
+
+                        @include breakpoint(medium) {
+                            left: 50%;
+                           
+                        }
+
+                        h1 {
+                            margin-bottom: 0px;
+                            font-weight: 700;
+                            color: #ffffff;
+                            line-height: calc(clamp(2.313rem, 1.423vw + 1.963rem, 3.5rem));
+                            font-size: clamp(35px, calc(35px + (40 - 35) * ((100vw - 393px) / (767 - 393))), 40px);                          
+
+                            @include breakpoint(small only) {
+                                padding: 20px;                        
+                                background-color: $mediumbluebgpanel;
+                                // font-size: 40px;
+                            }
+
+                            @include breakpoint(medium) {
+                                font-size: clamp(32px, calc(32px + (42 - 32) * ((100vw - 768px) / (1023 - 768))), 42px);
+                                margin-left: 50px;
+                                width: 45%;                         
+                            }
+
+                            @include breakpoint(large) {
+                                font-size: clamp(42px, calc(42px + (50 - 42) * ((100vw - 1024px) / (1728 - 1024))), 50px);
+                                max-width: 508px;                               
+                            }
+
+                            @include breakpoint(xlarge) {
+                                max-width: 558px;                                
+                            }
+
+                            @include breakpoint(xxlarge) {
+                                max-width: 558px;
+                            }
+                        }
+                    }
+                }
+
+                .flex-div {
+                    display: flex;
+                    width: 1122px;
+                    margin: 0 auto;
+                    background: #0b3d71;
+                }
+            }
+
+            .imgWrap {
+                max-width: 100%;
+                width: 100%;
+                height: 100%;
+
+                @media (max-width: 767px) {
+                    min-height: 577px;
+                    max-height: 577px;
+                    overflow: hidden;
+
+                }
+
+                // &::before{
+                //     opacity:90%;
+                //     content: '';
+                //     padding: 50px;
+                //     gap: 10px;
+                //     // background:linear-gradient(to bottom, transparent 75%, #0B3D71 25%);
+                //     position: absolute;
+                //     width: 100%;
+                //     height: 100%;
+                //     @media (min-width: 767px){
+                //         background: -webkit-linear-gradient(left, transparent 50%, $primary-color 50%);
+                //     }
+                // }
+                img {
+                    object-fit: cover;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+}

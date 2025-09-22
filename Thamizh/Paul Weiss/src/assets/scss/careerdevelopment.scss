@@ -1,0 +1,486 @@
+$primary-color: #001F3F;
+$secondary-color: #B9C8DA;
+@import "util/util";
+$img: "../../images/";
+$bgpanel-color: #B9C8DA;
+$mediumbluebgpanel: #0B3D71;
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+
+
+.careerdevelopment {
+    margin-top: calc(clamp(2.5rem, 8.24vw + 0.476rem, 9.375rem)); 
+    .grid-container {
+        .flex-box {
+            border-top: 10px solid $bgpanel-color;
+            .flexWrap {
+                padding-bottom: 29px;
+                .wraptitle {
+                    width: 100%;
+
+                    h2 {
+                        text-align: left;
+                        margin-top: calc(clamp(0.625rem, 1.124vw + 0.349rem, 1.563rem));
+                        letter-spacing: -0.05em;
+                        font-size: clamp(55px, calc(55px + (64 - 55) * ((100vw - 393px) / (1023 - 393))), 64px);
+                        line-height: 100%;
+
+                        @include breakpoint(large) {
+                            font-size: clamp(64px, calc(64px + (85 - 64) * ((100vw - 1024px) / (1728 - 1024))), 85px);
+                        }
+                    }
+                }
+            }
+        }
+
+
+
+
+        .contentWrap {
+            max-width: 1120px;
+            width: 100%;
+
+            h3 {
+                font-family: 'ABCDiatype';
+                font-style: normal;
+                font-weight: 700;
+                /* or 58px */
+                letter-spacing: -0.025em;
+                font-size: clamp(40px, calc(40px + (50 - 40) * ((100vw - 393px) / (1023 - 393))), 50px);
+                line-height: 100%;
+
+                @include breakpoint(large) {
+                    font-size: clamp(50px, calc(50px + (60 - 50) * ((100vw - 1024px) / (1728 - 1024))), 60px);
+                }
+
+                +p {
+                    margin-top: 31px;                   
+                }
+            }
+
+            p {
+                font-family: 'UntitledSerif';
+                font-style: normal;
+                font-weight: 400;
+                line-height: 123.6%;
+                /* or 26px */
+                letter-spacing: -0.01em;
+
+                font-size: clamp(18px, calc(18px + (22 - 18) * ((100vw - 393px) / (1023 - 393))), 22px);
+
+                @include breakpoint(large) {
+                    font-size: clamp(22px, calc(22px + (27 - 22) * ((100vw - 1024px) / (1728 - 1024))), 27px);
+                }
+
+                +p {
+                    margin-top:calc(clamp(1.25rem, 0.824vw + 1.048rem, 1.938rem));
+                }
+
+                a {
+                    font-family: 'UntitledSerif';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: clamp(22px, calc(22px + (22 - 22) * ((100vw - 393px) / (1023 - 393))), 22px);
+                    line-height: 107.6%;
+                    // line-height: 100%; 
+                    color: #001F3F;
+                    display: block;
+                    margin-top: 25px;
+
+                    @include breakpoint(llarge) {
+                        margin-top: 40px;
+                    }
+
+                    &::after {
+                        content: '';
+                        position: relative;
+                        right: -15px;
+                        height: 17px;
+                        width: 17px;
+                        background: url('#{$img}settings/arrow-blue.svg') no-repeat;
+                        background-size: contain;
+                    }
+                }
+            }
+
+            ul {
+
+                margin-left: 15px;
+                @include breakpoint(large) {
+                    margin-top: 25px;
+                    margin-left: 0;
+                }
+
+                @include breakpoint(llarge) {     
+                    margin-left: 15px;
+                }
+
+                li {
+                    font-family: 'UntitledSerif';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: clamp(18px, calc(18px + (22 - 18) * ((100vw - 393px) / (1023 - 393))), 22px);
+                    line-height: 116.6%;
+                    padding-left: 45px;
+                    /* or 26px */
+                    letter-spacing: -0.01em;
+                    position: relative;
+
+                    @include breakpoint(large) {
+                        // font-size: 22px;
+                        margin-bottom: calc(clamp(1.875rem, 2.841vw + 0.057rem, 3.125rem));
+                    }
+
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 3px;
+                        left: 0;
+                        background: url('#{$img}settings/squareBullet.svg') no-repeat;
+                        background-size: contain;
+                        height: 18px;
+                        width: 18px;
+                    }
+                }
+            }
+
+            +.programcontentWrap {
+                @include breakpoint(large) {
+                    margin-top: 121px;
+                }
+
+                @include breakpoint(llarge) {
+                    margin-top: 126px;
+                }
+            }
+
+            a {
+                font-family: 'UntitledSerif';
+                font-style: normal;
+                font-weight: 700;
+                font-size: clamp(25px, calc(25px + (25 - 25) * ((100vw - 393px) / (1023 - 393))), 25px);
+                line-height: 97.1%;
+                /* or 24px */
+                text-decoration: none;
+                letter-spacing: -0.025em;
+                position: relative;
+
+                &::after {
+                    content: '';
+                    position: relative;
+                    right: -24px;
+                    background: url("#{$img}settings/arrow-blue.svg") no-repeat;
+                    width: 27px;
+                    display: inline-block;
+                    height: 15px;
+                }
+            }
+        }
+
+
+        .overMorefaq {
+            .flexwrap {
+                margin-top:calc(clamp(2.5rem, 7.491vw + 0.66rem, 8.75rem));
+
+                @include breakpoint(medium) {
+                    display: flex;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                }
+                .leftwrap {
+                    width: 100%;
+
+                    @include breakpoint(medium) {
+                        width: 30.75%;
+                    }
+
+                    @include breakpoint(large) {
+                        width: 30.75%;
+                    }
+
+                    @include breakpoint(llarge) {
+                        // max-width: 575px;
+                        width: 32%;
+                    }
+
+                    @include breakpoint(xxlarge) {
+                        // max-width: 575px;
+                        width: 27.75%;
+                    }
+
+                    .leftcontentwrap {
+                        background: #0B3D71;
+                        padding: calc(clamp(1.125rem, 1.648vw + 0.72rem, 2.5rem));                      
+
+                        p {
+                            font-weight: 700;
+                            color: #FFFFFF;
+                            font-family: 'ABCDiatype';
+                            line-height: 100%;
+                            letter-spacing: -0.025em;
+                            font-size: clamp(25px, calc(25px + (30 - 25) * ((100vw - 393px) / (1023 - 393))), 30px);
+
+                            @include breakpoint(large) {
+                                font-size: clamp(30px, calc(30px + (40 - 30) * ((100vw - 1024px) / (1728 - 1024))), 40px);
+                            }
+                        }
+                    }
+                }
+
+                .rightwrap {
+                    width: 100%;
+
+                    @include breakpoint(small only) {
+                        margin-top: 34px;
+                    }
+
+                    @include breakpoint(medium) {
+                        width: 57.75%;
+                    }
+
+                    @include breakpoint(large) {
+                        width: 65.25%;
+                        // margin-top: -7px;
+                    }
+
+                    @include breakpoint(llarge) {
+                        width: 65%;
+                        // margin-top: -8px;
+                    }
+
+                    @include breakpoint(xxlarge) {
+                        width: 69.45%;
+                    }
+
+                    .rightcontentwrap {
+                        @include breakpoint(medium) {
+                            border-top: 10px solid #B9C8DA;
+                        }
+
+                        p {
+                            letter-spacing: -0.01em;
+                            font-weight: 400;
+                            line-height: 116.6%;
+                            font-family: 'UntitledSerif';
+                            font-size: clamp(18px, calc(18px + (22 - 18) * ((100vw - 393px) / (1023 - 393))), 22px);
+                            letter-spacing: -0.01em;
+
+
+                            @include breakpoint(medium) {
+                                margin-top: calc(clamp(1rem, 0.3vw + 0.926rem, 1.25rem));
+                            }
+
+                            @include breakpoint(large) {                            
+                                line-height: 123.6%;
+                            }                            
+                        }
+
+                        ul {
+                            margin-left: 0;
+                            margin-top: calc(clamp(2.063rem, 1.648vw + 1.658rem, 3.438rem));     
+                            @include breakpoint(llarge) {                            
+                                margin-left: 15px;
+                            }
+
+                            li {
+
+                                letter-spacing: -0.01em;
+                                font-weight: 400; 
+                                line-height: 123.6%;
+                                font-family: 'UntitledSerif';
+                                font-size: clamp(18px, calc(18px + (22 - 18) * ((100vw - 393px) / (1023 - 393))), 22px);
+                                line-height: 123.6%;
+                                letter-spacing: -0.01em;
+                                position: relative;
+                                padding-left: 45px;
+                                margin-bottom: 23px;
+                                &:last-child {
+                                    margin-bottom: 0;
+                                }
+
+                                &::before {
+                                    content: '';
+                                    position: absolute;
+                                    top: 3px;
+                                    left: 0;
+                                    background: url('#{$img}settings/squareBullet.svg') no-repeat;
+                                    background-size: contain;
+                                    height: 20px;
+                                    width: 20px;
+                                }
+
+
+
+                            }
+
+                            +p {
+                                margin-top: calc(clamp(2.188rem, 2.097vw + 1.672rem, 3.938rem));
+                            }
+                        }
+
+                    }
+
+                    +.imgWrap {
+                        margin-top: calc(clamp(2.5rem, 7.491vw + 0.66rem, 8.75rem));                    
+                    }
+
+                }
+
+                .imgWrap {
+                    @include breakpoint(small only) {
+                        margin-inline: -20px;
+                    }
+                }
+            }
+
+            .diFlex {
+                @include breakpoint(medium) {
+                    display: flex;
+                    justify-content: space-between;
+                }
+
+                .lftwrap {
+
+                    width: 100%;
+
+
+                    @include breakpoint(medium) {
+                        width: 30.75%;
+                    }
+
+                    @include breakpoint(large) {
+                        width: 30.75%;
+                    }
+
+                    @include breakpoint(llarge) {
+                        // max-width: 575px;
+                        width: 32%;
+                    }
+
+                    @include breakpoint(xxlarge) {
+                        // max-width: 575px;
+                        width: 27.75%;
+                    }
+                }
+
+                .rght {
+                    width: 100%;
+
+                    @include breakpoint(medium) {
+                        width: 57.75%;
+                    }
+
+
+
+                    @include breakpoint(large) {
+                        width: 65.25%;
+                    }
+
+                    @include breakpoint(llarge) {
+                        width: 65%;
+                        // margin-left: 50px;
+                    }
+
+                    @include breakpoint(xxlarge) {
+                        width: 69.45%;
+                    }
+
+                    .readCareer {
+                        position: relative;
+
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            left: 0px;
+                            right: 0px;
+                            height: 120px;
+                            bottom: 35px;
+                            background: linear-gradient(180deg, rgba(139, 167, 32, 0) 0%, #fff 100%);
+                        }
+
+                        @include breakpoint(small only) {
+                            // padding-left: 0px;
+                            // padding-right: 0px;
+                            // padding-top: 8px;
+
+                            // &::before {
+                            //     content: '';
+                            //     width: 100%;
+                            //     height: 90px;
+                            //     position: absolute;
+                            //     left: 0;
+                            //     background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+                            //     transform: rotate(-180deg);
+                            //     bottom: 60px;
+                            // }
+                        }
+
+                        @include breakpoint(large) {
+                            margin-bottom: 25px;
+                        }                        
+
+                        a {
+                            text-decoration: none;
+                            font-family: 'ABCDiatype';
+
+                            .flexiBtn {
+                                display: flex;
+                                align-items: center;
+                                gap: 9px;
+
+                                // @include breakpoint(small only) {
+                                //     background: #B9C8DA;
+                                //     padding: 13px 20px;
+                                //     padding-bottom: 14px;
+                                //     flex-direction: row-reverse;
+                                //     justify-content: space-between;
+                                // }
+
+                                p {
+                                    margin-bottom: 0;
+                                    margin-top: 5px;
+
+                                    span {
+                                        font-size: clamp(20px, calc(20px + (20 - 20) * ((100vw - 393px) / (1023 - 393))), 20px);
+                                        font-weight: 700;
+                                        line-height: 19.42px;
+                                        letter-spacing: -0.025em;
+                                        font-family: 'ABCDiatype';
+                                    }
+                                }
+                            }
+
+                            &.activelink {
+                                .flexiBtn {
+                                    svg {
+                                        transform: rotate(180deg);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.active {
+                .diFlex {
+                    .rght {
+                        .readCareer {
+                            &::before {
+                                content: unset;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

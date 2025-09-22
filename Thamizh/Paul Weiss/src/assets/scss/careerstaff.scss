@@ -1,0 +1,236 @@
+$primary-color: #001F3F;
+$secondary-color: #B9C8DA;
+@import "util/util";
+$img: "../../images/";
+$bgpanel-color: #B9C8DA;
+$mediumbluebgpanel: #0B3D71;
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+
+
+
+
+.staffAttorneys {
+    margin-top: calc(clamp(2.5rem, 8.24vw + 0.476rem, 9.375rem));
+    .grid-container {
+        .flex-box {
+            border-top: 10px solid $bgpanel-color;
+            .flexWrap {
+                padding-bottom: 31px;
+                @include breakpoint(medium) {
+                    display: flex;
+                    align-items: center;                   
+                }
+                @include breakpoint(llarge) {
+                    padding-bottom: 34px;
+                }
+
+                .wraptitle {
+                    width: 100%;
+                    @include breakpoint(medium) {
+                        width: 52%;
+                        margin-right: 4%;
+                    }
+
+                    @include breakpoint(large) {
+                        margin-right: 2%;
+                    }
+                    @include breakpoint(llarge) {
+                        width: 51%;
+                    }
+
+                    h2 {
+                        text-align: left;
+                        margin-top: calc(clamp(0.625rem, 0.375vw + 0.533rem, 0.938rem)); 
+                        letter-spacing: -0.05em;
+                        font-size: clamp(55px, calc(55px + (64 - 55) * ((100vw - 393px) / (1023 - 393))), 64px);
+                        line-height: 100%;
+                    
+                        @include breakpoint(large) {
+                            font-size: clamp(64px, calc(64px + (85 - 64) * ((100vw - 1024px) / (1728 - 1024))), 85px);
+                        }                        
+                    }
+
+
+
+                }
+
+                .gridWrap {
+                    @include breakpoint(small only){
+                        margin-top: 33px;
+                    }
+                    @include breakpoint(medium) {
+                        width: 44%;
+                    }
+                    @include breakpoint(large) {
+                        width: 46%;
+                    }
+
+                    @include breakpoint(llarge) {
+                        width: 47%;
+                    }
+
+                    .contentwrap {
+
+                        @include breakpoint(medium only){
+                            margin-top: 15px;
+                        }
+                        p {
+                            font-family: "UntitledSerif";
+                            font-size: clamp(18px, calc(18px + (22 - 18) * ((100vw - 393px) / (1023 - 393))), 22px);
+                            line-height: 116.6%;
+                            font-weight: 400;
+                            letter-spacing: -0.01em;
+                            margin-bottom: 0;
+ 
+                        }
+                    }
+                }
+            }
+        }
+
+        .twocolumn {
+            @include breakpoint(medium) {
+                display: flex;
+            }
+
+            @include breakpoint(llarge) {
+                margin-top: 13px;
+            }
+
+            .staffContent {
+                width: 100%;
+                @include breakpoint(medium) {
+                    width: 50.75%;
+                    margin-right: 5.25%;
+                }
+                @include breakpoint(medium) {
+                    width: 57.75%;
+                    margin-right: 5.25%;
+                }
+
+                @include breakpoint(llarge) {
+                    width: 50%;
+                    margin-right: 9.5%;
+                }
+
+                p {
+                    font-family: 'UntitledSerif';
+                    font-style: normal;
+                    font-weight: 400; 
+                    line-height: 123.6%;
+                    letter-spacing: -0.01em;
+
+                    font-size: clamp(18px, calc(18px + (22 - 18) * ((100vw - 393px) / (1023 - 393))), 22px);
+
+                    @include breakpoint(large) {
+                        font-size: clamp(22px, calc(22px + (27 - 22) * ((100vw - 1024px) / (1728 - 1024))), 27px);
+                    }
+ 
+
+                    +p {
+                        margin-top:calc(clamp(1.25rem, 0.899vw + 1.029rem, 2rem));
+                    }
+                }
+            }
+
+            .moreInfo {
+                width: 100%;
+                margin-top: 34px;
+                @include breakpoint(medium) {
+                    width: 44%;
+                    margin-top: 7px;
+                }
+                @include breakpoint(large) {
+                    width: 37%; 
+                }
+
+                @include breakpoint(llarge) {
+                    width: 35.45%;
+                    margin-top: 9px;
+                }
+
+                .info {                   
+                    padding-top: calc(clamp(1.25rem, 1.199vw + 0.956rem, 2.25rem));
+                    padding-bottom: calc(clamp(1.25rem, 0.375vw + 1.158rem, 1.563rem));
+                    padding-right:calc(clamp(1.25rem, 0.749vw + 1.066rem, 1.875rem)) ;
+                    padding-left: calc(clamp(1.25rem, 1.199vw + 0.956rem, 2.25rem));
+                    background: $bgpanel-color;                 
+                    p {
+                        font-family: 'ABCDiatype';
+                        font-weight: 400;
+                        font-size: clamp(18px, calc(18px + (20 - 18) * ((100vw - 393px) / (1023 - 393))), 20px);
+                        line-height: 100%;
+                        letter-spacing: -0.025em; 
+                    }
+
+                    .infoBlock {
+                        margin-top: 36px;
+                        .nameBlock {
+                            p {
+                                font-family: 'ABCDiatype';
+                                font-style: normal;
+                                font-weight: 700;
+                                font-size: clamp(22px, calc(22px + (25 - 22) * ((100vw - 393px) / (1024 - 393))), 25px);
+                                line-height: 97.1%;
+                                /* or 24px */
+                                letter-spacing: -0.025em; 
+                            }
+                        }
+
+                        .positionBlock {
+                            margin-top: 17px;
+                            p {
+                                font-family: 'ABCDiatype';
+                                font-style: normal;
+                                font-weight: 700;
+                                font-size: clamp(18px, calc(18px + (20 - 18) * ((100vw - 393px) / (1023 - 393))), 20px);
+                                line-height: 100%;
+                                letter-spacing: -0.025em;
+                                color: #0B3D71; 
+                                }
+                            
+                        }
+
+                        .blockAddress {
+                            p {
+                                font-family: 'ABCDiatype';
+                                font-style: normal;
+                                font-weight: 400;
+                                font-size: clamp(18px, calc(18px + (20 - 18) * ((100vw - 393px) / (1023 - 393))), 20px);
+                                line-height: 116.6%;
+                                /* or 23px */
+                                letter-spacing: -0.025em;
+                                color: #0B3D71;
+ 
+                            }
+                        }
+
+                        .emailBlock {
+                            margin-top: 18px;    
+                            p,
+                            a {
+                                font-family: 'ABCDiatype';
+                                font-style: normal;
+                                font-weight: 400;
+                                font-size: clamp(18px, calc(18px + (20 - 18) * ((100vw - 393px) / (1023 - 393))), 20px);
+                                line-height: 116.6%;
+                                color: #0B3D71;
+                                /* or 23px */
+                                letter-spacing: -0.025em;
+ 
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

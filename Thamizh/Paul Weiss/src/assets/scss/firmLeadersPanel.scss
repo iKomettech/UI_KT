@@ -1,0 +1,376 @@
+@import "util/util";
+$img: "../../images/";
+$bgpanel-color: #B9C8DA;
+$mediumbluebgpanel: #0B3D71;
+$white: #ffffff;
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+.firmLeaderPanel {
+    margin-top: 38px;
+
+    @include breakpoint(llarge) {
+        margin-top: 135px;
+    }
+
+    .grid-container {
+        .flex-box {
+            border-top: 10px solid $bgpanel-color;
+
+            @include breakpoint(small only) {
+                margin-top: 20px;
+            }
+
+            .flexWrap {
+                padding-bottom: calc(clamp(1.563rem, 2.381vw + 0.978rem, 2.5rem));
+
+                @include breakpoint(medium) {
+                    display: flex;
+                    // padding-bottom: 40px;
+                }
+                @include breakpoint(large) {
+                    padding-bottom: calc(clamp(2.5rem, 2.131vw + 1.136rem, 3.438rem));
+                }
+                .wraptitle {
+                    width: 100%;
+
+                    h2 {
+                        text-align: left;
+                        margin-top: calc(clamp(0.625rem, 2.381vw + 0.04rem, 1.563rem));
+                        font-size: clamp(55px, calc(55px + (64 - 55) * ((100vw - 393px) / (1024 - 393))), 64px) ;     
+                        line-height:100%;
+                        letter-spacing: -0.05em;
+                        // @include breakpoint(medium) {
+                        //     margin-top: 25px;
+                        // }
+                        @include breakpoint(large) {
+                            font-size: clamp(64px, calc(64px + (85 - 64) * ((100vw - 1024px) / (1728 - 1024))), 85px) ;
+                        }
+                    }
+
+                    @media (min-width: 767px) {
+                        width:51%;
+                        padding-right: 10px;
+                    }
+                   
+
+                }
+
+                .flxcontentwrap {
+                    max-width: 853px;
+                    margin-top: clamp(21px, calc(36px - 10vw), 36px);
+                    @include breakpoint(medium) {
+                        margin-top: 21px;
+                        max-width: 46%;
+                        margin-left: calc(clamp(0.8rem, 8.627vw - 3.391rem, 2.125rem));
+                    }
+                    @include breakpoint(large) {
+                        max-width: 54%;
+                        // margin-left: 34px;
+                    }
+                    @include breakpoint(xxlarge) {
+                        max-width: 56%;
+                        margin-left: 0;
+                        margin-top: 27px;
+                    }
+                    p {
+                        font-family: "UntitledSerif";
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: clamp(18px, calc(18px + (22 - 18) * ((100vw - 393px) / (1728 - 393))), 22px) ;
+                        line-height: 123.6%;
+                        /* or 27px */
+                        letter-spacing: -0.01em;
+                        word-break: break-word;
+
+                     
+
+                    }
+                }
+
+            }
+        }
+
+        .contentwrap {
+            p {
+                font-family: 'UntitledSerif';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 27px;
+                line-height: 33px;
+                letter-spacing: -0.01em;
+                word-break: break-word;
+                font-size: clamp(18px, calc(18px + (22 - 18) * ((100vw - 393px) / (1024 - 393))), 22px) ;
+                @include breakpoint(large) {
+                    font-size: clamp(22px, calc(22px + (27 - 22) * ((100vw - 1024px) / (1728 - 1024))), 27px) ;
+                } 
+
+                +p {
+                    margin-top: 24px;
+                }
+            }
+        }
+
+        .lawyersPanel {
+            .flexWrapTeam {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+                justify-content: flex-start;
+
+                @media (min-width:320px) and (max-width:662px) {
+                    justify-content: center;
+                }
+
+                @media (min-width:663px) and (max-width:1023px) {
+                    max-width: 625px;
+                    margin: 0 auto;
+                    justify-content: center;
+                }
+
+                @include breakpoint(large) {
+                    justify-content: flex-start;
+                    gap: inherit;
+                    row-gap: 20px;
+                }
+
+                .outBio {
+                    position: relative;
+                    width: 300px;
+                    overflow: hidden;
+                    background: #f1f4f8;
+
+                    &::after{
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        width: 0;
+                        height: 0;
+                        //border-bottom: 5px solid #0B3D71;
+                        //border-right: 5px solid #0B3D71;
+                        border: 0px solid transparent;
+                        box-sizing: border-box;
+                        border-bottom-width: 5px;
+                        border-right-width: 5px;
+                        pointer-events: none;
+                    }
+                    &:hover{
+                        &::after{
+                            width: 100%;
+                            height: 100%;
+                            border-color: #0B3D71;
+                            transition: border-color 0s, width 0.25s, height 0.25s;
+                            transition-delay: 0s, 0.25s, 0s;
+                        }
+                    }
+
+                    @media (min-width:320px) and (max-width:430px) {
+                        width: 345px;
+                    }
+
+                    @include breakpoint(large only) {
+                        &:nth-child(3n+3) {
+                            margin-right: 0;
+                        }
+                    }
+
+                    @include breakpoint(large) {
+                        width: 32%;
+                        margin-right: 2%;
+                    }
+
+                    @include breakpoint(llarge) {
+                        width: 23.959%;
+                        margin-right: 1.38%;
+
+                        &:nth-child(4n+4) {
+                            margin-right: 0;
+                        }
+                    }
+
+
+                    .bioBlock {
+                        width: 100%;
+                        height: auto;
+
+                        .imgWrap {
+                            overflow: hidden;
+
+                            img {
+                                width: 100%;
+                            }
+                        }
+
+                        .bioSection {
+                            padding: 25px 18px 40px;
+                            padding-top: 25px;
+                            padding-bottom: 40px;
+                            padding-inline: 18px;
+                            @media (min-width:320px) and (max-width:662px) {
+                                padding-bottom: 66px;
+                            }
+                            @include breakpoint(large) {
+                                // padding: 25px 18px 15px;
+                                padding-inline: calc(clamp(1.125rem, 0.568vw + 0.761rem, 1.375rem));
+                                padding-bottom: calc(clamp(0.938rem, 1.42vw + 0.028rem, 1.563rem));
+                            }
+
+                            // @include breakpoint(llarge) {
+                            //     padding: 25px 18px;
+                            // }
+
+                            // @include breakpoint(xxlarge) {
+                            //     padding: 25px 22px;
+                            // }
+
+                            .bioTitle {
+                                p {
+                                    font-style: normal;
+                                    font-weight: 700;
+                                    font-size: 25px;
+                                    line-height: 23px;
+                                    letter-spacing: -0.015em;
+                                    margin-bottom: 15px;
+
+                                    @include breakpoint(medium) {
+                                        font-size: 22px;
+                                        line-height: 23px;
+                                    }
+                                    @include breakpoint(large) {
+                                        font-size: clamp(22px, calc(22px + (27 - 22) * ((100vw - 1024px) / (1728 - 1024))), 27px) ;
+                                    } 
+                                    // @include breakpoint(large) {
+                                    //     font-size: 20px;
+                                    //     line-height: 23px;
+                                    // }
+
+                                    // @include breakpoint(llarge) {
+                                    //     font-size: 22px;
+                                    //     line-height: 23px;
+                                    // }
+
+                                    // @include breakpoint(xxlarge) {
+                                    //     font-size: 25px;
+                                    //     line-height: 23px;
+                                    // }
+
+                                    &:hover {
+                                        color: #0B3D71;
+                                    }
+                                }
+                            }
+
+                            .position {
+                                p {
+                                    font-size: 18px;
+                                    line-height: 19px;
+                                    font-weight: 400;
+                                    letter-spacing: -0.025em;
+                                    color: #0B3D71;
+                                    word-break: break-word;
+
+                                    @include breakpoint(xlarge) {
+                                        font-size: 20px;
+                                    }
+
+                                    @include breakpoint(small only) {
+                                        font-size: 20px;
+                                    }
+
+                                    &.position {
+                                        font-weight: 700;
+                                        margin-bottom: 2px;
+                                    }
+
+                                    &:first-child {
+                                        margin-bottom: 15px;
+                                    }
+                                }
+                            }
+
+                            .bioContent {
+                                p {
+                                    font-size: 18px;
+                                    line-height: 19px;
+                                    font-weight: 400;
+                                    letter-spacing: -0.025em;
+                                    color: #0B3D71;
+                                    word-break: break-word;
+
+                                    @include breakpoint(large) {
+                                        font-size: calc(clamp(1.125rem, 0.284vw + 0.943rem, 1.25rem));
+                                    }
+
+                                    @include breakpoint(small only) {
+                                        font-size: 20px;
+                                    }
+
+                                }
+
+                                .position {
+                                    margin-bottom: 20px;
+                                    font-weight: 700;
+                                }
+
+                                a {
+                                    color: #0B3D71;
+
+                                    &:hover {
+                                        color: #001F3F;
+                                    }
+                                }
+
+                                ul {
+                                    margin-left: 0;
+
+                                    li {
+                                        display: inline-flex;
+                                        flex-grow: 1;
+                                        flex-basis: auto;
+                                        padding-right: 4px;
+                                        padding-left: 6px;
+                                        text-align: center;
+                                        border-left: 1px solid #0B3D71;
+                                        justify-content: center;
+                                        font-size: 18px;
+                                        line-height: 19px;
+                                        font-weight: 400;
+                                        letter-spacing: -0.025em;
+                                        color: #0B3D71;
+
+                                        @include breakpoint(small only) {
+                                            font-size: 20px;
+                                        }
+
+                                        @include breakpoint(large) {
+                                            font-size: calc(clamp(1.125rem, 0.284vw + 0.943rem, 1.25rem));
+                                        }
+
+                                        &:first-child {
+                                            border-left: none;
+                                            padding-left: 0;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}
+.firmLeaderPanel .grid-container .lawyersPanel .flexWrapTeam .outBio .bioBlock .bioSection .bioContent a[href^="tel:"]{
+    text-decoration: none;
+    &:hover{
+        text-decoration: underline; 
+    }
+}

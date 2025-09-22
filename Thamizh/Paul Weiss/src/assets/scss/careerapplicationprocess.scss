@@ -1,0 +1,223 @@
+$primary-color: #001F3F;
+$secondary-color: #B9C8DA;
+@import "util/util";
+$img: "../../images/";
+$bgpanel-color: #B9C8DA;
+$mediumbluebgpanel: #0B3D71;
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+.careerApplicationProcess {
+    background: $bgpanel-color;
+    margin-top:calc(clamp(2.063rem, 7.94vw + 0.112rem, 8.688rem));
+    padding-top:calc(clamp(2.5rem, 8.24vw + 0.476rem, 9.375rem));
+    padding-bottom: calc(clamp(2.5rem, 8.24vw + 0.476rem, 9.375rem));  
+
+    .grid-container {
+        .applicationcontentWrap {
+            width: 100%;
+
+            .twoColumnContent {
+                margin-top:calc(clamp(2.188rem, 0.449vw + 2.077rem, 2.563rem));
+
+                @include breakpoint(medium) {
+                    display: flex;
+                }       
+                .leftCol {
+                    @include breakpoint(medium) {
+                        width: 48%;
+                        margin-right: 4%;
+                    }
+
+                    @include breakpoint(large) {
+                        width: 33%;
+                        margin-right: 7.74%;
+                        margin-left: 0;
+                    }
+
+                    @include breakpoint(llarge) {
+                        width: 50%;
+                        margin-right: 9.74%;
+                    }
+                }
+
+                .rightCol {
+                    @include breakpoint(medium) {
+                        width: 48%;
+                    }
+
+                    @include breakpoint(large) {
+                        width: 50.26%;
+                    }
+
+                    @include breakpoint(llarge) {
+                        width: 39.7%;
+                    }
+                    ul{
+                        margin-top: 0;
+                    }
+                }
+            }
+
+            .onceCloumn {
+                // margin-top: 35px; 
+
+                @include breakpoint(large) {
+                    margin-top: -20px;
+                }
+
+                @include breakpoint(llarge) {
+                    margin-top: -10px;
+                }
+
+                max-width: 1120px;
+                width: 100%;
+            }
+
+            .clickBtn {
+                margin-top: 36px;               
+                a {
+                    font-family: 'ABCDiatype';
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: 97.1%;
+                    /* or 24px */
+                    letter-spacing: -0.025em;
+                    width: 100%;
+                    color: #FFFFFF;
+                    display: inline-block;
+                    position: relative;
+                    padding: 20px 25px 17px;
+                    transition: all .5s ease;
+                    background: $mediumbluebgpanel;
+                    font-size: clamp(18px, calc(18px + (25 - 18) * ((100vw - 393px) / (1023 - 393))), 25px);
+
+
+                    @include breakpoint(medium) {
+                        padding: 20px 33px 17px;                
+                    }                   
+
+                    &:hover {
+                        background: $primary-color;
+                        transition: all .5s ease;
+                        text-decoration: none;
+                    }
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        right: 50px;
+                        background: url("#{$img}settings/share.svg") no-repeat;
+                        background-size: contain;
+                        width: 20px;
+                        display: inline-block;
+                        height: 20px;
+                    }
+                }
+            }
+
+            h3 {
+                font-family: 'ABCDiatype';
+                font-style: normal;
+                font-weight: 700;
+                // font-size: 40px;
+                line-height: 100%;
+                /* or 58px */
+                letter-spacing: -0.025em;
+                font-size: clamp(40px, calc(40px + (50 - 40) * ((100vw - 393px) / (1023 - 393))), 40px);
+
+                @include breakpoint(large) {
+                    font-size: clamp(50px, calc(50px + (60 - 50) * ((100vw - 1024px) / (1728 - 1024))), 60px);
+                }
+
+                // @include breakpoint(large) {
+                //     font-size: 50px;
+                // }
+                // @include breakpoint(llarge) {
+                //     font-size: 60px;
+                // }
+
+                +p {
+                    margin-top: calc(clamp(1.25rem, 0.824vw + 1.048rem, 1.938rem));
+                }
+            }
+
+            p {
+                font-family: 'UntitledSerif';
+                font-style: normal;
+                font-weight: 400;
+                line-height: 123.6%;
+                /* or 26px */
+                letter-spacing: -0.01em;
+
+                font-size: clamp(18px, calc(18px + (22 - 18) * ((100vw - 393px) / (1023 - 393))), 22px);
+
+                @include breakpoint(large) {
+                    font-size: clamp(22px, calc(22px + (27 - 22) * ((100vw - 1024px) / (1728 - 1024))), 27px);
+                }
+
+                +p {
+                    margin-top:calc(clamp(1.25rem, 0.824vw + 1.048rem, 1.938rem));
+                    
+                }
+            }
+
+            ul {
+                @include breakpoint(small only) {
+                    margin-left: 15px;                   
+                }
+                margin-top:calc(clamp(1.25rem, 0.824vw + 1.048rem, 1.938rem));
+                margin-left: 0;
+
+                li {
+                    font-family: 'UntitledSerif';
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 116.6%;
+                    padding-left: 45px;
+                    /* or 26px */
+                    letter-spacing: -0.01em;
+                    position: relative;
+                    margin-bottom: 23px;
+
+                    font-size: clamp(18px, calc(18px + (22 - 18) * ((100vw - 393px) / (1023 - 393))), 22px);
+
+                    @include breakpoint(large) {
+                        font-size: clamp(22px, calc(22px + (27 - 22) * ((100vw - 1024px) / (1728 - 1024))), 27px);                       
+                    }
+
+                    
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 3px;
+                        left: 0;
+                        background: url('#{$img}settings/racialBullet.svg') no-repeat;
+                        background-size: contain;
+                        height: 18px;
+                        width: 18px;
+                        @include breakpoint(medium) {
+                            top:5px
+                        }
+                        @include breakpoint(llarge) {
+                            top:8px
+                        }
+                    }
+                }
+            }
+
+
+        }
+    }
+}

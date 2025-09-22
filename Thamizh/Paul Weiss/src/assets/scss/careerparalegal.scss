@@ -1,0 +1,114 @@
+$primary-color: #001F3F;
+$secondary-color: #B9C8DA;
+@import "util/util";
+$img: "../../images/";
+$bgpanel-color: #B9C8DA;
+$mediumbluebgpanel: #0B3D71;
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+
+
+
+
+.careerParalegal {
+    //margin-top: 40px;
+
+    // @include breakpoint(medium) {
+    //     margin-top: 70px;
+    // }
+    margin-top: clamp(40px, calc(40px + (100 - 40) * ((100vw - 393px) / (1023 - 393))), 100px);
+    @include breakpoint(large) {
+        //margin-top: 100px;
+        margin-top :clamp(100px, calc(100px + (150 - 100) * ((100vw - 1024px) / (1728 - 1024))), 150px);
+    }
+
+    // @include breakpoint(llarge) {
+    //     margin-top: 150px;
+    // }
+
+    .grid-container {
+        .flex-box {
+            border-top: 10px solid $bgpanel-color;
+
+            .flexWrap {
+                //padding-bottom: 25px;
+                padding-bottom: clamp(25px, calc(25px + (25 - 25) * ((100vw - 393px) / (767 - 393))), 25px);
+                @include breakpoint(medium) {
+                    //padding-bottom: 20px;
+                    padding-bottom: clamp(20px, calc(20px + (21 - 20) * ((100vw - 768px) / (1728 - 768))), 21px);
+                }
+
+                // @include breakpoint(llarge) {
+                //     padding-bottom: 21px;
+                // }
+
+                .wraptitle {
+                    width: 100%;
+
+                    h2 {
+                        text-align: left;
+                        margin-top: 10px; 
+                        letter-spacing: -0.05em;
+
+                        font-size: clamp(55px, calc(55px + (64 - 55) * ((100vw - 393px) / (1023 - 393))), 64px);
+                        line-height: 100%;
+                    
+                        @include breakpoint(large) {
+                            font-size: clamp(64px, calc(64px + (85 - 64) * ((100vw - 1024px) / (1728 - 1024))), 85px);
+                            //margin-top: 18px;
+                            margin-top :clamp(18px, calc(18px + (18 - 18) * ((100vw - 1024px) / (1439 - 1024))), 18px);
+                        }
+
+                        @include breakpoint(xlarge) { 
+                            //margin-top: 15px;
+                            margin-top :clamp(15px, calc(15px + (15 - 15) * ((100vw - 1440px) / (1728 - 1440))), 15px);
+                        }
+                    }
+
+
+
+                }
+            }
+        }
+
+        .contentWrap {
+            max-width: 1120px;
+            width: 100%;
+
+            p {
+                font-family: 'UntitledSerif';
+                font-style: normal;
+                font-weight: 400; 
+                line-height: 123.6%;
+                letter-spacing: -0.01em;
+                color: #001F3F;
+
+                font-size: clamp(18px, calc(18px + (22 - 18) * ((100vw - 393px) / (1023 - 393))), 22px);
+
+                @include breakpoint(large) {
+                    font-size: clamp(22px, calc(22px + (27 - 22) * ((100vw - 1024px) / (1728 - 1024))), 27px);
+                }
+
+                +p {
+                    //margin-top: 20px;
+                    margin-top : clamp(20px, calc(20px + (27 - 20) * ((100vw - 393px) / (1023 - 393))), 27px);
+                    @include breakpoint(large) {
+                        //margin-top: 27px;
+                        margin-top : clamp(27px, calc(27px + (33 - 27) * ((100vw - 1024px) / (1728 - 1024))), 33px);
+                    }
+                    // @include breakpoint(llarge) {
+                    //     margin-top: 33px;
+                    // }
+                }
+            }
+        }
+    }
+}
+

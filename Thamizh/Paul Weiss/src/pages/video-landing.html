@@ -1,0 +1,397 @@
+<link rel="stylesheet" href="{{root}}assets/css/subbanner/subbanner.css" media="all">
+<div class="subannerPanel twocolumn podcastsubpanel mt-140 module">
+    <picture>
+        <source media="(min-width:320px) and (max-width:480px)" srcset="{{root}}assets/images/our-firm/mobile-banner.jpg"
+            type="image/jpg">
+        <img src="{{root}}assets/images/our-firm/banner.jpg" width="1920" height="825" alt="banner" loading="lazy" class="lazy">
+    </picture>
+    <div class="grid-container">
+        <div class="contentwrapper">
+            <div class="innerwrap">
+                <div class="flexwrap">
+                    <div class="leftwrap">
+                        <div class="datesec">
+                            <p>Paul, Weiss Videos</p>
+                        </div>
+                        <div class="content">
+                            <h1>Your Career at Paul, <br> Weiss: An Inside Look</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<link rel="stylesheet" href="{{root}}assets/css/videosliderpanel/videosliderpanel.css" media="all">
+<script type="text/javascript">
+    $(document).ready(function () {
+        if ($(".videosliderpanel .swiper .swiper-slide").length >= 1) {
+        var sliderDelay = $(".videoSliderDelay").val();
+        var swiperCarousel = new Swiper('.videoSlider', {
+        spaceBetween: 0,
+        loop: true,
+        preventClicks: true,
+        simulateTouch: false,
+        preloadImages: false,
+        lazy:true,
+        speed: 2500,
+        pagination: {
+        el: '.videoSlider .swiper-pagination',
+        clickable: true
+        },
+        navigation: {
+        nextEl: '.videoSlider .swiper-next',
+        prevEl: '.videoSlider .swiper-prev',
+        },
+        breakpoints: {
+            320: {
+                simulateTouch: true,
+            },
+            1280: {
+                simulateTouch: false,
+            },
+        },
+        on: {  
+            slideChange: function(el) {
+                $('video').each(function() {
+                var playerId = $(this).attr('id');
+                var myPlayer = videojs(playerId);
+                if (!myPlayer.paused()) {
+                    myPlayer.pause();
+                } 
+                myPlayer.on('ended', function() {
+                    $('#divOverlay').css('visibility', 'visible');
+                    $('.story-related-videos').css('visibility', 'visible');
+                });
+                });
+            }
+        }
+        });
+    }
+});
+</script>
+<div class="videosliderpanel">
+    <div class="grid-container">
+        <div class="swiper videoSlider">
+            <div class="swiper-wrapper">
+                <input type="hidden" class="videoSliderDelay" value="4000" />
+                <div class="swiper-slide">
+                    <div class="sliderwrap">
+                        <div class="videowrap">
+                            <div class="videoContainer">
+                                <div class="story-detail-video">
+                                    <video id="pwPlayer-6327763109112"
+                                           data-video-id="6327763109112"
+                                           data-account="1839446729001"
+                                           data-player="HJR1vW8Ab"
+                                           data-embed="default"
+                                           data-application-id
+                                           class="video-js"
+                                           controls
+                                           style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; width: 100%; height: 100%;"></video>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contentwrap">
+                            <div class="content">
+                                <h2>The Paul, Weiss Litigation Department: Winning When Stakes Are High</h2>
+                                <p>Get to know Paul, Weiss’s litigation hiring partners, Jaren Janghorbani and Gregory Laufer, in this video.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="sliderwrap">
+                        <div class="videowrap">
+                            <div class="videoContainer">
+                                <div class="story-detail-video">
+                                    <video id="pwPlayer-6327764624112"
+                                           data-video-id="6327764624112"
+                                           data-account="1839446729001"
+                                           data-player="HJR1vW8Ab"
+                                           data-embed="default"
+                                           data-application-id
+                                           class="video-js"
+                                           controls
+                                           style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; width: 100%; height: 100%;"></video>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contentwrap">
+                            <div class="content">
+                                <h2>Meet the Paul, Weiss Litigation Hiring Partners</h2>
+                                <p>Get to know Paul, Weiss’s litigation hiring partners, Jaren Janghorbani and Gregory Laufer, in this video.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="swiper-navs">
+                <div class="flexBox">
+                    <div class="swiper-prev"></div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-next"></div>
+                </div>
+            </div>
+        </div>        
+    </div>
+</div>
+<script src="https://players.brightcove.net/1839446729001/HJR1vW8Ab_default/index.min.js"></script>
+
+<!----------Video List Panel----------->
+<link rel="stylesheet" href="{{root}}assets/css/videolistpanel/videolistpanel.css" media="all">
+<div class="videolistpanel">
+    <div class="grid-container">
+        <div class="flexWrapTeam">
+            <div class="colblock">
+                <div class="imgwrap">
+                    <a href="#" aria-label="Mergers & Acquisitions">
+                         <img src="assets/images/videolist/video_thumb_1.jpg" alt="Mergers & Acquisitions" class="lazy zoom" width="466" height="287">
+                    </a>    
+                </div>
+                <div class="contentwrap">
+                    <a href="#" aria-label="Mergers & Acquisitions">
+                        <p>Mergers & Acquisitions</p>
+                    </a>
+                    <div class="titlewrap">
+                        <a href="#" aria-label="Mergers & Acquisitions">
+                            <p>M&A at Paul, Weiss: Excellence in Dealmaking</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="colblock">
+                <div class="imgwrap">
+                    <a href="#" aria-label="Mergers & Acquisitions">
+                         <img src="assets/images/videolist/video_thumb_2.jpg" alt="Mergers & Acquisitions" class="lazy zoom" width="466" height="287">
+                    </a>    
+                </div>
+                <div class="contentwrap">
+                    <a href="#" aria-label="Mergers & Acquisitions">
+                        <p>Litigation</p>
+                    </a>
+                    <div class="titlewrap">
+                        <a href="#" aria-label="Mergers & Acquisitions">
+                            <p>Paul, Weiss Litigations: Leaders in the Profession</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="colblock">
+                <div class="imgwrap">
+                    <a href="#" aria-label="Mergers & Acquisitions">
+                         <img src="assets/images/videolist/video_thumb_3.jpg" alt="Mergers & Acquisitions" class="lazy zoom" width="466" height="287">
+                    </a>    
+                </div>
+                <div class="contentwrap">
+                    <a href="#" aria-label="Mergers & Acquisitions">
+                        <p>Litigation</p>
+                    </a>
+                    <div class="titlewrap">
+                        <a href="#" aria-label="Mergers & Acquisitions">
+                            <p>The Paul, Weiss Litigation Department: Winning When Stakes Are High</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="colblock">
+                <div class="imgwrap">
+                    <a href="#" aria-label="Mergers & Acquisitions">
+                         <img src="assets/images/videolist/video_thumb_1.jpg" alt="Mergers & Acquisitions" class="lazy zoom" width="466" height="287">
+                    </a>    
+                </div>
+                <div class="contentwrap">
+                    <a href="#" aria-label="Mergers & Acquisitions">
+                        <p>Mergers & Acquisitions</p>
+                    </a>
+                    <div class="titlewrap">
+                        <a href="#" aria-label="Mergers & Acquisitions">
+                            <p>M&A at Paul, Weiss: Excellence in Dealmaking</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="colblock">
+                <div class="imgwrap">
+                    <a href="#" aria-label="Mergers & Acquisitions">
+                         <img src="assets/images/videolist/video_thumb_2.jpg" alt="Mergers & Acquisitions" class="lazy zoom" width="466" height="287">
+                    </a>    
+                </div>
+                <div class="contentwrap">
+                    <a href="#" aria-label="Mergers & Acquisitions">
+                        <p>Litigation</p>
+                    </a>
+                    <div class="titlewrap">
+                        <a href="#" aria-label="Mergers & Acquisitions">
+                            <p>Paul, Weiss Litigations: Leaders in the Profession</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="colblock">
+                <div class="imgwrap">
+                    <a href="#" aria-label="Mergers & Acquisitions">
+                         <img src="assets/images/videolist/video_thumb_3.jpg" alt="Mergers & Acquisitions" class="lazy zoom" width="466" height="287">
+                    </a>    
+                </div>
+                <div class="contentwrap">
+                    <a href="#" aria-label="Mergers & Acquisitions">
+                        <p>Litigation</p>
+                    </a>
+                    <div class="titlewrap">
+                        <a href="#" aria-label="Mergers & Acquisitions">
+                            <p>The Paul, Weiss Litigation Department: Winning When Stakes Are High</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="colblock">
+                <div class="imgwrap">
+                    <a href="#" aria-label="Mergers & Acquisitions">
+                         <img src="assets/images/videolist/video_thumb_1.jpg" alt="Mergers & Acquisitions" class="lazy zoom" width="466" height="287">
+                    </a>    
+                </div>
+                <div class="contentwrap">
+                    <a href="#" aria-label="Mergers & Acquisitions">
+                        <p>Mergers & Acquisitions</p>
+                    </a>
+                    <div class="titlewrap">
+                        <a href="#" aria-label="Mergers & Acquisitions">
+                            <p>M&A at Paul, Weiss: Excellence in Dealmaking</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="colblock">
+                <div class="imgwrap">
+                    <a href="#" aria-label="Mergers & Acquisitions">
+                         <img src="assets/images/videolist/video_thumb_2.jpg" alt="Mergers & Acquisitions" class="lazy zoom" width="466" height="287">
+                    </a>    
+                </div>
+                <div class="contentwrap">
+                    <a href="#" aria-label="Mergers & Acquisitions">
+                        <p>Litigation</p>
+                    </a>
+                    <div class="titlewrap">
+                        <a href="#" aria-label="Mergers & Acquisitions">
+                            <p>Paul, Weiss Litigations: Leaders in the Profession</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="colblock">
+                <div class="imgwrap">
+                    <a href="#" aria-label="Mergers & Acquisitions">
+                         <img src="assets/images/videolist/video_thumb_3.jpg" alt="Mergers & Acquisitions" class="lazy zoom" width="466" height="287">
+                    </a>    
+                </div>
+                <div class="contentwrap">
+                    <a href="#" aria-label="Mergers & Acquisitions">
+                        <p>Litigation</p>
+                    </a>
+                    <div class="titlewrap">
+                        <a href="#" aria-label="Mergers & Acquisitions">
+                            <p>The Paul, Weiss Litigation Department: Winning When Stakes Are High</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="colblock hidden" id="moreVideos">
+                <div class="imgwrap">
+                    <a href="#" aria-label="Mergers & Acquisitions">
+                         <img src="assets/images/videolist/video_thumb_3.jpg" alt="Mergers & Acquisitions" class="lazy zoom" width="466" height="287">
+                    </a>    
+                </div>
+                <div class="contentwrap">
+                    <a href="#" aria-label="Mergers & Acquisitions">
+                        <p>Litigation</p>
+                    </a>
+                    <div class="titlewrap">
+                        <a href="#" aria-label="Mergers & Acquisitions">
+                            <p>The Paul, Weiss Litigation Department: Winning When Stakes Are High</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="colblock hidden">
+                <div class="imgwrap">
+                    <a href="#" aria-label="Mergers & Acquisitions">
+                         <img src="assets/images/videolist/video_thumb_3.jpg" alt="Mergers & Acquisitions" class="lazy zoom" width="466" height="287">
+                    </a>    
+                </div>
+                <div class="contentwrap">
+                    <a href="#" aria-label="Mergers & Acquisitions">
+                        <p>Litigation</p>
+                    </a>
+                    <div class="titlewrap">
+                        <a href="#" aria-label="Mergers & Acquisitions">
+                            <p>The Paul, Weiss Litigation Department: Winning When Stakes Are High</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="allresult">
+            <a href="javascript:void(0)" onclick="toggleCards(event)" id="view_loadmore" aria-label="View More Videos List" class="view-all" contenteditable="false" style="cursor: pointer;">View More Videos</a>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+
+    let isViewMore = true;
+    function toggleCards() {
+        const cards = document.querySelectorAll('.flexWrapTeam .colblock');
+        const toggleBtn = document.querySelector('#view_loadmore');
+
+        if (isViewMore) {
+            // Show all cards
+            cards.forEach(card => card.classList.remove('hidden'));
+            toggleBtn.textContent = 'View Less Videos';
+            toggleBtn.classList.remove('viewing');
+            var target = $('#moreVideos');
+            $('html, body').animate({
+                scrollTop: $(target).offset().top - $('header').height() - 60
+            }, 500);
+        } else {
+            // Adjust based on screen size
+            resizeCards();
+            toggleBtn.textContent = 'View More Videos';
+            toggleBtn.classList.add('viewing');
+            var target = $('#view_loadmore');
+            $('html, body').animate({
+                scrollTop: $(target).offset().top - $('header').height() - 60
+            }, 500);
+        }
+
+        isViewMore = !isViewMore;
+    }
+    function resizeCards() {
+        const cards = document.querySelectorAll('.flexWrapTeam .colblock');
+        const screenWidth = window.innerWidth;
+        const toggleBtn = document.querySelector('#view_loadmore');
+
+        let visibleCount;
+        visibleCount = 9;
+
+        cards.forEach((card, index) => {
+            if (index < visibleCount) {
+                card.classList.remove('hidden');
+            } else {
+                card.classList.add('hidden');
+            }
+        });
+
+
+        if (cards.length <= visibleCount) {
+            console.log(cards.length)
+            toggleBtn.classList.add('hide')
+        } else {
+            toggleBtn.classList.remove('hide')
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        resizeCards();
+    });
+</script>

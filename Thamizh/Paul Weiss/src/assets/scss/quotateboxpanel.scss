@@ -1,0 +1,420 @@
+@import "util/util";
+$white: #ffffff;
+$primary-color: #001F3F;
+$secondary-color: #B9C8DA;
+@import "util/util";
+$img: "../../images/";
+$bgpanel-color: #B9C8DA;
+$mediumbluebgpanel: #0B3D71;
+$white: #ffffff;
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+.twocolumscontentpanel + link + .quotateboxpanel{
+    clear: both;
+    @include breakpoint(small only) {
+        // margin-top: 40px;
+    }
+    margin-top: calc(clamp(2.5rem, 9.206vw + 0.239rem, 6.125rem));
+    @include breakpoint(large) {
+        margin-top: calc(clamp(6.125rem, 6.25vw + 2.125rem, 8.875rem));
+    }
+    // @include breakpoint(llarge) {
+    //     margin-top: 142px;
+    // }
+}
+
+.quotateboxpanel {
+    margin-top: calc(clamp(2.5rem, 4.444vw + 1.408rem, 4.25rem));
+
+    @include breakpoint(small only) {
+        // margin-top: 40px;
+    }
+
+    @include breakpoint(large) {
+        margin-top: calc(clamp(4.25rem, 5.682vw + 0.614rem, 6.75rem));
+    }
+
+    .grid-container {
+        @media (max-width: 1279px) {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .contentwrap {
+            background: #B9C8DA;
+            height: 100%;
+            align-items: center;
+            display: flex;
+            min-height: 236px;
+
+            @include breakpoint(small only) {
+                padding: 36px 0 25px;
+            }
+
+            @include breakpoint(medium only) {
+                padding: 25px 0;
+            }
+
+            @include breakpoint(large) {
+                min-height: 319px;
+            }
+
+            @include breakpoint(llarge) {
+                min-height: 520px;
+            }
+
+            .content {
+                max-width: 85%;
+                margin-left: auto;
+                margin-right: auto;
+                text-align: center;
+
+                @include breakpoint(medium) {
+                    max-width: 85%;
+                }
+
+                @include breakpoint(large) {
+                    max-width: calc(clamp(55rem, 29.83vw + 35.909rem, 68.125rem));
+                }
+
+                @include breakpoint(llarge) {
+                    // max-width: 1090px;
+                }
+
+                h2 {
+                    text-align: left;
+                    font-family: "UntitledSerif";
+                    //font-size: 30px;
+                    font-style: italic;
+                    font-weight: 400;
+                    line-height: 100%;
+                    letter-spacing: -0.015em;
+                    word-break: break-word;
+                    margin-bottom: calc(clamp(0.938rem, 1.429vw + 0.587rem, 1.5rem));
+                    font-size: clamp(30px, calc(30px + (40 - 30) * ((100vw - 393px) / (1023 - 393))), 40px);
+                    @include breakpoint(large) {
+                        //font-size: 40px;
+                        text-align: center;
+                        margin-bottom: calc(clamp(1.5rem, 1.989vw + 0.227rem, 2.375rem));
+                        font-size: clamp(40px, calc(40px + (55.35 - 40) * ((100vw - 1024px) / (1728 - 1024))), 55.35px);
+
+                    }
+
+                    @include breakpoint(llarge) {
+                        //font-size: 55.35px;
+                        // margin-bottom: 38px;
+                    }
+
+                    // &::before{
+                    //     content: '“';
+                    // }
+                    // &::after{
+                    //     content: '”'; 
+                    // }
+                }
+
+                p {
+                    font-family: 'ABCDiatype';
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 123.6%;
+                    color: #001F3F;
+                    letter-spacing: -0.015em;
+                    text-align: left;
+                    font-size: clamp(14px, calc(14px + (18 - 14) * ((100vw - 393px) / (1023 - 393))), 18px);
+                    // @include breakpoint(small only) {
+                    //     max-width: 270px;
+                    //     margin-left: auto;
+                    //     margin-right: auto;
+                    // }
+                    @include breakpoint(large) {
+                        //font-size: 20px;
+                        text-align: center;
+                        font-size: clamp(20px, calc(20px + (20 - 20) * ((100vw - 1024px) / (1728 - 1024))), 20px);
+                    }
+                }
+            }
+        }
+    }
+
+    &.inclusionCurriculumQuate {
+        margin-top: calc(clamp(2.188rem, 0.794vw + 1.993rem, 2.5rem));
+        @include breakpoint(large){
+
+            margin-top: calc(clamp(2.5rem, 7.386vw - 2.227rem, 5.75rem));
+
+        }
+
+        // @include breakpoint(llarge){
+
+        //     margin-top: 92px;
+
+        // }
+
+        .grid-container{
+
+            @include breakpoint(large only){
+
+                padding-right: 25px;
+
+                padding-left: 25px;
+
+            }
+
+        }
+        .contentwrap {
+            @include breakpoint(small only){
+                padding: 32px 0 31px;
+            }
+            @include breakpoint(medium){
+                padding: 35px;
+            }
+            .content {
+                @include breakpoint(small only){
+                    max-width: 80%;
+                }
+
+                @include breakpoint(llarge) {
+                    max-width: 1150px;
+                    padding: 115px 0;
+                }
+
+                h2 {
+                    @include breakpoint(small only){
+                        margin-bottom: 15px;}
+                    @include breakpoint(xlarge) {
+                        margin-bottom: 23px;
+                    }
+                }
+
+                p {
+                    margin-bottom: 2px;
+                    @include breakpoint(small only){
+                        max-width: 315px;}
+                }
+            }
+        }
+    }
+
+    &.inclusionwomenleadquate {
+        @include breakpoint(llarge) {
+            margin-top: 125px;
+        }
+    }
+
+    &.probonoquotepanel {
+        margin-top: calc(clamp(0.625rem, 12.698vw - 2.494rem, 5.625rem));
+
+        // @include breakpoint(medium) {
+        //     margin-top: 40px;
+        // }
+
+        @include breakpoint(large) {
+            margin-top: calc(clamp(5.625rem, 7.955vw + 0.534rem, 9.125rem));
+        }
+        // @include breakpoint(llarge) {
+        //     margin-top: 146px;
+        // }
+        .grid-container {
+            @include breakpoint(large only) {
+                padding-inline: 25px;
+            }
+
+            .contentwrap {
+                min-height: auto;
+                @include breakpoint(medium only) {
+                    padding-right: 20px;
+                    padding-left: 20px;
+                }
+                .content {
+                    max-width: 100%;
+                    padding: 40px;
+                    text-align: left;
+                    margin-left: 0;
+                    padding-block: calc(clamp(2.5rem, 9.206vw + 0.239rem, 6.125rem));
+                    padding-inline: 40px;
+                    @include breakpoint(medium) {
+                        // padding: 58px 0px 58px 0px;
+                        max-width: 757px;
+                        margin-left: auto;
+                        margin-right: auto;
+                        width: 100%;
+                        padding-left: calc(clamp(0rem, 5.882vw - 2.824rem, 0.938rem));
+                        padding-right: calc(clamp(0rem, 1.961vw - 0.941rem, 0.313rem));
+                    }
+
+                    @include breakpoint(large) {
+                        // padding: 98px 5px 95px 15px; 
+                        padding-bottom: calc(clamp(5.938rem, 0vw + 5.938rem, 5.938rem));
+                        padding-top: calc(clamp(6.125rem, 6.676vw + 1.852rem, 9.063rem));
+                    }
+
+                    @include breakpoint(llarge) {
+                        // padding: 145px 0px 90px 0px;
+                        padding-bottom: calc(clamp(5.625rem, 0vw + 5.625rem, 5.625rem));
+                        padding-inline: 0;
+                        max-width: 1122px;
+                    }
+
+                    h2 {
+                        font-weight: 400;
+                        letter-spacing: -0.015em;
+                        font-style: normal;
+                        max-width: 874px;
+                        width: 100%;
+                        margin-top: calc(clamp(1.063rem, 1.27vw + 0.751rem, 1.563rem));
+                        margin-bottom: calc(clamp(0rem, 8.73vw - 2.144rem, 3.438rem));
+                        //font-size: 18px;
+                        line-height: 120%;
+                        font-size: clamp(18px, calc(18px + (24 - 18) * ((100vw - 393px) / (1023 - 393))), 24px);
+                        @include breakpoint(medium) {
+                            // margin-top: 25px;
+                            // margin-bottom: 55px;
+                            max-width: 591px;
+                            //font-size: 24px;
+                            line-height: 123.6%;
+                        }
+                        @include breakpoint(large) {
+                            margin-left: auto;
+                            margin-bottom: calc(clamp(3.438rem, 1.42vw + 2.528rem, 4.063rem));
+                            margin-top: calc(clamp(1.563rem, 0.426vw + 1.29rem, 1.75rem));
+                            margin-right: auto;
+                            font-size: clamp(24px, calc(24px + (35 - 24) * ((100vw - 1024px) / (1728 - 1024))), 35px);
+                            max-width: calc(clamp(36.938rem, 40.199vw + 11.21rem, 54.625rem));
+                        }
+                        @include breakpoint(llarge) {
+                            // font-size: 35px;
+                            // line-height: 43px;
+                            // max-width: 874px;
+                            // margin-bottom: 65px;
+                            // margin-top: 28px;
+                        }
+                        + p{
+                            @include breakpoint(llarge) {
+                                margin-left: 12px;
+                            }
+                        }
+                    }
+
+                    p {
+                        span {
+                            text-transform: uppercase;
+                            //font-size: 15px;
+                            line-height: 100%;
+                            font-weight: 400;
+                            font-size: clamp(15px, calc(15px + (18 - 15) * ((100vw - 393px) / (1023 - 393))), 18px);
+                            @include breakpoint(large) {
+                                font-size: clamp(18px, calc(18px + (18 - 18) * ((100vw - 1024px) / (1728 - 1024))), 18px);
+                            }
+                            // @include breakpoint(small only) {
+                            //     font-size: 15px;
+                            //     font-weight: 400;
+                            //     line-height: 15px;
+                            // }
+                        }
+
+                        font-family:'ABCDiatype';
+                        font-size: 15px;
+                        font-weight: 400;
+                        line-height: 100%;
+                        letter-spacing: -0.015em;
+                        max-width: inherit;
+                        font-size: clamp(15px, calc(15px + (18 - 15) * ((100vw - 393px) / (1023 - 393))), 18px);
+                        @include breakpoint(medium) {
+                            font-weight: 400;
+                            //font-size: 18px;
+                            line-height: 115.1%;
+                        }
+                        @include breakpoint(large) {
+                            font-size: clamp(18px, calc(18px + (20 - 18) * ((100vw - 1024px) / (1728 - 1024))), 20px);
+                        }
+                        // @include breakpoint(llarge) {
+                        //     font-size: 20px;
+                        //     line-height: 24.72px;
+                        // }
+
+                        &:last-child {
+                            @include breakpoint(small only) {
+                                display: none;
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+
+    &.inclusionwomenleadquate {
+        margin-top: calc(clamp(2.188rem, 2.222vw + 1.642rem, 3.063rem)); 
+
+        @include breakpoint(medium) {
+            margin-inline: 20px;
+            // margin-top: 49px;
+        }
+
+        @include breakpoint(large) {
+            margin-top: calc(clamp(3.063rem, 10.795vw - 3.847rem, 7.813rem));
+        }
+
+        .grid-container {
+            .contentwrap {
+                @include breakpoint(medium) {
+                    padding-top: calc(clamp(3.125rem, 16.078vw - 4.593rem, 5.688rem));
+                    padding-bottom: calc(clamp(3.125rem, 14.118vw - 3.651rem, 5.375rem));
+                }
+
+                @include breakpoint(large) {
+                    padding-inline: 0; 
+                }
+
+                .content h2 {
+                    @include breakpoint(large only) {
+                        margin-bottom: 30px;
+                    }
+                }
+            }
+        }
+    }
+
+    &.quotetransforming {
+        @include breakpoint(llarge){
+            margin-top: 77px;
+        }
+        .grid-container {
+            @include breakpoint(small only){
+                margin: 0 -20px;
+            }
+            .contentwrap {
+                @include breakpoint(medium) {
+                    padding-top: calc(clamp(3.125rem, 16.078vw - 4.593rem, 5.688rem));
+                    padding-bottom: calc(clamp(3.125rem, 14.118vw - 3.651rem, 5.375rem));
+                }
+
+                    @include breakpoint(llarge){
+                        padding: 110px 0 110px;
+                        padding-top: calc(clamp(5.75rem, 2.557vw + 4.114rem, 6.875rem));
+                        padding-bottom: calc(clamp(5.375rem, 3.409vw + 3.193rem, 6.875rem));
+                    }
+                .content {
+                    h2 {
+                        //text-align: left;
+                        @include breakpoint(large ) {
+                            margin-bottom: 30px;
+                        }
+                }
+                // p{
+                //     text-align: left;
+                // }
+                }
+            }
+        }
+    }
+}

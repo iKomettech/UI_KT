@@ -1,0 +1,649 @@
+@charset 'utf-8';
+@import 'settings';
+@import 'foundation';
+@import 'motion-ui';
+// Global styles
+@include foundation-global-styles;
+@include foundation-forms;
+@include foundation-typography;
+// @include foundation-pagination;
+// Grids (choose one)
+@include foundation-xy-grid-classes;
+@include foundation-grid;
+@include foundation-flex-grid;
+@include foundation-breadcrumbs;
+
+// Helpers
+@include foundation-flex-classes;
+// Custom UI
+ @import 'components/header';
+ @import 'components/footer';
+ @import 'components/alerts';
+ //@import 'components/animation';
+
+ .grid-container {
+  max-width: 90rem;
+  @media (max-width: 1480px){
+    padding-right:15px;
+    padding-left:15px;
+  }
+  @media (max-width: 1279px){
+    padding-right:25px;
+    padding-left:25px;
+  }
+  @media (max-width: 1023px){
+    padding-right:20px;
+    padding-left:20px;
+  }
+}
+a {
+  color: $primary-color;}
+a:hover, a:focus {
+  color: $primary-color; }
+  [type='text'], [type='password'], [type='date'], [type='datetime'], [type='datetime-local'], [type='month'], [type='week'], [type='email'], [type='number'], [type='search'], [type='tel'], [type='time'], [type='url'], [type='color'], textarea {
+    border-radius: 0;
+  }
+  p, .page404Wrap:not(a), li{
+    font-size: 18px;
+    line-height: 30px;
+  }
+  .semibold{
+    font-weight: 600;
+  } 
+  .medium{
+    font-weight: 500;
+  }    
+  a[href^="tel:"], a[href^="mailto:"]{
+    text-decoration: underline;
+  }
+
+  /*------Mobile Padding --------------*/
+  @media screen and (max-width: 767px) {
+    .practice_ares_panel .flex-box, .statics, .firmnews .firm .two_gridpanel.recentfirm .two_righ, .newspanel.probono, 
+    .bioPanel .grid-container .flex .mobileView .contentBlock{
+      margin-top: 40px !important;
+    }
+    // .practice_ares_panel + link + .newspanel {
+    //   margin-top: 80px !important;
+    // }
+    .statics{
+      padding-top: 40px !important;
+    }
+    // .homelocation{
+    //   padding-top: 80px !important;
+    //   padding-bottom: 35px !important;
+    // }
+    .insights .dis-flex{
+      padding-top: 40px !important;
+      padding-bottom: 40px !important;
+    }
+    .quotateboxpanel .grid-container .contentwrap{
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+    }
+    .recentnewspanel{
+      margin-top: 32px !important;
+      padding-top: 40px !important;
+    }
+    .recentnewspanel .grid-container{
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .bioPanel .grid-container .flex .rgtBlock .blockInside{
+      padding-top: 35px !important;
+      padding-bottom: 40px !important;
+    }
+    .bioPanel .grid-container .flex .mobileView .contentBlock .listContent:last-child{
+      padding-bottom: 6px !important;
+    }
+    .twocolumscontentpanel .grid-container .flexwrap .rightwrap, .quotateboxpanel .grid-container .contentwrap .content{
+      padding-bottom: 40px !important;
+    }
+    .twocolumscontentpanel .grid-container .flexwrap .leftwrap, .quotateboxpanel .grid-container .contentwrap .content{
+      padding-top: 40px !important;
+    }
+    .quotateboxpanel .grid-container .contentwrap .content p:last-child{
+      margin-bottom: 0 !important;
+    }
+    .awardscontentpanel .grid-container .flexwrap .rightwrap {
+      margin-top: 22px !important;
+  }
+  .awardscontentpanel .grid-container .flexwrap .leftwrap .titlewrap {
+    margin-bottom: 0 !important;
+}
+  // .newspanel.experiencepanel, .awardscontentpanel.insightspanel{
+  //   margin-top: 80px !important;
+  // }
+  // .awardscontentpanel.relatedpracticepanel{
+  //   margin-top: 90px !important;
+  // }
+  .recognitionpanel{
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+  }
+  .recentengamentpanel{
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+  }
+  .insightspanel .innerwrap .insightslistpanel .allresult{
+    margin-top: 18px !important;
+  }
+  .paginationpanels, .paginationpanels ul{
+    margin-bottom: 0 !important;
+  }
+  .paginationpanels ul li.prev-arrow{
+    margin-right: 14px !important;
+  }
+  .paginationpanels ul li.next-arrow{
+    margin-left: 14px !important;
+  }
+  .locationLandingPanel .grid-container .locatDetail{
+    padding-top: 36px !important;
+  }
+  .locationLandingPanel .grid-container .locatDetail .flexwrap{
+    padding-top: 26px !important;
+  }
+  .locationLandingPanel ~ .newspanel.experiencepanel, .contentpanel .contentwrap .social-share {
+    margin-top: 40px !important;
+}
+.locationPanel .flex-box .flexWrap {
+  padding-bottom: 26px !important;
+}
+.filterPanel .grid-container .filter-content .alphapetOrder .alphaTitle {
+  padding-bottom: 20px !important;
+}
+.filterPanel .grid-container .filter-content .alphapetOrder .flexAlpha{
+  padding: 20px 0px !important;
+}
+.filterPanel .grid-container .filter-content .advcontent{
+  margin-top: 40px !important;
+}
+.filterPanel .grid-container .filter-content .flexAcc .skinPlank li{
+  max-width: 100% !important;
+}
+.filterPanel .grid-container .filter-content .searchContainer {
+  padding-top: 40px !important;
+}
+.filterPanel .grid-container .filter-content .advcontent{
+  padding-bottom: 33px !important;
+}
+.videoClip {
+  margin-top: 0 !important;
+}
+.videoClip .grid-container{
+  padding-left: 0;
+  padding-right: 0;
+}
+.videopanel {
+  margin-top: 20px !important;
+}
+.videopanel .contentwrap .clientwrap .socialPanel {
+  margin-top: 0 !important;
+}
+.videopanel .contentwrap .clientwrap .socialPanel svg {
+  height: 20px;
+}
+.videopanel ~ .awardscontentpanel .grid-container .flexwrap .rightwrap{
+  margin-top: 6px !important;
+}
+.searchResultPanel .findAProfessionalPanel {
+  margin-top: 32px;
+}
+.searchResultPanel .innerwrap .insightslistpanel{
+  margin-top: 28px !important;
+}
+.searchResultPanel.insightslanding .innerwrap .leftwrap{
+  margin-top: 82px !important;
+}
+.searchResultPanel.insightslanding{
+  margin-top: 0 !important;
+}
+.searchResultPanel.insightslanding .innerwrap .insightslistpanel{
+  margin-top: 10px !important;
+}
+.searchResultPanel .practicesPanel{
+  margin-top: 0 !important;
+}
+.searchResultPanel .locationPanel {
+  padding-top: 28px !important;
+  padding-bottom: 4px;
+}
+.contactPanel .flexLoc{
+  margin-top: 4px !important;
+}
+.contactPanel .flexLoc .desRight {
+  margin-top: 48px !important;
+}
+.contactPanel .flexLoc .desRight .contactData, .contactPanel .flexLoc .desRight .contactData .detail + .detail{
+  margin-top: 42px !important;
+}
+.firmcontentpanel {
+  margin-top: 38px !important;
+}
+.firmcontentimagepanel{
+  margin-top: 40px !important;
+  padding-bottom: 0 !important;
+}
+.firmcontentimagepanel .grid-container .firmwrap{
+  padding-top: 40px !important;
+  padding-bottom: 24px !important;
+}
+.firmcontentimagepanel ~ .statics {
+  margin-top: 0 !important;
+}
+.timelinepanel {
+  margin-top: 36px !important;
+}
+.timelinepanel .historymobilepanel .mobiletimeline{
+  margin-left: 18px !important;
+  margin-right: 18px !important;
+}
+.timelinepanel .historymobilepanel{
+  border: 2px solid #B9C8DA;
+  margin-top:  clamp(51px, calc(51px + (95 - 51) * ((100vw - 393px) / (767 - 393))), 95px);
+}
+.timelinepanel .historymobilepanel .mobilehistorywrap{
+  border: 0 !important;
+  margin-top: 0px !important;
+}
+.firmnews .firm .two_gridpanel.recentfirm .two_right {
+  margin-top: 40px !important;
+}
+.firmnews .firm .two_gridpanel.recentfirm .imgWrap{
+  margin-top: 5px !important;
+}
+.inclusionnetworkPanel {
+  margin-top: 80px !important;
+}
+.inclusionnetworkPanel .twocolumnimgSec, .inclusionNumbersPanel {
+  margin-top: 40px !important;
+}
+.inclusionNumbersPanel{
+  padding: 40px 0 !important;
+}
+.inclusionnetworkPanel .twocolumnimgSec .imgrgtwrap {
+  margin-top: 42px !important;
+}
+.inclusionNumbersPanel .grid-container .dis-flex .rightBoxList .insteadCard .vsdigit .flex-dis p{
+  text-align: center !important;
+}
+.diversityPanel {
+  margin-top: 40px !important;
+  padding: 15px 0 40px !important;
+} 
+.racialPanel, .oursupplier{
+  padding: 40px 0 34px !important;
+  margin-top: 40px !important;
+}
+.workingPanel .grid-container .familynetworkPanel .quatePanel .contentwrap .content h3{
+  text-align: left !important;
+}
+.workingPanel .grid-container .familynetworkPanel .quatePanel .contentwrap .content p{
+  text-align: left !important;
+  margin-left: 0 !important;
+}
+.inclusiontransforming{
+  margin-top: 36px !important;
+  padding-top: 40px !important;
+  padding-bottom: 0 !important;
+}
+.inclusiontransforming .grid-container .middleRow .threeColumn .starColumn .cardCol .starDetail{
+  padding: 20px 20px 10px !important;
+}
+.inclusiontransforming .grid-container .middleRow .threeColumn .starColumn .cardCol .starDetail .nameTag p{
+  margin-bottom: 8px !important;
+}
+.inclusionwomen{
+  padding-top: 40px !important;
+  padding-bottom: 40px !important;
+}
+.alumnifaq{
+  padding-top: 40px !important;
+  margin-top: 30px !important;
+  padding-bottom: 24px !important;
+}
+.alumnifirmnews.newsPanel {
+  margin-top: 0 !important;
+}
+.alumnifirmnews.newsPanel.firmnews .firm .two_gridpanel.recentfirm .two_right{
+  margin-top: 20px !important;
+}
+.alumnispot .grid-container .allresult{
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+.alumninewspanel .grid-container .flex-box .flexWrap{
+  padding-bottom: 20px !important;
+}
+.threequestiondetailspanel .grid-container .flex .rgtBlock .blockInside{
+  padding: 40px 20px 30px !important;
+}
+.podcastoverviewpanel .podcastwrap .flexwrap .contwrap .subcribeapp .subcribelinks ul li{
+  margin-right: 21px !important;
+}
+.podcastoverviewpanel .podcastwrap .flexwrap .contwrap .subcribeapp .subcribelinks ul li svg{
+  width: 30px;
+  height: 30px;
+}
+.podcastoverviewpanel .podcastwrap .flexwrap .imgwrap{
+  margin-top: 32px !important;
+}
+.podcastoverviewpanel .podcastwrap .ctawrap .readmorecta{
+  padding-top: 8px;
+}
+.awardscontentpanel.podcastrecentpanel{
+  margin-top: 0 !important;
+}
+.awardscontentpanel.podcastrecentpanel .grid-container .allresult{
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+.podcast-iframepanel{
+  margin-top: -6px;
+}
+.podcast-iframepanel .grid-container{
+  padding-left: 0;
+  padding-right: 0;
+}
+.podcast-iframepanel .iframewrap iframe {
+  height: 162px !important;
+}
+.awardscontentpanel.podcastspeakerspanel {
+  margin-top: 50px !important;
+}
+.awardscontentpanel.podcastspeakerspanel .grid-container .flexwrap .rightwrap {
+  margin-top: 34px !important;
+}
+.awardscontentpanel.insightspanel.podcasttranscriptpanel {
+  margin-top: 50px !important;
+}
+.awardscontentpanel.podcasttranscriptpanel .grid-container .flexwrap .rightwrap {
+  margin-top: 28px !important;
+}
+.awardscontentpanel.podcasttranscriptpanel .grid-container .flexwrap .rightwrap .contentWrap ul li, .awardscontentpanel.podcasttranscriptpanel .grid-container .flexwrap .rightwrap .contentWrap p{
+  font-size: 18px !important;
+}
+.awardscontentpanel.relatedpracticepanel ~ .awardscontentpanel.podcastrecentpanel{
+  margin-top: -6px;
+}
+.awardscontentpanel.podcastlistpanel .grid-container .flexwrap .leftwrap{
+  display: flex;
+}
+.awardscontentpanel.podcastlistpanel .grid-container .flexwrap .leftwrap .titlewrap{
+  display: none;
+}
+.awardscontentpanel.podcastlistpanel .grid-container .flexwrap .leftwrap .imgwrap{
+  max-width: 167px;
+}
+.awardscontentpanel.podcastlistpanel .grid-container .flexwrap .leftwrap .subcribeapp .subcribelinks ul li:first-child{
+  margin-left: 0 !important;
+}
+.awardscontentpanel.podcastlistpanel .grid-container .flexwrap .leftwrap .subcribeapp .subcribelinks ul li{
+  margin-left: 18px !important;
+}
+.awardscontentpanel.podcastlistpanel .grid-container .flexwrap .leftwrap .subcribeapp {
+  margin-top: 4px !important;
+  margin-left: 18px !important;
+} 
+.awardscontentpanel.podcastlistpanel .grid-container .flexwrap .rightwrap .listwrap .listcontent:first-child {
+  border-top: none;
+}
+.awardscontentpanel.podcastlistpanel .grid-container .flexwrap .rightwrap{
+  margin-top: 25px !important;
+}
+.awardscontentpanel.podcastlistpanel .grid-container .flexwrap .rightwrap .listwrap .listcontent {
+  padding-bottom: 16px !important;
+  padding-top: 20px !important;
+}
+.podcastlistpanel .paginationpanels {
+  margin-top: 12px;
+}
+  }
+
+  @media screen and (max-width: 480px) {
+    .firmnews .firm .two_gridpanel.recentfirm .imgWrap img {
+      height: 314px;
+    }
+    .alumninewspanel .grid-container .spotlightdesc .flexwrap .imgwrap img{
+      height: 353px;
+      object-fit: cover;
+    }
+  }
+
+  /*--- Container Changes -------*/
+  .insightspanel .flexdivsection .grid-container{
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .subannerPanel.twocolumn .grid-container .eventPublicationPanel .innerwrap .flexwrap .leftwrap .positionBtn .allresult {
+    padding-left: 30px !important;
+}
+.bc-iframe, .bc-iframe body, .bc-player-HJR1vW8Ab_default, .bc-player-HJR1vW8Ab_default .vjs-poster {
+  background-color: #ffffff;
+}
+p.noresult {
+  font-family: "UntitledSerif";  
+  font-weight: 400;
+  line-height: 123.6%;
+  letter-spacing: -0.01em; 
+  color: #001F3F;
+  margin-bottom: 0px;
+  font-size: clamp(20px, calc(20px + (20 - 20) * ((100vw - 393px) / (1279 - 393))), 20px) ;                           
+  @include breakpoint(llarge){
+    font-size: clamp(27px, calc(27px + (27 - 27) * ((100vw - 1280px) / (1728 - 1280))), 27px) ;                            
+  }
+}
+@media screen and (min-width: 1728px){
+  header{
+    max-width: 1728px;
+    width: 100%;
+  }
+  header.sticky.active{
+    max-width: 1600px;
+  }
+  .subannerPanel.twocolumn .grid-container, .videoClip .grid-container{
+    left: -5px;
+    position: relative;
+  }
+  header.active ~ .main .subannerPanel.twocolumn .grid-container, header.active ~ .main .videoClip .grid-container {
+    left: 0;
+  }
+}
+@media screen and (min-width: 1728px){
+  header{
+    max-width: 1728px;
+    width: 100%;
+  }
+  header.sticky.active{
+    max-width: 1600px;
+  }
+  .subannerPanel.twocolumn .grid-container, .videoClip .grid-container{
+    left: -5px;
+    position: relative;
+  }
+  header.active ~ .main .subannerPanel.twocolumn .grid-container, header.active ~ .main .videoClip .grid-container {
+    left: 0;
+  }
+}
+@media screen and (min-width: 1280px) and (max-width: 1727px) {
+ .grid-container, .firmnews .firm.grid-container{
+  margin-left: clamp(1rem, calc(-7.5906rem + 64.4295vw), 8.7rem);
+  margin-right: clamp(1rem, calc(-7.5906rem + 30.2013vw), 3.7rem);
+  padding-left: 0;
+  padding-right: 0;
+ }
+ .statics .grid-container .counter{
+  width: clamp(33.125rem, calc(-14.4813rem + 59.5078vw), 49.75rem) !important;
+  max-width: clamp(33.125rem, calc(-14.4813rem + 59.5078vw), 49.75rem) !important;
+ }
+ .statics .testimonialPanel{
+  max-width: clamp(31.25rem, calc(7.6258rem + 29.5302vw), 39.5rem) !important;
+ }
+ .statics .grid-container .counter .counter-col .count-digit{
+  font-size: clamp(7.5rem, calc(-10.3971rem + 22.3714vw), 13.75rem) !important;
+ }
+ .statics .grid-container .counter .counter-col .plus::after{
+  font-size: clamp(10.5rem, calc(1.1935rem + 11.6331vw), 13.75rem) !important;
+ }
+ .firmnews .firm .two_gridpanel.recentfirm .two_left{
+  max-width: clamp(23.938rem, calc(3.3578rem + 25.7253vw), 31.125rem) !important;
+ }
+ .firmnews .firm .two_gridpanel.recentfirm .two_right{
+  max-width: clamp(36.563rem, calc(-9.9694rem + 58.1655vw), 52.813rem) !important;
+ }
+ .firmnews .firm .two_gridpanel.recentfirm .two_right .contentsec h3{
+  font-size: clamp(2.125rem, calc(-0.7385rem + 3.5794vw), 3.125rem) !important;
+  margin-bottom: clamp(2.5rem, calc(-3.5850rem + 7.6063vw), 4.625rem) !important;
+  line-height: 100% !important;
+ }
+ .firmnews .firm .two_gridpanel.related_news .two_right .contentsec p{
+  font-size: clamp(1.5rem, calc(0.4262rem + 1.3423vw), 1.875rem) !important;
+  line-height: 100% !important;
+ }
+ .subannerPanel.twocolumn {
+  width: 100%;
+}
+.bannerpanel .homeBanner .bannerwrap .grid-container .content.right h1{
+  max-width: clamp(32.5rem, calc(25.1608rem + 9.1740vw), 35.063rem) !important;
+}
+}
+
+
+
+///muruga padding
+ 
+.statics, .insights, .newspanel.probono, footer, .newspanel, .twocolumscontentpanel, .practicesPanel .parContent .contentPanel + .contentPanel, .twocolumscontentpanel + link + .quotateboxpanel, .podcastoverviewpanel,  .cultureInclusionPanel, .whypaulweisspanel,  .inclusioncolleaguepanel, .inclusionCurriculum, .diversityPanel, .inclusiongenderPanel, .pipelineprogram, .racialPanel, .scholarshipPanel, .oursupplier, .workingPanel, .inclusionwomenleader, .inclusionprogram, .inclusiontransforming, .inclusionstrategic , .inclusionwomen, .firmcontentpanel, .timelinepanel, .firmLeaderPanel, .firmBulletPanel, .quotateboxpanel.probonoquotepanel, .recentnewspanel, .contentpanel, .videolistpanel, .alumnicontentpanel, .alumninetwork, .alumnifaq, .alumnispot, .alumnifirmnews, .alumninewspanel, .threequestiondetailspanel, .businesscontact, .summerprogram, .careerApplicationProcess, .qualifiedContentWrap, .summerassociate .grid-container .videoSection, .ourprogramdevelop, .careerdevelopment, .careerrecentnews, .careerColleague, .staffAttorneys, .careerinsights, .recognitionpanel, .joinTeamPanel, .joinTeamPanel + .businessContent, .businesspolicy  {
+  margin-top: calc(clamp(2.5rem, 9.524vw + 0.161rem, 6.25rem)) !important; //40-100
+  
+  @include breakpoint(large) {
+    margin-top: calc(clamp(6.25rem, 6.818vw + 1.886rem, 9.25rem)) !important; //100-148
+  }
+}
+.newspanel.awards, .inclusionnetworkPanel, .inclusionNumbersPanel, .inclusioncontentpanel, .firmcontentimagepanel, .careerSalary, .summerprogram .grid-container .programcontentWrap + .programcontentWrap, .summerprogramlocate, .careerdevelopment .grid-container .overMorefaq .flexwrap  {
+  margin-top: calc(clamp(2.5rem, 9.524vw + 0.161rem, 6.25rem)) !important; //40-100
+  @include breakpoint(large) {
+    margin-top: calc(clamp(6.25rem, 3.977vw + 3.705rem, 8rem)) !important;  //100-128
+  }
+}
+
+.practice_ares_panel {
+  @include breakpoint(large) {
+    padding-top: calc(clamp(3.75rem, 1.42vw + 2.841rem, 4.375rem)) !important; //60-70
+  }
+}
+.insightspaneltitle, .lawyerspaneltitle {
+  margin-top: calc(clamp(2.5rem, 3.175vw + 1.72rem, 3.75rem)) !important; //40-60
+  @include breakpoint(large) {
+    margin-top: calc(clamp(3.75rem, 2.131vw + 2.386rem, 4.688rem)) !important; //60-75
+  }
+}
+  .insightspaneltitle .insights-title {
+    @include breakpoint(large) {
+      padding-bottom: calc(clamp(0rem, 7.813vw - 5rem, 3.438rem)) !important; //0-55
+    }
+  }
+  .searchResultPanel .innerwrap .insightslistpanel  {
+    padding-top: calc(clamp(0.625rem, 3.745vw - 0.295rem, 3.75rem)) !important; //10-60
+  }
+  // .insightspanel .innerwrap .rightwrap{
+  //   margin-top: calc(clamp(0rem, 3.499vw - 0.859rem, 1.938rem)) !important; //0-31
+  //   @include breakpoint(llarge) {
+  //     margin-top: calc(clamp(1.938rem, 4.688vw - 1.813rem, 3.25rem)) !important; //31-52
+  //   }
+  // }
+  .flexdivsection .flexdiv {
+    margin-top: calc(clamp(1.25rem, 7.937vw - 0.699rem, 4.375rem)) !important; //20-70
+    @include breakpoint(large) {
+      margin-top: calc(clamp(4.375rem, 1.42vw + 3.466rem, 5rem)) !important; //70-80
+    }
+  }
+  .locationPanel, .contactPanel{
+    @include breakpoint(medium) {
+    padding-top: calc(clamp(2.5rem, 3.646vw + 0.75rem, 4.688rem)) !important; //40-75
+    }
+  }
+  .linkspanel{
+    @include breakpoint(large) {
+    padding-top: calc(clamp(1.875rem, 3.977vw - 0.67rem, 3.625rem)) !important; //30-58
+    }
+  }
+  .partnercontentpanel{
+    @include breakpoint(medium) {
+      padding-top: calc(clamp(3.125rem, 5.729vw + 0.375rem, 6.563rem)) !important; //50-105
+      }
+  }
+  .general, .searchResultPanel, .generalPanel{
+    margin-top: calc(clamp(2.5rem, 3.175vw + 1.72rem, 3.75rem)) !important; //40-60
+    @include breakpoint(large) {
+      margin-top: calc(clamp(3.75rem, 2.131vw + 2.386rem, 4.688rem)) !important; //60-75
+    }
+  }
+    
+  .general .contentwrap p + h2, .general .contentwrap p + h3, .general .contentwrap p + h4 {
+    padding-top: calc(clamp(1.875rem, 2.381vw + 1.29rem, 2.813rem)) !important; //30-45
+    @include breakpoint(large) {
+      padding-top: calc(clamp(2.813rem, 2.841vw + 0.994rem, 4.063rem)) !important; //45-65
+    }
+  }
+ 
+  .eventpanel {
+    @include breakpoint(medium) {
+    margin-top: calc(clamp(1.25rem, 52.157vw - 23.785rem, 9.563rem)) !important; //20-153
+    }
+    @include breakpoint(large) {
+      margin-top: calc(clamp(9.563rem, 7.386vw + 4.835rem, 12.813rem)) !important; //153-205
+    }
+  }
+  .contactPanel .flex-box .flexWrap {
+    padding-bottom: calc(clamp(0.938rem, 3.745vw + 0.018rem, 4.063rem)) !important; //15-65
+  }
+
+  .everify, .traningProgram{
+    margin-top: calc(clamp(2.5rem, 9.524vw + 0.161rem, 6.25rem)) !important; //40-100
+    // margin-top: clamp(40px, calc(40px + (100 - 40) * ((100vw - 393px) / (1024 - 393))), 100px) !important; //40-70
+    @include breakpoint(medium) {
+      margin-top: calc(clamp(4.375rem, 3.229vw + 2.825rem, 6.313rem)) !important; //70-101
+      // margin-top: clamp(70px, calc(70px + (101 - 70) * ((100vw - 768px) / (1728 - 768))), 101px) !important;
+    }
+  }
+  .twocolumscontentpanel {
+    @include breakpoint(small only) {
+      margin-top: 0px !important;
+    }
+  }
+
+.awardscontentpanel {
+    margin-top: calc(clamp(3.75rem, 10.317vw + 1.216rem, 7.813rem)) !important; //60-125
+    @include breakpoint(large) {
+      margin-top: calc(clamp(7.813rem, 7.102vw + 3.267rem, 10.938rem)) !important; //125-175
+    }
+  }
+
+  .awardscontentpanel.relatedpracticepanel, .awardscontentpanel.insightspanel {
+    margin-top: calc(clamp(3.125rem, 7.937vw + 1.176rem, 6.25rem)) !important; //50-100
+    @include breakpoint(large) {
+      margin-top: calc(clamp(6.25rem, 10.227vw - 0.295rem, 10.75rem)) !important; //100-172
+    }
+  }
+
+  @media screen and (min-width: 850px) and (max-width: 1279px) {
+    .grid-container, .firmnews .firm.grid-container {
+      padding-left: clamp(2%, calc(-3.9441rem + 11.1888vw), 8%);
+      padding-right: clamp(2%, calc(-3.9441rem + 11.1888vw), 8%); }
+    header.sticky.active {
+      margin-left: clamp(2%, calc(-3.9441rem + 11.1888vw), 8%);
+      margin-right: clamp(2%, calc(-3.9441rem + 11.1888vw), 8%);
+      width: auto;
+      max-width: 90rem; } }
+
+      .alumnifirmnews.newsPanel {
+        margin-top: calc(clamp(0.938rem,6.349vw - 0.622rem,3.438rem)) !important;
+    }
+    
+    @media print,screen and (min-width: 64em) {
+        .alumnifirmnews.newsPanel {
+            margin-top:calc(clamp(3.438rem,4.261vw + 0.71rem,5.313rem)) !important;
+        }
+    }

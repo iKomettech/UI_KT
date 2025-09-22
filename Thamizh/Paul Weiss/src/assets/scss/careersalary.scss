@@ -1,0 +1,63 @@
+$primary-color: #001F3F;
+$secondary-color: #B9C8DA;
+@import "util/util";
+$img: "../../images/";
+$bgpanel-color: #B9C8DA;
+$mediumbluebgpanel: #0B3D71;
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+ 
+
+
+.careerSalary {
+    margin-top:calc(clamp(2.5rem, 4.494vw + 1.396rem, 6.25rem)) ;
+    .grid-container {
+        .salarycontentWrap {
+            max-width: 1120px;
+            width: 100%;
+
+            h3 {
+                font-family: 'ABCDiatype';
+                font-style: normal;
+                font-weight: 700;  
+                /* or 58px */
+                letter-spacing: -0.025em;
+                font-size: clamp(40px, calc(40px + (50 - 40) * ((100vw - 393px) / (1023 - 393))), 50px);
+                line-height: 100%;
+
+                @include breakpoint(large) {
+                    font-size: clamp(50px, calc(50px + (60 - 50) * ((100vw - 1024px) / (1728 - 1024))), 60px);
+                } 
+
+                +p {
+                    margin-top: calc(clamp(2.25rem, 0.375vw + 2.158rem, 2.563rem));                    
+                }
+            }
+
+            p {
+                font-family: 'UntitledSerif';
+                font-style: normal;
+                font-weight: 400; 
+                line-height: 123.6%;          
+                letter-spacing: -0.01em;
+                font-size: clamp(18px, calc(18px + (22 - 18) * ((100vw - 393px) / (1023 - 393))), 22px);
+                @include breakpoint(large) {
+                    font-size: clamp(22px, calc(22px + (27 - 22) * ((100vw - 1024px) / (1728 - 1024))), 27px);
+                }
+
+                
+
+                +p {
+                    margin-top: calc(clamp(1.25rem, 0.974vw + 1.011rem, 2.063rem));
+                }
+            }
+
+        }
+    }
+}

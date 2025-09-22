@@ -1,0 +1,585 @@
+<link rel="stylesheet" href="{{root}}assets/css/insightspanel/insightspanel.css" media="all">
+<link rel="stylesheet" href="{{root}}assets/css/searchResult/searchResult.css" media="all">
+<script type="text/javascript" defer>
+    $(document).ready(function () {
+        var action = "click";
+        var speed = "500";
+        $('.list-collapse .header i').on(action, function () {
+            //alert("hi");
+            //console.log($(this).parent().parent().next());
+            $(this).parent().parent().next()
+                .slideToggle(speed);
+            $(this).toggleClass('filter-selected');
+            return false;
+        });
+        $('.insightsbox label').on(action, function (e) {
+            e.preventDefault();
+            const $label = $(this); 
+            const $headerCheckbox = $label.closest('.customcheckbox').find('input[type="checkbox"]');
+            const $contentDiv = $label.closest('.header').next('.content');
+            const $contentCheckboxes = $contentDiv.find('.customcheckbox input[type="checkbox"]');
+            const shouldCheck = !$headerCheckbox.prop('checked');
+            $contentCheckboxes.prop('checked', shouldCheck);
+            $headerCheckbox.prop('checked', shouldCheck);
+        });
+        setTimeout(function () {
+            $('.insightsbox label').trigger(action);
+        }, 800);
+    });
+</script>
+<div class="searchResultPanel insightspanel ">
+    <div class="grid-container">
+        <div class="flex-box module">
+            <div class="flexWrap">
+                <div class="wraptitle">
+                    <h1>Search Results </h1>
+                </div>
+                <div class="resulttag">
+                    <p>Showing Results for: Mergers</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="innerwrap">
+            <div class="leftwrap">
+                <h2 class="filter-title">Filter Results</h2>
+                <ul class="list-collapse">
+                    <li>
+                        <div class="header">
+                            <a role="button" href="javascript:void(0)" aria-label="Lawyers">
+                                <div class="form-group customcheckbox">
+                                    <input type="checkbox" name="lawyers" id="lawyers" checked>
+                                    <label for="lawyers">Lawyers</label>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="header">
+                            <a role="button" href="javascript:void(0)" aria-label="insights">
+                                <i></i>
+                                <div class="form-group customcheckbox insightsbox">
+                                    <input type="checkbox" name="insights" id="insights">
+                                    <label for="insights">Insights</label>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="content">
+                            <div class="form-group customcheckbox">
+                                <input type="checkbox" name="insights-1" id="insights-1">
+                                <label for="insights-1">Awards</label>
+                            </div>
+                            <div class="form-group customcheckbox">
+                                <input type="checkbox" name="insights-2" id="insights-2">
+                                <label for="insights-2">Client News</label>
+                            </div>
+                            <div class="form-group customcheckbox">
+                                <input type="checkbox" name="insights-3" id="insights-3">
+                                <label for="insights-3">Client Memos</label>
+                            </div>
+                            <div class="form-group customcheckbox">
+                                <input type="checkbox" name="insights-4" id="insights-4">
+                                <label for="insights-4">Events</label>
+                            </div>
+                            <div class="form-group customcheckbox">
+                                <input type="checkbox" name="insights-5" id="insights-5">
+                                <label for="insights-5">Firm News</label>
+                            </div>
+                            <div class="form-group customcheckbox">
+                                <input type="checkbox" name="insights-6" id="insights-6">
+                                <label for="insights-6">Podcasts</label>
+                            </div>
+                            <div class="form-group customcheckbox">
+                                <input type="checkbox" name="insights-7" id="insights-7">
+                                <label for="insights-7">Publications</label>
+                            </div>
+                            <div class="form-group customcheckbox">
+                                <input type="checkbox" name="insights-8" id="insights-8">
+                                <label for="insights-8">Video</label>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="header">
+                            <a role="button" href="javascript:void(0)" aria-label="Practices">
+                                <div class="form-group customcheckbox">
+                                    <input type="checkbox" name="practices" id="practices" checked>
+                                    <label for="practices">Practices</label>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="header">
+                            <a role="button" href="javascript:void(0)" aria-label="Industries">
+                                <div class="form-group customcheckbox">
+                                    <input type="checkbox" name="industries" id="industries" checked>
+                                    <label for="industries">Industries</label>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="header">
+                            <a role="button" href="javascript:void(0)" aria-label="Date Range">
+                                <div class="form-group customcheckbox">
+                                    <input type="checkbox" name="locations" id="locations" checked>
+                                    <label for="locations">Locations</label>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="header">
+                            <a role="button" href="javascript:void(0)" aria-label="Date Range">
+                                <div class="form-group customcheckbox">
+                                    <input type="checkbox" name="other" id="other" checked>
+                                    <label for="other">Other Site Content</label>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+
+                <h2 class="filter-title">Advanced Search</h2>
+                <ul class="redirect">
+                    <li>
+                        <a href="#" aria-label="View All Practice Areas" class="redirectCta">
+                            Lawyers </a>
+                    </li>
+                    <li>
+                        <a href="#" aria-label="View All Practice Areas" class="redirectCta">
+                            Insights </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="rightwrap">
+                <div class="searchInput">
+                    <form class="" action="/search" method="GET">
+                        <label for="inputSearch" class="screen-reader-text">search</label>
+                        <div class="flexi-row">
+                            <input type="text" class="txtBox submit" name="q" id="searchInput" value=""
+                                placeholder="Search">
+                            <button type="button" name="searchbutton" class="submit">
+                                <i>Search</i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <link rel="stylesheet" href="{{root}}assets/css/lawyerspanel/lawyerspanel.css">
+                <div class="findAProfessionalPanel">
+                    <div class="resultTitle">
+                        <h2>Lawyers</h2>
+                    </div>
+                    <div class="flexWrapTeam">
+                        <div class="outBio">
+                            <div class="bioBlock">
+                                <div class="imgWrap">
+                                    <a href="#" aria-label="Matthew W. Abbot">
+                                        <img src="assets/images/lawyer/abbot.jpg" alt="Matthew W. Abbot"
+                                            class="lazy zoom" width="345" height="336"></a>
+                                </div>
+                                <div class="bioSection">
+                                    <div class="bioTitle">
+                                        <a href="#" aria-label="Matthew W. Abbot">
+                                            <p>Matthew W. Abbot</p>
+                                        </a>
+                                    </div>
+                                    <div class="bioContent">
+                                        <p class="position">Partner</p>
+                                        <ul>
+                                            <li>Washington</li>
+                                            <li>London</li>
+                                            <li>New York</li>
+                                        </ul>
+                                        <p><a href="tel:+1-212-373-3402">Tel: +1-212-373-3402</a></p>
+                                        <p><a href="mailto:mabbott@paulweiss.com">mabbott@paulweiss.com</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="outBio">
+                            <div class="bioBlock">
+                                <div class="imgWrap">
+                                    <a href="#" aria-label="Eyitayo “Tee” St. Matthew-Daniel">
+                                        <img src="assets/images/lawyer/eyitayo.jpg"
+                                            alt="Eyitayo “Tee” St. Matthew-Daniel" class="lazy zoom" width="345"
+                                            height="336"></a>
+                                </div>
+                                <div class="bioSection">
+                                    <div class="bioTitle">
+                                        <a href="#" aria-label="Eyitayo “Tee” St. Matthew-Daniel">
+                                            <p>Eyitayo “Tee” St. Matthew-Daniel</p>
+                                        </a>
+                                    </div>
+                                    <div class="bioContent">
+                                        <p class="position">Partner</p>
+                                        <ul>
+                                            <li>Washington</li>
+                                            <li>London</li>
+                                            <li>New York</li>
+                                        </ul>
+                                        <p><a href="tel:+1-212-373-3402">Tel: +1-212-373-3402</a></p>
+                                        <p><a
+                                                href="mailto:tstmatthewdaniel@paulweiss.com">tstmatthewdaniel@paulweiss.com</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="outBio">
+                            <div class="bioBlock">
+                                <div class="imgWrap">
+                                    <a href="#" aria-label="Jarryd E. Anderson">
+                                        <img src="assets/images/lawyer/jarryd.jpg" alt="Jarryd E. Anderson"
+                                            class="lazy zoom" width="345" height="336"></a>
+                                </div>
+                                <div class="bioSection">
+                                    <div class="bioTitle">
+                                        <a href="#" aria-label="Jarryd E. Anderson">
+                                            <p>Jarryd E. Anderson</p>
+                                        </a>
+                                    </div>
+                                    <div class="bioContent">
+                                        <p class="position">Partner</p>
+                                        <ul>
+                                            <li>Washington</li>
+                                            <li>London</li>
+                                            <li>New York</li>
+                                        </ul>
+                                        <p><a href="tel:+1-212-373-3402">Tel: +1-212-373-3402</a></p>
+                                        <p><a href="mailto:janderson@paulweiss.com">janderson@paulweiss.com</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="outBio">
+                            <div class="bioBlock">
+                                <div class="imgWrap">
+                                    <a href="#" aria-label="Kanesh Balasubramaniam">
+                                        <img src="assets/images/lawyer/kanesh.jpg" alt="Kanesh Balasubramaniam"
+                                            class="lazy zoom" width="345" height="336"></a>
+                                </div>
+                                <div class="bioSection">
+                                    <div class="bioTitle">
+                                        <a href="#" aria-label="Kanesh Balasubramaniam">
+                                            <p>Kanesh Balasubramaniam</p>
+                                        </a>
+                                    </div>
+                                    <div class="bioContent">
+                                        <p class="position">Partner</p>
+                                        <ul>
+                                            <li>Washington</li>
+                                            <li>London</li>
+                                            <li>New York</li>
+                                        </ul>
+                                        <p><a href="tel:+1-212-373-3402">Tel: +1-212-373-3402</a></p>
+                                        <p><a href="mailto:kbalas@paulweiss.com">kbalas@paulweiss.com</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="outBio">
+                            <div class="bioBlock">
+                                <div class="imgWrap">
+                                    <a href="#" aria-label="Matthew W. Abbot">
+                                        <img src="assets/images/lawyer/abbot.jpg" alt="Matthew W. Abbot"
+                                            class="lazy zoom" width="345" height="336"></a>
+                                </div>
+                                <div class="bioSection">
+                                    <div class="bioTitle">
+                                        <a href="#" aria-label="Matthew W. Abbot">
+                                            <p>Matthew W. Abbot</p>
+                                        </a>
+                                    </div>
+                                    <div class="bioContent">
+                                        <p class="position">Partner</p>
+                                        <ul>
+                                            <li>Washington</li>
+                                            <li>London</li>
+                                            <li>New York</li>
+                                        </ul>
+                                        <p><a href="tel:+1-212-373-3402">Tel: +1-212-373-3402</a></p>
+                                        <p><a href="mailto:mabbott@paulweiss.com">mabbott@paulweiss.com</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="outBio">
+                            <div class="bioBlock">
+                                <div class="imgWrap">
+                                    <a href="#" aria-label="Eyitayo “Tee” St. Matthew-Daniel">
+                                        <img src="assets/images/lawyer/eyitayo.jpg"
+                                            alt="Eyitayo “Tee” St. Matthew-Daniel" class="lazy zoom" width="345"
+                                            height="336"></a>
+                                </div>
+                                <div class="bioSection">
+                                    <div class="bioTitle">
+                                        <a href="#" aria-label="Eyitayo “Tee” St. Matthew-Daniel">
+                                            <p>Eyitayo “Tee” St. Matthew-Daniel</p>
+                                        </a>
+                                    </div>
+                                    <div class="bioContent">
+                                        <p class="position">Partner</p>
+                                        <ul>
+                                            <li>Washington</li>
+                                            <li>London</li>
+                                            <li>New York</li>
+                                        </ul>
+                                        <p><a href="tel:+1-212-373-3402">Tel: +1-212-373-3402</a></p>
+                                        <p><a
+                                                href="mailto:tstmatthewdaniel@paulweiss.com">tstmatthewdaniel@paulweiss.com</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="allresult"> <a href="#" aria-label="View All Practice Areas" class="view-all">All
+                            Lawyers Results</a></div>
+                </div>
+                <div class="insightslistpanel">
+                    <div class="resultTitle">
+                        <h2>Insights</h2>
+                    </div>
+                    <div class="flexwrap">
+                        <div class="colblock">
+                            <a href="#" aria-label="textcontent title">
+                                <div class="boxcontent">
+                                    <div class="datesec">
+                                        <p>April 24, 2024</p>
+                                    </div>
+                                    <div class="content">
+                                        <h3>Supreme Court Holds That Title VII Does Not Require a Showing of Material or
+                                            Significant Injury for Claims Based on Allegedly Discriminatory Transfers
+                                        </h3>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="colblock">
+                            <a href="#" aria-label="textcontent title">
+                                <div class="boxcontent">
+                                    <div class="datesec">
+                                        <p>April 24, 2024</p>
+                                    </div>
+                                    <div class="content">
+                                        <h3>Supreme Court Holds That Title VII Does Not Require a Showing of Material or
+                                            Significant Injury for Claims Based on Allegedly Discriminatory Transfers
+                                        </h3>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="colblock">
+                            <a href="#" aria-label="textcontent title">
+                                <div class="boxcontent">
+                                    <div class="datesec">
+                                        <p>April 24, 2024</p>
+                                    </div>
+                                    <div class="content">
+
+                                        <h3>PE Fundraising at a Glance (Q1 2024)</h3>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="colblock">
+                            <a href="#" aria-label="textcontent title">
+                                <div class="boxcontent">
+                                    <div class="datesec">
+                                        <p>April 24, 2024</p>
+                                    </div>
+                                    <div class="content">
+                                        <h3>Supreme Court Holds That Title VII Does Not Require a Showing of Material or
+                                            Significant Injury for Claims Based on Allegedly Discriminatory Transfers
+                                        </h3>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="colblock">
+                            <a href="#" aria-label="textcontent title">
+                                <div class="boxcontent">
+                                    <div class="datesec">
+                                        <p>April 24, 2024</p>
+                                    </div>
+                                    <div class="content">
+
+                                        <h3>PE Fundraising at a Glance (Q1 2024)</h3>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="colblock">
+                            <a href="#" aria-label="textcontent title">
+                                <div class="boxcontent">
+                                    <div class="datesec">
+                                        <p>April 24, 2024</p>
+                                    </div>
+                                    <div class="content">
+                                        <h3>Supreme Court Holds That Title VII Does Not Require a Showing of Material or
+                                            Significant Injury for Claims Based on Allegedly Discriminatory Transfers
+                                        </h3>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="allresult"> <a href="#" aria-label="View All Practice Areas" class="view-all">All
+                            Insights Results</a></div>
+                </div>
+                <link rel="stylesheet" href="assets/css/practicePanel/practicePanel.css" media="all">
+                <div class="practicesPanel ">
+                    <div class="resultTitle">
+                        <h2>Practices</h2>
+                    </div>
+                    <div class="parContent  module ">
+                        <div class="contentPanel module ">
+                            <div class="transDescPanel">
+                                <div class="threeColumn">
+                                    <div class="transBrief">
+                                        <ul>
+                                            <li>Mergers & Acquisitions</li>
+                                            <li>National Security, CFIUS & FARA</li>
+                                            <li>Personal Representation</li>
+                                            <li>Private Equity</li>
+                                            <li>Real Estate</li>
+                                        </ul>
+                                    </div>
+                                    <div class="transBrief">
+                                        <ul>
+                                            <li>Restructuring</li>
+                                            <li>SPACs</li>
+                                            <li>Sustainability & ESG</li>
+                                            <li>Tax</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="practicesPanel ">
+                    <div class="resultTitle">
+                        <h2>Industries</h2>
+                    </div>
+                    <div class="parContent  module ">
+                        <div class="contentPanel module ">
+                            <div class="transDescPanel">
+                                <div class="threeColumn">
+                                        <div class="flexWrapTeam">
+                                            <p class="noresult">No Results Found</p>
+                                        </div>
+                                </div>
+                            </div>
+                            <!-- <div class="transDescPanel">
+                                <div class="threeColumn">
+                                    <div class="transBrief">
+                                        <ul>
+                                            <li>Entertainment</li>
+                                            <li>Finance</li>
+                                            <li>Healthcare & Life Sciences</li>
+                                            <li>Information Technology</li>
+                                        </ul>
+                                    </div>
+                                    <div class="transBrief">
+                                        <ul>
+                                            <li>Insurance</li>
+                                            <li>Media & Entertainment</li>
+                                            <li>Real Estate</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+                <link rel="stylesheet" href="{{root}}assets/css/locations/locations.css" media="all">
+                <div class="locationPanel  module">
+                    <div class="resultTitle">
+                        <h2>Locations</h2>
+                    </div>
+                    <div class="continentalPanel">
+                        <div class="flexCity">
+
+                            <div class="flexWrapTeam">
+                                <p class="noresult">No Results Found</p>
+                            </div>
+        
+                    </div>
+                        <!-- <div class="flexCity">
+                            <div class="cityCard">
+                                <a href="#" aria-label="city name">
+                                    <div class="insideCard">
+                                        <img src="../assets/images/location/washington.jpg" alt="New York" width="344"
+                                            height="344" class="lazy zoom">
+                                        <div class="cityName">
+                                            <p>New York</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="insightslistpanel othercontentpanel">
+                    <div class="resultTitle">
+                        <h2>Other Site Content</h2>
+                    </div>
+                    <div class="flexwrap">
+                        <div class="flexWrapTeam">
+                            <p class="noresult">No Results Found</p>
+                        </div>
+        
+        
+                </div>
+                    <!-- <div class="flexwrap">
+                        <div class="colblock">
+                            <a href="#" aria-label="textcontent title">
+                                <div class="boxcontent">
+                                    <div class="datesec">
+                                        <p>Careers</p>
+                                    </div>
+                                    <div class="content">
+                                        <h3>Opportunities for Lateral Associates and Judicial Clerks
+                                        </h3>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="colblock">
+                            <a href="#" aria-label="textcontent title">
+                                <div class="boxcontent">
+                                    <div class="datesec">
+                                        <p>Contact Us</p>
+                                    </div>
+                                    <div class="content">
+                                        <h3>Lorem ipsum dolor sit amet consectetur. Pellentesque nisl cursus volutpat
+                                            mattis aliquet nisl enim amet.
+                                        </h3>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="colblock">
+                            <a href="#" aria-label="textcontent title">
+                                <div class="boxcontent">
+                                    <div class="datesec">
+                                        <p>Alumni</p>
+                                    </div>
+                                    <div class="content">
+
+                                        <h3>Lorem ipsum dolor sit amet consectetur. Pellentesque nisl cursus volutpat
+                                            mattis aliquet nisl enim amet.</h3>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

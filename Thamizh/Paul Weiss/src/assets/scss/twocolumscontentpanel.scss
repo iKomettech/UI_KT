@@ -1,0 +1,429 @@
+@import "util/util";
+$img: "../../images/";
+$bgpanel-color: #B9C8DA;
+$mediumbluebgpanel: #0B3D71;
+$white: #ffffff;
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+.twocolumscontentpanel {
+    @include breakpoint(medium) {
+        margin-top: 98px;
+    }
+
+    @include breakpoint(llarge) {
+        margin-top: 148px;
+    }
+
+    .grid-container {
+        @include breakpoint(small only) {
+            padding: 0;
+        }
+
+        .flexwrap {
+            // display: flex;
+            justify-content: space-between;
+
+            @include breakpoint(small only) {
+                flex-wrap: wrap;
+                flex-direction: column-reverse;
+            }
+
+            .leftwrap {
+                // max-width: 776px;
+                width: 100%;
+
+                @include breakpoint(small only) {
+                    max-width: 100%;
+                    padding-top: 20px;
+                    padding-left: 20px;
+                    padding-right: 20px;
+                }
+
+                @include breakpoint(large) {
+                    // width:64%;
+                }
+
+                @include breakpoint(llarge) {
+                    // max-width: 776px;
+
+                }
+
+                @include breakpoint(xlarge) {
+                    //padding-left: 15px;
+                }
+
+                &.active {
+                    .readMore {
+                        &::before {
+                            display: none;
+                        }
+                    }
+                }
+
+                .contentwrap {
+                    @include breakpoint(small only) {
+                        padding-left: 20px;
+                        padding-right: 20px;
+                    }
+                    &.contenthidden{
+                        height: 436px;
+                        overflow-y: hidden;
+                        position: relative;
+                        &::before{
+                            content: '';
+                            position: absolute;
+                            left: 0;
+                            right: 0;
+                            height: 7.5rem;
+                            bottom: 0;
+                            background: -webkit-gradient(linear, left top, left bottom, from(rgba(139, 167, 32, 0)), to(#fff));
+                            background: linear-gradient(180deg, rgba(139, 167, 32, 0) 0%, #fff 100%);
+                        }
+                    }
+                    &.contentless{
+                        +  .readMorePractice{
+                            display: none;
+                        }
+                        +  .readMore{
+                            display: none;
+                        }
+                    }
+                    p,
+                    li {
+                        font-family: "UntitledSerif";
+                        //font-size: 18px;
+                        font-weight: 400;
+                        line-height: 123.6%;
+                        letter-spacing: -0.01em;
+                        word-break: break-word;
+                        font-size: clamp(18px, calc(18px + (22 - 18) * ((100vw - 393px) / (1023 - 393))), 22px);
+                        @include breakpoint(large) {
+                            font-size: clamp(22px, calc(22px + (27 - 22) * ((100vw - 1024px) / (1728 - 1024))), 27px);
+                        }
+                        // @include breakpoint(large) {
+                        //     font-size: 22px;
+                        //     line-height: 27px;
+                        // }
+
+                        // @include breakpoint(llarge) {
+                        //     font-size: 27px;
+                        //     line-height: 33.37px;
+                        // }
+
+                        +p {
+                            margin-top: 32px;
+                        }
+                    }
+
+                    div {
+                        &.twocol {
+                            ul {
+                                @include breakpoint(small only) {
+                                    margin-left: 0;
+                                }
+
+                                column-gap: 20px;
+                                column-count: 1;
+
+                                @include breakpoint(medium) {
+                                    column-count: 2;
+                                }
+
+                                ul {
+                                    column-count: 1;
+                                    column-gap: 0px;
+                                }
+                            }
+                        }
+
+                        &.threecol {
+                            ul {
+                                column-gap: 20px;
+                                column-count: 1;
+
+                                @include breakpoint(medium) {
+                                    column-count: 2;
+                                }
+
+                                @include breakpoint(large) {
+                                    column-count: 3;
+                                }
+
+                                ul {
+                                    column-count: 1;
+                                    column-gap: 0px;
+                                }
+                            }
+                        }
+                    }
+
+                    table {
+                        margin-top: 15px;
+
+                        td {
+                            display: block;
+                            width: 100% !important;
+
+                            ul {
+                                margin-bottom: 0;
+                            }
+
+                            &:last-child {
+                                ul {
+                                    margin-bottom: 1rem;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .readMorePractice, .readMore {
+                    position: relative;
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        left: 0px;
+                        right: 0px;
+                        height: 120px;
+                        bottom: 35px;
+                        background: linear-gradient(180deg, rgba(139, 167, 32, 0) 0%, #fff 100%);
+                    }
+
+                    @include breakpoint(small only) {
+                        padding-left: 0px;
+                        padding-right: 0px;
+                        padding-top: 8px;
+
+                        &::before {
+                            content: '';
+                            width: 100%;
+                            height: 90px;
+                            position: absolute;
+                            left: 0;
+                            background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+                            transform: rotate(-180deg);
+                            bottom: 60px;
+                        }
+                    }
+
+                    @include breakpoint(large) {
+                        margin-bottom: calc(clamp(1.563rem, 1.42vw + 0.653rem, 2.188rem));
+                        margin-top: 20px;
+                    }
+
+                    // @include breakpoint(xxlarge) {
+                    //     margin-bottom: 35px;
+                    // }
+
+                    a {
+                        text-decoration: none;
+                        font-family: 'ABCDiatype';
+                        .flexiBtn {
+                            display: flex;
+                            align-items: center;
+                            gap: 9px;
+
+                            @include breakpoint(small only) {
+                                background: #B9C8DA;
+                                padding: 13px 20px;
+                                padding-bottom: 14px;
+                                flex-direction: row-reverse;
+                                justify-content: space-between;
+                            }
+
+                            p {
+                                margin-bottom: 0;
+                                span {
+                                    font-size: 20px;
+                                    font-weight: 700;
+                                    line-height: 19.42px;
+                                    letter-spacing: -0.025em;
+                                    font-family: 'ABCDiatype';
+                                }
+                            }
+                        }
+
+                        &.activelink {
+                            .flexiBtn {
+                                svg {
+                                    transform: rotate(180deg);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .rightwrap {
+                width: 100%;
+                position: relative;
+                z-index: 9;
+
+                @include breakpoint(small only) {
+                    background: #B9C8DA;
+                    padding: 20px;
+                    padding-top: 14px;
+                }
+
+                @include breakpoint(medium only) {
+                    max-width: 348px;
+                    margin-left: 30px;
+                    margin-bottom: 25px;
+                    float: right;
+                }
+
+                @include breakpoint(large) {
+                    width: 31%;
+                    float: right;
+                    margin-left: clamp(2.813rem, calc(-10.3681rem + 20.5955vw), 11.875rem);
+                }
+
+                @include breakpoint(llarge) {
+                    max-width: 466px;
+                    width: 33%;
+                    margin-bottom: 25px;
+                }
+
+                .listwrap {
+                    ul {
+                        border-top: 3px solid #0B3D71;
+                        padding-top: 8px;
+                        margin-left: 0;
+
+                        @include breakpoint(large) {
+                            margin-top: calc(clamp(0rem, 0.994vw - 0.636rem, 0.438rem));
+                        }
+
+                        li {
+                            font-size: 25px;
+                            font-weight: 700;
+                            //line-height: 25px;
+                            letter-spacing: -0.015em;
+                            border-bottom: 3px solid #B9C8DA;
+                            padding-top: calc(clamp(0rem, 0.635vw - 0.156rem, 0.25rem));
+                            padding-bottom: calc(clamp(0.25rem, 1.429vw - 0.101rem, 0.813rem));
+                            font-size: clamp(25px, calc(25px + (25 - 25) * ((100vw - 393px) / (767 - 393))), 25px);
+                            line-height: 100%;
+                            @include breakpoint(medium) {
+                                //font-size: 20px;
+                                //line-height: 18px;
+                                font-size: clamp(20px, calc(20px + (20 - 20) * ((100vw - 768px) / (1023 - 768))), 20px);
+                                // padding-top: 4px;
+                                // padding-bottom: 13px;
+                            }
+                            @include breakpoint(large) {
+                                font-size: clamp(20px, calc(20px + (25 - 20) * ((100vw - 1024px) / (1728 - 1024))), 25px);
+                            }
+                            // @include breakpoint(llarge) {
+                            //     font-size: 25px;
+                            //     line-height: 22.9px;
+                            // }
+
+                            &:last-child {
+                                border-bottom: none;
+                                padding-bottom: 0;
+                            }
+
+                            a {
+                                &:hover {
+                                    text-decoration: none;
+                                    color: #0B3D71;
+                                }
+                                &.active{
+                                    color: #0B3D71;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .allresult {
+                    @include breakpoint(small only) {
+                        background: #0B3D71;
+                        color: $white;
+
+                        &:hover {
+                            background-color: #114f8c;
+                        }
+                    }
+
+                    &:hover {
+                        .view-all {
+                            color: $white;
+                        }
+                    }
+
+                    .view-all {
+                        color: $primary-color;
+
+                        @include breakpoint(small only) {
+                            color: $white;
+                        }
+
+                        &:hover {
+                            color: $white;
+                        }
+
+                        @include breakpoint(medium) {
+                            font-size: clamp(20px, calc(20px + (20 - 20) * ((100vw - 768px) / (1023 - 768))), 20px);
+                        }
+
+                        @include breakpoint(llarge) {
+                            font-size: clamp(20px, calc(20px + (25 - 20) * ((100vw - 1024px) / (1728 - 1024))), 25px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.readMore a .mobile-text, .readMorePractice a .mobile-text {
+    display: inline;
+
+    @include breakpoint(medium) {
+        display: none;
+    }
+}
+
+.readMore a .desktop-text, .readMorePractice a .desktop-text {
+    display: none;
+
+    @include breakpoint(medium) {
+        display: inline;
+    }
+}
+
+.mobile-view .readMore a .mobile-text, .mobile-view .readMorePractice a .mobile-text {
+    display: inline;
+}
+
+.mobile-view .readMore a .desktop-text, .mobile-view .readMorePractice a .desktop-text {
+    display: none;
+}
+
+.twocolumscontentpanel .grid-container .flexwrap.active .leftwrap .readMore::before, .twocolumscontentpanel .grid-container .flexwrap.active .leftwrap .readMorePractice::before {
+    content: '';
+    display: none;
+}
+
+.twocolumscontentpanel .grid-container .flexwrap .leftwrap .collapsePanel {
+    margin-top: 30px;
+}
+
+.twocolumscontentpanel .grid-container .flexwrap .leftwrap .contentwrap table td+td {
+    margin-top: 24px;
+}
+
+.twocolumscontentpanel .grid-container .flexwrap .leftwrap .contentwrap table+p {
+    margin-top: 18px;
+    margin-bottom: 24px;
+}

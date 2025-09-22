@@ -1,0 +1,509 @@
+<link rel="stylesheet" href="{{root}}assets/css/insightspanel/insightspanel.css" media="all">
+<script type="text/javascript">
+    $(document).ready(function () {
+        var action = "click";
+        var speed = "500";
+        $('.list-collapse .header').on(action, function () {
+            $(this).next()
+                .slideToggle(speed);
+            $(this).find('a').toggleClass('filter-selected');
+             
+        });
+        $('.clearAll').on('click', function (e) {
+            e.preventDefault();
+            $this = $(this);
+            const clearBox = $this.parent().parent().find('.customcheckbox input[type="checkbox"]');
+            //console.log($this.parent().parent().find('.customcheckbox input[type="checkbox"]'));
+            $(clearBox).prop("checked", false);
+        });
+    });
+
+    $(document).ready(function () {
+        $(".insightslistpanel").each(function () {
+            var $panel = $(this);
+            var panelId = $panel.attr('id');
+            var biovideopanelId = '#' + panelId;
+            var $colblocks = $(biovideopanelId + ' .colblock');
+            var $loadResult = $(biovideopanelId + ' .allresult .load-cta');
+            var $allResult = $(biovideopanelId + ' .allresult .link-cta');
+            var $loadMore = $(biovideopanelId + '_loadmore');
+            //console.log($loadMore);
+            if ($colblocks.length > 3) {
+                $colblocks.hide();
+                $colblocks.slice(0, 3).show();
+                $loadResult.show();
+                $allResult.hide();
+                var visibleCount = 3;
+                var clickCount = 0;
+                $loadMore.on('click', function (e) {
+                    e.preventDefault();
+                    var target = $(this).attr('href');
+                    $('html, body').animate({
+                        scrollTop: $(target).offset().top - $('header').height() - 60
+                    }, 1000);
+                    setTimeout(function () {
+                        var $hiddenBlocks = $colblocks.filter(':hidden');
+                        var newVisibleCount = visibleCount + 3;
+                        $hiddenBlocks.slice(0, 3).slideDown();
+                        visibleCount = newVisibleCount;
+                        clickCount++; 
+                        if (visibleCount >= $colblocks.length) {
+                            $loadResult.hide();
+                            $allResult.show();
+                        }else if (clickCount >= 2) {
+                            $loadResult.hide();
+                            $allResult.show();
+                        }
+                    }, 1000);
+                });
+            }
+        });
+    });
+</script>
+<div class="insightspaneltitle">
+    <div class="grid-container">
+        <div class="insights-title">
+            <h1>Insights</h1>
+        </div>
+    </div>
+</div>
+<div class="insightspanel">
+    <div class="grid-container">
+        <div class="innerwrap">
+            <div class="leftwrap module">
+                <h2 class="filter-title">Filter Results</h2>
+                <ul class="list-collapse">
+                    <li>
+                        <div class="header">
+                            <a role="button" href="javascript:void(0)" aria-label="Lawyers">
+                                Lawyers
+                            </a>
+                        </div>
+                        <div class="content search-content">
+                            <div class="searchContainer">
+                                <form class="" action="/search" method="GET">
+                                    <div class="flexi-row">
+                                        <input type="text" class="txtBox" name="q" id="searchInput" value=""
+                                            placeholder="Filter by name">
+                                        <button type="button" name="searchbutton" class="submit">
+                                            <i>Search</i>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="header">
+                            <a role="button" href="javascript:void(0)" aria-label="Type">
+                                Type
+                            </a>
+                        </div>
+                        <div class="content">
+                            <div class="clear-filter">
+                                <a href="javascript:void(0)" class="clearAll">
+                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M9.899 0L5.656 4.29519L1.414 0L0 1.43173L4.242 5.72691L0 10.0221L1.414 11.4538L5.656 7.15864L9.899 11.4538L11.313 10.0221L7.071 5.72691L11.313 1.43173L9.899 0Z"
+                                            fill="#001F3F" />
+                                    </svg>
+                                    Clear All
+                                </a>
+                            </div>
+                            <div class="form-group customcheckbox">
+                                <input type="checkbox" name="type-1" id="type-1">
+                                <label for="type-1">Publications</label>
+                            </div>
+                            <div class="form-group customcheckbox">
+                                <input type="checkbox" name="type-2" id="type-2">
+                                <label for="type-2">Client News</label>
+                            </div>
+                            <div class="form-group customcheckbox">
+                                <input type="checkbox" name="type-3" id="type-3">
+                                <label for="type-3">Firm News</label>
+                            </div>
+                            <div class="form-group customcheckbox">
+                                <input type="checkbox" name="type-4" id="type-4">
+                                <label for="type-4">Events</label>
+                            </div>
+                            <div class="form-group customcheckbox">
+                                <input type="checkbox" name="type-5" id="type-5">
+                                <label for="type-5">Awards & Rankings</label>
+                            </div>
+                            <div class="form-group customcheckbox">
+                                <input type="checkbox" name="type-6" id="type-6">
+                                <label for="type-6">Podcasts</label>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="header">
+                            <a role="button" href="javascript:void(0)" aria-label="Practices">
+                                Practices
+                            </a>
+                        </div>
+                        <div class="content">
+                            <div class="clear-filter">
+                                <a href="javascript:void(0)" class="clearAll">
+                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M9.899 0L5.656 4.29519L1.414 0L0 1.43173L4.242 5.72691L0 10.0221L1.414 11.4538L5.656 7.15864L9.899 11.4538L11.313 10.0221L7.071 5.72691L11.313 1.43173L9.899 0Z"
+                                            fill="#001F3F" />
+                                    </svg>
+                                    Clear All
+                                </a>
+                            </div>
+                            <div class="form-group customcheckbox">
+                                <input type="checkbox" name="practices-1" id="practices-1">
+                                <label for="practices-1">Antitrust</label>
+                            </div>
+                            <div class="form-group customcheckbox">
+                                <input type="checkbox" name="practices-2" id="practices-2">
+                                <label for="practices-2">Artificial Intelligence</label>
+                            </div>
+                            <div class="form-group customcheckbox">
+                                <input type="checkbox" name="practices-3" id="practices-3">
+                                <label for="practices-3">Capital Markets</label>
+                            </div>
+                            <div class="form-group customcheckbox">
+                                <input type="checkbox" name="practices-4" id="practices-4">
+                                <label for="practices-4">Corporate</label>
+                            </div>
+                            <div class="form-group customcheckbox">
+                                <input type="checkbox" name="practices-5" id="practices-5">
+                                <label for="practices-5">Corporate Governance</label>
+                            </div>
+                            <div class="form-group customcheckbox">
+                                <input type="checkbox" name="practices-6" id="practices-6">
+                                <label for="practices-6">Cryptocurrency & Blockchain</label>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="header">
+                            <a role="button" href="javascript:void(0)" aria-label="Industries">
+                                Industries
+                            </a>
+                        </div>
+                        <div class="content">
+                            <div class="clear-filter">
+                                <a href="javascript:void(0)" class="clearAll">
+                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M9.899 0L5.656 4.29519L1.414 0L0 1.43173L4.242 5.72691L0 10.0221L1.414 11.4538L5.656 7.15864L9.899 11.4538L11.313 10.0221L7.071 5.72691L11.313 1.43173L9.899 0Z"
+                                            fill="#001F3F" />
+                                    </svg>
+                                    Clear All
+                                </a>
+                            </div>
+                            <div class="form-group customcheckbox">
+                                <input type="checkbox" name="industries-1" id="industries-1">
+                                <label for="industries-1">Digital Technology</label>
+                            </div>
+                            <div class="form-group customcheckbox">
+                                <input type="checkbox" name="industries-2" id="industries-2">
+                                <label for="industries-2">Financial Services</label>
+                            </div>
+                            <div class="form-group customcheckbox">
+                                <input type="checkbox" name="industries-3" id="industries-3">
+                                <label for="industries-3">Healthcare</label>
+                            </div>
+                            <div class="form-group customcheckbox">
+                                <input type="checkbox" name="industries-4" id="industries-4">
+                                <label for="industries-4">Infrastructure</label>
+                            </div>
+                            <div class="form-group customcheckbox">
+                                <input type="checkbox" name="industries-5" id="industries-5">
+                                <label for="industries-5">Media, Sports & Entertainment</label>
+                            </div>
+                            <div class="form-group customcheckbox">
+                                <input type="checkbox" name="industries-6" id="industries-6">
+                                <label for="industries-6">Insurance</label>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="header">
+                            <a role="button" href="javascript:void(0)" aria-label="Date Range">
+                                Date Range
+                            </a>
+                        </div>
+                        <div class="content date-content">
+                            <div class="form-group customcheckbox">
+                                <input type="checkbox" name="date-1" id="date-1">
+                                <label for="date-1">All</label>
+                            </div>
+                            <div class="form-group customcheckbox">
+                                <input type="checkbox" name="date-2" id="date-2">
+                                <label for="date-2">Last 3 Months</label>
+                            </div>
+                            <div class="form-group customcheckbox">
+                                <input type="checkbox" name="date-3" id="date-3">
+                                <label for="date-3">Last Year</label>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="rightwrap">
+                <div class="searchContainer">
+                    <form class="" action="/search" method="GET">
+                        <div class="flexi-row">
+                            <input type="text" class="txtBox" name="q" id="searchInput" value="" placeholder="Mergers">
+                            <button type="button" name="searchbutton" class="submit">
+                                <i>Search</i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="insightslistpanel" id="publist">
+                    <div class="resultTitle">
+                        <h2>Publications</h2>
+                    </div>
+                    <div class="flexwrap">
+                        <div class="colblock">
+                            <a href="#" aria-label="textcontent title">
+                                <div class="boxcontent">
+                                    <div class="datesec">
+                                        <p>April 24, 2024</p>
+                                    </div>
+                                    <div class="content">
+                                        <h3>Supreme Court Holds That Title VII Does Not Require a Showing of Material or
+                                            Significant Injury for Claims Based on Allegedly Discriminatory Transfers
+                                        </h3>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="colblock">
+                            <a href="#" aria-label="textcontent title">
+                                <div class="boxcontent">
+                                    <div class="datesec">
+                                        <p>April 24, 2024</p>
+                                    </div>
+                                    <div class="content">
+                                        <h3>Supreme Court Holds That Title VII Does Not Require a Showing of Material or
+                                            Significant Injury for Claims Based on Allegedly Discriminatory Transfers
+                                        </h3>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="colblock">
+                            <a href="#" aria-label="textcontent title">
+                                <div class="boxcontent">
+                                    <div class="datesec">
+                                        <p>April 24, 2024</p>
+                                    </div>
+                                    <div class="content">
+                                        <h3>PE Fundraising at a Glance (Q1 2024)</h3>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="colblock">
+                            <a href="#" aria-label="textcontent title">
+                                <div class="boxcontent">
+                                    <div class="datesec">
+                                        <p>April 24, 2024</p>
+                                    </div>
+                                    <div class="content">
+                                        <h3>PE Fundraising at a Glance (Q1 2024)</h3>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="colblock">
+                            <a href="#" aria-label="textcontent title">
+                                <div class="boxcontent">
+                                    <div class="datesec">
+                                        <p>April 24, 2024</p>
+                                    </div>
+                                    <div class="content">
+                                        <h3>PE Fundraising at a Glance (Q1 2024)</h3>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="colblock">
+                            <a href="#" aria-label="textcontent title">
+                                <div class="boxcontent">
+                                    <div class="datesec">
+                                        <p>April 24, 2024</p>
+                                    </div>
+                                    <div class="content">
+                                        <h3>PE Fundraising at a Glance (Q1 2024)</h3>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="colblock">
+                            <a href="#" aria-label="textcontent title">
+                                <div class="boxcontent">
+                                    <div class="datesec">
+                                        <p>April 24, 2024</p>
+                                    </div>
+                                    <div class="content">
+                                        <h3>PE Fundraising at a Glance (Q1 2024)</h3>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="colblock">
+                            <a href="#" aria-label="textcontent title">
+                                <div class="boxcontent">
+                                    <div class="datesec">
+                                        <p>April 24, 2024</p>
+                                    </div>
+                                    <div class="content">
+                                        <h3>PE Fundraising at a Glance (Q1 2024)</h3>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="colblock">
+                            <a href="#" aria-label="textcontent title">
+                                <div class="boxcontent">
+                                    <div class="datesec">
+                                        <p>April 24, 2024</p>
+                                    </div>
+                                    <div class="content">
+                                        <h3>PE Fundraising at a Glance (Q1 2024)</h3>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="colblock">
+                            <a href="#" aria-label="textcontent title">
+                                <div class="boxcontent">
+                                    <div class="datesec">
+                                        <p>April 24, 2024</p>
+                                    </div>
+                                    <div class="content">
+                                        <h3>PE Fundraising at a Glance (Q1 2024)</h3>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="colblock">
+                            <a href="#" aria-label="textcontent title">
+                                <div class="boxcontent">
+                                    <div class="datesec">
+                                        <p>April 24, 2024</p>
+                                    </div>
+                                    <div class="content">
+                                        <h3>PE Fundraising at a Glance (Q1 2024)</h3>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="colblock">
+                            <a href="#" aria-label="textcontent title">
+                                <div class="boxcontent">
+                                    <div class="datesec">
+                                        <p>April 24, 2024</p>
+                                    </div>
+                                    <div class="content">
+                                        <h3>PE Fundraising at a Glance (Q1 2024)</h3>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="colblock">
+                            <a href="#" aria-label="textcontent title">
+                                <div class="boxcontent">
+                                    <div class="datesec">
+                                        <p>April 24, 2024</p>
+                                    </div>
+                                    <div class="content">
+                                        <h3>PE Fundraising at a Glance (Q1 2024)</h3>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="colblock">
+                            <a href="#" aria-label="textcontent title">
+                                <div class="boxcontent">
+                                    <div class="datesec">
+                                        <p>April 24, 2024</p>
+                                    </div>
+                                    <div class="content">
+                                        <h3>PE Fundraising at a Glance (Q1 2024)</h3>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="allresult">
+                        <a href="#publist_loadmore" aria-label="View All Practice Areas" id="publist_loadmore" class="view-all load-cta">View More Publications</a>
+                        <a href="#" aria-label="View All Practice Areas" class="view-all link-cta">View More Publications</a>
+                    </div>
+                </div>
+                <div class="insightslistpanel" id="newslist">
+                    <div class="resultTitle">
+                        <h2>Client News</h2>
+                    </div>
+                    <div class="flexwrap">
+                        <div class="colblock">
+                            <a href="#" aria-label="textcontent title">
+                                <div class="boxcontent">
+                                    <div class="datesec">
+                                        <p>April 24, 2024</p>
+                                    </div>
+                                    <div class="content">
+                                        <h3>Apollo’s ATLAS SP Receives Investment From MassMutual
+                                        </h3>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="colblock">
+                            <a href="#" aria-label="textcontent title">
+                                <div class="boxcontent">
+                                    <div class="datesec">
+                                        <p>April 24, 2024</p>
+                                    </div>
+                                    <div class="content">
+                                        <h3>MDC Completes $4.9 Billion Sale to Japan’s Sekisui House
+                                        </h3>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="colblock">
+                            <a href="#" aria-label="textcontent title">
+                                <div class="boxcontent">
+                                    <div class="datesec">
+                                        <p>April 24, 2024</p>
+                                    </div>
+                                    <div class="content">
+                                        <h3>Paul, Weiss Files Amicus Brief in Voting Rights Appeal in Georgia</h3>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="colblock">
+                            <a href="#" aria-label="textcontent title">
+                                <div class="boxcontent">
+                                    <div class="datesec">
+                                        <p>April 24, 2024</p>
+                                    </div>
+                                    <div class="content">
+                                        <h3>Paul, Weiss Files Amicus Brief in Voting Rights Appeal in Georgia</h3>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="allresult">
+                        <a href="#newslist_loadmore" aria-label="View All Practice Areas" id="newslist_loadmore" class="view-all load-cta">View More Client News</a>
+                        <a href="#" aria-label="View All Practice Areas" class="view-all link-cta">View More Client News</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

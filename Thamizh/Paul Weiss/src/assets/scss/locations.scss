@@ -1,0 +1,226 @@
+$primary-color: #001F3F;
+$secondary-color: #B9C8DA;
+@import "util/util";
+$img: "../../images/";
+$bgpanel-color: #B9C8DA;
+$mediumbluebgpanel: #0B3D71;
+$medium-color: #0B3D71;
+$white: #fff;
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+
+.locationPanel {
+    @include breakpoint(medium) {
+        padding-top: 80px;
+    }
+
+    @include breakpoint(large) {
+        padding-top: 75px;
+    }
+
+    .flex-box {
+        border-top: 10px solid $bgpanel-color;
+
+        @include breakpoint(small only) {
+            margin-top: 40px;
+        }
+
+        .flexWrap {
+            padding-bottom: calc(clamp(0.938rem, 7.937vw - 1.012rem, 4.063rem));
+
+            @include breakpoint(medium) {
+                display: flex;
+                // padding-bottom: 65px;
+            }
+        }
+    }
+
+    .continentalPanel {
+        .flexCity {
+            display: flex;
+            flex-wrap: wrap;
+            row-gap: 20px;
+
+            // @include breakpoint(llarge) {
+            // }
+
+            .cityCard {
+                position: relative;
+                overflow: hidden;
+                width: 100%;
+
+                @media (min-width:501px) and (max-width:767px) {
+                    width: 49.5%;
+                    margin-right: 1%;
+                }
+
+                @include breakpoint(medium) {
+                    width: 32.431%;
+                    margin-right: 1.35%;
+                }
+
+                .insideCard {
+                    img {
+                        width: 100%;
+                        transition: all 0.75s;
+                        filter: grayscale(1);
+                        &:hover{
+                            scale: 1.05;
+                        }
+                    }
+
+                    .cityName {
+                        position: absolute;
+                        bottom: 0;
+                        z-index: 1;
+                        padding: 0 25px 12px;
+
+                        p {
+                            font-weight: 400;
+                            //font-size: 40px;
+                            line-height: 100%;
+                            letter-spacing: -0.025em;
+                            color: #FFFFFF;
+                            font-family: "UntitledSerif";
+                            font-size: clamp(40px, calc(40px + (40 - 40) * ((100vw - 393px) / (1728 - 393))), 40px);
+                            @media (min-width:501px) and (max-width:767px) {
+                                font-size: 24px;
+                                line-height: 29px;
+                            }
+
+                            @media (min-width:768px) and (max-width:1023px) {
+                                font-size: 26px;
+                                line-height: 29px;
+                            }
+                            @include breakpoint(large){
+                                font-size: calc(clamp(1.625rem, 1.989vw + 0.352rem, 2.5rem));
+                            }
+
+
+                        }
+                    }
+
+                    .countryTitle {
+                        position: relative;
+                        z-index: 1;
+                        padding: 27px 17px 0;
+                        padding-bottom: 0;
+
+                        @include breakpoint(large) {
+                            // padding: 33px 25px 0;
+                            padding-inline: calc(clamp(1.063rem, 1.136vw + 0.335rem, 1.563rem));
+                            padding-top: calc(clamp(1.688rem, 0.852vw + 1.142rem, 2.063rem));
+                        }
+
+                        h4 {
+                            width: 150px;
+                            height: 88px;
+                            font-weight: 700;
+                            font-size: 55px;
+                            line-height: 100%;
+                            letter-spacing: -0.06em;
+                            color: #FFFFFF;
+                            font-size: clamp(55px, calc(55px + (64 - 55) * ((100vw - 393px) / (1023 - 393))), 64px);
+                            @include breakpoint(large) {
+                                font-size: clamp(64px, calc(64px + (85 - 64) * ((100vw - 1024px) / (1728 - 1024))), 85px);
+                            // }
+                            // @include breakpoint(llarge) {
+                                width: calc(clamp(9.375rem, 11.648vw + 1.92rem, 14.5rem));
+                                height: calc(clamp(5.5rem, 6.818vw + 1.136rem, 8.5rem));
+                                // font-weight: 700;
+                                // font-size: 85px; 
+                                // letter-spacing: -0.06em;
+                            }
+                        }
+                    }
+                }
+
+                &:nth-child(2n + 2) {
+                    @media (min-width:501px) and (max-width:767px) {
+                        margin-right: 0;
+                    }
+                }
+
+                &:nth-child(3n + 3) {
+                    @include breakpoint(medium) {
+                        margin-right: 0;
+                    }
+                }
+
+                // &::after {
+                //     content: '';
+                //     background: linear-gradient(180deg, rgba(252, 253, 252, 0) 0%, rgba(0, 0, 0, 1) 100%);
+                //     width: 100%;
+                //     height: 100%;
+                //     position: absolute;
+                //     opacity: 1;
+                //     visibility: visible;
+                //     top: 0;
+                //     left: 0;
+                //     cursor: pointer;
+                //     transition: opacity 0.2s ease;
+                // }
+
+                &:hover {
+                    &::after {
+                        visibility: hidden;
+                        opacity: 0;
+                    }
+
+                    img {
+                        transition: all 0.75s;
+                        transform: scale(1.05);
+                    }
+                }
+            }
+
+            .countryCard {
+                background: #0B3D71;
+                color: #B9C8DA;
+
+                @media screen and (max-width:500px) {
+                    height: clamp(19.75rem, calc(73.714vw + 2.473rem), 27.813rem);
+                }
+
+                &::after {
+                    content: unset;
+                }
+            }
+        }
+
+        +.continentalPanel {
+            margin-top: calc(clamp(1.25rem, 18.692vw - 3.341rem, 2.5rem));
+
+            @media screen and (min-width:501px) {
+                margin-top: calc(clamp(2.5rem, 11.494vw - 1.099rem, 6.25rem));
+            }
+
+            @include breakpoint(large) {
+                margin-top: calc(clamp(6.25rem, 7.102vw + 1.705rem, 9.375rem));
+            }
+
+            // @include breakpoint(llarge) {
+            //     margin-top: 150px;
+            // }
+        }
+    }
+}
+
+.searchResultPanel{
+    .locationPanel{
+        padding-top: calc(clamp(2.125rem, 4.127vw + 1.111rem, 3.75rem));
+        // @include breakpoint(large){
+        //     padding-top: 60px;
+        // }
+    }
+}
+
+
+ 

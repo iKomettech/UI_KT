@@ -1,0 +1,167 @@
+$primary-color: #001F3F;
+$secondary-color: #B9C8DA;
+@import "util/util";
+$img: "../../images/";
+$bgpanel-color: #B9C8DA;
+$mediumbluebgpanel: #0B3D71;
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+.everify {
+    margin-top: calc(clamp(2.5rem, 4.569vw + 1.378rem, 6.313rem));  
+    .grid-container {
+        .flex-box {
+            border-top: 10px solid $bgpanel-color;
+
+            .flexWrap {
+                padding-bottom: calc(clamp(1.563rem, 0.899vw + 1.342rem, 2.313rem));             
+
+                .wraptitle {
+                    width: 100%;
+
+                    h2 {
+                        text-align: left;
+                        margin-top: calc(clamp(0.625rem, 1.124vw + 0.349rem, 1.563rem));
+                        letter-spacing: -0.04em;
+                        font-size: clamp(55px, calc(55px + (64 - 55) * ((100vw - 393px) / (1023 - 393))), 64px);
+                        line-height: 100%;
+
+                        @include breakpoint(large) {
+                            font-size: clamp(64px, calc(64px + (85 - 64) * ((100vw - 1024px) / (1728 - 1024))), 85px);                            
+                        }                       
+                    }
+
+
+
+                }
+
+            }
+        }
+
+        .contentWrap {
+            max-width: 1120px;
+            width: 100%;
+
+
+            p {
+                font-family: 'UntitledSerif';
+                font-style: normal;
+                font-weight: 400;
+                // font-size: 18px;
+                line-height: 123.6%;
+                /* or 26px */
+                letter-spacing: -0.01em;
+
+                font-size: clamp(18px, calc(18px + (22 - 18) * ((100vw - 393px) / (1023 - 393))), 22px);
+
+                @include breakpoint(large) {
+                    font-size: clamp(22px, calc(22px + (27 - 22) * ((100vw - 1024px) / (1728 - 1024))), 27px);
+                }
+
+                +p {
+                    margin-top: calc(clamp(1.688rem, 0.449vw + 1.577rem, 2.063rem));                   
+                }
+
+                @include breakpoint(small only) {
+                    a {
+                        font-family: 'ABCDiatype';
+                        font-style: normal;
+                        font-weight: 700; 
+                        line-height: 97.1%;
+                        letter-spacing: -0.025em;
+                        display: block;
+                        color: #001F3F;
+                        text-decoration: none;
+                        margin-top: 33px;
+                        transition: all ease-in-out .5s;
+                        background: #B9C8DA;
+                        padding: 20px 20px 15px;
+
+                        font-size: clamp(20px, calc(20px + (20 - 20) * ((100vw - 393px) / (1023 - 393))), 20px);
+
+
+                        &::after {
+                            content: unset;
+                        }
+                    }
+                }
+            }
+
+            ul {
+
+                margin-left: 15px;
+
+                li {
+                    font-family: 'UntitledSerif';
+                    font-style: normal;
+                    font-weight: 400; 
+                    line-height: 116.6%;
+                    padding-left: 45px;
+                    /* or 26px */
+                    letter-spacing: -0.01em;
+                    position: relative;
+                    font-size: clamp(18px, calc(18px + (22 - 18) * ((100vw - 393px) / (1023 - 393))), 22px);
+                    @include breakpoint(large) { 
+                        margin-bottom: 1.1em;
+                    }
+
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 3px;
+                        left: 0;
+                        background: url('#{$img}settings/squareBullet.svg') no-repeat;
+                        background-size: contain;
+                        height: 18px;
+                        width: 18px;
+                    }
+                }
+            }
+
+            +.contentWrap {
+                margin-top: 65px;
+            }
+
+            a {
+
+                font-family: 'UntitledSerif';
+                font-style: normal;
+                font-weight: 700;
+                line-height: 97.1%;
+                /* or 24px */
+                text-decoration: none;
+                letter-spacing: -0.025em;
+                position: relative;
+                font-size: clamp(18px, calc(18px + (22 - 18) * ((100vw - 393px) / (1023 - 393))), 22px);
+                @include breakpoint(large) {
+                    font-size: clamp(22px, calc(22px + (25 - 22) * ((100vw - 1024px) / (1728 - 1024))), 25px);
+                }
+                &::after {
+                    content: '';
+                    position: relative;
+                    right: -14px;
+                    background: url("#{$img}settings/arrow-blue.svg") no-repeat;
+                    background-size: contain;
+                    display: inline-block;
+                    height: 17px;
+                    width: 25px;
+                    top: 3px;
+
+                    @include breakpoint(llarge) {
+                        height: 18px;
+                        top: 1px;
+                        right: -11px;
+                        width: 30px;
+                    }
+                }
+            }
+        }
+    }
+}

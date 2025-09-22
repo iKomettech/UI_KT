@@ -1,0 +1,119 @@
+@import "util/util";
+$white: #ffffff;
+$secondary-color: #0076bf;
+$img: "../../images";
+.fourcolumnpanel{
+    .innerWrap{
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 100%;
+    max-width: 100%;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+        .colblock{
+            width: 325px;
+            margin-bottom: calc(clamp(1.875rem, 1.746vw + 1.446rem, 2.563rem));
+            margin-right:calc(clamp(0rem, 3.175vw - 0.78rem, 1.25rem));
+            box-shadow: 0px 3px 23px rgba(0,0,0,0.16);
+            position: relative;
+            padding: 0;
+            border-radius: 13px;
+            @include breakpoint(xlarge only){
+                width: 23.7%;
+                margin-right:20px;
+            }
+            @include breakpoint(large only){
+                width: 23.5%;
+                margin-right: 20px;
+            }
+            @include breakpoint(medium only){
+                width: 48.6%;
+                margin: 0 auto;
+                margin-bottom: 30px; 
+            }
+            @include breakpoint(small only){
+                width: 100%;
+                margin: 0 auto;
+                margin-bottom: calc(clamp(1.875rem, 1.746vw + 1.446rem, 2.563rem));
+                margin-right: calc(clamp(0rem, 3.175vw - 0.78rem, 1.25rem));
+                
+            }
+            &:nth-child(even){
+                @include breakpoint(medium only){
+                    margin-right: 0;
+                }
+            }
+            &:last-child{
+                margin-right: 0;
+                
+            } 
+            .imgWrap{
+                margin-bottom: 0;
+                padding:8px;
+                img{
+                    width: 100%;
+                    object-fit: cover;
+                    max-height: 100%;
+                    object-position: top;
+                    border-top-right-radius:13px;
+                    border-top-left-radius:13px;
+                    @include breakpoint(medium){
+                        max-height: 199px;
+                        min-height: 199px;
+                    } 
+                    @include breakpoint(large){
+                        max-height: calc(clamp(12.438rem, 5.824vw + 8.71rem, 15rem));
+                        min-height: calc(clamp(12.438rem, 5.824vw + 8.71rem, 15rem));
+                    }
+                    // @include breakpoint(xlarge){
+                    //     max-height: 240px;
+                    //     min-height: 240px;
+                    // } 
+                }
+            }   
+            .contentsection{
+                // padding:5px 34px 19px 34px;
+                padding-inline: calc(clamp(1.125rem, 2.54vw + 0.501rem, 2.125rem));
+                padding-top: 5px;
+                padding-bottom: calc(clamp(1.125rem, 0.159vw + 1.086rem, 1.188rem));
+                @include breakpoint(small only){
+                    padding-block: 18px ;
+                }
+                .contentblock{
+                    padding-bottom: 25px;
+                    p{
+                        font-size: 16px;
+                        font-weight: 400;
+                        line-height: 22px;
+                        padding-bottom: 25px;
+                    }
+                }
+                .date{
+                    line-height: 20px;
+                    font-size: 14px;
+                    padding-bottom:25px;
+                    a{
+                         color:#000000;
+                    } 
+                }
+                .col-title{
+                    padding-bottom:12px;
+                    a{
+                        line-height: 24px;
+                        font-size: 20px;
+                        color:#3E6F91;
+                        font-weight: 800;
+                    }   
+                }
+                .ctablock{
+                    position: absolute;
+                    bottom: 28px;
+                }
+            }   
+    }
+    }
+    .viewallcta{
+        display: flex;
+        justify-content: center;
+    }
+}

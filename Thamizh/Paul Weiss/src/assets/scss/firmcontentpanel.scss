@@ -1,0 +1,49 @@
+@import "util/util";
+$img: "../../images/";
+$bgpanel-color: #B9C8DA;
+$mediumbluebgpanel:#0B3D71;
+$white:#ffffff;
+$primary-color: #0B3D71;
+$secondary-color: #B9C8DA;
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+.firmcontentpanel{
+    margin-top: calc(clamp(2.063rem, 9.365vw - 0.238rem, 5.75rem));
+    // @include breakpoint(medium) {
+    //     margin-top: 92px;
+    // }
+    @include breakpoint(large) {
+        margin-top: calc(clamp(5.75rem, 7.528vw + 0.932rem, 9.063rem));
+    }
+    .grid-container{
+        .contentwrap{
+            max-width: 1120px;
+            width: 100%;
+            p{
+                font-family: 'UntitledSerif';
+                font-style: normal;
+                font-weight: 400;
+                font-size: clamp(18px, calc(18px + (22 - 18) * ((100vw - 393px) / (1024 - 393))), 22px) ;
+                line-height: 120%;
+                letter-spacing: -0.01em;
+                word-break: break-word;
+                + p{
+                    margin-top: calc(clamp(1.25rem, 1.587vw + 0.86rem, 1.875rem));
+                    // @include breakpoint(large) {
+                    //     margin-top: 30px;
+                    // }
+                }
+                @include breakpoint(large) {
+                    font-size: clamp(22px, calc(22px + (27 - 22) * ((100vw - 1024px) / (1728 - 1024))), 27px) ;
+                    line-height: 123.6%;    
+                }
+            }
+        }
+    }
+}

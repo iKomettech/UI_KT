@@ -1,0 +1,217 @@
+@import "util/util";
+$img: "../../images/";
+$bgpanel-color: #B9C8DA;
+$mediumbluebgpanel: #0B3D71;
+$white: #ffffff;
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+
+.alumninewspanel {
+    margin-top: calc(clamp(2.5rem, 8.73vw + 0.356rem, 5.938rem));
+
+    // @include breakpoint(medium) {
+    //     margin-top: 70px;
+    // }
+
+    @include breakpoint(large) {
+        margin-top: calc(clamp(5.938rem, 7.102vw + 1.392rem, 9.063rem));
+    }
+
+    // @include breakpoint(llarge) {
+    //     margin-top: 145px;
+    // }
+
+    .grid-container {
+        .flex-box {
+            border-top: 10px solid $bgpanel-color;
+
+            @include breakpoint(small only) {
+                margin-top: 20px;
+            }
+
+            .flexWrap {
+                padding-bottom: calc(clamp(1.563rem, 1.587vw + 1.173rem, 2.188rem));
+
+                @include breakpoint(medium) {
+                    display: flex;
+                    // padding-bottom: 35px;
+                }
+
+                @include breakpoint(large) {
+                    padding-bottom: calc(clamp(2.188rem, 0.71vw + 1.733rem, 2.5rem));
+                }
+
+                .wraptitle {
+                    width: 100%;
+
+                    h2 {
+                        text-align: left;
+                        margin-top: calc(clamp(0.938rem, 0.476vw + 0.821rem, 1.125rem));
+                        letter-spacing: -0.05em;
+                        font-size: clamp(55px, calc(55px + (64 - 55) * ((100vw - 393px) / (1023 - 393))), 64px);
+                        line-height: 100%;
+
+                        @include breakpoint(large) {
+                            font-size: clamp(64px, calc(64px + (85 - 64) * ((100vw - 1024px) / (1728 - 1024))), 85px);
+                        }
+
+                        @include breakpoint(medium) {
+                            // margin-top: 18px;
+                            letter-spacing: -0.04em;
+                        }
+
+                        @include breakpoint(large) {
+                            margin-top: calc(clamp(1.125rem, 0.994vw + 0.489rem, 1.563rem));
+                        }
+                        @include breakpoint(xlarge) {
+                            // margin-top: 25px;
+                            letter-spacing: -0.05em;
+                        }
+
+                        span {
+                            @include breakpoint(small only) {
+                                display: block;
+                            }
+                        }
+                    }
+
+                }
+
+
+            }
+        }
+
+        .contentwrap {
+            max-width: 1120px;
+            width: 100%;
+
+            @include breakpoint(small only) {
+                margin-top: 2px;
+            }
+
+            p {
+                font-family: 'UntitledSerif';
+                font-style: normal;
+                font-weight: 400;
+                letter-spacing: -0.01em;
+                word-break: break-word;
+                line-height: 123.6%;
+                letter-spacing: -0.01em;
+
+                font-size: clamp(18px, calc(18px + (22 - 18) * ((100vw - 393px) / (1023 - 393))), 22px);
+
+                @include breakpoint(large) {
+                    font-size: clamp(22px, calc(22px + (27 - 22) * ((100vw - 1024px) / (1728 - 1024))), 27px);
+                }
+
+                +p {
+                    margin-top: 24px;
+                }
+            }
+
+            ul {
+                margin-left: 0;
+                margin-top: 37px;
+
+                li {
+                    font-family: 'UntitledSerif';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: calc(clamp(1.688rem, 0vw + 1.688rem, 1.688rem));
+                    line-height: 33px;
+                    letter-spacing: -0.01em;
+                    word-break: break-word;
+                    position: relative;
+                    padding-left: 38px;
+                    margin-bottom: .55rem;
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 8px;
+                        left: 0;
+                        background: url('#{$img}settings/squareBullet.svg') no-repeat;
+                        height: 18px;
+                        width: 18px;
+                    }
+                }
+            }
+        }
+
+        .spotlightdesc {
+            .flexwrap {
+                @include breakpoint(medium) {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 0px;
+                }
+
+                @include breakpoint(large) {
+                    margin-top: calc(clamp(0rem, 2.131vw - 1.364rem, 0.938rem));
+                }
+                @include breakpoint(llarge) { 
+                    gap: 25px;
+                }
+
+                .contentwrap {
+                    width: 100%;
+                    max-width: 100%;
+
+                    @include breakpoint(medium) {
+                        width: 40%;
+                        margin-right: 5%;
+                    }
+
+                    @include breakpoint(llarge) {
+                        max-width: 575px;
+                        margin-right: 35px;
+                        margin-right: inherit;
+                    }
+                }
+
+                .imgwrap,
+                .videowrap {
+                    width: 100%;
+                    margin-top: 33px;
+                    position: relative;
+
+                    @include breakpoint(medium) {
+                        margin-top: 3px;
+                        width: 55%;
+                    }
+
+                    @include breakpoint(llarge) {
+                        margin-top: calc(clamp(0.188rem, 0.71vw - 0.267rem, 0.5rem));
+                    }
+
+                    @include breakpoint(llarge) {
+                        // margin-top: 8px;
+                        width: 100%;
+                        max-width: 800px;
+                    }
+                    @media (min-width:1728px){
+                        margin-top: 0;
+                    }
+                    img {
+
+                        filter: grayscale(1);
+                    }
+                }
+            }
+        }
+
+        .bc-iframe,
+        .bc-iframe body,
+        .bc-player-HJR1vW8Ab_default,
+        .bc-player-HJR1vW8Ab_default .vjs-poster {
+            background-color: #ffffff;
+        }
+    }
+}

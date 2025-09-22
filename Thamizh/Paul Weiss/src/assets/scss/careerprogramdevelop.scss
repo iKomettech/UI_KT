@@ -1,0 +1,280 @@
+$primary-color: #001F3F;
+$secondary-color: #B9C8DA;
+@import "util/util";
+$img: "../../images/";
+$bgpanel-color: #B9C8DA;
+$mediumbluebgpanel: #0B3D71;
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+.ourprogramdevelop {
+    margin-top: calc(clamp(2.5rem, 8.24vw + 0.476rem, 9.375rem));
+    .grid-container {
+        .flex-box {
+            border-top: 10px solid $bgpanel-color;
+
+            .flexWrap {
+                padding-bottom: calc(clamp(1.313rem, 0.674vw + 1.147rem, 1.875rem));
+                .wraptitle {
+                    width: 100%;
+
+                    h2 {
+                        text-align: left;
+                        margin-top: calc(clamp(0.625rem, 0.899vw + 0.404rem, 1.375rem));
+                        letter-spacing: -0.05em;
+                        font-size: clamp(55px, calc(55px + (64 - 55) * ((100vw - 393px) / (1023 - 393))), 64px);
+                        line-height: 100%;
+                        @include breakpoint(large) {
+                            font-size: clamp(64px, calc(64px + (85 - 64) * ((100vw - 1024px) / (1728 - 1024))), 85px);                          
+                        }
+                    }
+                }
+            }
+        }
+
+        .contentWrap {
+            max-width: 1120px;
+            width: 100%;
+
+            h3 {
+                font-family: 'ABCDiatype';
+                font-style: normal;
+                font-weight: 700;
+                /* or 58px */
+                letter-spacing: -0.025em;
+
+                font-size: clamp(40px, calc(40px + (50 - 40) * ((100vw - 393px) / (1023 - 393))), 50px);
+                line-height: 100%;
+
+                @include breakpoint(large) {
+                    font-size: clamp(50px, calc(50px + (60 - 50) * ((100vw - 1024px) / (1728 - 1024))), 60px);
+                }
+
+                +p {
+                    margin-top: calc(clamp(2.188rem, 0.524vw + 2.059rem, 2.625rem));
+                }
+            }
+
+            p {
+                font-family: 'UntitledSerif';
+                font-style: normal;
+                font-weight: 400;
+                line-height: 123.6%;
+                /* or 26px */
+                letter-spacing: -0.01em;
+                font-size: clamp(18px, calc(18px + (22 - 18) * ((100vw - 393px) / (1023 - 393))), 22px);
+                @include breakpoint(large) {
+                    font-size: clamp(22px, calc(22px + (27 - 22) * ((100vw - 1024px) / (1728 - 1024))), 27px);
+                }
+
+
+                +p {
+                    margin-top: calc(clamp(1.25rem, 0.824vw + 1.048rem, 1.938rem));
+                   }
+
+                a {
+
+                    @include breakpoint(small only) {
+                        font-family: 'ABCDiatype';
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: clamp(20px, calc(20px + (20 - 20) * ((100vw - 393px) / (1728 - 393))), 20px);
+                        line-height: 97.1%;
+                        letter-spacing: -0.025em;
+                        display: block;
+                        color: #001F3F;
+                        text-decoration: none;
+                        margin-top: 0px;
+                        transition: all ease-in-out .5s;
+                        background: #B9C8DA;
+                        padding: 20px 20px 15px;
+
+                        &::after {
+                            content: unset !important;
+                        }
+                    }
+
+                    font-family: 'UntitledSerif';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: clamp(22px, calc(22px + (22 - 22) * ((100vw - 768px) / (1728 - 768))), 22px);
+                    line-height: 107.6%;
+                    // line-height: 100%; 
+                    color: #001F3F;
+                    display: block;
+                    margin-top: 25px;
+
+                    @include breakpoint(llarge) {
+                        margin-top: 40px;
+                        //font-size: clamp(25px, calc(25px + (25 - 25) * ((100vw - 1280px) / (1728 - 1280))), 25px);
+                    }
+
+                    &::after {
+                        content: '';
+                        position: relative;
+                        right: -9px;
+                        height: 17px;
+                        width: 20px;
+                        background: url('#{$img}settings/arrow-blue.svg') no-repeat;
+                        background-size: contain;
+                        top: 3px;
+                    }
+                }
+            }
+
+            ul {
+
+                margin-left: 15px;
+
+                @include breakpoint(large) {
+                    margin-top: 25px;
+                    margin-left: 0;
+                }
+
+                @include breakpoint(llarge) {                 
+                    margin-left: 15px;
+                }
+
+                li {
+                    font-family: 'UntitledSerif';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: clamp(18px, calc(18px + (22 - 18) * ((100vw - 393px) / (1023 - 393))), 22px);
+                    line-height: 116.6%;
+                    padding-left: 45px;
+                    /* or 26px */
+                    letter-spacing: -0.01em;
+                    position: relative;
+
+                    @include breakpoint(large) {
+                        margin-bottom: calc(clamp(1.875rem, 2.841vw + 0.057rem, 3.125rem));
+                    }
+
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 3px;
+                        left: 0;
+                        background: url('#{$img}settings/squareBullet.svg') no-repeat;
+                        background-size: contain;
+                        height: 18px;
+                        width: 18px;
+                    }
+                }
+            }
+
+            +.programcontentWrap {
+                @include breakpoint(large) {
+                    margin-top: calc(clamp(7.563rem, 0.71vw + 7.108rem, 7.875rem));
+                }
+            }
+
+            a {
+                font-family: 'UntitledSerif';
+                font-style: normal;
+                font-weight: 700;
+                font-size: clamp(25px, calc(25px + (25 - 25) * ((100vw - 393px) / (1728 - 393))), 25px);
+                line-height: 97.1%;
+                /* or 24px */
+                text-decoration: none;
+                letter-spacing: -0.025em;
+                position: relative;
+
+                &::after {
+                    content: '';
+                    position: relative;
+                    right: -24px;
+                    background: url("#{$img}settings/arrow-blue.svg") no-repeat;
+                    width: 27px;
+                    display: inline-block;
+                    height: 15px;
+                }
+            }
+        }
+
+        .articleContent {
+            max-width: 1120px;
+            width: 100%;
+            margin-top: calc(clamp(2.5rem, 5.54vw - 1.045rem, 4.938rem));
+            h3 {
+                font-family: 'UntitledSerif';
+                font-style: normal;
+                font-weight: 700;
+                font-size: clamp(30px, calc(30px + (40 - 30) * ((100vw - 393px) / (1023 - 393))), 40px);
+                line-height: 100%;
+                /* identical to box height, or 39px */
+                letter-spacing: -0.025em;
+
+
+                +ul {
+                    margin-top: 35px;
+                }
+            }
+
+
+
+            ul {
+
+                margin-left: 0px;
+
+                @include breakpoint(large) {
+                    margin-top: 25px;
+                    margin-left: 0;
+                }
+
+                @include breakpoint(llarge) {                   
+                    margin-left: 15px;
+                }
+
+                li {
+                    font-family: 'UntitledSerif';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: clamp(18px, calc(18px + (22 - 18) * ((100vw - 393px) / (1023 - 393))), 22px);
+                    line-height: 116.6%;
+                    padding-left: 45px;
+                    /* or 26px */
+                    letter-spacing: -0.01em;
+                    position: relative;
+                    margin-bottom: calc(clamp(0.938rem, 1.423vw + 0.588rem, 2.125rem));
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 3px;
+                        left: 0;
+                        background: url('#{$img}settings/squareBullet.svg') no-repeat;
+                        background-size: contain;
+                        height: 20px;
+                        width: 20px;
+                    }
+                }
+            }
+
+            +.articleContent {
+                @include breakpoint(llarge) {
+                    margin-top: 89px;
+                }
+            }
+
+        }
+
+        .videoSection {
+            margin-top: calc(clamp(2.188rem, 8.614vw + 0.072rem, 9.375rem));
+            @include breakpoint(small only) {
+                margin-inline: -20px;
+            }
+            .videoContainer {
+                max-width: 1308px;
+                width: 100%;
+                margin: 0 auto;
+            }
+        }
+    }
+}

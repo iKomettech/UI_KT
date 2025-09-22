@@ -1,0 +1,100 @@
+@import "util/util";
+$img: "../../images/";
+$bgpanel-color: #B9C8DA;
+$mediumbluebgpanel: #0B3D71;
+$white: #ffffff;
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+.videolistpanel {
+    margin-top: calc(clamp(2.375rem, 8.015vw + 0.406rem, 9.063rem));
+    .flexWrapTeam{
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: calc(clamp(0.938rem, 2.172vw + 0.404rem, 2.75rem));   
+        .colblock{
+            width: 100%;
+            margin-right: 0;
+            @media (min-width: 600px) and (max-width: 1023px) {
+                width: 49%;
+                margin-right: 2%;
+                &:nth-child(2n+2) {
+                    margin-right: 0;
+                }
+            }
+            @include breakpoint(large) {
+                width: 31.931%;
+                margin-right: 2.10%;
+                &:nth-child(3n+3) {
+                    margin-right: 0;
+                }
+            }
+            @include breakpoint(llarge) {
+                width: 32.362%;
+                margin-right: 0.96%;
+            }
+            &.hidden {
+                display: none;
+            }
+            .imgwrap{
+                overflow: hidden;
+                img{
+                    width: 100%;
+                    @media (max-width: 480px) {
+                        height: 226px;
+                        object-fit: cover;
+                    }
+                }
+            }
+            .contentwrap{
+                padding-right: 0px;
+                padding-top: calc(clamp(0.375rem, 0.824vw + 0.173rem, 1.063rem));
+                padding-bottom: calc(clamp(0.375rem, 0.824vw + 0.173rem, 1.063rem));             
+                @include breakpoint(medium) {                 
+                    padding-right: 10px;
+                }
+               
+                P{
+                    font-weight: 400;
+                    //font-size: 20px;
+                    line-height: 100%;
+                    letter-spacing: -0.025em;
+                    margin-bottom: 0px;
+                    font-size: clamp(20px, calc(20px + (20 - 20) * ((100vw - 393px) / (1728 - 393))), 20px);
+                    color: #0B3D71;
+                    @include breakpoint(llarge) {
+                        margin-bottom: 0.5rem;
+                    }
+                }
+                a:hover, a:focus {
+                    color: #0B3D71;
+                }
+                .titlewrap{
+                    p{
+                        font-family: 'UntitledSerif';
+                        font-weight: 400;
+                        font-size: 25px;
+                        line-height: 100%;   
+                        letter-spacing: -0.025em; 
+                        font-size: clamp(25px, calc(25px + (27 - 25) * ((100vw - 393px) / (1023 - 393))), 27px);
+                        color: #001f3f;                        
+                        @include breakpoint(medium) {
+                            font-size: clamp(27px, calc(27px + (35 - 27) * ((100vw - 1024px) / (1728 - 1024))), 35px);
+                        }                        
+                    }
+                    a:hover, a:focus {
+                        color: #001f3f;
+                    }
+                }
+            }
+        }
+    }
+    .allresult{
+        margin-top: 10px;       
+    }
+}

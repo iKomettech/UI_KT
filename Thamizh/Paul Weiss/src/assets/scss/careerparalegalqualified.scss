@@ -1,0 +1,329 @@
+$primary-color: #001F3F;
+$secondary-color: #B9C8DA;
+@import "util/util";
+$img: "../../images/";
+$bgpanel-color: #B9C8DA;
+$mediumbluebgpanel: #0B3D71;
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+
+.qualifiedContentWrap {
+    // margin-top: 40px;
+
+    // @include breakpoint(medium) {
+    //     margin-top: 70px;
+    // }
+
+    // @include breakpoint(large) {
+    //     margin-top: 100px;
+    // }
+
+    // @include breakpoint(llarge) {
+    //     margin-top: 150px;
+    // }
+
+    margin-top: clamp(40px, calc(40px + (100 - 40) * ((100vw - 393px) / (1023 - 393))), 100px);
+    @include breakpoint(large) {
+        margin-top :clamp(100px, calc(100px + (150 - 100) * ((100vw - 1024px) / (1728 - 1024))), 150px);
+    }
+
+    .grid-container {
+        .contentWrapper {
+            max-width: 1097px;
+            width: 100%;
+
+            h3 {
+                font-family: 'ABCDiatype';
+                font-style: normal;
+                font-weight: 700; 
+                line-height: 97.1%;
+                letter-spacing: -0.025em;
+                color: #001F3F;
+                //margin-bottom: 35px;
+
+                font-size: clamp(40px, calc(40px + (50 - 40) * ((100vw - 393px) / (1023 - 393))), 50px);
+                line-height: 100%;
+                margin-bottom: clamp(35px, calc(35px + (44 - 35) * ((100vw - 393px) / (1024 - 393))), 44px);
+
+                @include breakpoint(large) {
+                    font-size: clamp(50px, calc(50px + (60 - 50) * ((100vw - 1024px) / (1728 - 1024))), 60px);
+
+                    //margin-bottom: 44px;
+                    margin-bottom: clamp(44px, calc(44px + (44 - 44) * ((100vw - 1024px) / (1279 - 1024))), 44px);
+                }
+
+                @include breakpoint(llarge) {
+                    //margin-bottom: 30px;
+                    margin-bottom: clamp(30px, calc(30px + (30 - 30) * ((100vw - 1280px) / (1728 - 1280))), 30px);
+                }
+            }
+
+            p {
+                font-family: 'UntitledSerif';
+                font-style: normal;
+                font-weight: 400;
+                line-height: 116.6%;
+                letter-spacing: -0.01em;
+                color: #001F3F;
+                font-size: clamp(18px, calc(18px + (22 - 18) * ((100vw - 393px) / (1023 - 393))), 22px);
+
+                @include breakpoint(large) {
+                    font-size: clamp(22px, calc(22px + (27 - 22) * ((100vw - 1024px) / (1728 - 1024))), 27px);
+                }
+
+                +p {
+                    //margin-top: 25px;
+                    margin-top: clamp(25px, calc(25px + (31 - 25) * ((100vw - 393px) / (1023 - 393))), 31px);
+                    @include breakpoint(large) {
+                        //margin-top: 31px;
+                        margin-top: clamp(31px, calc(31px + (38 - 31) * ((100vw - 1024px) / (1728 - 1024))), 38px);
+                    }
+
+                    // @include breakpoint(llarge) {
+                    //     margin-top: 38px;
+                    // }
+                }
+            }
+
+            ul {
+                margin-left: 0;
+                //margin-top: 32px;
+                margin-top: clamp(32px, calc(32px + (40 - 32) * ((100vw - 393px) / (1023 - 393))), 40px);
+                @include breakpoint(large) {
+                    //margin-top: 40px;
+                    margin-top: clamp(40px, calc(40px + (40 - 40) * ((100vw - 1024px) / (1279 - 1024))), 40px);
+                }
+
+                @include breakpoint(llarge) {
+                    //margin-top: 25px;
+                    margin-top: clamp(25px, calc(25px + (25 - 25) * ((100vw - 1280px) / (1728 - 1280))), 25px);
+                    margin-left: 15px;
+                }
+
+                li {
+                    font-family: 'UntitledSerif';
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 116.6%;
+                    letter-spacing: -0.01em;
+                    color: #001F3F;
+                    position: relative;
+                    padding-left: 44px;
+                    //margin-bottom: 34px;
+                    font-size: clamp(18px, calc(18px + (22 - 18) * ((100vw - 393px) / (1023 - 393))), 22px);
+                    margin-bottom: clamp(34px, calc(34px + (30 - 34) * ((100vw - 393px) / (1728 - 393))), 30px);
+                    @include breakpoint(large) {
+                        font-size: clamp(22px, calc(22px + (22 - 22) * ((100vw - 1024px) / (1728 - 1024))), 22px);
+
+                        //margin-bottom: 30px;
+                    }
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        height: 20px;
+                        width: 20px;
+                        background: url('#{$img}settings/squareBullet.svg') no-repeat;
+                        background-size: contain;
+                        left: 0;
+                        top: 5px;
+                        display: inline-block;
+                    }
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+
+        .probonoCta {
+            //margin-top: 42px;
+            margin-top: clamp(42px, calc(42px + (48 - 42) * ((100vw - 393px) / (1023 - 393))), 48px);
+            @include breakpoint(large) {
+                //margin-top: 48px;
+                margin-top: clamp(48px, calc(48px + (48 - 48) * ((100vw - 1024px) / (1279 - 1024))), 48px);
+            }
+
+            @include breakpoint(llarge) {
+                //margin-top: 35px;
+                margin-top: clamp(35px, calc(35px + (35 - 35) * ((100vw - 1280px) / (1728 - 1280))), 35px);
+            }
+
+            a {
+                display: inline-block;
+                width: 100%;
+                background: $mediumbluebgpanel;
+                font-family: 'ABCDiatype';
+                font-style: normal;
+                font-weight: 700;
+                font-size: clamp(20px, calc(20px + (25 - 20) * ((100vw - 393px) / (1023 - 393))), 25px);
+                line-height: 97.1%;
+                /* or 24px */
+                letter-spacing: -0.025em;
+                color: #FFFFFF;
+                padding: 19px 23px 16px;
+                transition: all ease-in-out .5s;
+                padding-top: clamp(19px, calc(19px + (22 - 19) * ((100vw - 393px) / (1728 - 393))), 22px);
+                padding-left: clamp(23px, calc(23px + (23 - 23) * ((100vw - 393px) / (1728 - 393))), 23px);
+                padding-right: clamp(23px, calc(23px + (23 - 23) * ((100vw - 393px) / (1728 - 393))), 23px);
+                padding-top: clamp(16px, calc(16px + (16 - 16) * ((100vw - 393px) / (1728 - 393))), 16px);
+                // @include breakpoint(large) { 
+                //     padding: 19px 23px 16px;
+                // }
+
+                // @include breakpoint(llarge) {
+                //     padding: 22px 23px 16px;
+                // }
+
+                &:hover {
+                    background: $primary-color;
+                    text-decoration: none;
+                    transition: all ease-in-out .5s;
+                }
+            }
+        }
+
+        .smallcontentWrapper {
+            max-width: 1097px;
+            width: 100%;
+
+            h3 {
+                font-family: 'ABCDiatype';
+                font-style: normal;
+                font-weight: 700; 
+                line-height: 97.1%;
+                letter-spacing: -0.025em;
+                color: #001F3F;
+                //margin-bottom: 33px;
+                margin-bottom: clamp(33px, calc(33px + (35 - 33) * ((100vw - 393px) / (1728 - 393))), 35px);
+                font-size: clamp(40px, calc(40px + (50 - 40) * ((100vw - 393px) / (1023 - 393))), 50px);
+                line-height: 100%;
+
+                @include breakpoint(large) {
+                    font-size: clamp(50px, calc(50px + (60 - 50) * ((100vw - 1024px) / (1728 - 1024))), 60px);
+                    //margin-bottom: 34px;
+                }
+
+                // @include breakpoint(llarge) { 
+                //     margin-bottom: 35px;
+                // }
+            }
+
+            p {
+                font-family: 'UntitledSerif';
+                font-style: normal;
+                font-weight: 400; 
+                line-height: 116.6%;
+                letter-spacing: -0.01em;
+                color: #001F3F;
+
+                font-size: clamp(18px, calc(18px + (22 - 18) * ((100vw - 393px) / (1023 - 393))), 22px);
+
+                @include breakpoint(large) {
+                    font-size: clamp(22px, calc(22px + (22 - 22) * ((100vw - 1024px) / (1728 - 1024))), 22px); 
+                }
+
+
+
+                +p {
+                    //margin-top: 20px;
+                    margin-top: clamp(20px, calc(20px + (26 - 20) * ((100vw - 393px) / (1728 - 393))), 26px)
+                    // @include breakpoint(large) {
+                    //     margin-top: 25px;
+                    // }
+
+                    // @include breakpoint(llarge) {
+                    //     margin-top: 26px;
+                    // }
+                }
+            }
+
+            ul {
+                margin-left: 0;
+                margin-bottom: 0;
+                //margin-top: 31px;
+                margin-top: clamp(31px, calc(31px + (39 - 31) * ((100vw - 393px) / (1023 - 393))), 31px);
+                @include breakpoint(large) {
+                    //margin-top: 39px;
+                    margin-top: clamp(39px, calc(39px + (39 - 39) * ((100vw - 1024px) / (1279 - 1024))), 39px);
+                }
+
+                @include breakpoint(llarge) {
+                    //margin-top: 57px;
+                    margin-top: clamp(57px, calc(57px + (57 - 57) * ((100vw - 1280px) / (1728 - 1280))), 57px);
+                    margin-left: 15px;
+                }
+
+                li {
+                    font-family: 'UntitledSerif';
+                    font-style: normal;
+                    font-weight: 400; 
+                    line-height: 116.6%;
+                    letter-spacing: -0.01em;
+                    color: #001F3F;
+                    position: relative;
+                    padding-left: 44px;
+                    //margin-bottom: 28px;
+                    
+                    margin-bottom :clamp(28px, calc(28px + (30 - 28) * ((100vw - 393px) / (1728 - 393))), 30px);
+                    font-size: clamp(18px, calc(18px + (22 - 18) * ((100vw - 393px) / (1023 - 393))), 22px);
+
+                    @include breakpoint(large) {
+                        font-size: clamp(22px, calc(22px + (22 - 22) * ((100vw - 1024px) / (1728 - 1024))), 22px); 
+                        //margin-bottom: 30px;
+                    }
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        height: 20px;
+                        width: 20px;
+                        background: url('#{$img}settings/racialBullet.svg') no-repeat;
+                        background-size: contain;
+                        left: 0;
+                        top: 5px;
+                        display: inline-block;
+                    }
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    &.bgWrapper {
+        background: $bgpanel-color;
+        // padding: 40px 0;
+
+        // @include breakpoint(medium) {
+        //     padding: 70px 0;
+        // }
+
+        // @include breakpoint(large) {
+        //     padding: 100px 0;
+        // }
+
+        // @include breakpoint(llarge) {
+        //     padding: 150px 0 ;
+        // }
+
+        padding-top: clamp(40px, calc(40px + (100 - 40) * ((100vw - 393px) / (1023 - 393))), 100px);
+        padding-bottom: clamp(40px, calc(40px + (100 - 40) * ((100vw - 393px) / (1023 - 393))), 100px);
+        @include breakpoint(large) {
+            //margin-top: 100px;
+            padding-top :clamp(100px, calc(100px + (150 - 100) * ((100vw - 1024px) / (1728 - 1024))), 150px);
+            padding-bottom :clamp(100px, calc(100px + (150 - 100) * ((100vw - 1024px) / (1728 - 1024))), 150px);
+        }
+
+    }
+}

@@ -1,0 +1,244 @@
+@import "util/util";
+$img: "../../images/";
+$bgpanel-color: #B9C8DA;
+$mediumbluebgpanel: #0B3D71;
+$white: #ffffff;
+$primary-color: #0B3D71;
+$secondary-color: #B9C8DA;
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+.racialPanel {
+
+    // margin-top: 34px;
+    // padding: 20px 0 13px;
+    padding-top: clamp(20px, calc(20px + (90 - 20) * ((100vw - 393px) / (1024 - 393))), 90px);
+    padding-bottom: clamp(13px, calc(13px + (88 - 13) * ((100vw - 393px) / (1024 - 393))), 88px);
+    background: #B9C8DA;
+
+    @include breakpoint(large) {
+        // margin-top: 95px;
+        // padding: 90px 0 88px;
+        padding-top: clamp(90px, calc(90px + (150 - 90) * ((100vw - 1024px) / (1728 - 1024))), 150px);
+        padding-bottom: clamp(88px, calc(88px + (120 - 88) * ((100vw - 1024px) / (1728 - 1024))), 120px);
+    }
+
+    // @include breakpoint(llarge) {
+    //     margin-top: 144px;
+    //     padding: 150px 0 120px;
+    // }
+
+    .grid-container {
+        .flex-box {
+            border-top: 10px solid $mediumbluebgpanel;
+
+
+            .flexWrap {
+                padding-bottom: 27px;
+
+                @include breakpoint(medium) {
+                    padding-bottom: 24px;
+                }
+
+                @include breakpoint(large) {
+                    padding-bottom: clamp(24px, calc(24px + (46 - 24) * ((100vw - 1024px) / (1728 - 1024))), 46px);
+                }
+
+                .wraptitle {
+                    width: 100%;
+
+                    h2 {
+                        text-align: left;
+                        margin-top: clamp(10px, calc(10px + (22 - 10) * ((100vw - 393px) / (1024 - 393))), 22px);
+                        line-height: 100%;
+                        letter-spacing: -0.05em;
+                        font-size: clamp(55px, calc(55px + (64 - 55) * ((100vw - 393px) / (1024 - 393))), 64px);
+
+                        @include breakpoint(large) {
+                            // margin-top: 22px; 
+                            font-size: clamp(64px, calc(64px + (85 - 64) * ((100vw - 1024px) / (1728 - 1024))), 85px);
+                        }
+                    }
+
+                }
+            }
+        }
+
+        .contentWrap {
+            max-width: 1120px;
+            width: 100%;
+
+            p {
+                font-family: 'UntitledSerif';
+                font-size: clamp(18px, calc(18px + (22 - 18) * ((100vw - 393px) / (1024 - 393))), 22px);
+                line-height: 123.6%;
+                letter-spacing: -0.01em;
+
+                @include breakpoint(large) {
+                    font-size: clamp(22px, calc(22px + (27 - 22) * ((100vw - 1024px) / (1728 - 1024))), 27px);
+                }
+
+                +p {
+                    margin-top: 30px;
+
+                    @include breakpoint(medium) {
+                        margin-top: 23px;
+                    }
+
+                    @include breakpoint(large) {
+                        margin-top: clamp(23px, calc(23px + (33 - 23) * ((100vw - 1024px) / (1728 - 1024))), 33px);
+                    }
+                }
+            }
+        }
+
+        .twoColContent {
+            margin-top: clamp(5px, calc(5px + (50 - 5) * ((100vw - 393px) / (1023 - 393))), 50px);
+
+            // @include breakpoint(medium) {
+            //     margin-top: 35px;
+            // }
+
+            // @include breakpoint(large) {
+            //     margin-top: 50px;
+            // }
+
+            @include breakpoint(llarge) {
+                margin-top: 35px;
+            }
+
+            .flexrow {
+                //display: flex;
+
+                ul {
+                    //width: 70%;
+                    margin-bottom: 0;
+                }
+
+                .imgwrap {
+                    width: 26%;
+                    margin-top: 9px;
+                    float: right;
+                    margin-left: clamp(58px, calc(58px + (80 - 58) * ((100vw - 393px) / (1023 - 393))), 80px);
+                    margin-right: clamp(0px, calc(0px + (36 - 0) * ((100vw - 393px) / (1023 - 393))), 36px);
+
+                    @include breakpoint(large) {
+                        // margin-left: 80px;
+                        // margin-right: 36px;
+                        margin-top: clamp(6px, calc(6px + (9 - 6) * ((100vw - 1024px) / (1728 - 1024))), 9px);
+                        width: 26%;
+                    }
+
+                    @include breakpoint(llarge) {
+                        margin-left: 58px;
+                        // margin-top: 9px;
+                        margin-right: 0;
+                    }
+
+                    p {
+                        font-family: 'ABCDiatype';
+                        font-style: normal;
+                        line-height: 100%;
+                        // text-align: center;
+                        letter-spacing: -0.025em;
+                        margin-top: 20px;
+                        width: 100%;
+                        padding-left: 0;
+                        font-size: clamp(16px, calc(16px + (18 -16) * ((100vw - 393px) / (1023 - 393))), 16px) !important;
+
+                        @include breakpoint(small only) {
+                            text-align: center;
+                            // font-size: 16px;
+                            padding-inline: 10px;
+                        }
+
+                        @include breakpoint(large) {
+                            font-size: clamp(18px, calc(18px + (20 -18) * ((100vw - 1024px) / (1728 - 1024))), 20px) !important ;
+                        }
+
+                        @include breakpoint(llarge) {
+                            margin-top: 20px;
+                            width: 90%;
+                        }
+                    }
+
+                    &.racialImg {
+                        display: none;
+
+                        @include breakpoint(medium) {
+                            display: block;
+                        }
+                    }
+                }
+
+                .mobileView {
+                    @include breakpoint(medium) {
+                        display: none;
+                    }
+
+                    .imgwrap {
+
+                        padding: 19px;
+                        margin-top: 17px;
+                        width: inherit;
+                        float: inherit;
+                        margin-left: inherit;
+                        padding-bottom: 0;
+                        text-align: center;
+
+                        &.racialImg {
+                            display: block;
+                        }
+                    }
+
+                }
+            }
+
+            ul {
+                margin-left: 0px;
+
+                li {
+                    font-family: 'UntitledSerif';
+                    font-style: normal;
+                    font-size: clamp(18px, calc(18px + (22 - 18) * ((100vw - 393px) / (1024 - 393))), 22px);
+                    line-height: 123.6%;
+                    letter-spacing: -0.01em;
+                    word-break: break-word;
+                    position: relative;
+                    padding-left: clamp(39px, calc(39px + (45 - 39) * ((100vw - 393px) / (1023 - 393))), 45px);
+                    margin-bottom: clamp(12.8px, calc(12.8px + (20.8 - 12.8) * ((100vw - 393px) / (1023 - 393))), 20.8px);
+
+                    @include breakpoint(large) {
+                        // padding-left: 45px;
+                        // margin-bottom: 1.2rem;
+                        font-size: clamp(22px, calc(22px + (27 - 22) * ((100vw - 1024px) / (1728 - 1024))), 27px);
+                    }
+
+
+                    @include breakpoint(large only) {
+                        &:nth-child(3) {
+                            margin-top: 58px;
+                        }
+                    }
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 8px;
+                        left: 0;
+                        background: url('#{$img}settings/racialBullet.svg') no-repeat;
+                        background-size: contain;
+                        height: 18px;
+                        width: 18px;
+                    }
+                }
+            }
+        }
+    }
+}

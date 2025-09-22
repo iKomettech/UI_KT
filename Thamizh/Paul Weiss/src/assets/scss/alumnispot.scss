@@ -1,0 +1,316 @@
+@import "util/util";
+$img: "../../images/";
+$bgpanel-color: #B9C8DA;
+$mediumbluebgpanel: #0B3D71;
+$white: #ffffff;
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+.alumnispot {
+    margin-top: 40px;
+
+    @include breakpoint(medium) {
+        margin-top: 75px;
+    }
+
+    @include breakpoint(large) {
+        margin-top: 100px;
+    }
+
+    @include breakpoint(llarge) {
+        margin-top: 148px;
+    }
+
+    &.alumnispotdetail {
+        margin-top: calc(clamp(2.188rem, 1.27vw + 1.876rem, 2.688rem));
+
+        // @include breakpoint(medium) {
+        //     margin-top: 43px;
+        // }
+
+        @include breakpoint(large) {
+
+            margin-top: calc(clamp(2.688rem, 6.818vw - 1.676rem, 5.688rem));
+        }
+    }
+
+    .grid-container {
+        .flex-box {
+            border-top: 10px solid $bgpanel-color;
+
+            @include breakpoint(small only) {
+                margin-top: 20px;
+            }
+
+            .flexWrap {
+                padding-bottom: calc(clamp(1.563rem, 3.175vw + 0.783rem, 2.813rem));
+
+                // @include breakpoint(large) {
+                //     // display: flex;
+                //     padding-bottom: 45px;
+                // }
+
+                @include breakpoint(llarge) {
+                    // display: flex;
+                    padding-bottom: calc(clamp(1.75rem, 0vw + 1.75rem, 1.75rem));
+                }
+
+                .wraptitle {
+                    width: 100%;
+
+                    h2 {
+                        text-align: left;
+                        margin-top: calc(clamp(0.625rem, 0.794vw + 0.43rem, 0.938rem));
+                        letter-spacing: -0.05em;
+                        font-size: clamp(55px, calc(55px + (64 - 55) * ((100vw - 393px) / (1023 - 393))), 64px);
+                        line-height: 100%;
+
+                        @include breakpoint(large) {
+                            font-size: clamp(64px, calc(64px + (85 - 64) * ((100vw - 1024px) / (1728 - 1024))), 85px);
+                         
+                            margin-top: calc(clamp(0.938rem, 1.42vw + 0.028rem, 1.563rem));
+                        }
+ 
+                    }
+
+
+
+                }
+
+                .gridWrap {
+                    .contentwrap {
+                        margin-top: 10px;
+                        margin-bottom: 0px;
+                        display: grid;
+                        grid-gap: 12px 0px;
+                        margin-left: calc(clamp(0rem, 8.021vw - 1.97rem, 1.875rem));
+
+                        @include breakpoint(small) {
+                            grid-template-columns: repeat(1, 1fr);
+                        }
+
+                        @include breakpoint(medium) {
+                            grid-template-columns: repeat(3, 1fr);
+                            grid-gap: 40px 15px;
+                            margin-left: calc(clamp(1.875rem, 27.451vw - 11.301rem, 6.25rem));
+                            margin-top: 20px;
+                        }
+
+                        @include breakpoint(large) {
+                            grid-gap: 40px 15px;
+                            margin-left: calc(clamp(6.25rem, -9.943vw + 12.614rem, 1.875rem));
+                        }
+
+                        @include breakpoint(xlarge) {
+                            grid-gap: 38px 6px;
+                            max-width: 1350px;
+                            // margin-left: 30px;
+                        }
+
+                        li,
+                        a {
+                            font-family: "UntitledSerif";
+                            font-size: calc(clamp(1.563rem, -0.802vw + 1.76rem, 1.375rem));
+                            text-decoration: none;
+                            cursor: pointer;
+                            font-weight: 400;
+                            grid-gap: 20px 0px;
+                            margin-bottom: 0px;
+                            letter-spacing: -0.25px;
+
+                            @include breakpoint(medium) {
+                                font-size: calc(clamp(1.375rem, 2.353vw + 0.246rem, 1.75rem));
+                                line-height: 22px;
+                            }
+
+                            @include breakpoint(large) {
+                                font-size: calc(clamp(1.75rem, 1.705vw + 0.659rem, 2.5rem));
+                                line-height: 38px;
+                            }
+
+                            
+                        }
+                    }
+                }
+            }
+        }
+
+        .peaple {
+            .flexAlumni {
+                display: flex;
+                flex-wrap: wrap;
+                row-gap: 20px;
+
+                // @include breakpoint(llarge) {
+                // }
+
+                .alumniCard {
+                    position: relative;
+                    overflow: hidden;
+                    width: 100%;
+
+                    @media (min-width:601px) and (max-width:1023px) {
+                        width: 49.5%;
+                        margin-right: 1%;
+                    }
+
+
+
+                    @include breakpoint(large) {
+                        width: 32%;
+                        margin-right: 2%;
+                    }
+
+                    @include breakpoint(llarge) {
+                        width: 32.431%;
+                        margin-right: 1.35%;
+                    }
+
+                    .insideCard {
+                        img {
+                            width: 100%;
+                            transition: all 0.75s;
+                            filter: grayscale(1);
+                            &.nogrey{
+                                filter: grayscale(0);
+                            }
+                        }
+
+                        .alumniName {
+                            position: absolute;
+                            bottom: 0;
+                            z-index: 1;
+                            padding: 0 25px 18px;
+
+                            p {
+                                font-weight: 400;
+                                letter-spacing: -0.025em;
+                                color: #FFFFFF;
+                                font-family: "UntitledSerif";
+                                font-size: calc(clamp(1.875rem, -0.789vw + 2.069rem, 1.625rem));
+                                line-height: 97.1%;
+                                /* or 29px */
+                                letter-spacing: -0.025em;
+
+                                @include breakpoint(large) {
+                                    font-size: calc(clamp(1.875rem, 1.42vw + 0.966rem, 2.5rem)); 
+                                }
+
+                                @media (min-width:901px) {
+                                    font-size: calc(clamp(1.625rem, 3.279vw - 0.221rem, 1.875rem)); 
+                                }
+ 
+
+
+                            }
+                        }
+
+                        .countryTitle {
+                            position: relative;
+                            z-index: 1;
+                            // padding: 27px 17px 0;
+                            padding-bottom: 0;
+                            padding-top: calc(clamp(1.688rem, 0vw + 1.688rem, 1.688rem));
+                            padding-inline: calc(clamp(1.063rem, 0vw + 1.063rem, 1.063rem));
+
+                            @include breakpoint(large) {
+                                // padding: 33px 25px 0;
+                                padding-top: calc(clamp(1.688rem, 0.852vw + 1.142rem, 2.063rem));
+                                padding-inline: calc(clamp(1.063rem, 1.136vw + 0.335rem, 1.563rem));
+                            }
+
+                            h4 {
+                                width: 150px;
+                                height: 88px;
+                                font-weight: 700; 
+                                letter-spacing: -0.06em;
+                                color: #FFFFFF;  
+                                font-size: clamp(55px, calc(55px + (64 - 55) * ((100vw - 393px) / (1023 - 393))), 64px);
+                                line-height: 100%;
+                            
+                                @include breakpoint(large) {
+                                    font-size: clamp(64px, calc(64px + (85 - 64) * ((100vw - 1024px) / (1728 - 1024))), 85px);
+                                }
+
+                                @include breakpoint(llarge) {
+                                    width: 232px;
+                                    height: 136px;
+                                    font-weight: 700;  
+                                    letter-spacing: -0.06em;
+                                }
+                            }
+                        }
+                    }
+
+                    &:nth-child(2n + 2) {
+                        @media (min-width:601px) and (max-width:1023px) {
+                            margin-right: 0;
+                        }
+                    }
+
+                    &:nth-child(3n + 3) {
+                        @include breakpoint(large) {
+                            margin-right: 0;
+                        }
+                    }
+
+                    &::after {
+                        content: '';
+                        background: linear-gradient(180deg, rgba(252, 253, 252, 0) 0%, rgba(0, 0, 0, 1) 90%);
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        opacity: .3;
+                        visibility: visible;
+                        top: 0;
+                        left: 0;
+                        cursor: pointer;
+                        transition: opacity 0.2s ease;
+                    }
+
+                    &:hover {
+                        &::after {
+                            visibility: hidden;
+                            opacity: 0;
+                        }
+
+                        img {
+                            transition: all 0.75s;
+                            transform: scale(1.1);
+                        }
+                    }
+                }
+
+                .countryCard {
+                    background: #0B3D71;
+                    color: #B9C8DA;
+
+                    @media screen and (max-width:500px) {
+                        height: clamp(19.75rem, calc(73.714vw + 2.473rem), 27.813rem);
+                    }
+
+                    &::after {
+                        content: unset;
+                    }
+                }
+            }
+
+
+        }
+
+        .allresult {
+            margin-top: 20px;
+
+            @include breakpoint(small only) {
+                padding-bottom: 2px;
+                padding-top: 6px;
+            }
+        }
+    }
+}

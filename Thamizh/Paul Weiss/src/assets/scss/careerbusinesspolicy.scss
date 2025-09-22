@@ -1,0 +1,143 @@
+@import "util/util";
+$white: #ffffff;
+$primary-color: #001F3F;
+$secondary-color: #B9C8DA;
+$img: "../../images/";
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+.businesspolicy {
+    margin-top: calc(clamp(2.5rem, 7.715vw + 0.605rem, 8.938rem));
+    padding-top:calc(clamp(2.5rem, 7.491vw + 0.66rem, 9.45rem));
+    padding-bottom: calc(clamp(2.5rem, 7.491vw + 0.66rem, 8.75rem));
+    background: #b9c8db;
+    .grid-container {
+        &::before {
+            content: '';
+            background: #0b3d70;
+            width: 100%;
+            display: block;
+            height: 10px;
+            position: relative;
+        }
+
+        .titlewrap {
+            padding-top: 15px;
+            padding-bottom: calc(clamp(1.25rem, 2.097vw + 0.735rem, 3rem));
+            h2 {
+                font-style: normal;
+                font-weight: 700; 
+                letter-spacing: -0.05em;
+                font-size: clamp(40px, calc(40px + (64 - 40) * ((100vw - 393px) / (1023 - 393))), 64px);
+                line-height: 100%;
+            
+                @include breakpoint(large) {
+                    font-size: clamp(64px, calc(64px + (85 - 64) * ((100vw - 1024px) / (1728 - 1024))), 85px);                
+                }
+            }
+        }
+
+        .policyContent {
+            max-width: 1120px;
+            width: 100%;
+
+            h3 {
+                font-family: 'UntitledSerif';
+                font-style: normal;
+                font-weight: 700;
+                font-size: clamp(22px, calc(22px + (27 - 22) * ((100vw - 393px) / (1023 - 393))), 27px); 
+                // line-height: 100%;
+                line-height: 116.6%;
+                letter-spacing: -0.01em;
+                color: #001F3F;
+
+                // @include breakpoint(large) {
+                //     font-size: 27px;
+                // }
+
+                +p {
+                    margin-top: calc(clamp(1.25rem, 0.15vw + 1.213rem, 1.375rem));
+                }
+            }
+
+            p {
+                font-family: 'UntitledSerif';
+                font-style: normal;
+                font-weight: 400; 
+                line-height: 116.6%;
+                // line-height: 100%;
+                letter-spacing: -0.01em;
+                color: #001F3F;
+
+                font-size: clamp(18px, calc(18px + (22 - 18) * ((100vw - 393px) / (1023 - 393))), 22px);
+
+                @include breakpoint(large) {
+                    font-size: clamp(22px, calc(22px + (22 - 22) * ((100vw - 1024px) / (1728 - 1024))), 22px);
+                }
+
+                +h3 {
+                    margin-top: calc(clamp(2rem, 0.599vw + 1.853rem, 2.5rem));
+                }
+
+            }
+
+            ul {
+                margin-left: calc(clamp(0rem, 1.124vw - 0.276rem, 0.938rem));
+                margin-top: calc(clamp(2.063rem, 0.599vw + 1.915rem, 2.563rem));
+
+                li {
+                    font-family: 'UntitledSerif';
+                    font-style: normal;
+                    font-weight: 400; 
+                    line-height: 100%;
+                    // line-height: 123.6%;
+                    letter-spacing: -0.01em;
+                    color: #001F3F;
+                    position: relative;
+                    padding-left: 45px;
+                    margin-bottom: calc(clamp(2.313rem, -0.674vw + 2.478rem, 1.75rem));
+
+                    font-size: clamp(18px, calc(18px + (22 - 18) * ((100vw - 393px) / (1023 - 393))), 22px);
+
+                    @include breakpoint(large) {
+                        font-size: clamp(22px, calc(22px + (27 - 22) * ((100vw - 1024px) / (1728 - 1024))), 27px);
+                    }
+
+                    a {
+                        text-decoration: underline;
+                    }
+                    &:last-child{
+                        margin-bottom: 0;
+                    }
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        height: 20px;
+                        width: 20px;
+                        background: url('#{$img}settings/racialBullet.svg') no-repeat;
+                        background-size: contain;
+                        left: 0;
+                        top: 5px;
+                        @include breakpoint(llarge) { 
+                            top:0px;
+                        }
+                    }
+                }
+
+                +p {
+                    margin-top:calc(clamp(2rem, 0.824vw + 1.798rem, 2.688rem));                    
+                }
+            }
+        }
+    }
+}
+footer {
+    margin-top: 0px !important;
+}

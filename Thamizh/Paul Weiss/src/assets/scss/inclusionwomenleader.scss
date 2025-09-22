@@ -1,0 +1,216 @@
+@import "util/util";
+$img: "../../images/";
+$bgpanel-color: #B9C8DA;
+$mediumbluebgpanel: #0B3D71;
+$white: #ffffff;
+$primary-color: #0B3D71;
+$secondary-color: #B9C8DA;
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+
+
+.inclusionwomenleader {
+    margin-top: 38px;
+
+    @include breakpoint(medium) {
+        margin-top: 70px;
+    }
+    @include breakpoint(large) {
+        margin-top: 97px;
+    }
+    @include breakpoint(llarge) {
+        margin-top: 142px;
+    }
+
+    .grid-container {
+        .flex-box {
+            border-top: 10px solid $bgpanel-color;
+
+            @include breakpoint(small only) {
+                margin-top: 20px;
+            }
+
+            .flexWrap {
+                padding-bottom: 25px;
+
+                // @include breakpoint(medium) {
+                //     padding-bottom: 25px;
+                // }
+
+                .wraptitle {
+                    width: 100%;
+
+                    h2 {
+                        text-align: left;
+                        margin-top: calc(clamp(0.625rem, 0.794vw + 0.43rem, 0.938rem));
+                        line-height: 100%;
+                        letter-spacing: -0.05em;
+                        font-size: clamp(55px, calc(55px + (64 - 55) * ((100vw - 393px) / (1024 - 393))), 64px) ;
+                        @include breakpoint(large) {   
+                          font-size: clamp(64px, calc(64px + (85 - 64) * ((100vw - 1024px) / (1728 - 1024))), 85px) ;
+                        //   margin-top: 15px;
+                        }
+                    }
+
+                }
+            }
+        }
+
+        .twoColumn {
+            @include breakpoint(medium) {
+                display: flex;
+                margin-top: 10px;
+            }
+
+            @include breakpoint(large) {
+                margin-top: calc(clamp(0.438rem, 3.977vw - 2.108rem, 2.188rem));
+            }
+
+            // @include breakpoint(llarge) {
+            //     margin-top: 35px;
+            // }
+
+            .leftBoxwrap {
+                @include breakpoint(medium) {
+                    width: 36%;
+                    margin-right: 2%;
+
+                }
+
+                @include breakpoint(llarge) {
+                    width: 28%;
+                }
+                .imgWrap{
+                    @include breakpoint(small only){
+                        max-width: 397px;
+                        width: 100%;
+                        margin: 0 auto;
+                    }
+                }
+                .contentWrap {
+                    h3 {
+                        font-family: 'ABCDiatype';
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 60px;
+                        line-height: 97.1%;
+                        margin-bottom: 0;
+                    }
+
+                    h4 {
+                        font-family: 'ABCDiatype';
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 36px;
+                        line-height: 97.1%;
+                        /* or 35px */
+                        letter-spacing: -0.025em;
+                        margin-top: 15px;
+                    }
+                }
+            }
+
+            .rightContentWrap {
+                margin-top: 34px;
+
+                @include breakpoint(medium) {
+                    width: 62%;
+                    margin-top: -7px;
+                }
+
+                @include breakpoint(llarge) {
+                    width: 68%;
+                    margin-top: -10px;
+                }
+
+                .contentWrap {
+                    h4 {
+                        font-family: 'ABCDiatype';
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 30px;
+                        line-height: 97.1%;
+                        /* or 29px */
+                        letter-spacing: -0.01em;
+                        margin-bottom: 0px;
+                    }
+
+                    p {
+                        font-family: 'UntitledSerif';
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: clamp(18px, calc(18px + (22 - 18) * ((100vw - 393px) / (1024 - 393))), 22px) ;
+                        line-height: 123.6%;
+                        /* or 29px */
+                        letter-spacing: -0.01em;
+                        margin-bottom: 0;
+
+                        @include breakpoint(large) {
+                            font-size: clamp(22px, calc(22px + (27 - 22) * ((100vw - 1024px) / (1728 - 1024))), 27px) ;
+                        }
+
+                        +p {
+                            margin-top: 23px;
+                        }
+                    }
+
+                    ul {
+                        margin-top: 29px;
+
+                        li {
+                            font-family: 'UntitledSerif';
+                            font-style: normal;
+                            font-weight: 400;
+                            font-size: 30px;
+                            line-height: 97.1%;
+                            /* or 29px */
+                            letter-spacing: -0.025em;
+                            padding-left: 25px;
+                            margin-bottom: 15px;
+                            position: relative;
+
+                            &::before {
+                                content: "";
+                                position: absolute;
+                                left: 0;
+                                top: 4px;
+                                width: 8px;
+                                height: 8px;
+                                margin-right: 0;
+                                background-color: $primary-color;
+                                border-radius: 50%;
+
+                                @include breakpoint(large) {
+                                    top: calc(clamp(0.25rem, 0.852vw - 0.295rem, 0.625rem));
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .frameImg {
+            text-align: center;
+            margin-top: 78px;
+
+            p {
+                font-family: 'ABCDiatype';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 100%;
+                text-align: center;
+                letter-spacing: -0.025em;
+                margin-top: 15px;
+            }
+        }
+    }
+}

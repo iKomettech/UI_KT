@@ -1,0 +1,217 @@
+$primary-color: #001F3F;
+$secondary-color: #B9C8DA;
+@import "util/util";
+$img: "../../images/";
+$bgpanel-color: #B9C8DA;
+$mediumbluebgpanel: #0B3D71;
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+.summerprogram {
+    margin-top: calc(clamp(2.5rem, 7.566vw + 0.642rem, 8.813rem));   
+    .grid-container {
+        .flex-box {
+            border-top: 10px solid $bgpanel-color;
+
+            .flexWrap {
+                padding-bottom: calc(clamp(1.313rem, 1.124vw + 1.037rem, 2.25rem));
+                .wraptitle {
+                    width: 100%;
+                    h2 {
+                        text-align: left;
+                        margin-top: calc(clamp(0.625rem, 1.124vw + 0.349rem, 1.563rem));  
+                        letter-spacing: -0.04em;
+                        font-size: clamp(55px, calc(55px + (64 - 55) * ((100vw - 393px) / (1023 - 393))), 64px);
+                        line-height: 100%;
+                        @include breakpoint(large) {
+                            font-size: clamp(64px, calc(64px + (85 - 64) * ((100vw - 1024px) / (1728 - 1024))), 85px);                              
+                        }
+                    }
+
+
+
+                }
+
+                .gridWrap {
+                    .contentwrap {
+                        margin-top: 10px;
+                        margin-bottom: 0px;
+                        display: grid;
+                        grid-gap: 12px 0px;
+                        margin-left: 0px;
+
+                        @include breakpoint(small) {
+                            grid-template-columns: repeat(1, 1fr);
+                        }
+
+                        @include breakpoint(medium) {
+                            grid-template-columns: repeat(3, 1fr);
+                            grid-gap: 40px 15px;
+                            margin-left: 30px;
+                            margin-top: 20px;
+                        }
+
+                        @include breakpoint(large) {                           
+                            margin-left: 100px;
+                        }
+
+                        @include breakpoint(xlarge) {
+                            grid-gap: 38px 6px;
+                            max-width: 1350px;                          
+                        }
+
+                        li,
+                        a {
+                            font-family: "UntitledSerif";
+                            font-size: clamp(25px, calc(25px + (28 - 25) * ((100vw - 393px) / (1023 - 393))), 28px);                        
+                            line-height: 100%;                        
+                            text-decoration: none;
+                            cursor: pointer;
+                            font-weight: 400;
+                            grid-gap: 20px 0px;
+                            margin-bottom: 0px;
+                            letter-spacing: -0.25px;                            
+                            @include breakpoint(large) {
+                                font-size: clamp(28px, calc(28px + (40 - 28) * ((100vw - 1024px) / (1728 - 1024))), 40px);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .programcontentWrap {
+            max-width: 1117px;
+            width: 100%;
+            h3 {
+                font-family: 'ABCDiatype';
+                font-style: normal;
+                font-weight: 700; 
+                /* or 58px */
+                letter-spacing: -0.025em;
+                font-size: clamp(40px, calc(40px + (50 - 40) * ((100vw - 393px) / (1023 - 393))), 50px);
+                line-height: 100%;
+
+                @include breakpoint(large) {
+                    font-size: clamp(50px, calc(50px + (60 - 50) * ((100vw - 1024px) / (1728 - 1024))), 60px);
+                }
+
+                +p {
+                    margin-top: 31px;
+                }
+            }
+
+            p {
+                font-family: 'UntitledSerif';
+                font-style: normal;
+                font-weight: 400; 
+                line-height: 123.6%;
+                /* or 26px */
+                letter-spacing: -0.01em;
+                font-size: clamp(18px, calc(18px + (22 - 18) * ((100vw - 393px) / (1023 - 393))), 22px);
+                @include breakpoint(large) {
+                    font-size: clamp(22px, calc(22px + (27 - 22) * ((100vw - 1024px) / (1728 - 1024))), 27px);
+                }
+            
+
+                +p {
+                    margin-top: calc(clamp(1.25rem, 0.824vw + 1.048rem, 1.938rem));
+                }
+            }
+
+            ul {
+
+                margin-left: 15px;
+                @include breakpoint(large){
+                    margin-top: 25px;
+                    margin-left: 0;
+                }
+                @include breakpoint(llarge){                   
+                    margin-left: 15px;
+                }
+                li {
+                    font-family: 'UntitledSerif';
+                    font-style: normal;
+                    font-weight: 400; 
+                    line-height: 116.6%;
+                    padding-left: 45px;
+                    /* or 26px */
+                    letter-spacing: -0.01em;
+                    position: relative;
+                    font-size: clamp(18px, calc(18px + (22 - 18) * ((100vw - 393px) / (1023 - 393))), 22px);   
+                    @include breakpoint(large) { 
+                        margin-bottom: 30px;
+                    }
+                    // @include breakpoint(llarge) {
+                    //     // font-size: 27px;
+                    //     margin-bottom: 50px;
+                    // }
+
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 3px;
+                        left: 0;
+                        background: url('#{$img}settings/squareBullet.svg') no-repeat;
+                        background-size: contain;
+                        height: 18px;
+                        width: 18px;
+                    }
+                }
+            }
+
+            +.programcontentWrap {
+                margin-top: calc(clamp(1.25rem, 7.94vw - 0.7rem, 7.875rem));
+            }
+
+            a {
+                font-family: 'UntitledSerif';
+                font-style: normal;
+                font-weight: 700;
+                font-size: clamp(25px, calc(25px + (25 - 25) * ((100vw - 393px) / (1023 - 393))), 25px);
+                line-height: 97.1%;
+                /* or 24px */
+                text-decoration: none;
+                letter-spacing: -0.025em;
+                position: relative;
+
+                &::after {
+                    content: '';
+                    position: relative;
+                    right: -24px;
+                    background: url("#{$img}settings/arrow-blue.svg") no-repeat;
+                    width: 27px;
+                    display: inline-block;
+                    height: 15px;
+                }
+            }
+        }
+
+        .imgWrapFull {
+            margin-top: calc(clamp(2.188rem, 1.873vw + 1.728rem, 3.75rem));
+            @include breakpoint(small only){
+                margin-inline: -20px;
+            }
+
+            img{
+                @media (max-width:479px) {
+                    height: 90px;
+                }
+            }          
+            +.programcontentWrap {
+                margin-top: calc(clamp(2.5rem, 2.247vw + 1.948rem, 4.375rem));
+            }
+        }
+    }
+}
+
+
+
+
+ 

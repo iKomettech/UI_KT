@@ -1,0 +1,172 @@
+$primary-color: #001F3F;
+$secondary-color: #B9C8DA;
+@import "util/util";
+$img: "../../images/";
+$bgpanel-color: #B9C8DA;
+$mediumbluebgpanel: #0B3D71;
+$medium-color: #0B3D71;
+$primarybgcolor: #001F3F;
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+.careerColleague {
+    background-color: $primarybgcolor;
+    color: white;
+    padding-bottom: calc(clamp(2.5rem, 8.24vw + 0.476rem, 9.375rem));
+    padding-top: calc(clamp(2.5rem, 8.24vw + 0.476rem, 9.375rem));
+    margin-top: calc(clamp(2.5rem, 8.24vw + 0.476rem, 9.375rem));  
+    .grid-container {
+        .flex-box {
+            border-top: 10px solid $medium-color;
+
+            .flexWrap {
+                padding-bottom: calc(clamp(1.313rem, 0.599vw + 1.165rem, 1.813rem));               
+
+                .wraptitle {
+                    width: 100%;
+
+                    h2 {
+                        text-align: left;
+                        margin-top: 17px; 
+                        letter-spacing: -0.04em;
+                        color: #fff;
+                        font-size: clamp(55px, calc(55px + (64 - 55) * ((100vw - 393px) / (1023 - 393))), 64px);
+                        line-height: 100%;
+                    
+                        @include breakpoint(large) {
+                            font-size: clamp(64px, calc(64px + (85 - 64) * ((100vw - 1024px) / (1728 - 1024))), 85px);
+                        }                        
+                    }
+
+
+
+                }
+            }
+        }
+
+
+
+
+        .flexbox {
+            display: flex; 
+
+            @include breakpoint(small only) {
+                flex-direction: column-reverse;
+                gap: 40px;
+            }
+
+            @include breakpoint(large) {
+                margin-top: calc(clamp(0.938rem, 5.398vw - 2.517rem, 3.313rem));
+            }
+
+            .boxContainer {
+                background: $medium-color;
+                width: 100%;
+
+                @include breakpoint(medium) {
+                    width: 53.25%;
+                    margin-right: 4.75%;
+                }
+
+                @include breakpoint(llarge) {
+                    width: 48.25%;
+                    margin-right: 1.75%;
+                }
+
+                .insideBox {                    
+                    padding-top:calc(clamp(1.188rem, 3.071vw + 0.433rem, 3.75rem)) ;
+                    padding-bottom:calc(clamp(1.188rem, 3.071vw + 0.433rem, 3.75rem)) ;
+                    padding-left: calc(clamp(1.188rem, 1.873vw + 0.728rem, 2.75rem));
+                    padding-right:calc(clamp(1.188rem, 0.824vw + 0.985rem, 1.875rem)) ;
+
+                    h3 {
+                        font-family: 'ABCDiatype';
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 30px;
+                        line-height: 97.1%;
+                        color: #FFFFFF;
+                        margin-bottom: calc(clamp(2rem, -1.348vw + 2.331rem, 0.875rem));
+                        font-size: clamp(30px, calc(30px + (40 - 30) * ((100vw - 393px) / (1023 - 393))), 40px); 
+        
+                        @include breakpoint(large) {
+                            font-size: clamp(40px, calc(40px + (60 - 40) * ((100vw - 1024px) / (1728 - 1024))), 60px);
+                        }
+                    }
+
+                    p { 
+                        font-family: 'ABCDiatype';
+                        line-height: 97.3%;
+                        letter-spacing: -0.025em;
+                        font-size: clamp(18px, calc(18px + (21 - 18) * ((100vw - 393px) / (1023 - 393))), 21px);
+
+                        @include breakpoint(large) {
+                            font-size: clamp(21px, calc(21px + (34 - 21) * ((100vw - 1024px) / (1728 - 1024))), 34px);                       
+                            line-height: 103.6%;
+                            letter-spacing: 0; 
+                        }
+ 
+                    }
+                }
+
+                .colleagueCta {
+                    a {
+                        display: inline-block;
+                        width: 100%;
+                        background: $bgpanel-color;
+                        font-family: 'ABCDiatype';
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: clamp(20px, calc(20px + (25 - 20) * ((100vw - 393px) / (1023 - 393))), 25px);
+                        line-height: 97.1%;
+                        /* or 24px */
+                        letter-spacing: -0.025em;
+                        color: #001F3F;
+                        padding: 20px 20px 15px;
+                        transition: all ease-in-out .2s;
+                        border: 1px solid $bgpanel-color;                       
+                        &:hover{
+                            color: #fff;
+                            background: #001F3F;
+                            transition: all ease-in-out .2s;
+                            text-decoration: none;
+                        }
+                        &:focus, &:focus-visible{
+                            outline-color: #B9C8DA;
+                            outline-width: 2px;
+                        }
+                    }
+                }
+            }
+
+            .imgContainer {
+                width: 100%;
+
+                @include breakpoint(medium) {
+                    width: 38.5%;
+                    margin-top: 22px;
+                }
+
+                @include breakpoint(llarge) {
+                    width: 49%;
+                    text-align: center;
+                    margin-top: 60px;
+                }
+                img{
+                    @include breakpoint(small only){
+                        width: 100%;
+                    }
+                    @include breakpoint(large only){
+                        width: 398px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,125 @@
+@import "util/util";
+$img: "../../images/";
+$bgpanel-color: #B9C8DA;
+$mediumbluebgpanel: #0B3D71;
+$white: #ffffff;
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+
+.firmBulletPanel {
+    margin-top: 35px;
+    @include breakpoint(medium) {
+        margin-top: 120px;
+    }
+    @include breakpoint(llarge) {
+        margin-top: 142px;
+    }
+
+    .grid-container {
+        .flex-box {
+            border-top: 10px solid #B9C8DA;
+
+            @include breakpoint(small only) {
+                margin-top: 20px;
+            }
+
+            .flexWrap {
+                padding-bottom: calc(clamp(1.625rem, 0.317vw + 1.547rem, 1.75rem));
+                // @include breakpoint(medium) {
+                //     padding-bottom: 28px;
+                // }
+                @include breakpoint(large) {
+                    padding-bottom: calc(clamp(1.75rem, 3.835vw - 0.705rem, 3.438rem));
+                }
+                .wraptitle {
+                    width: 100%;
+
+                    h2 {
+                        text-align: left;
+                        margin-top: calc(clamp(0.625rem, 2.381vw + 0.04rem, 1.563rem));                      
+                        line-height: 100%;
+                        letter-spacing: -0.05em;
+                        font-size: clamp(55px, calc(55px + (64 - 55) * ((100vw - 393px) / (1024 - 393))), 64px) ;                  
+                        // @include breakpoint(medium) {                         
+                        //     margin-top: 25px; 
+                        // }
+                        @include breakpoint(large) {
+                            font-size: clamp(64px, calc(64px + (85 - 64) * ((100vw - 1024px) / (1728 - 1024))), 85px) ;
+                        }
+                    }
+
+                }
+
+
+            }
+        }
+
+        .contentwrap {
+            p {
+                font-family: 'UntitledSerif';
+                font-style: normal;
+                font-weight: 400;
+                letter-spacing: -0.01em;
+                word-break: break-word;               
+                font-size: clamp(18px, calc(18px + (22 - 18) * ((100vw - 393px) / (1024 - 393))), 22px) ;
+                line-height: 123.6%;
+                @include breakpoint(large) {
+                    font-size: clamp(22px, calc(22px + (27 - 22) * ((100vw - 1024px) / (1728 - 1024))), 27px) ;
+                }          
+                +p {
+                    margin-top: 24px;
+                }
+            }
+
+            ul {
+                margin-left: 0;
+                margin-top: calc(clamp(0.625rem, 4.762vw - 0.545rem, 2.5rem));
+                // @include breakpoint(medium) {
+                //     margin-top: 40px;
+                // }
+                @include breakpoint(xxlarge) {
+                    margin-top: 37px;
+                }
+
+                li {
+                    font-family: 'UntitledSerif';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 18px;
+                    line-height: 123.6%;
+                    letter-spacing: -0.01em;
+                    word-break: break-word;
+                    position: relative;
+                    padding-left: 38px;
+                    margin-bottom: .9rem;
+                    font-size: clamp(18px, calc(18px + (22 - 18) * ((100vw - 393px) / (1024 - 393))), 22px) ;               
+                    @include breakpoint(large) {
+                        font-size: clamp(22px, calc(22px + (27 - 22) * ((100vw - 1024px) / (1728 - 1024))), 27px) ;
+                    }  
+                  
+                    @include breakpoint(llarge) {                       
+                        margin-bottom: .55rem;
+                        line-height: 33px;
+                    }
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 8px;
+                        left: 0;
+                        background: url('#{$img}settings/squareBullet.svg') no-repeat;
+                        height: 18px;
+                        width: 18px;
+                    }
+                }
+            }
+        }
+    }
+}

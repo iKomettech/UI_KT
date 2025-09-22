@@ -1,0 +1,199 @@
+$primary-color: #001F3F;
+$secondary-color: #B9C8DA;
+@import "util/util";
+$img: "../../images/";
+$bgpanel-color: #B9C8DA;
+$mediumbluebgpanel: #0B3D71;
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+.businesscontact {
+    margin-top:calc(clamp(2.5rem, 8.24vw + 0.476rem, 9.375rem));  
+
+    .grid-container {
+        .flexColunm {
+            @include breakpoint(medium) {
+                display: flex;
+            }
+
+            .generalContent {
+                @include breakpoint(medium) {
+                    width: 55%;
+                    margin-right: 5%;
+                }
+
+                @include breakpoint(large) {
+                    width: 53%;
+                    margin-right: 8%;
+                }
+
+                @include breakpoint(xlarge) {
+                    width: 69%;
+                    margin-right: 5%;
+                }
+
+                h2 {
+                    font-family: 'ABCDiatype';
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: 100%;
+                    /* or 58px */
+                    letter-spacing: -0.025em;
+                    color: #001F3F;
+                    margin-bottom: 20px;
+                    font-size: clamp(40px, calc(40px + (50 - 40) * ((100vw - 393px) / (1023 - 393))), 50px); 
+                    @include breakpoint(large) {
+                        font-size: clamp(50px, calc(50px + (60 - 50) * ((100vw - 1024px) / (1728 - 1024))), 60px);                     
+                    }
+                }
+
+                p {
+                    font-family: 'UntitledSerif';
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 123.6%;
+                    letter-spacing: -0.01em;
+                    color: #001F3F;
+                    font-size: clamp(18px, calc(18px + (22 - 18) * ((100vw - 393px) / (1023 - 393))), 22px);
+                    @include breakpoint(large) {
+                        font-size: clamp(22px, calc(22px + (27 - 22) * ((100vw - 1024px) / (1728 - 1024))), 27px);
+                    }
+                }
+            }
+
+            .contactInfo {
+                @include breakpoint(small only) {
+                    margin-top: 34px;
+                }
+
+                @include breakpoint(medium) {
+                    width: 45%;
+                }
+
+                @include breakpoint(large) {
+                    width: 39%;
+                }
+
+                @include breakpoint(xlarge) {
+                    width: 26%;
+                }
+
+                .info {
+                    padding: calc(clamp(1.25rem, 1.498vw + 0.882rem, 2.5rem));                    
+                    background: $bgpanel-color;
+
+                    .contacttitle {
+                        border-top: 10px solid $mediumbluebgpanel;
+
+                        h3 {
+                            font-family: 'ABCDiatype';
+                            font-style: normal;
+                            font-weight: 700; 
+                            line-height: 97.1%;
+                            letter-spacing: -0.025em;
+                            color: #001F3F;
+                            margin-top: 10px;
+                            font-size: clamp(25px, calc(25px + (30 - 25) * ((100vw - 393px) / (1023 - 393))), 30px); 
+
+                            @include breakpoint(large) {
+                                font-size: clamp(30px, calc(30px + (40 - 30) * ((100vw - 1024px) / (1728 - 1024))), 40px);
+                            }
+                        }
+                    }
+
+                    p {
+                        font-family: 'ABCDiatype';
+                        font-weight: 400; 
+                        line-height: 100%;
+                        letter-spacing: -0.025em;
+                        font-size: clamp(18px, calc(18px + (20 - 18) * ((100vw - 393px) / (1023 - 393))), 20px);
+                       
+                    }
+
+                    .infoBlock {
+                        margin-top: 27px;
+
+                        .nameBlock {
+                            p {
+                                font-family: 'ABCDiatype';
+                                font-style: normal;
+                                font-weight: 700;
+                                font-size: clamp(22px, calc(22px + (22 - 22) * ((100vw - 393px) / (1728 - 393))), 22px);
+                                line-height: 97.1%;
+                                /* or 24px */
+                                letter-spacing: -0.025em;
+                                color: #001F3F;
+
+                                // @include breakpoint(large) {
+                                //     font-size: 22px;
+                                // }
+                            }
+                        }
+
+                        .positionBlock {
+                            margin-top: 10px;
+
+                            p {
+                                font-family: 'ABCDiatype';
+                                font-style: normal;
+                                font-weight: 700;
+                                font-size: clamp(22px, calc(22px + (22 - 22) * ((100vw - 393px) / (1728 - 393))), 22px);
+                                line-height: 100%;
+                                letter-spacing: -0.025em;
+                                color: #001F3F;
+
+                            }
+                        }
+
+                        .blockAddress {
+                            p {
+                                font-family: 'ABCDiatype';
+                                font-style: normal;
+                                font-weight: 400;
+                                font-size: 18px;
+                                line-height: 116.6%;
+                                /* or 23px */
+                                letter-spacing: -0.025em;
+                                color: #001F3F;
+
+                                @include breakpoint(large) {
+                                    font-size: 20px;
+                                }
+                            }
+                        }
+
+                        .emailBlock {
+                            margin-top: 14px;
+
+                            p,
+                            a {
+                                font-family: 'ABCDiatype';
+                                font-style: normal;
+                                font-weight: 400;
+                                font-size: clamp(18px, calc(18px + (20 - 18) * ((100vw - 393px) / (1023 - 393))), 20px);
+                                line-height: 116.6%;
+                                color: #001F3F;
+                                /* or 23px */
+                                letter-spacing: -0.025em;
+                                margin-bottom: 0;
+                                text-decoration: none;
+                                &:hover{
+                                    text-decoration: underline;
+                                }
+                                // @include breakpoint(large) {
+                                //     font-size: 22px;
+                                // }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

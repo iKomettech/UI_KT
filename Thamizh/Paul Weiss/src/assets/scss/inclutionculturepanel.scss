@@ -1,0 +1,208 @@
+@import "util/util";
+$img: "../../images/";
+$bgpanel-color: #B9C8DA;
+$mediumbluebgpanel: #0B3D71;
+$white: #ffffff;
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+.cultureInclusionPanel {
+    margin-top: calc(clamp(2.375rem, 9.841vw - 0.042rem, 6.25rem));
+
+    @include breakpoint(large) {
+        margin-top: calc(clamp(6.25rem, 8.523vw + 0.795rem, 10rem));
+    }
+
+    // @include breakpoint(llarge) {
+    //     margin-top: 160px;
+    // }
+
+    .grid-container {
+        .flex-box {
+            border-top: 10px solid $bgpanel-color;
+
+            @include breakpoint(small only) {
+                margin-top: 20px;
+            }
+
+            .flexWrap {
+                padding-bottom: 25px;
+
+                @include breakpoint(medium) {
+                    padding-bottom: 15px;
+                }
+
+                @include breakpoint(large) {
+                    padding-bottom: calc(clamp(0.938rem, 1.42vw + 0.028rem, 1.563rem));
+                }
+
+                .wraptitle {
+                    width: 100%;
+
+                    h2 {
+                        text-align: left;
+                        margin-top: 10px;
+                        font-size: clamp(55px, calc(55px + (64 - 55) * ((100vw - 393px) / (1024 - 393))), 64px) ;
+                        line-height: 100%;
+                        letter-spacing: -0.05em;
+
+                        @include breakpoint(large) {
+                            font-size: clamp(64px, calc(64px + (85 - 64) * ((100vw - 1024px) / (1728 - 1024))), 85px) ;
+                            margin-top: 15px;
+                        }
+                    }
+
+                }
+            }
+        }
+
+        .contentwrap {
+            max-width: 1120px;
+            width: 100%;
+
+            p {
+                font-family: 'UntitledSerif';
+                font-style: normal;
+                font-weight: 400;
+                font-size: clamp(18px, calc(18px + (22 - 18) * ((100vw - 393px) / (1024 - 393))), 22px) ;
+                line-height: 123.6%;
+                letter-spacing: -0.01em;
+                word-break: break-word;
+
+                +p {
+                    margin-top: 30px;
+                }
+
+                @include breakpoint(large) {
+                    font-size: clamp(22px, calc(22px + (27 - 22) * ((100vw - 1024px) / (1728 - 1024))), 27px) ;
+                }
+            }
+        }
+    }
+}
+
+
+.inclutionculturepanel {
+    margin-top: 35px;
+
+    @include breakpoint(large) {
+        margin-top: calc(clamp(2.5rem, 4.261vw - 0.227rem, 4.375rem));
+    }
+
+    // @include breakpoint(llarge) {
+    //     margin-top: 70px;
+    // }
+
+    .grid-container {
+        .twoColumn {
+            @include breakpoint(medium) {
+                display: flex;
+            }
+
+            .contentwrap {
+                width: 100%;
+                margin-top: 34px;
+
+                @include breakpoint(medium) {
+                    width: 53.2%;
+                    margin-top: 0;
+                }
+                @include breakpoint(llarge) {
+                    width: 52%;
+                    margin-top: 0;
+                }
+
+                p {
+                    font-family: 'UntitledSerif';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: clamp(18px, calc(18px + (22 - 18) * ((100vw - 393px) / (1024 - 393))), 22px) ;
+                    line-height: 123.6%;
+                    letter-spacing: -0.01em;
+                    word-break: break-word;
+
+                    @include breakpoint(large) {
+                        font-size: clamp(22px, calc(22px + (27 - 22) * ((100vw - 1024px) / (1728 - 1024))), 27px) ;
+                    }
+
+                    +p {
+                        margin-top: calc(clamp(1.438rem, 0.317vw + 1.36rem, 1.563rem));
+
+                        // @include breakpoint(large) {
+                        //     margin-top: 25px;
+                        // }
+                    }
+                }
+
+                h3 {
+                    font-family: 'UntitledSerif';
+                    font-weight: 700;
+                    font-size: clamp(20px, calc(20px + (25 - 20) * ((100vw - 393px) / (768 - 393))), 25px) ;
+                    line-height: 97.1%;
+                    /* or 29px */
+                    letter-spacing: -0.025em;
+                    margin-bottom: calc(clamp(0.688rem, 0.635vw + 0.532rem, 0.938rem));
+                    @include breakpoint(medium) {
+                        font-size: clamp(25px, calc(25px + (30 - 25) * ((100vw - 768px) / (1728 - 768))), 30px) ; 
+                        // margin-bottom: 15px;      
+                    }
+
+                    @include breakpoint(large) {                       
+                        margin-bottom: calc(clamp(0.938rem, 0.994vw + 0.301rem, 1.375rem));
+                    }
+                }
+            }
+
+            .imgwrap {
+                width: 100%;
+
+                @include breakpoint(medium) {
+                    margin-top: 4px;
+                    width: 44.55%;
+                    margin-right: 2.25%;
+                }
+
+                @include breakpoint(large) {
+
+                    margin-top: calc(clamp(0.25rem, 0.426vw - 0.023rem, 0.438rem));
+                }
+                @include breakpoint(llarge) {
+ 
+                    width: 45.55%;
+                    margin-right: 2.45%;
+                }
+
+                p {
+                    font-family: 'ABCDiatype';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 16px;
+                    font-size: clamp(16px, calc(16px + (18 - 16) * ((100vw - 393px) / (1024 - 393))), 18px) ;
+                    line-height: 100%;
+                    /* or 20px */
+                    letter-spacing: -0.025em;
+                    color: #001F3F;
+                    word-break: break-word;
+                    margin-top: 21px;
+
+                    @include breakpoint(medium) {
+                        margin-top: 14px;
+                    }
+
+                    @include breakpoint(large) {
+                        font-size: clamp(18px, calc(18px + (20 - 18) * ((100vw - 1024px) / (1728 - 1024))), 20px) ;
+                    }
+
+                    
+                }
+
+            }
+        }
+    }
+}

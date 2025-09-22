@@ -1,0 +1,348 @@
+@import "util/util";
+$white: #ffffff;
+$primary-color: #007041;
+$img: "../../images";
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+.bannertwocolumnpanel{
+    .flexwrap{
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+        align-items: center;
+        @include breakpoint(medium) {
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            flex-direction: row;
+            align-items: flex-start;
+        }
+        .leftWrap{
+            width: 100%;
+            max-width: 355px;
+            @include breakpoint(small only) {
+                margin-top: 76px !important;
+            }
+            @include breakpoint(medium) {
+                max-width: 350px;
+            }
+            @include breakpoint(large) {
+                max-width: 404px;
+            }
+            @include breakpoint(xlarge) {
+                max-width: 585px;
+            }
+            @media (min-width:1280px) and (max-width:1360px){
+                max-width: 505px;
+            }
+            .content{
+                text-align: center;
+                margin-bottom: 18px;
+                @include breakpoint(medium) {
+                    margin-bottom: 12px;
+                }
+                @include breakpoint(llarge) {
+                    margin-bottom: 26px;
+                }
+                h2{
+                    font-weight: 800;
+                    color: #01362A; 
+                    font-size: clamp(25px, calc(25px + (18 - 25) * ((100vw - 393px) / (1023 - 393))), 18px); 
+                    line-height: 126.6%;
+                    text-transform: uppercase;
+                    @include breakpoint(medium) { 
+                        color: $white;
+                    }
+                    @include breakpoint(large) {
+                        font-size: clamp(18px, calc(18px + (28 - 18) * ((100vw - 1024px) / (1728 - 1024))), 28px); 
+                    }
+                }
+            }
+            .sliderwrap{
+                background: #ffffff;
+                border-radius: 30px;
+                box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.20);
+                width: 100%;
+                height: 100%;
+                max-height: 344px;
+                overflow: hidden;
+                @include breakpoint(medium) {
+                    max-height: 320px;
+                    border-radius: 34px;
+                    box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.16);
+                }
+                @include breakpoint(large) {
+                    max-height: 350px;
+                }
+                @include breakpoint(llarge){
+                    max-height: 508px;
+                    border-radius: 48px 47px 56px 56px;
+                }
+                .flexBox {
+                    width: 75px;
+                    right: 15px;
+                    top: 44px;
+                    position: absolute;
+                    @include breakpoint(medium){
+                        width: 72px;
+                        right: 12px;
+                        top: 45px;
+                    }
+                    @include breakpoint(llarge){
+                        width: 81px;
+                        right: 30px;
+                        top: 66px;
+                    }
+                    .swiper-button-prev {
+                        &::after {
+                            content: '' !important;
+                            background: url('#{$img}/settings/service-arrow-left.svg') no-repeat;
+                            background-size: contain;
+                            width: 22px;
+                            height: 32px;
+                            @include breakpoint(medium) {
+                                width: 19px;
+                                height: 28px;
+                            }
+                            @include breakpoint(xlarge) {
+                                width: 28px;
+                                height: 41px;
+                            }
+                        }
+                        &:hover{
+                            &::after {
+                                background: url('#{$img}/settings/service-arrow-left-fill.svg') no-repeat;
+                                background-size: contain;
+                            }
+                        }
+                    }
+
+                    .swiper-button-next {
+                        &::after {
+                            content: '' !important;
+                            background: url('#{$img}/settings/service-arrow-right.svg') no-repeat;
+                            background-size: contain;
+                            width: 22px;
+                            height: 32px;
+                            @include breakpoint(medium) {
+                                width: 19px;
+                                height: 28px;
+                            }
+                            @include breakpoint(xlarge) {
+                                width: 28px;
+                                height: 41px;
+                            }
+                        }
+                        &:hover{
+                            &::after {
+                                background: url('#{$img}/settings/service-arrow-right-fill.svg') no-repeat;
+                                background-size: contain;
+                            }
+                        }
+                    }
+                }
+                .serviceSlider{
+                    .box-content{
+                        margin: 10px;
+                        border-radius:22px;
+                        background: #b7d6ce;
+                        overflow: hidden;
+                        @include breakpoint(medium){
+                            margin: 11px;
+                            border-radius:24px;
+                        }
+                        @include breakpoint(llarge){
+                            margin: 17px;
+                            border-radius:36px;
+                        }
+                        .contentWrap{
+                            width: 100%;
+                            background: #42B02B;
+                            padding:12px 0px 0px 14px;
+                            min-height: 134px;
+                            @include breakpoint(medium) {
+                                min-height: 114px;
+                                padding:12px 0px 0px 14px;
+                            }
+                            @include breakpoint(large) {
+                                padding:12px 0px 0px 18px;
+                                min-height: 122px;
+                            }
+                            @include breakpoint(llarge) {
+                                min-height: 162px;
+                                padding:20px 0px 0px 24px;
+                            }
+                            h2{
+                                font-size: 20px;
+                                line-height: 22px;
+                                font-weight: 700;
+                                text-transform: uppercase;
+                                color: $white;
+                                max-width: 270px;
+                                margin-bottom: 2px;
+                                @include breakpoint(large) {
+                                    font-size: 25px;
+                                    line-height: 26px;
+                                    max-width: 302px;
+                                }
+                                @include breakpoint(llarge) {
+                                    font-size: 38px;
+                                    line-height: 38px;
+                                    max-width: 438px;
+                                }
+                            }
+                            p{
+                                font-size: 16px;
+                                line-height: 18px;
+                                font-weight: 400;
+                                color: $white;
+                                max-width: 310px;
+                                word-wrap: break-word;
+                                display: -webkit-box;
+                                -webkit-box-orient: vertical;
+                                -webkit-line-clamp: 4;
+                                overflow: hidden;
+                                @include breakpoint(medium) {
+                                    -webkit-line-clamp: 3;
+                                    max-width: 300px;
+                                }
+                                @include breakpoint(large) {
+                                    max-width: 348px;
+                                }
+                                @include breakpoint(llarge) {
+                                    font-size: 18px;
+                                    line-height: 20px;
+                                    max-width: 438px;
+                                }
+                            }
+                        }
+                        .imgWrap{
+                            width: 100%;
+                            height: 128px;
+                            overflow: hidden;
+                            @include breakpoint(medium) {
+                                height: 116px;
+                            }
+                            @include breakpoint(large) {
+                                height: 136px;
+                            }
+                            @include breakpoint(llarge){
+                                height: 210px;
+                            }
+                            img{
+                                object-fit: cover;
+                                height: 100%;
+                                width: 100%;
+                            }
+                        }
+                        .btnWrap{
+                            width: 100%;
+                            background: $primary-color;
+                            min-height: 50px;
+                            text-align: right;
+                            @include breakpoint(medium){
+                                min-height: 56px;
+                            }
+                            @include breakpoint(llarge){
+                                min-height: 83px;
+                            }
+                            .whitebtn{
+                                margin-top: 5px;
+                                margin-right: 20px;
+                                @include breakpoint(medium){
+                                    margin-top: 8px;
+                                    margin-right: 20px;
+                                }
+                                @include breakpoint(llarge){
+                                    margin-top: 18px;
+                                    margin-right: 20px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .rightWrap{
+            width: 100%;
+            max-width: 320px;
+            @include breakpoint(small only) {
+                margin-top: -211px !important;
+            }
+            @include breakpoint(medium only) {
+                max-width: 335px;
+            }
+            @include breakpoint(large) {
+                max-width: 362px;
+            }
+            @include breakpoint(xlarge) {
+                max-width: 685px;
+            }
+            @media (min-width:1280px) and (max-width:1360px){
+                max-width: 505px;
+            }
+            .content{
+                text-align: center;
+                h2{
+                    font-weight: 800;
+                    color: $white;
+                    font-size: 18px;
+                    line-height: 23px;
+                    text-transform: uppercase;
+                    margin-bottom: 0;
+                    @media (min-width:1280px){
+                        font-size: 28px;
+                        line-height: 38px;
+                    }
+                }
+                p{
+                    font-weight: 600;
+                    color: $white;
+                    font-size: 18px;
+                    line-height: 23px;
+                    @media (min-width:1280px){
+                        font-size: 28px;
+                        line-height: 38px;
+                    }
+                }
+            }
+            .imgWrap{
+                svg{
+                    filter: drop-shadow(0px 0px 3px rgba(0,0,0,0.20));
+                    margin-top: 0px;
+                    width: 100%;
+                    height: 100%;
+                    @include breakpoint(medium){
+                        margin-top: 0px;
+                    }
+                    @include breakpoint(large){
+                        margin-top: 8px;
+                    }
+                    @include breakpoint(llarge){
+                        margin-top: 14px;
+                    }
+                    .grow:hover{
+                        fill: #012048;
+                    }
+                    .manage:hover{
+                        fill: #008F86;
+                    }
+                    .transition:hover{
+                        fill: #298415;
+                    }
+                    .transform:hover{
+                        fill: #003E30;
+                    }
+                }
+            }
+        }
+    }
+}

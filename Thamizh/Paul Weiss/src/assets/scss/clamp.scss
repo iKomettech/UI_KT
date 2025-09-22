@@ -1,0 +1,218 @@
+@import "util/util";
+$white: #ffffff;
+$primary-color: #001F3F;
+$secondary-color: #B9C8DA;
+@import "util/util";
+$img: "../../images/";
+$bgpanel-color: #B9C8DA;
+$mediumbluebgpanel: #0B3D71;
+$white: #ffffff;
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+
+
+h1 {
+    font-size: clamp(55px, calc(55px + (64 - 55) * ((100vw - 393px) / (1023 - 393))), 64px);
+    font-weight: 700;
+    line-height: 100%;
+    letter-spacing: clamp(-2.75px, calc(-2.75px + (-4.25 + 2.75) * ((100vw - 393px) / (1728 - 393))), -4.25px);
+
+    @include breakpoint(large) {
+        font-size: clamp(64px, calc(64px + (90 - 64) * ((100vw - 1024px) / (1728 - 1024))), 90px);
+    }
+}
+
+h2 {
+    font-size: clamp(55px, calc(55px + (64 - 55) * ((100vw - 393px) / (1023 - 393))), 64px);
+    line-height: 100%;
+
+    @include breakpoint(large) {
+        font-size: clamp(64px, calc(64px + (85 - 64) * ((100vw - 1024px) / (1728 - 1024))), 85px);
+    }
+}
+h3 {
+    font-size: clamp(25px, calc(25px + (40 - 25) * ((100vw - 393px) / (1728 - 393))), 40px);
+    line-height: 100%;
+    letter-spacing: clamp(-0.625px, calc(-0.625px + (-1 + 0.625) * ((100vw - 393px) / (1728 - 393))), -1px);
+}
+h4 {
+    font-size: clamp(25px, calc(25px + (30 - 25) * ((100vw - 393px) / (1728 - 393))), 30px);
+    line-height: 100%;
+    letter-spacing: clamp(-0.625px, calc(-0.625px + (-0.75 + 0.625) * ((100vw - 393px) / (1728 - 393))), -0.75px);
+}
+p,
+li {
+    line-height: 123.6%;
+
+    font-size: clamp(18px, calc(18px + (22 - 18) * ((100vw - 393px) / (1023 - 393))), 22px);
+
+    @include breakpoint(large) {
+        font-size: clamp(22px, calc(22px + (27 - 22) * ((100vw - 1024px) / (1728 - 1024))), 27px);
+    }
+
+
+
+
+    
+    letter-spacing: clamp(0px, calc(0px + (-0.27 - 0) * ((100vw - 393px) / (1728 - 393))), -0.27px);
+}
+
+
+
+
+// .mtop {
+//     &:not(header) {
+//         margin-top: clamp(40px, calc(40px + (150 - 40) * ((100vw - 393px) / (1728 - 393))), 150px) ;
+//     }
+
+
+// }
+
+// .p-top { 
+//     padding-block: clamp(40px, calc(40px + (150 - 40) * ((100vw - 393px) / (1728 - 393))), 150px) ;
+// }
+
+//Mydeen
+
+
+.bannerpanel .homeBanner .bannerwrap .grid-container .content.right h1 {
+    font-size: clamp(40px, calc(40px + (42 - 40) * ((100vw - 393px) / (1023 - 393))), 42px);
+
+    @include breakpoint(large) {
+        font-size: clamp(42px, calc(42px + (60 - 42) * ((100vw - 1024) / (1728 - 1024))), 60px);
+    }
+}
+
+.practice_ares_panel .flex-box .flexWrap .wraptitle h2,
+.parent .div-1 h2,
+.statics .grid-container h2,
+.homelocation .grid-container h2,
+.firmnews h2,
+.newspanel.probono .grid-container .dis-flex .flex-1 h2,
+.newspanel h2 {
+    font-size: clamp(55px, calc(55px + (64 - 55) * ((100vw - 393px) / (1023 - 393))), 64px);
+    line-height: 100%;
+
+    @include breakpoint(large) {
+        font-size: clamp(64px, calc(64px + (85 - 64) * ((100vw - 1024px) / (1728 - 1024))), 85px);
+    }
+}
+
+.practice_ares_panel .flex-box .flexWrap .gridWrap .contentwrap li,
+.practice_ares_panel .flex-box .flexWrap .gridWrap .contentwrap a {
+    @include breakpoint(large) {
+        font-size: clamp(28px, calc(28px +(30 - 28)*((100vw - 1024px) /(1728 - 1024))), 30px);
+    }
+}
+
+
+//client news
+.parent div.grid-box p,
+.parent div.grid-box span {
+
+    font-size: clamp(20px, calc(20px + (20 - 20) * ((100vw - 393px) / (1728 - 393))), 20px);
+    line-height: 100%;
+
+    @include breakpoint(medium only) {
+        font-size: clamp(16px, calc(16px + (20 - 16) * ((100vw - 768px) / (1023 - 768))), 20px);
+    }
+}
+
+.parent div.grid-box h3 {
+    font-size: clamp(25px, calc(25px + (30 - 25) * ((100vw - 393px) / (1023 - 393))), 30px);
+    line-height: 100%;
+
+    @include breakpoint(large) {
+        font-size: clamp(30px, calc(30px + (40 - 30) * ((100vw - 1024px) / (1728 - 1024))), 40px);
+    }
+}
+
+
+.parent div.grid-box.div-2 h3 {
+    font-size: clamp(25px, calc(25px + (32 - 25) * ((100vw - 393px) / (1023 - 393))), 32px);
+    line-height: 100%;
+
+    @include breakpoint(large) {
+        font-size: clamp(32px, calc(32px + (60 - 32) * ((100vw - 1024px) / (1728 - 1024))), 60px);
+    }
+}
+
+.statics .grid-container .counter .counter-col p {
+    font-size: clamp(14px, calc(14px + (22 - 14) * ((100vw - 393px) / (1023 - 393))), 22px);
+    line-height: 100%;
+
+    @include breakpoint(large) {
+        font-size: clamp(22px, calc(22px + (22 - 22) * ((100vw - 1024px) / (1728 - 1024))), 20px);
+    }
+}
+
+.statics .grid-container .counter .counter-col .count-digit {
+    font-size: clamp(55px, calc(55px + (220 - 55) * ((100vw - 393px) / (1023 - 393))), 197px);
+    line-height: 100%;
+
+    @include breakpoint(large) {
+        font-size: clamp(220px, calc(220px + (220 - 220) * ((100vw - 1024px) / (1728 - 1024))), 220px);
+    }
+
+    @include breakpoint(llarge) {
+        font-size: clamp(7.5rem, calc(-10.3971rem + 22.3714vw), 13.75rem);
+    }
+}
+
+.statics .grid-container .counter .counter-col .plus::after {
+    font-size: clamp(55px, calc(55px + (197 - 55) * ((100vw - 393px) / (1023 - 393))), 197px);
+
+    @include breakpoint(llarge) {
+        font-size: clamp(7.5rem, calc(-10.3971rem + 22.3714vw), 13.75rem);
+    }
+}
+
+.statics .testimonialPanel .flexWrap .testiWrap .swiper .textBlock .contentwrap h3 {
+    font-size: clamp(30px, calc(30px + (50 - 30) * ((100vw - 393px) / (1023 - 393))), 50px);
+
+    @include breakpoint(large) {
+        font-size: calc(clamp(3.125rem, 0vw + 3.125rem, 3.125rem));
+    }
+}
+
+
+.homelocation .grid-container .dis-flex .loc-list ul li a {
+    font-size: calc(clamp(1.563rem, 0.426vw + 1.29rem, 1.75rem));
+
+    @include breakpoint(large) {
+        font-size: calc(clamp(1.75rem, 1.705vw + 0.659rem, 2.5rem));
+    }
+}
+
+.homelocation .grid-container p,
+.firmnews .firm .two_gridpanel.related_news .two_right .contentsec span {
+    font-size: calc(clamp(1.25rem, 0vw + 1.25rem, 1.25rem));
+}
+
+.firmnews .firm .two_gridpanel.recentfirm .two_right .contentsec span,
+.newspanel.awards div.grid-box span {
+    font-size: calc(clamp(0.938rem, 0.794vw + 0.743rem, 1.25rem));
+
+    @include breakpoint(large) {
+        font-size: clamp(1.25rem, calc(0vw + 1.25rem), 1.25rem);
+    }
+}
+
+.firmnews .firm .two_gridpanel.recentfirm .two_right .contentsec h3 {
+    font-size: calc(clamp(1.563rem, -0.113vw + 1.59rem, 1.5rem));
+
+    @include breakpoint(llarge) {
+        font-size: clamp(2.125rem, calc(-0.7385rem + 3.5794vw), 3.125rem);
+    }
+}
+
+.firmnews .firm .two_gridpanel.recentfirm .two_right .contentsec p {
+    font-size: calc(clamp(1.125rem, 0.3vw + 1.051rem, 1.375rem));
+}

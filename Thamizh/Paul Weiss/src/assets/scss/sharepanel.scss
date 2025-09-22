@@ -1,0 +1,99 @@
+@import "util/util";
+$img: "../../images/";
+$bgpanel-color: #B9C8DA;
+$mediumbluebgpanel: #0B3D71;
+$white: #ffffff;
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+.contentwrap {
+    .social-share {
+        margin-top: calc(clamp(2.5rem, 4.762vw + 1.33rem, 4.375rem));
+
+        // @include breakpoint(medium) {
+        //     margin-top: 70px;
+        // }
+
+        .share-text {
+            font-style: normal;
+            font-weight: 700;
+            // font-size: 25px;
+            line-height: 100%;
+            letter-spacing: -0.03em;
+            color: #001F3F;
+            font-size: clamp(25px, calc(25px + (28 - 25) * ((100vw - 393px) / (1023 - 393))), 28px);
+            @include breakpoint(large) {
+                font-size: clamp(28px, calc(28px + (37 - 28) * ((100vw - 1024px) / (1728 - 1024))), 37px);
+            }
+            // @include breakpoint(medium) {
+            //     font-size: 28px;
+            //     line-height: 22px;
+            // }
+
+            // @include breakpoint(llarge) {
+            //     font-size: 37px;
+            //     line-height: 29px;
+            // }
+        }
+
+        ul {
+            list-style: none;
+            margin-left: 0;
+            margin-top: 22px;
+            margin-bottom: 0;
+            line-height: 12px;
+
+            @include breakpoint(medium) {
+                margin-top: 22px;
+            }
+
+            @include breakpoint(large) {
+                margin-top: calc(clamp(1.375rem, 2.557vw - 0.261rem, 2.5rem));
+            }
+
+            li {
+                padding-right: calc(clamp(1.25rem, 2.381vw + 0.665rem, 2.188rem));
+                line-height: 12px;
+
+                // @include breakpoint(medium) {
+                //     padding-right: 30px;
+                // }
+
+                // @include breakpoint(large) {
+                //     padding-right: 35px;
+                // }
+
+                &::before {
+                    display: none;
+                }
+
+                display: inline-block;
+                margin-bottom: 0;
+
+                a {
+                    display: block;
+                }
+
+                svg {
+                    width: 20px;
+
+                    @include breakpoint(medium) {
+                        width: 30px;
+                    }
+
+                    &:hover {
+                        path {
+                            fill: #001F3F;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
