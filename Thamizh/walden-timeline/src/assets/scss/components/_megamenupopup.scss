@@ -1,0 +1,472 @@
+.homeloginpopupwrapper {
+    .overlay {
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.8);
+        display: none;
+        z-index: 99999;
+    }
+    .popUpWrapper {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        z-index: 9999;
+        transform: translate(-50%, -50%);
+
+        .close {
+            margin-right: -2px;
+            height: 17px;
+            transition: transform 0.55s;
+            transition: transform 0.55s, -webkit-transform 0.55s;
+            position: absolute;
+            right: 20px;
+            top: 18px;
+            &:hover {
+                transform: scale(1.1);
+            }
+            i {
+                display: block;
+                width: 17px;
+                position: relative;
+                float: right;
+                margin-top: -2px;
+                &::before,
+                &:after {
+                    content: "";
+                    background: #1c375e;
+                    width: 2px;
+                    height: 17px;
+                    transform-origin: center center;
+                    transition-delay: 0.1s;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    margin-top: 0;
+                    margin-left: 0;
+                    transition: -webkit-transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                }
+                &:after {
+                    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.1s,
+                        -webkit-transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.1s;
+                    -webkit-transform: rotate(-45deg);
+                    transform: rotate(-45deg);
+                }
+                &:before {
+                    transform: rotate(45deg);
+                }
+            }
+        }
+    }
+    .popupWrap {
+        margin: 0px 1px;
+    }
+    .wrap {
+        background: $white-color;
+        width: 100%;
+        padding: 40px 35px 2px 35px;
+        margin: 0 auto;
+        border-radius: 0px;
+        position: relative;
+        text-align: center;
+
+        @include breakpoint(medium) {
+            width: 650px;
+        }
+
+        @include breakpoint(large) {
+            padding: 58px 50px 14px 50px;
+            width: 1200px;
+        }
+        @media (min-width: 1024px) and (max-width: 1279px) {
+            width: 950px;
+            padding: 58px 25px 14px 25px;
+        }
+        @include breakpoint(xlarge) {
+            padding: 58px 95px 14px 93px;
+            width: 1492px;
+        }
+        @media (min-width: 1366px) and (max-width: 1600px) {
+            width: 1200px;
+            padding: 58px 50px 14px 50px;
+        }
+        p {
+            font-size: 26px;
+            line-height: 35px;
+            color: $body-font-color;
+            margin-bottom: 57px;
+            @include breakpoint(large) {
+                font-size: 26px;
+                line-height: 35px;
+                margin-bottom: 57px;
+            }
+        }
+
+        &:after {
+            content: "";
+            background: url(../images/home-popupborder-bg-1.svg) no-repeat;
+            height: 35px;
+            background-size: cover !important;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 100%;
+            position: absolute;
+            bottom: -34px;
+            overflow: hidden;
+            z-index: 1;
+            left: 0px;
+            @include breakpoint(small only) {
+                bottom: -24px;
+                height: 25px;
+            }
+        }
+        .popContent {
+            @media only screen and (min-width: 0px) and (max-width: 1279px) {
+                max-height: 70vh;
+                overflow-y: scroll;
+            }
+            .flexwrap {
+                margin-bottom: 20px;
+                @include breakpoint(medium only) {
+                    max-width: 400px;
+                    margin: 0 auto;
+                    margin-bottom: 40px;
+                }
+                @include breakpoint(large) {
+                    margin-bottom: 46px;
+                    justify-content: center;
+                }
+            }
+
+            .leftwrap {
+                padding-top: 0px;
+                padding-bottom: 42px;
+                @include breakpoint(large) {
+                    width: 590px;
+                    margin-right: 40px;
+                    padding-top: 130px;
+                   
+                }
+                @media (min-width: 1024px) and (max-width: 1279px) {
+                    width: 426px;
+                    margin-right: 70px;
+                }
+                @include breakpoint(xlarge) {
+                    width: 814px;
+                    margin-right: 110px;
+                    padding-top: 130px;
+                }
+                @media (min-width: 1366px) and (max-width: 1600px) {
+                    width: 630px;
+                    margin-right: 40px;
+                }
+
+                h6 {
+                    font-weight: 700;
+                    text-align: center;
+                    font-size: 20px;
+                    line-height: 24px;
+                    margin-bottom: 14px;
+                    @include breakpoint(large) {
+                        font-size: 28px;
+                        line-height: 35px;
+                        margin-bottom: 51px;
+                    }
+                    @include breakpoint(xlarge) {
+                        font-size: 36px;
+                        line-height: 40px;
+                        margin-bottom: 51px;
+                    }
+                }
+                .tabHorizontal {
+                    max-width: 308px;
+                    background: $tertiary-color;
+                    margin: 0px auto;
+                    background: #edf2f7;
+                    border-radius: 26px;
+                    padding: 9px 13px;
+
+                    @include breakpoint(medium) {
+                        max-width: 427px;
+                    }
+
+                    @include breakpoint(large) {
+                        max-width: 520px;
+                        margin: 0px auto;
+                        background: $tertiary-color;
+                        border-radius: 26px;
+                        padding: 10px 13px;
+                    }
+
+                    @include breakpoint(xlarge) {
+                        max-width: 652px;
+                    }
+
+                    @media (min-width: 1366px) and (max-width: 1600px) {
+                        max-width: 480px;
+                    }
+
+                    .nav.nav-tabs {
+                        display: flex;
+                        background: $white-color;
+                        margin: 0px;
+                        border-radius: 26px;
+                        justify-content: center;
+                        li {
+                            font-size: 15px;
+                            line-height: 22px;
+                            font-weight: 400;
+                            width: 147px;
+                            text-transform: uppercase;
+                            -webkit-transition: all 0.5s;
+                            transition: all 0.5s;
+                            padding: 4px 6px;
+                            margin: 0px;
+                            margin-right: 10px;
+                            &:last-child{
+                                margin-right: 0;   
+                                padding-left: 10px;
+                                padding-right: 10px;
+                            }
+                            @include breakpoint(medium) {
+                                width: 347px;
+                            }
+                            @include breakpoint(large) {
+                                font-size: 16px;
+                                line-height: 22px;
+                                font-weight: 400;
+                                width: 240px;
+                                text-transform: uppercase;
+                                transition: all 0.5s;
+                                padding: 9.2px 20px;
+                                
+                               
+                            }
+                            @include breakpoint(xlarge) {
+                                width: 310px;
+                            }
+                            @media (min-width: 1366px) and (max-width: 1600px) {
+                                width: 240px;
+                            }
+                            a {
+                                text-decoration: none;
+                                color: $secondary-blue;
+                            }
+                            &:hover {
+                                background: $secondary-blue;
+                                color: $white-color;
+                                border-radius: 16.39px;
+                                font-weight: 700;
+                                a {
+                                    color: $white-color;
+                                }
+                            }
+                            &.active {
+                                background: $secondary-blue;
+                                color: $white-color;
+                                border-radius: 16.39px;
+                                a {
+                                    font-weight: 400;
+                                    color: $white-color;
+                                }
+                                &:hover {
+                                    background: $lightblue;
+                                }
+                            }
+                        }
+                    }
+                }
+                .btnsec {
+                    margin-top: 60px;
+                    display: block;
+                    @include breakpoint(large) {
+                        margin-top: 50px;
+                    }
+                    .ctaborder {
+                        @include breakpoint(large) {
+                            min-width: 450px;
+                            line-height: 60px;
+                            font-size: 30px;
+                            line-height: 40px;
+                            border-radius: 37px;
+                        }
+                        @media (min-width: 1024px) and (max-width: 1279px) {
+                            min-width: 410px;
+                        }
+                        @include breakpoint(xlarge) {
+                            min-width: 604px;
+                        }
+                        @media (min-width: 1366px) and (max-width: 1600px) {
+                            min-width: 480px;
+                        }
+                    }
+                }
+            }
+
+            .rightwrap {
+                @include breakpoint(large) {
+                    width: 380px;
+                }
+                .logincontent {
+                    .loginForm {
+                        padding: 11px 29px 11px 29px;
+                        border-radius: 51px;
+                        @include breakpoint(large) {
+                            padding: 11px 37px 15px 37px;
+                        }
+                        &.greybgpanel {
+                            h6 {
+                                color: #00214e;
+                            }
+                        }
+                        &.darkbluebgcolor {
+                            h6 {
+                                color: $white-color;
+                            }
+                            .forgotPassword {
+                                justify-content: space-between;
+                                a {
+                                    color: $white-color;
+                                }
+                            }
+                        }
+                        h6 {
+                            font-size: 17px;
+                            line-height: 29px;
+                            font-weight: 700;
+                            margin-bottom: 7px;
+                            text-align: left;
+                            @include breakpoint(large) {
+                                font-size: 19px;
+                                line-height: 40px;
+                                margin-bottom: 9px;
+                            }
+                        }
+                        .form-group {
+                            margin-bottom: 10px;
+                            @include breakpoint(large) {
+                                margin-bottom: 12px;
+                            }
+                            label {
+                                width: 37px;
+                                background-size: contain;
+                                background-repeat: no-repeat;
+                            }
+                            .txtBox {
+                                background: #ffffff;
+                                font-size: 17px;
+                                line-height: 29px;
+                                color: #4f4f4f;
+                                padding: 0 11px;
+                                margin-left: 0px;
+                                width: 100%;
+                                height: 39px;
+                                border-radius: 16px;
+                                margin-bottom: 0px;
+                                border: solid 1px #707070;
+                                box-shadow: none;
+                                @include breakpoint(large) {
+                                    font-size: 19px;
+                                    line-height: 40px;
+                                    border-radius: 16px;
+                                    height: 50px;
+                                }
+                                &::-webkit-input-placeholder {
+                                    color: #4f4f4f !important;
+                                    opacity: 1;
+                                }
+                                &:-ms-input-placeholder {
+                                    color: #4f4f4f !important;
+                                    opacity: 1;
+                                }
+                                &::placeholder {
+                                    color: #4f4f4f !important;
+                                }
+
+                                &.error {
+                                    background: #ffe4e4;
+                                }
+                            }
+                        }
+                        + .loginForm {
+                            margin-top: 20px;
+                            padding-bottom: 30px;
+                            @include breakpoint(large) {
+                                margin-top: 32px;
+                                padding-bottom: 40px;
+                            }
+                            h6 {
+                                color: $white;
+                            }
+                        }
+                    }
+                    .forgotPassword {
+                        margin-bottom: 0px;
+                        display: flex;
+                        justify-content: space-between;
+                        margin-top: 7px;
+                        @include breakpoint(large) {
+                            margin-top: 11px;
+                        }
+
+                        a {
+                            font-size: 17px;
+                            line-height: 29px;
+                            font-weight: 700;
+                            margin-right: 0px;
+                            @include breakpoint(large) {
+                                font-size: 19px;
+                                line-height: 40px;
+                            }
+                            + a {
+                                margin-right: 0px;
+                                margin-left: 0px;
+                            }
+                        }
+                    }
+                    .loginBtn {
+                        margin-top: 15px;
+                        width: 100%;
+                        @include breakpoint(large) {
+                            margin-top: 23px;
+                        }
+                        button, input[type="submit"] {
+                            background-color: $yellow-bg-color;
+                            font-size: 17px;
+                            line-height: 29px;
+                            color: #00214e;
+                            padding: 5px 20px;
+                            border-radius: 22px;
+                            font-weight: 700;
+                            cursor: pointer;
+                            height: 50px;
+                            width: 100%;
+                            position: relative;
+                            overflow: hidden;
+                            display: block;
+                            background-image: linear-gradient(0, $secondary-color, $secondary-color);
+                            transition: all 0.3s;
+                            background-size: 100% 0;
+                            background-repeat: no-repeat;
+                            background-position: top;
+                            text-transform: uppercase;
+                            border: 0;
+                            @include breakpoint(large) {
+                                font-size: 19px;
+                                line-height: 40px;
+                            }
+                            &:hover {
+                                background-size: 100% 100%;
+                                color: #fff;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
