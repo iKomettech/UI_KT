@@ -1,0 +1,468 @@
+.gridpanel {
+  margin-top: 28px;
+  @include breakpoint(medium) {
+    margin-top: 0px;
+  }
+  .grid-container {
+    @include breakpoint(small only) {     
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+  }
+  h2 {
+    font-size: 30px;
+    line-height: 40px;
+    color: $secondary-color;
+    text-align: center;
+    position: relative;
+    margin-bottom: 56px;
+    
+    @include breakpoint(small only) {
+    max-width: 450px;
+    padding-right: 0.625rem;
+    padding-left: 0.625rem;
+    margin-left: 10px;
+    margin-right: 10px;
+    }
+
+    @include breakpoint(large) {
+      font-size: 43px;
+      line-height: 57px;
+    }
+    &:after { 
+      content: '';
+      height: 2px;
+      width: 30px;
+      right: 0;
+      position: absolute;
+      background: $primary-color;
+      top: 50%;
+      @include breakpoint(medium) {
+        width: 28.5%;
+      }
+      @include breakpoint(large) {
+        width: 27%;
+      }
+      @include breakpoint(xlarge) {
+        width: 33%;
+      }
+
+    }
+    &:before{
+      content: '';
+      height: 2px;
+      width: 30px;
+      left:0;
+      position: absolute;
+      top: 50%;
+      background: $primary-color;
+      @include breakpoint(medium) {
+        width: 28.5%;
+      }
+      @include breakpoint(large) {
+        width: 27%;
+      }
+      @include breakpoint(xlarge) {
+        width: 33%;
+      }
+    }
+  }
+  .grid-margin-x > .large-4 {
+    @include breakpoint(medium) {
+      width: calc(50% - 1.374rem);
+    }
+    @include breakpoint(large) {
+      width: calc(33.333% - 1.374rem);
+    }
+  }
+  .grid-margin-x {
+    @include breakpoint(medium) {
+      margin-right: -21px !important;
+    }
+  }
+
+  .topsec {
+    @include breakpoint(medium) {
+    height: 100%;
+    }
+  }
+  .imgsec {
+    overflow: hidden;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+    transform: translateZ(0);
+    position: relative;
+    a {
+      img {
+        transition: all 0.45s;
+        object-fit: contain;
+        width: 100%;
+      }
+      &:hover {
+        img {
+          transform: scale(1.1);
+          transition: all 0.45s;
+        }
+      }
+    }
+  }
+  .ctablock {
+    max-width: 100%;
+    margin-top:0px;
+    padding: 3px 30px 0;
+    margin-bottom: 10px;  
+    text-align: center;
+    @include breakpoint(medium) {
+      margin-top: -60px;
+      padding: 3px 30px 30px;
+      margin-bottom: 40px; 
+      text-align: left;
+    }
+    @include breakpoint(large) {
+      margin-top: -70px;
+      padding: 3px 30px 0;
+      margin-bottom: 0px;  
+
+    }
+  }
+  .contentsec {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 14px 20px 12px 30px;
+    position: relative;
+    text-align: center;
+    @include breakpoint(medium) {
+      padding: 28px 20px 20px 30px;
+      margin-bottom: 0;
+      text-align: left;
+    }
+    @include breakpoint(large) {
+      padding: 24px 20px 122px 30px;
+      margin-bottom: 0;
+    }
+    
+    h1,
+    .h1,
+    h2,
+    .h2,
+    h3,
+    .h3,
+    h4,
+    .h4,
+    h5,
+    .h5,
+    h6,
+    .h6 {
+      color: $white;
+    }
+    p {
+      color: $white;
+      font-size: 16px;
+      line-height: 22px;
+      max-width: 339px;
+    }
+    a {
+      text-decoration: none;
+    }
+  }
+
+  .video {
+    background: $tertiary-color;
+    margin-right: 0 !important;
+   
+    @include breakpoint(small only) {
+      max-width: 440px;
+      margin-left: 0;
+    }
+    @media (min-width: 430px) and (max-width: 767px) {
+       max-width: 430px;
+    margin-left: 10px !important;
+     }
+   
+    p {
+      max-width: 511px;
+      margin-bottom: 45px;
+      @include breakpoint(large) {
+        margin-bottom: 30px;
+        }
+    }
+    h3 {
+      font-size: 36px;
+      line-height: 48px;
+      margin-bottom: 32px;
+      @include breakpoint(large) {
+      margin-bottom: 12px;
+      }
+    }
+    .contentsec {
+      padding: 51px 20px 80px 20px;
+      @include breakpoint(large) {
+      padding: 20px 20px 20px 20px;
+      }
+      @include breakpoint(xlarge) {
+        padding: 71px 20px 68px 92px;
+        }
+    }
+    .videosec {
+      height: 100%;
+    }
+    .imgsec{
+      height: 100%;
+      @include breakpoint(small only) {
+        margin: 0px -10px;
+      }
+    }
+  }
+
+  .gridinfo {
+    padding: 0;
+    max-width: 440px;
+    // @media (min-width: 430px) and (max-width: 767px) {
+    //   max-width: 430px;
+    //   margin-left: 20px;
+    // }
+    background-color: $secondary-color;
+    padding-bottom: 10px;
+    margin-top: 12px;
+    margin-bottom: 18px;
+    
+    @include breakpoint(medium) {
+      margin: 0 0;
+      margin-top: 28px;
+      margin-bottom: 0px;
+      margin-left: 0;
+      margin-right: 21.9px;
+    }
+    @include breakpoint(large) {
+      margin-top: 38px;
+    }
+  }
+  .btn-center {
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 22px;
+      margin-bottom: 39px;
+    @include breakpoint(large) {
+      margin-top: 50px;
+      margin-bottom: 57px;
+    } @include breakpoint(xlarge) {
+      margin-top: 50px;
+      margin-bottom: 120px;
+    }
+    .ctaborder {
+      &.nobg {
+        border: 1px solid $body-font-color;
+        min-width: 176px;
+        color: $body-font-color;
+        &:hover {
+          color: #fff;
+        }
+      }
+    }
+  }
+  +.gridpanel{
+    margin-top: 28px;
+    @include breakpoint(large) {
+    margin-top: 2px;
+    }
+  }
+}
+.teamgrid{
+  margin-bottom: 73px;
+  @include breakpoint(large) {
+    margin-bottom: 69px;
+  }
+  h2 {
+    font-size:30px;
+    line-height: 40px;
+    color: $secondary-color;
+    text-align: center;
+    position: relative;
+    bottom: 45px;
+    max-width: 450px;
+    margin: 0 auto;
+    @include breakpoint(medium) {
+      max-width: 738px;
+    }
+    @include breakpoint(large) {
+      font-size: 43px;
+      line-height: 57px;
+      max-width: 1366px;
+    }
+    &:after { 
+      content: '';
+      height: 2px;
+      width: 98px;
+      right: 0;
+      position: absolute;
+      background: $primary-color;
+      top: 50%;
+      @include breakpoint(medium) {
+        width: 39%;
+      }
+      @include breakpoint(large) {
+        width: 39%;
+      }
+      @include breakpoint(xlarge) {
+        width: 42%;
+      }
+
+    }
+    &:before{
+      content: '';
+      height: 2px;
+      width: 98px;
+      left:0;
+      position: absolute;
+      top: 50%;
+      background: $primary-color;
+      @include breakpoint(medium) {
+        width: 39%;
+      }
+      @include breakpoint(large) {
+        width: 39%;
+      }
+      @include breakpoint(xlarge) {
+        width: 42%;
+      }
+    }
+  }
+}
+.teampanel {
+  position: relative;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  .cell {
+    position: relative;
+    overflow: hidden;
+  }
+  .videoPanel {
+    padding-bottom: 51.27% !important;
+    &:before {
+      background-color: transparent !important;
+    }
+  }
+  .contentsec {
+    max-width: 450px;
+    position: absolute;
+    right: auto;
+    top:2%;
+    padding-left: 25px;
+    padding-top: 20px;
+    padding-right: 15px;
+    @include breakpoint(small only) {
+    padding-left: 10px; 
+    left: 50%;
+    transform: translate(-50%, 0px);
+    width: 100%;
+    right: 0;
+    }
+    @include breakpoint(medium) {
+      padding-left: 20px;
+      max-width: 382px;
+      margin-right: 1%;
+    top:5%;
+    right: 0;
+    }
+    @include breakpoint(large only) {
+      padding-top: 10px;
+    }
+    @include breakpoint(large) { 
+      padding-left: 15px;
+    max-width: 435px;
+    margin-right: 8%;
+    top:5%;
+    }
+    @include breakpoint(xlarge) {
+      max-width: 610px;
+      top:24%;
+    }
+    p {
+      color: $white;
+      font-size: 16px;
+      line-height: 24px;
+      @include breakpoint(large) {
+        font-size: 18px;
+        line-height: 28px;
+      }
+      @include breakpoint(xlarge) {
+        line-height: 32px;
+      }
+      
+    }
+    .ctaborder {
+      margin-top: 18px;
+      @include breakpoint(large) {
+        margin-top: 35px
+      }
+     
+    }
+  }
+ 
+  .teamleft{
+    background-position: right;
+    @include breakpoint(small only) {
+    min-height: 270px;
+    max-height: 270px;
+    }
+    @include breakpoint(medium only) {
+      min-height: 300px;
+      }
+      @include breakpoint(large only) {
+        min-height: 351px;
+        }
+    .video-panel .filter-img .videoPanel:before,     .video-panel .filter-img .videoPanel:after{
+      display: none;
+    }
+    .video-panel .filter-img .videoPanel:hover {
+         transform: initial;
+      cursor: default;
+  }
+  }
+  .teamright{
+    background-position: left;
+    @include breakpoint(small only) {
+    min-height: 250px;
+    max-height: 250px;
+    }
+    @include breakpoint(medium only) {
+      min-height: 300px;
+      }
+      @include breakpoint(large only) {
+        min-height: 351px;
+        }
+        
+}
+}
+.ctaborder {
+  &.nobg {
+    background: transparent;
+    font-size: 16px;
+    line-height: 22px;
+    color: #fff;
+    padding: 8px 25.5px;
+    border: 1px solid $white;
+    @include breakpoint(large) {
+      font-size: 19px;
+    line-height: 26px;
+    }
+  }
+}
+
+@media (min-width: 430px) and (max-width: 767px) {
+ .gridpanel .grid-margin-x{
+  margin-left: 0;
+  margin-right: 0;
+  }
+
+  }
+  @media screen and (max-width:1390px) and (min-width:1366px){
+    .teampanel{
+      .videoPanel{
+            padding-bottom: 55.27% !important;
+      }
+    }
+  }

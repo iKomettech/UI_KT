@@ -1,0 +1,832 @@
+$contact-icon-bg: #004d6e;
+$blue-color: #004d6e;
+.contactpanel{
+    .headingwrap{
+        .heading-title{
+            @include breakpoint(medium only){
+                margin-bottom: 20px;
+            }
+            @include breakpoint(small only){
+                padding-top: 20px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+    .main-title{
+        font-size: 36px;
+        line-height: 40px;
+        font-weight: 700;
+        position: relative;
+        padding-bottom: 5px;
+        @include breakpoint(medium only){
+            text-align: center;
+        }
+        @include breakpoint(small only){
+            max-width: 305px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 22px;
+        }
+        @media (min-width: 768px) and (max-width: 1279px){
+            font-size: 30px;
+        }
+        &:after{
+            content: "";
+            width: 67px;
+            height: 4px;
+            position: absolute;
+            left: 0;
+            bottom: 0px;
+            background-color: #FE5000;
+            @include breakpoint(medium only){
+                left: calc(50% - 35px);
+            }
+            @include breakpoint(small only){
+                left: calc(50% - 35px);
+            } 
+        }
+        
+    }
+    .sub-title{
+        font-size: 24px;
+        line-height: 26px;
+        font-weight: 600; 
+        position: relative;
+        padding-bottom: 7px;
+        @include breakpoint(small only){
+            font-size: 20px;
+        }
+        @media (min-width: 768px) and (max-width: 1279px){
+            font-size: 20px;
+        }
+        &:after{
+            content: "";
+            width: 67px;
+            height: 4px;
+            position: absolute;
+            left: 0;
+            bottom: 0px;
+            background-color: #FE5000;
+            @include breakpoint(medium only){
+                left: calc(50% - 35px);
+            }
+            @include breakpoint(small only){
+                left: calc(50% - 35px);
+            } 
+        }
+    }
+    .flexwrap{
+        display: flex;
+        @include breakpoint(medium only){
+            flex-wrap: wrap;
+        }
+        @include breakpoint(small only){
+            flex-wrap: wrap;
+        }
+        .leftwrap{
+            max-width: 382px;
+            width: 100%;
+            padding-top: 23px;
+            padding-left: 42px;
+            padding-bottom: 36px;
+            padding-right: 46px;
+            margin-right: 4%;
+            @media (min-width: 1024px) and (max-width: 1279px){
+                max-width: 314px;
+                margin-right: 3%;
+                padding-left: 24px;
+                padding-right: 24px;
+            }
+            @include breakpoint(medium only){
+                order:1;
+                margin: 0 auto;
+                margin-top: 0px;
+                max-width: 100%;
+                padding-left: 0;
+                padding-right: 0;
+                margin-right: 0;
+                text-align: center;
+            }
+            @include breakpoint(small only){
+                order:1;
+                margin: 0 auto;
+                margin-top: 0px;
+                max-width: 100%;
+                padding-left: 0;
+                padding-right: 0;
+                margin-right: 0;
+                text-align: center;
+            }
+            .desctext{
+                padding-top: 16px;
+                padding-bottom: 22px;
+                p{
+                    font-size: 18px;
+                    line-height: 26px;
+                    font-weight: 400;
+                    @media (min-width: 375px) and (max-width: 1279px){
+                        font-size: 16px;
+                        line-height: 24px;
+                    }
+                    a[href^="mailto:"]{
+                        font-size: 18px;
+                        line-height: 26px;
+                        font-weight: 400;
+                        text-decoration: underline; 
+                        &:hover{
+                            color: $secondary-color;
+                        }
+                        @media (min-width: 375px) and (max-width: 1279px){
+                            font-size: 16px;
+                            line-height: 24px;
+                        }
+                    }
+                    a[href^="tel:"]{
+                        font-size: 18px;
+                        line-height: 26px;
+                        font-weight: 700;
+                        text-decoration: none; 
+                        &:hover{
+                            color: $secondary-color;
+                        }
+                        @media (min-width: 375px) and (max-width: 1279px){
+                            font-size: 16px;
+                            line-height: 24px;
+                        }
+                    }
+                }
+            }
+            .getdirection{
+                padding-top: 0px;
+                P{
+                    a{
+                        font-size: 18px;
+                        line-height: 26px;
+                        font-weight: 700;
+                        text-decoration: underline; 
+                        &:hover{
+                            color: $secondary-color;
+                        }
+                        @media (min-width: 375px) and (max-width: 1279px){
+                            font-size: 16px;
+                            line-height: 24px;
+                        }
+                    }
+                }
+            }
+        }
+        .rightwrap{
+            max-width: 928px;
+            width: 100%;
+            position: relative;
+            @include breakpoint(medium only){
+                max-width: 100%;
+            }
+            @include breakpoint(small only){
+                max-width: 100%;
+            }
+            &.panelbg{
+                background: #f5f5f5;
+                padding-left: 48px;
+                padding-right: 48px;
+                padding-top: 0px;
+                padding-bottom: 46px;
+                @include breakpoint(small only){
+                    padding-left: 24px;
+                    padding-right: 24px;
+                }
+                @include breakpoint(medium only){
+                    padding-left: 24px;
+                    padding-right: 24px;
+                }
+            }
+            .desctext{
+                p{
+                font-size: 18px;
+                font-weight: 400;
+                line-height: 26px;
+                @include breakpoint(small only){
+                    font-size: 16px;
+                }
+                @media (min-width: 1024px) and (max-width: 1279px){
+                    font-size: 16px;
+                }
+                }
+                
+            }
+        }
+    }
+    .contactwrap {
+        padding-top: 20px;
+        .grid-x {
+            flex-wrap: nowrap;
+            background: url("#{$img}/contact-form-desktop.svg") no-repeat center;
+            background-size: 100%;
+            height: 271px;
+            max-width: 100%;
+            min-width: 100%;
+            margin-top: 54px;
+            @include breakpoint(small only){
+                flex-direction: column;
+                background: url("#{$img}/contact-form-mobile.svg") no-repeat center;
+                height: 735px;
+                justify-content: center;
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
+        .iconsec {
+            display: inline-block;
+            max-width: 33.23%;
+            width: 100%;
+            margin: 0 auto;
+            @media (min-width: 1280px) and (max-width: 1390px){
+                max-width: 33.05%; 
+            }  
+            @include breakpoint(medium only){
+                max-width: 33.05%; 
+            } 
+            @include breakpoint(small only){
+                max-width: 100%;
+            }
+            &:first-child{
+                @include breakpoint(small only){
+                    position: relative;
+                    top: -30px;   
+                }
+            }  
+            a {
+                display: inline-block;
+                color: inherit;
+                transition: 0.75s all;
+                padding-top: 45px;
+                padding-bottom: 45px;
+                width: 100%;
+                height: 100%;
+                @include breakpoint(medium only){
+                    padding-top: 75px;
+                }
+                @include breakpoint(large only){
+                    padding-top: 65px;
+                } 
+                &:hover {
+                    figure {
+                        svg {
+                            transform: scale(1.1);
+                            transition: 1s ease;
+                        }
+                        img {
+                            transform: scale(1.1);
+                            transition: 1s ease;
+                        }
+                    }
+                    span {
+                        color: $secondary-color;
+                    }
+                    text-decoration: none;
+                }
+                figure {
+                    display: inline-flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding-bottom: 34px;
+                    @include breakpoint(small only){
+                        padding-bottom: 20px;
+                    }
+                    @include breakpoint(medium only){
+                        padding-bottom: 24px;
+                    }
+                    @include breakpoint(large only){
+                        padding-bottom: 24px;
+                    }
+                    svg {
+                        height: 73px;
+                        width: 73px;
+                        position: relative;
+                        overflow: hidden;
+                        vertical-align: middle;
+                        transition: 0.75s all;
+                        @include breakpoint(small only){
+                            height: 53px;
+                            width: 53px;
+                        }
+                        @include breakpoint(medium only){
+                            height: 48px;
+                            width: 48px;
+                        }
+                        @include breakpoint(large only){
+                            height: 53px;
+                            width: 53px;
+                        } 
+                    }
+                    img {
+                        transition: 1s ease;
+                        height: 73px;
+                        width: 73px;
+                        @include breakpoint(medium only){
+                            height: 48px;
+                            width: 48px;
+                        }
+                        @include breakpoint(large only){
+                            height: 53px;
+                            width: 53px;
+                        } 
+                    }
+                }
+                .linkContnet {
+                    color: $body-font-color;
+                    text-align: center;
+                    text-transform: none;
+                    position: relative;
+                    transition: all 0.3s;
+                    font-size:22px;
+                    line-height: 26px;
+                    font-weight: 600;
+                    display: block;
+                    @include breakpoint(small only){
+                        font-size: 20px;
+                        line-height: 24px;
+                    } 
+                    @include breakpoint(medium only){
+                        font-size: 16px;
+                        line-height: 20px;
+                    } 
+                    @include breakpoint(large only){
+                        font-size:18px;
+                        line-height: 22px;
+                    } 
+                    @media (min-width: 1024px) and (max-width: 1279px){
+                        font-size: 16px;
+                        line-height: 20px;
+                    }
+                }
+            }
+        }
+        .multistepcontact {
+            &:not(:first-of-type){
+                display:none;
+            }
+            .topics {
+                max-width: 1024px;
+                margin: 0px auto;
+                margin-bottom: 80px;
+                @include breakpoint(large) {
+                    margin-bottom: 0px;
+                }
+                .desctext{
+                    padding-top: 20px;
+                    @include breakpoint(medium only) {
+                        font-size: 16px;
+                        line-height: 24px;
+                    }
+                }
+                .contactFormField {
+                    margin-top: 36px;
+                    .two-column{
+                        display: flex;
+                        @include breakpoint(small only){
+                            flex-wrap: wrap;
+                        }
+                        .form-group{
+                            max-width: 401px;
+                            width: 100%;
+                            &:first-child{
+                                margin-right: 30px;
+                                @include breakpoint(small only){
+                                    margin-right: 0;
+                                }
+                            }
+                            @include breakpoint(small only){
+                                max-width: 100%;
+                            }
+                        }
+                    }
+                    .form-group {
+                        position: relative;
+                        margin-bottom: 20px;
+                        span {
+                            &.errorMsg {
+                                background-color: $black;
+                                background-image: url(#{$img}/star.svg);
+                                background-repeat: no-repeat;
+                                position: absolute;
+                                top: 16px;
+                                right: -12px;
+                                width: 28px;
+                                height: 28px;
+                                background-size: 18px 50px;
+                                background-position: 5px -7px;
+                                border-radius: 50%;
+                            }
+                            &.f-error {
+                                background-color: #9f0a1f;
+                                background-image: url(#{$img}/wrong.svg);
+                                background-position: 7px 7px;
+                                background-size: 14px 14px;
+                            }
+                            &.f-success {
+                                background-color: #119f0a;
+                                background-image: url(#{$img}/success.svg);
+                                border: 2px solid #119f0a;
+                                background-position: 3px 3px;
+                                background-size: 18px 18px;
+                            }
+                        }
+                        label {
+                            color: $body-font-color;
+                            font-size: 14px;
+                            line-height: 22px;
+                            font-weight: 400;
+                            padding-left: 3px;
+                            white-space: nowrap;
+                            text-align: left;
+                            margin-bottom: 10px;
+                        }
+                        input {
+                            border-radius: 0;
+                            background-color: #ffffff;
+                            padding: 10px 10px;
+                            border: 1px solid #000000;
+                            height: 60px;
+                            color: $black;
+                            font-size: 18px;
+                            width: 100%;
+                            margin-bottom: 0px;
+                        }
+                        .errorContact{
+                            font-size: 12px;
+                            color: #9f0a1f;   
+                        }
+                        .ui-selectmenu-button {
+                            border-radius: 0;
+                            background-color: #ffffff;
+                            padding: 5px 18px;
+                            border: 1px solid #707070;
+                            height: 42px;
+                            color: #000000;
+                            width: 100%;
+                            margin-bottom: 158px;
+                            height: 75px;
+                            font-size: 38px;
+                            line-height: 51px;
+                            font-weight: 400;
+                            margin-bottom: 43px;
+                            padding-left: 35px;
+                            padding-right: 35px;
+                            @include breakpoint(medium only) {
+                                color: #000000;
+                                font-size: 18px;
+                                line-height: 24px;
+                                font-weight: 400;
+                            }
+                            @include breakpoint(small only) {
+                                color: #000000;
+                                font-size: 18px;
+                                line-height: 24px;
+                                font-weight: 400;
+                                height: auto;
+                                padding: 9px 18px;
+                            }
+                            .ui-selectmenu-text {
+                                padding: 0;
+                                font-size: 38px;
+                                line-height: 51px;
+                                font-weight: 400;
+                                font-family: "Archivo Narrow";
+                                @include breakpoint(medium only) {
+                                    color: #000000;
+                                    font-size: 18px;
+                                    line-height: 24px;
+                                    font-weight: 400;
+                                }
+                                @include breakpoint(small only) {
+                                    color: #000000;
+                                    font-size: 18px;
+                                    line-height: 24px;
+                                    font-weight: 400;
+                                }
+                            }
+                            @include breakpoint(medium) {
+                                height: 45px;
+                                padding: 10px 20px;
+                                margin-bottom: 43px;
+                            }
+                            @include breakpoint(large) {
+                                height: 79px;
+                                padding: 13px 37px;
+                                margin-bottom: 80px;
+                            }
+                            &:after {
+                                height: 30px;
+                                width: 48px;
+                                right: 24px;
+                                top: 32%;
+                                background-size: contain;
+                                background: url(#{$img}/dropdownarrow.svg) no-repeat;
+                                content: "";
+                                display: inline-block;
+                                margin-top: 0px;
+                                pointer-events: none;
+                                position: absolute;
+                                transition: all 0.55s;
+                                @include breakpoint(medium only) {
+                                    height: 14px;
+                                    background-size: contain;
+                                    width: 33px;
+                                    right: 10px;
+                                    top: 38%;
+                                }
+                                @include breakpoint(small only) {
+                                    height: 14px;
+                                    background-size: contain;
+                                    width: 33px;
+                                    right: 10px;
+                                    top: 38%;
+                                }
+                            }
+                            &.ui-selectmenu-button-open:after {
+                                transform: rotate(-180deg);
+                                transition: all 0.55s;
+                            }
+                        }
+                        .txtBox {
+                            border: 1px solid #000000;
+                            ::-webkit-input-placeholder {
+                                /* Edge */
+                                color: #000000;
+                            }
+                            :-ms-input-placeholder {
+                                /* Internet Explorer 10-11 */
+                                color: #000000;
+                                opacity: 1;
+                            }
+                            ::placeholder {
+                                color: #000000;
+                            }
+                            &:focus {
+                                outline: none;
+                            }
+                        }
+                        textarea {
+                            border-radius: 0;
+                            background-color: #ffffff;
+                            width: 100%;
+                            height: 223px;
+                            color: $body-font-color;
+                            font-size: 18px;
+                            padding: 6px 12px;
+                            border: 1px solid #000000;
+                            margin-bottom: 13px;
+                            ::-webkit-input-placeholder {
+                                /* Edge */
+                                color: #000000;
+                            }
+                            :-ms-input-placeholder {
+                                /* Internet Explorer 10-11 */
+                                color: #000000;
+                                opacity: 1;
+                            }
+                            ::placeholder {
+                                color: #000000;
+                            }
+                        }
+                    }
+                    .successForm{
+                        .txtBox, .textarea{
+                            border: 1px solid #119f0a !important;
+                        }
+                    }
+                    .errorForm{
+                        .txtBox, .textarea{
+                            border: 1px solid #9f0a1f !important;
+                        }
+                    }
+                }
+            }
+    
+            button.ctaborder.prev,
+            button.ctaborder.next,
+            button.ctaborder.submitbtn {
+                font-size: 20px;
+                line-height: 18px;
+                font-weight: bold;
+                text-transform: uppercase;
+                min-height: auto;
+                min-width: 111px;
+                border-radius: 0;
+                padding: 8px 18px;
+            }
+            button.ctaborder.prev {
+                margin-right: 3px;
+                &::before{
+                    display: none;
+                }
+                &:hover{
+                    border: 1px solid $secondary-color;
+                }
+            }
+            .nextPrevBtn {
+                margin-bottom: 0px;
+                text-align: right;
+                margin-top: 32px;
+                @include breakpoint(small only){
+                    text-align: center;
+                    margin-top: 0px;
+                }
+                @include breakpoint(medium) {
+                    margin-bottom: 0px;
+                }
+            }
+            .submitbtns {
+                margin-bottom: 58px;
+                @include breakpoint(medium) {
+                    margin-bottom: 90px;
+                }
+            }
+            .umbraco-forms-fieldset{
+                min-inline-size: auto;
+            }
+            .umbraco-forms-container{
+                display: flex;
+                flex-wrap: wrap;
+                margin-top: 36px;
+                .umbraco-forms-field{
+                    width: 100%;
+                    max-width: 100%;
+                    margin-bottom: 20px;
+                    @include breakpoint(medium) {
+                        &:first-child{
+                            margin-right: 33px;
+                        }
+                        &:first-child , &:nth-child(2){
+                            max-width: 48%;
+                            width: 100%;
+                        }
+                    }
+                    @media (min-width: 1279px) and (max-width: 1390px){
+                        &:first-child{
+                            margin-right: 26px;
+                        }
+                    }
+                    @media (min-width: 375px) and (max-width: 1279px){
+                        &:first-child{
+                            margin-right: 0px;
+                        }
+                        &:first-child , &:nth-child(2){
+                            max-width: 100%;
+                        }
+                    }
+                    input{
+                        height: 60px;
+                        color: #000000;
+                        font-size: 18px;
+                    }
+                    textarea{
+                        height: 223px;
+                    }
+                }
+            }
+            .btn.primary{
+                float: right;
+                background: #FE5000;
+                color: #ffffff;
+                border: 1px solid #FE5000;
+                display: inline-block;
+                position: relative;
+                font-size: 20px;
+                line-height: 18px;
+                font-weight: bold;
+                text-transform: uppercase;
+                min-height: auto;
+                min-width: 111px;
+                border-radius: 0;
+                padding: 8px 18px;
+                transition: 0.3s;
+                &:hover{
+                    background: $primary-color;
+                    border-color:$primary-color ;
+                }
+            }
+            &.lastStep{
+                button.ctaborder.prev{
+                    margin-right: 35px;
+                    float: right;
+                }
+            }
+            .umbraco-forms-caption{
+                display: none;
+            } 
+        }
+        .progress {
+            border: 1px solid #707070;
+            background-color: #fff;
+            height: 14px;
+            max-width: 100%;
+            margin: 0px auto;
+            margin-top: 26px;
+            overflow: hidden;
+            display: none;
+            @include breakpoint(large) {
+                margin-top: 90px;
+                height: 22px;
+            }
+            .progress-bar {
+                float: left;
+                width: 0;
+                height: 100%;
+                font-size: 12px;
+                line-height: 20px;
+                color: #fff;
+                text-align: center;
+                background-color: $secondary-color;
+                box-shadow: none;
+                transition: width 0.6s ease;
+            }
+        }
+        .imgsection{
+            margin-top: 30px;
+            overflow: hidden;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            @include breakpoint(large){
+                position: absolute;
+                margin-top: 60px;
+            }
+            img{
+                width: 100%;
+            }
+        }
+        .current{
+            ~ .progress{
+                margin-top: 70px;
+                @include breakpoint(small only){
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+    .successsection{
+        padding-top: 155px;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-bottom: 88px;
+        @include breakpoint(small only){
+            padding-top: 65px;
+        }
+        @include breakpoint(medium only){
+            padding-top: 65px;
+        }
+        .success{
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+            .successtxt{
+                p{
+                    font-size: 80px;
+                    line-height: 85px;
+                    font-weight: 700;
+                    padding-bottom: 36px;
+                    color: #000000;
+                    @include breakpoint(small only){
+                        font-size: 70px;
+                        line-height: 75px; 
+                    }
+                    @media (min-width: 768px) and (max-width: 1279px){
+                        font-size: 60px;
+                        line-height: 65px;
+                    }
+                    @include breakpoint(small only){
+                        font-size: 40px;
+                        line-height: 45px; 
+                    }
+                }
+            }
+            p{
+                font-size: 22px;
+                line-height: 26px;
+                font-weight: 600;
+                color: #707070;
+                @media (min-width: 375px) and (max-width: 1279px){
+                    font-size: 18px;
+                }
+            }
+            .success-checkmark{
+                padding-top: 78px;
+                @include breakpoint(medium only){
+                    padding-top: 28px;
+                }
+                @include breakpoint(small only){
+                    padding-top: 28px;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1279px) {
+    .contactpanel .contactwrap .imgsection {
+        position: relative;
+        margin-top: 60px;
+    }
+}

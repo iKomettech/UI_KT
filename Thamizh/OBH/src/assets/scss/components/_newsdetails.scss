@@ -1,0 +1,250 @@
+
+.newsdetails {
+    .subbannerpanel.nobanner {
+        min-height: 60px;
+            @include breakpoint(large) {
+                min-height: 138px;
+             }
+        .bannerwrapheight{
+            min-height: 60px;
+            @include breakpoint(large) {
+                min-height: 138px;
+             }
+            .shadowbg{
+                height:40px;
+                @include breakpoint(large) {
+                   height:115px;
+                }
+        }
+      }
+    }
+
+    &.imgsmall{
+        .innerWrap{
+            .imgWrap{
+                overflow: hidden;  
+                margin: 0 auto;
+                max-width: 480px;
+            }
+            .dis{
+                max-width: 480px;
+                margin: 0 auto;
+            }
+        } 
+        .social-share { 
+            margin-top: 35px;
+        }
+    
+    }
+    &.noimg{
+        .social-share { 
+            margin-top: 15px;
+        }
+    }
+
+    .grid-container {
+        padding-right: 0.625rem;
+        padding-left: 0.625rem;
+        max-width:731px;
+        margin-left: auto;
+        margin-right: auto;
+            .heading-title {
+                text-align:center;
+                margin-bottom: 28px;
+                h1 {
+                    font-size: 36px;
+                    line-height: 45px;
+                    font-weight: 800;
+                    margin-bottom: 10px;
+                    text-align: center;
+                    text-transform: unset;
+                    @include breakpoint(small only) {
+                        font-size: 25px;
+                        line-height: 35px;
+                        margin-bottom: 10px;
+                        padding-left: 15px;
+                        padding-right: 15px;
+                    }
+                    @include breakpoint(medium only) {
+                        margin-bottom: 20px;
+                    }
+                }
+                 &::after{
+                    left:43%;
+                    @include breakpoint(small only) {
+                        left: calc(50% - 50px);  
+                    }
+                 }
+            } 
+        .ColumnWrap{
+            .date{
+                color:$secondary-color;
+                font-size: 24px;
+                line-height: 28px;
+                text-align: center;
+                font-weight: 700;
+                padding-bottom: 32px;
+            }
+            .innerWrap{
+                .imgWrap{
+                    overflow: hidden; 
+                    max-width: 720px;
+                    margin: 0 auto;
+                    text-align: center; 
+                }
+                .dis{
+                    text-align: center;
+                    font-size: 14px;
+                    line-height: 18px;
+                    font-weight: 700;
+                    padding-top: 3px;
+                }
+                p{
+                   font-size: 18px; 
+                   line-height: 32px;
+                   padding-bottom: 45px;
+                   @include breakpoint(small only) {
+                    padding-bottom: 10px;
+                    padding-top: 30px;
+                   }
+                   @include breakpoint(medium only) {
+                    padding-bottom: 10px;
+                   }
+                }
+                .btn-wrap{
+                    text-align: center;
+                    padding-top: 15px;
+                    padding-bottom:40px;
+                    text-transform: uppercase;
+                    .ctaborder.primarybtn
+                    {
+                        background:$secondary-color;
+                    // &:hover {
+                    //     background:black;
+                    // }
+                   }
+                    .ctaborder{
+                       min-width: 172.5px;
+                       height: 34px;
+                       font-size: 20px;
+                       line-height:22px;
+                       font-weight: 700;
+                       padding: 6px 24px;
+                       padding-right:15px;
+                       text-align: center;
+                       border: unset;
+                       &:before {
+                        background-color: #707070;
+                        }
+                       span{
+                        &:before {
+                            content: "<";
+                            display: inline-block;
+                            width: 10px;
+                            height: 8px;
+                            position: absolute;
+                            top: 6px;
+                            font-weight: 700;
+                            left: 8px;
+                            }
+                       }   
+                    }
+                }
+            }
+        } 
+      
+        .social-share { 
+            position: relative;
+            max-width: 720px;
+            margin: 0 auto;
+            margin-bottom: 28px;
+            text-align: center;
+            margin-top: 10px;
+            .ctaborder.primarybtn:before {
+                content: "";
+                background: white;
+                border: 1px solid black;
+            }
+            .ctaborder.primarybtn:hover {
+                color: #ffffff;
+                background: #1c1c1b;
+            }
+            .ctaborder.primarybtn {
+                background: white;
+                color: black;
+                width:166px;
+                height: 44px;
+                text-align: left;
+                font-size: 25px;
+                padding: 8px 30px;
+                text-transform: capitalize;
+            }
+            .ctaborder::after {
+                content: "";
+                position: absolute;
+                top: 17%;
+                left: 110px;
+                margin-top: 0px;
+                z-index: 2;
+                margin: auto;
+                width: 28px;
+                height: 28px;
+                background-image: url("#{$img}/share-icon.svg");
+                background-size: contain;
+                background-repeat: no-repeat;
+                cursor: pointer;
+            }
+            .ctaborder:hover::after{
+                background-image: url("#{$img}/share-icon-hover.svg");
+            }
+       ul{
+        background: #000;
+        width: 154px;
+        height: 44px;
+        position: absolute;
+        top: 0;
+        left: 425px;
+        visibility: hidden;
+        opacity: 0;
+        transition:all .2s;      	
+        padding: 4px;
+        transform: scaleX(0);
+        transition: all 0.3s;
+        transform-origin: left;
+        z-index: 1;
+        @include breakpoint(small only) {
+            top: 44px;
+            left: 82px
+        }
+           li {
+               display: inline-block;
+               padding: 0 5px;
+               img{
+                   width: 70%;
+                   &:hover {
+                       width: 75%;
+                   }
+               }
+               svg {
+                   &:hover {
+                       path{
+                           fill: #cacaca;
+                       }
+                   }
+               }
+           }
+       }
+       &.open {	
+       ul{
+            visibility: visible;
+            opacity: 1;
+            -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+       }
+   }
+   }	 
+    }
+}
+.social-share +.btn-wrap{
+    margin-top: 35px;
+}

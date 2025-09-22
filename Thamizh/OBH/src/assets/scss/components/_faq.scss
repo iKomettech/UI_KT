@@ -1,0 +1,161 @@
+
+.faqpanel {
+    .accordion-container {
+        .heading-title {
+            margin-bottom: 53px;
+        }
+        position: relative;
+        @include breakpoint(large) {
+            margin: 70px 0;
+        }
+        @include breakpoint(small only) {
+            margin-top: 53px;
+        }
+    }
+    .faq-accordion {
+        position: relative;
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .faq-accordion > a {
+        display: block;
+        padding: 15px 40px 18px 20px;     
+        text-decoration: none;
+        font-weight: normal;
+        -webkit-transition: all 0.2s linear;
+        transition: all 0.2s linear;
+        align-items: center;
+        display: flex;
+        position: relative;
+        font-size: 20px;
+        line-height: 27px;
+        word-break: break-word;
+        @include breakpoint(small) {
+            font-size: 20px;
+            line-height: 25px;
+            font-weight: 600;
+        }
+        @include breakpoint(large) {
+            font-size: 24px;
+            line-height: 20px;
+            font-weight: 600;
+            padding: 39px 63px 32px 30px;
+        }
+        @include breakpoint(xlarge) {
+            font-size: 24px;
+            line-height: 20px;
+            font-weight: 700;
+            padding: 39px 63px 32px 77px;
+        }  
+    }
+    .faq-accordion > a i {
+        position: relative;
+        &.fa-angle-down {
+            background: url(../images/faq-down.svg);
+            position: absolute;
+            top: 30%;
+            right: 10px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 18px;
+            height: 20px;
+            transition: all .3s;
+            @include breakpoint(small only) {
+                top: 45%;
+            }
+            @include breakpoint(large) {
+                right: 30px;
+                width: 33px;
+                height: 20px;
+                top: 40%;
+            }
+            @include breakpoint(xlarge) {
+                right: 21px;
+                width: 43px;
+                height: 28px;
+            }
+        }
+        &.fa-angle-up {
+            background: url(../images/faq-up.svg);
+            position: absolute;
+            top: 30%;
+            right: 10px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 18px;
+            height: 20px;
+            transition: all .3s;
+            transform: translate(0px, -50%);
+            transform: rotate(180deg);
+            @include breakpoint(small only) {
+                top: 45%;
+            }
+            @include breakpoint(large) {
+                right: 30px;
+                width: 33px;
+                height: 20px;
+                top: 40%;
+            }
+            @include breakpoint(xlarge) {
+                right: 21px;
+                width: 43px;
+                height: 28px;
+            }
+        }
+    }
+
+    .faq-content {
+        display: none;
+        border-top: 0px;
+        padding: 15px 40px 18px 20px;
+        padding-top: 0 !important;
+        @include breakpoint(medium only) {
+            margin-left:0px;
+            padding: 15px 40px 18px 20px;
+            max-width: 700px;
+        }
+        @include breakpoint(large) {
+            padding:33px 0px;
+            margin-left:30px;
+            max-width: 948px;
+        }
+        @include breakpoint(xlarge) {
+            padding:33px 0px;
+            margin-left:77px;
+            max-width: 948px;
+        }
+        .btn {
+            margin-top: 28px;
+            text-align: left;
+            margin-bottom: 12px;
+            @include breakpoint(large) {
+                margin-top: 43px;
+                margin-bottom: 18px;
+            }
+        }
+        p {
+            font-size: 18px;
+            line-height: 26px;
+            margin-top: 0; 
+            word-break: break-word; 
+            @include breakpoint(small only) {
+                font-size: 16px;
+                line-height: 23px;
+            } 
+            @include breakpoint(medium only) {
+                font-size: 16px;
+                line-height: 23px;
+            } 
+            @include breakpoint(large only) {
+                font-size: 18px;
+                line-height: 25px;
+            }          
+            a {
+                text-decoration: underline;
+            }
+        }
+    }
+   
+}

@@ -1,0 +1,1567 @@
+{{!-- This is the base layout for your project, and will be used on every page unless specified. --}}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OBHS | One Brooklyn Health</title>
+    <meta name="title" content="OBHS | One Brooklyn Health" />
+    <meta name="description"
+        content="We design wealth strategies specifically to fit the needs of each client. Contact us to see how One Brooklyn Health advisors can assist you with reaching your goals." />
+    <link rel="shortcut icon" type="image/x-icon" href="{{root}}assets/images/obh-favicon.ico">
+    <link rel="preload" href="{{root}}assets/plugins/fonts/opensans-regular-webfont.woff2" as="font" type="font/woff2"
+        crossorigin>
+    <link rel="preload" href="{{root}}assets/plugins/fonts/opensans-light-webfont.woff2" as="font" type="font/woff2"
+        crossorigin>
+    <link rel="preload" href="{{root}}assets/plugins/fonts/opensans-bold-webfont.woff2" as="font" type="font/woff2"
+        crossorigin>
+    <link rel="preload" href="{{root}}assets/plugins/fonts/opensans-bold-webfont-latin.woff2" as="font" type="font/woff2"
+        crossorigin>    
+    <link rel="preload" href="{{root}}assets/plugins/fonts/opensans-semibold-webfont.woff2" as="font" type="font/woff2"
+        crossorigin>
+    <link rel="preload" href="{{root}}assets/plugins/fonts/opensans-semibold-webfont-latin.woff2" as="font" type="font/woff2"
+        crossorigin>
+    <link rel="preload" href="{{root}}assets/plugins/fonts/opensans-extrabold-webfont.woff2" as="font" type="font/woff2"
+        crossorigin>
+    <link rel="stylesheet" href="{{root}}assets/plugins/css/font.css" as="style">
+    <link rel="stylesheet" href="{{root}}assets/plugins/css/swiper.min.css">
+    <link rel="stylesheet" href="{{root}}assets/plugins/css/jquery-ui.min.css">
+	<link rel="stylesheet" href="{{root}}assets/plugins/css/flat.css" media="all">
+    <link rel="stylesheet" href="{{root}}assets/plugins/css/sliderpanel.css" media="all">
+    <link rel="stylesheet" href="{{root}}assets/plugins/css/YouTubePopUp.css" media="all">
+    <link rel="stylesheet" href="{{root}}assets/css/style.css" media="all">
+</head>
+
+<body>
+    <div id="skiptocontent"><a href="#maincontent" alt="skip to main content">skip to main content</a></div>
+    <div class="loaderBlock">
+        <div class="svgAnimation">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="50" />
+            </svg>
+        </div>
+        <div class="loaderWrap">
+            <img src="{{root}}assets/images/obh-logo.png" alt="One Brooklyn Health" width="368" height="77"
+                class="lazyload" loading="lazy" />
+        </div>
+    </div>
+    <div class="sitewrap">
+        <header class="sticky module">
+         <!-- <div class="alertsPannel">
+          <div class="grid-container">
+            <div class="alertsWrap">
+              <div class="wrap">
+                <img src="../assets/images/more-info.svg" alt="alert-icon"/>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                  dolore magna aliqua. Ut enim ad minim veniam Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                  <a href="#">Learn More</a>
+                </p>
+                <a href="#" id="alertsPannelClose" class="close-alerts">
+                    <i></i>
+                    <span class="screen-reader-text">
+                      Close
+                    </span>
+                  </a>
+              </div>
+            </div>
+          </div>
+        </div> -->
+            <div class="grid-container">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="{{root}}assets/images/OBH Logo.svg" alt="One Brooklyn Health" width="368" height="77" />
+                    </a>
+                </div>
+
+                <div class="headerMainWrapper toprightcta">
+                    <div class="secondary-nav">
+                        <ul class="mainmenu">
+                          <li><a href="#">News</a></li>
+                          <li><a href="#">Events</a></li>
+                          <li><a href="#">Careers</a></li> 
+                          <li><a href="#">Health Care Professionals</a></li>  
+                          <li><a href="#">Donate</a></li>  
+                          <li><a href="#">Volunteer</a></li>  
+                        </ul>
+                    </div>
+                    <div class="headerWrapper">
+                        <div class="menusearchBlock search">
+                            <a href="javascript:void(0)" id="search-toggle">
+                                <i><span class="screen-reader-text">Search</span></i>
+                            </a>
+                            <div class="form-group ui-widget">
+                                <form class="search" action="#" method="GET" id="searchform">
+                                    <label for="searchid" class="screen-reader-text">Search</label><input type="text" class="txtBox" id="searchid" name="q" required="" placeholder="Search"><span>&nbsp;</span>
+                                    <button type="submit" form="searchform" value="Submit" hidden="">Submit</button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="hamburger">
+                            <a href="#" class="mhamburger" title="Mobile hamburger">
+                                <span> <img src="{{root}}assets/images/hamburger-icon.svg" alt="One Brooklyn Health"
+                                        class="screen-reader-text" /></span>
+                              
+                            </a>
+                        </div>
+                        <div class="header-menu">
+                            <ul class="mainMenu">
+                                <li class="dropdownMenu menu-mega-blog"><a href="#"
+                                        class="first-level-link">Find a Doctor</a>
+                                        <div class="magasubfn-megamenu-wrapper fusion-megamenu-fullwidth">
+                                            <div class="row">
+                                                <div class="magasubfn-megamenu-holder">
+                                                    <ul class="magasubfn-megamenu">
+                                                        <li class="menu-item fiterWidget">
+                                                            <div class="widgets-container second-level-widget">
+                                                                <div class="title-h2">Filter By</div>
+                                                                <div class="physicianSearchBlock">
+                                                                    <div class="selctbox">
+                                                                        <div class="title-h4">Speciality</div>
+                                                                        <select class="selectSpeciality" id="obhSpeciality" name="Specialty" title="Specialty">
+                                                                            <option value="">Select Specialty</option>
+                                                                            <option value="Specialty1">Specialty1</option>
+                                                                            <option value="Specialty2">Specialty2</option>
+                                                                            <option value="Specialty3">Specialty3</option>
+                                                                            <option value="Specialty4">Specialty4</option>
+                                                                            <option value="Specialty5">Specialty5</option>
+                                                                            <option value="Specialty6">Specialty6</option>
+                                                                            <option value="Specialty7">Specialty7</option>
+                                                                            <option value="Specialty8">Specialty8</option>
+                                                                            <option value="Specialty9">Specialty9</option>
+                                                                            <option value="Specialty10">Specialty10</option>
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="selctbox">
+                                                                        <div class="title-h4">Condition</div>
+                                                                        <select class="selectCondition" id="obhCondition" name="condition" title="Condition">
+                                                                            <option value="">Select Condition</option>
+                                                                            <option value="Condition1">Condition1</option>
+                                                                            <option value="Condition2">Condition2</option>
+                                                                            <option value="Condition3">Condition3</option>
+                                                                            <option value="Condition4">Condition4</option>
+                                                                            <option value="Condition5">Condition5</option>
+                                                                            <option value="Condition6">Condition6</option>
+                                                                            <option value="Condition7">Condition7</option>
+                                                                            <option value="Condition8">Condition8</option>
+                                                                            <option value="Condition9">Condition9</option>
+                                                                            <option value="Condition10">Condition10</option>
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="btn-right">
+                                                                        <a href="#" class="ctaborder secondarybtn" aria-label="Search">Search</a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="menu-item searchWidget">
+                                                            <div class="widgets-container second-level-widget">
+                                                                <div class="title-h2">Browse By Doctor’s Last Name</div>
+                                                                <div class="searchByLastName exploreLetter">
+                                                                        <ul>
+                                                                            <li><a href="#" aria-label="Find a doctors by Last Name A">A</a></li>
+                                                                            <li><a href="#" aria-label="Find a doctors by Last Name B">B</a></li>
+                                                                            <li><a href="#" aria-label="Find a doctors by Last Name C">C</a></li>
+                                                                            <li><a href="#" aria-label="Find a doctors by Last Name D">D</a></li>
+                                                                            <li><a href="#" aria-label="Find a doctors by Last Name E">E</a></li>
+                                                                            <li><a href="#" aria-label="Find a doctors by Last Name F">F</a></li>
+                                                                            <li><a href="#" aria-label="Find a doctors by Last Name G">G</a></li>
+                                                                            <li><a href="#" aria-label="Find a doctors by Last Name H">H</a></li>
+                                                                            <li><a href="#" aria-label="Find a doctors by Last Name I">I</a></li>
+                                                                            <li><a href="#" aria-label="Find a doctors by Last Name J">J</a></li>
+                                                                            <li><a href="#" aria-label="Find a doctors by Last Name K">K</a></li>
+                                                                            <li><a href="#" aria-label="Find a doctors by Last Name L">L</a></li>
+                                                                            <li><a href="#" aria-label="Find a doctors by Last Name M">M</a></li>
+                                                                            <li><a href="#" aria-label="Find a doctors by Last Name N">N</a></li>
+                                                                            <li><a href="#" aria-label="Find a doctors by Last Name O">O</a></li>
+                                                                            <li><a href="#" aria-label="Find a doctors by Last Name P">P</a></li>
+                                                                            <li><a href="#" aria-label="Find a doctors by Last Name Q">Q</a></li>
+                                                                            <li><a href="#" aria-label="Find a doctors by Last Name R">R</a></li>
+                                                                            <li><a href="#" aria-label="Find a doctors by Last Name S">S</a></li>
+                                                                            <li><a href="#" aria-label="Find a doctors by Last Name T">T</a></li>
+                                                                            <li><a href="#" aria-label="Find a doctors by Last Name U">U</a></li>
+                                                                            <li><a href="#" aria-label="Find a doctors by Last Name V">V</a></li>
+                                                                            <li><a href="#" aria-label="Find a doctors by Last Name W">W</a></li>
+                                                                            <li><a href="#" aria-label="Find a doctors by Last Name X">X</a></li>
+                                                                            <li><a href="#" aria-label="Find a doctors by Last Name Y">Y</a></li>
+                                                                            <li><a href="#" aria-label="Find a doctors by Last Name Z">Z</a></li>
+                                                                        </ul>
+                                                                </div>
+                                                                <div class="title-h2">Search by Name</div>
+                                                                <form class="namesearchform">
+                                                                    <div class="input-group">
+                                                                        <span class="form-control-search"><span class="screen-reader-text">Search</span></span>
+                                                                        <input type="text" class="form-control" name="searchname" placeholder=""/>
+                                                                        <div class="input-group-append">
+                                                                        <button class="ctaborder secondarybtn" type="button">
+                                                                            Search
+                                                                        </button>
+                                                                        </div>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div style="clear:both;"></div>
+                                            </div>
+                                        </div>
+                                </li>
+                                <li class="dropdownMenu">
+                                    <a class="first-level-link" href="#">Contact</a>
+                                </li>
+                                
+                                <li class="dropdownMenu"><a class="first-level-link" href="#">Telehealth</a>
+                                </li>
+                                <li class="dropdownMenu"><a class="first-level-link" href="#">MyChart</a>
+                                </li>
+                                <li class="dropdownMenu select-language">
+                                    <a href="javascript:void(0);" class="langtogBtn notranslate"><span>Select Language</span></a>
+                                    <ul class="SubMenu notranslate" id="selectmenu">
+                                            <li><a href="javascript:void(0);" value="English"><span>English</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Afrikaans"><span>Afrikaans</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Albanian"><span>Shqip / Albanian</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Amharic"><span>አማርኛ / Amharic</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Arabic"><span>العربية / Arabic</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Armenian"><span>Հայերեն / Armenian</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Azerbaijani"><span>آذربايجان / Azerbaijani</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Basque"><span>Euskara / Basque</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Belarusian"><span>Беларуская / Belarusian</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Bengali"><span>বাংলা / Bengali</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Bosnian"><span>Bosanski / Bosnian</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Bulgarian"><span>Български / Bulgarian</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Catalan"><span>Català / Catalan</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Cebuano"><span>Cebuano</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Chichewa"><span>Chichewa</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Chinese (Simplified)"><span>简体中文 / Chinese (Simplified)</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Chinese (Traditional)"><span>繁體中文 / Chinese (Traditional)</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Corsican"><span>Corsu / Corsican</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Croatian"><span>Hrvatski / Croatian</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Czech"><span>Česky / Czech</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Danish"><span>dansk / Danish</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Dutch"><span>Nederlands / Dutch</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Esperanto"><span>Esperanto</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Estonian"><span>Eesti keel / Estonian</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Filipino"><span>Filipino</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Finnish"><span>Suomi/ Finnish</span></a></li>
+                                            <li><a href="javascript:void(0);" value="French"><span>Français / French</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Frisian"><span>Frysk / Frisian</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Galician"><span>Galego / Galician</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Georgian"><span>ქართული / Georgian</span></a></li>
+                                            <li><a href="javascript:void(0);" value="German"><span>Deutsch / German</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Greek"><span>Ελληνικά / Greek</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Gujarati"><span>ગુજરાતી / Gujarati</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Haitian Creole"><span>Krèyol ayisyen / Haitian Creole</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Hausa"><span>Hausa</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Hawaiian"><span>ʻŌlelo Hawaiʻi / Hawaiian</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Hebrew"><span>עברית / Hebrew</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Hindi"><span>हिन्दी / Hindi</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Hmong"><span>Hmoob / Hmong</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Hungarian"><span>Magyar / Hungarian</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Icelandic"><span>Íslenska / Icelandic</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Igbo"><span>Igbo / Igbo</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Indonesian"><span>Bahasa Indonesia / Indonesian</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Irish"><span>Gaeilge / Irish</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Italian"><span>Italiano / Italian</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Japanese"><span>日本語 / Japanese</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Javanese"><span>Basa Jawa / Javanese</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Kannada"><span>ಕನ್ನಡ / Kannada</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Kazakh"><span>Қазақша / Kazakh</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Khmer"><span>ភាសាខ្មែរ / Khmer</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Korean"><span>한국어 / Korean</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Kurdish (Kurmanji)"><span>Kurdî Kurmancî / Kurdish (Kurmanji)</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Kyrgyz"><span>Кыргызча / Kyrgyz</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Lao"><span>ລາວ / Lao</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Latin"><span>Latina / Latin</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Latvian"><span>Latviešu / Latvian</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Lithuanian"><span>Lietuvių / Lithuanian</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Luxembourgish"><span>Lëtzebuergesch / Luxembourgish</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Macedonian"><span>Македонски / Macedonian</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Malagasy"><span>Malagasy</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Malay"><span>Bahasa Melayu / Malay</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Malayalam"><span>മലയാളം / Malayalam</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Maltese"><span>il-Malti / Maltese</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Maori"><span>Māori / Maori</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Marathi"><span>मराठी / Marathi</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Mongolian"><span>Монгол / Mongolian</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Myanmar (Burmese)"><span>မြန်မာ (ဗမာ) / Myanmar (Burmese)</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Nepali"><span>नेपाली / Nepali</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Norwegian"><span>norsk / Norwegian</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Pashto"><span>پښتو / Pashto</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Persian"><span>فارسی / Persian</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Polish"><span>Polski / Polish</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Portuguese"><span>Português / Portuguese</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Punjabi"><span>ਪੰਜਾਬੀ  / Punjabi</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Romanian"><span>Română / Romanian</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Russian"><span>Русский / Russian</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Samoan"><span>Faa-Samoa / Samoan</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Scots Gaelic"><span>Gàidhlig / Scots Gaelic</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Serbian"><span>Српски / Serbian</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Sesotho"><span>Sotho / Sesotho</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Shona"><span>ChiShona / Shona</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Sindhi"><span>سنڌي / Sindhi</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Sinhala"><span>සිංහල / Sinhala</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Slovak"><span>Slovenčina / Slovak</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Slovenian"><span>Slovenščina / Slovenian</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Somali"><span>Soomaali / Somali</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Spanish"><span>Español / Spanish</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Sundanese"><span>Basa Sunda / Sundanese</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Swahili"><span>Kiswahili / Swahili</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Swedish"><span>svenska / Swedish</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Tajik"><span>Тоҷикӣ / Tajik</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Tamil"><span>தமிழ் / Tamil</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Telugu"><span>తెలుగు / Telugu</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Thai"><span>ไทย / Thai</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Turkish"><span>Türkçe / Turkish</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Ukrainian"><span>Українська / Ukrainian</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Urdu"><span>اردو / Urdu</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Uzbek"><span>O'zbek / Uzbek</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Vietnamese"><span>Tiếng Việt / Vietnamese</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Welsh"><span>Cymraeg / Welsh</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Xhosa"><span>isiXhosa / Xhosa</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Yiddish"><span>אידיש / Yiddish</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Yoruba"><span>Yorùbá / Yoruba</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Zulu"><span>isiZulu / Zulu</span></a></li>
+                                        </ul>
+                                  </li>
+                            </ul>
+                        </div>
+                        <div class="header-submenu">
+                            <ul class="mainsubMenu">
+                                <li class="dropdownMenu menu-mega-blog"><a href="#"
+                                    class="first-level-link">COVID-19</a>
+                            </li>
+                            <li class="dropdownMenu menu-mega-blog">
+                                <a class="first-level-link" href="#">Our Services</a>
+                                <div class="magasubfn-megamenu-wrapper fusion-megamenu-fullwidth">
+                                    <div class="row">
+                                        <div class="magasubfn-megamenu-holder">
+                                            <ul class="magasubfn-megamenu">
+                                                <li class="menu-item fiterWidget">
+                                                    <div class="widgets-container second-level-widget">
+                                                        <div class="title-h2">CENTERS OF EXCELLENCE</div>
+                                                        <div class="servicesmenu">
+                                                            <ul>
+                                                                <li><a href="#">Neurosciences Institutes
+                                                                </a></li>
+                                                                <li><a href="#">Bone & Joint Center
+                                                                </a></li>
+                                                                <li><a href="#">Comprehensive Behavioral Health Center
+                                                                </a></li>
+                                                                <li><a href="#">Kingsbrook Rehabilitation Institute                                                                    
+                                                                </a></li>
+                                                            </ul>
+                                                            <div class="btn-service-all">
+                                                                <a href="#" class="ctaborder secondarybtn" aria-label="View all Services">View all Services</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="menu-item searchWidget">
+                                                    <div class="widgets-container second-level-widget">
+                                                        <div class="title-h2">Browse By First Letter</div>
+                                                        <div class="searchByLastName exploreLetter">
+                                                                <ul>
+                                                                    <li><a href="#" aria-label="Find a doctors by Last Name A">A</a></li>
+                                                                    <li><a href="#" aria-label="Find a doctors by Last Name B">B</a></li>
+                                                                    <li><a href="#" aria-label="Find a doctors by Last Name C">C</a></li>
+                                                                    <li><a href="#" aria-label="Find a doctors by Last Name D">D</a></li>
+                                                                    <li><a href="#" aria-label="Find a doctors by Last Name E">E</a></li>
+                                                                    <li><a href="#" aria-label="Find a doctors by Last Name F">F</a></li>
+                                                                    <li><a href="#" aria-label="Find a doctors by Last Name G">G</a></li>
+                                                                    <li><a href="#" aria-label="Find a doctors by Last Name H">H</a></li>
+                                                                    <li><a href="#" aria-label="Find a doctors by Last Name I">I</a></li>
+                                                                    <li><a href="#" aria-label="Find a doctors by Last Name J">J</a></li>
+                                                                    <li><a href="#" aria-label="Find a doctors by Last Name K">K</a></li>
+                                                                    <li><a href="#" aria-label="Find a doctors by Last Name L">L</a></li>
+                                                                    <li><a href="#" aria-label="Find a doctors by Last Name M">M</a></li>
+                                                                    <li><a href="#" aria-label="Find a doctors by Last Name N">N</a></li>
+                                                                    <li><a href="#" aria-label="Find a doctors by Last Name O">O</a></li>
+                                                                    <li><a href="#" aria-label="Find a doctors by Last Name P">P</a></li>
+                                                                    <li><a href="#" aria-label="Find a doctors by Last Name Q">Q</a></li>
+                                                                    <li><a href="#" aria-label="Find a doctors by Last Name R">R</a></li>
+                                                                    <li><a href="#" aria-label="Find a doctors by Last Name S">S</a></li>
+                                                                    <li><a href="#" aria-label="Find a doctors by Last Name T">T</a></li>
+                                                                    <li><a href="#" aria-label="Find a doctors by Last Name U">U</a></li>
+                                                                    <li><a href="#" aria-label="Find a doctors by Last Name V">V</a></li>
+                                                                    <li><a href="#" aria-label="Find a doctors by Last Name W">W</a></li>
+                                                                    <li><a href="#" aria-label="Find a doctors by Last Name X">X</a></li>
+                                                                    <li><a href="#" aria-label="Find a doctors by Last Name Y">Y</a></li>
+                                                                    <li><a href="#" aria-label="Find a doctors by Last Name Z">Z</a></li>
+                                                                </ul>
+                                                        </div>
+                                                        <div class="title-h2">Search by Name</div>
+                                                        <form class="namesearchform">
+                                                            <div class="input-group">
+                                                                <span class="form-control-search"><span class="screen-reader-text">Search</span></span>
+                                                                <input type="text" class="form-control" name="searchname" placeholder=""/>
+                                                                <div class="input-group-append">
+                                                                <button class="ctaborder secondarybtn" type="button">
+                                                                    Search
+                                                                </button>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div style="clear:both;"></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="dropdownMenu singlemenu"><a class="first-level-link" href="#">Patients & Visitors</a>
+                                <div class="singleMenuWrap">
+                                    <ul>
+                                                <li><a href="/patients-visitors">Overview</a></li>
+                                                <li><a href="/patients-visitors/patient-experience">Patient Experience</a></li>
+                                                <li><a href="/empty-page">Financial Assistance</a></li>
+                                                <li><a href="/empty-page">Patient Rights</a></li>
+                                                <li><a href="/patients-visitors/medical-records-health-information">Medical Records</a></li>
+                                                <li><a href="/empty-page">Patient Education</a></li>
+                                                <li><a href="/patients-visitors/visitor-information">Visitor Information</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="dropdownMenu"><a class="first-level-link" href="#">Community</a>
+                            </li>
+                            <li class="dropdownMenu"><a class="first-level-link" href="#">Healthy Living</a>
+                            </li>
+                            <li class="dropdownMenu singlemenu"><a class="single-link" href="#">Our Story</a>
+                                <div class="singleMenuWrap">
+                                    <ul>
+                                        <li><a href="#">About OBH</a></li>
+                                        <li><a href="#">Our History</a></li>
+                                        <li><a href="#">Our Leadership</a></li>
+                                        <li><a href="#">FAQs</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="dropdownMenu"><a class="first-level-link" href="#">Locations</a>
+                            </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-wrapper">
+
+                <nav role="navigation">
+
+                    <div class="nav-toggle">
+                        <span class="nav-back"></span>
+                        <span class="nav-title">Menu</span>
+                        <span class="nav-close"></span>
+                    </div>
+                    <div class="menu-section">
+                        <ul class="langmenu">
+                            <li class="dropdownMenu select-language">
+                                <a href="javascript:void(0);" class="langtogBtn notranslate"><span>Select Language</span></a>
+                                <ul class="SubMenu notranslate" id="selectmenu_mob">
+                                            <li><a href="javascript:void(0);" value="English"><span>English</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Afrikaans"><span>Afrikaans</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Albanian"><span>Shqip / Albanian</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Amharic"><span>አማርኛ / Amharic</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Arabic"><span>العربية / Arabic</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Armenian"><span>Հայերեն / Armenian</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Azerbaijani"><span>آذربايجان / Azerbaijani</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Basque"><span>Euskara / Basque</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Belarusian"><span>Беларуская / Belarusian</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Bengali"><span>বাংলা / Bengali</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Bosnian"><span>Bosanski / Bosnian</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Bulgarian"><span>Български / Bulgarian</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Catalan"><span>Català / Catalan</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Cebuano"><span>Cebuano</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Chichewa"><span>Chichewa</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Chinese (Simplified)"><span>简体中文 / Chinese (Simplified)</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Chinese (Traditional)"><span>繁體中文 / Chinese (Traditional)</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Corsican"><span>Corsu / Corsican</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Croatian"><span>Hrvatski / Croatian</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Czech"><span>Česky / Czech</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Danish"><span>dansk / Danish</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Dutch"><span>Nederlands / Dutch</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Esperanto"><span>Esperanto</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Estonian"><span>Eesti keel / Estonian</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Filipino"><span>Filipino</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Finnish"><span>Suomi/ Finnish</span></a></li>
+                                            <li><a href="javascript:void(0);" value="French"><span>Français / French</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Frisian"><span>Frysk / Frisian</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Galician"><span>Galego / Galician</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Georgian"><span>ქართული / Georgian</span></a></li>
+                                            <li><a href="javascript:void(0);" value="German"><span>Deutsch / German</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Greek"><span>Ελληνικά / Greek</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Gujarati"><span>ગુજરાતી / Gujarati</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Haitian Creole"><span>Krèyol ayisyen / Haitian Creole</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Hausa"><span>Hausa</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Hawaiian"><span>ʻŌlelo Hawaiʻi / Hawaiian</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Hebrew"><span>עברית / Hebrew</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Hindi"><span>हिन्दी / Hindi</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Hmong"><span>Hmoob / Hmong</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Hungarian"><span>Magyar / Hungarian</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Icelandic"><span>Íslenska / Icelandic</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Igbo"><span>Igbo / Igbo</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Indonesian"><span>Bahasa Indonesia / Indonesian</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Irish"><span>Gaeilge / Irish</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Italian"><span>Italiano / Italian</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Japanese"><span>日本語 / Japanese</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Javanese"><span>Basa Jawa / Javanese</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Kannada"><span>ಕನ್ನಡ / Kannada</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Kazakh"><span>Қазақша / Kazakh</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Khmer"><span>ភាសាខ្មែរ / Khmer</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Korean"><span>한국어 / Korean</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Kurdish (Kurmanji)"><span>Kurdî Kurmancî / Kurdish (Kurmanji)</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Kyrgyz"><span>Кыргызча / Kyrgyz</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Lao"><span>ລາວ / Lao</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Latin"><span>Latina / Latin</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Latvian"><span>Latviešu / Latvian</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Lithuanian"><span>Lietuvių / Lithuanian</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Luxembourgish"><span>Lëtzebuergesch / Luxembourgish</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Macedonian"><span>Македонски / Macedonian</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Malagasy"><span>Malagasy</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Malay"><span>Bahasa Melayu / Malay</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Malayalam"><span>മലയാളം / Malayalam</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Maltese"><span>il-Malti / Maltese</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Maori"><span>Māori / Maori</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Marathi"><span>मराठी / Marathi</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Mongolian"><span>Монгол / Mongolian</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Myanmar (Burmese)"><span>မြန်မာ (ဗမာ) / Myanmar (Burmese)</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Nepali"><span>नेपाली / Nepali</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Norwegian"><span>norsk / Norwegian</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Pashto"><span>پښتو / Pashto</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Persian"><span>فارسی / Persian</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Polish"><span>Polski / Polish</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Portuguese"><span>Português / Portuguese</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Punjabi"><span>ਪੰਜਾਬੀ  / Punjabi</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Romanian"><span>Română / Romanian</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Russian"><span>Русский / Russian</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Samoan"><span>Faa-Samoa / Samoan</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Scots Gaelic"><span>Gàidhlig / Scots Gaelic</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Serbian"><span>Српски / Serbian</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Sesotho"><span>Sotho / Sesotho</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Shona"><span>ChiShona / Shona</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Sindhi"><span>سنڌي / Sindhi</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Sinhala"><span>සිංහල / Sinhala</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Slovak"><span>Slovenčina / Slovak</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Slovenian"><span>Slovenščina / Slovenian</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Somali"><span>Soomaali / Somali</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Spanish"><span>Español / Spanish</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Sundanese"><span>Basa Sunda / Sundanese</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Swahili"><span>Kiswahili / Swahili</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Swedish"><span>svenska / Swedish</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Tajik"><span>Тоҷикӣ / Tajik</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Tamil"><span>தமிழ் / Tamil</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Telugu"><span>తెలుగు / Telugu</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Thai"><span>ไทย / Thai</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Turkish"><span>Türkçe / Turkish</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Ukrainian"><span>Українська / Ukrainian</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Urdu"><span>اردو / Urdu</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Uzbek"><span>O'zbek / Uzbek</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Vietnamese"><span>Tiếng Việt / Vietnamese</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Welsh"><span>Cymraeg / Welsh</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Xhosa"><span>isiXhosa / Xhosa</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Yiddish"><span>אידיש / Yiddish</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Yoruba"><span>Yorùbá / Yoruba</span></a></li>
+                                            <li><a href="javascript:void(0);" value="Zulu"><span>isiZulu / Zulu</span></a></li>
+                                    </ul>
+                              </li>
+                        </ul>
+                        <ul class="primarymeu">
+                            <li class="has-dropdown">
+                                <a href="#">Find a Doctor</a>
+                                <ul>
+                                    <li class="menu-item">
+                                        <div class="menu-head-title">Find a Doctor</div>
+                                        <div class="second-level-widget">
+                                            <div class="title-h2">Filter By</div>
+                                            <div class="physicianSearchBlock">
+                                                <div class="selctbox">
+                                                    <div class="title-h4">Speciality</div>
+                                                    <select class="selectSpeciality" name="Specialty" title="Specialty">
+                                                        <option value="">Select Specialty</option>
+                                                        <option value="Specialty1">Specialty1</option>
+                                                        <option value="Specialty2">Specialty2</option>
+                                                        <option value="Specialty3">Specialty3</option>
+                                                        <option value="Specialty4">Specialty4</option>
+                                                        <option value="Specialty5">Specialty5</option>
+                                                        <option value="Specialty6">Specialty6</option>
+                                                        <option value="Specialty7">Specialty7</option>
+                                                        <option value="Specialty8">Specialty8</option>
+                                                        <option value="Specialty9">Specialty9</option>
+                                                        <option value="Specialty10">Specialty10</option>
+                                                    </select>
+                                                </div>
+                                                <div class="selctbox">
+                                                    <div class="title-h4">Condition</div>
+                                                    <select class="selectCondition" name="condition" title="Condition">
+                                                        <option value="">Select Condition</option>
+                                                        <option value="Condition1">Condition1</option>
+                                                        <option value="Condition2">Condition2</option>
+                                                        <option value="Condition3">Condition3</option>
+                                                        <option value="Condition4">Condition4</option>
+                                                        <option value="Condition5">Condition5</option>
+                                                        <option value="Condition6">Condition6</option>
+                                                        <option value="Condition7">Condition7</option>
+                                                        <option value="Condition8">Condition8</option>
+                                                        <option value="Condition9">Condition9</option>
+                                                        <option value="Condition10">Condition10</option>
+                                                    </select>
+                                                </div>
+                                                <div class="btn-right">
+                                                    <a href="#" class="ctaborder secondarybtn" aria-label="Search">Search</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="menu-item">
+                                        <div class="second-level-widget">
+                                            <div class="title-h2">Browse By Doctor’s Last Name</div>
+                                            <div class="searchByLastName exploreLetter">
+                                                    <ul>
+                                                        <li><a href="#" aria-label="Find a doctors by Last Name A">A</a></li>
+                                                        <li><a href="#" aria-label="Find a doctors by Last Name B">B</a></li>
+                                                        <li><a href="#" aria-label="Find a doctors by Last Name C">C</a></li>
+                                                        <li><a href="#" aria-label="Find a doctors by Last Name D">D</a></li>
+                                                        <li><a href="#" aria-label="Find a doctors by Last Name E">E</a></li>
+                                                        <li><a href="#" aria-label="Find a doctors by Last Name F">F</a></li>
+                                                        <li><a href="#" aria-label="Find a doctors by Last Name G">G</a></li>
+                                                        <li><a href="#" aria-label="Find a doctors by Last Name H">H</a></li>
+                                                        <li><a href="#" aria-label="Find a doctors by Last Name I">I</a></li>
+                                                        <li><a href="#" aria-label="Find a doctors by Last Name J">J</a></li>
+                                                        <li><a href="#" aria-label="Find a doctors by Last Name K">K</a></li>
+                                                        <li><a href="#" aria-label="Find a doctors by Last Name L">L</a></li>
+                                                        <li><a href="#" aria-label="Find a doctors by Last Name M">M</a></li>
+                                                        <li><a href="#" aria-label="Find a doctors by Last Name N">N</a></li>
+                                                        <li><a href="#" aria-label="Find a doctors by Last Name O">O</a></li>
+                                                        <li><a href="#" aria-label="Find a doctors by Last Name P">P</a></li>
+                                                        <li><a href="#" aria-label="Find a doctors by Last Name Q">Q</a></li>
+                                                        <li><a href="#" aria-label="Find a doctors by Last Name R">R</a></li>
+                                                        <li><a href="#" aria-label="Find a doctors by Last Name S">S</a></li>
+                                                        <li><a href="#" aria-label="Find a doctors by Last Name T">T</a></li>
+                                                        <li><a href="#" aria-label="Find a doctors by Last Name U">U</a></li>
+                                                        <li><a href="#" aria-label="Find a doctors by Last Name V">V</a></li>
+                                                        <li><a href="#" aria-label="Find a doctors by Last Name W">W</a></li>
+                                                        <li><a href="#" aria-label="Find a doctors by Last Name X">X</a></li>
+                                                        <li><a href="#" aria-label="Find a doctors by Last Name Y">Y</a></li>
+                                                        <li><a href="#" aria-label="Find a doctors by Last Name Z">Z</a></li>
+                                                    </ul>
+                                            </div>
+                                            <div class="title-h2">Search by Name</div>
+                                            <form class="namesearchform">
+                                                <div class="name-group">
+                                                    <span class="form-control-search"><span class="screen-reader-text">Search</span></span>
+                                                    <input type="text" class="form-control" name="searchname" placeholder=""/>
+                                                    <button class="ctaborder secondarybtn" type="button">
+                                                        Search
+                                                    </button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+
+
+                            <li class="">
+                                <a href="#">Schedule Appointment
+                                </a>
+                            </li>
+
+                            <li class="">
+                                <a href="#">Telehealth
+                                </a>
+                            </li>
+
+                            <li class="">
+                                <a href="#">My Chart
+                                </a>
+                            </li>
+                        </ul>
+
+                        <ul class="topmeu">
+                            <li class="">
+                                <a href="#">COVID-19
+                                </a>
+                            </li>
+                            <li class="has-dropdown">
+                                <a href="#">Our Services</a>
+                                <ul>
+                                    <li class="menu-item">
+                                        <div class="menu-head-title">Our Services</div>
+                                        <div class="second-level-widget">
+                                            <div class="title-h2">CENTERS OF EXCELLENCE</div>
+                                            <div class="servicesmenu">
+                                                <ul>
+                                                    <li><a href="#">Neurosciences Institutes
+                                                    </a></li>
+                                                    <li><a href="#">Bone & Joint Center
+                                                    </a></li>
+                                                    <li><a href="#">Comprehensive Behavioral Health Center
+                                                    </a></li>
+                                                    <li><a href="#">Kingsbrook Rehabilitation Institute                                                                    
+                                                    </a></li>
+                                                </ul>
+                                                <div class="btn-service-all">
+                                                    <a href="#" class="ctaborder secondarybtn" aria-label="View all Services">View all Services</a>
+                                                </div>
+                                            </div>            
+                                        </div>
+                                    </li>
+                                    <li class="menu-item">
+                                        <div class="second-level-widget">
+                                            <div class="title-h2">Browse By First Letter</div>
+                                            <div class="searchByLastName exploreLetter">
+                                                    <ul>
+                                                        <li><a href="#" aria-label="Find a doctors by Last Name A">A</a></li>
+                                                        <li><a href="#" aria-label="Find a doctors by Last Name B">B</a></li>
+                                                        <li><a href="#" aria-label="Find a doctors by Last Name C">C</a></li>
+                                                        <li><a href="#" aria-label="Find a doctors by Last Name D">D</a></li>
+                                                        <li><a href="#" aria-label="Find a doctors by Last Name E">E</a></li>
+                                                        <li><a href="#" aria-label="Find a doctors by Last Name F">F</a></li>
+                                                        <li><a href="#" aria-label="Find a doctors by Last Name G">G</a></li>
+                                                        <li><a href="#" aria-label="Find a doctors by Last Name H">H</a></li>
+                                                        <li><a href="#" aria-label="Find a doctors by Last Name I">I</a></li>
+                                                        <li><a href="#" aria-label="Find a doctors by Last Name J">J</a></li>
+                                                        <li><a href="#" aria-label="Find a doctors by Last Name K">K</a></li>
+                                                        <li><a href="#" aria-label="Find a doctors by Last Name L">L</a></li>
+                                                        <li><a href="#" aria-label="Find a doctors by Last Name M">M</a></li>
+                                                        <li><a href="#" aria-label="Find a doctors by Last Name N">N</a></li>
+                                                        <li><a href="#" aria-label="Find a doctors by Last Name O">O</a></li>
+                                                        <li><a href="#" aria-label="Find a doctors by Last Name P">P</a></li>
+                                                        <li><a href="#" aria-label="Find a doctors by Last Name Q">Q</a></li>
+                                                        <li><a href="#" aria-label="Find a doctors by Last Name R">R</a></li>
+                                                        <li><a href="#" aria-label="Find a doctors by Last Name S">S</a></li>
+                                                        <li><a href="#" aria-label="Find a doctors by Last Name T">T</a></li>
+                                                        <li><a href="#" aria-label="Find a doctors by Last Name U">U</a></li>
+                                                        <li><a href="#" aria-label="Find a doctors by Last Name V">V</a></li>
+                                                        <li><a href="#" aria-label="Find a doctors by Last Name W">W</a></li>
+                                                        <li><a href="#" aria-label="Find a doctors by Last Name X">X</a></li>
+                                                        <li><a href="#" aria-label="Find a doctors by Last Name Y">Y</a></li>
+                                                        <li><a href="#" aria-label="Find a doctors by Last Name Z">Z</a></li>
+                                                    </ul>
+                                            </div>
+                                            <div class="title-h2">Search by Name</div>
+                                            <form class="namesearchform">
+                                                <div class="name-group">
+                                                    <span class="form-control-search"><span class="screen-reader-text">Search</span></span>
+                                                    <input type="text" class="form-control" name="searchname" placeholder=""/>
+                                                    <button class="ctaborder secondarybtn" type="button">
+                                                        Search
+                                                    </button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="">
+                                <a href="#">Patients & Visitors
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="#">Community
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="#">Healthy Living
+                                </a>
+                            </li>
+                            <li class="has-dropdown">
+                                <a href="#">Our Story</a>
+                                <ul>
+                                    <li><a href="#">About OBH</a></li>
+                                    <li><a href="#">Our History</a></li>
+                                    <li><a href="#">Our Leadership</a></li>
+                                    <li><a href="#">FAQs</a></li>
+                                </ul>
+                            </li>
+                            <li class="">
+                                <a href="#">Location
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="lastmenu">
+                            <li><a href="#">News</a></li>
+                            <li><a href="#">Events</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Careers</a></li> 
+                            <li><a href="#">Health Care Professionals</a></li>  
+                            <li><a href="#">Donate</a></li>  
+                            <li><a href="#">Volunteer</a></li>  
+                        </ul>
+                    </div>
+
+                </nav>
+            </div>
+            <div class="formSearch">
+                <div class="headRgt desktop">
+                    <div class="searchBlock">
+                        <div class="seachBox">
+                            <div class="searchLogo">
+                                <h2>search</h2>
+                            </div>
+                            <form class="smsearchForm" id="SearchForm_header" action="/" method="GET">
+                                <i class="searchIcon">
+                                    Search
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="35.923" height="34.597" viewBox="0 0 35.923 34.597">
+                                    <path id="Union_20" data-name="Union 20" d="M7.028,29.631V21.924a2.085,2.085,0,0,1,1.406-1.971V18.4A9.054,9.054,0,0,1,4.028,16.85,9.221,9.221,0,0,1,.185,11.068,9.284,9.284,0,0,1,.718,5.626a9.221,9.221,0,0,1,3.31-4.053,9.066,9.066,0,0,1,10.216,0,9.254,9.254,0,0,1,2.468,2.488,9.364,9.364,0,0,1,.842,1.565,9.21,9.21,0,0,1,.532,1.729,9.39,9.39,0,0,1,0,3.713,9.21,9.21,0,0,1-.532,1.729A9.234,9.234,0,0,1,15.6,15.725a9.226,9.226,0,0,1-1.352,1.125,9.119,9.119,0,0,1-1.552.849,9,9,0,0,1-2.9.7v1.553a2.085,2.085,0,0,1,1.4,1.971v7.707a2.084,2.084,0,1,1-4.168,0Zm.725-27.1A7,7,0,0,0,4.226,4.391,6.892,6.892,0,0,0,3.373,5.4,6.752,6.752,0,0,0,2.73,6.558a6.68,6.68,0,0,0,0,5.306,6.752,6.752,0,0,0,.644,1.158,6.892,6.892,0,0,0,.852,1.009,7.013,7.013,0,0,0,1.032.832,7.042,7.042,0,0,0,2.5,1.025,7.208,7.208,0,0,0,2.813,0A7.008,7.008,0,0,0,14.1,14.032a6.942,6.942,0,0,0,.851-1.009,6.689,6.689,0,0,0,0-7.623A6.942,6.942,0,0,0,14.1,4.391a7.021,7.021,0,0,0-1.033-.832,7.048,7.048,0,0,0-2.5-1.026,7.254,7.254,0,0,0-2.813,0Z" transform="translate(0 13.79) rotate(-49)" fill="#FE5000"/>
+                                    </svg>
+                                </i>
+                                <label class="screen-reader-text" for="inputSearch">Header Search</label>
+                                <input type="text" id="inputSearch" name="s" placeholder="" autocomplete="off" value="" class="ui-autocomplete-input txtBox">
+                                <button type="submit" name="button" class="searchBtn" id="searchBtn">Go</button>
+                                <i class="spinner-border fa-spin" style="display: none;"><span class="screen-reader-text">Loading...</span></i>
+                            </form>
+                        </div>
+                        <div class="smartSearch">
+                            <div class="mainWraps">
+                                <div class="wraps" id="searchResultsHtml">
+                                    <div class="recentSearches" id="recentSearchResults">
+                                        <div class="titleBlock" id="rsBlock">
+                                            <div class="lftBlock">
+                                                <div class="searchHead">
+                                                    <h2> Recent Searches </h2>
+                                                </div>
+                                                <div class="searchContent">
+                                                    <ul>
+                                                        <li><a class="rsKeys" rel="Services" href="javascript:void(0);">Services</a></li>
+                                                        <li><a class="rsKeys" rel="News" href="javascript:void(0);">News</a></li>
+                                                        <li><a class="rsKeys" rel="Others" href="javascript:void(0);">Others</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="rgtBlock">
+                                                <a href="javascript:void(0);" id="clearSearch">Clear Searches</a>
+                                            </div>
+                                        </div>
+                                        <div class="rserachLst" id="scroll-bar">
+                                            <div class="midResult" id="midResults">
+                                                <div class="searchFlex">
+                                                    <div class="menuList">
+                                                        <div class="menuContent">
+                                                            <h4> Quick Links </h4>
+                                                            <ul>
+                                                                <li><a class="" href="#" target="">Blog</a></li>
+                                                                <li><a class="" href="#" target="">Insurance</a></li>
+                                                                <li><a class="" href="#" target="_blank">Vaccine</a></li>
+                                                                <li><a class="" href="#" target="_blank">Careers</a></li>
+                                                                <li><a class="" href="#" target="">Volunteer</a></li>
+                                                                <li><a class="" href="#" target="">News</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="GridContentWrap">
+                                                        <div class="imgContentSection">
+                                                            <div class="ContentDetails">
+                                                                <a href="#" target="" aria-label="Learn More about Surgery">
+                                                                    <div class="imgSection">
+                                                                        <div class="gridImg">
+                                                                            <img src="https://www.centrastate.com/wp-content/uploads/sites/9/2020/11/Surgery-Doctor-and-Patient-2-scaled.jpg" alt="Surgery">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="contentdetails">
+                                                                        <h3>Surgery</h3>
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                            <a href="#" target="" aria-label="Learn More about Surgery" class="learnMore">Learn More</a>
+                                                        </div>
+                                                        <div class="imgContentSection">
+                                                            <div class="ContentDetails">
+                                                                <a href="#" target="" aria-label="Learn More about Orthopedics">
+                                                                    <div class="imgSection">
+                                                                        <div class="gridImg">
+                                                                            <img src="https://www.centrastate.com/wp-content/uploads/sites/9/2020/11/GettyImages-804450356-3.jpg" alt="Orthopedics">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="contentdetails">
+                                                                        <h3>Orthopedics</h3>
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                            <a href="#" target="" aria-label="Learn More about Orthopedics" class="learnMore">Learn More</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="queryResults" id="searchResultsHtmlAll" style="display: none;">
+                                                <div class="searchFlex" rel="80">
+                                                    <div class="searchList serviceDetails">
+                                                        <div class="search-title">Services</div>
+                                                        <div class="seeMore view-all"><a href="#">View All</a></div>
+                                                        <ul>
+                                                            <li>
+                                                                <div class="serachInfo">
+                                                                    <a href="#">Emergency Department</a>
+                                                                    <p>If you are looking for an emergency room near you,…</p>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="serachInfo">
+                                                                    <a href="#">COVID-19 Resources</a>
+                                                                    <p>While the COVID-19 pandemic has changed much in our lives,…</p>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="searchList imageContent">
+                                                        <div class="search-title">News</div>
+                                                        <div class="seeMore view-all"><a href="#">View All</a></div>
+                                                        <ul>
+                                                            <li>
+                                                                <div class="serachInfo">
+                                                                    <p class="date">March 3, 2022</p>
+                                                                    <a href="#">Healthy Recipes Using Fresh Produce</a>
+                                                                    <p>Live Life Well has partnered with the Freehold Mayor’s Wellness…</p>
+                                                                </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="serachInfo">
+                                                            <p class="date">March 20, 2020</p>
+                                                            <a href="#">How to Say Thanks to the Workers on the Coronavirus Front Lines</a>
+                                                            <p>Over the last several months, so many of you—patients, community…</p>
+                                                        </div>
+                                                </li>
+                                                </ul>
+                                            </div>
+                                            <div class="searchList otherResults">
+                                                <div class="search-title">Other Results</div>
+                                                <div class="seeMore view-all"><a href="#">View All</a></div>
+                                                <ul>
+                                                    <li>
+                                                        <div class="serachInfo">
+                                                            <a href="#">Forms &amp; Appointment FAQs</a>
+                                                            <p>Forms Arriving prepared will ease the check-in process when you…</p>
+                                                        </div>
+                                                    </li>
+        
+                                                </ul>
+                                            </div>
+                                            </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bottomBtn">
+                                <a href="#" class="ctaborder primarybtn" id="va_results">
+                                        view all search results
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="stickyEmpty">
+        </div>
+        <div class="main" id="maincontent">
+        {{!-- Pages you create in the src/pages/ folder are inserted here when the flattened page is created. --}} {{>
+        body}}
+        </div>
+        <!-- <div class="newsletterPannel">
+            <div class="grid-container">
+                  <div class="wraps"> 
+                     <form data-form-validate="true" class="newsLetterForm" action="#" method="post"  id="newsLetterForm"  novalidate="novalidate">
+                        <h5>
+                            Sign Up </br>for <b>OBH</b> Emails
+                        </h5>
+                        <div class="form-group">
+                            <p class="email_lable">Email Address</p>		  
+                            <fieldset>
+                                <legend class="screen-reader-text">Email Address</legend>
+                                <label style="display:none;" class="lbl-error">Please enter a valid Email Address</label>
+                                <label style="display:none;" class="lbl-success">Thank you for contacting us. A representative will be in touch with you.</label>
+                                <label for="newsemail" class="screen-reader-text">Email Address</label>                                
+                                <input type="text" class="txtBox form-control" id="email" name="newsemail" required placeholder="Email Address" >
+                            </fieldset>              
+                        </div>
+                        <button type="submit" name="button" class="ctaborder secondarybtn">
+                                Join
+                        </button>
+                    </form>
+                  </div>        
+              </div>
+            </div> -->
+            <div class="newsletterPannel">
+                <div class="grid-container">
+                    <div class="wraps umbraco-forms">
+                        <h5>
+                            Sign Up <br />for <b>OBH</b> Emails
+                        </h5>
+                        <p class="email-ad">Email Address</p>
+                        <div class="lbl-error" style="display: none">Please enter a valid Email Address</div>
+                        <div id="umbraco_form_0681d51d77cc40a09942e7d941ba19a6" class="umbraco-forms-form signup umbraco-forms-">
+                            <form action="/" enctype="multipart/form-data" id="formcb1396e7a4c74977892d1258f1c65e2f" method="post"><input data-val="true" data-val-required="The FormId field is required." name="FormId" type="hidden" value="0681d51d-77cc-40a0-9942-e7d941ba19a6" /><input data-val="true" data-val-required="The FormName field is required." name="FormName"
+                                    type="hidden" value="Sign Up" /><input data-val="true" data-val-required="The RecordId field is required." name="RecordId" type="hidden" value="00000000-0000-0000-0000-000000000000" /><input name="PreviousClicked" type="hidden" value=""
+                                /><input name="Theme" type="hidden" value="" /> <input type="hidden" name="FormStep" value="0" />
+                                <input type="hidden" name="RecordState" value="Q2ZESjhPeUpfZDdTYXhWTXI4OGxRS3hGbFRMWXQxYkRYTXNBUkxUc3ZYNzRkdUxSUXpfYk0tTE1qTjREOHRwMllKWUcyYVFWYVZpQTVTeGo3Q2lvYVdnMDVHU2ZCcFNOby1QSVZTNE5TWkFKbGNUNE5FcjBWU3BNQ01jWWh0b3BKZWRzekE=" />
+                                <div class="umbraco-forms-page" id="c1dc88fa-4b96-4a29-9cea-8a18f0ed5710">
+                                    <fieldset class="umbraco-forms-fieldset" id="099c86af-ebbd-421b-bc27-dc9ce1e77a40">
+                                        <div class="row-fluid">
+                                            <div class="umbraco-forms-container col-md-12">
+                                                <div class=" umbraco-forms-field emailaddress shortanswer mandatory">
+                                                    <div class="umbraco-forms-field-wrapper">
+                                                        <input type="text" name="0b81d29b-39f3-49f3-fb53-a5f907782922" id="0b81d29b-39f3-49f3-fb53-a5f907782922" data-umb="0b81d29b-39f3-49f3-fb53-a5f907782922" class="text " value="" maxlength="255" placeholder="Email Address" data-val="true" data-val-required="Please provide a value for Email Address"
+                                                            data-val-regex="Please enter valid email" data-val-regex-pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$" />
+                                                        <span class="field-validation-valid" data-valmsg-for="0b81d29b-39f3-49f3-fb53-a5f907782922" data-valmsg-replace="true"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+            
+                                    <div style="display: none" aria-hidden="true">
+                                        <input type="text" name="0681d51d77cc40a09942e7d941ba19a6" />
+                                    </div>
+                                    <div class="umbraco-forms-navigation row-fluid">
+            
+                                        <div class="col-md-12">
+                                            <input type="submit" class="btn primary" value="Join" name="__next" data-form-navigate="next" data-umb="submit-forms-form" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <input name="__RequestVerificationToken" type="hidden" value="CfDJ8OyJ_d7SaxVMr88lQKxFlTINOO-_meVepKAlwbwH4dsvq2uu1l8apyO-tlbynboH6ae3GNd8xNCeCTHyvZHTGLUsmtDdeh-VPXjh5-_ONsO3wiIQu_5m4PN_2dc-paI0cqEPwd3oaWA-l_ETTtbYaFE" /><input name="ufprt"
+                                    type="hidden" value="CfDJ8OyJ_d7SaxVMr88lQKxFlTKVbnslbsl3vkiO762K0zqf92f-dmJhwcN1YdMRoZMnUenkx8iVOGsVVPThuWKEjK7Hg5sdSZGlolzEBXZY9Y6NBtWGzko7vcDhNrADo0b3NjNCx84O4VndZ3t8oK6gQwc" /></form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <footer class="threerow module">
+            <div class="grid-container">
+                <div class="footersec">
+                    <div class="primaryfooter">
+                        <div class="column-1">
+                            <div class="fLogo">
+                                <a href="#">
+                                    <img src="{{root}}assets/images/OBH Logo.svg" alt="One Brooklyn Health" loading="lazy" class="lazyload">
+                                </a>
+                            </div>
+                            <div class="address">
+                            <p>
+                                OBH Administrative Offices
+                                1545 Atlantic Avenue
+                                Brooklyn, NY 11213
+                            </p>
+                        <div class="socialLnk">
+                            <ul class="sociallinks">
+                                <li>
+                                    <a href="#" target="_blank" class="speedBumpLink" rel="noopener">
+                                        <img src="../assets/images/facebook.svg" alt="facebook" loading="lazy" class="ls-is-cached lazyloaded">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank" class="speedBumpLink" rel="noopener">
+                                        <img src="../assets/images/twitter.svg" alt="twitter" loading="lazy" class="ls-is-cached lazyloaded">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank" class="speedBumpLink" rel="noopener">
+                                        <img src="../assets/images/instagram.svg" alt="instagram" loading="lazy" class="ls-is-cached lazyloaded">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank" class="speedBumpLink" rel="noopener">
+                                        <img src="../assets/images/linkedin.svg" alt="linkedin" loading="lazy" class="ls-is-cached lazyloaded">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                        </div>
+                        <div class="column-2">
+                            <a href="#" class="ctaborder whitebtn" aria-label="Find a Doctor">Find a Doctor
+                            </a>
+                        </div>
+                        <div class="column-3">
+                            <a href="#" class="ctaborder whitebtn" aria-label="Contact Us">Contact</a>
+                        </div>
+                        <div class="column-4">
+                            <a href="#" class="ctaborder whitebtn" aria-label="Telehealth">Telehealth</a>
+                        </div>
+                        <div class="column-5">
+                            <a href="#" class="ctaborder whitebtn" aria-label="My Chart">MyChart</a>
+                        </div>
+                    </div>
+                    <div class="secondaryfooter">
+                        <div class="column-1">
+                            
+                        </div>
+                        <div class="column-2">
+                            <ul>
+                                <li><a href="#">About OBH</a></li>
+                                <li><a href="#">Careers</a></li>
+                                <li><a href="#">News</a></li>
+                            </ul>
+                        </div>
+                        <div class="column-3">
+                            <ul>
+                                <li><a href="#">Our Services </a></li>
+                                <li><a href="#">Our Locations</a></li>
+                                <li><a href="#">Community</a></li>
+                            </ul>
+                        </div>
+                        <div class="column-4">
+                            <ul>
+                                <li><a href="#">Health Resources</a></li>
+                                <li><a href="#">Health Care Professionals</a></li>
+                            </ul>
+                        </div>
+                        <div class="column-5">
+                            <ul>
+                                <li><a href="#">Donate</a></li>
+                                <li><a href="#">Volunteer</a></li>
+                            </ul>
+                        </div>
+                        <div class="column-6">
+                                <ul>
+                                    <li><a href="mailto:info@bhmcny.org">info@bhmcny.org</a></li>
+                                    <li><a href="mailto:contact@interfaithmedical.org">contact@interfaithmedical.org</a></li>
+                                    <li><a href="mailto:info@kingbrook.org">info@kingbrook.org</a></li>
+                                    <li><a href="tel:(718) 240-5000">(718) 240-5000</a></li>
+                                 </ul>
+                        </div>
+                    </div>
+                    <div class="thirdfooter">
+                        <div class="column-1">
+                            
+                        </div>
+                        <div class="column-2">
+                            <ul class="footerlinks ">
+                                <li><a href="#">Staff Portal</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Site Map</a></li>
+                                <li><a href="#">Compliance Program</a></li>
+                            </ul>
+                            <ul class="footerlinks copy">
+                                <li>© 2022 All rights reserved. Copyright by OBH</li>
+                                <li>Site Designed and Developed by <a href="https://www.multimediasolutions.com/" target="_blank" class="speedBumpLink" rel="noopener">Multimedia Solutions</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </footer>
+    </div>
+    <input type="hidden" name="excludeUrl" id="excludeUrl" value="[{&quot;excludeUrl&quot;:&quot;https://www.google.com&quot;},{&quot;excludeUrl&quot;:&quot;https://web13.secureinternetbank.com/ebc_ebc1151/Login/221270651#&quot;}]" />
+    <div class="speedBump">
+        <div class="grid-container">
+            <div class="speedContainer">
+                <div class="imgblock">
+                    <img src="assets/images/obh-logo.png" alt="One Brooklyn Health" width="368" height="58" />
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <a href="#">Learn More</a></p>
+                <div class="speedButSection">
+                    <div class="cancelparent">
+                        <a href="javascript:void(0)" aria-label="back to the page in speedbump" class="ctaborder secondarybtn cancel">Back</a>
+                    </div>
+                    <div class="proceedparent">
+                        <a href="#" target="_blank" class="ctaborder secondarybtn proceed">Proceed</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+
+    <!-- <div class="alertsPannel footeraletpanel">
+        <div class="grid-container">
+          <div class="alertsWrap">
+            <div class="wrap">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                <a href="#">Learn More</a>
+              </p>
+              <a href="#" id="alertsPannelClose" class="close-alerts">
+                  <i></i>
+                  <span class="screen-reader-text">
+                    Close
+                  </span>
+                </a>
+            </div>
+          </div>
+        </div>
+      </div> -->
+      <div id="google_translate_element"></div>
+
+<div class="paginacontainer">
+    <div class="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 118.041;"></path>
+        </svg>
+    </div>
+</div>
+
+<script src="{{root}}assets/plugins/js/jquery.min.js"></script>
+<script src="{{root}}assets/plugins/js/nprogress.js" defer></script>
+<script src="{{root}}assets/plugins/js/waypoints.min.js" defer></script>
+<script src="{{root}}assets/plugins/js/jquery-ui.min.js" defer></script>
+<script src="{{root}}assets/plugins/js/swiper.min.js" defer></script>
+<script src="{{root}}assets/plugins/js/jquery.validate.min.js" defer></script>
+<script src="{{root}}assets/plugins/js/lazysizes.min.js" defer></script>
+<script src="{{root}}assets/plugins/js/lightbox.js" defer></script>
+<script src="{{root}}assets/plugins/js/imagetoSVG.js" defer ></script>
+<script src="{{root}}assets/plugins/js/jquery.mb.YTPlayer.js" defer ></script>
+<script src="{{root}}assets/plugins/js/banner-script.js" defer ></script>
+<script src="{{root}}assets/plugins/js/YouTubePopUp.jquery.js" defer></script>
+<script src="{{root}}assets/plugins/js/custom.js" defer></script>
+<script src="{{root}}assets/plugins/js/contact.js" defer></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key={API_Key}&amp;libraries=drawing,geometry&callback=initMap"></script>
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<script>
+        $(document).ready(function () {
+
+        $("#selectmenu li a, #selectmenu_mob li a").on('click', function (e) {
+            e.preventDefault();
+            var lang = $(this).find('span').text();
+            var lang1 = $(this).attr('value');
+            //console.log(lang1);
+            $(".langtogBtn").find('span').text(lang);
+            var $frame = $('.VIpgJd-ZVi9od-xl07Ob-OEVmcd');
+            $frame.contents().find(".VIpgJd-ZVi9od-vH1Gmf-ibnC6b span.text:contains(" + $.trim(lang1) + ")").get(0).click();
+            localStorage.setItem('lanuge', lang);
+            googleTranslateElementInit();
+            if ($(this).attr('value') == "English") {
+                document.cookie = "googtrans=;" + new Date + ";path=/;domain=multimediasolutions.com";
+                document.cookie = "googtrans=;" + new Date + ";path=/;";
+                location.reload();
+            }
+            return false;
+        });
+        if (localStorage.getItem("lanuge") === null) {
+            $('.langtogBtn span').text("Select Language");
+        }else{
+            var la = localStorage.getItem('lanuge');
+            $('.langtogBtn span').text(la);
+        }  
+        
+
+        $(".select-language a").on('click', function () {
+            $("#selectmenu,#selectmenu_mob").toggleClass("topsubmenu-view");
+            $('.formSearch').removeClass('searchOpen');
+            $('#search-toggle').removeClass('searchclose');
+        });
+             
+            $('body').bind('click', function (e) {
+            //console.log("IOS Devices Click Event Test ...");
+                if ($(e.target).closest('.select-language').length == 0) {
+                    var opened = $('#selectmenu').hasClass('topsubmenu-view');
+                    var opened1 = $('#selectmenu_mob').hasClass('topsubmenu-view');
+                    if (opened === true) {
+                        $('#selectmenu').removeClass('topsubmenu-view');
+                    }
+                    if (opened1 === true) {
+                        $('#selectmenu_mob').removeClass('topsubmenu-view');
+                    }
+                }
+            });
+            //window.MyReset = () => jQuery('#\\:1\\.container').contents().find('#\\:1\\.restore').click();
+        });
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ pageLanguage: '', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false,  multilanguagePage: true }, 'google_translate_element');
+        }
+</script>
+
+<script type="text/javascript">
+    $( document ).ready(function() {
+        $(".primaryfooter .address, .ourdoctorpanel .titlehead, .ourdoctorpanel .locationsection, .location_details .location_name, .location_details .sub_info, .addresswrap .addresssec, .loclist .contentlist, .doctorspanel .titlehead, .ourservicespanel .locationwrp .columns-1, .leadershippanel .descpanel .headingwrap .heading-title, .darkbg label p, .testimonial .texWrap p span").addClass("notranslate");
+  });
+</script>
+<script>
+$(document).ready(function () {  
+    $('#copyright-year').text(new Date().getFullYear());
+    setTimeout(function () {
+		if ($('.popUpWrapper').length > 0) {
+        $('html').addClass('popUpOpen');
+		  setTimeout(function () {
+			    $('.popupWrap .wrap,.popUpWrapper').addClass('Open');
+		  }, 100);
+	    }
+	}, 1000);  
+    $('.popUpWrapper .popup-close').click(function () {
+		$('html').removeClass('popUpOpen');
+		$('.popupWrap .wrap,.popUpWrapper').removeClass('Open');			
+    });                  
+});
+</script>
+
+<script type="text/javascript">
+    var gmarkers = [], markersContent = [];
+    function initMap() {
+            var locations = [
+                ['<p class="head">Brookdale Hospital Medical Center</p> <p class="desc">One Brookdale Plaza Brooklyn, NY 11212</p>', '40.6550688', '-73.9122805', '1'],
+                ['<p class="head">Interfaith Medical Center</p> <p class="desc">One Brookdale Plaza Brooklyn, NY 11212</p>', '40.6545753', '-73.9134312', '2'],
+                ['<p class="head">Kingsbrook Jewish Medical Center</p> <p class="desc">One Brookdale Plaza Brooklyn, NY 11212</p>', '40.6545753', '-73.9121915', '3'],
+                ['<p class="head">Brookdale Hospital Medical Center</p> <p class="desc">One Brookdale Plaza Brooklyn, NY 11212</p>', '40.6550688', '-73.9134312', '4'],
+            ];
+
+            var map = new google.maps.Map(document.getElementById('map'), {
+                mapId: "f93ee2021ebc6785",
+                zoom: 17,
+                center: new google.maps.LatLng(40.654605, -73.9121705),
+                mapTypeControl: false,
+                zoomControl:false,
+                panControl:false,
+                streetViewControl:false,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            });
+            gmarkers.push(marker);
+            var infowindow = new google.maps.InfoWindow();
+            var marker, i;
+            var image = '../assets/images/location-pin.png';
+
+            for (i = 0; i < locations.length; i++) {
+                marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                    map: map,
+                    icon: image,
+                    animation: google.maps.Animation.DROP,
+                });
+                google.maps.event.addListener(marker, 'click', (function (marker, i) {
+                    return function () {
+                        infowindow.setContent(locations[i][0]);
+                        infowindow.open(map, marker);
+                    }
+                })(marker, i));
+                google.maps.event.addListener(marker, 'mouseover', (function (marker, i) {
+                    return function () {
+                        infowindow.setContent(locations[i][0]);
+                        infowindow.open(map, marker);
+                    }
+                })(marker, i));
+                google.maps.event.addListener(marker, 'mouseout', (function (marker, i) {
+                    return function () {
+                        infowindow.setContent(locations[i][0]);
+                        infowindow.open(map, marker);
+                    }
+                })(marker, i));
+                infowindow.setContent(locations[i][0]);
+                infowindow.open(map, marker);
+            }
+        } 
+        function infoOpen(i) {
+                //console.log(gmarkers);
+                google.maps.event.trigger(gmarkers[i], 'click');
+             }      
+    </script>
+    <!-- <script type="text/javascript">
+
+        var gmarkers = [];
+        //var locationBoxClicked = false;
+    
+        function clearMarkers() {
+            for (i = 0; i < gmarkers.length; i++) {
+                gmarkers[i].setMap(null);
+            }
+    
+            gmarkers = []
+        }
+    
+        function initMap() {
+            clearMarkers();
+            $('#map').html('');
+            var locationJson = '';
+    
+            if ($("#map_value").length > 0) {
+                locationJson = $("#map_value").val();
+            }
+    
+            var locations = jQuery.parseJSON(locationJson);
+            
+            var map = new google.maps.Map(document.getElementById('map'), {
+                mapId: "f93ee2021ebc6785",
+                zoom: 13,
+                center: new google.maps.LatLng(40.654605, -73.912171),
+                mapTypeControl: false,
+                zoomControl: false,
+                panControl: false,
+                streetViewControl: false,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            });
+
+            var zoomLevelSizes = [
+			{ triggerWidth: 1365, zoomLevel: 13 - 2 },
+			{ triggerWidth: 320, zoomLevel: 13 - 1 }
+		];
+
+		var resizeTimeout = -1;
+		function handleResizeEvent() {
+			resizeTimeout = -1;
+			var width = window.innerWidth;
+			console.log(width);
+			for (var i = zoomLevelSizes.length - 1; i >= 0; i--) {
+				if (width < zoomLevelSizes[i].triggerWidth) {
+					if (map.getZoom() > zoomLevelSizes[i].zoomLevel) {
+						map.setZoom(zoomLevelSizes[i].zoomLevel);
+					}
+				}else if (width >= 1366) {
+					if (map.getZoom() >= zoomLevelSizes[i].zoomLevel) {
+						map.setZoom(13);
+						break;
+					}
+				}
+			}
+		}
+		handleResizeEvent()
+		google.maps.event.addDomListener(window, 'resize', function () {
+			if (resizeTimeout !== -1) {
+				clearTimeout(resizeTimeout);
+			}
+			resizeTimeout = setTimeout(handleResizeEvent, 500);
+		});
+        //if ($(window).width() <= 1279) {
+		//	var center = map.getCenter();
+		//	map.setCenter(center);
+		//	map.setZoom(@mapDefaultZoomValue - 2);
+		//	google.maps.event.trigger(map, "resize");
+		//}
+		//google.maps.event.addDomListener(window, "resize", function () {
+		//	var center = map.getCenter();
+		//	map.setCenter(center);
+		//	map.setZoom(@mapDefaultZoomValue - 2);
+		//	google.maps.event.trigger(map, "resize");
+		//});
+            var infowindow = new google.maps.InfoWindow();
+            var marker, i;
+            var image = '../assets/images/location-pin.png';
+    
+            for (i = 0; i < locations.length; i++) {
+    
+                var position = new google.maps.LatLng(locations[i]["Latitude"], locations[i]["Longitude"]);
+    
+                marker = new google.maps.Marker({
+                    position: position,
+                    map: map,
+                    icon: image,
+                    animation: google.maps.Animation.DROP,
+                });
+                
+                google.maps.event.addListener(marker, 'click', (function (marker, idx) {
+                    return function () {
+                        var panPoint = new google.maps.LatLng(locations[idx]["Latitude"], locations[idx]["Longitude"]);
+                        infowindow.setContent('<p class="head">' + locations[idx]["LocationName"] + '</p> <p class="desc">' + locations[idx]["MapFullAddress"] + '</p>');
+                        infowindow.open(map, marker);
+    
+                        if (idx != 0) {
+                            map.panTo(gmarkers[idx].position, gmarkers[idx - 1].position);
+                        }
+                        else {
+                            map.panTo(gmarkers[idx].position);
+                        }
+                        
+                        $(".addresswrap").removeClass("active");
+                        $('#location-box-' + idx).addClass("active");
+                        
+                        //if(!locationBoxClicked)
+                        //{
+                        //	var $parentDiv = $('.locationWrap');
+                        //	var $innerListItem = $('#location-box-' + idx);
+    
+                        //	$('.locationWrap').animate({
+                        //		scrollTop: ($parentDiv.scrollTop() + $innerListItem.position().top - $parentDiv.height() / 2 + $innerListItem.height() / 2)
+                        //	}, 1000);
+                        //}
+                        //else{
+                        //	locationBoxClicked = false;
+                        //}
+                    }
+                })(marker, i));
+                google.maps.event.addListener(marker, 'mouseover', (function (marker, i) {
+                    return function () {
+                        infowindow.setContent('<p class="head notranslate">' + locations[i]["LocationName"] + '</p> <p class="desc notranslate">' + locations[i]["MapFullAddress"] + '</p>');
+                        infowindow.open(map, marker);
+                    }
+                })(marker, i));
+                google.maps.event.addListener(marker, 'mouseout', (function (marker, i) {
+                    return function () {
+                        infowindow.setContent('<p class="head notranslate">' + locations[i]["LocationName"] + '</p> <p class="desc notranslate">' + locations[i]["MapFullAddress"] + '</p>');
+                        infowindow.open(map, marker);
+                    }
+                })(marker, i));
+    
+                gmarkers.push(marker);
+                google.maps.event.trigger(gmarkers[0], 'click');
+            }
+        }
+    
+        function infoOpen(i, element) {
+            //locationBoxClicked = true;
+            $(".addresswrap").removeClass("active");
+            $(element).addClass("active");
+            google.maps.event.trigger(gmarkers[i], 'click');
+        }
+    
+        var panPath = [];   // An array of points the current panning action will use
+        var panQueue = [];  // An array of subsequent panTo actions to take
+        var STEPS = 15;    // The number of steps that each panTo action will undergo
+    
+        function panTo(newLat, newLng) {
+            if (panPath.length > 0) {
+                // We are already panning...queue this up for next move
+                panQueue.push([newLat, newLng]);
+            } else {
+                // Lets compute the points we'll use
+                panPath.push("LAZY SYNCRONIZED LOCK");  // make length non-zero - 'release' this before calling setTimeout
+                var curLat = map.getCenter().lat();
+                var curLng = map.getCenter().lng();
+                var dLat = (newLat - curLat) / STEPS;
+                var dLng = (newLng - curLng) / STEPS;
+    
+                for (var i = 0; i < STEPS; i++) {
+                    panPath.push([curLat + dLat * i, curLng + dLng * i]);
+                }
+                panPath.push([newLat, newLng]);
+                panPath.shift();      // LAZY SYNCRONIZED LOCK
+                setTimeout(doPan, 20);
+    
+            }
+        }
+    
+        function doPan() {
+            var next = panPath.shift();
+            if (next != null) {
+                // Continue our current pan action
+                map.panTo(new google.maps.LatLng(next[0], next[1]));
+                setTimeout(doPan, 20);
+            } else {
+                // We are finished with this pan - check if there are any queue'd up locations to pan to
+                var queued = panQueue.shift();
+                if (queued != null) {
+                    panTo(queued[0], queued[1]);
+                } else {
+                    map.setZoom(13);
+                }
+            }
+        }
+    </script> -->
+
+<script type="text/javascript">
+    $(window).scroll(lazyLoadJuicer);
+
+    var feed = $('.juicer-feed');
+    var juicerFeedScrollDistance = 0;
+    if (typeof (feed.offset()) !== "undefined") {
+        juicerFeedScrollDistance = feed.offset().top;
+    }
+    var juicerLoaded = false;
+    function lazyLoadJuicer() {
+        var scrollDistance = $(window).scrollTop();
+        var windowHeight = $(window).height();
+
+        if ((scrollDistance >= (juicerFeedScrollDistance - windowHeight)) && !juicerLoaded) {
+            $.getScript('//assets.juicer.io/embed-no-jquery.js');
+            $('head').append('<link rel="stylesheet" type="text/css" href="//assets.juicer.io/embed.css">');
+            juicerLoaded = false;
+        }
+    };
+
+    lazyLoadJuicer();
+</script>
+
+</body>
+</html>

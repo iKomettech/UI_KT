@@ -1,0 +1,201 @@
+.subbannerpanel{
+  .bannerwrapheight{
+    min-height: 521px;
+    width: 100%;
+    position: relative;
+    @include breakpoint(small only) {
+    min-height: calc(100dvh - 87px);
+    }
+    @include breakpoint(medium only) {
+    min-height: 310px;
+    }
+    @include breakpoint(large only) {
+    min-height: 400px;
+    }
+    .imgWrap{
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+          background-size: cover;
+          min-height: 521px;
+          @include breakpoint(small only) {
+              min-height: calc(100dvh - 87px);
+              background-position: bottom !important;
+          }
+          @include breakpoint(medium only) {
+              min-height: 310px;
+          }
+          @include breakpoint(large only) {
+              min-height: 410px;
+          }
+          &.gradient{
+              &:after {
+                  content: "";
+                  background: linear-gradient(180deg, #ffffff00 0%, #87878700 35%, #0f0f0fa8 100%);
+                  background-size: cover !important;
+                  background-repeat: no-repeat;
+                  background-position: center;
+                  width: 100%;
+                  height: 100%;
+                  position: absolute;
+                  right: 0;
+                  bottom: 0;
+                  left: 0;
+                  z-index: 1;
+                  height: 337px
+              }  
+          }   
+      }
+      .content{
+      margin: 0 auto;
+      position: absolute;
+      max-width: 100%;
+      width: 100%;
+      z-index: 2;
+      bottom:52px;
+        @include breakpoint(small only) {
+          max-width: 320px;
+          font-size: 49px;
+          line-height: 70px;
+          bottom:10px;
+          max-width: 100%;
+        }
+        @include breakpoint(medium only) {
+          max-width: 100%;
+        }
+        @include breakpoint(large only) {
+          max-width: 656px;
+        }
+        h1{
+          font-size: 56px;
+          line-height: 70px;
+          color:$white;
+          text-transform: uppercase;
+          font-weight: 900;
+          padding-bottom: 11px;
+          text-align: left;
+          margin-bottom: 5px;
+          @include breakpoint(small only) {
+            font-size: 36px;
+            line-height: 48px;
+            color: $white;
+            font-weight: 900;
+            text-align: center;
+            overflow-wrap: break-word;
+          }
+          @include breakpoint(medium only) {
+            font-size: 48px;
+            line-height: 60px;
+          }
+          @include breakpoint(large only) {
+            font-size: 60px;
+            line-height: 78px;
+            position: relative;
+            left: -4px;
+          }
+          .txt_small{
+            font-size: 42px;
+            text-transform: lowercase;
+            line-height: 70px;
+          }
+        }
+        p{
+          font-size: 30px;
+          line-height: 41px;
+          color: $light-gray;
+          margin-top: 28px;
+          transform: translate(-58px, 0px);
+          transition: all 0.75s;
+          opacity: 0;
+          transition-delay: 0.75s;
+          @include breakpoint(small only) {
+              font-size: 16px;
+              line-height: 24px;
+              margin-top: 0;
+              color: #fff;
+          }
+          @include breakpoint(medium only) {
+              font-size: 22px;
+              line-height: 32px;
+          }
+          @include breakpoint(large only) {
+          font-size: 26px;
+          line-height: 33px;
+          }
+        }
+      }
+  }&.nobanner{
+    min-height: 138px;
+    @include breakpoint(small only){
+      min-height: 0px;
+    }
+    .bannerwrapheight{
+      min-height: 138px;
+      @include breakpoint(small only){
+        min-height: 0px;
+      }
+      .content{
+        bottom: unset;
+        top: 26px;
+        .headingwrap{
+          padding-top: 22px;
+          @include breakpoint(medium only){
+            padding-top: 0;
+           }
+        }
+        .heading-title h1 {
+          font-size: 32px;
+          line-height: 35px;
+          color: #000000;
+          font-weight: 800;
+          text-transform: uppercase;
+          margin-bottom: 0px;
+          padding-bottom: 10px;
+          position: relative;
+          text-align: center;
+          @include breakpoint(large){
+            font-size: 30px;
+            line-height: 70px;
+            text-align: left;
+            padding-bottom: 0px;
+            left: 0;
+          }
+          @include breakpoint(xlarge){
+            font-size: 36px;
+          }
+       }
+      }
+    }
+  }
+}
+.breadcrumbWrapBottom {
+  @include breakpoint(small only) {
+    display: none;
+  }
+  padding: 8px 0 0;
+  li {
+    font-size: 16px;
+    text-transform: inherit;
+    color: $body-font-color;
+    font-weight: 600;
+    line-height: 18px;
+    a {
+      font-size: 16px;
+      font-weight: 600;
+      color: #000000;
+      line-height: 18px;
+    }
+    &:not(:last-child)::after {
+      content: ">";
+      color: #000000;
+      margin: 0 5px;
+    }
+    &.active {
+      margin: 0px 0;
+      a {
+        font-weight: 600;
+        color: #000000;
+      }
+    }
+  }
+}

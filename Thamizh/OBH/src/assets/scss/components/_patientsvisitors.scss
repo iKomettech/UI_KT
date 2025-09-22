@@ -1,0 +1,791 @@
+
+.patientsvisitors{
+    &.communitypage {
+        .testimonial {
+            margin-top: 7px;
+            margin-bottom: 0px;
+            .swiper-container {
+                margin-bottom: 0px;
+            }
+        }
+        .threeColumnWrap {
+            .innerWrap {
+                .colblock {
+                    &.patientblock {
+                        .imgWrap {
+                            margin-bottom: 0;
+                            img.zoom {
+                                width: 100%;
+                                object-fit: cover;
+                                max-height: 100%;
+                                object-position: top;
+                                @include breakpoint(medium) {
+                                    max-height: 199px;
+                                    min-height: 199px;
+                                }
+                                @include breakpoint(large) {
+                                    max-height: 182px;
+                                    min-height: 182px;
+                                }
+                                @include breakpoint(xlarge) {
+                                    max-height: 284px;
+                                    min-height: 284px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+   
+    &.careers {
+        &.communitypage {
+            .testimonial {
+                .swiper-container {
+                    margin-bottom: 70px;
+                }
+                &+.job_opportunities{	
+                    margin-bottom: 0px;	
+                }	
+            }	
+        }	
+        .testimonial {	
+            &+.job_opportunities{	
+                padding-bottom: 75px;
+            }
+        }
+        .job_opportunities{
+            text-align: center;
+            .ctaborder{
+              font-size:28px;
+              line-height:32px;
+              padding: 22.5px 53px;
+              text-transform: uppercase;
+              @include breakpoint(small only) {
+                font-size:24px;
+              }
+              @include breakpoint(medium only) {
+                font-size:24px;
+              }
+              @include breakpoint(large only) {
+                font-size:24px;
+              }
+            }
+        }
+        .twocolumnpanels {
+            padding-top: 63px;
+            .colblock{
+                background: #f5f5f5;
+                margin-bottom: 25px;
+                .imgWrap{
+                    margin-bottom: 45px;
+                } 
+                .contentsection {
+                    padding-right:66px;
+                    .descsection {
+                        padding-bottom:  50px;
+                    }
+                }
+            }  
+        }
+        .pagecontent {
+            margin-bottom: 63px;
+            margin-top: 40px;
+            p {
+                margin-left: 56px;
+                @include breakpoint(small only){
+                    margin-left: 0px;
+                }
+                @include breakpoint(medium only){
+                    margin-left: 0px;
+                }
+            }
+        }
+        .last_block{
+            padding-top: 23px;
+            margin: 0 auto !important;
+            @include breakpoint(small){
+                padding-bottom: 30px;
+                margin-left: 0px; 
+            }
+            @include breakpoint(large){
+                padding-bottom: 30px; 
+            }
+            @include breakpoint(xlarge){
+                padding-bottom: 75px; 
+            }
+        }
+    }
+    .pagecontent{
+        margin-bottom: 104px;
+        margin-top: 68px;
+        padding:40px 0px ;
+        @include breakpoint(large only){
+            padding: 40px 40px;
+        } 
+        @include breakpoint(medium only){
+            padding: 40px 40px;
+        }
+        @include breakpoint(small only){
+            margin-bottom: 50px;
+            margin-top: 25px;
+            padding:20px 40px;
+        }
+        p{
+            font-size:18px;
+            line-height:28px ;
+            margin-left: 50px;
+            max-width: 1217px;
+            margin-bottom: 10px;
+            @include breakpoint(large only){
+                max-width: 1217px;  
+                margin-left: 0px;
+            } 
+            @include breakpoint(medium only){
+                max-width: 1217px; 
+                margin-left: 0px;
+            }
+            @include breakpoint(small only){
+                margin-left: 0px;
+            }
+        }
+    }
+    .threecolumnpanels{
+    padding-top: 0px;
+    padding-bottom: 0px;
+    @include breakpoint(small only){
+        padding-top: 40px;
+    }
+    .question{
+        margin-top: 50px;
+        margin-bottom: 60px;
+        @include breakpoint(small only){
+            margin-top: 30px;
+        }
+        .graypanelbg{
+            max-width: 100%;
+            width: 819px;
+            margin: 0 auto;
+            text-align: center;
+            padding-top: 60px;
+            border-radius: 150px;
+            @include breakpoint(small only){
+              padding:40px 20px;
+              padding-bottom: 0px;
+              border-radius: 80px;
+            }
+            h3{
+                font-size:74px;
+                line-height:36px;
+                font-weight: 700;
+                @include breakpoint(small only){
+                    font-size:50px;
+                }
+                @include breakpoint(medium only){
+                    font-size:60px;
+                }
+                @include breakpoint(large only){
+                    font-size:65px;
+                }
+            }
+            p{
+                font-size:18px;
+                line-height:36px;  
+                padding-bottom: 35px;
+                padding-top: 10px;
+                font-weight: 700;
+                @include breakpoint(small only){
+                    padding-bottom: 20px;
+                    padding-top: 15px;
+                    font-size: 17px;
+                    line-height: 20px;
+                }
+            }
+        }
+    }
+    .threeColumnWrap{
+        .innerWrap{
+            .colblock{
+                &.patientblock{
+                    width: 31%;
+                    margin-bottom: 41px;
+                    margin-right: 3.4%;
+                    position: relative;
+                    padding: 0;
+                    @include breakpoint(large only){
+                        width: 32%;
+                        margin-right: 2%;
+                    }
+                    @include breakpoint(medium only){
+                        width: 48%;
+                        margin-bottom: 30px;
+                        margin-right: 3.88%;
+                        &:nth-child(2n+2), &:last-child{
+                            margin-right: 0;
+                        } 
+                        &:nth-child(3){
+                            margin-right: 3.88% !important;
+                        }
+                    }
+                    @include breakpoint(small only){
+                        width: 100%;
+                        margin-bottom: 30px;
+                        margin-right: 0;
+                    }
+                    &:nth-child(3n+3), &:last-child{
+                        margin-right: 0;
+                    } 
+                    .imgWrap{
+                        margin-bottom: 0;
+                        img{
+                            width: 100%;
+                            object-fit: cover;
+                            max-height: 100%;
+                            object-position: top;
+                            @include breakpoint(medium){
+                                max-height: 199px;
+                                min-height: 199px;
+                            } 
+                            @include breakpoint(large){
+                                max-height: 182px;
+                                min-height: 182px;
+                            }
+                            @include breakpoint(xlarge){
+                                max-height: 240px;
+                                min-height: 240px;
+                            } 
+                        }
+                    }   
+                    .contentsection{
+                        padding: 18px 37px;
+                        padding-bottom: 28px;
+                        @include breakpoint(small only){
+                            padding: 18px 18px;
+                        }
+                        .namesection{
+                           .heading-title{
+                            margin-bottom:10px;
+                            h2{
+                                font-size:24px;
+                                line-height: 35px;
+                                text-transform: capitalize;
+                                text-align: left;
+                                margin:0;
+                                @include breakpoint(small only){
+                                    padding-bottom:5px;
+                                }
+                            }
+                            a {
+                                text-decoration: none;
+                            }
+                            &:after {
+                                content: "";
+                                width: 63px;
+                                height: 5px;
+                                position: absolute;
+                                left: 0;
+                                bottom: 0;
+                                background-color: #FE5000;
+                            }
+                           }
+                            p{
+                                font-size: 18px;
+                                font-weight: 400;
+                                line-height: 28px;
+                                padding-top: 15px;
+                                padding-bottom: 48px;
+                            }
+                        }
+                    }
+                    .locationbtnwrp{
+                        &.learnbtn{
+                            position: absolute;
+                            bottom: 28px;
+                            max-width: 158px;
+                            width: 100%;
+                            padding-right: 0;
+                            .ctaborder.secondarybtn{
+                                max-width: 158px;
+                                margin-left: 0px !important;
+                                font-size: 20px;
+                            }
+                        }
+                
+                    }
+                }
+            }
+        }
+    }
+}
+}
+.communitypage.patientsvisitors .threecolumnpanels .threeColumnWrap .innerWrap .colblock .contentsection .namesection p {
+    padding-top: 5px;
+    padding-bottom: 0;
+}
+.communitypage.patientsvisitors .threecolumnpanels .threeColumnWrap .innerWrap .colblock .contentsection{
+    padding: 30px 37px;
+    padding-bottom: 50px;
+}
+.communitypage.patientsvisitors .threecolumnpanels .locationbtnwrp.learnbtn {
+    bottom: 50px;
+}
+.communitypage.patientsvisitors .threecolumnpanels .threeColumnWrap .innerWrap .colblock .contentsection {
+    padding-bottom: 80px;
+}
+.obhblockpanels{
+    margin-top: 78px;
+    @media print, screen and (min-width: 80em) {
+        margin-top: 178px;
+    }
+    .twoColumnWrap{
+        .innerWrap{
+            display: flex;
+            flex-wrap: wrap;
+            min-width: 100%;
+            max-width: 100%;
+            justify-content: flex-start;
+            .colblock{
+                &.obhblock{
+                    width: 100%;
+                    margin-bottom: 20px;
+                    margin-right: 0%;
+                    position: relative;
+                    padding: 0;
+                    background: #F5F5F5;
+                    @media print, screen and (min-width: 80em) {
+                        margin-bottom: 41px;
+                    }
+                    &:first-child{
+                        @include breakpoint(large){
+                            width: 63.447%;
+                        }
+                        @media print, screen and (min-width: 80em) {
+                            width: 65.447%;
+                        }
+                    }
+                    @include breakpoint(large){
+                        width: 35.04%;
+                        margin-right: 1.5%;
+                    }
+                    @media print, screen and (min-width: 80em) {
+                        width: 31.04%;
+                        margin-right: 3.5%;
+                    }
+                    &:last-child{
+                        margin-right: 0;
+                    } 
+                    .imgWrap{
+                        margin-bottom: 0;
+                        overflow: hidden;
+                        img{
+                            width: 100%;
+                            object-fit: cover;
+                            max-height: 100%;
+                            max-height: 240px;
+                            min-height: 240px;
+                            object-position: top;
+                            @include breakpoint(medium){
+                                max-height: 240px;
+                                min-height: 240px;
+                            } 
+                            @include breakpoint(large){
+                                max-height: 182px;
+                                min-height: 182px;
+                            }
+                            @include breakpoint(xlarge){
+                                max-height: 284px;
+                                min-height: 284px;
+                            } 
+                        }
+                    }   
+                    .contentsection{
+                        padding: 18px 24px;
+                        padding-bottom: 28px;
+                        @include breakpoint(small only){
+                            padding: 18px 18px;
+                        }
+                        @media print, screen and (min-width: 80em) {
+                            padding: 18px 37px;
+                        }
+                        .namesection{
+                           .heading-title{
+                            margin-bottom:10px;
+                            h2{
+                                font-size:28px;
+                                line-height: 36px;
+                                font-weight: 800;
+                                text-transform: uppercase;
+                                text-align: left;
+                                margin:0;
+                                @include breakpoint(small only){
+                                    padding-bottom:5px;
+                                    font-size:24px;
+                                    line-height: 30px;
+                                }
+                                @media print, screen and (min-width: 80em) {
+                                    font-size:36px;
+                                    line-height: 46px;
+                                }
+                            }
+                            a {
+                                text-decoration: none;
+                            }
+                            &:after {
+                                content: "";
+                                width: 63px;
+                                height: 5px;
+                                position: absolute;
+                                left: 0;
+                                bottom: 0;
+                                background-color: #FE5000;
+                            }
+                           }
+                            p{
+                                font-size: 18px;
+                                font-weight: 400;
+                                line-height: 28px;
+                                padding-top: 0;
+                                padding-bottom: 58px;
+                                @include breakpoint(large){
+                                    padding-bottom:68px;
+                                }
+                                @include breakpoint(small only){
+                                    font-size: 16px;
+                                    line-height: 20px;
+                                }
+                            }
+                        }
+                    }
+                    .locationbtnwrp{
+                        &.learnbtn{
+                            position: absolute;
+                            bottom: 28px;
+                            max-width: 158px;
+                            width: 100%;
+                            padding-right: 0;
+                            .ctaborder.secondarybtn{
+                                max-width: 158px;
+                                margin-left: 0px !important;
+                                font-size: 20px;
+                                padding: 4px 18px;
+                            }
+                        }
+                
+                    }
+                }
+            }
+            &.alterwrap{
+                padding-top: 22px;
+                .colblock{
+                    &.obhblock{
+                        &:first-child{
+                            @include breakpoint(large){
+                                width: 35.04%;
+                            }
+                            @media print, screen and (min-width: 80em) {
+                                width: 31.04%;
+                            }
+                        }
+                        &:last-child{
+                            @include breakpoint(large){
+                                width: 63.447%;
+                            }
+                            @media print, screen and (min-width: 80em) {
+                                width: 65.447%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.obhfeaturedpanels{
+    margin-top: 20px;
+    @include breakpoint(large){
+        margin-top: 58px;
+    }
+    .heading-title{
+        margin-bottom: 48px;
+        h2{
+            line-height: 36px;
+            font-size: 28px;
+            @include breakpoint(small only){
+                line-height: 30px;
+                font-size: 24px;
+            }
+            @include breakpoint(large){
+                line-height: 62px;
+                font-size: 36px;
+            }
+        }
+    }
+    .flexwrap{
+        display: flex;
+        flex-wrap: wrap;
+        @include breakpoint(large){
+            flex-wrap: nowrap;
+        }
+        .imgWrap{
+            min-width: 100%;
+            overflow: hidden;
+            max-height: 100%;
+            margin-right: 0%;
+            @include breakpoint(large){
+                min-width: calc(100% - 452px);
+                max-height: 514px;
+                margin-right: 2.5%;
+            }
+            .filter-img.popup{
+                position: relative;
+                overflow: hidden;
+                cursor: pointer;
+                    &::after{
+                        content: "";
+                        position: absolute;
+                        bottom: 0;
+                        right: 0;
+                        top:0;
+                        left: 0;
+                        margin: auto;
+                        width: 48px;
+                        height: 48px;
+                        background-image: url("#{$img}/obh-play-icon-round.svg");
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        cursor: pointer;
+                        -webkit-transition: all 0.3s;
+                        transition: all 0.3s;
+                        z-index: 9;
+                        @include breakpoint(xlarge){
+                          width: 90px;
+                          height: 90px;
+                        }
+                    }
+                    &:hover{
+                      &::after{
+                          transform: scale(0.85);
+                      }
+                    }
+            }
+          img{
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+          }
+        }
+        .rightwarp{
+            max-width: 100%;
+            width: 100%;
+            margin-top: 20px;
+            @include breakpoint(large){
+                max-width: 406px;
+                margin-top: 0;
+            }
+            .contwrap{
+                p{
+                    font-size: 18px;
+                    font-weight: 400;
+                    line-height: 30px;
+                    @include breakpoint(small only){
+                        font-size: 16px;
+                        line-height: 20px;
+                    }
+                }
+                .date{
+                    color: #fe5000;
+                    font-weight: 700;
+                    line-height: 24px;
+                    padding-bottom: 8px;
+                    @media print, screen and (min-width: 80em) {
+                        padding-bottom: 25px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.obhvideolistpanels{
+    margin-top: 58px;
+    @include breakpoint(small only){
+        margin-top: 30px;
+    }
+    .heading-title{
+        margin-bottom: 58px;
+        h2{
+            line-height: 36px;
+            font-size: 28px;
+            @include breakpoint(small only){
+                line-height: 30px;
+                font-size: 24px;
+            }
+            @include breakpoint(large){
+                line-height: 62px;
+                font-size: 36px;
+            }
+        }
+    }
+    .obhvideolist{
+        display: none;
+        padding-top: 80px;
+        @include breakpoint(small only){
+            padding-top: 50px;
+        }
+        @media print, screen and (min-width: 80em) {
+            padding-top: 90px;
+        }
+        &:nth-child(2){
+            padding-top: 0;
+        }
+        .flexwrap{
+            display: flex;
+            flex-wrap: wrap;
+            background: #F5F5F5;
+            @include breakpoint(large){
+                flex-wrap: nowrap;
+            }
+            .imgWrap{
+                min-width: 100%;
+                overflow: hidden;
+                max-height: 100%;
+                @include breakpoint(large){
+                    min-width: calc(100% - 861px);
+                    max-height: 286px;
+                }
+                .filter-img.popup{
+                  position: relative;
+                  overflow: hidden;
+                  cursor: pointer;
+                      &::after{
+                          content: "";
+                          position: absolute;
+                          bottom: 0;
+                          right: 0;
+                          top:0;
+                          left: 0;
+                          margin: auto;
+                          width: 48px;
+                          height: 48px;
+                          background-image: url("#{$img}/obh-play-icon-round.svg");
+                          background-size: cover;
+                          background-repeat: no-repeat;
+                          cursor: pointer;
+                          -webkit-transition: all 0.3s;
+                          transition: all 0.3s;
+                          z-index: 9;
+                          @include breakpoint(xlarge){
+                            width: 90px;
+                            height: 90px;
+                          }
+                      }
+                      &:hover{
+                        &::after{
+                            transform: scale(0.85);
+                        }
+                      }
+              }
+              img{
+                    object-fit: cover;
+                    width: 100%;
+                    height: 100%;
+              }
+            }
+            .rightwarp{
+                max-width: 861px;
+                width: 100%;
+                background: #F5F5F5;
+                padding: 18px;
+                @include breakpoint(small only){
+                    padding: 15px;
+                }
+                @media print, screen and (min-width: 80em) {
+                    padding: 24px 27px 24px 29px;
+                }
+                .contwrap{
+                    h3{
+                        font-size: 20px;
+                        font-weight: 800;
+                        text-transform: uppercase;
+                        margin-bottom: 11px;
+                        @media print, screen and (min-width: 80em) {
+                            font-size: 24px;
+                        }
+                        b{
+                            font-weight: 800;
+                        }
+                    }
+                    p{
+                        font-size: 18px;
+                        font-weight: 400;
+                        line-height: 26px;
+                        @include breakpoint(small only){
+                            font-size: 16px;
+                        }
+                    }
+                    .date{
+                        color: #fe5000;
+                        font-weight: 700;
+                        line-height: 24px;
+                        padding-bottom: 12px;
+                        @media print, screen and (min-width: 80em) {
+                            padding-bottom: 25px;
+                        }
+                    }
+                    .columnwrap{
+                        display: flex;
+                        flex-wrap: nowrap;
+                        @include breakpoint(small only){
+                            flex-wrap: wrap;
+                        }
+                        ul{
+                            margin-left: 0;
+                            @include breakpoint(small only){
+                                margin-bottom: 0;
+                            }
+                            li{
+                                list-style: none;
+                                font-size: 18px;
+                                font-weight: 400;
+                                line-height: 20px;
+                                @include breakpoint(small only){
+                                    font-size: 16px;
+                                }
+                            }
+                        }
+                        .col1{
+                            margin-right: 5%;
+                            @media print, screen and (min-width: 80em) {
+                                margin-right: 11.4%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .btnwrap {
+        display: none;
+        padding-top: 38px;
+        padding-bottom: 30px;
+        .viewall-btn{
+            width: 100%;
+            margin: 0 auto;
+            text-align: center;
+        }
+    }
+}
+@keyframes spin {
+    from {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg); }
+    to {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg); } }
+  
+  @-webkit-keyframes spin {
+    from {
+      -webkit-transform: rotate(0deg); }
+    to {
+      -webkit-transform: rotate(360deg); } }

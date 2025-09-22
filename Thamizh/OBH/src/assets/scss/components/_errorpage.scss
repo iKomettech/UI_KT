@@ -1,0 +1,156 @@
+.page404Wrap {
+  text-align: center;
+  margin-bottom: 7px;
+  margin-top: 12px;
+  padding: 35px 0px 125px 0px;
+  @include breakpoint(small only) {
+    padding: 0px 0px 50px 0px;
+  }
+  .graybg {
+    margin: 0px auto;
+    width: 100%;
+    background-color:#F5F5F5;
+    text-align: center;
+    padding: 18px 0px 59px 0px;
+    border: 20px solid $grey-bg-color;
+    @include breakpoint(large only) {
+      max-width: 100%;
+      padding: 0px 30px 40px 30px;
+    }
+    @include breakpoint(medium only) {
+      max-width: 100%;
+      padding: 0px 30px 30px 30px;
+    }
+    @include breakpoint(small only) {
+      max-width: 100%;
+      padding: 0px 20px 30px 20px;
+    }
+    .pt-0{
+     margin-top:0px;
+    }
+  }
+  h1 {
+    font-size: 150px;
+    line-height:95px;
+    margin-top: 0px;
+    color: $secondary-color;
+    font-weight: 700;
+    padding-top: 36px;
+    padding-bottom: 25px;
+    margin-bottom: 0px;
+    @include breakpoint(large only) {
+      font-size: 100px;
+      padding-bottom: 0px;
+    }
+    @include breakpoint(medium only) {
+      font-size: 80px;
+      line-height:40px;
+      padding-bottom: 15px;
+    }
+    @include breakpoint(small only) {
+      font-size: 50px;
+      line-height:40px;
+      padding-bottom: 15px;
+    }
+  }
+  h3 {
+    margin-top: 0px;
+    font-size: 80px;
+    line-height:95px;
+    color: $secondary-color;
+    text-transform: uppercase;
+    font-weight: 700;
+    @include breakpoint(large only) {
+      font-size: 70px;
+    }
+    @include breakpoint(medium only) {
+      font-size: 60px;
+      line-height:40px;
+      margin-top: 20px;
+    }
+    @include breakpoint(small only) {
+      margin-top: 0px;
+      font-size: 30px;
+      line-height:30px;
+    }
+  }
+
+  p {
+    margin-top: 55px;
+    color:$grey-bg-color;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 45px;
+    max-width: 1218px;
+    margin: 0 auto;
+    @include breakpoint(small only) {
+      margin-top: 10px;
+      font-size: 18px;
+      line-height: 25px;
+    }
+    @include breakpoint(medium only) {
+      margin-top: 25px;
+      font-size: 20px;
+      line-height: 25px;
+    }
+
+    @include breakpoint(large only) {
+      font-size: 25px;
+      line-height: 30px;
+    }
+    a {
+      font-weight:700;
+      color:$grey-bg-color;
+      text-decoration: underline;
+      &:hover{
+        color: $secondary-color;
+      }
+    }
+  }
+
+  .btnError {
+    margin-top: 34px;
+    @include breakpoint(small only) {
+      margin-top: 15px;
+    }
+    a{
+      text-transform: uppercase;
+    }
+    .ctabtn {
+      color: $white;
+      font-weight: 700;
+      min-width: auto;
+      padding: 5px 32px;
+      height: 52px;
+      &:hover {
+        color:$black;
+      }
+      &:after {
+        background: $white;
+      }
+    }
+  }
+  .ctaborder{
+    font-size: 36px;
+    line-height: 55px;
+    @include breakpoint(small only) {
+      font-size: 20px;
+      line-height: 20px;
+    }
+    @include breakpoint(medium only) {
+      font-size: 25px;
+      line-height: 30px;
+    }
+    &.secondarybtn{
+      padding: 8px 56px;
+      @include breakpoint(small only) {
+        padding: 8px 25px;
+      }
+    }
+  }
+}
+.page404Wrap{
+    p{
+      padding-bottom: 10px;
+    }
+}

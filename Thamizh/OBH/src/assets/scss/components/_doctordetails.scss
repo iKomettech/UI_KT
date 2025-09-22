@@ -1,0 +1,583 @@
+.doctor_details{
+  @include breakpoint(medium) {
+    margin-top: 6px;
+  }
+  a{
+    color: $body-font-color;
+  }
+  h1 {
+    margin: 0px 0 25px;
+    font-size: 30px;
+    line-height: 40px;
+    @include breakpoint(medium) {
+        line-height: 50px;
+        font-size: 40px;
+    }
+    @include breakpoint(large) {
+      margin: 10px 0 32px;
+       line-height: 56px;
+        font-size: 50px;
+    }
+    @include breakpoint(xlarge) {
+        font-size: 74px;
+        line-height: 100px;
+    }
+ 
+  }
+
+  .resultcontent {
+    margin: 0px 0 0px;
+    @include breakpoint(large) {
+      display: grid;
+    overflow: hidden;
+    width: 100%;
+    margin: 6px 0 7px;
+    }
+    .resultCount {
+        margin: 30px 0 0px;
+        padding-left: 0px;
+        text-align: center;
+    }
+    .parentWrap {
+      .resulthighlight {
+        transition: 0.3s;
+        padding: 0px 0px 0px;
+        position: relative;
+        @include breakpoint(medium) {
+          padding: 0px 0px 8px;
+        }
+        @include breakpoint(large) {
+          padding: 4px 0 60px;
+        }
+        &:last-child {
+          padding: 11px 0px 4px;
+          @include breakpoint(medium) {
+            padding: 4px 0 72px;
+          }
+        }
+        &:nth-child(1) {
+          padding: 34px 0 20px;
+          @include breakpoint(medium) {
+            padding: 55px 0px 60px;
+          }
+          .innerWrap {
+            @include breakpoint(medium) {
+              padding-top: 0px;
+              padding-bottom: 0px;
+            }
+          }
+        }
+        .innerWrap {
+          display: flex;
+          width: 100%;
+          flex-wrap: wrap;
+          background: #F5F5F5;
+          .headwrp {
+            width: 100%;
+            order: 2;
+            padding-top:10px;
+            @include breakpoint(large) {
+              order: 1;
+            }
+            
+            h2, a {
+              font-size: 26px;
+              line-height: 50px;
+              margin: 0;
+              color: $primary-color;
+              font-weight: 700;
+              text-transform: uppercase;
+              padding-bottom: 0;
+              @include breakpoint(small only) {
+                  padding-bottom: 6px;
+              }
+              @include breakpoint(medium only) {
+                  padding-bottom: 6px;
+              }
+              @include breakpoint(large) {
+                font-size: 43px;
+                line-height: 45px;
+                margin-bottom: 10px;
+              }
+              &:hover{
+                  text-decoration: none;
+              }
+            }
+            h2{
+              &:after{
+                  width: 71px;
+                  @include breakpoint(small only) {
+                      left:calc(50% - 71px)
+                  }
+              }
+              span{
+                  font-weight: 400;
+              }
+            }
+            .dis_title{
+              font-size: 22px;
+              line-height: 29px;
+              font-weight: 400;
+            }
+            .location_title{
+              font-size: 24px;
+              line-height: 24px;
+              font-weight: 700;
+              text-transform: uppercase;
+              padding-bottom: 10px;
+              padding-top: 38px;
+            }
+          }
+          .locationwrp{
+              display: flex;
+              padding-top: 20px;
+              @include breakpoint(small only){
+                  flex-wrap: wrap;
+              }
+              @include breakpoint(medium only){
+                flex-wrap: wrap;
+              }
+
+              .sub_info{
+                  font-size: 18px;
+                  line-height: 24px;
+                  font-weight: 600;
+              }
+              .sub-grayinfo{
+                  font-size: 15px;
+                  line-height: 24px;
+                  color: #000000;
+                  font-weight: 600;
+                  margin-top: 0px;
+              }
+              .ctaborder.secondarybtn {
+                max-width:371px;
+                height: 67px;
+                line-height:20px;
+                font-size: 24px;
+                padding: 25px 30px;
+                margin-top: 42px;
+                @include breakpoint(small only){
+                  font-size: 20px;
+                  padding: 25px 55px;
+                }
+                @include breakpoint(medium only){
+                  font-size: 20px;
+                  padding: 25px 55px;
+                }
+                @include breakpoint(large only){
+                  font-size: 20px;
+                }
+
+              }
+        
+              .ctaborder.graybtn {
+                  padding: 8px 13.1px;
+                @include breakpoint(large only){
+                    max-width: 100%;
+                }
+              }
+              .columns-1{
+                  max-width: 389px;
+                  width: 100%;
+                  @include breakpoint(small only){
+                      max-width: 100%;
+                  }
+                  @include breakpoint(medium only){
+                    max-width: 100%;
+                }
+                  p{
+                      font-size: 18px;
+                      line-height: 24px;
+                      margin-top: 0;
+                  }
+                  .location_1{
+                    margin-top: 50px;
+                    &:first-child{
+                      margin-top:0px;
+                    }
+                  }
+                  .location_name{
+                      font-size: 22px;
+                      line-height: 24px;
+                      font-weight: 700;
+                      padding-bottom: 25px;
+                      text-transform: capitalize;
+                  }
+                  
+                  .locationbtnwrp{
+                      padding-top:13px;
+                      display: flex;
+                      @include breakpoint(small only){
+                          padding-top: 10px;
+                          display: block;
+                      }
+                      .ctaborder{
+                          text-transform: uppercase;
+                          text-decoration: none;
+                          font-size: 20px;
+                          line-height: 20px;
+                          font-weight: 600;
+                          padding: 8px;
+                          &.border-left{
+                              padding: 5px 18px;
+                              max-width: 258px;
+                              width: 100%;
+                              padding-right: 10px;
+                              @include breakpoint(medium only){
+                                  max-width: 100%;
+                                  width: auto;
+                              }
+                          }
+                          &.secondarybtn{
+                              font-size: 16px;
+                              font-weight: bold;
+                              padding: 5px 18px;
+                              max-width: 144px;
+                              width: 100%;
+                              position: relative;
+                              top: -1px;
+                              @media (min-width: 1024px) and (max-width: 1250px) {
+                               margin-left: 0 !important;   
+                               margin-top: 10px;
+                              }
+                          }
+                      }
+                      .ctaborder + .ctaborder{
+                          margin-left: 7px;
+                          @media (min-width: 1024px) and (max-width: 1150px) {
+                              margin-left: 0px;
+                          }
+                          @include breakpoint(small only){
+                              margin-top: 10px;
+                              margin-left: 0px;
+                          }
+                      }
+                  }   
+              }
+              .columns-2{
+                  margin-left:70px;
+                  max-width: 265px;
+                  padding-top: 7px;
+                  @include breakpoint(small only){
+                      padding-left:0px;
+                      padding-top:50px;
+                      margin-left: 0px;
+                  }
+                  @include breakpoint(medium only){
+                    padding-left:0px;
+                    padding-top:50px;
+                    margin-left: 0px;
+                  }
+                  @include breakpoint(large only){
+                    margin-left: 0px;
+                  }
+                  @include breakpoint(xlarge){
+                    padding-left:0px;
+                  }
+                  .features_title{
+                      font-size: 24px;
+                      line-height: 24px;
+                      text-transform: uppercase;
+                      font-weight: 700;
+                  }
+                  .features_1{
+                    margin-top:0px;
+                    .sub_info{
+                      padding-top:3px;
+                    }
+                  }
+                  .features_3{
+                    margin-top:40px;
+                    .sub_info{
+                      font-weight: 700;
+                    }
+                  }
+                  p{
+                    &:hover{
+                      margin-left:0px;
+                      transition:0px;
+                    }
+                      a{
+                          font-size: 18px;
+                          line-height: 20px;
+                          font-weight: 700;
+                          transition: all 0.75s;
+                          &:hover{
+                              padding-left: 10px;
+                              transition: all 0.45s;
+                              text-decoration: none;
+                              &:after{
+                                  left: 10px;
+                                  transition: all 0.45s;
+                                  background: url("#{$img}/link-bta-hover.svg");
+                              }
+                          }
+                          &:after{
+                                  background: url("#{$img}/link-bta.svg");
+                                  content: "";
+                                  display: inline-block;
+                                  height: 21px;
+                                  vertical-align: middle;
+                                  width: 21px;
+                                  position: relative;
+                                  color: $black;
+                                  right: -10px;
+                                  top: 0px;
+                              }
+                      }
+                  }
+              }
+            }
+
+       
+          .imgWrap {         
+          //   min-width: 100%;
+              order: 1;
+              overflow: hidden;
+              @include breakpoint(small) {
+                  width:100%;
+          
+              }
+            @include breakpoint(large) {
+              max-width: 553px;
+              width: 41%;
+              overflow: hidden;
+              order:2;
+            }
+              img{
+                  object-fit: cover;
+                  width: 100%;
+                  height: 100%;
+                  transition: all 0.75s;  
+                  &:hover {
+                      transform: scale(1.1);
+                    }
+                }
+            
+            figure {
+              width: 100%;
+              background-size: cover;
+              background-position: top !important;
+              transition: all 0.75s;           
+              object-fit: cover;
+              height: auto; 
+              overflow: hidden;            
+              @include breakpoint(medium) {
+                width: 100%;
+              
+              }
+              @include breakpoint(large) {
+                height: 310px;
+                width: 467px;
+              }
+            
+              img,
+              picture {
+                  @include breakpoint(small) {
+                    width: 100%;
+                  } 
+                    @include breakpoint(medium) {
+                    width: 100%;
+                  } 
+              }
+              &:hover {
+                transform: scale(1.1);
+              }
+            }
+            + .cntWrap {
+              padding-bottom: 20px;
+              max-width: 100%;
+              padding-top: 19px;
+              order: 3;
+              padding-left: 0px;
+              @include breakpoint(small) {
+                  padding-left: 15px;
+                  padding-right: 15px;
+              }
+              @include breakpoint(medium) {
+                max-width: 100%;
+                order: 3;
+                padding-bottom: 20px;
+                padding-left: 20px;
+                padding-right: 20px
+              }
+              @include breakpoint(large) {
+                // max-width: 718px;
+                padding-left: 24px;
+                width: 57%;
+                padding-left: 20px;
+                padding-right: 20px;
+              }
+              @include breakpoint(xlarge) {
+                padding-left: 45px;
+                max-width: 812px;
+                padding-right: 35px;
+              }
+            }
+          }
+          .cntWrap {
+            width: 100%;
+            position: relative;
+            padding-top: 43px;
+              
+            &.fulwidth {
+              order: 3;
+              max-width: 100%;
+              padding-top: 0px;
+              margin-top: 19px;
+              padding-bottom: 20px;
+              @include breakpoint(medium) {
+                max-width: 682px;
+              }
+             @include breakpoint(large) {
+                max-width: 950px;  
+              }
+    
+              @include breakpoint(xlarge) {
+                max-width: 1197px;
+                padding-top: 0;
+                margin-top: 18px;
+              }
+           
+           
+            }
+
+            p {
+              line-height: 25px;
+              font-size: 17px;
+              margin-top: -8px;
+              @include breakpoint(medium) {
+                max-width: 100%;
+                line-height: 30px;
+                font-size: 20px;
+              }
+
+
+              & + p {
+                max-width: 100%;
+                margin: 18px 0 0;
+               
+                @include breakpoint(large) {
+                 
+                  margin: 11px 0 0;
+                }
+              }
+
+              a {
+                
+                line-height: 30px;
+                font-size: 20px;      
+                word-break: break-word;             
+                &:hover {
+                  color: $secondary-color;
+                }
+              }
+            }
+          }
+        }
+
+        h3 {
+          margin-bottom: 21px;
+          @include breakpoint(medium) {
+            margin-bottom: 19px;
+            font-size: 24px;
+            line-height: 28px;
+          }
+          @include breakpoint(large) {
+          margin-bottom: 24px;
+          }
+        
+        }
+      }
+    }
+  }
+}
+@media (min-width: 1024px) and (max-width: 1390px){
+  .search-result-panel .resultcontent .parentWrap .resulthighlight .grid-container {
+      padding-left: 0px !important;
+      padding-right: 0px !important;
+     }
+}
+@media(max-width: 438px){
+  .doctor_details .resultcontent .parentWrap .resulthighlight .innerWrap .locationwrp .ctaborder.secondarybtn {
+      max-width: 371px;
+      height: 60px;
+      line-height: 40px;
+      font-size: 18px;
+      padding: 10px 10px;
+      margin-top: 42px;
+  }
+  .doctor_details .resultcontent .parentWrap .resulthighlight .innerWrap .locationwrp .columns-1 .locationbtnwrp .ctaborder {
+      width: 250px;
+  }
+
+
+}
+@media (min-width: 1024px) and (max-width: 1220px) {
+  .doctor_details .resultcontent .parentWrap .resulthighlight .innerWrap .locationwrp .ctaborder.secondarybtn {
+  max-width: 371px;
+  height: 67px;
+  line-height: 20px;
+  font-size: 19px;
+  padding: 25px 15px;
+  margin-top: 42px;
+}
+.doctor_details .resultcontent .parentWrap .resulthighlight .innerWrap .locationwrp .ctaborder.graybtn {
+  width: 264px;
+  margin: 10px 0px;
+  text-align: center;
+}
+.doctor_details .resultcontent .parentWrap .resulthighlight .innerWrap .locationwrp .columns-1 .locationbtnwrp {
+  display: block;
+}
+.doctor_details .resultcontent .parentWrap .resulthighlight .innerWrap .locationwrp .columns-1 .locationbtnwrp .ctaborder + .ctaborder {
+margin-left: 0px;
+}
+.doctor_details .resultcontent .parentWrap .resulthighlight .innerWrap .locationwrp .columns-2 .features_title {
+font-size: 19px;
+}
+.doctor_details .resultcontent .parentWrap .resulthighlight .innerWrap .locationwrp .columns-1 {
+max-width: 300px;
+}
+.doctor_details .resultcontent .parentWrap .resulthighlight .innerWrap .imgWrap {
+width: 40%;
+}
+.doctor_details .resultcontent .parentWrap .resulthighlight .innerWrap .imgWrap + .cntWrap {
+width: 50%;
+}
+.doctor_details .resultcontent .parentWrap .resulthighlight .innerWrap .locationwrp .ctaborder.secondarybtn {
+font-size: 18px;
+}
+}
+@media (min-width: 1221px) and (max-width: 1359px) {
+.doctor_details .resultcontent .parentWrap .resulthighlight .innerWrap .locationwrp .ctaborder.secondarybtn {
+  padding: 25px 55px;
+}
+}
+
+.doctor_details .resultcontent .parentWrap .resulthighlight .innerWrap .cntWrap p+p {
+  margin: 0;
+}
+.doctor_details .resultcontent .parentWrap .resulthighlight .innerWrap .locationwrp .columns-2 .features_title{
+  padding-bottom: 10px;
+}
+@media (max-width: 767px){
+  .doctor_details .resultcontent .parentWrap .resulthighlight .innerWrap .headwrp h2, .doctor_details .resultcontent .parentWrap .resulthighlight .innerWrap .headwrp a{
+      font-size: 18px;
+  line-height: 30px;
+  }
+  .doctor_details .resultcontent .parentWrap .resulthighlight .innerWrap .headwrp .dis_title, .doctor_details .resultcontent .parentWrap .resulthighlight .innerWrap .headwrp .location_title, .doctor_details .resultcontent .parentWrap .resulthighlight .innerWrap .locationwrp .columns-1 .location_name, .doctor_details .resultcontent .parentWrap .resulthighlight .innerWrap .locationwrp .columns-2 .features_title{
+      font-size: 18px;
+  }
+  .doctor_details .resultcontent .parentWrap .resulthighlight .innerWrap .locationwrp{
+      padding-top: 8px;
+  }
+  .doctor_details .resultcontent .parentWrap .resulthighlight .innerWrap .locationwrp .columns-1 .location_name{
+      font-size: 16px;
+      padding-bottom: 8px;
+  }
+  .doctor_details .resultcontent .parentWrap .resulthighlight .innerWrap .locationwrp .columns-2 .features_3 .pt-30 {
+      padding-top: 15px;
+  }
+}

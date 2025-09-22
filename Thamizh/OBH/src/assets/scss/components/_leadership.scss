@@ -1,0 +1,395 @@
+.leadershippanel{
+    .descpanel{
+        padding-bottom: 58px;
+        .headingwrap{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 34px;
+            @include breakpoint(small only) {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            @include breakpoint(medium only) {
+                flex-wrap: wrap;
+            }
+            .heading-title{
+                margin-bottom: 0;
+                h2{
+                    line-height: 50px;
+                    text-align: left;
+                    @include breakpoint(small only) {
+                        text-align: center;
+                        line-height: 35px;
+                    }
+                }
+                span{
+                    display: block;
+                    text-transform: uppercase;
+                    font-size: 14px;
+                    line-height: 16px;
+                    font-weight: 400;
+                    text-align: left;
+                    @include breakpoint(small only) {
+                        text-align:center;
+                    }
+                }
+                &:after{
+                    bottom: -9px;
+                    left: 0;
+                    @include breakpoint(small only) {
+                        left: calc(50% - 50px);
+                    }
+                }
+            }
+        }
+        .flexwrap{
+            display: flex;
+            background: #F5F5F5;
+            margin-top: 38px;
+            @include breakpoint(small only) {
+                flex-wrap: wrap;
+            }
+            @include breakpoint(medium only) {
+                flex-wrap: wrap;
+            }
+            .imgWrap{
+                min-width: 569px;
+                overflow: hidden;
+                @include breakpoint(small only) {
+                    min-width: 100%;
+                }
+                @include breakpoint(medium only) {
+                    min-width: 100%;
+                }
+                @media (min-width: 1024px) and (max-width: 1279px){
+                    min-width: 50%;
+                }
+                img{
+                    object-fit: cover;
+                    width: 100%;
+                    height: 100%;
+                    @media (min-width: 1024px) and (max-width: 1279px){
+                        height: auto;
+                    }
+                    @include breakpoint(medium only) {
+                        height: 690px;
+                        object-position: top;
+                    }
+                    @include breakpoint(small only) {
+                        height: 335px;
+                        object-position: top;
+                    }
+                }
+            }
+            .leftwarp{
+                max-width: 767px;
+                width: 100%;
+                .contwrap{
+                    padding-top: 24px;
+                    padding-left: 28px;
+                    padding-right: 42px;
+                    padding-bottom: 22px;
+                    @include breakpoint(xlarge) {
+                        padding-top: 35px;
+                        padding-left: 75px;
+                        padding-right: 45px;
+                        padding-bottom: 35px;
+                    }
+                    .content-title{
+                        font-weight: 800;
+                        font-size: 18px;
+                        line-height: 28px;
+                        padding-bottom: 0;
+                    }
+                    p{
+                        font-size: 18px;
+                        font-weight: 400;
+                        line-height: 28px;
+                    }
+                    .secondarybtn{
+                        min-width: 143px;
+                        text-align: center;
+                        padding: 8px;
+                        text-transform: uppercase;
+                        margin-top: 32px;
+                        line-height: 18px;
+                    }
+                }
+            }
+        }
+    }
+    .doctorspanel{
+        padding-top: 50px;
+        &::after{
+           display: none;
+        }
+        .grid-container{
+            .headingwrap{
+                .heading-title{
+                    max-width: 675px;
+                    margin-bottom: 57px;
+                    h2{
+                        line-height: 38px;
+                    } 
+                    &:after{
+                        bottom: -10px;
+                    } 
+                }
+            }
+            .doctlist{
+                max-width: 410px;
+                figure{
+                    height: 100%;
+                    img{
+                        width: 100%;
+                    }
+                }
+                .namesection{
+                    padding-bottom: 41px;
+                    padding-left: 40px;
+                    padding-right: 40px;
+                    box-shadow: none;
+                    @include breakpoint(small only) {
+                        height: auto !important;
+                    }
+                  .contentsection{
+                    max-width: 300px;
+                    padding-bottom: 0;
+                    .titlehead{
+                        font-size: 24px;
+                        line-height: 24px;
+                        text-transform: none;
+                        padding-bottom: 10px;
+                        span{
+                            font-weight: 700;
+                            padding-left: 0;
+                        }
+                        @include breakpoint(large only) {
+                            font-size: 20px;
+                        }
+                        @include breakpoint(medium only) {
+                            font-size: 20px;
+                        }
+                        @include breakpoint(small only) {
+                            font-size: 20px;
+                        }
+                    }
+                    p{
+                        font-size: 18px;
+                        line-height: 21px;
+                        color: #707070;
+                        @include breakpoint(large only) {
+                            font-size: 16px;
+                        }
+                        @include breakpoint(medium only) {
+                            font-size: 16px;
+                        }
+                        @include breakpoint(small only) {
+                            font-size: 16px;
+                        }
+                    }
+                  }  
+                }
+                
+            }
+        }
+        .threecolumnpanels{
+            padding-bottom: 62px;
+            padding-top: 0;
+        }
+    }
+}
+.servicelistpanels{
+    .servicewrapper{
+        padding-top: 20px;
+        position: relative;
+        margin-top: -12px;
+        &::before{
+            content: "";
+            width: 97px;
+            height: 8px;
+            position: absolute;
+            left: 0;
+            top: 12px;
+            background-color: #FE5000;
+        }
+        div{
+            &.darkbg{
+                width: 100%;
+                background: #4E4E4E;
+                display: flex;
+                justify-content: flex-start;
+                color: $white;
+                font-size: 24px;
+                font-weight: 400;
+                line-height: 20px;
+                text-align: left;
+                @include breakpoint(small only) {
+                    flex-wrap: wrap;
+                }
+                .heading{
+                    color: $secondary-color;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    padding-left: 97px;
+                    padding-right: 104px;
+                    padding-top: 48px;
+                    padding-bottom: 48px;
+                    @include breakpoint(medium only) {
+                        padding-left: 25px;
+                        padding-right: 25px;
+                    }
+                    @include breakpoint(small only) {
+                        padding-left: 25px;
+                        padding-right: 25px;
+                        padding-top: 24px;
+                        padding-bottom: 24px;
+                        font-size: 18px;
+                    }
+                }
+                .content{
+                    padding-bottom: 44px;
+                    @include breakpoint(small only) {
+                        padding-bottom: 0;
+                    }
+                    p{
+                        padding-left: 97px;
+                        padding-right: 104px;
+                        padding-top: 28px;
+                        padding-top: 18px;
+                        padding-bottom: 18px;
+                        font-weight: 400;
+                        line-height: 20px;
+                        position: relative;
+                        min-height: 118px;
+                        display: flex;
+                        flex-wrap: wrap;
+                        align-items: center;
+                        overflow: hidden;
+                        line-height: 26px;
+                        @media (min-width: 1360px) and (max-width: 1390px){
+                            padding-left: 87px;
+                            padding-right: 94px;
+                        }
+                        @include breakpoint(large only) {
+                            padding-left: 45px;
+                            padding-right: 50px;
+                           
+                        }
+                        @include breakpoint(medium only) {
+                            padding-left: 25px;
+                            padding-right: 25px;
+                            min-height: 140px;
+                            font-size: 18px;
+                        }
+                        @include breakpoint(small only) {
+                            padding-left: 25px;
+                            padding-right: 25px;
+                            font-size: 18px;
+                            min-height: auto;
+                        }
+                        @media (min-width: 1024px) and (max-width: 1200px){
+                            font-size: 18px;
+                        }
+                        &::after{
+                            content: "";
+                            width: 84.6%;
+                            height: 1px;
+                            position: absolute;
+                            left: 0px;
+                            bottom: 0;
+                            background-color: rgba(255,255,255,0.23);
+                            @include breakpoint(large only) {
+                                width: 90.6%;
+                            }
+                            @include breakpoint(medium only) {
+                                width: 100%;
+                                left: -20px;
+                            }
+                            @include breakpoint(small only) {
+                                width: 100%;
+                            }
+                        }
+                        
+                    }
+                }
+                .column-1{
+                        width: 50%;
+                        background-color: #707070;
+                        @include breakpoint(small only) {
+                            width: 100%;
+                        }
+                        .heading{
+                            background-color: #222222;
+                        }
+                        .content{
+                            p{
+                                text-transform: uppercase;
+                                &::after{
+                                    width: 100%;
+                                    left: 98px;
+                                    @include breakpoint(large only) {
+                                        left: 45px;
+                                    }
+                                    @include breakpoint(medium only) {
+                                        left: 20px;
+                                    }
+                                    @include breakpoint(small only) {
+                                        left: 0px;
+                                    }
+                                }
+                            }
+                        }
+                }
+                .column-2{
+                     width: 50%;
+                     position: relative;
+                     @include breakpoint(small only) {
+                        width: 100%;
+                    }
+                    .heading{
+                        background-color: #000000;
+                     }
+                     .labeldiv{
+                        font-size: 24px;
+                        font-weight: 400;
+                        line-height: 20px;
+                        text-align: left;
+                        color: $white;
+                        @media (min-width: 1024px) and (max-width: 1200px){
+                            font-size: 16px;
+                        }
+                        @include breakpoint(medium only) {
+                            font-size: 18px;
+                        }
+                        @include breakpoint(small only) {
+                            font-size: 18px;
+                            width: 100%;
+                        }
+                        span{
+                            font-size: 16px;
+                            padding-left: 6px;
+                            align-self: flex-end;
+                            @media (min-width: 1024px) and (max-width: 1200px){
+                               font-size: 13px; 
+                            }
+                            @media (min-width: 375px) and (max-width: 1023px){
+                                padding-left: 0;
+                                display: block;
+                                width: 100%;
+                                font-size: 13px;
+                            }
+                            +br{
+                                @include breakpoint(medium only) {
+                                    display: none;
+                                }
+                            }
+                        }
+                     }
+                }
+            }
+        }
+    } 
+}
+

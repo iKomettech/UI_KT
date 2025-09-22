@@ -1,0 +1,395 @@
+
+    .three_gridpanel {
+        margin-top: 60px;
+        margin-bottom: 60px;
+        @include breakpoint(medium only) {
+          max-width: 768px;
+          margin: 0 auto;
+        }
+        @include breakpoint(large) {
+      margin-top:82px;
+      margin-bottom: 120px;
+        }
+        .grid-container {
+          @include breakpoint(small only) {     
+              padding-left: 0px !important;
+              padding-right: 0px !important;
+          }
+        }
+        .curve_title {
+          @include breakpoint(large only) {
+            font-size: 18px;
+          }
+        }
+        h2 {
+          font-size: 30px;
+          line-height: 40px;
+          color: $secondary-color;
+          text-align: center;
+          position: relative;
+          margin-bottom: 56px;
+          
+          @include breakpoint(small only) {
+          max-width: 450px;
+          padding-right: 0.625rem;
+          padding-left: 0.625rem;
+          margin-left: 10px;
+          margin-right: 10px;
+          }
+      
+          @include breakpoint(large) {
+            font-size: 43px;
+            line-height: 57px;
+          }
+          &:after { 
+            content: '';
+            height: 2px;
+            width: 30px;
+            right: 0;
+            position: absolute;
+            background: $primary-color;
+            top: 50%;
+            @include breakpoint(medium) {
+              width: 28.5%;
+            }
+            @include breakpoint(large) {
+              width: 27%;
+            }
+            @include breakpoint(xlarge) {
+              width: 33%;
+            }
+      
+          }
+          &:before{
+            content: '';
+            height: 2px;
+            width: 30px;
+            left:0;
+            position: absolute;
+            top: 50%;
+            background: $primary-color;
+            @include breakpoint(medium) {
+              width: 28.5%;
+            }
+            @include breakpoint(large) {
+              width: 27%;
+            }
+            @include breakpoint(xlarge) {
+              width: 33%;
+            }
+          }
+        }
+        .grid-margin-x > .large-4 {
+          @include breakpoint(small only) {
+            width: calc(100% - 1.25rem);
+          }
+          @include breakpoint(medium only) {
+            width: calc(50% - 1.374rem);
+          }
+          @include breakpoint(large only) {
+            width: calc(33.333% - 0.374rem);
+          }
+          width: calc(33.333% - 1.374rem);
+        }
+        .grid-margin-x {
+          @include breakpoint(medium) {
+            justify-content: space-between;
+            // margin-right: -21px !important;//
+          }
+        }
+      
+        .topsec {
+            position: relative;
+            &::before{
+              background: #707070;
+              content: '';
+              position: absolute;
+              width: 101%;
+              top: -1px;
+              height: 50%;
+              border-top-right-radius: 25px;
+              left: -2px;
+                
+              }
+          @include breakpoint(medium) {
+          height: 100%;
+          }
+        }
+        .imgsec {
+          overflow: hidden;
+          width: auto;
+          display: block;
+          margin: 0 auto;
+          transform: translateZ(0);
+          position: relative;
+          a {
+            img {
+              transition: all 0.45s;
+              object-fit: contain;
+              width: 100%;
+            }
+            &:hover {
+              img {
+                transform: scale(1.1);
+                transition: all 0.45s;
+              }
+            }
+          }
+        }
+        .ctablock {
+          max-width: 100%;
+          margin-top:0px;
+          padding: 3px 30px 0;
+          margin-bottom: 10px;  
+          text-align: center;
+          @include breakpoint(medium) {
+            margin-top: -60px;
+            padding: 3px 30px 30px;
+            margin-bottom: 40px; 
+            text-align: left;
+          }
+          @include breakpoint(large) {
+            margin-top: -70px;
+            padding: 3px 30px 0;
+            margin-bottom: 0px;  
+      
+          }
+        }
+        .contentsec {
+          max-width: 100%;
+          // margin: 0 10px;    /      
+          padding: 83px 0px 0px 16px;      
+          text-align: left;  
+          @include breakpoint(medium) {     
+            margin-bottom: 0;
+          
+          }
+         
+          &::before{
+            background:$white;
+            content: '';
+            position: absolute;
+            width: 100%;
+            top:60px;
+            height: 50%;
+            left:0;
+            border-top-right-radius: 25px;
+            
+          }
+          
+          h1,
+          .h1,
+          h2,
+          .h2,
+          h3,
+          .h3,
+          h4,
+          .h4,
+          h5,
+          .h5,
+          h6,
+          .h6 {
+            color: $white;
+          }
+          p {
+            color: $white;
+            font-size: 16px;
+            line-height: 22px;
+            max-width: 339px;
+          }
+          a {
+            text-decoration: none;
+          }
+        }
+      
+        .video {
+          background: $tertiary-color;
+          margin-right: 0 !important;
+         
+          @include breakpoint(small only) {
+            max-width: 440px;
+            margin-left: 0;
+          }
+          @media (min-width: 430px) and (max-width: 767px) {
+             max-width: 430px;
+          margin-left: 10px !important;
+           }
+         
+          p {
+            max-width: 511px;
+            margin-bottom: 45px;
+            @include breakpoint(large) {
+              margin-bottom: 30px;
+              }
+          }
+          h3 {
+            font-size: 36px;
+            line-height: 48px;
+            margin-bottom: 32px;
+            @include breakpoint(large) {
+            margin-bottom: 12px;
+            }
+          }
+          .contentsec {
+            padding: 51px 20px 80px 20px;
+            @include breakpoint(large) {
+                padding: 28px 0px 0px 30px;
+            }
+            @include breakpoint(xlarge) {
+              padding: 71px 20px 68px 92px;
+            }
+          }
+          .videosec {
+            height: 100%;
+          }
+          .imgsec{
+            height: 100%;
+            @include breakpoint(small only) {
+              margin: 0px -10px;
+            }
+          }
+        }
+      
+        .gridinfo {
+          padding: 0;
+          max-width: 355px;
+          margin: 0 auto;
+          margin-top: 12px;
+          margin-bottom: 18px;
+          @include breakpoint(medium) {
+            margin: 0 0;
+            margin-top: 28px;
+            margin-bottom: 0px;
+            margin-left: 0;
+            margin-right: 0%;
+            max-width: 392px;
+          }
+          @include breakpoint(large) {
+            margin-top: 38px;
+          }
+          @include breakpoint(xlarge) {
+          margin-right: 0%;
+          }
+          @include breakpoint(small only) {
+            margin-bottom: 14px;
+            margin-top:0px;
+          }
+          &:last-child {
+            @include breakpoint(medium) {
+            margin-right:0px;
+            }
+          }
+          .corner_logo{
+            background: url(../images/obh-bg-light.svg) no-repeat;
+            background-repeat: no-repeat;   
+            background-position: bottom right;
+          }
+          .content_list{
+            padding-bottom: 20px;
+            padding-top: 17px;
+            text-align: left;
+            position: relative;
+            margin: 0 0;
+            min-height: 230px;
+            @include breakpoint(large) {
+                padding-bottom: 20px;
+            }
+             li{
+                line-height: 32px;
+                font-size: 22px;
+                margin-bottom: 32px;
+                padding-left: 50px;
+                padding-right: 20px;
+                transition: all 0.75s;
+                @include breakpoint(medium only) {
+                  font-size: 19px;
+                }
+                @include breakpoint(large only) {
+                  font-size: 19px;
+                }
+                @include breakpoint(xlarge only) {
+                  font-size: 22px;
+                }
+                a:before {
+                    background: url(../images/list-arrow.svg) no-repeat;
+                    content: "";
+                    display: inline-block;
+                    height: 36px;
+                    vertical-align: middle;
+                    width: 36px;
+                    position: relative;
+                    color: #fff;
+                    right: 20px;
+                    left: 0px;
+                    position: absolute;
+                    transition: all 0.45s;
+    
+                }
+                &:hover{
+                  padding-left: 60px;
+                  transition: all 0.45s;
+                  @include breakpoint(medium only) {
+                    padding-left: 52px;
+                  }
+                  @include breakpoint(small only) {
+                    padding-left: 55px;
+                  }
+                  @include breakpoint(large only) {
+                    padding-left:47px;
+                  }
+                  a{
+                    color: $secondary-color;
+                    &::before{
+                      transition: all 0.45s;
+                      @include breakpoint(medium only) {
+                        left: 5px;
+                      }
+                      @include breakpoint(small only) {
+                        left:5px;
+                      }
+                      @include breakpoint(large only) {
+                        left: 2px;
+                      }
+                      @include breakpoint(xlarge) {
+                        left: 20px;
+                      }
+                    }
+                  }
+              }
+             }
+           
+          }
+        }
+     
+        .btn-center {
+          margin: 0 auto;
+          text-align: center;
+          margin-top: 22px;
+            margin-bottom: 39px;
+          @include breakpoint(large) {
+            margin-top: 50px;
+            margin-bottom: 57px;
+          } @include breakpoint(xlarge) {
+            margin-top: 50px;
+            margin-bottom: 120px;
+          }
+          .ctaborder {
+            &.nobg {
+              border: 1px solid $body-font-color;
+              min-width: 176px;
+              color: $body-font-color;
+              &:hover {
+                color: #fff;
+              }
+            }
+          }
+        }
+        +.gridpanel{
+          margin-top: 28px;
+          @include breakpoint(large) {
+          margin-top: 2px;
+          }
+        }
+      }
+    
+   

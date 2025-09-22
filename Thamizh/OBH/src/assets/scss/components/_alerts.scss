@@ -1,0 +1,564 @@
+.alertsPannel {
+	position: static;
+	top: 0px;
+	left: 50%;
+	width: 100%;
+	z-index: 9999;
+	background: #FE5000;
+    &.primarybgcolor{
+        background: $primary-color;
+    }
+    &.secondarybgcolor{
+        background: $secondary-color;
+    }
+	.alertsWrap {
+		.wrap {
+			width: 100%;
+			max-width: 1366px;
+			padding: 18px 0px 18px 0px;
+			margin: 0 auto;
+			position: relative;
+            display: flex;
+            align-items: center;
+            @include breakpoint(small only){
+                align-items: flex-start;
+                padding: 8px 0px 8px 0px;
+            }
+		}
+		p, a {
+			font-size: 16px;
+			line-height: 20px;
+			color: $white;
+			font-weight: 400;
+            @include breakpoint(small only){
+                padding-right: 10px; 
+                font-size: 14px;
+			    line-height: 16px;
+            }
+        }
+        p{
+            width: 100%;
+        }
+        a:hover{
+            text-decoration: underline;
+        }
+        img{
+            width: 35px;
+            margin-right: 15px;
+            @include breakpoint(small only){
+                width: 20px;
+                margin-right: 10px;
+            }
+        }
+	}
+    &.footeraletpanel{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        top: unset;
+        .grid-container{
+            max-width: 100% !important;
+        }
+    }
+}
+.close-alerts {
+	i {
+		display: block;
+		width: 35px;
+		height: 35px;
+        background:url('#{$img}/alert-close-white.svg');
+        &:hover{
+            opacity: 0.9;
+        }
+        @include breakpoint(small only){
+            width: 20px;
+            height: 20px;
+        }
+	}
+}
+
+.speedBump {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 99999999;
+    left: 50%;
+    transform: translate(-50%, -0%);
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);
+    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+    margin-top: 0px;
+    display: none;
+    &.active {
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1);
+        transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+        display: block;
+    }
+    @include breakpoint(small only) {
+        position: fixed;
+    }
+    .close {
+        text-shadow: none;
+        font-size: 18px;
+        opacity: 0.89;
+    }
+    .speedContainer {
+        @include breakpoint(small) {
+            width: 100%;
+            top: 15%;
+            transform: translate(-50%, -50%);
+            left: 0px;
+            padding: 34px 8px 45px;
+            position: fixed;
+            background-color: #ffffff;
+            border: 4px solid $secondary-color;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+        }
+        @include breakpoint(small only) {
+            max-width: 97%;
+        }
+        @include breakpoint(medium) {
+            margin: 0 auto;
+            width: 100%;
+            padding: 28px 46px 35px;
+            text-align: center;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+        }
+        @include breakpoint(xlarge) {
+            padding: 60px 90px 61px;
+        }
+        @include breakpoint(medium) {
+            max-width: 696px;
+        }
+        @include breakpoint(large) {
+            max-width: 966px;
+        }
+        @include breakpoint(xlarge) {
+            max-width: 1108px;
+        }
+        .imgblock {
+            overflow: hidden;
+            width: 232px;
+            height: 60px;
+            position: relative;
+            text-align: center;
+            margin: 0 auto;
+            margin-bottom: 27px;
+            @include breakpoint(large) {
+                width: 376px;
+                height: 90px;
+                position: relative;
+                text-align: center;
+
+                margin-bottom: 37px;
+            }
+            img {
+                max-width: initial;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                max-height: initial;
+                left: 0;
+                top: 0;
+                right: 0;
+                -o-object-fit: contain;
+                object-fit: contain;
+                transition: all 0.55s;
+            }
+            &:hover {
+                img {
+                    transform: scale(0.9);
+                }
+            }
+        }
+        h2 {
+            font-weight: 400;
+            text-transform: uppercase;
+            @include breakpoint(small) {
+                font-size: 30px;
+            }
+        }
+        p {
+            text-align: left;
+            font-size: 17px;
+            line-height: 24px;
+            color: $primary-color;
+            @include breakpoint(large) {
+                font-size: 20px;
+                line-height: 28px;
+            }
+            a {
+                text-decoration: underline;
+                color: $primary-color;
+                &:hover {
+                    color: $secondary-color;
+                }
+            }
+            + p {
+                margin: 20px 0 20px;
+                @include breakpoint(xlarge) {
+                    margin: 40px 0 20px;
+                }
+            }
+        }
+        ul {
+            margin-top: 20px;
+            padding-left: 20px;
+            @include breakpoint(medium) {
+                margin-top: 24px;
+            }
+            li {
+                position: relative;
+                padding-left: 23px;
+                font-size: 17px;
+                line-height: 22px;
+                margin-bottom: 0px;
+                border: 0;
+                text-align: left;
+                padding-bottom: 10px;
+
+                @include breakpoint(large) {
+                    font-size: 28px;
+                    line-height: 38px;
+                    padding-bottom: 13px;
+                }
+
+                &:before {
+                    content: "";
+                    display: inline-block;
+                    background: $primary-color;
+                    left: 0px;
+                    content: "";
+                    width: 8px;
+                    height: 8px;
+                    top: 8px;
+                    border-radius: 50%;
+                    position: absolute;
+                    border: 0px;
+                    @include breakpoint(large) {
+                        top: 17px;
+                    }
+                }
+            }
+            ul {
+                margin: 25px 0 0;
+                padding-left: 25px;
+            }
+        }
+        ol {
+            text-align: left;
+            padding-left: 20px;
+            li {
+                text-align: left;
+                font-size: 17px;
+                line-height: 22px;
+                padding-bottom: 10px;
+
+                @include breakpoint(large) {
+                    font-size: 20px;
+                    line-height: 27px;
+                    padding-bottom: 13px;
+                }
+            }
+            ol {
+                margin: 25px 0 0;
+                padding-left: 25px;
+            }
+        }
+        .speedButSection {
+            margin-top: 34px;
+            display: inline-flex;
+            flex-wrap: wrap;
+            width: 100%;
+            justify-content: center;
+
+            @include breakpoint(medium) {
+                width: auto;
+            }
+            @include breakpoint(large) {
+                margin-top: 37px;
+            }
+            @media screen and (max-width: 524px) {
+                .cancelparent {
+                    width: 100%;
+                    margin: 0 auto;
+                    text-align: center;
+                    order: 2;
+                }
+                .proceedparent {
+                    margin-bottom: 15px !important;
+                    width: 100%;
+                    margin: 0 auto;
+                    text-align: center;
+                    order: 1;
+                    a {
+                        margin-left: 0px !important;
+                        padding: 8px 10px;
+                    }
+                }
+            }
+            a.ctaborder {
+                text-transform: uppercase;
+                min-width: auto;
+                min-height: auto;
+                font-weight: 600;
+                @include breakpoint(small only) {
+                    min-width: 145px;
+                }
+                @include breakpoint(large) {
+                    font-size: 21px;
+                    line-height: 29px;
+                    padding: 8.5px 32px;
+                }
+            }
+            .proceedparent a {
+                margin-left: 41px;
+                @include breakpoint(small) {
+                    margin-left: 41px;
+                }
+                @media (min-width: 200px) and (max-width: 524px) {
+                    margin-left: 0px !important;
+                }
+            }
+        }
+    }
+}
+
+.popUpWrapper {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	z-index: 99999;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	margin: 0px auto;
+	max-width: 100%;
+	width: 100%;
+    &.Open{
+        visibility: visible;
+        background: rgba(0, 0, 0, 0.5);
+        width: 100%;
+        position: fixed;
+        height: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+	.popupWrap {
+		.wrap {
+			background: #ffffff;
+			border: solid 4px $secondary-color;
+			padding: 34px 8px 45px;
+			margin: 0 auto;
+            position: relative;
+            opacity: 0;
+            transition: all 0.3s;
+            &.primarybgcolor{
+                border: solid 4px $primary-color; 
+            }
+            &.secondarybgcolor{
+                border: solid 4px $secondary-color; 
+            }
+            &.Open{
+                opacity: 1;
+            }
+            @include breakpoint(small) {
+                width: 100%;
+                top: 15%;
+                transform: translate(-50%, -50%);
+                left: 0px;
+                padding: 34px 8px 45px;
+                position: fixed;
+                background-color: #ffffff;
+                border: 4px solid $secondary-color;
+                top: 50%;
+                left: 50%;
+                -webkit-transform: translate(-50%, -50%);
+            }
+            @include breakpoint(small only) {
+                max-width: 97%;
+            }
+            @include breakpoint(medium) {
+                margin: 0 auto;
+                width: 100%;
+                padding: 28px 46px 35px;
+                text-align: center;
+                top: 50%;
+                left: 50%;
+                -webkit-transform: translate(-50%, -50%);
+            }
+            @include breakpoint(xlarge) {
+                padding: 60px 90px 61px;
+            }
+            @include breakpoint(medium) {
+                max-width: 696px;
+            }
+            @include breakpoint(large) {
+                max-width: 966px;
+            }
+            @include breakpoint(xlarge) {
+                max-width: 1108px;
+            }
+		}
+		.popContent {
+			max-width: 1116px;
+            @include breakpoint(large only) {
+                max-width: 816px;
+            }
+            @include breakpoint(medium only) {
+                max-width: 546px;
+            }
+            @include breakpoint(small only) {
+                max-width: 90%;
+            }
+		}
+        h2 {
+            font-weight: 400;
+            text-transform: uppercase;
+            @include breakpoint(small) {
+                font-size: 30px;
+            }
+        }
+        p {
+            text-align: left;
+            font-size: 17px;
+            line-height: 24px;
+            color: $primary-color;
+            @include breakpoint(large) {
+                font-size: 20px;
+                line-height: 28px;
+            }
+            a {
+                text-decoration: underline;
+                color: $primary-color;
+                &:hover {
+                    color: $secondary-color;
+                }
+            }
+            + p {
+                margin: 20px 0 20px;
+                @include breakpoint(xlarge) {
+                    margin: 40px 0 20px;
+                }
+            }
+        }
+        ul {
+            margin-top: 20px;
+            padding-left: 20px;
+            @include breakpoint(medium) {
+                margin-top: 24px;
+            }
+            li {
+                position: relative;
+                padding-left: 23px;
+                font-size: 17px;
+                line-height: 22px;
+                margin-bottom: 0px;
+                border: 0;
+                text-align: left;
+                padding-bottom: 10px;
+
+                @include breakpoint(large) {
+                    font-size: 28px;
+                    line-height: 38px;
+                    padding-bottom: 13px;
+                }
+
+                &:before {
+                    content: "";
+                    display: inline-block;
+                    background: $primary-color;
+                    left: 0px;
+                    content: "";
+                    width: 8px;
+                    height: 8px;
+                    top: 8px;
+                    border-radius: 50%;
+                    position: absolute;
+                    border: 0px;
+                    @include breakpoint(large) {
+                        top: 17px;
+                    }
+                }
+            }
+            ul {
+                margin: 25px 0 0;
+                padding-left: 25px;
+            }
+        }
+        ol {
+            text-align: left;
+            padding-left: 20px;
+            li {
+                text-align: left;
+                font-size: 17px;
+                line-height: 22px;
+                padding-bottom: 10px;
+
+                @include breakpoint(large) {
+                    font-size: 20px;
+                    line-height: 27px;
+                    padding-bottom: 13px;
+                }
+            }
+            ol {
+                margin: 25px 0 0;
+                padding-left: 25px;
+            }
+        }
+	}
+	.close-alerts {
+		opacity: 1;
+		position: absolute;
+		right: 40px;
+		top: 24px;
+		i {
+			display: block;
+			width: 33px;
+			height: 33px;
+			position: relative;
+			float: right;
+			margin-top: 0px;
+			right: 0px;
+			top: 0px;
+            background:url('#{$img}/alert-close.svg');
+            &:hover{
+                opacity: 0.7;
+            }
+            @include breakpoint(medium only) {
+                right: -30px;
+                top: -20px;
+            }
+            @include breakpoint(small only) {
+                right: -30px;
+                top: -20px;
+            }
+		}
+	}
+}
+.popUpWrapper {
+    visibility: hidden;
+}
+.popUpOpen .popUpWrapper {
+    display: block;
+}

@@ -1,0 +1,229 @@
+.two_gridpanel {
+  margin-top: 28px;
+  background: linear-gradient(#fff,#fff) center/250px 100% no-repeat, linear-gradient(to right, $secondary-color 50%, $grey-bg-color 0);
+  @include breakpoint(small only) {    
+    background: linear-gradient(#fff, #fff) center/0px 100% no-repeat, linear-gradient(to bottom, #FE5000 50%, #707070 0);
+    padding-top: 142px;
+    padding-bottom: 142px;
+  }
+  .ctaborder{
+    &.smallbtn {
+      padding: 5px 24px;
+      text-transform: uppercase;
+    }
+  }
+  @include breakpoint(medium) {
+    margin-top: 45px;
+    margin-bottom: 45px;
+  }
+  @media (min-width: 1280px) and (max-width: 1390px)
+  {
+  .grid-container {
+    padding-left: 0; 
+    padding-right: 0;
+  }
+}
+.grid-container {
+  @include breakpoint(small only) {     
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    max-width: 100% !important;
+  } 
+}
+.twotile_title{
+  font-size: 28px;
+  line-height: 30px;
+  color:white;
+  font-weight: bold;
+  a{
+    font-size: 28px;
+    line-height: 30px;
+    color:white;
+    font-weight: bold;
+    &:hover{
+      color:$secondary-color;
+      text-decoration: none;
+    }
+    @include breakpoint(small only) {
+      font-size: 28px;
+      line-height: 32px;
+    }
+  }
+}
+.two_left{
+  width: 52.64%;
+  min-height: 485px;
+  @include breakpoint(small only) {
+    width: 100%;
+    min-height: 100%;
+  } 
+}
+.two_right{
+  width: 47.22%;
+  min-height: 485px;
+  @include breakpoint(small only) {
+    width: 100%;
+    min-height:fit-content;
+  } 
+}
+.topsec {
+  @include breakpoint(medium) {
+  height: 100%;
+  }
+}
+.imgsec {
+  overflow: hidden;
+  width:auto;
+  display: block;
+  margin: 0 auto;
+  transform: translateZ(0);
+  position: relative;
+  
+  a {
+    img {
+      transition: all 0.45s;
+      object-fit: contain;
+      width: 100%;
+    }
+    &:hover {
+      img {
+        transform: scale(1.1);
+        transition: all 0.45s;
+      }
+    }
+  }
+}
+  .ctablock {
+    max-width: 100%;
+    margin-top:0px;
+    padding: 3px 30px 0;
+    margin-bottom: 10px;  
+    text-align: center;
+    @include breakpoint(medium) {
+      margin-top: -60px;
+      padding: 3px 30px 30px;
+      margin-bottom: 40px; 
+      text-align: left;
+    }
+    @include breakpoint(large) {
+      margin-top: -70px;
+      padding: 3px 30px 0;
+      margin-bottom: 0px;  
+    }
+  }
+  .contentsec {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 14px 20px 12px 30px;
+    position: relative;
+    @include breakpoint(small only) {
+      padding: 50px 68px 40px 30px;
+      max-width: 100%;
+      text-align: left;
+
+    }
+    @include breakpoint(medium only) {
+      padding: 28px 20px 20px 30px;
+      margin-bottom: 0;
+      text-align: center;
+      margin-top:30px;
+    }
+    @include breakpoint(large only) {
+      padding:111px 10px 101px 0px;
+      margin-bottom: 0;
+      max-width: 473px;
+      margin-left: 50px;
+      text-align: left;
+    }
+    @include breakpoint(xlarge) {
+      margin-left: 85px;
+      padding:111px 0px 101px 0px;
+      margin-bottom: 0;
+      max-width: 473px;
+      text-align: left;
+    }
+    p {
+    color: #ffffff;
+    font-size: 22px;
+    line-height: 28px;
+    padding-top: 30px;
+    padding-bottom: 35px;
+    }
+    a:focus {
+      outline-color: $white;
+    }
+  }
+  .gridinfo {
+    padding: 0;
+    max-width: 440px;
+    // @media (min-width: 430px) and (max-width: 767px) {
+    //   max-width: 430px;
+    //   margin-left: 20px;
+    // }
+    background-color: $secondary-color;
+    padding-bottom: 10px;
+    margin-top: 12px;
+    margin-bottom: 18px;
+    @include breakpoint(medium) {
+      margin: 0 0;
+      margin-top: 28px;
+      margin-bottom: 0px;
+      margin-left: 0;
+      margin-right: 21.9px;
+    }
+    @include breakpoint(large) {
+      margin-top: 38px;
+    }
+  }
+  .btn-center {
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 22px;
+      margin-bottom: 39px;
+    @include breakpoint(large) {
+      margin-top: 50px;
+      margin-bottom: 57px;
+    } @include breakpoint(xlarge) {
+      margin-top: 50px;
+      margin-bottom: 120px;
+    }
+    .ctaborder {
+      &.nobg {
+        border: 1px solid $body-font-color;
+        min-width: 176px;
+        color: $body-font-color;
+        &:hover {
+          color: #fff;
+        }
+      }
+    }
+  }
+  +.gridpanel{
+    margin-top: 28px;
+    @include breakpoint(large) {
+    margin-top: 2px;
+    }
+  }
+}
+.ctaborder {
+  &.nobg {
+    background: transparent;
+    font-size: 16px;
+    line-height: 22px;
+    color: #fff;
+    padding: 8px 25.5px;
+    border: 1px solid $white;
+    @include breakpoint(large) {
+      font-size: 19px;
+      line-height: 26px;
+    }
+  }
+}
+@media (min-width: 430px) and (max-width: 767px) {
+ .gridpanel .grid-margin-x{
+  margin-left: 0;
+  margin-right: 0;
+  }
+}
