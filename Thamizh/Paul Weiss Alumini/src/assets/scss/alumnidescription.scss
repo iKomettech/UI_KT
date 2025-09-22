@@ -1,0 +1,231 @@
+@import "util/util";
+$white: #ffffff;
+$primary-color: #001F3F;
+$secondary-color: #B9C8DA;
+$img: "../../images/";
+$bgpanel-color: #B9C8DA;
+$mediumbluebgpanel: #0B3D71;
+$white: #ffffff;
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+.alumniDescription {
+
+    .grid-container {
+
+        .descContent {
+            max-width: 1120px;
+            width: 100%;
+
+            p {
+                font-family: 'UntitledSerif';
+                font-style: normal;
+                font-weight: 400;
+                letter-spacing: -0.01em;
+                line-height: 123.6%;
+
+                +p {
+                    margin-top: 20px;
+
+                    @include breakpoint(large) {
+                        margin-top: 22px;
+                    }
+
+                    @include breakpoint(llarge) {
+                        margin-top: 24px;
+                    }
+                }
+            }
+
+            hr {
+                border: 2px solid #DCE3E1;
+                margin: 2.75rem auto 2.5rem;
+
+                @include breakpoint(llarge) {
+                    border: 3px solid #DCE3E1;
+                    margin: 3.25rem auto 4rem;
+                }
+            }
+
+            ul {
+
+                margin-left: 0px;
+
+                @include breakpoint(llarge) {
+                    margin-left: 15px;
+                    margin-top: 24px;
+                }
+
+                li {
+                    font-family: 'UntitleSerif';
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 116.6%;
+                    padding-left: 45px;
+                    /* or 26px */
+                    letter-spacing: -0.01em;
+                    position: relative;
+                    margin-bottom: 16px;
+
+                    //font-size: clamp(18px, calc(18px + (22 - 18) * ((100vw - 393px) / (1023 - 393))), 22px);
+
+                    @include breakpoint(large) {
+                        //font-size: calc(clamp(1.375rem, 0vw + 1.375rem, 1.375rem));
+                        margin-bottom: 1.15em;
+                    }
+
+                    @include breakpoint(llarge) {
+                        //font-size: calc(clamp(1.375rem, 0vw + 1.375rem, 1.375rem));
+                        margin-bottom: 30px;
+                    }
+
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 3px;
+                        left: 0;
+                        background: url('#{$img}settings/squareBullet.svg') no-repeat;
+                        background-size: contain;
+                        height: 18px;
+                        width: 18px;
+                    }
+                }
+            }
+        }
+
+        .customCta {
+            margin-top: 37px;
+
+            @include breakpoint(large) {
+                margin-top: 48px;
+            }
+
+            @include breakpoint(llarge) {
+                margin-top: 37px;
+            }
+
+            a {
+                font-family: 'UntitledSerif';
+                font-style: normal;
+                font-weight: 700;
+                font-size: clamp(18px, calc(18px + (22 - 18) * ((100vw - 393px) / (1023 - 393))), 22px);
+                line-height: 100%;
+                letter-spacing: -0.025em;
+                color: #001F3F;
+                display: inline-block;
+                position: relative;
+
+                @include breakpoint(large) {
+                    font-size: clamp(22px, calc(22px + (25 - 22) * ((100vw - 1024px) / (1278 - 1024))), 25px);
+
+                }
+
+                &::after {
+                    content: '';
+                    position: relative;
+                    right: -4px;
+                    width: 31px;
+                    height: 17px;
+                    display: inline-block;
+                    background: url('#{$img}settings/arrow-blue.svg') no-repeat;
+                    background-size: contain;
+                }
+                transition: all ease .4s;
+                &:hover{
+                    text-decoration: none;
+                    padding-left: 5px;
+                    transition: all ease .4s;
+                }
+
+                @include breakpoint(small only) {
+                    font-family: 'ABCDiatype';
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: 100%;
+                    letter-spacing: -0.015em;
+                    color: #001F3F;
+                    background: #B9C8DA;
+                    display: block;
+                    padding: 18px 22px 15px;
+                    margin-top: 0;
+                    font-size: clamp(20px, calc(20px +(22 - 20)*((100vw - 393px) /(1023 - 393))), 22px);
+                    line-height: 100%;
+                    &::after{
+                        content: unset;
+                    }
+                    &:hover{
+                        text-decoration: none;
+                        padding-left: 22px;
+                    }
+                }
+            }
+        }
+
+        .imgWrap {
+            margin-top: 62px;
+
+            @include breakpoint(large) {
+                margin-top: 45px;
+            }
+
+            @include breakpoint(llarge) {
+                margin-top: 62px;
+            }
+        }
+        .resetform{
+            margin-top: 44px;
+            .flexwrap{
+                display: flex;
+                flex-wrap: nowrap;
+                .form-group{
+                    max-width: 487px;
+                    width: 100%;
+                    input{
+                        background: #FFFFFF;
+                        border: 1.5px solid #001F3F;
+                        height: 60px;
+                        letter-spacing: -0.025em;
+                        color: #001F3F;
+                        font-size: 25px;
+                        line-height: 100%;
+                        width: 100%;
+                        padding: 16px 20px;
+                        &::placeholder{
+                            color: #001F3F;
+                        }
+                    }   
+                }
+                .submitform {
+                    margin-left: 20px;
+                    .submit_btn{
+                        display: inline-block;
+                        padding: 20px 21px 15px;
+                        background: linear-gradient(0deg, #B9C8DA, #B9C8DA), #B9C8DA; 
+                        font-family: 'ABCDiatype';
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 25px;
+                        line-height: 100%;
+                        letter-spacing: -0.025em;
+                        width: inherit;
+                        color: #001F3F; 
+                        border: none;
+                        height: 60px;
+                        &:hover{
+                            background: #001F3F;
+                            color: #ffffff;
+                        }
+                    }
+        
+                }
+            }
+        }
+    }
+}

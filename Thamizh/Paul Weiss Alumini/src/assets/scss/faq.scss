@@ -1,0 +1,251 @@
+$primary-color: #001F3F;
+$secondary-color: #B9C8DA;
+@import "util/util";
+$img: "../../images/";
+$bgpanel-color: #B9C8DA;
+$mediumbluebgpanel: #0B3D71;
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+
+
+.faqpanel {
+    
+    .grid-container {
+
+        .flex-box {
+            .flexWrap {
+                .wraptitle {
+                    h2 { 
+                        font-family: 'UntitledSerif';
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: clamp(30px, calc(30px + (30 - 30) * ((100vw - 393px) / (1023 - 393))), 30px);
+                        line-height: 100%; 
+                        letter-spacing: -0.05em;
+                        color: #001F3F; 
+                        @include breakpoint(large){
+                            font-size: clamp(30px, calc(30px + (40 - 30) * ((100vw - 1024px) / (1728 - 1024))), 40px);
+                        }
+                    }
+                }
+            }
+        }
+        .overMorefaq {
+            .flexwrap {
+                margin-top: 10px;
+
+                @include breakpoint(medium) {
+                    display: flex;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                }
+
+                @include breakpoint(large) {
+                    margin-top: 12px;
+                }
+                @include breakpoint(llarge) {
+                    margin-top: 10px;
+                }
+
+                .leftwrap {
+                    width: 100%;
+
+                    @include breakpoint(medium) {
+                        width: 44.75%;
+                    }
+
+                    @include breakpoint(large) {
+                        width: 34.75%;
+                    }
+
+                    @include breakpoint(llarge) {
+                        // max-width: 575px;
+                        width: 42.2%;
+                    }
+ 
+
+                    .leftcontentwrap {
+                        background: #0B3D71;
+                        padding: 18px 20px;
+                        padding-bottom: 7px;
+
+                        @include breakpoint(large) {
+                            padding: 37px 39px 24px;
+                        }
+
+                        @include breakpoint(xlarge) {
+                            padding: 37px 40px 23px;
+                        }
+
+                        p {
+                            font-weight: 700;
+                            color: #FFFFFF;
+                            font-family: 'ABCDiatype';
+                            line-height: 116.6%;
+                            letter-spacing: -0.001em;
+                        }
+                    }
+                }
+
+                .rightwrap {
+                    width: 100%;
+
+                    @include breakpoint(small only) {
+                        margin-top: 15px;
+                    }
+
+                    @include breakpoint(medium) {
+                        width: 49.75%;
+                    }
+
+                    @include breakpoint(large) {
+                        width: 57.5%;
+                        // margin-top: -7px;
+                    }
+
+                    @include breakpoint(llarge) {
+                        width: 55%;
+                        // margin-top: -8px;
+                    }
+ 
+
+                    .rightcontentwrap {
+                        @include breakpoint(medium) {
+                            border-top: 10px solid #B9C8DA;
+                        }
+
+                        p {
+                            letter-spacing: -0.01em;
+                            font-weight: 400;
+                            line-height: 116.6%;
+                            font-family: 'UntitledSerif';
+                            letter-spacing: -0.01em;
+                            margin-top: 15px;
+
+                            @include breakpoint(medium) {
+                                margin-top: 16px;
+                            }
+
+                            @include breakpoint(large) {
+                                margin-top: 23px;
+                                line-height: 123.6%;
+                            }
+
+                            @include breakpoint(llarge) {
+                                //     font-size: 27px;
+                                //     line-height: 123.6%;
+                                margin-top: 22px;
+                            } 
+                            +p{
+                                @include breakpoint(small only){
+                                    margin-top: 26px;}
+                            }
+                        }
+
+                        ul {
+                            margin-left: 0;
+                            margin-top: 33px;
+
+                            @include breakpoint(large) {
+                                margin-top: 35px;
+                            }
+
+                            @include breakpoint(llarge) {
+                                margin-top: 55px;
+                                margin-left: 15px;
+                            }
+
+                            li {
+
+                                letter-spacing: -0.01em;
+                                font-weight: 400;
+                                line-height: 123.6%;
+                                font-family: 'UntitledSerif';
+                                line-height: 123.6%;
+                                letter-spacing: -0.01em;
+                                position: relative;
+                                padding-left: 45px;
+                                margin-bottom: 23px;
+
+                                @include breakpoint(large) {
+                                    margin-bottom: 28px;
+                                }
+
+                                &:last-child {
+                                    margin-bottom: 0;
+                                }
+
+                                &::before {
+                                    content: '';
+                                    position: absolute;
+                                    top: 3px;
+                                    left: 0;
+                                    background: url('#{$img}settings/squareBullet.svg') no-repeat;
+                                    background-size: contain;
+                                    height: 20px;
+                                    width: 20px;
+                                }
+
+
+
+                            }
+
+                            +p {
+                                margin-top: 35px;
+
+                                @include breakpoint(llarge) {
+                                    margin-top: 63px;
+                                }
+                            }
+                        }
+
+                    }
+
+                    +.imgWrap {
+                        margin-top: 40px;
+
+
+                        @include breakpoint(large) {
+                            margin-top: 92px;
+                        }
+
+                        @include breakpoint(llarge) {
+                            margin-top: 140px;
+                        }
+                    }
+
+                }
+
+                .imgWrap {
+                    @include breakpoint(small only) {
+                        margin-inline: -20px;
+                    }
+                }
+
+
+                +.flexwrap {
+                    margin-top: 37px;
+
+                    @include breakpoint(large) {
+                        margin-top: 35px;
+                    }
+
+                    @include breakpoint(llarge) {
+                        margin-top: 55px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+

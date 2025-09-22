@@ -1,0 +1,350 @@
+<div class="subannerPanel practicesubbaner mt-140 mb-150">
+    <picture>
+        <source media="(min-width:320px) and (max-width:480px)"
+            srcset="{{root}}assets/images/alumni-portal/mobile-banner.jpg" type="image/jpg">
+        <img src="{{root}}assets/images/alumni-portal/banner.jpg" width="1920" height="825" alt="banner" loading="lazy"
+            class="lazy">
+    </picture>
+    <div class="grid-container">
+        <div class="subTitle">
+            <h1>Submit a Job</h1>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="alumniupdateprofile submitJob mb-150">
+    <div class="grid-container">
+        <div class="contentWrap">
+            <p>Please enter details below to describe the position you would like to submit. A member of Paul, Weiss’s
+                staff will review your submission and will respond with any questions. We cannot guarantee that all
+                submitted jobs will be posted. If you have any questions about the submission, posting or follow-up
+                process, please contact us at careerconnect@paulweiss.com.</p>
+        </div>
+
+
+        <div class="profileBox">
+            <form class="update-profile" action="#" method="post" id="career_login">
+                <fieldset>
+                    <legend class="screen-reader-text"> Submit Job Form</legend>
+                    <div class="curricular-information">
+                        <div class="flexwrap">
+                            <div class="form-group">
+                                <label for="yourName" class="forms-label">Your Name</label>
+                                <input type="text" id="yourName" class="txtBox" name="yourName" required="" autocomplete="off">
+                            </div>
+                            <div class="form-group">
+                                <label for="yourEmail" class="forms-label">Your Email</label>
+                                <input type="email" id="yourEmail" class="txtBox" name="yourEmail" required="" autocomplete="off">
+                            </div>
+                            <div class="form-group">
+                                <label for="phonenumber" class="forms-label">Your Phone Number</label>
+                                <input type="text" class="txtBox" id="phonenumber" name="phonenumber" required="" autocomplete="off">
+                            </div>
+                        </div>
+
+                        <div class="boxSetUpdate">
+                            <div class="item">
+                                <input type="checkbox" id="checkOne" checked>
+                                <label for="checkOne">I am willing to discuss this job opening with potential candidates.</label>
+                            </div>
+                            <div class="item">
+                                <input type="checkbox" id="checkTwo" checked>
+                                <label for="checkTwo">Display my email on the job description.</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="email-information">
+                        <div class="visible-wrap">
+                            <h2>Job Details</h2> 
+                        </div>
+                        <div class="flexwrap">
+                            <div class="form-group">
+                                <label for="company" class="forms-label">Company</label>
+                                <input type="text" class="txtBox" id="company" name="company" required="" autocomplete="off">
+                            </div>
+                            <div class="form-group">
+                                <label for="companywebsite" class="forms-label">Company Website</label>
+                                <input type="text" class="txtBox" id="companywebsite" name="companywebsite" required="" autocomplete="off">
+                            </div>
+                        </div>
+                        <div class="flexwrap">
+                            <div class="form-group">
+                                <label for="jobtitle" class="forms-label">Job Title</label>
+                                <input type="email" class="txtBox" id="jobtitle" name="jobtitle" required="" autocomplete="off">
+                            </div>
+                            <div class="form-group">
+                                <label for="jobpost" class="forms-label">Job Posting Link</label>
+                                <input type="email" class="txtBox" id="jobpost" name="jobpost" required="" autocomplete="off">
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="curricular-information mt-5 FourCol location">
+                        <div class="flexwrap">
+                            <div class="form-group">
+                                <input type="hidden" name="locations.index" value="0" />
+                                <label for="careerCountry" class="forms-label">Country</label>
+                                <select class="form-control" id="careerCountry" name="locations[0].Country" default="United States of America" default="United States">
+                                    <option value="">Select Country</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="careerState" class="forms-label">State</label>
+                                <select class="form-control" id="careerState" name="locations[0].State" default="">
+                                    <option value="">Select State</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="cityone" class="forms-label">City</label>
+                                <input type="text" class="txtBox" id="cityone" name="locations[0].City" required="" autocomplete="off">
+                            </div>
+                        </div>
+                        <div class="flexwrap">
+                            <div class="form-group">
+                                <label for="zip" class="forms-label">ZIP Code</label>
+                                <input type="text" class="txtBox" id="zip" name="zip" autocomplete="off">
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="addmorecta">
+                        <a href="javascript:void(0)" id="addLocation">Add Another Location</a>
+                    </div>
+                    <div class="job-description">
+                        <div class="visible-wrap">
+                            <h2>Job Description</h2> 
+                        </div>
+                        <div class="flexwrap">
+                            <div class="form-group txt-editor">
+                                <textarea name="jobtxtArea" id="jobtxtArea" class="form-control jobtxtArea" cols="20"></textarea>
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="submitform">
+                        <button type="submit" class="submit_btn">Submit</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="{{root}}assets/scripts/global/country-json.js" defer></script>
+<script src="{{root}}assets/scripts/global/handlebars-v4.1.2.js" defer></script>
+
+<script id="entry-template" type="text/x-handlebars-template" defer>
+    <div class="curricular-information mt-5 FourCol location location-wrappper">
+        <div class="flexwrap">
+            <div class="form-group">
+                <input type="hidden" name="locations.index" value="{{index}}" />
+                <label for="careerCountry_{{index}}">Country</label>
+                <select id="careerCountry_{{index}}" required name="locations[{{index}}].Country" default="United States of America" class="form-control" tabindex="1">
+                    <option value="" rel="">-Select Country-</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="careerState_{{index}}">State</label>
+                <select id="careerState_{{index}}" name="locations[{{index}}].State" class="form-control" tabindex="1" default="">
+                    <option value="" rel="">-Select State-</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="city_{{index}}">City</label>
+                <input type="text" placeholder="" name="locations[{{index}}].City" required id="city_{{index}}" class="form-control"
+                       title="city" aria-required="true">
+            </div>
+            <div class="form-group">
+                <label for="zip_{{index}}">Zip Code</label>
+                <input type="text" placeholder="" name="locations[{{index}}].Zip" id="zip_{{index}}" class="form-control" title="Zip Code"
+                       aria-required="true">
+            </div>
+            <div class="form-group remove">
+                <label style="visibility: hidden;">Remove</label>
+                <a class="remove" href="javascript:void(0)">Remove</a>
+            </div>
+        </div>
+    </div>
+</script>
+<script type="text/javascript" defer>
+   $(document).ready(function() {
+            $("#jobtxtArea").jqte({
+                'format': false,
+                'fsize': false,
+                'ol': true,
+                'ul': true,
+                'outdent': false,
+                'indent': false,
+                'left': false,
+                'center': false,
+                'right': false,
+                'rule': false,
+                'unlink': false,
+                'link': false,
+                'sup': false,
+                'sub': false,
+                'strike': false,
+                'color': false,
+                'remove': false,
+                'source': false
+            });
+            $.each(myJson.countries,
+                function(index, value) {
+                    $("#careerCountry").append('<option rel="' +
+                        index +
+                        '" value="' +
+                        value.country +
+                        '">' +
+                        value.country +
+                        '</option>');
+                });
+
+            country_id = $("#careerCountry").attr("default");
+            $("#careerCountry").find("option[value='" + country_id + "']").prop("selected", true).trigger("change");
+            $("#careerCountry").on('selectmenuchange',
+                function() {
+                    $("#careerState").selectmenu("destroy");
+                    $("#careerState").find("option:gt(0)").remove();
+                    // $("#careerState").find("option:first").text("Loading...");
+
+                    country_id = $(this).find('option:selected').attr('rel');
+
+                    $("#SltState1,#careerState").selectmenu();
+                    $.each(myJson.countries[country_id].states,
+                        function(index1, value1) {
+                            $("#careerState").find("option:first").text("-Select State-");
+                            console.log(country_id);
+                            if (country_id == "182") {
+                                $("#careerState").append('<option rel="' +
+                                    index1 +
+                                    '" value="' +
+                                    value1 +
+                                    '">' +
+                                    value1 +
+                                    '</option>');
+                            }
+                            // $("#careerState").selectmenu("refresh");
+                        });
+                    var maxMenuWidth = $("#careerState").parent().find(".ui-selectmenu-button").width();
+                    $(".ui-selectmenu-menu").css({ 'max-width': maxMenuWidth - 1 });
+
+                });
+
+            country_id = $("#careerCountry").find('option:selected').attr('rel');
+            // console.log("Country INDEX : " + country_id);
+            if (country_id != "") {
+                $.each(myJson.countries[country_id].states,
+                    function(index1, value1) {
+                        $("#careerState").find("option:first").text("-Select State-");
+                        $("#careerState")
+                            .append('<option rel="' + index1 + '" value="' + value1 + '">' + value1 + '</option>');
+                        // $("#careerState").selectmenu("refresh");
+                    });
+
+                state_id = $("#careerState").attr("default");
+                $("#careerState").find("option[value='" + state_id + "']").prop("selected", true).trigger("change");
+            }
+            $("#careerState").selectmenu();
+            $("#careerCountry").selectmenu();
+            $('.ui-selectmenu-button').keydown(function(e) {
+                if (e.which == 13) {
+                    $('form#career_login').submit();
+                    return false;
+                }
+            });
+
+            var locationIndex = 0;
+
+            $('#addLocation').on('click',
+                function(e) {
+                    e.preventDefault();
+
+                    // compile template
+                    var source = document.getElementById("entry-template").innerHTML;
+                    var template = Handlebars.compile(source);
+
+                    locationIndex++;
+                    //console.log(locationIndex);
+                    // generate html
+                    var context = { index: locationIndex };
+                    var html = template(context);
+
+                    // add html to the dom
+                    var lastLocation = $('.location').last();
+                    $(html).insertAfter(lastLocation);
+
+                    // add countries to the dropdown
+                    $.each(myJson.countries,
+                        function(index, value) {
+                            $("#careerCountry_" + locationIndex).append('<option rel="' +
+                                index +
+                                '" value="' +
+                                value.country +
+                                '">' +
+                                value.country +
+                                '</option>');
+                    });
+
+                    $("#careerCountry_" + locationIndex).on('selectmenuchange',
+                        function() {
+                            $("#careerState_" + locationIndex).selectmenu("destroy");
+                            $("#careerState_" + locationIndex).find("option:gt(0)").remove();
+                            // $("#careerState").find("option:first").text("Loading...");
+
+                            country_id = $(this).find('option:selected').attr('rel');
+
+                            $.each(myJson.countries[country_id].states,
+                                function(index1, value1) {
+                                    $("#careerState").find("option:first").text("-Select State-");
+                                    console.log(country_id);
+                                    if (country_id == "182") {
+                                        $("#careerState_" + locationIndex).append('<option rel="' +
+                                            index1 +
+                                            '" value="' +
+                                            value1 +
+                                            '">' +
+                                            value1 +
+                                            '</option>');
+                                    }
+                                    // $("#careerState").selectmenu("refresh");
+                                });
+                            var maxMenuWidth = $("#careerState_" + locationIndex).parent().find(".ui-selectmenu-button").width();
+                            $(".ui-selectmenu-menu").css({ 'max-width': maxMenuWidth - 1 });
+
+                            $("#SltState1,#careerState_" + locationIndex ).selectmenu();
+
+                    });
+
+                    // Set default country
+                    country_id = $("#careerCountry_" + locationIndex).attr("default");
+                    $("#careerCountry_" + locationIndex).find("option[value='" + country_id + "']").prop("selected", true).trigger("change");
+
+                    country_id = $("#careerCountry_" + locationIndex).find('option:selected').attr('rel');
+                    // console.log("Country INDEX : " + country_id);
+                    if (country_id != "") {
+                        $.each(myJson.countries[country_id].states,
+                            function(index1, value1) {
+                                $("#careerState_" + locationIndex).find("option:first").text("-Select State-");
+                                $("#careerState_" + locationIndex)
+                                    .append('<option rel="' + index1 + '" value="' + value1 + '">' + value1 + '</option>');
+                                 //$("#careerState_" + locationIndex).selectmenu("refresh");
+                            });
+
+                        state_id = $("#careerState_" + locationIndex).attr("default");
+                        $("#careerState_" + locationIndex).find("option[value='" + state_id + "']").prop("selected", true).trigger("change");
+                    }
+
+                    // style dropdowns
+                    $("#careerCountry_" + locationIndex + ", #careerState_" + locationIndex).selectmenu();
+                });
+
+            $('.location-wrappper').on('click',
+                '.remove',
+                function(e) {
+                    e.preventDefault();
+
+                    // find section
+                    $(this).closest('.FourCol.location').remove();
+                });
+        });
+</script>

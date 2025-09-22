@@ -1,0 +1,224 @@
+$primary-color: #001F3F;
+$secondary-color: #B9C8DA;
+@import "util/util";
+$img: "../../images/";
+$bgpanel-color: #B9C8DA;
+$mediumbluebgpanel: #0B3D71;
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+footer {
+
+    .footer-grid-container {
+        padding-left: 20px;
+        padding-right: 20px;
+
+        @include breakpoint(medium) {
+            width: 100%;
+            padding-right: 20px;
+            padding-left: 20px;
+            margin: 0 auto;
+        }
+
+        // @include breakpoint(xlarge) {
+        //     width: 1440px;
+        // }
+
+        @include breakpoint(xxlarge) {
+            width: 1440px;
+            margin: 0 auto;
+            padding: 0 12px;
+        }
+
+        @media screen and (min-width:1480px) {
+            padding: 0;
+        }
+    }
+
+    br {
+        @include breakpoint(medium) {
+            display: none;
+        }
+
+        +span {
+            display: none;
+
+            @include breakpoint(medium) {
+                display: inline-block;
+            }
+        }
+    }
+
+    &.threerow {
+        margin: 0px 0 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        position: relative;
+        margin-top: 40px;
+
+        @include breakpoint(medium) {
+            margin-top: 55px;
+        }
+        @include breakpoint(large) {
+            margin-top: 98px;
+        }
+        @include breakpoint(llarge) {
+            margin-top: 148px;
+        }
+        li,
+        a,
+        p {
+            font-size: clamp(12px, calc(12px + (16.85 - 12) * ((100vw - 393px) / (1023 - 393))), 16.85px);
+            line-height: 101.1%;
+            font-weight: 400;
+            color: $black;
+            margin-bottom: 0px;
+            text-decoration: none;
+            color: #ffffff;
+
+            @include breakpoint(large) {
+                font-size: clamp(22px, calc(22px + (22 - 22)* ((100vw - 1024px) / (1728 - 1024))), 22px); 
+            }
+ 
+        }
+
+        a {
+            &:hover {
+                color: $secondary-color;
+                transition: all 0.5s;
+            }
+        }
+
+        ul {
+            margin-left: 0;
+            margin-top: 0;
+
+            @media (min-width:991px) and (max-width:1024px) {
+                margin-top: -5px;
+            }
+        }
+    }
+
+    .secondaryfooter {
+        background: rgba(0, 0, 0, 0.5);
+        padding-top: 20px;
+        padding-bottom: 17px;
+
+        @include breakpoint(medium) {
+            padding-top: 18px;
+            padding-bottom: 10px;
+        }
+        .flexRow {
+            @include breakpoint(medium) {
+                display: flex;
+            }
+
+            .copyRights {
+                @media (min-width:768px) and (max-width: 1279px) {
+                    margin-bottom: 17px;
+                }
+
+                @include breakpoint(llarge) {
+                    width: 43%;
+                    margin-right: .6%;
+                }
+
+                @include breakpoint(xlarge) {
+                    width: 45%;
+                    margin-right: .6%;
+                }
+
+                p {
+                    font-family: "UntitledSerif";
+                    font-size: clamp(12px, calc(12px + (16.85 - 12) * ((100vw - 393px) / (1023 - 393))), 16.85px);
+                    font-weight: 400;
+                    line-height: 101.1%;
+                    text-align: center;
+                    margin-bottom: 0;
+
+                    @include breakpoint(small only) {
+                        text-align: left;
+                    }
+
+                    @include breakpoint(large) {
+                        text-align: left;
+                        // font-size: 16.85px; 
+                        font-size: clamp(22px, calc(22px + (22 - 22)* ((100vw - 1024px) / (1728 - 1024))), 22px);
+                    }
+                }
+            }
+
+            .createrRight {
+                @include breakpoint(small only){
+                    margin-top: 15px;
+                }
+                p {
+                    font-family: "UntitledSerif";
+                    font-size: clamp(12px, calc(12px + (16.85 - 12) * ((100vw - 393px) / (1023 - 393))), 16.85px);
+                    font-weight: 400;
+                    line-height: 101.1%;
+                    text-align: center;
+                    margin-bottom: 0;
+
+                    @include breakpoint(small only) {
+                        text-align: left;
+                        max-width: 250px;
+                        word-break: break-word;
+                    }
+
+                    @include breakpoint(large) {
+                        text-align: left;
+                        // font-size: 16.85px;
+                        font-size: clamp(22px, calc(22px + (22 - 22)* ((100vw - 1024px) / (1728 - 1024))), 22px);
+                        line-height: 101.1%;
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+footer .secondaryfooter .flexRow p{
+    font-size: clamp(14px, calc(14px + (16.85 - 14) * ((100vw - 393px) / (1728 - 393))), 16.85px) ;
+    line-height: 101.1% ;
+    letter-spacing: 0px ;
+}
+@media print, screen and (max-width: 47.9988em) {
+    footer .secondaryfooter .flexRow .copyRights p {
+        font-size: clamp(12px, calc(12px + (12 - 12) * ((100vw - 393px) / (767 - 393))), 12px);
+    }
+}
+
+.aluminifooter{
+    &.threerow{
+        .secondaryfooter{
+            background: $primary-color;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            @include breakpoint(large){
+                padding-top: 37px;
+                padding-bottom: 30px;}
+            @include breakpoint(llarge){
+                padding-top: 37px;
+                padding-bottom: 42px;}
+            .flexRow{
+                justify-content: space-between;
+                // align-items: center;
+                .copyRights p{
+                    line-height: 101.1%;
+                }
+            }
+        }
+    }
+}
+ 

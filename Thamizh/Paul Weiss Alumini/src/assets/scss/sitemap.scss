@@ -1,0 +1,222 @@
+@import "util/util";
+$white: #ffffff;
+$primary-color: #001F3F;
+$lightgray-bg-color:#EDEDED;
+$breakpoints: (
+  small: 0,
+  medium: 768px,
+  large: 1024px,
+  llarge: 1280px,
+  xlarge: 1360px,
+  xxlarge: 1440px,
+);
+ .col-1 {
+  @include breakpoint(medium) {
+    margin-bottom: 56px !important;
+  }
+}
+.col-1 .heading-title {
+  margin-bottom: 16px !important;
+}
+.group.item-one .heading-title, .group.item-one .heading-title h3{
+  margin-bottom: 0 !important;
+}
+.col-1 .desc {
+  margin-bottom: 0 !important;
+}
+.sitemap .item .desc + .desc {
+  margin-bottom: 8px;
+  @include breakpoint(large) {
+    margin-bottom: 18px;
+  }
+}
+.heading-title:nth-of-type(1) {
+  @include breakpoint(medium) {
+    margin-bottom: 32px !important;
+  }
+}
+.heading-title:nth-of-type(2){
+  @include breakpoint(medium) {
+  margin-bottom: 0 !important;
+  }
+}
+.heading-title:nth-of-type(2) h3{
+  @include breakpoint(medium) {
+    margin-bottom: 20px;
+    line-height: 28px;
+  }
+}
+.heading-title.Professionals {
+  @include breakpoint(medium) {
+    margin-bottom: 30px !important;
+  }
+}
+.heading-title.Careers {
+  @include breakpoint(medium) {
+    margin-top: 34px;
+  }
+}
+.heading-title.Locations {
+  @include breakpoint(medium) {
+    margin-top: 30px;
+  }
+}
+.heading-title.About.the.Firm{
+  @include breakpoint(medium) {
+    margin-top: 30px;
+  }
+}
+.heading-title.Contact.Us{
+  @include breakpoint(medium) {
+  margin-top: 36px;
+  margin-bottom: 30px !important;
+  }
+}
+.sitemap .item .desc +.heading-title.Pro.Bono {
+  @include breakpoint(medium) {
+    margin-bottom: 12px !important;
+  }
+}
+
+.sitemap{
+  margin-top: 10px;
+  @include breakpoint(medium) {
+    margin-top: 40px;
+  };
+  @include breakpoint(llarge) {
+    margin-top: 60px;
+  }
+  ul:empty{
+    display: none;
+  }
+  ul{
+  margin:0px 0px 10px 5px
+  }
+  .group{
+   .heading-title 
+   {
+    @include breakpoint(medium only) {
+      text-align: left;
+    }
+    &:after{
+      @include breakpoint(medium only) {
+        left: 0;
+      }
+    }
+    a{
+      &:hover{
+        color: $primary-color;
+      }
+    }
+    h3{
+      font-weight: 700;
+      //font-size: 37px;
+      line-height: 100%;
+      color: $primary-color;
+      font-weight: 700;
+      max-width: 300px;
+      position: relative; 
+      letter-spacing: -0.025em;
+      font-size: clamp(28px, calc(28px + (34 - 28) * ((100vw - 393px) / (768 - 1024))), 34px);
+      @include breakpoint(large) {
+        //font-size: 34px;
+        font-size: clamp(34px, calc(34px + (37 - 34) * ((100vw - 1024px) / (1728 - 1024))), 37px);
+      }
+     
+      @include breakpoint(small only) {
+        margin-top: 26px;
+      }
+      a{
+        &:hover{
+          text-decoration: unset;
+        }
+      }
+    }
+    }
+    h4{
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      line-height: 100%;
+      color: $primary-color;
+      margin-bottom:0px;
+      // @include breakpoint(medium) {
+      //   font-size: 22px;
+      // }
+      font-size: clamp(22px, calc(22px + (22 - 22) * ((100vw - 1024px) / (1728 - 1024))), 22px);
+      @include breakpoint(large) {
+        //font-size: 25px;
+        font-size: clamp(25px, calc(25px + (22 - 22) * ((100vw - 1024px) / (1728 - 1024))), 25px);
+      }
+    }
+  }
+  .item{
+    display: flex;
+    width: 100%;  
+    flex-wrap: wrap;
+    @include breakpoint(medium){
+      width: 74.6%;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+    }
+    .desc{
+      margin-bottom: 0px;
+      @include breakpoint(medium){
+        margin-bottom: 42px;
+      }
+      ul{
+        margin-left:0px;
+        li{
+          padding-left: 0px;
+          margin-bottom: 8px;
+          line-height: 0;
+         a{
+           font-size:16px;
+           font-weight: 400; 
+           letter-spacing: -0.01em;
+            line-height: 123.6%;
+            font-family: "UntitledSerif";
+            font-size: clamp(16px, calc(16px + (20 -16) * ((100vw - 393px) / (1023 - 393))), 20px);
+           @include breakpoint(large) {
+            //font-size: 20px;
+            font-size: clamp(20px, calc(20px + (20 - 20) * ((100vw - 1024px) / (1728 - 1024))), 20px);
+           }
+           &:hover{
+            color: #2d2d2d;
+            text-decoration: underline;
+         } 
+         }
+         &::before{
+          content:unset;
+         }
+       }
+      }
+      +.heading-title {
+        margin-top: 28px;
+        margin-bottom: 7px !important;
+        @include breakpoint(small only) {
+          margin-top: 15px;
+          margin-bottom: 12px !important;
+        }
+    }
+    }
+  }
+  // h2{
+  //   font-size:36px;
+  //   line-height:35px; 
+  //   margin-top: 30px;
+  //   margin-bottom:60px;
+  //   color: $primary-color;
+  //   @include breakpoint(small only) {
+  //     text-align: left;
+  //     margin-left:0px;
+  //   }
+  //   @include breakpoint(large) {
+  //     font-size:56px;
+  //     line-height:65px; 
+  //   }
+  // }
+}
+.col-2 .heading-title + .heading-title{
+  margin-bottom: 12px;
+}

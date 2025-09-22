@@ -1,0 +1,140 @@
+<div class="subannerPanel practicesubbaner mt-140 mb-150">
+    <picture>
+        <source media="(min-width:320px) and (max-width:480px)" srcset="{{root}}assets/images/alumni-portal/mobile-banner.jpg"
+            type="image/jpg">
+        <img src="{{root}}assets/images/alumni-portal/banner.jpg" width="1920" height="825" alt="banner" loading="lazy" class="lazy">
+    </picture>
+    <!-- <div class="grid-container">
+        <div class="subTitle">
+            <h1>Career Coaching</h1>
+        </div>
+    </div> -->
+</div>
+
+<div class="alumniTitleDescription mb-150">
+    <div class="grid-container">
+        <div class="flex-box">
+            <div class="flexWrap">
+                <div class="wraptitle">
+                    <h2>Welcome to the Paul, Weiss Alumni Network Portal</h2>
+                </div>
+            </div>
+        </div>
+        <div class="descContent welcomeContent">
+            <p>The Paul, Weiss Alumni Network Portal connects you to the firm and to each other. You can search the Alumni Directory, update your contact information in your profile and learn about the accomplishments of your fellow alumni.</p>
+            <p>For in-depth features on firm alumni and history, visit the alumni section of the Paul, Weiss website.</p>
+            <p>We are eager to hear from you! If you have any questions about alumni matters, please contact Sarah Marchitto, Senior Alumni Manager, at smarchitto@paulweiss.com or 212-373-2569.</p>
+            <p><a href="#"><img src="{{root}}assets/images/alumni-portal/home-linked.svg" width="30" height="30" alt="LinkedIn"></a>Join the <a href="#">Paul, Weiss Alumni Network Group</a> on LinkedIn.</p>
+        </div> 
+    </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function () {
+    if ($(".eventsliderpanel .swiper .swiper-slide").length >= 1) {
+        var swiperCarousel = new Swiper('.eventSlider', {
+            spaceBetween: 0,
+            loop: true,
+            preventClicks: true,
+            simulateTouch: false,
+            preloadImages: false,
+            lazy: true,
+            speed: 1500,
+            navigation: {
+                nextEl: '.eventSlider .swiper-button-next',
+                prevEl: '.eventSlider .swiper-button-prev',
+            },
+            breakpoints: {
+                320: {
+                    simulateTouch: true,
+                },
+                1280: {
+                    simulateTouch: false,
+                },
+            },
+        });
+
+        $('.eventSlider').on('click', '.swiper-slide .imgwrap', function(event) {
+            $('.eventsliderpanel').addClass('fullscreen');
+            $('.bg-overlay').addClass('show');
+            setTimeout(() => {
+                swiperCarousel.update();
+            }, 1000);
+        });
+
+        $('.close-button').on('click', function(event) {
+            $('.bg-overlay').removeClass('show');
+            $('.eventsliderpanel.fullscreen').removeClass('fullscreen');
+            setTimeout(() => {
+                swiperCarousel.update();
+            }, 1000);
+        });
+    }
+    contentHeight();
+    function contentHeight() {
+        var getImgWidth = $('.swiper-slide .imgwrap img').width();
+        $('.swiper-slide .contentwrap').css('max-width', getImgWidth);
+    }
+    $(window).resize(contentHeight);
+});
+
+</script>
+<div class="bg-overlay"></div>
+<div class="eventsliderpanel mb-150">
+    <div class="grid-container">
+        <div class="flex-box">
+            <div class="flexWrap">
+                <div class="wraptitle">
+                    <h2>Paul, Weiss Event Photos</h2>
+                </div>
+            </div>
+        </div>
+        <div class="swiper eventSlider">
+            <div class="close-button">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect y="5" width="7.07075" height="49.4953" transform="rotate(-45 0 5)" fill="#001F3F"/>
+                    <rect x="5.00781" y="40" width="7.07075" height="49.4953" transform="rotate(-135 5.00781 40)" fill="#001F3F"/>
+                    </svg>                    
+            </div>
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="sliderwrap">
+                        <div class="imgwrap">
+                            <img src="{{root}}assets/images/alumni-portal/event-1.jpg" width="1249" height="718" alt="event-1">
+                        </div>
+                        <div class="contentwrap">
+                            <p>Paul, Weiss recently hosted a panel discussion, “Alumni in Public Interest,” in which five of the firm’s alumni spoke about their career paths and current roles and shared advice for those interested in a career in public interest. The panel included: Marnie Berk, Director of Pro Bono Programs, NY Lawyers for the Public Interest; Raj Borsellino, Program Officer, Robin Hood Foundation; Elizabeth Curran, Staff Attorney, Special Education Unit, NY Legal Assistance Group; Alex Elson, Senior Counsel and Co-Founder, National Student Legal Defense Network; and Rafi Stern, Staff Attorney/Legal Fellow, Lawyers Alliance for NY. Litigation partner Audra Soloway, co-chair of the firm’s Public Matters Committee, moderated the discussion.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="sliderwrap">
+                        <div class="imgwrap">
+                            <img src="{{root}}assets/images/alumni-portal/event-1.jpg" width="1249" height="718" alt="event-2">
+                        </div>
+                        <div class="contentwrap">
+                            <p>Paul, Weiss recently hosted a panel discussion, “Alumni in Public Interest,” in which five of the firm’s alumni spoke about their career paths and current roles and shared advice for those interested in a career in public interest. The panel included: Marnie Berk, Director of Pro Bono Programs, NY Lawyers for the Public Interest; Raj Borsellino, Program Officer, Robin Hood Foundation; Elizabeth Curran, Staff Attorney, Special Education Unit, NY Legal Assistance Group; Alex Elson, Senior Counsel and Co-Founder, National Student Legal Defense Network; and Rafi Stern, Staff Attorney/Legal Fellow, Lawyers Alliance for NY. Litigation partner Audra Soloway, co-chair of the firm’s Public Matters Committee, moderated the discussion.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div> 
+    </div>
+</div>
+<div class="socialpanel mb-150 ptb-150">
+    <div class="grid-container">
+        <div class="flex-box">
+            <div class="flexWrap">
+                <div class="wraptitle">
+                    <h2>Paul, Weiss on Social Media</h2>
+                </div>
+            </div>
+            <div class="socialwrap">
+                <script type="text/javascript" async defer src="https://www.juicer.io/embed/paul-weiss-rifkind-wharton-garrison-llp/embed-code.js?per=6&amp;gutter=20&amp;filter=Linkedin&amp;nojquery=true"></script>
+            </div>
+        </div>
+    </div>    
+</div>

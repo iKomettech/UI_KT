@@ -1,0 +1,383 @@
+<div class="subannerPanel practicesubbaner mt-140 mb-150">
+    <picture>
+        <source media="(min-width:320px) and (max-width:480px)" srcset="{{root}}assets/images/alumni-portal/mobile-banner.jpg"
+            type="image/jpg">
+        <img src="{{root}}assets/images/alumni-portal/banner.jpg" width="1920" height="825" alt="banner" loading="lazy" class="lazy">
+    </picture>
+    <div class="grid-container">
+        <div class="subTitle">
+            <h1>Update Profile</h1>
+        </div>
+    </div>
+</div>
+
+<div class="alumniupdateprofile mb-150">
+    <div class="grid-container">
+        <div class="contentWrap">
+            <p>Please use the fields below to update your contact information. To share personal or professional news
+                with your fellow alumni in an Alumni Note, please send updates to Sarah Marchitto, Senior Alumni
+                Manager, at <a href="#">smarchitto@paulweiss.com</a>.</p>
+        </div>
+        
+        <div class="passWordBox">
+            <div class="leftBoxPss">
+                <h2>Password</h2>
+                <a href="javascript:void(0)" aria-label="change Password" class="btnStats">Change Password</a>
+                <div class="mainWrapper account_setup reset" id="ChangePwd" style="display: none;">
+                    <div class="twocols">
+                        <form action="#"  id="reset_login" method="post">
+                              <div class="parent">
+                                <div class="childWrapper formWrapper">
+                                    <div class="form-group login-input">
+                                        <label for="OldPwd">Old Password</label>
+                                        <input class="form-control" id="OldPwd" name="OldPassword" autocomplete="current-password" required="required" title="Old Password" type="password" value="" />
+                                        <label for="Newpassword">New Password</label>
+                                        <input class="form-control" id="Newpassword" name="Newpassword" autocomplete="current-password" required="required" title="Password" type="password" value="" />
+                                        <label for="ConfirmPassword">Confirm Password</label>
+                                        <input class="form-control" id="Confirmpassword" name="Confirmpassword" autocomplete="current-password" required="required" title="Password" type="password" value="" />
+                                    </div>
+                                    <div class="login-btn pwd_btn">
+                                        <button type="submit" class="hvr-shutter-out-horizontal">Reset Password</button>
+                                    </div>
+                                </div>
+                                <div class="childWrapper contentwrapper">
+                                    <div class="blk">
+                                        <p>Password requirements are:</p>
+                                        <ul>
+                                            <li>8 characters in length</li>
+                                            <li>one letter</li>
+                                            <li>one number</li>
+                                        </ul>
+                                    </div>
+                                    <div class="passwordtext">
+                                        <span class="">Password Strength</span>
+                                        <span id="pstrength" class="default"></span>
+                                    </div>
+                                    <div class="progress-striped">
+                                        <div id="jak_pstrength" class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>        
+                    </div>
+                </div>
+                <!-- Change password end -->
+            </div>
+            
+            <div class="jobSeekBox">
+                <h2>Job Seeking Preferences</h2>
+                <div class="boxSet">
+                    <div class="item">
+                        <input type="checkbox" id="check" checked>
+                        <label for="check">I am actively looking for new roles.</label>
+                        <p><em>This designation will only be shared internally; it will not be publicly visible on your profile.</em></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="profileBox">
+            <h2>Profile</h2>
+            <form action="#" enctype="multipart/form-data" id="form_login" method="post" class="update-profile">
+                <fieldset>
+                    <legend class="screen-reader-text"> Update Profile Form</legend>
+                    <div class="profile-information">
+                        <div class="flexwrap">
+                            <div class="leftwrap">
+                                <div class="imgBox">
+                                    <img id="changeImg" src="{{root}}assets/images/alumni-portal/placeholder.png" width="251" height="251" alt="profile photo">
+                                </div>
+                                <div class="fileupload">
+                                    <label for="files" class="input-file">Update your headshot</label>
+                                    <input type="file" class="fileBox" onchange = readURL(this); id="files" name="files" accept="image/*" autocomplete="off">
+                                </div>
+                            </div>
+                            <div class="rightwrap">
+                                <div class="form-group">
+                                    <label for="firstname" class="forms-label">First Name</label>
+                                    <input type="text" class="txtBox" id="firstname" name="firstname" required="" autocomplete="off">
+                                </div>
+                                <div class="form-group">
+                                    <label for="middlename" class="forms-label">Middle Name</label>
+                                    <input type="text" class="txtBox" id="middlename" name="middlename" autocomplete="off">
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastname" class="forms-label">Last Name</label>
+                                    <input type="text" class="txtBox" id="lastname" name="lastname" required="" autocomplete="off">
+                                </div>
+                                <div class="form-group">
+                                    <label for="maidenname" class="forms-label">Maiden Name</label>
+                                    <input type="text" class="txtBox" id="maidenname" name="maidenname" autocomplete="off">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="curricular-information">
+                        <div class="flexwrap">
+                            <div class="form-group">
+                                <label for="paularea" class="forms-label">Paul, Weiss Practice Area</label>
+                                <select class="selectMenu" id="paularea" name="paularea" title="Area Type">
+                                    <option value="">Select Practice Area</option>
+                                    <option value="Antitrust">Antitrust</option>
+                                    <option>Artificial Intelligence</option>
+                                    <option>Capital Markets</option>
+                                    <option>Corporate</option>
+                                    <option>Corporate Governance</option>
+                                    <option>Cryptocurrency & Blockchain</option>
+                                    <option>Executive Compensation</option>
+                                    <option>Practices</option>
+                                    <option>Practices</option>
+                                    <option>Practices</option>
+                                    <option>Practices</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="paulyears" class="forms-label">Years at Paul, Weiss</label>
+                                <input type="text" class="txtBox" id="paulyears" name="paulyears" autocomplete="off">
+                            </div>
+                            <div class="form-group">
+                                <label for="summeryear" class="forms-label">Summer Year</label>
+                                <input type="text" class="txtBox" id="summeryear" name="summeryear" autocomplete="off">
+                            </div>
+                            <div class="form-group">
+                                <label for="paulschool" class="forms-label">Law School</label>
+                                <select class="selectMenu" id="paulschool" name="paulschool" title="School Type">
+                                    <option value="">Select School</option>
+                                    <option value="Acadia University">Acadia University</option>
+                                    <option>Adelphi University</option>
+                                    <option>American University</option>
+                                    <option>American University of Beirut</option>
+                                    <option>American University; Washington College of Law</option>
+                                    <option>Amherst College</option>
+                                    <option>Schools</option>
+                                    <option>Schools</option>
+                                    <option>Schools</option>
+                                    <option>Schools</option>
+                                    <option>Schools</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="paulschoolyear" class="forms-label">Law School Class Year</label>
+                                <select class="selectMenu" id="paulschoolyear" name="paulschoolyear" title="School Year Type">
+                                    <option value="">Select Class Year</option>
+                                    <option value="1992">1992</option>
+                                    <option>1993</option>
+                                    <option>1994</option>
+                                    <option>1995</option>
+                                    <option>1996</option>
+                                    <option>1997</option>
+                                    <option>1998</option>
+                                    <option>1999</option>
+                                    <option>1993</option>
+                                    <option>1994</option>
+                                    <option>1995</option>
+                                    <option>1996</option>
+                                    <option>1997</option>
+                                    <option>1998</option>
+                                    <option>1999</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="badge-bg-text">
+                        <p>Manage the visibility of your details in the Alumni directory. Check the information that will be displayed.</p>
+                    </div>
+                    <div class="email-information">
+                        <div class="visible-wrap">
+                            <h2>Email</h2>
+                            <div class="visible-area">
+                                <p>Visible</p>
+                                <div class="item">
+                                    <input type="checkbox" id="email-visible" checked>
+                                    <label for="email-visible">Preferred Email Address</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flexwrap">
+                            <div class="form-group">
+                                <label for="preferemail" class="forms-label">Preferred email address</label>
+                                <input type="email" class="txtBox" id="preferemail" name="preferemail" autocomplete="off">
+                            </div>
+                            <div class="form-group">
+                                <label for="alteremail" class="forms-label">Alternate email address (will not appear in profile)</label>
+                                <input type="email" class="txtBox" id="alteremail" name="alteremail" autocomplete="off">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="work-information">
+                        <div class="visible-wrap">
+                            <h2>Work</h2>
+                            <div class="visible-area">
+                                <p>Visible</p>
+                                <div class="item">
+                                    <input type="checkbox" id="company-visible" checked>
+                                    <label for="company-visible">Company, Title, & Division</label>
+                                </div>
+                                <div class="item">
+                                    <input type="checkbox" id="address-visible" checked>
+                                    <label for="address-visible">Address</label>
+                                </div>
+                                <div class="item">
+                                    <input type="checkbox" id="phone-visible" checked>
+                                    <label for="phone-visible">Phone & Fax</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flexwrap">
+                            <div class="form-group">
+                                <label for="company" class="forms-label">Company</label>
+                                <input type="text" class="txtBox" id="company" name="company" autocomplete="off">
+                            </div>
+                        </div>
+                        <div class="flexwrap">
+                            <div class="form-group">
+                                <label for="title" class="forms-label">Title</label>
+                                <input type="text" class="txtBox" id="title" name="title" autocomplete="off">
+                            </div>
+                            <div class="form-group">
+                                <label for="division" class="forms-label">Division</label>
+                                <input type="text" class="txtBox" id="division" name="division" autocomplete="off">
+                            </div>
+                        </div>
+                        <div class="flexwrap">
+                            <div class="leftwrap">
+                                <div class="form-group">
+                                    <label for="address" class="forms-label">Address</label>
+                                    <textarea name="address" id="address" rows="4" cols="50"></textarea>
+                                </div>
+                            </div>
+                            <div class="rightwrap">
+                                <div class="form-group">
+                                    <label for="City" class="forms-label">City</label>
+                                    <input type="text" class="txtBox" id="City" name="City" autocomplete="off">
+                                </div>
+                                <div class="form-group">
+                                    <label for="State" class="forms-label">State</label>
+                                    <select class="selectMenu" id="State" id="State" name="State" title="State Type">
+                                        <option value="">Select State</option>
+                                        <option rel="0" value="Alabama">Alabama</option>
+                                        <option rel="1" value="Alaska">Alaska</option>
+                                        <option rel="2" value="Arizona">Arizona</option>
+                                        <option rel="3" value="Arkansas">Arkansas</option>
+                                        <option rel="4" value="California">California</option>
+                                        <option rel="5" value="Colorado">Colorado</option>
+                                        <option rel="3" value="Arkansas">Arkansas</option>
+                                        <option rel="4" value="California">California</option>
+                                        <option rel="5" value="Colorado">Colorado</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ZIP" class="forms-label">ZIP Code</label>
+                                    <input type="text" class="txtBox" id="ZIP" name="ZIP" autocomplete="off">
+                                </div>
+                                <div class="form-group">
+                                    <label for="Country" class="forms-label">Country</label>
+                                    <select class="selectMenu" id="Country" name="Country" title="Country Type">
+                                        <option value="">Select Country</option>
+                                        <option rel="0" value="Afghanistan">Afghanistan</option>
+                                        <option rel="1" value="Albania">Albania</option>
+                                        <option rel="2" value="Algeria">Algeria</option>
+                                        <option rel="3" value="Andorra">Andorra</option>
+                                        <option rel="4" value="Angola">Angola</option>
+                                        <option rel="5" value="Antarctica">Antarctica</option>
+                                        <option rel="1" value="Albania">Albania</option>
+                                        <option rel="2" value="Algeria">Algeria</option>
+                                        <option rel="3" value="Andorra">Andorra</option>
+                                        <option rel="4" value="Angola">Angola</option>
+                                        <option rel="5" value="Antarctica">Antarctica</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flexwrap mt-0">
+                            <div class="form-group">
+                                <label for="Phone" class="forms-label">Phone</label>
+                                <input type="text" class="txtBox" id="Phone" name="Phone" autocomplete="off">
+                            </div>
+                            <div class="form-group">
+                                <label for="Fax" class="forms-label">Fax</label>
+                                <input type="text" class="txtBox" id="Fax" name="Fax" autocomplete="off">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="home-information">
+                        <div class="visible-wrap">
+                            <h2>Home</h2>
+                            <div class="visible-area">
+                                <p>Visible</p>
+                                <div class="item">
+                                    <input type="checkbox" id="home-address-visible" checked>
+                                    <label for="home-address-visible">Address</label>
+                                </div>
+                                <div class="item">
+                                    <input type="checkbox" id="home-phone-visible" checked>
+                                    <label for="home-phone-visible">Phone</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flexwrap">
+                            <div class="leftwrap">
+                                <div class="form-group">
+                                    <label for="home-address" class="forms-label">Address</label>
+                                    <textarea name="home-address" rows="4" id="home-address" cols="50"></textarea>
+                                </div>
+                            </div>
+                            <div class="rightwrap">
+                                <div class="form-group">
+                                    <label for="home-City" class="forms-label">City</label>
+                                    <input type="text" class="txtBox" id="home-City" name="home-City" autocomplete="off">
+                                </div>
+                                <div class="form-group">
+                                    <label for="home-State" class="forms-label">State</label>
+                                    <select class="selectMenu" id="home-State" name="home-State" title="State Type">
+                                        <option value="">Select State</option>
+                                        <option rel="0" value="Alabama">Alabama</option>
+                                        <option rel="1" value="Alaska">Alaska</option>
+                                        <option rel="2" value="Arizona">Arizona</option>
+                                        <option rel="3" value="Arkansas">Arkansas</option>
+                                        <option rel="4" value="California">California</option>
+                                        <option rel="5" value="Colorado">Colorado</option>
+                                        <option rel="3" value="Arkansas">Arkansas</option>
+                                        <option rel="4" value="California">California</option>
+                                        <option rel="5" value="Colorado">Colorado</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="home-ZIP" class="forms-label">ZIP Code</label>
+                                    <input type="text" class="txtBox" id="home-ZIP" name="home-ZIP" autocomplete="off">
+                                </div>
+                                <div class="form-group">
+                                    <label for="home-Country" class="forms-label">Country</label>
+                                    <select class="selectMenu" id="home-Country" name="home-Country" title="Country Type">
+                                        <option value="">Select Country</option>
+                                        <option rel="0" value="Afghanistan">Afghanistan</option>
+                                        <option rel="1" value="Albania">Albania</option>
+                                        <option rel="2" value="Algeria">Algeria</option>
+                                        <option rel="3" value="Andorra">Andorra</option>
+                                        <option rel="4" value="Angola">Angola</option>
+                                        <option rel="5" value="Antarctica">Antarctica</option>
+                                        <option rel="1" value="Albania">Albania</option>
+                                        <option rel="2" value="Algeria">Algeria</option>
+                                        <option rel="3" value="Andorra">Andorra</option>
+                                        <option rel="4" value="Angola">Angola</option>
+                                        <option rel="5" value="Antarctica">Antarctica</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flexwrap mt-0">
+                            <div class="form-group">
+                                <label for="home-Phone" class="forms-label">Phone</label>
+                                <input type="text" class="txtBox" id="home-Phone" name="home-Phone" autocomplete="off">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="submitform">
+                        <button type="submit" class="submit_btn">Update</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>

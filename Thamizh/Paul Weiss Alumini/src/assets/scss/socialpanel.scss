@@ -1,0 +1,81 @@
+@import "util/util";
+$white: #ffffff;
+$primary-color: #001F3F;
+$secondary-color: #B9C8DA;
+$img: "../../images/";
+$bgpanel-color: #B9C8DA;
+$mediumbluebgpanel: #0B3D71;
+$white: #ffffff;
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+.socialpanel {
+    background: $bgpanel-color;
+    &.mb-150{
+        margin-bottom: 0;
+    }
+    .grid-container {
+        .flex-box {
+            border-top: 10px solid $mediumbluebgpanel;
+        }
+        .socialwrap{
+            .juicer-feed h1.referral, .juicer-feed li.feed-item:before{
+                display: none;
+            }
+            .juicer-feed .j-stacker>* {
+                padding: 10px !important;
+            }
+            .juicer-feed.modern li.feed-item {
+                padding: 0 15px;
+                box-shadow: none;
+                border: none;
+            }
+            .juicer-feed .feed-item .j-message, .juicer-feed .feed-item .j-message p{
+                letter-spacing: -0.05em;
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 100%;
+                font-family: "ABCDiatype";
+                color: #000000;
+            }
+            .juicer-feed a:hover{
+                color: #0B3D71;
+            }
+            .juicer-feed.modern .j-text {
+                font-size: 18px;
+                padding: 20px 0px;
+            }
+            .juicer-feed .juicer-button{
+                background-color: #0B3D71;
+                color:white;
+                font-family: "ABCDiatype";
+                font-weight: 700;
+                font-size: 27px;
+                line-height: 123.6%;
+                letter-spacing: -0.01em;
+                position: relative;
+                transition: all 0.45s;
+                border:unset;
+                padding: 11px 18px;
+                border:1px solid #0B3D71;
+                text-align: left;
+                margin-top:40px;
+                margin-bottom: 0;
+                width: max-content;
+                text-transform: capitalize;
+                &:hover {
+                  transition: all 0.45s;
+                  background-color: #001F3F;
+                  color: $primary-color;
+                  border:1px solid #001F3F;
+                  color:white;
+                }
+              }
+        }
+    }
+}

@@ -1,0 +1,164 @@
+$primary-color: #001F3F;
+$secondary-color: #B9C8DA;
+@import "util/util";
+$img: "../../images/";
+$bgpanel-color: #B9C8DA;
+$mediumbluebgpanel: #0B3D71;
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+
+
+.noteList {
+
+
+    .grid-container {
+        .flex-box .flexWrap .wraptitle h2 {
+            font-family: 'UntitledSerif';
+            line-height: 100%;
+            font-size: clamp(40px, calc(40px + (40 - 40) * ((100vw - 393px) / (1023 - 393))), 40px);
+
+            @include breakpoint(large) {
+                font-size: clamp(40px, calc(40px + (60 - 40) * ((100vw - 1024px) / (1728 - 1024))), 60px);
+            }
+        }
+
+        .noteContent {
+            max-width: 1120px;
+            width: 100%;
+
+            ul {
+                li {
+
+                    font-family: 'UntitledSerif';
+                    line-height: 123.6%;
+                    letter-spacing: -0.01em;
+                    padding-left: 45px;
+
+
+                    @include breakpoint(large) {
+                        margin-bottom: 23px;
+                    }
+
+                    @include breakpoint(llarge) {
+                        margin-bottom: 18px;
+                    }
+
+                    // b, strong{
+                    //     text-decoration: underline;
+                    // }
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 9px;
+                        left: 0;
+                        background: url('#{$img}settings/squareBullet.svg') no-repeat;
+                        background-size: contain;
+                        height: 20px;
+                        width: 20px;
+                    }
+
+                    &:last-child {
+                        margin-bottom: 3px;
+
+                        @include breakpoint(large) {
+                            margin-bottom: 15px;
+                        }
+
+                        @include breakpoint(llarge) {
+                            margin-bottom: 3px;
+                        }
+                    }
+                }
+            }
+
+            .collapsePanel {
+                @include breakpoint(large) {
+                    margin-top: 23px;
+                }
+
+                @include breakpoint(llarge) {
+                    margin-top: 18px;
+                }
+            }
+
+            .readMore {
+                padding-left: 43px;
+                position: relative;
+
+                @include breakpoint(large) {
+                    margin-bottom: 0px;
+                    display: block;
+                    padding-left: 17px;
+                }
+
+                @include breakpoint(xxlarge) {
+                    margin-bottom: 0px;
+                    padding-left: 43px;
+                }
+
+                a {
+                    text-decoration: none;
+                    font-family: 'ABCDiatype';
+
+                    .flexiBtn {
+                        display: flex;
+                        align-items: center;
+                        gap: 9px;
+
+                        p {
+                            margin-bottom: -3px;
+
+                            span {
+                                font-size: clamp(20px, calc(20px + (20 - 20) * ((100vw - 393px) / (1728 - 393))), 20px);
+                                font-weight: 700;
+                                line-height: 100%;
+                                letter-spacing: -0.025em;
+
+                            }
+
+                            font-weight: 400;
+                        }
+                    }
+
+                    &.activelink {
+                        .flexiBtn {
+                            svg {
+                                transform: rotate(180deg);
+                            }
+                        }
+                    }
+                }
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    left: 0px;
+                    right: 0px;
+                    height: 120px;
+                    bottom: 30px;
+                    background: linear-gradient(180deg, rgba(139, 167, 32, 0) 0%, #fff 100%);
+                }
+            }
+        }
+
+
+
+        &.active {
+
+            .readMore {
+                &::after {
+                    content: unset;
+
+                }
+            }
+        }
+    }
+}
