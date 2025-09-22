@@ -1,0 +1,31 @@
+@import "util/util";
+$white: #ffffff;
+$primary-color: #003e7e;
+$secondary-color: #ececec;
+$black-color:#000000;
+$red-color:#eb0028;
+$img: "../../images/";
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px
+);
+.error-landing *{
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.error-landing .title{
+    text-align: center;
+    font-weight: 700;
+    font-size: 36px;
+    margin-top: 30px;
+    position: relative;
+    &::before{
+        content: '';
+        background: #003e7e;
+        width: 130px;
+        height: 17px;
+        text-align: center;
+        position: absolute;
+        top: 60px;
+    }
+}

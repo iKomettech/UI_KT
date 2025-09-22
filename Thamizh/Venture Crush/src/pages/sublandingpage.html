@@ -1,0 +1,663 @@
+<script>
+    $(document).ready(function() {
+    $(".sub-tab-menu li a").on("click", function() {
+    $(".sub-tab-menu li").removeClass("active");
+        $(this).parent().addClass("active");
+    });
+    var action="click";
+    var speed="500";
+    $('.list-collapse .menu-title').on(action, function() {
+        $(this).next()
+            .slideToggle(speed);
+        $(this).find('.icon').toggleClass('minus');  
+    });
+    $('.mobile-accordian li a').on(action, function() {
+        $(this).toggleClass('filter-selected');
+    }); 
+    var distance = $('.sticky-wrapper').offset().top;
+    $(window).scroll(function () {
+        if ($(window).scrollTop() >= distance) {
+            $('.sub-tab-menu').addClass("is-sticky-top");
+        } else {
+            $('.sub-tab-menu').removeClass("is-sticky-top");
+        }
+    });
+});
+</script>
+<link rel="stylesheet" href="{{root}}assets/css/tabpanel/tabpanel.css" media="all">
+<div class="tabpanel">
+<div class="grid-container mt-110">
+    <div class="tab-menu">
+        <div id="peopletab-sticky-wrapper" class="sticky-wrapper"> 
+            <ul class="sub-tab-menu" id="peopletab" style="">
+                <li class="active"><a href="#section1" class="" aria-label="description"><span>Description</span></a></li>
+                <li class="newsEvents"><a href="#section2" class="" aria-label="Events"><span>Events</span></a></li>
+            </ul>
+        </div>
+    </div>
+</div> 
+<div class="grid-container box-content">
+    <div class="right-section">
+        <div id="section1">
+        <div class="content-section">
+            <h2>Description</h2>
+            <p>Our VentureCrushFG Pod program is both virtual and in-person (2 virtual pods + 1 in-person). Each Pod has 10-15 startups and 4-5 Pod leads (VCs + 2 from our VentureCrush team). Pods meet 4x during a 5-month period for off-the-record discussions. They also (optionally) attend 4 larger “on the record” VentureCrush sessions. 
+                We embrace #diversityequityinclusion</p>
+            <p>
+                VentureCrushFG does NOT:
+            </p>
+            <ul>
+                <li>
+                    take equity,
+                </li>
+                <li>
+                    charge
+                </li>
+                <li>
+                    require anyone to do business with anyone else
+                </li>
+                <li>
+                    promote competition between founders, or<br>
+                    have a demo day (we do NOT stack rank our startups, require them to seek funding, dictate when they seek funding, or on what terms).
+                </li>
+            </ul>
+        </div>
+
+    <div class="company-content">
+        <h2>Top VFCG Pod Program Companies</h2>
+        <div class="company-list">
+            <div class="companybox">
+                <div class="imgbox">
+                    <a href="#">
+                        <figure class="figurebox">
+                            <img class="lazy" src="assets/images/vintage/aavia.jpg" alt="aavia">
+                        </figure>
+                    </a>
+                </div>
+            </div>
+            <div class="companybox">
+                <div class="imgbox">
+                    <a href="#">
+                        <figure class="figurebox">
+                            <img class="lazy" src="assets/images/vintage/alika.jpg" alt="alika">
+                        </figure>
+                    </a>
+                </div>
+            </div>
+            <div class="companybox">
+                <div class="imgbox">
+                    <figure class="figurebox">
+                        <img class="lazy" src="assets/images/vintage/triangle.jpg" alt="triangle">
+                    </figure>
+                </div>
+            </div>
+            <div class="companybox">
+                <div class="imgbox">
+                    <figure class="figurebox">
+                        <img class="lazy" src="assets/images/vintage/benjamin.jpg" alt="benjamin">
+                    </figure>
+                </div>
+            </div>
+            <div class="companybox">
+                <div class="imgbox">
+                    <figure class="figurebox">
+                        <img class="lazy" src="assets/images/vintage/brainceek.jpg" alt="brainceek">
+                    </figure>
+                </div>
+               
+            </div>
+            <div class="companybox">
+                <div class="imgbox">
+                    <figure class="figurebox">
+                        <img class="lazy" src="assets/images/vintage/healthhive.jpg" alt="healthhive">
+                    </figure>
+                </div>
+            </div>
+            <div class="companybox">
+                <div class="imgbox">
+                    <figure class="figurebox">
+                        <img class="lazy" src="assets/images/vintage/interprice.jpg" alt="interprice">
+                    </figure>
+                </div>
+            </div>
+            <div class="companybox">
+                <div class="imgbox">
+                    <figure class="figurebox">
+                        <img class="lazy" src="assets/images/vintage/ivenstore.jpg" alt="ivenstore">
+                    </figure>
+                </div>
+            </div>
+            <div class="companybox">
+                <div class="imgbox">
+                    <figure class="figurebox">
+                        <img class="lazy" src="assets/images/vintage/lina.jpg" alt="lina">
+                    </figure>
+                </div>
+            </div>
+        </div> 
+    </div>
+    <div class="blue_cta_block cta-section">
+        <a href="#" class="blue_cta" aria-label="APPLY">APPLY</a>
+        <a href="#" class="blue_cta" aria-label="More INFO">MORE INFO</a>
+        <a href="#" class="blue_cta" aria-label="RECORDINGS">RECORDINGS</a>
+    </div> 
+</div>   
+<link rel="stylesheet" href="{{root}}assets/css/eventlist/eventlist.css" media="all">
+<div class="eventlist module" id="section2">
+    <h2>Upcoming Events</h2>
+    <div class="eventresults">
+        <div class="imgwrap">
+            <a href="#" aria-label="event-1">
+                <figure class="lazy" data-src="assets/images/event-1.jpg">
+                    <picture>
+                        <img class="lazy" data-src="assets/images/event-1.jpg" alt="Event 1">
+                    </picture>
+                </figure>
+            </a>
+            <span class="line"></span>
+        </div>
+        <div class="cntwrap">
+            <p class="date">Jan 01, 2023</p>
+            <h3><a href="#">Event 1 of VentureCrushFG</a></h3>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.</p>
+            <p class="click-here"><a href="#">Click Here</a> to RSVP</p>
+        </div>
+    </div>
+    <div class="eventresults">
+        <div class="imgwrap">
+            <a href="#" aria-label="event-2">
+                <figure class="lazy" data-src="assets/images/event-2.jpg">
+                    <picture>
+                        <img class="lazy" data-src="assets/images/event-2.jpg" alt="Event 2">
+                    </picture>
+                </figure>
+            </a>
+            <span class="line"></span>
+        </div>
+        <div class="cntwrap">
+            <p class="date">Mar 23, 2023</p>
+            <h3><a href="#">Event 2 of VentureCrushFG</a></h3>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.</p>
+            <p class="click-here"><a href="#">Click Here</a> to RSVP</p>
+        </div>
+    </div>
+    <div class="eventresults">
+        <div class="imgwrap">
+            <a href="#" aria-label="event-3">
+                <figure class="lazy" data-src="assets/images/event-3.jpg">
+                    <picture>
+                        <img class="lazy" data-src="assets/images/event-3.jpg" alt="Event 3">
+                    </picture>
+                </figure>
+            </a>
+            <span class="line"></span>
+        </div>
+        <div class="cntwrap">
+            <p class="date">Jul 12, 2023</p>
+            <h3><a href="#">Event 3 of VentureCrushFG</a></h3>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.</p>
+            <p class="click-here"><a href="#">Click Here</a> to RSVP</p>
+        </div>
+    </div>
+    <div class="blue_cta_block">
+        <a href="#" class="blue_cta" aria-label="More Events">More Events</a>
+    </div>
+</div>
+<div class="eventlist module">
+    <h2>Previous Events</h2>
+    <div class="eventresults">
+        <div class="imgwrap">
+            <a href="#" aria-label="event-1">
+                <figure class="lazy" data-src="assets/images/event-1.jpg">
+                    <picture>
+                        <img class="lazy" data-src="assets/images/event-1.jpg" alt="Event 1">
+                    </picture>
+                </figure>
+            </a>
+            <span class="line"></span>
+        </div>
+        <div class="cntwrap">
+            <p class="date">Jan 01, 2023</p>
+            <h3><a href="#">Event 1 of VentureCrushFG</a></h3>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.</p>
+            <p class="click-here"><a href="#">Click Here</a> to RSVP</p>
+        </div>
+    </div>
+    <div class="eventresults">
+        <div class="imgwrap">
+            <a href="#" aria-label="event-2">
+                <figure class="lazy" data-src="assets/images/event-2.jpg">
+                    <picture>
+                        <img class="lazy" data-src="assets/images/event-2.jpg" alt="Event 2">
+                    </picture>
+                </figure>
+            </a>
+            <span class="line"></span>
+        </div>
+        <div class="cntwrap">
+            <p class="date">Mar 23, 2023</p>
+            <h3><a href="#">Event 2 of VentureCrushFG</a></h3>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.</p>
+            <p class="click-here"><a href="#">Click Here</a> to RSVP</p>
+        </div>
+    </div>
+    <div class="eventresults">
+        <div class="imgwrap">
+            <a href="#" aria-label="event-3">
+                <figure class="lazy" data-src="assets/images/event-3.jpg">
+                    <picture>
+                        <img class="lazy" data-src="assets/images/event-3.jpg" alt="Event 3">
+                    </picture>
+                </figure>
+            </a>
+            <span class="line"></span>
+        </div>
+        <div class="cntwrap">
+            <p class="date">Jul 12, 2023</p>
+            <h3><a href="#">Event 3 of VentureCrushFG</a></h3>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.</p>
+            <p class="click-here"><a href="#">Click Here</a> to RSVP</p>
+        </div>
+    </div>
+    <div class="blue_cta_block">
+        <a href="#" class="blue_cta" aria-label="More Events">More Events</a>
+    </div>
+</div>
+    </div>
+    <div class="left-section">
+        <div class="grybox">
+            <ul class="grylinklist">
+                <li class="grylinkitem">
+                    <a href="#" class="blue_cta" aria-label="Vintages">Vintages</a>
+                </li>
+                <li class="grylinkitem"> 
+                    <a href="#" class="blue_cta" aria-label="Guest Speakers"> Guest Speakers</a>
+                </li>
+                <li class="grylinkitem">
+                    <a href="#" class="blue_cta" aria-label="FAQ's">FAQ's</a>
+                </li>
+            </ul>
+        </div> 
+        <div class="leadership">
+            <h2>Leadership</h2>
+            <div class="leader-list">
+                <div class="leaderwrap">
+                    <figure class="lazy" data-src="assets/images/leader1.jpg">
+                        <picture>
+                            <img class="lazy" data-src="assets/images/leader1.jpg" alt="Meredith Beuchaw">
+                        </picture>
+                    </figure>
+                    <p class="leader-name">
+                        Meredith Beuchaw
+                    </p>
+                    <p>
+                        Partner
+                    </p>
+                </div>
+            </div>
+            <div class="leader-list">
+                <div class="leaderwrap">
+                    <figure class="lazy" data-src="assets/images/leader1.jpg">
+                        <picture>
+                            <img class="lazy" data-src="assets/images/leader2.jpg" alt="Mark Kesslen">
+                        </picture>
+                    </figure>
+                    <p class="leader-name">
+                        Mark Kesslen
+                    </p>
+                    <p>
+                        Partner
+                    </p>
+                    <p>Chair, Intellectual Property 
+                        Group</p>
+                </div>
+            </div>
+            <div class="leader-list">
+                <div class="leaderwrap">
+                    <figure class="lazy" data-src="assets/images/leader3.jpg">
+                        <picture>
+                            <img class="lazy" data-src="assets/images/leader3.jpg" alt="Ed Zimmerman">
+                        </picture>
+                    </figure>
+                    <p class="leader-name">
+                        Ed Zimmerman
+                    </p>
+                    <p>
+                        Partner
+                    </p>
+                    <p> Chair and Co-Founder, 
+                        Emerging Companies & 
+                        Venture Capital (fka, 
+                        The Tech Group)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="tabpanel mobile-tab">
+    <div class="grid-container box-content">
+        <div class="right-section mobile">
+            <ul class="list-collapse">
+            <li class="list">
+                <div class="menu-title">
+                    <a role="button" href="javascript:void(0)"  aria-label="Description">
+                        <span>Description</span>
+                        <span class="icon plus"></span>
+                    </a>
+                </div>
+            <div class="mobile-accordian">
+            <div class="content-section">
+                <p>Our VentureCrushFG Pod program is both virtual and in-person (2 virtual pods + 1 in-person). Each Pod has 10-15 startups and 4-5 Pod leads (VCs + 2 from our VentureCrush team). Pods meet 4x during a 5-month period for off-the-record discussions. They also (optionally) attend 4 larger “on the record” VentureCrush sessions. 
+                    We embrace #diversityequityinclusion</p>
+                <p>
+                    VentureCrushFG does NOT:
+                </p>
+                <ul>
+                    <li>
+                        take equity,
+                    </li>
+                    <li>
+                        charge
+                    </li>
+                    <li>
+                        require anyone to do business with anyone else
+                    </li>
+                    <li>
+                        promote competition between founders, or<br>
+                        have a demo day (we do NOT stack rank our startups, require them to seek funding, dictate when they seek funding, or on what terms).
+                    </li>
+                </ul>
+            </div>
+               <div class="company-content">
+               <h2>Top VFCG Pod Program Companies</h2>
+               <div class="company-list">
+                <div class="companybox">
+                    <div class="imgbox">
+                        <a href="#">
+                            <figure class="figurebox">
+                                <img class="lazy" src="assets/images/vintage/aavia.jpg" alt="aavia">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+                <div class="companybox">
+                    <div class="imgbox">
+                        <a href="#">
+                            <figure class="figurebox">
+                                <img class="lazy" src="assets/images/vintage/alika.jpg" alt="alika">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+                <div class="companybox">
+                    <div class="imgbox">
+                        <figure class="figurebox">
+                            <img class="lazy" src="assets/images/vintage/triangle.jpg" alt="triangle">
+                        </figure>
+                    </div>
+                </div>
+                <div class="companybox">
+                    <div class="imgbox">
+                        <figure class="figurebox">
+                            <img class="lazy" src="assets/images/vintage/benjamin.jpg" alt="benjamin">
+                        </figure>
+                    </div>
+                </div>
+                <div class="companybox">
+                    <div class="imgbox">
+                        <figure class="figurebox">
+                            <img class="lazy" src="assets/images/vintage/brainceek.jpg" alt="brainceek">
+                        </figure>
+                    </div> 
+                </div>
+                <div class="companybox">
+                    <div class="imgbox">
+                        <figure class="figurebox">
+                            <img class="lazy" src="assets/images/vintage/healthhive.jpg" alt="healthhive">
+                        </figure>
+                    </div>
+                </div>
+                <div class="companybox">
+                    <div class="imgbox">
+                        <figure class="figurebox">
+                            <img class="lazy" src="assets/images/vintage/interprice.jpg" alt="interprice">
+                        </figure>
+                    </div>
+                </div>
+                <div class="companybox">
+                    <div class="imgbox">
+                        <figure class="figurebox">
+                            <img class="lazy" src="assets/images/vintage/ivenstore.jpg" alt="ivenstore">
+                        </figure>
+                    </div>
+                </div>
+                <div class="companybox">
+                    <div class="imgbox">
+                        <figure class="figurebox">
+                            <img class="lazy" src="assets/images/vintage/lina.jpg" alt="lina">
+                        </figure>
+                    </div>
+                </div>
+            </div> 
+        </div>
+        <div class="blue_cta_block cta-section">
+            <a href="#" class="blue_cta" aria-label="APPLY">APPLY</a>
+            <a href="#" class="blue_cta" aria-label="More INFO">MORE INFO</a>
+            <a href="#" class="blue_cta" aria-label="RECORDINGS">RECORDINGS</a>
+        </div> 
+        <div class="leadership">
+            <h2>Leadership</h2>
+            <div class="leader-list">
+                <div class="leaderwrap">
+                    <figure class="lazy" data-src="assets/images/leader1.jpg">
+                        <picture>
+                            <img class="lazy" data-src="assets/images/leader1.jpg" alt="Meredith Beuchaw">
+                        </picture>
+                    </figure>
+                    <p class="leader-name">
+                        Meredith Beuchaw
+                    </p>
+                    <p>
+                        Partner
+                    </p>
+                </div>
+            </div>
+            <div class="leader-list">
+                <div class="leaderwrap">
+                    <figure class="lazy" data-src="assets/images/leader1.jpg">
+                        <picture>
+                            <img class="lazy" data-src="assets/images/leader2.jpg" alt="Mark Kesslen">
+                        </picture>
+                    </figure>
+                    <p class="leader-name">
+                        Mark Kesslen
+                    </p>
+                    <p>
+                        Partner
+                    </p>
+                    <p>Chair, Intellectual Property 
+                        Group</p>
+                </div>
+            </div>
+            <div class="leader-list">
+                <div class="leaderwrap">
+                    <figure class="lazy" data-src="assets/images/leader3.jpg">
+                        <picture>
+                            <img class="lazy" data-src="assets/images/leader3.jpg" alt="Ed Zimmerman">
+                        </picture>
+                    </figure>
+                    <p class="leader-name">
+                        Ed Zimmerman
+                    </p>
+                    <p>
+                        Partner
+                    </p>
+                    <p> Chair and Co-Founder, 
+                        Emerging Companies & 
+                        Venture Capital (fka, 
+                        The Tech Group)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </li>
+    <li class="list">
+    <link rel="stylesheet" href="{{root}}assets/css/eventlist/eventlist.css" media="all">
+    <div class="eventlist module">
+        <div class="menu-title">
+            <a role="button" href="javascript:void(0)"  aria-label="VentureCrush Sub Sites">
+                <span>Upcoming Events</span>
+                <span class="icon plus"></span>
+            </a>
+        </div>
+       <div class="mobile-accordian">
+        <div class="eventresults">
+            <div class="imgwrap">
+                <a href="#" aria-label="event-1">
+                    <figure class="lazy" data-src="assets/images/event-1.jpg">
+                        <picture>
+                            <img class="lazy" data-src="assets/images/event-1.jpg" alt="Event 1">
+                        </picture>
+                    </figure>
+                </a>
+                <span class="line"></span>
+            </div>
+            <div class="cntwrap">
+                <p class="date">Jan 01, 2023</p>
+                <h3><a href="#">Event 1 of VentureCrushFG</a></h3>
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.</p>
+                <p class="click-here"><a href="#">Click Here</a> to RSVP</p>
+            </div>
+        </div>
+        <div class="eventresults">
+            <div class="imgwrap">
+                <a href="#" aria-label="event-2">
+                    <figure class="lazy" data-src="assets/images/event-2.jpg">
+                        <picture>
+                            <img class="lazy" data-src="assets/images/event-2.jpg" alt="Event 2">
+                        </picture>
+                    </figure>
+                </a>
+                <span class="line"></span>
+            </div>
+            <div class="cntwrap">
+                <p class="date">Mar 23, 2023</p>
+                <h3><a href="#">Event 2 of VentureCrushFG</a></h3>
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.</p>
+                <p class="click-here"><a href="#">Click Here</a> to RSVP</p>
+            </div>
+        </div>
+        <div class="eventresults">
+            <div class="imgwrap">
+                <a href="#" aria-label="event-3">
+                    <figure class="lazy" data-src="assets/images/event-3.jpg">
+                        <picture>
+                            <img class="lazy" data-src="assets/images/event-3.jpg" alt="Event 3">
+                        </picture>
+                    </figure>
+                </a>
+                <span class="line"></span>
+            </div>
+            <div class="cntwrap">
+                <p class="date">Jul 12, 2023</p>
+                <h3><a href="#">Event 3 of VentureCrushFG</a></h3>
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.</p>
+                <p class="click-here"><a href="#">Click Here</a> to RSVP</p>
+            </div>
+        </div>
+        <div class="blue_cta_block">
+            <a href="#" class="blue_cta" aria-label="More Events">More Events</a>
+        </div>
+        </div>
+    </div>
+    </li>
+    <li class="list">
+    <div class="eventlist module">
+        <div class="menu-title">
+            <a role="button" href="javascript:void(0)"  aria-label="VentureCrush Sub Sites">
+                <span>Previous Events</span>
+                <span class="icon plus"></span>
+            </a>
+        </div>
+        <div class="mobile-accordian">
+        <div class="eventresults">
+            <div class="imgwrap">
+                <a href="#" aria-label="event-1">
+                    <figure class="lazy" data-src="assets/images/event-1.jpg">
+                        <picture>
+                            <img class="lazy" data-src="assets/images/event-1.jpg" alt="Event 1">
+                        </picture>
+                    </figure>
+                </a>
+                <span class="line"></span>
+            </div>
+            <div class="cntwrap">
+                <p class="date">Jan 01, 2023</p>
+                <h3><a href="#">Event 1 of VentureCrushFG</a></h3>
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.</p>
+                <p class="click-here"><a href="#">Click Here</a> to RSVP</p>
+            </div>
+        </div>
+        <div class="eventresults">
+            <div class="imgwrap">
+                <a href="#" aria-label="event-2">
+                    <figure class="lazy" data-src="assets/images/event-2.jpg">
+                        <picture>
+                            <img class="lazy" data-src="assets/images/event-2.jpg" alt="Event 2">
+                        </picture>
+                    </figure>
+                </a>
+                <span class="line"></span>
+            </div>
+            <div class="cntwrap">
+                <p class="date">Mar 23, 2023</p>
+                <h3><a href="#">Event 2 of VentureCrushFG</a></h3>
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.</p>
+                <p class="click-here"><a href="#">Click Here</a> to RSVP</p>
+            </div>
+        </div>
+        <div class="eventresults">
+            <div class="imgwrap">
+                <a href="#" aria-label="event-3">
+                    <figure class="lazy" data-src="assets/images/event-3.jpg">
+                        <picture>
+                            <img class="lazy" data-src="assets/images/event-3.jpg" alt="Event 3">
+                        </picture>
+                    </figure>
+                </a>
+                <span class="line"></span>
+            </div>
+            <div class="cntwrap">
+                <p class="date">Jul 12, 2023</p>
+                <h3><a href="#">Event 3 of VentureCrushFG</a></h3>
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.</p>
+                <p class="click-here"><a href="#">Click Here</a> to RSVP</p>
+            </div>
+        </div>
+        <div class="blue_cta_block">
+            <a href="#" class="blue_cta" aria-label="More Events">More Events</a>
+        </div>
+        </div>
+    </div>
+    </li>
+    </div>
+        </div>
+        <div class="grid-container">
+        <div class="left-section mobile">
+            <div class="grybox">
+                <ul class="grylinklist">
+                    <li class="grylinkitem">
+                        <a href="#" class="blue_cta" aria-label="Vintages">Vintages</a>
+                    </li>
+                    <li class="grylinkitem"> 
+                        <a href="#" class="blue_cta" aria-label="Guest Speakers"> Guest Speakers</a>
+                    </li>
+                    <li class="grylinkitem">
+                        <a href="#" class="blue_cta" aria-label="FAQ's">FAQ's</a>
+                    </li>
+                </ul>
+            </div>   
+        </div>
+        </div>
+    </div>

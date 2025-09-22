@@ -1,0 +1,93 @@
+@import "util/util";
+$white: #ffffff;
+$primary-color: #003e7e;
+$secondary-color: #ececec;
+$black-color:#000000;
+$red-color:#eb0028;
+$img: "../../images/";
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+);
+.bannerpanel{
+   .imgWrap{
+   figure{
+    max-width: 100%;
+    height:auto;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 29px;
+    @include breakpoint(small) {
+        width:355px;
+        min-height: 155px;
+    }
+    @include breakpoint(medium) {
+        margin-top: 0;
+        margin-bottom: 30px;
+        width:736px;
+        min-height:323px;
+    }
+    @include breakpoint(large) {
+        width:736px;
+        min-height:323px;
+    }
+    }
+    .Venture_bold{
+        text-transform: uppercase;
+        text-align: center;
+    }
+}
+.banner_dis{
+    p{
+    font-size:20px;
+    line-height:24px;
+    font-weight:400;
+    font-family:'Roboto Condensed';
+    text-align: center;
+    margin-bottom:52px;
+    @include breakpoint(medium) {
+        max-width: 1063px;
+        font-size:24px;
+        line-height:29px;
+        margin-bottom:46px;
+    }
+    span{
+       text-transform: uppercase;
+       font-weight: 900;
+    }
+}
+ul{
+    list-style-type: disc;
+}
+}
+h1{
+    font-weight: 900;
+    font-size:34px;
+    line-height:41px;
+    padding-bottom:27px;
+    text-align: center;
+    @include breakpoint(medium) {
+        font-size: 50px;
+        line-height:61px;
+        padding-bottom: 44px;
+    }
+    &.Venture_bold{
+        sub{
+            font-size: 8px; 
+        }
+    }
+}
+}
+.blue_cta_block {
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 0;
+    display: block;
+    text-align: center;
+    .blue_cta{
+        @include breakpoint(small only) {
+            float: none;
+        }
+    }
+}

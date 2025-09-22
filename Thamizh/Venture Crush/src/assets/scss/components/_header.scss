@@ -1,0 +1,291 @@
+@import "util/util";
+$white: #ffffff;
+$primary-color: #003e7e;
+$secondary-color: #ececec;
+$black-color:#000000;
+$red-color:#eb0028;
+$img: "../../images/";
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+);
+header {
+    background:$white;
+    .grid-container{
+        @include breakpoint(small only) {
+            padding-right: 16px !important;
+            padding-left: 16px !important;
+        }
+    }
+    &.sticky {
+        position: fixed;
+        left: 0;
+        right: 0px;
+        z-index: 99;
+        top: 0px;
+        &.active {
+            transition: transform 0.45s ease-out, -webkit-transform 0.45s ease-out;
+            box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.16);
+            background: #ffffff;
+            opacity: 1;
+            scroll-behavior: smooth;
+            .logo{
+                @include breakpoint(small only) {
+                    padding-bottom: 10px;
+                }
+            }
+        }
+    }
+    .logo {
+        display: inline-block;
+        vertical-align: middle;
+        width: 100px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        transition: all 200ms linear;
+        @include breakpoint(medium) {
+            width:219px;
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+        a {
+            display: block;
+            img {
+                max-width: 100%;
+            }
+        }
+        &.islogo{
+            a {
+                img {
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+    .sociallinks {
+        display: flex;
+        margin-left: 0;
+        margin-bottom: 30px;
+        padding-top:0px;
+        position: absolute;
+        float: right;
+        right:0px;
+        width:540px;
+        bottom:0px;
+        @include breakpoint(small only) {
+            margin-top: 0px;
+            padding-top: 0;
+            bottom:0px;
+            right:unset;
+            left:120px;
+        }
+        li {
+            margin-right: 15px;
+            font-size: 0;
+            line-height:0px;
+            margin-bottom: 0;
+            @include breakpoint(small only) {
+                margin-right: 15px;
+            }
+            a {
+                font-size: 0;
+                line-height: 0px;
+                img {
+                    transition: all 0.5s;
+                    &:hover{
+                        transform: scale(1.05);
+                    }
+                }
+            }
+            svg{
+                transition: all 0.5s;
+                path, circle {
+                    fill:$black;
+                }
+                &:hover{
+                    transition: all 0.5s;
+                    transform: scale(1.05);
+                    path, circle {
+                        fill:$red-color;
+                    }
+                }
+
+            }
+            &:last-child {
+                margin-right: 0px;
+            }
+        }
+    }
+}
+.toggle-menu {
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    position: relative;
+    top: 10px;
+    float: right;
+    z-index: 1000;
+    transition: right linear .2s;
+    right:0px;
+    @include breakpoint(large) {
+        top: 43px;
+    }
+    &.active{
+        top: 6px;
+        @include breakpoint(large) {
+            top: 43px;
+        }
+    }
+}
+    .toggle-menu i {
+    position: absolute;
+    display: block;
+    height: 5px;
+    background: #000000;
+    width: 42px;
+    left: 8px;
+    transition: all .3s;
+    @include breakpoint(small only) {
+        height: 4px;
+    }
+    }
+    .toggle-menu i:nth-child(1) {
+    top: 16px;
+    @include breakpoint(medium) {
+        top: 5px;
+    }
+    @include breakpoint(small only) {
+        top: 8px;
+    }
+    }
+    .toggle-menu i:nth-child(2) {
+    top: 33px;
+    @include breakpoint(medium) {
+        top: 21px;
+    }
+    @include breakpoint(small only) {
+        top: 20px;
+    }
+    }
+    .toggle-menu i:nth-child(3) {
+    top: 50px;
+    @include breakpoint(small only) {
+        top: 32px;
+    }
+    @include breakpoint(medium) {
+        top: 36px;
+
+    }
+    }
+    .toggle-menu.active i:nth-child(1) {
+    top: 25px;
+    -webkit-transform: rotateZ(45deg);
+    transform: rotateZ(45deg);
+    }
+    .toggle-menu.active i:nth-child(2) {
+    background: transparent;
+    }
+    .toggle-menu.active i:nth-child(3) {
+    top: 25px;
+    -webkit-transform: rotateZ(-45deg);
+    transform: rotateZ(-45deg);
+    }
+    .container {
+    position: relative;
+    overflow: hidden;
+    }
+    .menu-drawer {
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    position: absolute;
+    display: block;
+    right:-10%;
+    top: 0;
+    height: auto;
+    transition: all .3s;
+    padding: 57px 15px;
+    @include breakpoint(large) {
+        width: 1048px;
+        padding: 57px 35px;
+        // min-height: 1048px;
+    }
+    .logo{
+        position: absolute;
+        top: 0;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+        display: block;
+        width: 100px;
+        @media screen and (min-width: 1024px) {
+            display: none;
+        }
+    }
+    .menu-item{
+        margin-top:92px;
+        position: absolute;
+        top: 0px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        overflow-y: auto;
+        @media screen and (min-width: 1024px) {
+            margin-top:80px;
+            margin-bottom: 23px;
+            top: 45px;
+            left: 40px;
+        }
+    }
+    }
+    .menu-drawer.open {
+    transform: translateX(0%);
+    right: 0;
+    }
+    .menu-drawer {
+        transform: translateX(100%);
+        transition: all .3s;
+        .menu-item{
+            li {
+                font-weight: bold;
+                margin-bottom: 17px;
+                text-align:left;
+                @include breakpoint(medium) {
+                    margin-bottom: 30px; 
+                }
+                @include breakpoint(large) {
+                    margin-bottom: 45px; 
+                }
+                a {
+                text-decoration: none;
+                font-family:'Roboto Condensed';
+                font-size: 20px;
+                line-height: 24px;
+                @include breakpoint(medium) {
+                    font-size: 28px;
+                    line-height: 39px;                
+                }
+                @include breakpoint(large) {
+                    font-size: 33px;
+                    line-height: 39px;
+                }
+                }
+                &:last-child{
+                    margin-bottom:0px;
+                }
+            }
+        }
+    }
+    
+    .home{
+        transition: all 200ms linear;
+        opacity: 1;
+        visibility: visible;
+        .logo {
+            visibility: hidden;
+            opacity: 0;
+            transition: all 200ms linear;
+            transform: translateY(-20px);
+        }
+}

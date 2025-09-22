@@ -1,0 +1,234 @@
+@import "util/util";
+$white: #ffffff;
+$primary-color: #003e7e;
+$secondary-color: #ececec;
+$black-color:#000000;
+$red-color:#eb0028;
+$img: "../../images/";
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1100px,
+);
+.eventlist{
+    margin-bottom:60px;
+    @include breakpoint(medium) {
+        margin-bottom:122px;
+    }
+    h2{
+        font-size:28px;
+        line-height:34px;
+        padding-bottom: 10px;
+        font-weight: bold;
+        border-bottom: 3px solid $primary-color;
+        @include breakpoint(medium) {
+            font-size:30px;
+            line-height:37px;
+        }
+    }
+    .eventresults{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 34px;
+    @include breakpoint(medium) {
+        padding-bottom: 50px;
+    }
+    @include breakpoint(small only){
+       flex-wrap: wrap;
+    }
+     &:nth-child(2){
+        padding-top: 19px;
+        @include breakpoint(medium) {
+        padding-top: 28px;
+        }
+    }
+    &:last-child{
+        padding-bottom: 0px;
+    }
+
+    // &:nth-child(2){
+    //     position: relative;
+    //     top:-25px;
+    //     padding-bottom: 12px;
+    //     @include breakpoint(small only){
+    //         top: 0;
+    //         padding-top: 30px;
+    //     }
+    // }
+    &:last-child{
+        padding-bottom: 105px;
+    }
+    .imgwrap{
+        overflow: hidden;
+        position: relative;
+        width: 216px;
+        height: 192px;
+        @media screen and (max-width: 480px) {
+            width: 340px;
+        }
+        .line{
+            position: absolute;
+            border-bottom: 10px solid $red-color;
+            opacity: 0;
+            left: 0;
+            bottom:0;
+            width: 100%;
+            transition: all 0.75s;
+        }
+        &:hover{
+            .line{
+                opacity: 1;
+            }
+        }
+        figure{
+            width: 216px;
+            height: 192px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: top;
+            transition: all 0.75s;
+            -o-object-fit: cover;
+            object-fit: cover;
+            height: auto;
+            overflow: hidden;
+            @media screen and (max-width: 480px) {
+                width: 100%;
+            }
+            &:hover{
+                transform: scale(1.1);
+            }
+            img{
+                max-width: 100%;
+                @media screen and (max-width: 480px) {
+                    width: 100%;
+                    -o-object-fit: cover;
+                    object-fit: cover;
+                    height: auto;
+                    overflow: hidden;
+                }
+            }
+        }
+    }
+    .cntwrap{
+        width: calc(100% - 246px);
+        @include breakpoint(small only){
+            width: 100%;
+            padding-top: 22px;
+        }
+        .date{
+            font-size: 18px;
+            line-height: 22px;
+            padding: 0;
+            text-align: left;
+            font-family: 'Roboto Condensed', sans-serif;
+            padding-bottom: 10px;
+            @include breakpoint(small only){
+                padding-bottom: 1px;
+            }
+            @include breakpoint(large){
+                font-size: 21px;
+                line-height: 25px;
+            }
+        }
+        h3{
+            font-size: 18px;
+            line-height: 22px;
+            font-weight: 700;
+            text-align: left;
+            word-break: break-word;
+            padding-bottom: 2px;
+            @include breakpoint(large){
+                font-size: 21px;
+                line-height: 25px;
+            }
+            a{
+                font-size: 18px;
+                line-height: 22px;
+                font-weight: 700;
+                text-align: left;
+                word-break: break-word;
+                text-decoration: none;
+                &:hover{
+                    color: $red-color;
+                }
+                @include breakpoint(large){
+                    font-size: 21px;
+                    line-height: 25px;
+                }
+            }
+        }
+        .click-here{
+            font-size: 18px;
+            line-height: 22px;
+            font-weight: 700;
+            text-align: left;
+            word-break: break-word;
+            font-family: 'Roboto Condensed', sans-serif;
+            padding-top: 6px;
+            display: block;
+            @include breakpoint(large){
+                font-size: 21px;
+                line-height: 25px;
+            }
+            @include breakpoint(small only){
+                padding-top: 15px;
+            }
+            a{
+                font-size: 18px;
+                line-height: 22px;
+                font-weight: 700;
+                font-family: 'Roboto Condensed', sans-serif;
+                color: $primary-color;
+                &:hover{
+                    color: $red-color;
+                }
+                @include breakpoint(large){
+                    font-size: 21px;
+                    line-height: 25px;
+                }
+            }
+        }
+        p{
+            font-size: 18px;
+            line-height: 21px;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            text-align: left;
+            word-break: break-word;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 6;
+            overflow: hidden;
+            @include breakpoint(large){
+                -webkit-line-clamp: 4;
+            }
+            + p{
+                display: none;
+            }
+            a{
+                font-size: 18px;
+                line-height: 21px;
+                text-decoration: underline;
+                &:hover{
+                    color: $red-color;
+                }
+            }
+        }
+    }
+}
+}
+.blue_cta_block {
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 0;
+    display: block;
+    text-align: center;
+    .blue_cta{
+        @include breakpoint(small only) {
+            float: none;
+        }
+    }
+}
+.threecolumnpanel p + p + link + .eventlist {
+    padding-top: 36px;
+}

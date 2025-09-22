@@ -1,0 +1,385 @@
+<script type="text/javascript" src="{{root}}assets/scripts/datepicker/moment.min.js"></script>
+<script type="text/javascript" src="{{root}}assets/scripts/datepicker/daterangepicker.js"></script>
+<link rel="stylesheet" type="text/css" href="{{root}}assets/css/datepicker/daterangepicker.css" />
+<link rel="stylesheet" href="{{root}}assets/css/datepicker/datepicker.css">
+<link rel="stylesheet" href="{{root}}assets/css/events/events.css" media="all">
+<script>
+$(document).ready(function() {
+    var action="click";
+    var speed="500";
+    $('.list-collapse .header').on(action, function() {
+        $(this).next()
+            .slideToggle(speed);
+        $(this).find('.icon').toggleClass('minus');  
+        //$(this).toggleClass('activeheader');
+    });
+    $('.event-filter li').on(action, function() {
+        $(this).toggleClass('filter-selected');
+        $(this).find('a').trigger("blur");
+    }); 
+    $('input[name="daterange"]').daterangepicker({
+        "autoApply": true,
+        "autoUpdateInput": false,
+    });
+    $('input[name="daterange"]').on('apply.daterangepicker', function(ev, picker) {
+        $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
+     });
+});
+    function fnclearDate(){
+        $('input[name="daterange"]').val('');
+        $('.dateheader .icon').removeClass('minus');
+        $('.dateheader .icon').addClass('plus');
+        $('.datecontent').hide();
+     }
+</script>
+<div class="event-landing">
+    <div class="grid-container">
+        <h1 class="title">Events</h1>
+        <div class="innerwrap">
+            <div class="leftwrap module">
+                <h2 class="filter-title">Filter By:</h2>
+                <ul class="list-collapse">
+                    <li>
+                        <div class="header">
+                            <a role="button" href="javascript:void(0)"  aria-label="VentureCrush Sub Sites">
+                                <span>VentureCrush Sub Sites</span>
+                                <span class="icon plus"></span>
+                            </a>
+                        </div>
+                        <div class="content">
+                            <ul id="events-subsite-filter" class="event-filter">
+                                <li data-id="VentureCrushFG"><a href="javascript:void(0)" class="">VentureCrushFG</a></li>
+                                <li data-id="VentureCrushFGX"><a href="#" class="">VentureCrushFGX</a></li>
+                                <li data-id="VentureCrush Paris"><a href="#" class="">VentureCrush Paris</a></li>
+                                <li data-id="VentureCrush Africa Global"><a href="#" class="">VentureCrush Africa Global</a></li>
+                                <li data-id="VentureCrush Women In VC"><a href="#" class="">VentureCrush Women In VC</a></li>
+                                <li data-id="VentureCrush Americas"><a href="#" class="">VentureCrush Americas</a></li>
+                                <li data-id="VentureCrushFG"><a href="#" class="">VentureCrushFG</a></li>
+                                <li data-id="VentureCrushFGX"><a href="#" class="">VentureCrushFGX</a></li>
+                                <li data-id="VentureCrush Paris"><a href="#" class="">VentureCrush Paris</a></li>
+                                <li data-id="VentureCrush Africa Global"><a href="#" class="">VentureCrush Africa Global</a></li>
+                                <li data-id="VentureCrush Women In VC"><a href="#" class="">VentureCrush Women In VC</a></li>
+                                <li data-id="VentureCrush Americas"><a href="#" class="">VentureCrush Americas</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="header">
+                            <a role="button" href="javascript:void(0)" aria-label="Event Type">
+                                <span>Event Type</span>
+                                <span class="icon plus"></span>
+                            </a>
+                        </div>
+                        <div class="content">
+                            <ul id="practice-filter" class>
+                                <li data-id="Speakers"><a href="javascript:void(0)" class="">Speakers</a></li>
+                                <li data-id="Break-Out Leaders"><a href="javascript:void(0)" class="">Break-Out Leaders</a></li>
+                                <li data-id="Co-Leaders"><a href="javascript:void(0)" class="">Co-Leaders</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="header">
+                            <a role="button" href="javascript:void(0)" aria-label="Previous/Upcoming">
+                                <span>Previous/Upcoming</span>
+                                <span class="icon plus"></span>
+                            </a>
+                        </div>
+                        <div class="content">
+                            <div class="form-group customcheckbox">
+                                <input type="radio" name="events" id="previous-events">
+                                <label for="previous-events">Previous Events</label>
+                              </div>
+                              <div class="form-group customcheckbox">
+                                <input type="radio" name="events" id="upcoming-events">
+                                <label for="upcoming-events">Upcoming Events</label>
+                              </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="header dateheader">
+                            <a role="button" href="javascript:void(0)" aria-label="Search by Date(s)">
+                                <span>Search by Date(s)</span>
+                                <span class="icon plus"></span>
+                            </a>
+                        </div>
+                        <div class="content datecontent">
+                            <div class="form-group dategroup-form">
+                                <input type="text" name="daterange" value class="datepick" id="daterangeValue" title="Date Picker" placeholder="Select Start/End Date"/>
+                            </div>
+                            <div class="date-mobile-form">
+                                <label class="label-filter">Start Date:</label>
+                                <div class="start-date d-flex">
+                                    <select class="selectMenu" id="select-start-month" name="startMonth" title="Month">
+                                        <option value="0">Month</option>
+                                        <option value="01">Jan</option>
+                                        <option value="02">Feb</option>
+                                        <option value="03">Mar</option>
+                                        <option value="04">Apr</option>
+                                        <option value="05">May</option>
+                                        <option value="06">Jun</option>
+                                        <option value="07">Jul</option>
+                                        <option value="08">Aug</option>
+                                        <option value="09">Sept</option>
+                                        <option value="10">Oct</option>
+                                        <option value="11">Nov</option>
+                                        <option value="12">Dec</option>
+                                    </select>
+                                    <select class="selectMenu" id="select-start-date" name="startDate" title="Date">
+                                        <option value="0">Date</option>
+                                        <option value="01">1</option>
+                                        <option value="02">2</option>
+                                        <option value="03">3</option>
+                                        <option value="04">4</option>
+                                        <option value="05">5</option>
+                                        <option value="06">6</option>
+                                        <option value="07">7</option>
+                                        <option value="08">8</option>
+                                        <option value="09">9</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                        <option value="13">13</option>
+                                        <option value="14">14</option>
+                                        <option value="15">15</option>
+                                        <option value="16">16</option>
+                                        <option value="17">17</option>
+                                        <option value="18">18</option>
+                                        <option value="19">19</option>
+                                        <option value="20">20</option>
+                                        <option value="21">21</option>
+                                        <option value="22">22</option>
+                                        <option value="23">23</option>
+                                        <option value="24">24</option>
+                                        <option value="25">25</option>
+                                        <option value="26">26</option>
+                                        <option value="27">27</option>
+                                        <option value="28">28</option>
+                                        <option value="29">29</option>
+                                        <option value="30">30</option>
+                                        <option value="31">31</option>
+                                    </select>
+                                    <select class="selectMenu" id="select-start-year" name="startYear" title="Year">
+                                        <option value>Year</option>
+                                        <option value="2013">2013</option>
+                                        <option value="2014">2014</option>
+                                        <option value="2015">2015</option>
+                                        <option value="2016">2016</option>
+                                        <option value="2017">2017</option>
+                                        <option value="2018">2018</option>
+                                        <option value="2019">2019</option>
+                                        <option value="2020">2020</option>
+                                    </select>
+                                </div>
+                                <label class="label-filter">End Date:</label>
+                                <div class="end-date d-flex">
+                                    <select class="selectMenu" id="select-end-month" name="endMonth" title="Month">
+                                        <option value="0">Month</option>
+                                        <option value="01">Jan</option>
+                                        <option value="02">Feb</option>
+                                        <option value="03">Mar</option>
+                                        <option value="04">Apr</option>
+                                        <option value="05">May</option>
+                                        <option value="06">Jun</option>
+                                        <option value="07">Jul</option>
+                                        <option value="08">Aug</option>
+                                        <option value="09">Sept</option>
+                                        <option value="10">Oct</option>
+                                        <option value="11">Nov</option>
+                                        <option value="12">Dec</option>
+                                    </select>
+                                    <select class="selectMenu" id="select-end-date" name="endDate" title="Date">
+                                        <option value="0">Date</option>
+                                        <option value="01">1</option>
+                                        <option value="02">2</option>
+                                        <option value="03">3</option>
+                                        <option value="04">4</option>
+                                        <option value="05">5</option>
+                                        <option value="06">6</option>
+                                        <option value="07">7</option>
+                                        <option value="08">8</option>
+                                        <option value="09">9</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                        <option value="13">13</option>
+                                        <option value="14">14</option>
+                                        <option value="15">15</option>
+                                        <option value="16">16</option>
+                                        <option value="17">17</option>
+                                        <option value="18">18</option>
+                                        <option value="19">19</option>
+                                        <option value="20">20</option>
+                                        <option value="21">21</option>
+                                        <option value="22">22</option>
+                                        <option value="23">23</option>
+                                        <option value="24">24</option>
+                                        <option value="25">25</option>
+                                        <option value="26">26</option>
+                                        <option value="27">27</option>
+                                        <option value="28">28</option>
+                                        <option value="29">29</option>
+                                        <option value="30">30</option>
+                                        <option value="31">31</option>
+                                    </select>
+                                    <select class="selectMenu" id="select-end-year" name="endYear" title="Year">
+                                        <option value>Year</option>
+                                        <option value="2013">2013</option>
+                                        <option value="2014">2014</option>
+                                        <option value="2015">2015</option>
+                                        <option value="2016">2016</option>
+                                        <option value="2017">2017</option>
+                                        <option value="2018">2018</option>
+                                        <option value="2019">2019</option>
+                                        <option value="2020">2020</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <label class="clear-filter"><a href="javascript:void(0)" onclick="fnclearDate();">Clear selections</a></label>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="rightwrap module">
+                <div class="paginationwrap">
+                    <div class="itemcount">
+                        <p class="resultcount">1 to 74 of 74 results</p>
+                    </div>
+                    <div class="itemcount">
+                        <ul class="pagination">
+							<li class="1"><a href="#" title="pagination"><i class="fa-angle-double-left"><span class="screen-reader-text">Page</span></i></a></li>
+							<li class="1"><a href="#"><i class="fa-angle-left"><span class="screen-reader-text">Page</span></i></a></li>
+							<li class="1"><a href="#" class="active" title="pagination">1</a></li>
+                            <li class="1"><a href="#" class="" title="pagination">2</a></li>
+                            <li class="1"><a href="#" class="" title="pagination">3</a></li>
+                            <li class="1"><a href="#" class="" title="pagination">4</a></li>
+                            <li class="1"><a href="#" class="" title="pagination">5</a></li>
+                            <li class="1"><a href="#" class="" title="pagination">6</a></li>
+                            <li class="1"><a href="#" class="" title="pagination">7</a></li>
+                            <li class="1"><a href="#" class="" title="pagination">8</a></li>
+							<li class="1"><a href="#"><i class="fa-angle-right"><span class="screen-reader-text">Page</span></i></a></li>
+							<li class="1"><a href="#" title="pagination"><i class="fa-angle-double-right"><span class="screen-reader-text">Page</span></i></a></li>
+						</ul>
+                    </div>
+                </div>
+                <div class="eventwrap">
+                    <div class="sortdropdown">
+                        <div class="dropwidth">
+                            <label>Items Per Page:</label>
+                            <select class="selectMenu" id="eventsort" name="type" title="Items Per Page">
+                                        <option value="10">10</option>
+                                        <option value="25">25</option>
+                                        <option value="0" selected>All</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="eventresults">
+                        <div class="imgwrap">
+                            <a href="#" aria-label="event-1">
+                            <figure class="lazy" data-src="assets/images/event-1.jpg">
+                                <picture>
+                                    <img class="lazy" data-src="assets/images/event-1.jpg" alt="Event 1">
+                                </picture>
+                            </figure>
+                            </a>
+                            <span class="line"></span>
+                        </div>
+                        <div class="cntwrap">
+                            <p class="date">Jan 01, 2023</p>
+                            <h3><a href="#">Event 1 of VentureCrushFG</a></h3>
+                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.</p>
+                            <p class="click-here"><a href="#">Click Here</a> to RSVP</p>
+                        </div>
+                    </div>
+                    <div class="eventresults">
+                        <div class="imgwrap">
+                            <a href="#" aria-label="event-2">
+                            <figure class="lazy" data-src="assets/images/event-2.jpg">
+                                <picture>
+                                    <img class="lazy" data-src="assets/images/event-2.jpg" alt="Event 2">
+                                </picture>
+                            </figure>
+                            </a>
+                            <span class="line"></span>
+                        </div>
+                        <div class="cntwrap">
+                            <p class="date">Mar 23, 2023</p>
+                            <h3><a href="#">Event 2 of VentureCrushFG</a></h3>
+                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.</p>
+                        </div>
+                    </div>
+                    <div class="eventresults">
+                        <div class="imgwrap">
+                            <a href="#" aria-label="event-3">
+                            <figure class="lazy" data-src="assets/images/event-3.jpg">
+                                <picture>
+                                    <img class="lazy" data-src="assets/images/event-3.jpg" alt="Event 3">
+                                </picture>
+                            </figure>
+                            </a>
+                            <span class="line"></span>
+                        </div>
+                        <div class="cntwrap">
+                            <p class="date">Jul 12, 2023</p>
+                            <h3><a href="#">Event 3 of VentureCrushFG</a></h3>
+                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.</p>
+                        </div>
+                    </div>
+                    <div class="eventresults">
+                        <div class="imgwrap">
+                            <a href="#" aria-label="event-4">
+                            <figure class="lazy" data-src="assets/images/event-4.jpg">
+                                <picture>
+                                    <img class="lazy" data-src="assets/images/event-4.jpg" alt="Event 4">
+                                </picture>
+                            </figure>
+                            </a>
+                            <span class="line"></span>
+                        </div>
+                        <div class="cntwrap">
+                            <p class="date">Jan 01, 2023</p>
+                            <h3><a href="#">Event 4 of VentureCrushFG</a></h3>
+                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.</p>
+                            <p class="click-here"><a href="#">Click Here</a> to RSVP</p>
+                        </div>
+                    </div>
+                    <div class="eventresults">
+                        <div class="imgwrap">
+                            <a href="#" aria-label="event-5">
+                            <figure class="lazy" data-src="assets/images/event-5.jpg">
+                                <picture>
+                                    <img class="lazy" data-src="assets/images/event-5.jpg" alt="Event 5">
+                                </picture>
+                            </figure>
+                            </a>
+                            <span class="line"></span>
+                        </div>
+                        <div class="cntwrap">
+                            <p class="date">Mar 23, 2023</p>
+                            <h3><a href="#">Event 5 of VentureCrushFG</a></h3>
+                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.</p>
+                        </div>
+                    </div>
+                    <div class="eventresults">
+                        <div class="imgwrap">
+                            <a href="#" aria-label="event-6">
+                            <figure class="lazy" data-src="assets/images/event-6.jpg">
+                                <picture>
+                                    <img class="lazy" data-src="assets/images/event-6.jpg" alt="Event 6">
+                                </picture>
+                            </figure>
+                            </a>
+                            <span class="line"></span>
+                        </div>
+                        <div class="cntwrap">
+                            <p class="date">Jul 12, 2023</p>
+                            <h3><a href="#">Event 6 of VentureCrushFG</a></h3>
+                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.</p>
+                            <p class="click-here"><a href="#">Click Here</a> to RSVP</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,89 @@
+@font-face {
+  font-family: "Glyphicons Halflings";
+  src: url(../datepicker/glyphicons-halflings-regular.eot);
+  src: url(../datepicker/glyphicons-halflings-regular.eot?#iefix) format("embedded-opentype"), url(../fonts/glyphicons-halflings-regular.woff2) format("woff2"), url(../fonts/glyphicons-halflings-regular.woff) format("woff"), url(../fonts/glyphicons-halflings-regular.ttf) format("truetype"), url(../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular) format("svg")
+}
+.glyphicon {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: "Glyphicons Halflings";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale
+}
+.daterangepicker *{
+  font-family: 'Roboto Condensed', sans-serif;
+}
+.daterangepicker .glyphicon.glyphicon-calendar:before {
+  content: "\e109";
+  font-family: "Glyphicons Halflings";
+}
+.daterangepicker .glyphicon.glyphicon-chevron-left:before {
+  content: "\e079";
+  font-family: "Glyphicons Halflings";
+  -webkit-text-stroke: 1px #ffffff;
+}
+.daterangepicker .glyphicon.glyphicon-chevron-right:before {
+  content: "\e080";
+  font-family: "Glyphicons Halflings";
+  -webkit-text-stroke: 1px #ffffff;
+}
+.daterangepicker.dropdown-menu {
+  max-width: none;
+  z-index: 9;
+  -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+  box-shadow: 0 6px 12px rgba(0,0,0,.175);
+  font-size: 14px;
+  background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+  border: none;
+  margin: 0;
+  border-radius: 0;
+  padding:4px 0;
+  display: none;
+}
+.daterangepicker .calendar{
+  width: 238px;
+}
+.table-condensed>thead>tr>th, .table-condensed>tbody>tr>th, .table-condensed>tfoot>tr>th, .table-condensed>thead>tr>td, .table-condensed>tbody>tr>td, .table-condensed>tfoot>tr>td {
+  padding: 0.5px;
+}
+.daterangepicker .calendar th, .daterangepicker .calendar td{
+  min-width: 30px;
+  width: 30px;
+  height: 30px;
+}
+.daterangepicker .input-mini{
+  border: 1px solid #ccc !important;
+  border-radius: 4px !important;
+}
+.daterangepicker .input-mini.active {
+  border: 1px solid #08c !important;
+  border-radius: 4px !important;
+}
+.daterangepicker .input-mini{
+  font-size: 14px !important;
+  color: #003E7E;
+}
+.daterangepicker .calendar th, .daterangepicker .calendar td{
+  font-weight: normal;
+  font-size: 14px;
+}
+.daterangepicker td.active, .daterangepicker td.active:hover{
+  background-color: #003E7E;
+}
+.daterangepicker.ltr .left .daterangepicker_input {
+  padding-right: 8px;
+}
+.event-landing .innerwrap .leftwrap .list-collapse li .datepick:focus{
+  outline: none !important;
+  box-shadow: none !important;
+}
+@media screen and (max-width: 767px) {
+  .daterangepicker.dropdown-menu {
+    display: none !important;
+  }
+}
