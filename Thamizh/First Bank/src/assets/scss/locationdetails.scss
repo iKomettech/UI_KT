@@ -1,0 +1,374 @@
+@import "util/util";
+$white: #ffffff;
+$primary-color: #012169;
+$secondary-color: #0076bf;
+$body-font-color: #000000;
+$img: "../../images";
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+.locationdetailspanel{
+    h1{
+        color:$primary-color;
+        font-weight: 700;
+        position: relative;
+        max-width: 100%;
+        font-size: 45px;
+        line-height: 50px;
+        margin-bottom: 30px;
+        margin-top: 20px;
+        @include breakpoint(medium) {
+            font-size: 24px;
+            line-height: 28px;
+        }
+        @include breakpoint(large) {
+            font-size: 36px;
+            line-height: 38px;
+            margin-bottom: 15px;
+            margin-top: 80px;
+        }
+        @include breakpoint(llarge) {
+            font-size: 40px;
+            line-height: 40px;
+            margin-bottom: 5px;
+        }
+        @include breakpoint(xlarge) {
+            font-size: 65px;
+            line-height: 75px;
+        }
+    }
+}
+.locationdetailsblock{
+    margin-top: 20px;
+    margin-bottom: 86px;
+    @include breakpoint(medium){
+        margin-top: 50px;
+        margin-bottom: 80px;
+    }
+    @include breakpoint(llarge){
+        margin-top: 110px;
+        margin-bottom: 116px;
+    }
+    h2{
+        font-size: 20px;
+        padding-bottom: 10px;
+        font-weight: 600;
+        position: relative;
+        @include breakpoint(medium){
+            font-size: 30px;
+            line-height: 36px;
+            padding-bottom: 16px;
+        }
+        @include breakpoint(llarge){
+            font-size: 32px;
+            line-height: 38px;
+        }
+        &::after{
+            content: '';
+            position: absolute;
+            background: #84BD00;
+            width: 77px;
+            height: 9px;
+            left: 0;
+            bottom:-4px;
+          }
+          + table{
+            margin-top: 44px;
+            @include breakpoint(small only){
+                margin-top: 22px;
+            }
+          }
+    }
+    .lobbypanel{
+        padding-top: 20px;
+        @include breakpoint(medium){
+            padding-top: 10px;
+        }
+        .flexwrap{
+            padding-top:45px;
+            padding-bottom:45px;
+            display: block;
+            @include breakpoint(medium){
+                display: flex;
+                justify-content: flex-start;
+                flex-wrap: wrap;
+            }
+            @include breakpoint(llarge){
+                justify-content: space-between;
+                flex-wrap: nowrap;
+            }
+            @include breakpoint(small only){
+                padding-top: 24px;
+                padding-bottom: 24px;
+            }
+            .colblock{
+                width: 100%;
+                max-width: 355px;
+                @include breakpoint(medium){
+                    max-width: 48%;
+                }
+                @include breakpoint(large){
+                    max-width: 40%;
+                }
+                @include breakpoint(llarge){
+                    max-width: 27%;
+                }
+                &:first-child{
+                    margin-right: 3%;
+                }
+                &:nth-child(2){
+                    @include breakpoint(small only){
+                        margin-top: 34px;
+                    }
+                }
+                table{
+                    th{
+                        strong, b{
+                            font-weight: 600;
+                        }
+                    }
+                    th, td{
+                        font-size: 18px;
+                        line-height: 32px;
+                        @include breakpoint(small only){
+                            &:first-child{
+                                width: 158px;
+                            }
+                        }
+                        @include breakpoint(llarge){
+                            font-size: 20px;
+                            line-height: 38px;
+                        }
+                    }
+                }
+                &.mapdetails{
+                    width: 100%;
+                    max-width: 555px;
+                    height: 484px;
+                    margin-top: 50px;
+                    @include breakpoint(small only){
+                        height: 324px;
+                    }
+                    @include breakpoint(llarge){
+                        max-width: 38.544%;
+                        margin-top: 0;
+                    }
+                    #map, #googleMap{
+                        width: 100%;
+                        height: 100%;
+                        margin: 0;
+                        padding: 0;
+                    }
+                    .gm-style-iw-chr{
+                        display: none;
+                    }
+                    .gm-style-iw {
+                        left: 0px !important;
+                        background-color: #ffffff;
+                        -webkit-box-shadow: 0px 3px 6px rgba(0,0,0,0.16);
+                        box-shadow: 0px 3px 6px rgba(0,0,0,0.16);
+                        border-radius: 10px !important;
+                        padding: 0;
+                        border:none;
+                        color: #000000; 
+                        width: 347px;
+                        min-width: 347px !important; 
+                        max-width: 347px !important;
+                        max-height: max-content !important;
+                        @include breakpoint(small only){
+                            width: 325px;
+                            min-width: 325px !important;
+                            max-width: 325px !important;
+                        }
+                    }
+                    .gm-style-iw-d{
+                        overflow: hidden !important;
+                        padding: 12px;
+                        max-height: max-content !important;
+                        text-align: center;
+                        @include breakpoint(large) {
+                            padding: 12px 18px 9px 18px;
+                        }
+                        div{
+                            font-family: "Montserrat", sans-serif;
+                           .head{
+                            font-size: 24px;
+                            font-weight: 600;
+                            line-height: 26px;
+                            color: $primary-color;
+                            padding-bottom: 16px;
+                            padding-top: 16px;
+                            @include breakpoint(small only){
+                                font-size: 18px;
+                                line-height: 18px;
+                                padding-top: 12px;
+                            }
+                           }
+                           p{
+                            font-size:18px;
+                            margin-bottom:0px;
+                            line-height:24px;
+                            + p{
+                                margin-top: 0;
+                            }
+                           }
+                           .subhead{
+                            font-size:18px;
+                            line-height:24px;
+                            font-weight: 600;
+                            padding-bottom: 10px;
+                           }
+                           .ctawrap {
+                            padding-bottom: 20px;
+                            @include breakpoint(small only){
+                                padding-top: 5px;
+                                padding-bottom: 0;
+                            }
+                            a{
+                                font-size:18px;
+                            line-height: 22px;
+                            font-weight: 600;
+                            width: 100%;
+                            color: #000000;
+                            transition: all 0.45s;
+                            @include breakpoint(small only){
+                                font-size: 16px;
+                                line-height: 19px;
+                            }
+                            &:hover{
+                                transition: all 0.45s;
+                                padding-left: 10px !important;
+                                text-decoration: none;
+                                color: $primary-color;
+                            }
+                             &:after{
+                                   content: '';
+                                   background: url("./#{$img}/settings/arrow_learnmore.svg");
+                                   background-repeat: no-repeat;
+                                   background-size: contain;
+                                   position: relative;
+                                   padding-left: 22px;
+                                   transition: all 0.45s;
+                                   max-width: 20.54px;
+                                   max-height: 20.63px;
+                                   top:1px;
+                                   left: 11px;
+                                   @include breakpoint(small only){
+                                    left: 6px;
+                                   }
+                                   @include breakpoint(large) {
+                                    max-width: 21.91px;
+                                    max-height: 22px;
+                                  }
+                             }
+                            }
+                        }
+                        }
+                    }
+                    .gm-style .gm-style-iw-tc{
+                        background: white;
+                        clip-path: polygon(16% 10%, 50% 100%, 100% -42%);
+                        height: 16px;
+                        top: -1px;
+                        right:-4px;
+                        left:-3px;
+                        width:36px;
+                        &:after{
+                            background: white;
+                            height: 20px;
+                            top: 0px;
+                            width:36px;
+                        }
+                    }
+                    .gm-ui-hover-effect {
+                        opacity: 1;
+                        top: 12px !important;
+                        right: 5px !important;
+                        font-weight: 600;
+                    }
+                    .gm-ui-hover-effect>span{
+                        background-color: $primary-color;
+                        width: 24px !important;
+                        height: 24px !important;
+                        margin: 2px !important;
+                    }
+                    .gm-fullscreen-control {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    .holidayhrspanel{
+        .holidayhrs{
+            width: 100%;
+            max-width: 672px;
+            position: relative;
+            margin-top: 0%;
+            @include breakpoint(small only){
+                margin-top: 2%;
+            }
+            @include breakpoint(llarge){
+                margin-top: -7.8%;
+            }
+            .ac-title{
+                position: relative;
+                cursor: pointer;
+                h2{
+                    .arrow-down{
+                        width: 18px;
+                        background: url(../../images/settings/list-down-arrow-blue.svg);
+                        background-repeat: no-repeat;
+                        height: 10px;
+                        right: -14px;
+                        position: relative;
+                        top: -4px;
+                        transition: all .3s;
+                        display: inline-block;
+                        transform: rotate(180deg);
+                        @include breakpoint(small only){
+                            top:0px;
+                            right: -6px;
+                        }
+                    }
+                    .arrow-up{
+                        transform: rotate(0deg);
+                    }
+                }
+            }
+        }
+        .holidayhide{
+            margin-top: 45px;
+            @include breakpoint(small only){
+                margin-top: 26px;
+            }
+            @include breakpoint(llarge){
+                margin-bottom: -20px;
+            }
+            table{
+                th{
+                    strong, b{
+                        font-weight: 600;
+                    }
+                }
+                th, td{
+                    font-size: 20px;
+                    line-height: 34px;
+                    padding-bottom: 5px;
+                    @include breakpoint(small only){
+                        font-size: 16px;
+                        line-height: 20px;
+                        padding-bottom: 10px;
+                    }
+                    vertical-align: top;
+                }
+            }
+        }
+    }
+}

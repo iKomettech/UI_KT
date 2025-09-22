@@ -1,0 +1,134 @@
+@import "util/util";
+$white: #ffffff;
+$primary-color: #012169;
+$secondary-color: #A5D4FC;
+$img: "../../images/";
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+.ourvaluepanel + link + .alternative{
+    @include breakpoint(llarge){
+        margin-top: 102px;
+    }
+}
+.ourvaluepanel{
+    margin-top: 50px;
+    @include breakpoint(medium){
+        margin-top: 36px;
+    }
+    @include breakpoint(large){
+        margin-top: 80px;
+    }
+    .grid-container{
+        .innerwrap{
+            h2{
+                text-transform: uppercase;
+                font-size: 51px;
+                line-height: 40px;
+                font-weight: 600;
+                color: #4D96D5;
+                @include breakpoint(medium){
+                    font-size: 98px;
+                    line-height: 95px;
+                }
+                @include breakpoint(large){
+                    font-size: 85px;
+                    line-height: 80px;
+                }
+                @include breakpoint(llarge){
+                    font-size: 120px;
+                    line-height: 95px;
+                }
+            }
+        }
+        .flexwrap{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 14px;
+            flex-wrap: wrap;
+            @include breakpoint(large){
+                margin-top: 80px;
+                flex-wrap: nowrap;
+            }
+            .colblock{
+                &:nth-child(1){
+                    max-width: 378px;
+                    width: 100%;
+                    @include breakpoint(small only){
+                        margin-bottom: 15px;
+                    }
+                    @include breakpoint(medium){
+                        max-width: 48%;
+                    }
+                    @include breakpoint(large){
+                        max-width: 30%;
+                    }
+                    @include breakpoint(llarge){
+                        max-width: 378px;
+                    }
+                }
+                &:nth-child(2){
+                    max-width: 416px;
+                    width: 100%;
+                    @include breakpoint(small only){
+                        margin-bottom: 15px;
+                    }
+                    @include breakpoint(medium){
+                        max-width: 48%;
+                    }
+                    @include breakpoint(large){
+                        max-width: 30%;
+                    }
+                    @include breakpoint(llarge){
+                        max-width: 416px;
+                    }
+                }
+                &:nth-child(3){
+                    max-width: 385px;
+                    width: 100%;
+                    @include breakpoint(medium){
+                        max-width: 100%;
+                    }
+                    @include breakpoint(large){
+                        max-width: 30%;
+                    }
+                    @include breakpoint(llarge){
+                        max-width: 385px;
+                    }
+                }
+                .contentwrap{
+                    h3{
+                        font-size: 24px;
+                        line-height: 48px;
+                        font-weight: 600;
+                        color: $primary-color;
+                        @include breakpoint(large){
+                            font-size: 26px;
+                            line-height: 36px;
+                        }
+                        @include breakpoint(llarge){
+                            font-size: 32px;
+                            line-height: 51px;
+                        }
+                    }
+                    p{
+                        font-size: 18px;
+                        line-height: 22px;
+                        @include breakpoint(large){
+                            line-height: 24px;
+                        }
+                        @include breakpoint(llarge){
+                            font-size: 20px;
+                            line-height: 28px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

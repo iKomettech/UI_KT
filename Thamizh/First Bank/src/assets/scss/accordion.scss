@@ -1,0 +1,480 @@
+@import "util/util";
+$white: #ffffff;
+$primary-color: #012169;
+$lightgray-bg-color:#EDEDED;
+$img: "../../images";
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+.accordion{
+    margin-top:45px;
+    @include breakpoint(medium) {
+        margin-top:70px;
+    }
+    @include breakpoint(llarge) {
+        margin-top:110px;
+    }
+    .team-accordion {
+        position: relative;
+        width: 100%;
+        height: auto;
+        margin-bottom: 30px;
+        &.hov{
+            .toggle{
+                background: $primary-color;
+                color: $white;
+                h3{
+                    color: $white;
+                }
+            }
+            &.mainActive{
+                .toggle{
+                    background: #E7EDF1;
+                    color: $primary-color;
+                    h3{
+                        color: $primary-color;
+                    }
+                    .team-head{
+                        .fa-angle-up{
+                            background: url("#{$img}/settings/team-plus.svg");
+                            position: relative;
+                            background-size: contain;
+                            background-repeat: no-repeat;
+                            transition: all .5s;
+                            width: 24px;
+                            height: 24px;  
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .team-accordion > a {
+        display: block;
+        padding: 16px 18px;     
+        text-decoration: none;
+        font-weight: 400;
+        -webkit-transition: all 0.2s linear;
+        transition: all 0.2s linear;
+        align-items: center;
+        position: relative;
+        font-size: 28px;
+        line-height: 32px;
+        word-break: break-word;
+        display: grid;
+        align-items: center;
+        transition: all .5s;
+        background: #E7EDF1;
+        color: $primary-color;
+        border-radius: 10px;
+        text-transform: uppercase;
+        &.active{
+            background: $primary-color;
+            color: $white;
+            h3{
+                color: $white;
+            }
+        }
+        h3{
+            font-size: 20px;
+            line-height: 24px;
+            font-weight: 600;
+            color: $primary-color;
+            margin-bottom: 0;
+            @include breakpoint(medium){
+                font-size: 24px;
+                line-height: 28px;
+            }
+            @include breakpoint(large){
+                font-size: 28px;
+                line-height: 32px;
+            }
+        } 
+        .team-head{
+            display: flex;
+            align-items: center;
+            i{
+                margin-right: 14px;
+                @include breakpoint(medium){
+                    margin-right: 24px;
+                }
+                @include breakpoint(large){
+                    margin-right: 37px;
+                }
+                &.fa-angle-down {
+                    background: url("#{$img}/settings/team-plus.svg");
+                    position: relative;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    transition: all .5s;
+                    width: 24px;
+                    height: 24px;                    
+                }
+                &.fa-angle-up {
+                    background: url("#{$img}/settings/team-minus.svg");
+                    position: relative;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    transition: all .3s;
+                    width: 24px;
+                    height: 3px;
+                }
+            }
+        }
+    }
+    .team-content, .accordion-content, .leadblock-content{
+        margin-top: 60px;   
+        display: none;
+        @include breakpoint(small only){
+            margin-top: 30px;
+        }
+        .team-nested-content{
+            margin-bottom: 0px;
+            .flexwrap{
+                margin-bottom: 70px;
+            }
+        }
+        .team-accordion {
+            margin-bottom: 30px;
+        }
+    }
+    &.teamaccordionpanel{
+        margin-top: 65px;
+        @include breakpoint(medium) {
+            margin-top: 48px;
+        }
+        @include breakpoint(large) {
+            margin-top: 70px;
+        }
+        + .teamaccordionpanel{
+            margin-top: 30px;
+        }
+        .grid-container{
+            .filterwrap{
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 12px;
+                @include breakpoint(small only){
+                    flex-wrap: wrap;
+                    margin-bottom: 24px;
+                }
+                @include breakpoint(llarge){
+                    margin-bottom: 0;
+                }
+                .titlewrap{
+                    @include breakpoint(small only){
+                        width: 100%;
+                    }
+                    @include breakpoint(medium only){
+                        max-width: 348px;
+                    }
+                    &.fullwrap{
+                        @include breakpoint(medium only){
+                            max-width: 100%;
+                        }
+                    }
+                    h2{
+                        text-align: left;
+                        color:$primary-color;
+                        font-size:20px;
+                        line-height:24px;
+                        font-weight: 600;
+                        text-transform: none;
+                        margin-bottom: 8px;
+                        @media (min-width: 320px) and (max-width: 650px){
+                            margin-bottom: 16px;
+                        }
+                        @include breakpoint(medium){
+                            font-size:26px;
+                            line-height:30px;
+                            margin-bottom: 24px;
+                        }
+                        @include breakpoint(large){
+                            font-size: 30px;
+                            line-height: 40px;
+                        }
+                        @include breakpoint(llarge){
+                            font-size: 42px;
+                            line-height: 48px;
+                        }
+                    }
+                }
+                .regionwrap{
+                    .form-group.selectbox{
+                        margin-bottom: 8px;
+                        @media (min-width: 320px) and (max-width: 650px){
+                            margin-bottom: 16px;
+                        }
+                        @include breakpoint(medium){
+                            margin-bottom: 24px;
+                        } 
+                    }
+                    .form-group .ui-button.ui-selectmenu-button{
+                        @include breakpoint(large){
+                            padding: 12px 12px;
+                            padding-left: 18px;
+                        }
+                    }
+                }
+            }
+            .flexwrap{
+                display: flex;
+                flex-wrap: wrap;
+                @include breakpoint(small only){
+                    justify-content: center;
+                }
+                .colblock{
+                    width: 100%;
+                    margin-right: 0%;
+                    border-radius: 12px;
+                    background: #E9F3FB;
+                    position: relative;
+                    max-width: 23.82%;
+                    margin-right: 1.56%;
+                    @media (min-width: 320px) and (max-width: 650px){
+                        max-width: 340px;
+                        margin-right: 0%;
+                        margin-bottom: 30px;
+                        &:last-child{
+                            margin-bottom: 0;
+                        }
+                    }
+                    @include breakpoint(medium only){
+                        max-width: 31.75%;
+                        margin-right: 1.56%;
+                        &:nth-child(n+4){
+                            margin-top: 10px;
+                        }
+                    }
+                    @include breakpoint(large){
+                        &:nth-child(4n+4), &:last-child{
+                            margin-right: 0;
+                        }
+                        &:nth-child(n+5){
+                            margin-top: 20px;
+                        }
+                    }
+                    @media (min-width: 651px) and (max-width: 767px){
+                        max-width: 46.32%;
+                        margin-right: 3%;
+                        &:nth-child(n+3){
+                            margin-top: 20px;
+                        }
+                        &:nth-child(2n+2), &:last-child{
+                            margin-right: 0;
+                        }
+                    }
+                    &:hover{
+                        .imgwrap{
+                            img{
+                                transform: scale(1.02);
+                            }
+                        }
+                        .biocta{
+                            .applylink{
+                                padding-left: 10px !important;
+                                text-decoration: none;
+                                transition: all 0.45s;
+                            }
+                        }
+                    }
+                    .readbiolink{
+                        display: block;
+                        padding: 12px;
+                        @include breakpoint(llarge){
+                            padding: 20px;
+                            padding-top: 32px;
+                        }
+                        &:hover{
+                            text-decoration: none;
+                            color: #2D2D2D;
+                        }
+                    }
+                    .imgwrap{
+                        width: 100%;
+                        max-width: 279px;
+                        margin-left: auto;
+                        margin-right: auto;
+                        border-radius: 8px;
+                        overflow: hidden;
+                        @media (min-width: 320px) and (max-width: 650px){
+                            max-width: 367px;
+                        }
+                        img{
+                            object-fit: cover;
+                            width: 100%;
+                            height: 100%;
+                            transition: all 0.75s;
+                        }
+                    }
+                    .contentwrap{
+                        text-align: center;
+                        margin-top: 16px;
+                        padding-bottom: 34px;
+                        h3{
+                            font-size: 24px;
+                            line-height: 32px;
+                            font-weight: 600;
+                            color: $primary-color;
+                            margin-bottom: 12px;
+                            @include breakpoint(medium){
+                                font-size: 18px;
+                                line-height: 24px;
+                                margin-bottom: 10px;
+                            }
+                            @include breakpoint(large){
+                                font-size: 20px;
+                                line-height: 24px;
+                                margin-bottom: 12px;
+                            }
+                            @include breakpoint(llarge){
+                                font-size: 22px;
+                                line-height: 28px;
+                            }
+                            @include breakpoint(xlarge){
+                                font-size: 28px;
+                                line-height: 32px;
+                            }
+                        }
+                        p{
+                            font-size: 16px;
+                            line-height: 20px;
+                            color: #2D2D2D;
+                            font-weight: 500;
+                            @include breakpoint(llarge){
+                                font-size: 18px;
+                                line-height: 24px;
+                            }
+                            @include breakpoint(xlarge){
+                                font-size: 20px;
+                                line-height: 24px;
+                            }
+                        }
+                        .biocta{
+                            bottom: 20px;
+                            position: absolute;
+                            width: 100%;
+                            left: 0;
+                            .applylink{
+                                transition: all 0.45s;
+                                font-size:16px;
+                                line-height:20px;
+                                font-weight: 600;  
+                                color: #2D2D2D;
+                                @include breakpoint(llarge){
+                                    font-size:18px;
+                                    line-height:22px;
+                                }
+                                &:after {
+                                    content: "";
+                                    width: 100%;
+                                    color:#000000;
+                                    height: 100%;
+                                    background: url(/assets/images/settings/arrow_learnmore.svg) no-repeat center;
+                                    position: absolute;
+                                    padding-left: 40px;
+                                    background-size: contain;
+                                    max-width: 20.54px;
+                                    max-height: 20.63px;
+                                    transition: all 0.45s; 
+                                    @include breakpoint(medium){
+                                        max-width: 21.91px;
+                                        max-height: 22px;
+                                    } 
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &.dividerpanel{
+            margin-top: 65px;
+            @include breakpoint(medium) {
+                margin-top: 48px;
+            }
+            @include breakpoint(large) {
+                margin-top: 70px;
+            }
+            .grid-container{
+                padding-top: 65px;
+                @include breakpoint(medium) {
+                    padding-top: 48px;
+                }
+                @include breakpoint(large) {
+                    padding-top: 70px;
+                }
+                &::before{
+                    content: '';
+                    background: $primary-color;
+                    width: 100%;
+                    display: block;
+                    height: 5px;
+                    top: -65px;
+                    position: relative;
+                    @include breakpoint(medium) {
+                        top: -48px;
+                    }
+                    @include breakpoint(large) {
+                        top: -70px;
+                    }
+                }
+            }
+        }
+    }
+}
+// .accordion-content {
+//     .team-accordion .team-head{
+//         margin-left: 20px;
+//         @include breakpoint(large) {
+//             margin-left: 50px;
+//         }
+//     }
+// }
+.regionwrap{
+    .selectbox{
+        width: 370px;
+        @media (max-width: 430px) {
+            width: 355px;
+        }
+        @include breakpoint(large) {
+            width: 455px;
+        }
+        .ui-button.ui-selectmenu-button{
+            font-size: 18px;
+            line-height: 22px;
+        }
+    }   
+}
+@media (max-width: 1023px) {
+    #region-filter-button {
+        padding: 13px 16px;
+        font-size: 14px;
+        line-height: 18px;
+    }
+}
+#region-filter-menu, #region-filter-1-menu{
+    height: 205px;
+}
+@media (max-width: 1023px){
+    .ui-menu .ui-menu-item-wrapper{
+        padding: 5px 10px;
+        font-size: 14px;
+        line-height: 18px;
+    }
+}
+@media (max-width: 430px) {
+    .ui-selectmenu-button-closed::after, .ui-selectmenu-button-open::after{
+        right: 15px;
+    }
+}
+
+.accordion.faqpanel .team-content, .accordion.faqpanel .accordion-content, .accordion.faqpanel .leadblock-content{
+    margin-top: 20px;
+    padding: 20px;
+}

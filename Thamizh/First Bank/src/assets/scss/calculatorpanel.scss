@@ -1,0 +1,116 @@
+@import "util/util";
+$white: #ffffff;
+$primary-color: #012169;
+$secondary-color: #19A7C1;
+$img: "../../images/";
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+.calculatorpanel{
+    margin-top: 50px;
+    @include breakpoint(medium) {
+        margin-top: 78px;
+    }
+    .grid-container{
+        .flexwrap{
+            display: flex;
+            flex-wrap: wrap;
+            .colblock{
+                width: 100%;
+                max-width: 100%;
+                margin-right: 0;
+                position: relative;
+                margin-bottom: 40px;
+                @include breakpoint(medium only) {
+                    max-width: 47.66%;
+                    margin-right: 4%;
+                    margin-bottom: 0;
+                    &:nth-child(2n+2), &:last-child{
+                        margin-right: 0;
+                    }
+                    &:nth-child(n+3){
+                        margin-top: 86px;
+                        .wraptitle{
+                            height: auto;
+                        }
+                    }
+                }
+                @include breakpoint(large) {
+                    max-width: 30.66%;
+                    margin-right: 4%;
+                    margin-bottom: 0;
+                    &:nth-child(3n+3), &:last-child{
+                        margin-right: 0;
+                    }
+                    &:nth-child(n+4){
+                        margin-top: 86px;
+                        .wraptitle{
+                            height: auto;
+                        }
+                    }
+                }
+                .wraptitle{
+                    margin-bottom: 20px;
+                    @include breakpoint(medium) {
+                        margin-bottom: 45px;
+                        height: 76px;
+                    }
+                    @include breakpoint(llarge) {
+                        margin-bottom: 55px;
+                        height: 116px;
+                    }
+                    h2{
+                        font-size: 30px;
+                        line-height: 34px;
+                        font-weight: 700;
+                        color: $primary-color;
+                        position: relative;
+                        padding-bottom: 14px;
+                        @include breakpoint(llarge) {
+                            font-size: 40px;
+                            line-height: 48px;
+                        }
+                        &::after{
+                            content: '';
+                            position: absolute;
+                            background: #84BD00;
+                            width: 86px;
+                            height: 9px;
+                            left: 0;
+                            bottom:-4px;
+                            @include breakpoint(small only) {
+                              height: 5px;
+                              bottom: 2px;
+                            }
+                        }
+                    }
+                }
+                ul{
+                    li{
+                        font-size: 18px;
+                        line-height: 24px;
+                        font-weight: 600;
+                        padding-left: 0;
+                        margin-bottom: 10px;
+                        @include breakpoint(llarge) {
+                            font-size: 24px;
+                            line-height: 38px;
+                        }
+                        &:last-child{
+                            margin-bottom: 0;
+                        }
+                        &::before{
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

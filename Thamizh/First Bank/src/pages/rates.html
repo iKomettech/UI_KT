@@ -1,0 +1,414 @@
+
+<link rel="stylesheet" href="{{root}}assets/css/subbanner/subbanner.css" media="all">
+<div class="subbannerpanel module">
+    <div class="bannerwrap">
+        <div class="contentwrap">
+            <div class="grid-container">
+                <div class="content">
+                    <h1>Rates</h1>
+                    <p>Find the latest rates for your <br> financial solutions</p>
+                    <div class="ctablock">
+                        <a href="#" class=" ctabtn primarybtn" aria-label="Get Started">Get Started</a>
+                        <a href="#" class=" ctabtn secondarybtn" aria-label="Find a Branch">Find a Branch</a>
+                    </div> 
+                </div>
+            </div>
+        </div>
+        <div class="imgWrap">
+            <div class="filter-img">
+                <img class="img" src="{{root}}assets/images/rate.jpg" width="960" height="500" alt="Business Banking">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="breadcrumbWrapBottom white">
+    <div class="grid-container">
+        <ul class="breadcrumbs">
+            <li class="breadcrumb-item ">
+                <a href="/" aria-label="Learn More - Home">Home</a>
+            </li>
+            <li class="breadcrumb-item ">Rates</li>
+        </ul>
+    </div>
+</div>
+<!--Desktop Version-->
+<div class="ratecardpanel module">
+    <div class="grid-container">
+        <div class="flexwrap">
+            <div class="cardblock">
+                <div class="img-block">
+                    <div class="img-pos">
+                        <img class="image-block imagetoSVG" src="assets/images/rate-icon.svg" alt="Personal Checking">
+                    </div>
+                </div>
+                <div class="box-shadow">
+                    <div class="contentsection">
+                        <div class="content">
+                            <h2>Personal Checking <br> & Savings</h2>
+                            <p>Our personal checking and savings accounts offer great rates and benefits. </p>
+                            <a href="javascript:void(0)" class="ctabtn outlinebtn activebtn" aria-label="Personal Checking Rates" data-in="#Personal-Table">Check Rates</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cardblock">
+                <div class="img-block">
+                    <div class="img-pos">
+                        <img class="image-block imagetoSVG" src="assets/images/rate-icon.svg" alt="Business Checking">
+                    </div>
+                </div>
+                <div class="box-shadow">
+                    <div class="contentsection">
+                        <div class="content">
+                            <h2>Business Checking <br> & Savings</h2>
+                            <p>Find the business checking savings account rates you are looking for below.</p>
+                            <a href="#" class="ctabtn outlinebtn" aria-label="Business Checking Rates" data-in="#Business-Table">Check Rates</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cardblock">
+                <div class="img-block">
+                    <div class="img-pos">
+                        <img class="image-block imagetoSVG" src="assets/images/rate-icon.svg" alt="Certificate of Deposits">
+                    </div>
+                </div>
+                <div class="box-shadow">
+                    <div class="contentsection">
+                        <div class="content">
+                            <h2>Certificate of <br> Deposits</h2>
+                            <p>Explore higher returns with CD rates and earn more. </p>
+                            <a href="#" class="ctabtn outlinebtn" aria-label="Certificate of Deposits Rates">Check Rates</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cardblock">
+                <div class="img-block">
+                    <div class="img-pos">
+                        <img class="image-block imagetoSVG" src="assets/images/rate-icon.svg" alt="Money Market">
+                    </div>
+                </div>
+                <div class="box-shadow">
+                    <div class="contentsection">
+                        <div class="content">
+                            <h2>Money Market <br> Accounts</h2>
+                            <p>Look at the home equity and loan rates to see what works for you.</p>
+                            <a href="#" class="ctabtn outlinebtn" aria-label="Money Market Rates">Check Rates</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div>
+</div>
+<!--Mobile Version-->
+<div class="ratefilterpanel">
+    <div class="grid-container">
+        <div class="filtersection">
+            <h2>Check Rates</h2>
+            <div class="form-group selectbox">
+                <select class="selectMenu" id="rate-filter" name="rate-filter" title="filter-rates">
+                    <option value="Personal Checking &amp; Savings">Personal Checking & Savings</option>
+                    <option value="Personal Checking &amp; Savings">Business Checking & Savings</option>
+                    <option value="Certificate of Deposits">Certificate of Deposits</option>
+                    <option value="Money Market Accounts">Money Market Accounts</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
+<link rel="stylesheet" href="{{root}}assets/css/ratetable/ratetable.css" media="all">
+    <script type="text/javascript" defer>
+        $(document).ready(function () {
+            $('.ratecardpanel .ctabtn').click(function (e) {
+                e.preventDefault();
+                $(".ratesTable").removeClass("activeTable");
+                $(".ratecardpanel .ctabtn").removeClass("activebtn");
+                $(this).addClass("activebtn");
+                var getID = $(this).attr('data-in');
+                //console.log(getID);
+                $(getID).addClass("activeTable");
+            });
+            if ($(".ratetableSlider .swiper .swiper-slide").length > 1) {
+                var swiperCarousel = new Swiper('.rateCheckingSlider', {
+                    slidesPerView: "1",
+                    spaceBetween: 10,
+                    navigation: {
+                        nextEl: '.rateCheckingSlider .swiper-button-next',
+                        prevEl: '.rateCheckingSlider .swiper-button-prev',
+                    },
+                });
+            }
+        });
+    </script>
+    <div class="ratetablepanel">
+        <div class="grid-container">
+            <!--Desktop Version-->
+            <!--Table One-->
+            <div class="ratesTable module adjtableSize activeTable" id="Personal-Table">
+                <table border="0">
+                    <thead>
+                        <tr> 
+                           <th>Personal <br> Checking <br> Accounts</th>
+                           <th>Interest <br> Rate</th>
+                           <th >Annual <br> Percentage <br> Yield</th>
+                           <th>Minimum <br> Opening <br> Balance</th>
+                           <th >Daily Minimum <br> Balance to <br> Earn Interest</th>
+                           <th>Service <br> Fees</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Basic <br> Checking</td>
+                            <td>N/A</td>
+                            <td >N/A</td>
+                            <td>$50</td>
+                            <td >N/A</td>
+                            <td>N/A</td>
+                        </tr>
+                        <tr>
+                            <td>50 First <br> Checking</td>
+                            <td>0.23%</td>
+                            <td >0.23%</td>
+                            <td>$50</td>
+                            <td >$1</td>
+                            <td>N/A</td>
+                        </tr>
+                        <tr>
+                            <td>e-Checking</td>
+                            <td>0.25%</td>
+                            <td >0.25%</td>
+                            <td>$500</td>
+                            <td >$500</td>
+                            <td>$15 <br> <small>if below $500</small></td>
+                        </tr>
+                        <tr>
+                            <td>Premier <br> Checking</td>
+                            <td>0.23%</td>
+                            <td >0.23%</td>
+                            <td>$500</td>
+                            <td >$500</td>
+                            <td>$15 <br> <small>if below $500</small></td>
+                        </tr>
+                        <tr>
+                            <td>Relationship <br> Checking</td>
+                            <td>N/A</td>
+                            <td >N/A</td>
+                            <td>$1000</td>
+                            <td >N/A</td>
+                            <td>$25 <br> <small>if below $1000</small></td>
+                        </tr>
+                        <tr>
+                            <td>Community <br> Checking</td>
+                            <td>N/A</td>
+                            <td >N/A</td>
+                            <td>$25</td>
+                            <td >N/A</td>
+                            <td><small> None with 
+                                monthly direct
+                                deposit / $5 per 
+                                month with
+                                no direct deposit</small></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+             <!--Table Two-->
+            <div class="ratesTable module adjtableSize" id="Business-Table">
+                <table border="0">
+                    <thead>
+                        <tr> 
+                           <th>Business <br> Checking <br> Accounts</th>
+                           <th>Business <br> Interest <br> Rate</th>
+                           <th >Annual <br> Percentage <br> Yield</th>
+                           <th>Service <br> Fees</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Basic <br> Checking</td>
+                            <td>N/A</td>
+                            <td >N/A</td>
+                            <td>N/A</td>
+                        </tr>
+                        <tr>
+                            <td>50 First <br> Checking</td>
+                            <td>0.23%</td>
+                            <td>$50</td>
+                            <td >$1</td>
+                        </tr>
+                        <tr>
+                            <td>e-Checking</td>
+                            <td>0.25%</td>
+                            <td>$500</td>
+                            <td>$15 <br> <small>if below $500</small></td>
+                        </tr>
+                        <tr>
+                            <td>Premier <br> Checking</td>
+                            <td>0.23%</td>
+                            <td >$500</td>
+                            <td>$15 <br> <small>if below $500</small></td>
+                        </tr>
+                        <tr>
+                            <td>Relationship <br> Checking</td>
+                            <td>N/A</td>
+                            <td >N/A</td>
+                            <td>$25 <br> <small>if below $1000</small></td>
+                        </tr>
+                        <tr>
+                            <td>Community <br> Checking</td>
+                            <td>N/A</td>
+                            <td>$25</td>
+                            <td >N/A</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!--Mobile Version-->
+            <div class="ratetableSlider">
+                <div class="swiper rateCheckingSlider activeSlider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="swiper-card">
+                                <div class="titleblock">
+                                    <p>Basic Basic Checking Basic Checking Basic Checking Basic Checking Checking</p>
+                                </div>
+                                <div class="navblock">
+                                    <p>Swipe to Explore Products</p>
+                                    <div class="swiper-button-next"></div>
+                                    <div class="swiper-button-prev"></div>
+                                </div>
+                                <div class="contentblock">
+                                    <div class="content">
+                                        <p class="tablehead">Interest Rate:</p>
+                                        <p>N/A</p>
+                                    </div>
+                                    <div class="content">
+                                        <p class="tablehead">Annual Percentage Yield:</p>
+                                        <p>N/A</p>
+                                    </div>
+                                    <div class="content">
+                                        <p class="tablehead">Minimum Opening Balance:</p>
+                                        <p>$50</p>
+                                    </div>
+                                    <div class="content">
+                                        <p class="tablehead">Daily Minimum Balance to Earn Interest:</p>
+                                        <p>N/A</p>
+                                    </div>
+                                    <div class="content">
+                                        <p class="tablehead">Service Fees:</p>
+                                        <p>N/A</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="swiper-card">
+                                <div class="titleblock">
+                                    <p>50 First Checking</p>
+                                </div>
+                                <div class="navblock">
+                                    <p>Swipe to Explore Products</p>
+                                    <div class="swiper-button-next"></div>
+                                    <div class="swiper-button-prev"></div>
+                                </div>
+                                <div class="contentblock">
+                                    <div class="content">
+                                        <p class="tablehead">Interest Rate:</p>
+                                        <p>0.23%</p>
+                                    </div>
+                                    <div class="content">
+                                        <p class="tablehead">Annual Percentage Yield:</p>
+                                        <p>0.23%</p>
+                                    </div>
+                                    <div class="content">
+                                        <p class="tablehead">Minimum Opening Balance:</p>
+                                        <p>$50</p>
+                                    </div>
+                                    <div class="content">
+                                        <p class="tablehead">Daily Minimum Balance to Earn Interest:</p>
+                                        <p>$1</p>
+                                    </div>
+                                    <div class="content">
+                                        <p class="tablehead">Service Fees:</p>
+                                        <p>N/A</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="swiper-card">
+                                <div class="titleblock">
+                                    <p>e-Checking</p>
+                                </div>
+                                <div class="navblock">
+                                    <p>Swipe to Explore Products</p>
+                                    <div class="swiper-button-next"></div>
+                                    <div class="swiper-button-prev"></div>
+                                </div>
+                                <div class="contentblock">
+                                    <div class="content">
+                                        <p class="tablehead">Interest Rate:</p>
+                                        <p>0.25%</p>
+                                    </div>
+                                    <div class="content">
+                                        <p class="tablehead">Annual Percentage Yield:</p>
+                                        <p>0.25%</p>
+                                    </div>
+                                    <div class="content">
+                                        <p class="tablehead">Minimum Opening Balance:</p>
+                                        <p>$500</p>
+                                    </div>
+                                    <div class="content">
+                                        <p class="tablehead">Daily Minimum Balance to Earn Interest:</p>
+                                        <p>$500</p>
+                                    </div>
+                                    <div class="content">
+                                        <p class="tablehead">Service Fees:</p>
+                                        <p>$15 <br> <small>if below $500</small></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="swiper-card">
+                                <div class="titleblock">
+                                    <p>Community Checking</p>
+                                </div>
+                                <div class="navblock">
+                                    <p>Swipe to Explore Products</p>
+                                    <div class="swiper-button-next"></div>
+                                    <div class="swiper-button-prev"></div>
+                                </div>
+                                <div class="contentblock">
+                                    <div class="content">
+                                        <p class="tablehead">Interest Rate:</p>
+                                        <p>N/A</p>
+                                    </div>
+                                    <div class="content">
+                                        <p class="tablehead">Annual Percentage Yield:</p>
+                                        <p>N/A</p>
+                                    </div>
+                                    <div class="content">
+                                        <p class="tablehead">Minimum Opening Balance:</p>
+                                        <p>$25</p>
+                                    </div>
+                                    <div class="content">
+                                        <p class="tablehead">Daily Minimum Balance to Earn Interest:</p>
+                                        <p>N/A</p>
+                                    </div>
+                                    <div class="content">
+                                        <p class="tablehead">Service Fees:</p>
+                                        <p>None with monthly direct deposit / $5 per month with no direct deposit</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>     
+                </div>    
+            </div>
+        </div>
+    </div>
+    

@@ -1,0 +1,293 @@
+@import "util/util";
+$white: #ffffff;
+$primary-color: #012169;
+$lightgray-bg-color:#EDEDED;
+$img: "../../images/";
+$breakpoints: (
+  small: 0,
+  medium: 768px,
+  large: 1024px,
+  llarge: 1280px,
+  xlarge: 1360px,
+  xxlarge: 1440px,
+);
+.breadcrumbWrapBottom {
+    @include breakpoint(small only) {
+      display: none;
+    }
+    padding-top: 45px;
+    padding-bottom: 15px;
+    position: relative;
+    z-index: 9;
+    .breadcrumbs{
+        margin-bottom: 0;
+    }
+    li.breadcrumb-item {
+      font-size: 16px;
+      text-transform: inherit;
+      color:$primary-color;
+      font-weight: 400;
+      line-height: 20px;
+      margin-bottom: 0;
+      a {
+        font-size: 16px;
+        color: $primary-color;
+        line-height: 20px;
+      }
+      &:not(:last-child)::after {
+        content: "";
+        margin: 0 6px;
+      }
+    }
+  }
+.teambiopanel{
+    margin-top: 8px;
+    @include breakpoint(large){
+        margin-top: 58px;
+    }
+    .viewcta{
+        padding-bottom: 25px;
+        @media (min-width: 320px) and (max-width: 1023px){
+            padding-top: 20px;
+        }
+        .viewlink{
+            padding: 0;
+            color: #000000;
+            font-size: 30px;
+            line-height: 37px;
+            font-weight: 700;
+            text-decoration: none;
+            @media (min-width: 320px) and (max-width: 1279px){
+                font-size: 24px;
+            }
+            &:hover{
+                padding-left: 10px !important;
+                transition: all 0.55s;
+            }
+            &:before{
+                content: '';
+                background-size: contain;
+                display: inline-block;
+                height: 38px;
+                vertical-align: middle;
+                width: 38px;
+                position: relative;
+                right: -3px;
+                top: -1px;
+                color: #fff;
+                background: url("#{$img}/settings/arrow_learnmore.svg") no-repeat;
+                background-size: contain;
+                transform: rotate(180deg);
+                margin-right: 8px;
+                @media (min-width: 320px) and (max-width: 1279px){
+                    height: 24px;
+                    width: 24px;
+                    margin-right: 5px;
+                    top: -2px;
+                }
+            }
+        }
+    }
+    .panelwrap {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        @include breakpoint(large){
+            width: 100%;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+        }
+    }
+    .imgwrap {
+        width: 100%;
+        margin-left: 0px;
+        background:#E9F3FB;
+        padding: 28px;
+        border-radius: 12px;
+        overflow: hidden;
+        max-width: 355px;
+        max-height: 355px;
+        margin-top: 22px;
+        @include breakpoint(medium){
+            display: flex;
+            width: 100%;
+            margin-right: 24px;
+            max-width: 365px;
+            max-height: 365px;
+        }
+        @include breakpoint(large){
+            margin-right: 60px;
+            margin-top: 0;
+        }
+        @include breakpoint(llarge){
+            margin-right: 60px;
+            padding: 45px;
+            max-width: 565px;
+            max-height: 565px;
+        }
+        @include breakpoint(xlarge){
+            margin-right: 100px;
+        }
+        .image-block{
+            img{
+                border-radius: 8px;
+            }
+        }
+    }
+
+    .cntwrap {
+        position: relative;
+        width: 100%;
+        margin-top: 0px;
+        text-align: center;
+        display: grid;
+         @include breakpoint(large){
+            width: 73.5%;
+            margin-top: 0px;
+            text-align: left;
+         }
+         .biocontent{
+            display: none;
+            @include breakpoint(large){
+                display: block;
+            }
+         }
+         &.mobilewrap{
+            display: block;
+            @media (max-width: 420px){
+                text-align: left;
+            }
+            @include breakpoint(large){
+                display: none;
+            }
+            .biocontent{
+                display: block;
+             }
+        }
+        .columncontent{
+            h1{
+                font-size:45px;
+                line-height:50px;
+                font-weight: 700;
+                color:$primary-color;
+                margin-bottom: 10px;
+                @include breakpoint(large){
+                    font-size:55px;
+                    line-height:75px;
+                }
+                span{
+                    font-size:24px;
+                    line-height:28px;
+                    font-weight: 700;
+                    display: block;
+                    color: #2d2d2d;
+                    margin-top: 16px;
+                    @include breakpoint(large){
+                        margin-top: 0px;
+                    }
+                }
+            }
+              p{
+                font-size:20px;
+                line-height:24px;
+                font-weight: 500;
+                @include breakpoint(llarge){
+                    font-size:24px;
+                    line-height:28px;
+                }
+                + p{
+                    margin-top: 10px;
+                }
+              }
+              a{
+                text-decoration: none;
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+              .social-share{
+                display: flex;
+                margin-top: 8px;
+                justify-content: center;
+                @include breakpoint(large){
+                    justify-content: flex-start;
+                    margin-top: 25px;
+                }
+                @media (max-width: 420px){
+                    justify-content: flex-start;
+                }
+                ul{
+                    list-style: none;
+                    li{
+                        padding-left: 0;
+                        &::before{
+                            display: none;
+                        }
+                        display: inline-block;
+                        margin-bottom: 0;
+                        svg{
+                            width: 36px;
+                            @include breakpoint(llarge) {
+                                width: 39px;
+                            }
+                            &:hover{
+                                path{
+                                    fill: #0076bf;
+                                }
+                            }
+                        }
+                    }
+                }   
+            }
+        }
+        .columncontactcontent{
+            padding: 0;
+            display: block;
+            position: relative;
+            padding-top: 12px;
+            text-align: left;
+            .contentwrap{
+                padding-top: 0;
+                max-width: 694px;
+                width: 100%;
+                @include breakpoint(medium only){
+                    max-width: 700px;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+                p{
+                    font-size:16px;
+                    line-height:24px;
+                    margin-bottom:0px;
+                    font-weight: 400;
+                    @include breakpoint(large){
+                        font-size:18px;
+                        line-height:24px;
+                    }
+                    @include breakpoint(llarge){
+                        font-size:20px;
+                        line-height:28px;
+                    }
+                }
+            }
+        } 
+       
+    }
+    .contentwrap{
+        padding-top:50px;
+        @include breakpoint(xlarge){
+            max-width:933px;
+            padding-top:105px;
+        }
+        p{
+            font-size:16px;
+            line-height:24px;
+            margin-bottom:0px;
+            @include breakpoint(large){
+                font-size:18px;
+                line-height:30px;
+            }
+        }
+    }
+}
+

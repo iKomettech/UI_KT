@@ -1,0 +1,61 @@
+
+<link rel="stylesheet" href="{{root}}assets/css/subbanner/subbanner.css" media="all">
+<div class="calculatorheadingpanel">
+    <div class="grid-container">
+        <div class="caltitle">
+            <h1>Home Budget</h1>
+        </div>
+    </div>
+</div>    
+<div class="breadcrumbWrapBottom white">
+    <div class="grid-container">
+        <ul class="breadcrumbs">
+            <li class="breadcrumb-item ">
+                <a href="/" aria-label="Learn More - Home">Home</a>
+            </li>
+            <li class="breadcrumb-item ">
+                <a href="/" aria-label="Learn More - Home">Calculators</a>
+            </li>
+            <li class="breadcrumb-item ">Home Budget</li>
+        </ul>
+    </div>
+</div>
+<link rel="stylesheet" href="assets/css/generalcontent/generalcontent.css" media="all">
+<div class="general module">
+        <div class="grid-container">
+            <div class="contentwrap">
+                <p> 
+                    Managing your monthly budget can be difficult and frustrating. One of the most important aspects of controlling your budget is to determine where your money is going. This calculator helps you do just that. By entering your income and monthly expenditures, you can see how much you have left to save and where your money is being spent. In addition, you can click the "View Report" to see your entries results in detail, which can help identify areas for improvement.
+                </p>
+            </div>
+    </div>
+</div>
+<div class="calculatordetailpanel">
+    <div class="grid-container">
+        <div class="iframeContainer">
+            <iframe src="../KJECalc/Calc/AutoRebate.html" frameborder="0" scrolling="no"></iframe>
+        </div>
+        <script>
+            function resizeIframe() {
+                const iframes = document.querySelectorAll('.iframeContainer iframe');
+                if (iframes) {
+                    iframes.forEach(iframe => {
+                        iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+                    });
+                }
+            }
+            document.querySelectorAll('.iframeContainer iframe').forEach(iframe => {
+                iframe.addEventListener('load', resizeIframe);
+            });
+        </script>
+        
+    </div>
+</div>
+<div class="disclaimerpanel">
+    <div class="grid-container">
+        <div class="notepanel">
+            <h2>Other Important Information</h2>
+            <p>Information and interactive calculators are made available to you only as self-help tools for your independent use and are not intended to provide investment or tax advice. We cannot and do not guarantee their applicability or accuracy in regards to your individual circumstances. All examples are hypothetical and are for illustrative purposes. We encourage you to seek personalized advice from qualified professionals regarding all personal finance issues.</p>
+        </div>    
+    </div>
+</div>        

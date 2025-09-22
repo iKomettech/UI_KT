@@ -1,0 +1,342 @@
+@import "util/util";
+$white: #ffffff;
+$primary-color: #012169;
+$secondary-color: #A5D4FC;
+$img: "../../images/";
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+.lenderspanel + link + .general, .lenderspanel + .general{
+    margin-top: 20px;
+    @include breakpoint(large) {
+        margin-top: 30px;
+    }
+}
+.lenderspanel + link + .general .contentwrap .ctablock, .lenderspanel + .general .contentwrap .ctablock{
+    @include breakpoint(large) {
+        text-align: left;
+    }
+}
+.lenderspanel{
+    margin-top: 102px;
+    @include breakpoint(small only) {	
+        margin-top:55px;	
+    }
+    h2{
+        text-align: center;
+        color:$primary-color;
+        font-size:30px;
+        line-height:35px;
+        font-weight: 600;
+        text-transform: uppercase;
+        @include breakpoint(small only){
+        margin-bottom:26px;
+        }
+        @include breakpoint(medium){
+            font-size:30px;
+            line-height:40px;
+            margin-bottom: 40px;
+        }
+        @include breakpoint(large){
+            text-align: left;
+        }
+        @include breakpoint(llarge){
+            font-size:48px;
+            margin-bottom:58px;
+            line-height:51px;
+        }
+    }
+    .innerWrap{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        margin: 0 auto;
+        justify-content: center;
+        @include breakpoint(large){
+            justify-content: flex-start;
+        }
+        .colblock{
+            width: 100%;
+            max-width: 588px;
+            margin-right: 0;
+            display: flex;
+            &.trusryblock{
+                @media (max-width: 650px){
+                    max-width: 100%;
+                }
+                .contentWrap{
+                    max-width: 380px;
+                    @include breakpoint(large only){
+                        max-width: 275px;
+                    }
+                    p{
+                        span.small-letter{
+                            font-weight: 400;
+                        }
+                        + p{
+                            margin-top: 0;
+                        }
+                    }
+                    .readbiolink{
+                        .applylink{
+                            display: inline-block;
+                            @media (max-width: 650px){
+                                font-size: 16px;
+                            }
+                        }
+                    }
+                }
+            }
+            @media (max-width: 650px){
+                display: block;
+                max-width: 100%;
+            }
+            &:last-child, &:nth-child(2n+2){
+                margin-right: 0;
+            }
+            @include breakpoint(medium only){
+                margin-bottom: 45px;
+            }
+            @include breakpoint(small only){
+                max-width: 75%;
+                margin-right: 0;
+                margin-bottom: 45px;
+                &:last-child{
+                    margin-bottom: 0;
+                }
+            }
+            @include breakpoint(large){
+                max-width: 48.54%;
+                margin-right: 2.4%;
+                &:nth-child(n+3){
+                    margin-top: 60px;
+                }
+            }
+            @include breakpoint(llarge){
+                max-width: 45.54%;
+                margin-right: 4.4%;
+            }
+            .imgWrap{
+                max-width: 289px;
+                max-height: 289px;
+                width: 100%;
+                border-radius: 50%;
+                @media (max-width: 650px){
+                    max-width: 166px;
+                    max-height: 166px;
+                }
+                @include breakpoint(large only){
+                    max-width: 209px;
+                    max-height: 209px;
+                }
+                @include breakpoint(small only){
+                    margin: 0 auto;
+                }
+                img{
+                    width: 100%;
+                    object-fit: cover;
+                    overflow: hidden;
+                    border-radius: 50%;
+                }
+            }
+            .contentWrap{
+                max-width: 289px;
+                width: 100%;
+                margin-left: 40px;
+                @media (max-width: 650px){
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin-top: 20px;
+                    text-align: center;
+                    max-width: 260px;
+                }
+                @include breakpoint(large){
+                    margin-left: 20px;
+                }
+                @include breakpoint(llarge){
+                    margin-left: 40px;
+                }
+                .content{
+                    margin-top: 10px;
+                    h3{
+                        font-size: 26px;
+                        line-height: 24px;
+                        font-weight: 600;
+                        margin-bottom: 10px;
+                        @include breakpoint(llarge){
+                            font-size: 28px;
+                            line-height: 38px;
+                        }
+                        @include breakpoint(xlarge){
+                            font-size: 28px;
+                            line-height: 32px;
+                        }
+                    }
+                    p{
+                        margin-bottom: 15px;
+                    }
+                    p, a{
+                        font-size: 18px;
+                        line-height: 22px;
+                        font-weight: 600;
+                        @include breakpoint(large){
+                            font-size: 20px;
+                            line-height: 24px;
+                        }
+                    }
+                    a{
+                        text-decoration: none;
+                        &:hover{
+                            text-decoration: underline;
+                        }
+                    }
+                    .readbiolink{
+                        margin-top: 20px;
+                        .applylink{
+                            transition: all 0.45s;
+                            font-size:18px;
+                            line-height:22px;
+                            font-weight: 600;  
+                            &:after {
+                                content: "";
+                                width: 100%;
+                                color:#000000;
+                                height: 100%;
+                                background: url(/assets/images/settings/arrow_learnmore.svg) no-repeat center;
+                                position: absolute;
+                                padding-left: 40px;
+                                background-size: contain;
+                                max-width: 20.54px;
+                                max-height: 20.63px;
+                                transition: all 0.45s; 
+                                @include breakpoint(medium){
+                                    max-width: 21.91px;
+                                    max-height: 22px;
+                                } 
+                            }
+                            &:hover {
+                                padding-left: 10px !important;
+                                color:#000000;
+                                text-decoration: none;
+                                transition: all 0.45s;   
+                                @media (max-width: 650px){
+                                    padding-left: 0px !important;
+                                } 
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.branchmangerpanel{
+        @include breakpoint(small only){
+            margin-top: 65px;
+        }
+        h2{
+            text-align: center;
+            @include breakpoint(llarge){
+                text-align: left;
+                margin-bottom: 42px;
+            }
+        }    
+        .innerWrap{
+            justify-content: center;
+            @include breakpoint(large){
+                justify-content: flex-start;
+                flex-wrap: nowrap;
+            }
+            @include breakpoint(large only){
+                max-width: 967px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+        .colblock{
+            flex-wrap: wrap;
+            justify-content: center;
+            @include breakpoint(large){
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+            }
+            @include breakpoint(llarge){
+                max-width: 43.54%;
+                margin-right: 2%;
+            }
+            @include breakpoint(small only){
+                margin-bottom: 25px;
+                display: block;
+            }
+            .imgWrap{
+                max-width: 166px;
+                max-height: 166px;
+                overflow: hidden;
+                @include breakpoint(large){
+                    max-width: 209px;
+                    max-height: 209px;
+                }
+                @include breakpoint(llarge){
+                    max-width: 289px;
+                    max-height: 289px;
+                }
+                img{
+                    height: auto;
+                }
+            }
+            .contentWrap{
+                @include breakpoint(medium only){
+                    max-width: 210px;
+                    width: 100%;
+                    margin-left: 20px;
+                }
+                @include breakpoint(small only){
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin-top: 20px;
+                    text-align: center;
+                    max-width: 260px;
+                }
+                @include breakpoint(small only){
+                    h3{
+                        font-size: 20px;
+                        margin-bottom: 16px;
+                    }
+                }
+            }
+            &.contentblock{
+                max-width: 54.45%;
+                @include breakpoint(medium only){
+                    max-width: 65%;
+                }
+                @include breakpoint(small only){
+                    max-width: 355px;
+                }
+                .content{
+                    p{
+                        margin-bottom: 0;
+                        + p{
+                            margin-top: 26px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.lenderspanel h2  {
+    + h4, + h3, + h5, + h6{
+        margin-bottom: 50px;
+        text-align: center;
+        @include breakpoint(medium){
+            margin-top: -30px; 
+         }
+        @include breakpoint(large){
+           text-align: left;
+        }
+    }
+}

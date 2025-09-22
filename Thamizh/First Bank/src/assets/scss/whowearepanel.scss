@@ -1,0 +1,162 @@
+@import "util/util";
+$white: #ffffff;
+$primary-color: #012169;
+$secondary-color: #A5D4FC;
+$img: "../../images/";
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+.whowearepanel{
+    margin-top: 60px;
+    @include breakpoint(large){
+        margin-top: 150px;
+    }
+    + .whowearepanel{
+        margin-top: 0px;
+    }
+    .grid-container{
+        border-bottom: 1px solid rgba(112,112,112,0.36);
+    }
+    .innerwrap{
+        max-width: 926px;
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 48px;
+        margin-bottom: 42px;;
+        @include breakpoint(medium){
+            margin-top: 48px;
+            margin-bottom: 42px;
+            max-width: 701px;
+        }
+        @include breakpoint(large){
+            margin-top: 78px;
+            margin-bottom: 72px;
+            max-width: 926px;
+        }
+        @include breakpoint(xlarge){
+            margin-right: 10.1%;
+        }
+        @media (min-width: 1400px){
+            margin-right: 11.5%;
+        }
+        @media (min-width: 1440px){
+            margin-right: 12.2%;
+        } 
+        @media (min-width: 1480px){
+            margin-right: 13.4%;
+        } 
+        .flexwrap{
+            display: flex;
+            flex-wrap: wrap;
+            @include breakpoint(large only){
+                margin-left: 13.4%;
+                align-items: center;
+            }
+            @include breakpoint(large){
+                flex-wrap: nowrap;
+            }
+            .leftwrap{
+                max-width: 100%;
+                width: 100%;
+                @include breakpoint(large){
+                    max-width: 326px;
+                }
+                h2{
+                    text-transform: uppercase;
+                    font-size: 51px;
+                    line-height: 40px;
+                    font-weight: 600;
+                    color: #4D96D5;
+                    letter-spacing: -2px;
+                    br{
+                        display: none;
+                    }
+                    @include breakpoint(medium){
+                        font-size: 98px;
+                        line-height: 95px;
+                    }
+                    @include breakpoint(large){
+                        font-size: 85px;
+                        line-height: 80px;
+                        letter-spacing: -4px;
+                    }
+                    @include breakpoint(llarge){
+                        font-size: 120px;
+                        line-height: 95px;
+                    }
+                    @include breakpoint(large){
+                        br{
+                            display: block;
+                        }
+                    }
+                }
+            }
+            .rightwrap{
+                max-width: 100%;
+                width: 100%;
+                margin-left: 0px;
+                @include breakpoint(large){
+                    max-width: 460px;
+                    margin-left: 64px;
+                }
+                p{
+                    font-size: 20px;
+                    line-height: 28px;
+                    @include breakpoint(large only){
+                        font-size: 18px;
+                        line-height: 24px;
+                    }
+                    @include breakpoint(small only){
+                        font-size: 18px;
+                        line-height: 22px;
+                        margin-top: 20px;
+                    }
+                }
+            }
+        }
+    }
+    &.left{
+        .grid-container{
+            border-top: 1px solid rgba(112,112,112,0.36);
+        }
+        .leftwrap{
+            @include breakpoint(large){
+                text-align: right;
+            }
+        }
+    }
+    &.right{
+        .flexwrap{
+            flex-direction: row-reverse;
+            .rightwrap{
+                max-width: 100%;
+                width: 100%;
+                margin-right:0px;
+                margin-left: -3px;
+                @include breakpoint(large only){
+                    margin-left: 18px;
+                }
+                @include breakpoint(large){
+                    max-width: 306px;
+                }
+                p{
+                    @include breakpoint(large){
+                        text-align: right;
+                    }
+                }
+            }
+            .leftwrap{
+                max-width: 100%;
+                width: 100%;
+                @include breakpoint(large){
+                    margin-left: 64px;
+                }
+            }
+        }
+    }
+}

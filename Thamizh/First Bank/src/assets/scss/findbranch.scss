@@ -1,0 +1,441 @@
+@import "util/util";
+$white: #ffffff;
+$black:#000000;
+$primary-color: #012169;
+$secondary-color: #19A7C1;
+$img: "../../images/";
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    xlarge: 1360px,
+    xxlarge: 1400px,
+    xxxlarge: 1660px,
+);
+.findbranchPannel {
+  padding-top:150px;
+  @include breakpoint(small only) {		
+    padding-top:75px;	
+  }
+  @include breakpoint(medium only) {		
+    padding-top:75px;		
+  }	
+  @include breakpoint(large only) {		
+    padding-top:75px;		
+  }	
+  .wraps{
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    height: 265px;
+    @include breakpoint(medium){
+      height: 209px;
+    }
+    @include breakpoint(large){
+      height: 255px;
+    }
+    border-radius: 79px;
+    @include breakpoint(small only){
+      max-width:100%;
+    }
+    @include breakpoint(medium){
+      max-width: 97.2%;
+    }
+    @include breakpoint(large){
+      max-width: 1102px;
+      margin-bottom: 150px;
+    }
+  &:before{
+    content:"";
+    background-repeat: no-repeat;
+    background-image: url(../../images/settings/mobilefindbefore.png);
+    left: 0px;
+    position: absolute;
+    display: block;
+    width: 50%;
+    background-size: contain;
+    top: 0px;
+    background-position: left;
+    height: 265px;
+    z-index:1;
+    @include breakpoint(medium){
+      background-image: url(../../images/settings/findbefore.svg);
+      height: 209px;
+      background-size: contain;
+      width: 344px;
+    }
+    @include breakpoint(large){
+      height: 255px;
+    }
+  }
+  &:after{
+    content:"";
+    background-repeat: no-repeat;
+    background-image: url(../../images/settings/mobilefindafter.png);
+    right: 0px;
+    position: absolute;
+    background-size: contain;
+    display: block;
+    width: 50%;
+    height: 265px;
+    top: 0px;
+    background-position: right;
+    @include breakpoint(medium){
+      background-image: url(../../images/settings/findafter.svg);
+      height: 209px;
+      background-size: contain;
+      width: 344px;
+    }
+    @include breakpoint(large){
+      height: 255px;
+    }
+  }
+  }
+  h2  {
+    color: $primary-color;
+    padding: 0px 30px;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 35px;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    z-index:9;
+    margin-bottom:20px;
+    padding-top: 48px;
+    text-transform: uppercase;
+    @media (min-width: 460px) and (max-width: 600px) {
+      padding: 0px 17%;
+      padding-top:35px;
+    }
+    @media (min-width: 600px) and (max-width: 767px) {
+      padding: 0px 25%;
+      padding-top:35px;
+    }
+    @include breakpoint(medium){
+      font-size: 30px;
+      padding: 0px 30px;
+      margin-bottom:18px;
+      padding-top: 40px;
+      line-height: 44px;
+    }
+    @include breakpoint(xlarge){
+      font-size: 48px;
+      margin-bottom: 40px;
+      padding-top: 48px;
+      line-height: 51px;
+    }
+  }
+form {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  z-index:9;
+  position: relative;
+  @include breakpoint(small only){
+    width: 90%;
+    margin:0 auto;
+  }
+  @include breakpoint(medium only){
+    width: 64%;
+    margin: auto;
+  }
+  .form-group {
+    position: relative;
+    margin-bottom: 0;
+    width: 100%;
+    max-width: 565px;
+  }
+  }
+
+.txtBox{
+  background: #E7EDF1;
+  padding: 0 25px;
+  height: 75px;
+  width: 100%;
+  font-size: 21px;
+  line-height: 28px;
+  color:#2D2D2D;
+  border: none;
+  margin-bottom:0px;
+  border-radius: 22px 0 0 22px !important;
+  @include breakpoint(medium){
+    font-size: 18px;
+    height: 50px;
+    line-height: 24px;
+  }
+  @include breakpoint(large){
+    font-size: 21px;
+    height: 75px;
+    line-height: 28px;
+  }
+  &::placeholder{
+    color: $black;
+  }
+  &.errortext{
+    border: 1px solid #ff0000 !important;
+  }
+}
+.ctaborder{
+  height: 75.3px;
+  min-width:110px;
+  position: relative;
+  border-radius: 0;
+  font-size: 24px;
+  line-height: 17px;
+  font-weight: 700;
+  border-radius: 18px;
+  background: #012169;
+  color: $white;
+  margin-left: -15px;
+  transition: 0.45s all;
+  @include breakpoint(small only){
+    padding: 8px 8px;
+  }
+  @include breakpoint(medium only){
+    height: 50px;
+  }
+  &:after{
+   content:unset;
+  }
+  &:hover{
+    background: $white;
+    border:1px solid $primary-color;
+    color: $primary-color;
+  }
+  @include breakpoint(medium){
+    font-size: 19px;
+    min-width:122px;
+    line-height: 15px;
+  }
+  @include breakpoint(large){
+    font-size: 24px;
+    min-width:159.09px;
+    line-height: 17px;
+  }
+}
+}
+.getError {
+  padding-top: 20px;
+  @include breakpoint(xxlarge) {
+    padding-top: 30px;
+  }
+  p {
+    text-align: center;
+    color: #d02323;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 18px;
+    @include breakpoint(medium) {
+      font-size: 22px;
+    }
+    @include breakpoint(xlarge) {
+      font-size: 26px;
+      font-weight: 500;
+      line-height: 26px;
+    }
+    @include breakpoint(xxlarge) {
+      font-size: 30px;
+      line-height: 30px;
+    }
+  }
+}
+input {
+  border: 0px;
+  &.form-control {
+    &.error {
+      border: 1px solid #ff0000 !important;
+    }
+  }
+}
+.errorSpan {
+  position: absolute;
+  top: 22px;
+  right: -11px;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  z-index: 1;
+  @include breakpoint(landscape) {
+    top: 11px;
+    right: -11px;
+  }
+  @include breakpoint(small) {
+    width: 20px;
+    height: 20px;
+    top: 18px;
+    right: -9px;
+  }
+}
+.errorForm {
+  .errorSpan {
+    background: red;
+  }
+}
+.successForm {
+  .errorSpan {
+    background:red;
+  }
+}
+.lbl-error {
+  color: red;   
+  position: relative;
+  top: 0px;
+  margin-bottom: 10px;
+  @include breakpoint(large) {
+    top: -22px;
+    position: absolute;
+  }
+  
+}
+.lbl-success {
+  color: $primary-color;
+  top: 0px;
+  margin-bottom: 10px;
+  position: relative;
+   @include breakpoint(large) {
+    position: absolute;
+    top: -22px;
+  }
+}
+input:-ms-input-placeholder:focus{
+  color: #999;
+}
+.findbranchPannel {
+  .umbraco-forms{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+    @include breakpoint(xlarge){
+      justify-content: space-between;
+      flex-wrap: nowrap;
+    }
+    h5, h3{
+      padding-top:10px;
+      @include breakpoint(medium only){
+        font-size: 28px;
+      }
+      @media (min-width: 1280px) and (max-width: 1390px) {
+        font-size: 26px;
+        padding-right: 15px;
+      }
+    }
+    .email-ad{
+      width: 100%;
+      text-align: center;
+      @include breakpoint(medium){
+        display: none;
+      }
+    }
+    .lbl-success, .lbl-error{
+      top: 0;
+      position: relative;
+      margin-left: 0;
+      width: 100%;
+      @include breakpoint(small only){
+        margin-left:-15px;
+      } 
+      @include breakpoint(large){
+        width: 940px;
+        position: absolute;
+        margin-left: 345px;
+        top: -28px;
+      } 
+      @include breakpoint(xlarge){
+        margin-left: 420px;
+        top: -28px;
+        position: absolute;
+      }
+      @media (min-width: 1360px) and (max-width: 1380px) {
+        margin-left: 405px;
+      }
+      @media (min-width: 1024px) and (max-width: 1279px) {
+        top: 0;
+        position: relative;
+        margin-left: 0;
+        width: 942px;
+      }
+    }
+    .lbl-success{
+      p{
+        font-size: 16px;
+        font-weight: 600;
+      }
+    }
+    .umbraco-forms-field-wrapper{
+      p.error{
+        font-size: 10px;
+      }
+    }
+    .umbraco-forms-field.emailaddress{
+      min-width: 814px;
+      @media (min-width: 1280px) and (max-width: 1390px) {
+        min-width: 754px;
+       }
+       @include breakpoint(medium only){
+        min-width: 605px;
+       }
+       @include breakpoint(small only){
+        min-width: 450px;
+     }
+     .umbraco-forms-label{
+      font-size: 0;
+     }
+    }
+    .btn.primary {
+      background: #FE5000;
+      color: #ffffff;
+      border: 1px solid #FE5000;
+      padding: 8px 18px;
+      font-weight:700;
+      display: inline-block;
+      position: relative;
+      transition: 0.3s;
+      background-size: 200% 100%;
+      background-position: 100% 0;
+      transition: background-position .3s;
+      &:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        background: $white;
+        transform: scaleX(1);
+        transform-origin: 100%;
+        transition-property: transform;
+        transition-duration: 0.3s;
+        transition-timing-function: ease-out;
+      }
+      &:before {
+        content: "";
+        background: $primary-color;
+      }
+      &:hover {
+          color: $white;
+          border: 1px solid $white;
+          background: $primary-color;
+          background-position: 0 0;
+          &:before {
+            transform: scaleX(0);
+        }
+      }
+     }
+  }
+}
+
+.umbraco-forms-field-wrapper .field-validation-error {
+  color: #ff0000;
+}
+.error-text{
+  font-size: 20px;
+  line-height: 2;
+  color: #ff0000;
+  padding-top: 4px;
+}
+

@@ -1,0 +1,1381 @@
+
+<link rel="stylesheet" href="{{root}}assets/css/heroslider/heroslider.css">
+<script src="{{root}}assets/scripts/heroslider/heroslider.js" defer></script>
+<div class="bannerpanel module">
+    <div class="homeBanner">
+        <div class="grid-container-full">
+            <div class="swiper homeBannerSlider">
+                <div class="swiper-wrapper">
+                    <input type="hidden" class="hdnHomeBannerSliderDelay" value="4000" />
+                    <div class="swiper-slide temp1" id="homeBanner-11">
+                        <div class="sliderWrapper">
+                            <div class="bannerwrap">
+                                <div class="contentwrap">
+                                    <div class="grid-container">
+                                        <div class="content">
+                                            <h1>Community first.</h1>
+                                            <p>As your neighbors and friends, we commit to helping our communities grow stronger.</p>    
+                                            <div class="ctablock">
+                                                <a href="#" class="ctabtn primarybtn" aria-label="Why First Bank">Why First Bank</a>
+                                                <a href="#" class="ctabtn gradientbtn" aria-label="Open an Account">Open an Account</a>
+                                            </div>                                                </div>
+                                    </div>
+                                </div>
+                                <div class="imgWrap">
+                                    <div class="filter-img">
+                                        <img class="img" src="{{root}}assets/images/home/Intersection.png" width="977" height="716" alt="Home Promotional">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide temp1" id="homeBanner-1">
+                        <div class="sliderWrapper">
+                            <div class="bannerwrap">
+                                <div class="contentwrap">
+                                    <div class="grid-container">
+                                        <div class="content">
+                                            <h1>Bank Local</h1>
+                                            <p>Personal Bankers. <br> Real Relationships </p>
+                                            <div class="ctablock">
+                                                <a href="#" class="ctabtn primarybtn" aria-label="Why First Bank">Why First Bank</a>
+                                                <a href="#" class="ctabtn gradientbtn" aria-label="Open an Account">Open an Account</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="imgWrap">
+                                    <div class="filter-img">
+                                        <img class="img" src="{{root}}assets/images/home/Intersection.png" width="977" height="716" alt="Home Promotional">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide temp2" id="homeBanner-2">
+                        <div class="sliderWrapper">
+                            <div class="bannerwrap">
+                                <div class="fullimgWrap">
+                                    <div class="filter-img overlay">
+                                        <img class="img" src="{{root}}assets/images/home/banner-1.jpg" width="1920" height="725" alt="Home Promotional Image">
+                                    </div>
+                                </div>
+                                <div class="contentwrap imgWrapContent">
+                                    <div class="grid-container">
+                                        <div class="content">
+                                            <h1>Bank Local</h1>
+                                            <p><i>Personal Bankers.</i> <br> <i>Real Relationships</i></p>
+                                            <div class="ctablock">
+                                                <a href="#" class="ctabtn whitebtn" aria-label="Why First Bank">Why First Bank</a>
+                                                <a href="#" class="ctabtn gradientbtn" aria-label="Open an Account">Open an Account</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide temp2" id="homeBanner-8">
+                        <div class="sliderWrapper">
+                            <div class="bannerwrap">
+                                <div class="fullimgWrap">
+                                    <div class="filter-img overlay">
+                                        <img class="img" src="{{root}}assets/images/home/banner-1.jpg" width="1920" height="725" alt="Home Promotional Image">
+                                    </div>
+                                </div>
+                                <div class="contentwrap imgWrapContent">
+                                    <div class="grid-container">
+                                        <div class="content">
+                                            <h1>Business never sleeps.<br>But you should.</h1>
+                                            <p><span class="small-letter">With bankers and solutions you trust, you can relax knowing your business finances are in good hands.</span></p> 
+                                            <div class="ctablock">
+                                                <a href="#" class="ctabtn whitebtn" aria-label="Why First Bank">Why First Bank</a>
+                                                <a href="#" class="ctabtn gradientbtn" aria-label="Open an Account">Open an Account</a>
+                                            </div>                                                       
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                    
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="grid-container">
+                    <div class="flexBox">
+                        <div class="swiper-pagination"></div>
+                        <a href="javascript:void(0)" class="swiper-button-play" id="play-slider">
+                        <span class="screen-reader-text">Play / Pause</span>
+                    </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<link rel="stylesheet" href="{{root}}assets/css/chatbot/chatbot.css" media="all">
+
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function() {
+    const inputElement = document.getElementById('txtBox');
+
+    inputElement.addEventListener('keydown', function(event) {
+        if (event.key.length === 1 && /[a-zA-Z]/.test(event.key)) {
+            const inputValue = event.key;
+            document.dispatchEvent(
+                new CustomEvent('CustomGPTSendQuery', { detail: inputValue })
+            );
+            inputElement.value = '';
+        }
+    });
+});
+    $(document).ready(function() {
+  $("body").on("click", "#newsemail", function() {
+      localStorage.removeItem("isclosed");
+      $(".chat-disclaimer").remove();
+  });
+  $(document).on("click", "#newsemail", function(e) {
+      e.preventDefault();
+      localStorage.removeItem("isclosed");
+      $(".searchClose").click();
+  });
+  $("#newsemail").click(function(e) {
+      e.preventDefault();
+      $(".searchClose").click();
+      localStorage.removeItem("isclosed");
+      var myTimerDisMon = undefined;
+      const myTimerDis = setInterval(() => {
+          const iframeWrapper = document.getElementById('cgpt-ai-assistant-iframe-wrapper');
+          if (iframeWrapper) {
+              const disclaimerDiv = document.createElement('div');
+              disclaimerDiv.className = 'chat-disclaimer';
+              iframeWrapper.appendChild(disclaimerDiv);
+              const disclaimerText = document.getElementById('chatbotDisclaimerText');
+              if (disclaimerText) {
+                  disclaimerDiv.innerHTML = disclaimerText.innerHTML;
+              }
+              clearInterval(myTimerDis);
+              const myTimerDisMon = setInterval(() => {
+                  const modal = document.querySelector('.cgpt-ai-assistant-modal');
+                  if (modal && !modal.classList.contains('open')) {
+                      localStorage.setItem('isclosed', 'true');
+                      clearInterval(myTimerDisMon);
+                  }
+              }, 1000);
+          }
+      }, 1000);
+  });
+});
+</script>
+<style>
+.cgpt-ai-assistant-modal .cgpt-ai-assistant-iframe-wrapper {
+  position: relative;
+}
+.cgpt-ai-assistant-modal {
+  width: 604px;
+}
+.cgpt-ai-assistant-modal.open+.cgpt-ai-assistant-overlay {
+  opacity: 0 !important;
+}
+.cgpt-ai-assistant-modal .cgpt-ai-assistant-toolbar {
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.16);
+  background-color: #C8EFF9;
+}
+.cgpt-ai-assistant-modal .cgpt-ai-assistant-iframe-wrapper iframe {
+  height: 55%;
+  border: 2px solid #C8EFF9;
+  padding-bottom: 20px;
+  background: #F5FAFD;
+}
+.cgpt-ai-assistant-modal .cgpt-ai-assistant-toolbar:before {
+  content: "Ask Penny";
+  display: block;
+  position: absolute;
+  left: 16px;
+  color: #ffffff;
+  font-weight: 600;
+  line-height: 30px;
+  color: #012169;
+  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
+  /* background: url("{{root}}assets/images/settings/chatbot-icon.svg"); */
+  height: 28px;
+  background-repeat: no-repeat;
+  padding-left: 0px;
+  background-size: contain;
+}
+.chatbot-box .chatbot-text-area[data-v-1004b942] {
+  background-color: #E7EDF1 !important;
+}
+.cgpt-ai-assistant-modal .cgpt-ai-assistant-toolbar .cgpt-ai-assistant-toolbar-button{
+    color: #012169 !important;
+    background: transparent;
+}
+.change-path-stroke[data-v-ede169be] path {
+  stroke: #012169 !important;
+}
+.cgpt-ai-assistant-iframe-wrapper .v-field__input,
+.v-textarea .v-field--no-label textarea,
+.v-textarea .v-field--active textarea {
+  opacity: 1;
+  background: #E7EDF1 !important;
+  mask: none;
+}
+.cgpt-ai-assistant-hidden {
+  display: none !important;
+}
+.chat-disclaimer {
+  background: #F5FAFD;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.16);
+  border: 2px solid #C8EFF9;
+  padding: 20px;
+  margin-top: -10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius:10px;
+}
+.chat-disclaimer p {
+    font-size: 10px;
+    line-height: 14px;
+    word-break: break-word;
+    font-weight: 500;
+    color: #A5A8AC;
+}
+.chat-disclaimer p a {
+  text-decoration: underline;
+}
+.cgpt-ai-assistant-modal .cgpt-ai-assistant-toolbar .cgpt-ai-assistant-toolbar-button{
+    font-size: 12px;
+    padding: 5px;
+    line-height: 12px;
+}
+@media screen and (max-height: 700px) {
+  .cgpt-ai-assistant-modal .cgpt-ai-assistant-iframe-wrapper iframe {
+      height: 55%;
+  }
+}
+@media screen and (max-height: 600px) {
+  .cgpt-ai-assistant-modal .cgpt-ai-assistant-iframe-wrapper iframe {
+      height: 240px;
+  }
+}
+@media screen and (max-height: 500px) {
+  .cgpt-ai-assistant-modal .cgpt-ai-assistant-iframe-wrapper iframe {
+      height: 250px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .cgpt-ai-assistant-modal .cgpt-ai-assistant-iframe-wrapper iframe {
+      height: calc(100% - 180px);
+  }
+}
+</style>
+<!-- without-before -->
+<div class="chatbot with-before module">
+    <div class="grid-container">
+        <div class="wraps">
+            <div class="leftwrap">
+                <img src="{{root}}assets/images/home/chatbefore.png" class="with-bg dkimg" style="display:none;" alt="chatbot" width="946" height="524"/>
+                <img src="{{root}}assets/images/home/chatbot.png" class="without-bg dkimg"  style="display:none;" alt="chatbot" width="946" height="524"/>
+                <img src="{{root}}assets/images/home/chatbefore-mobile.png" class="with-bg mobileimg"  style="display:none;" alt="chatbot" width="426" height="321"/>
+                <img src="{{root}}assets/images/home/chatbot-mobile.png" class="without-bg mobileimg"  style="display:none;" alt="chatbot" width="426" height="321"/>
+            </div>
+            <div class="rightwrap">
+                <div class="content">
+                    <h2>Hi. I’m <span style="color: rgb(201, 143, 78);">Penny!</span></h2>
+                    <p>How may I help you today?<br>Ask me any questions.</p> 
+                    <button class="ctabtn" id="newsemail" data-cgpt-ai-assistant>Click here to chat with me!</button>
+                    <!-- <label for="newsemail" class="screen-reader-text">Type your questions here: </label>
+                    <input type="text" class="txtBox form-control" id="txtBox" name="txtBox" required="" placeholder="Type your questions here:" data-cgpt-ai-assistant-input> -->
+                    <script src="https://cdn.customgpt.ai/js/ai-assistant.js" defer="" p_id="37807" p_key="f7cca9d7153ea9329c473150b2a2e840"></script>                         
+                    <div id="chatbotDisclaimerText" style="display:none;"> <p>First Bank NJ AI Chatbot is intended to provide streamlined access to firstbanknj.com-related information and is not a substitute for obtaining professional advice about a specific question from a banking expert. Use of First Bank AI Chatbot is subject to all of the Terms of Use of firstbanknj.com, which can be found here.</p></div>
+                </div>
+            </div>
+            </div>
+    </div>
+</div>
+<link rel="stylesheet" href="{{root}}assets/css/inlinevideo/inlinevideo.css" media="all">
+<script src="{{root}}assets/scripts/inlinevideo/custom-video.js" defer></script>
+<link rel="stylesheet" href="{{root}}assets/css/tabpanel/tabpanel.css" media="all">
+<script src="{{root}}assets/scripts/tabpanel/easy-responsive-tabs.js" defer></script>
+<script type="text/javascript" defer>
+$(document).ready(function () {
+        $('.tabpanel').easyResponsiveTabs({
+            type: 'default',        
+            width: 'auto',
+            fit: true,  
+            tabidentify: 'tab_identifier_child', 
+            activate: function(event) { 
+            var $tab = $(this);
+            var $info = $('#tabInfo');
+            var $name = $('span', $info);
+            $name.text($tab.text());
+            $info.show();
+            }
+        });
+        
+            function Videofunction(){
+                        var getyoutubevalue = $('.tabBusinessContentSlider .swiper-slide-active').find('figure').hasClass('youtubevideopanel');
+                        var getvimeovalue = $('.tabBusinessContentSlider .swiper-slide-active').find('figure').hasClass('vimeovideopanel');
+                        var this_dataindex;
+                        var this_datavimeoindex;
+                        if (getyoutubevalue) {
+                            var pictureyoutubedata = $('.tabBusinessContentSlider .swiper-slide-active').find('figure');
+                            this_dataindex = $(pictureyoutubedata).attr('data-index');
+                            if (this_dataindex) {
+                                YoutubeplayerList[this_dataindex].pauseVideo();
+                            }
+                        }
+                        if (getvimeovalue) {
+                            var picturevimeodata = $('.tabBusinessContentSlider .swiper-slide-active').find('figure');
+                            this_datavimeoindex = $(picturevimeodata).attr('data-index');
+                            if (this_datavimeoindex) {
+                                VimeoplayerList[this_datavimeoindex].pause();
+                            }
+                        }
+                        var getyoutubevalue = $('.tabPersonalContentSlider .swiper-slide-active').find('figure').hasClass('youtubevideopanel');
+                        var getvimeovalue = $('.tabPersonalContentSlider .swiper-slide-active').find('figure').hasClass('vimeovideopanel');
+                        var this_dataindex;
+                        var this_datavimeoindex;
+                        if (getyoutubevalue) {
+                            var pictureyoutubedata = $('.tabPersonalContentSlider .swiper-slide-active').find('figure');
+                            this_dataindex = $(pictureyoutubedata).attr('data-index');
+                            if (this_dataindex) {
+                                YoutubeplayerList[this_dataindex].pauseVideo();
+                            }
+                        }
+                        if (getvimeovalue) {
+                            var picturevimeodata = $('.tabPersonalContentSlider .swiper-slide-active').find('figure');
+                            this_datavimeoindex = $(picturevimeodata).attr('data-index');
+                            if (this_datavimeoindex) {
+                                VimeoplayerList[this_datavimeoindex].pause();
+                            }
+                        }
+            }
+
+        $('.tabblockpanel .tabHorizontal li a').click(function (e) {
+            e.preventDefault();
+            $($(this).data('target')).find('.resp-tabs-list .resp-tab-item:first-child').trigger('click');
+            Videofunction();
+        });
+
+
+        if ($(".tapswiperpanel .swiper .swiper-slide").length > 0) {
+            var swiperBusinessCarousel = new Swiper('.tapBusinesssSlider', {
+                slidesPerView: "1",
+                allowTouchMove: true,
+                preloadImages: false,
+                spaceBetween: 10,
+                lazy:true,
+                loop:false,
+                navigation: {
+                nextEl: '.tapBusinesssSlider .swiper-button-next',
+                prevEl: '.tapBusinesssSlider .swiper-button-prev',
+                },
+            });
+            var swiperBusinessCarouselContent = new Swiper(".tabBusinessContentSlider", {
+                spaceBetween: 10,
+                allowTouchMove: true,
+                preloadImages: false,
+                lazy:true,
+                autoHeight: false,
+                loop:false,
+                on: {
+                    slideChange: function () {
+                        Videofunction();
+                    },
+                },
+            });
+            var swiperPersonalCarousel = new Swiper('.tapPersonalSlider', {
+                slidesPerView: "1",
+                allowTouchMove: true,
+                preloadImages: false,
+                spaceBetween: 10,
+                lazy:true,
+                loop:false,
+                navigation: {
+                nextEl: '.tapPersonalSlider .swiper-button-next',
+                prevEl: '.tapPersonalSlider .swiper-button-prev',
+                },
+            });
+            var swiperPersonalCarouselContent = new Swiper(".tabPersonalContentSlider", {
+                spaceBetween: 10,
+                allowTouchMove: true,
+                preloadImages: false,
+                lazy:true,
+                autoHeight: false,
+                loop:false,
+                on: {
+                    slideChange: function () {
+                        Videofunction();
+                    },
+                },
+            });
+            swiperBusinessCarousel.controller.control = swiperBusinessCarouselContent;
+            swiperBusinessCarouselContent.controller.control = swiperBusinessCarousel;
+            swiperPersonalCarousel.controller.control = swiperPersonalCarouselContent;
+            swiperPersonalCarouselContent.controller.control = swiperPersonalCarousel;
+    }
+});
+</script>
+<div class="or">
+    <div class="grid-container">
+        <p role="heading" aria-label="1">OR</p>
+    </div>
+</div>
+<div class="tabsection module" style="background:url(assets/images/home/tabpane-bg.jpg)">
+    <div class="grid-container">
+        <div class="titlepanel">
+            <p>Select the financial solutions that suits your needs</p>
+            <h2>Business or Personal Banking?</h2>
+        </div>
+        <div class="tabblockpanel">
+            <div class="tabHorizontal text-center">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="tabList active">
+                        <a href="javascript:void(0)" class="active" role="tab" aria-controls="tab-business-banking" data-toggle="tab" aria-selected="true" data-target="#tab-business-banking">Business Banking</a>
+                    </li>
+                    <li role="presentation" class="tabList">
+                        <a href="javascript:void(0)" class="" role="tab" aria-controls="tab-personal-banking" data-toggle="tab" aria-selected="true" data-target="#tab-personal-banking">Personal Banking</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="tab-content tabs">
+                <div role="tabpanel" id="tab-business-banking" class="tab-pane fade show active">
+                    <div class="tabpanel">
+                        <div class="grid-container">
+                            <div class="tabpasection">
+                                <ul class="resp-tabs-list" role="tablist" aria-label="Product Tabs">
+                                    <li role="tab"> 
+                                        <p>Special Promotions</p>
+                                    </li>
+                                    <li role="tab">
+                                        <p>Business Checking</p>
+                                    </li>
+                                    <li role="tab">
+                                        <p>Business Lending</p>
+                                    </li>
+                                    <li role="tab">
+                                        <p>Online Banking</p>
+                                    </li>
+                                    <li role="tab">
+                                        <p>Credit Cards</p>
+                                    </li>
+                                </ul>
+                                <div class="resp-tabs-container">
+                                    <div class="tabblock">
+                                        <div class="tabimagecontent">
+                                            <div class="tabtext">
+                                                <h2>Sed ut perspiciatis unde omnis iste natus error sit voluptatem</h2>
+                                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architectSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis 
+                                                    et quasi architecto…</p>
+                                                <a class="ctabtn primarybtn">Explore Options</a>
+                                            </div>
+                                            <div class="tabimage">
+                                                <a href="#">
+                                                    <img data-src="assets/images/special-promotions.jpg" class="lazy layzeloading zoom" width="750" height="422" alt="Special Promotions" >
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tabblock">
+                                        <div class="tabimagecontent">
+                                            <div class="tabtext">
+                                                    <h2>Sed ut perspiciatis unde omnis iste natus error sit voluptatem</h2>
+                                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architectSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis 
+                                                        et quasi architecto…</p>
+                                                <a class="ctabtn primarybtn">Read More</a>
+                                            </div>
+                                            <div class="tabimage">
+                                                <div class="insight-img">
+                                                    <figure class="videoPanel vimeovideopanel video-thumb-image noSpeedBump" data-videoSource="vimeo">
+                                                        <img data-src="assets/images/special-promotions.jpg" class="lazy layzeloading zoom" width="750" height="422" alt="Special Promotions" >
+                                                        <div id="ytplayer-tab1" class="vimeo-video-src" data-videoid="347119375"> </div>
+                                                    </figure>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tabblock">
+                                        <div class="tabimagecontent">
+                                            <div class="tabtext">
+                                                    <h2>Sed ut perspiciatis unde omnis iste natus error sit voluptatem</h2>
+                                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architectSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis 
+                                                        et quasi architecto…</p>
+                                                <a class="ctabtn primarybtn">Read More</a>
+                                            </div>
+                                            <div class="tabimage">
+                                                <div class="insight-img">
+                                                    <figure class="videoPanel youtubevideopanel video-thumb-image noSpeedBump" data-videoSource="youtube">
+                                                        <img data-src="assets/images/special-promotions.jpg" class="lazy layzeloading zoom" width="750" height="422" alt="Special Promotions" >
+                                                        <div id="ytplayer-tab2" class="youtube-video-src" data-videoid="yAoLSRbwxL8"> </div>
+                                                    </figure>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tabblock">
+                                        <div class="tabimagecontent">
+                                            <div class="tabtext">
+                                                    <h2>Sed ut perspiciatis unde omnis iste natus error sit voluptatem</h2>
+                                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architectSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis 
+                                                        et quasi architecto…</p>
+                                                <a class="ctabtn primarybtn">Read More</a>
+                                            </div>
+                                            <div class="tabimage">
+                                                <a href="#">
+                                                    <img data-src="assets/images/special-promotions.jpg" class="lazy layzeloading zoom" width="750" height="422" alt="Special Promotions" >
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>    
+                                    <div class="tabblock">
+                                        <div class="tabimagecontent">
+                                            <div class="tabtext">
+                                                    <h2>Sed ut perspiciatis unde omnis iste natus error sit voluptatem</h2>
+                                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architectSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis 
+                                                        et quasi architecto…</p>
+                                                <a class="ctabtn primarybtn">Read More</a>
+                                            </div>
+                                            <div class="tabimage">
+                                                <a href="#">
+                                                    <img data-src="assets/images/special-promotions.jpg" class="lazy layzeloading zoom" width="750" height="422" alt="Special Promotions" >
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tapswiperpanel">
+                        <div class="grid-container">
+                            <div class="swiper tapSlider tapBusinesssSlider">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="swiper-list">
+                                            <p>Special Promotions</p>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="swiper-list">
+                                            <p>Business Checking</p>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="swiper-list">
+                                            <p>Business Lending</p>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="swiper-list">
+                                            <p>Online Banking</p>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="swiper-list">
+                                            <p>Credit Cards</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                            </div>  
+                            <div thumbsSlider="" class="swiper tabContentSlider tabBusinessContentSlider">
+                                <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="swiper-content">
+                                        <div class="tabblock">
+                                            <div class="tabimagecontent">
+                                                <div class="tabtitle">Sed ut perspiciatis unde omnis iste natus error sit voluptatem</div>
+                                                <div class="tabtext">
+                                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architectSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto…</p>
+                                                </div>
+                                                <div class="tabimage">
+                                                    <div class="insight-img">
+                                                        <figure class="videoPanel vimeovideopanel video-thumb-image noSpeedBump" data-videoSource="vimeo">
+                                                            <img src="assets/images/special-promotions.jpg" class="zoom" width="750" height="422" alt="Special Promotions" >
+                                                            <div id="ytplayer-tabMobile" class="vimeo-video-src" data-videoid="347119375"> </div>
+                                                        </figure>
+                                                    </div>
+                                                </div>
+                                                <div class="ctablock">
+                                                    <a class="ctabtn primarybtn" aria-label="Explore Options">Explore Options</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="swiper-content">
+                                        <div class="tabblock">
+                                            <div class="tabimagecontent">
+                                                <!-- <div class="tabtitle">Kerry Santopietro Named LIBN <br>
+                                                    2023 Top 50 Women in Business</div> -->
+                                                    <div class="tabtext">
+                                                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architectSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto…</p>
+                                                    </div>
+                                                    <div class="tabimage">
+                                                        <div class="insight-img">
+                                                            <figure class="videoPanel vimeovideopanel video-thumb-image noSpeedBump" data-videoSource="vimeo">
+                                                                <img src="assets/images/special-promotions.jpg" class="zoom" width="750" height="422" alt="Special Promotions" >
+                                                                <div id="ytplayer-tab1Mobile" class="vimeo-video-src" data-videoid="347119375"> </div>
+                                                            </figure>
+                                                        </div>
+                                                    </div>
+                                                    <div class="ctablock">
+                                                        <a class="ctabtn primarybtn" aria-label="Read More">Read More</a>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="swiper-content">
+                                        <div class="tabblock">
+                                            <div class="tabimagecontent">
+                                                <!-- <div class="tabtitle">Kerry Santopietro Named LIBN <br>
+                                                    2023 Top 50 Women in Business</div> -->
+                                                    <div class="tabtext">
+                                                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architectSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto…</p>
+                                                    </div>
+                                                    <div class="tabimage">
+                                                        <a href="#">
+                                                            <img src="assets/images/special-promotions.jpg" class="zoom" width="750" height="422" alt="Special Promotions" >
+                                                        </a>
+                                                    </div>
+                                                    <div class="ctablock">
+                                                        <a class="ctabtn primarybtn" aria-label="Read More">Read More</a>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="swiper-content">
+                                        <div class="tabblock">
+                                            <div class="tabimagecontent">
+                                                <!-- <div class="tabtitle">Kerry Santopietro Named LIBN <br>
+                                                    2023 Top 50 Women in Business</div> -->
+                                                    <div class="tabtext">
+                                                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architectSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto…</p>
+                                                    </div>
+                                                    <div class="tabimage">
+                                                        <div class="insight-img">
+                                                            <figure class="videoPanel youtubevideopanel video-thumb-image noSpeedBump" data-videoSource="youtube">
+                                                                <img src="assets/images/special-promotions.jpg" class="zoom" width="750" height="422" alt="Special Promotions" >
+                                                                <div id="ytplayer-tab2Mobile" class="youtube-video-src" data-videoid="Vt28CX44SE8"> </div>
+                                                            </figure>
+                                                        </div>
+                                                    </div>
+                                                    <div class="ctablock">
+                                                        <a class="ctabtn primarybtn" aria-label="Read More">Read More</a>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="swiper-content">
+                                        <div class="tabblock">
+                                            <div class="tabimagecontent">
+                                                <!-- <div class="tabtitle">Kerry Santopietro Named LIBN <br>
+                                                    2023 Top 50 Women in Business</div> -->
+                                                    <div class="tabtext">
+                                                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architectSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto…</p>
+                                                    </div>
+                                                    <div class="tabimage">
+                                                        <a href="#">
+                                                            <img src="assets/images/special-promotions.jpg" class="zoom" width="750" height="422" alt="Special Promotions" >
+                                                        </a>
+                                                    </div>
+                                            </div>
+                                        </div>  
+                                    </div>
+                                </div>
+                                </div>
+                            </div>    
+                        </div>
+                    </div>
+                </div>
+                <!---Tab Personal-->
+                <div role="tabpanel" id="tab-personal-banking" class="tab-pane fade">
+                    <div class="tabpanel">
+                        <div class="grid-container">
+                            <div class="tabpasection">
+                                <ul class="resp-tabs-list" role="tablist" aria-label="Product Tabs">
+                                    <li role="tab">
+                                        <p>Credit Cards</p>
+                                    </li>
+                                    <li role="tab">
+                                        <p>Business Lending</p>
+                                    </li>
+                                    <li role="tab">
+                                        <p>Online Banking</p>
+                                    </li>
+                                    <li role="tab"> 
+                                        <p>Special Promotions</p>
+                                    </li>
+                                    <li role="tab">
+                                        <p>Business Checking</p>
+                                    </li>
+                                </ul>
+                                <div class="resp-tabs-container">
+                                    <div class="tabblock">
+                                        <div class="tabimagecontent">
+                                            <div class="tabtext">
+                                                <!-- <h2>Kerry Santopietro Named LIBN 2023 <br>
+                                                    Top 50 Women in Business</h2> -->
+                                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architectSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis 
+                                                    et quasi architecto…</p>
+                                                <a class="ctabtn primarybtn">Explore Options</a>
+                                            </div>
+                                            <div class="tabimage">
+                                                <a href="#">
+                                                    <img data-src="assets/images/special-promotions.jpg" class="lazy layzeloading zoom" width="750" height="422" alt="Special Promotions" >
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tabblock">
+                                        <div class="tabimagecontent">
+                                            <div class="tabtext">
+                                                <!-- <h2>Kerry Santopietro Named LIBN <br>
+                                                    2023 Top 50 Women in Business</h2> -->
+                                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architectSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis 
+                                                        et quasi architecto…</p>
+                                                <a class="ctabtn primarybtn">Read More</a>
+                                            </div>
+                                            <div class="tabimage">
+                                                <div class="insight-img">
+                                                    <figure class="videoPanel vimeovideopanel video-thumb-image noSpeedBump" data-videoSource="vimeo">
+                                                        <img data-src="assets/images/special-promotions.jpg" class="lazy layzeloading zoom" width="750" height="422" alt="Special Promotions" >
+                                                        <div id="ytplayer-tab11" class="vimeo-video-src" data-videoid="347119375"> </div>
+                                                    </figure>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tabblock">
+                                        <div class="tabimagecontent">
+                                            <div class="tabtext">
+                                                <!-- <h2>Kerry Santopietro Named LIBN <br>
+                                                    2023 Top 50 Women in Business</h2> -->
+                                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architectSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis 
+                                                        et quasi architecto…</p>
+                                                <a class="ctabtn primarybtn">Read More</a>
+                                            </div>
+                                            <div class="tabimage">
+                                                <div class="insight-img">
+                                                    <figure class="videoPanel youtubevideopanel video-thumb-image noSpeedBump" data-videoSource="youtube">
+                                                        <img data-src="assets/images/special-promotions.jpg" class="lazy layzeloading zoom" width="750" height="422" alt="Special Promotions" >
+                                                        <div id="ytplayer-tab22" class="youtube-video-src" data-videoid="yAoLSRbwxL8"> </div>
+                                                    </figure>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tabblock">
+                                        <div class="tabimagecontent">
+                                            <div class="tabtext">
+                                                <!-- <h2>Kerry Santopietro Named LIBN <br>
+                                                    2023 Top 50 Women in Business</h2> -->
+                                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architectSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis 
+                                                        et quasi architecto…</p>
+                                                <a class="ctabtn primarybtn">Read More</a>
+                                            </div>
+                                            <div class="tabimage">
+                                                <a href="#">
+                                                    <img data-src="assets/images/special-promotions.jpg" class="lazy layzeloading zoom" width="750" height="422" alt="Special Promotions" >
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>    
+                                    <div class="tabblock">
+                                        <div class="tabimagecontent">
+                                            <div class="tabtext">
+                                                <!-- <h2>Kerry Santopietro Named LIBN <br>
+                                                    2023 Top 50 Women in Business</h2> -->
+                                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architectSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis 
+                                                        et quasi architecto…</p>
+                                                <a class="ctabtn primarybtn">Read More</a>
+                                            </div>
+                                            <div class="tabimage">
+                                                <a href="#">
+                                                    <img data-src="assets/images/special-promotions.jpg" class="lazy layzeloading zoom" width="750" height="422" alt="Special Promotions" >
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tapswiperpanel">
+                        <div class="grid-container">
+                            <div class="swiper tapSlider tapPersonalSlider">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="swiper-list">
+                                            <p>Special Promotions</p>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="swiper-list">
+                                            <p>Business Checking</p>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="swiper-list">
+                                            <p>Business Lending</p>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="swiper-list">
+                                            <p>Online Banking</p>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="swiper-list">
+                                            <p>Credit Cards</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                            </div>  
+                            <div thumbsSlider="" class="swiper tabContentSlider tabPersonalContentSlider">
+                                <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="swiper-content">
+                                        <div class="tabblock">
+                                            <div class="tabimagecontent">
+                                                <!-- <div class="tabtitle">Kerry Santopietro Named LIBN <br>
+                                                    2023 Top 50 Women in Business</div> -->
+                                                <div class="tabtext">
+                                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architectSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto…</p>
+                                                </div>
+                                                <div class="tabimage">
+                                                    <div class="insight-img">
+                                                        <figure class="videoPanel vimeovideopanel video-thumb-image noSpeedBump" data-videoSource="vimeo">
+                                                            <img src="assets/images/special-promotions.jpg" class="zoom" width="750" height="422" alt="Special Promotions" >
+                                                            <div id="ytplayer-tab122Mobile" class="vimeo-video-src" data-videoid="347119375"> </div>
+                                                        </figure>
+                                                    </div>
+                                                </div>
+                                                <div class="ctablock">
+                                                    <a class="ctabtn primarybtn" aria-label="Explore Options">Explore Options</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="swiper-content">
+                                        <div class="tabblock">
+                                            <div class="tabimagecontent">
+                                                <!-- <div class="tabtitle">Kerry Santopietro Named LIBN <br>
+                                                    2023 Top 50 Women in Business</div> -->
+                                                    <div class="tabtext">
+                                                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architectSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto…</p>
+                                                    </div>
+                                                    <div class="tabimage">
+                                                        <div class="insight-img">
+                                                            <figure class="videoPanel vimeovideopanel video-thumb-image noSpeedBump" data-videoSource="vimeo">
+                                                                <img src="assets/images/special-promotions.jpg" class="zoom" width="750" height="422" alt="Special Promotions" >
+                                                                <div id="ytplayer-tab11Mobile" class="vimeo-video-src" data-videoid="347119375"> </div>
+                                                            </figure>
+                                                        </div>
+                                                    </div>
+                                                    <div class="ctablock">
+                                                        <a class="ctabtn primarybtn" aria-label="Read More">Read More</a>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="swiper-content">
+                                        <div class="tabblock">
+                                            <div class="tabimagecontent">
+                                                <!-- <div class="tabtitle">Kerry Santopietro Named LIBN <br>
+                                                    2023 Top 50 Women in Business</div> -->
+                                                    <div class="tabtext">
+                                                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architectSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto…</p>
+                                                    </div>
+                                                    <div class="tabimage">
+                                                        <a href="#">
+                                                            <img src="assets/images/special-promotions.jpg" class="zoom" width="750" height="422" alt="Special Promotions" >
+                                                        </a>
+                                                    </div>
+                                                    <div class="ctablock">
+                                                        <a class="ctabtn primarybtn" aria-label="Read More">Read More</a>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="swiper-content">
+                                        <div class="tabblock">
+                                            <div class="tabimagecontent">
+                                                <!-- <div class="tabtitle">Kerry Santopietro Named LIBN <br>
+                                                    2023 Top 50 Women in Business</div> -->
+                                                    <div class="tabtext">
+                                                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architectSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto…</p>
+                                                    </div>
+                                                    <div class="tabimage">
+                                                        <div class="insight-img">
+                                                            <figure class="videoPanel youtubevideopanel video-thumb-image noSpeedBump" data-videoSource="youtube">
+                                                                <img src="assets/images/special-promotions.jpg" class="zoom" width="750" height="422" alt="Special Promotions" >
+                                                                <div id="ytplayer-tab22Mobile" class="youtube-video-src" data-videoid="Vt28CX44SE8"> </div>
+                                                            </figure>
+                                                        </div>
+                                                    </div>
+                                                    <div class="ctablock">
+                                                        <a class="ctabtn primarybtn" aria-label="Read More">Read More</a>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="swiper-content">
+                                        <div class="tabblock">
+                                            <div class="tabimagecontent">
+                                                <!-- <div class="tabtitle">Kerry Santopietro Named LIBN <br>
+                                                    2023 Top 50 Women in Business</div> -->
+                                                    <div class="tabtext">
+                                                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architectSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto…</p>
+                                                    </div>
+                                                    <div class="tabimage">
+                                                        <a href="#">
+                                                            <img src="assets/images/special-promotions.jpg" class="zoom" width="750" height="422" alt="Special Promotions" >
+                                                        </a>
+                                                    </div>
+                                            </div>
+                                        </div>  
+                                    </div>
+                                </div>
+                                </div>
+                            </div>    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" defer>
+    $(document).ready(function () {
+           var swiper = new Swiper(".newspanel", {
+           slidesPerView: 1,
+           loop:true,
+           pagination: {
+               el: ".newspanel .swiper-pagination",
+               clickable: true,
+           },
+           navigation: {
+           nextEl: ".newspanel .swiper-button-next",
+           prevEl: ".newspanel .swiper-button-prev",
+       },
+       breakpoints: {
+               640: {
+                   slidesPerView: 1,
+                   slidesPerGroup: 1,
+               },
+               768: {
+                   slidesPerView: 2,
+                   slidesPerGroup: 2,
+                   spaceBetween: 0,
+               },
+               1024: {
+                   slidesPerView: 4,
+                   slidesPerGroup: 4,
+                   spaceBetween: 16,
+               },
+               1199: {
+                   slidesPerView: 4,
+                   spaceBetween: 32,
+               },
+               1360: {
+                   slidesPerView: 4,
+                   spaceBetween: 53,
+               },
+           },
+       });
+   });
+</script> 
+<link rel="stylesheet" href="{{root}}assets/css/fourcolumnpanel/fourcolumnpanel.css" media="all">
+<div class="fourcolumnpanel module">
+    <div class="grid-container">
+        <h2>Tips, News & Events</h2>
+        <div class="swiper-container newspanel">
+            <div class="swiper-wrapper innerWrap">
+                <div class="swiper-slide">
+                <div class="colblock mySlides fade">
+                    <div class="imgWrap">
+                        <a href="javascript:void(0);" alt="Articlelink1">
+                            <picture>
+                                <source media="(min-width:320px) and (max-width:767px)" srcset="assets/images/article1.jpg" type="image/jpg">
+                                <source media="(min-width:768px) and (max-width:1023px)" srcset="assets/images/article1.jpg" type="image/jpg">
+                                <source media="(min-width:1024px) and (max-width:1279px)" srcset="assets/images/article1.jpg" type="image/jpg">
+                                <source media="(min-width: 1366px)" srcset="assets/images/article1.jpg" type="image/jpg">
+                                <img data-src="assets/images/article1.jpg" data-srcset="assets/images/article1.jpg" srcset="assets/images/article1.jpg" alt="Article1" class="lazy zoom" width="320" height="204">
+                            </picture>
+                        </a>
+                    </div>
+                    <div class="contentsection">
+                        <div class="col-title">
+                            <p>Community</a>
+                        </div>
+                        <div class="date">
+                            <p>June 14, 2001</p>
+                        </div>
+                        <div class="col-title-sec">
+                            <a href="#" aria-label="#">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam.</a>
+                        </div>
+                        <div class="contentblock">
+                            <p>Adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+                        </div>
+                        <div class="ctablock">
+                            <a class="learnmorecta">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <div class="swiper-slide">
+                <div class="colblock mySlides fade">
+                    <div class="imgWrap">
+                        <a href="javascript:void(0);" alt="Articlelink2">
+                            <picture>
+                                <source media="(min-width:320px) and (max-width:767px)" srcset="assets/images/article2.jpg" type="image/jpg">
+                                <source media="(min-width:768px) and (max-width:1023px)" srcset="assets/images/article2.jpg" type="image/jpg">
+                                <source media="(min-width:1024px) and (max-width:1279px)" srcset="assets/images/article2.jpg" type="image/jpg">
+                                <source media="(min-width: 1366px)" srcset="assets/images/article2.jpg" type="image/jpg">
+                                <img data-src="assets/images/article2.jpg" data-srcset="assets/images/article2.jpg" srcset="assets/images/article2.jpg" alt="Article2" class="lazy zoom" width="320" height="204">
+                            </picture>
+                        </a>
+                    </div>
+                    <div class="contentsection">   
+                        <div class="col-title">
+                            <p>In the News</p>
+                        </div>
+                        <div class="date">
+                            <p>05 / 10 / 2023</p>
+                        </div>
+                        <div class="col-title-sec">
+                            <a href="#" aria-label="#">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam.</a>
+                        </div>
+                        <div class="contentblock">
+                            <p>Adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+                        </div>
+                        <div class="ctablock">
+                            <a class="learnmorecta">Learn More</a>
+                        </div> 
+                    </div>
+                </div>
+                </div>
+                <div class="swiper-slide">
+                <div class="colblock mySlides fade">
+                    <div class="imgWrap">
+                        <a href="" alt="Articlelink3">
+                            <picture>
+                                <source media="(min-width:320px) and (max-width:767px)" srcset="assets/images/article3.jpg" type="image/jpg">
+                                <source media="(min-width:768px) and (max-width:1023px)" srcset="assets/images/article3.jpg" type="image/jpg">
+                                <source media="(min-width:1024px) and (max-width:1279px)" srcset="assets/images/article3.jpg" type="image/jpg">
+                                <source media="(min-width: 1366px)" srcset="assets/images/article3.jpg" type="image/jpg">
+                                <img data-src="assets/images/article3.jpg" data-srcset="assets/images/article3.jpg" srcset="assets/images/article3.jpg" alt="Article3" class="lazy zoom" width="320" height="204">
+                            </picture>
+                        </a>
+                    </div>
+                    <div class="contentsection">
+                        <div class="col-title">
+                            <p>Event</p>
+                        </div>
+                        <div class="date">
+                            <p>05 / 10 / 2023</p>
+                        </div>
+                        <div class="col-title-sec">
+                            <a href="#" aria-label="#">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam.</a>
+                        </div>
+                        <div class="contentblock">
+                            <p>Adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem</p>
+                        </div>
+                        <div class="ctablock">
+                            <a class="learnmorecta">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <div class="swiper-slide">
+                <div class="colblock mySlides fade">
+                    <div class="imgWrap">
+                        <a href="javascript:void(0);" alt="Articlelink4">
+                            <picture>
+                                <source media="(min-width:320px) and (max-width:767px)" srcset="assets/images/article4.jpg" type="image/jpg">
+                                <source media="(min-width:768px) and (max-width:1023px)" srcset="assets/images/article4.jpg" type="image/jpg">
+                                <source media="(min-width:1024px) and (max-width:1279px)" srcset="assets/images/article4.jpg" type="image/jpg">
+                                <source media="(min-width: 1366px)" srcset="assets/images/article4.jpg" type="image/jpg">
+                                <img data-src="assets/images/article4.jpg" data-srcset="assets/images/article4.jpg" srcset="assets/images/article4.jpg" alt="Article4" class="lazy zoom" width="320" height="204">
+                            </picture>
+                        </a>
+                    </div>
+                    <div class="contentsection">
+                        <div class="col-title">
+                            <p>Fraud Education</p>
+                        </div>
+                        <div class="date">
+                            <p>05 / 10 / 2023</p>
+                        </div>
+                        <div class="col-title-sec">
+                            <a href="#" aria-label="#">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam.</a>
+                        </div>
+                        <div class="contentblock">
+                            <p>Adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+                        </div>
+                        <div class="ctablock">
+                            <a class="learnmorecta">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="navBox" style="display: none;">
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+        <div class="viewallcta">
+            <a href="#" class="ctabtn primarybtn iconbbtn" aria-label="View all News">
+                View All
+            </a>
+        </div>
+    </div>
+</div>
+<link rel="stylesheet" href="{{root}}assets/css/fourcolumn_skewpanel/fourcolumn_skewpanel.css" media="all">
+<script type="text/javascript" defer>
+    $(document).ready(function () {
+           var swiper = new Swiper(".newspanel", {
+           slidesPerView: 1,
+           loop:false,
+           pagination: {
+               el: ".newspanel .swiper-pagination",
+               clickable: true,
+           },
+           navigation: {
+           nextEl: ".newspanel .swiper-button-next",
+           prevEl: ".newspanel .swiper-button-prev",
+        },
+           breakpoints: {
+               640: {
+                   slidesPerView: 1,
+                   slidesPerGroup: 1,
+                   loop:true,
+               },
+               768: {
+                   slidesPerView: 2,
+                   slidesPerGroup: 2,
+                   spaceBetween: 0,
+                   loop:false,
+               },
+               1024: {
+                   slidesPerView: 4,
+                   slidesPerGroup: 4,
+                   spaceBetween: 15,
+               },
+               1199: {
+                   slidesPerView: 4,
+                   spaceBetween: 15,
+               },
+               1360: {
+                   slidesPerView: 4,
+                   spaceBetween: 15,
+               },
+           },
+       });
+   });
+</script> 
+<div class="fourcolumnpanel fourcolumn_skewpanel module">
+    <div class="grid-container">
+        <h2>Business Banking Solutions</h2>
+        <div class="swiper-container newspanel">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="colblock mySlides fade">
+                  <div class="imgWrap">
+                    <a href="#" aria-label="Article1">
+                        <img data-src="assets/images/article1.jpg"  alt="Article1" class="lazy layzeloading zoom" width="349" height="183">
+                        <div class="before"></div>
+                    </a>
+                  </div>
+                  <div class="contentsection">
+                    <div class="col-title">
+                        <p>Business Checking</a>
+                    </div>
+                    <div class="contentblock">
+                        <p>Discover the ideal business checking account for your growing venture, paired with a banking team you can trust.</p>
+                    </div>
+                    <div class="ctablock">
+                        <a href="#" class="ctabtn primarybtn" aria-label="Explore More">Explore More</a>
+                    </div>
+                  </div>
+                  </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="colblock mySlides fade">
+                        <div class="imgWrap">
+                            <a href="#" aria-label="Article2">
+                                <img data-src="assets/images/article2.jpg"  alt="Article2" class="lazy layzeloading zoom" width="349" height="183">
+                                <div class="before"></div>
+                            </a>
+                        </div>
+                        <div class="contentsection">   
+                          <div class="col-title">
+                              <p>Business Savings</p>
+                          </div>
+                          <div class="contentblock">
+                              <p>See various savings options for your business to prepare for an exciting future proactively.</p>
+                          </div>
+                          <div class="ctablock">
+                            <a href="#" class="ctabtn primarybtn" aria-label="Explore More">Start Saving</a>
+                          </div> 
+                       </div>
+                       </div>
+                  </div>
+                  <div class="swiper-slide">
+                 <div class="colblock mySlides fade">
+                    <div class="imgWrap">
+                        <a href="#" aria-label="Article3">
+                            <img data-src="assets/images/article3.jpg"  alt="Article3" class="lazy layzeloading zoom" width="349" height="183">
+                            <div class="before"></div>
+                        </a>
+                    </div>
+                  <div class="contentsection">
+                    <div class="col-title">
+                        <p>Treasury Management</p>
+                    </div>
+                    <div class="contentblock">
+                        <p>Improve cash flow and business banking operations with First Bank’s Treasury management solutions. Find what your team is looking for, and keep business moving forward.</p>
+                    </div>
+                    <div class="ctablock">
+                        <a href="#" class="ctabtn primarybtn" aria-label="Explore More">Compare Checking</a>
+                    </div>
+                   </div>
+                  </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="colblock mySlides fade">
+                        <div class="imgWrap">
+                            <a href="#" aria-label="Article4">
+                                <img data-src="assets/images/article4.jpg"  alt="Article4" class="lazy layzeloading zoom" width="349" height="183">
+                                <div class="before"></div>
+                            </a>
+                        </div>
+                        <div class="contentsection">
+                         <div class="col-title">
+                             <p>Government Banking</p>
+                         </div>
+                         <div class="contentblock">
+                             <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed.</p>
+                         </div>
+                         <div class="ctablock">
+                            <a href="#" class="ctabtn primarybtn" aria-label="Explore More">Compare Checking</a>
+                         </div>
+                         </div>
+                     </div>
+                  </div>
+             
+        </div>
+        <div class="navBox" style="display: none;">
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+</div>
+</div>
+</div>
+<link rel="stylesheet" href="{{root}}assets/css/findbranch/findbranch.css" media="all">
+<div class="findbranchPannel module">
+    <div class="grid-container">
+        <div class="wraps">
+            <h2>FIND A BRANCH OR ATM</h2>
+            <form data-form-validate="true" class="findbranch" method="post" id="findbranch" novalidate="novalidate">
+                <div class="form-group">
+                    <fieldset>
+                        <legend class="screen-reader-text">Zip Code</legend>
+                        <input type="text" class="txtBox form-control" id="cityzipcode" name="cityzipcode" placeholder="Enter Zip Code...">
+                        <p class="error-text" style="display: none;">Enter Zip Code...</p>
+                        <div class="rserachLst">
+                            <ul>
+                                <li>41002</li>
+                                <li>41002</li>
+                                <li>41002</li>
+                                <li>41002</li>
+                                <li>41002</li>
+                            </ul>
+                        </div>
+                    </fieldset>
+                </div>
+                <button type="submit" name="button" class="ctaborder">Search</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+// $(window).on('load', function () {
+//     function setupObserver() {
+//         var target = document.querySelector('.swiper-slide-active');
+//         if (!target) {
+//             console.log('Target element not found.');
+//             return;
+//         }
+//         var observer = new MutationObserver(function (mutations) {
+//             mutations.forEach(function (mutation) {
+//                 if (mutation.attributeName === "class") {
+//                     if ($(".swiper-slide-active").hasClass("temp1")) {
+//                         $(".chatbot").removeClass("without-before").addClass("with-before");
+//                     } else {
+//                         alert("hi");
+//                         $(".chatbot").removeClass("with-before").addClass("without-before");
+//                     }
+//                 }
+//             });
+//         });
+//         var config = {
+//             attributes: true,
+//             attributeFilter: ["class"]
+//         };
+//         observer.observe(target, config);
+//     }
+//     setTimeout(setupObserver, 1000);
+// });
+</script>
+<script type="text/javascript">
+    $(window).scroll(lazyLoadJuicer);
+    var feed = $('.juicer-feed');
+    var juicerFeedScrollDistance = 0;
+    if (typeof (feed.offset()) !== "undefined") {
+        juicerFeedScrollDistance = feed.offset().top;
+    }
+    var juicerLoaded = false;
+    function lazyLoadJuicer() {
+        var scrollDistance = $(window).scrollTop();
+        var windowHeight = $(window).height();
+        if ((scrollDistance >= (juicerFeedScrollDistance - windowHeight)) && !juicerLoaded) {
+            $.getScript('//assets.juicer.io/embed-no-jquery.js');
+            $('head').append('<link rel="stylesheet" type="text/css" href="//assets.juicer.io/embed.css">');
+            juicerLoaded = false;
+            // $(".juicer-feed .juicer-button").addClass("ctabtn primarybtn");
+            // $(".juicer-feed .primarybtn").removeClass("juicer-button j-paginate");
+        }
+    };
+    lazyLoadJuicer();
+
+</script>
+<link rel="stylesheet" href="{{root}}assets/css/followuspanel/followuspanel.css" media="all">
+<section class="secondarycolor connectpanel">
+    <h2>Connect with Us</h2>
+    <div class="col-md-12">
+        <ul class="juicer-feed" data-feed-id="mmbb-financial-services" data-per="3" data-columns="3" data-gutter="30"></ul>
+    </div>
+</section>

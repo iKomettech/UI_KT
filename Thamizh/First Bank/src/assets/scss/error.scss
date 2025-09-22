@@ -1,0 +1,74 @@
+@import "util/util";
+$white: #ffffff;
+$black:#000000;
+$primary-color: #012169;
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+.page404Wrap {
+    padding-top: 45px;
+    @include breakpoint(medium) {
+      padding-top: 50px;
+    }
+    h1 {
+      color: $primary-color;
+      font-weight: 700;
+      font-size: 30px;
+      line-height:40px;
+      padding-bottom: 15px;
+      padding-top: 36px;
+      @include breakpoint(medium) {
+        font-size: 65px;
+        line-height:75px;
+        padding-bottom: 35px;
+      }
+      @include breakpoint(large) {
+        padding-bottom: 55px;
+      }
+    }
+    .home-link{
+      font-size: 16px;
+      line-height:20px;
+      color: $primary-color;
+    }
+    .wrapSection{
+      text-align: center;
+      p{
+        color:$black;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 25px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding-top: 20px;
+        @include breakpoint(medium) {
+          font-size: 20px;
+          line-height: 25px;
+          max-width: 730px;
+        }
+        @include breakpoint(large) {
+          font-size: 25px;
+          line-height: 30px;
+          padding-top: 30px;
+          max-width: 955px;
+        }
+        @include breakpoint(xlarge) {
+          font-size: 32px;
+          line-height: 38px;
+          padding-top: 82px;
+          max-width: 1200px;
+        }
+        a {
+          font-weight:700;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  

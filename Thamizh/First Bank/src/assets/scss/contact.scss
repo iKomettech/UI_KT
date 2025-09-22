@@ -1,0 +1,967 @@
+@import "util/util";
+
+$white: #ffffff;
+$primary-color: #012169;
+$body-font-color: #000000;
+$black: #000000;
+$lightgray-bg-color:#EDEDED;
+$img: "../../images/";
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+.contactpanel{
+    margin-top: 95px;
+    .flexwrap{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        @include breakpoint(large){
+          flex-wrap: nowrap;
+        } 
+        .leftwrap{
+            max-width: 100%;
+            width: 100%;
+            margin-bottom: 40px;
+            @include breakpoint(large){
+              max-width: 357px;
+              margin-bottom: 0;
+              margin-right: 50px;
+            }
+            .findbranch { 
+                position: relative;
+                h2{
+                    font-size: 34px;
+                    font-weight: 700;
+                    line-height: 38px;
+                    color: $primary-color;
+                    padding-bottom: 2px;
+                    @include breakpoint(large only){
+                      font-size: 28px;
+                    }
+                }
+                .findlocaion{
+                    display:flex;
+                    margin-top: 12px;
+                    .ctabtn.primarybtn {
+                        padding: 0px 38px;
+                        border-radius: 0;
+                        height: 48px;
+                        border-radius: 25px;
+                        position: absolute;
+                        right: -18px;
+                        @include breakpoint(large only){
+                          padding: 0px 25px;
+                          right: 32px;
+                        }
+                    }
+                    input {
+                        height: 48px;
+                        border: 2px solid #012169;
+                        font-size: 18px;
+                        line-height: 18px;
+                        max-width: 315px;
+                        border-right: 0;
+                        border-radius: 25px;
+                        font-weight: 600;
+                        color: rgba(1, 33, 105, 0.47);
+                        border-top-right-radius: 0;
+                        border-bottom-right-radius: 0;
+                        padding-left: 22px;
+                        &::placeholder {
+                            color: rgba(1, 33, 105, 0.47);
+                            opacity: 1;
+                        }
+                        &:-ms-input-placeholder {
+                            color: rgba(1, 33, 105, 0.47);
+                        }
+                        &::-ms-input-placeholder {
+                            color: rgba(1, 33, 105, 0.47);
+                        }
+                        @include breakpoint(large only){
+                            font-size: 17px;
+                        }
+                    }
+                }
+            }
+            .contentwrap{
+                margin-top: 10px;
+                text-align: left;
+                @media (min-width: 430px) and (max-width: 1023px) {
+                  text-align: center;
+                }
+                h2{
+                    font-size: 34px;
+                    font-weight: 700;
+                    line-height: 38px;
+                    color: $primary-color;
+                    padding-bottom: 0px;
+                    &:last-of-type {
+                        padding-top: 16px;
+                    }
+                    @include breakpoint(large only){
+                      font-size: 28px;
+                    }
+                }
+                h3{
+                    font-size: 24px;
+                    font-weight: 600;
+                    line-height: 24px;
+                    margin-bottom: 12px;
+                    margin-top: 18px;
+                    text-align: left;
+                    @media (min-width: 430px) and (max-width: 1023px) {
+                      text-align: center;
+                    }
+                }
+                p{
+                    font-size: 20px;
+                    line-height: 28px;
+                    font-weight: 400;
+                    + p{
+                        margin-top: 0;
+                        margin-bottom: 6px;
+                    }
+                    span{
+                        font-weight: 600;
+                        padding-bottom: 5px;
+                        display: block;
+                        padding-top: 12px;
+                    }
+                    + h2{
+                        padding-top: 15px;
+                    }
+                }
+                a{
+                    display: flex;
+                    @media (min-width: 430px) and (max-width: 1023px) {
+                      justify-content: center;
+                      max-width: 375px;
+                      margin: 0 auto;
+                    }
+                }
+                a[href^="tel:"]{
+                    font-size: 24px;
+                    line-height: 38px;
+                    font-weight: 600;
+                    text-decoration: none;
+                    &:hover{
+                      text-decoration: underline;
+                    }
+                }
+                a[href^="mailto:"]{
+                    font-size: 20px;
+                    line-height: 28px;
+                    font-weight: 400;
+                    text-decoration: none;
+                    margin-bottom: 5px;
+                    &:hover{
+                      text-decoration: underline;
+                    }
+                }
+            }
+            .ctawrap{
+                margin-top: 20px;
+                @media (min-width: 430px) and (max-width: 1023px) {
+                  text-align: center;
+                }
+            }
+        }
+    }
+}
+.contactpanel .iconbox {
+    text-align: center;
+    position: relative;
+    pointer-events: none;
+}
+    .contactpanel .iconimg {
+    width: 106px;
+    height: 106px;
+    transition: all 0.4s;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+.contactpanel .flexwrap .rightwrap .main-title.h2, .contactpanel .flexwrap .rightwrap .main-title h2{
+    text-align: center;
+    font-size: 48px;
+    line-height: 51px;
+    font-weight: 600;
+    margin-bottom: 52px;
+    text-transform: uppercase;
+    color: $primary-color;
+    @media (min-width: 1024px) and (max-width: 1279px) {
+      font-size: 38px;
+      line-height: 41px;
+      margin-bottom: 36px;
+    }
+    @media (min-width: 320px) and (max-width: 1023px) {
+      font-size: 30px;
+      line-height: 35px;
+      margin-bottom: 36px;
+    }
+}
+.contactpanel .flexwrap .rightwrap h3 {
+  font-size: 28px;
+  line-height: 34px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.contactpanel .flexwrap .rightwrap h4, .contactpanel .flexwrap .rightwrap .h4, .contactpanel .flexwrap .rightwrap p, .contactpanel .flexwrap .rightwrap a, .contactpanel .flexwrap .rightwrap li {
+    font-size: 24px;
+    line-height: 34px;
+    font-weight: 600;
+    @media (min-width: 320px) and (max-width: 1279px) {
+      font-size: 20px;
+      line-height: 24px;
+    }
+}
+.contactpanel .contactwrap .multistepcontact .topics .main-title .h2{
+    font-size: 32px;
+    line-height: 34px;
+    font-weight: 600;
+    color: $primary-color;
+    @media (min-width: 1024px) and (max-width: 1279px) {
+      font-size: 26px;
+      line-height: 30px;
+    }
+    @media (min-width: 320px) and (max-width: 1023px) {
+      font-size: 20px;
+      line-height: 34px;
+    }
+}
+.contactpanel .multistepcontact .greybgpanel {
+  background: none;
+}
+.contactpanel .multistepcontact .contactwrap {
+  background: none;
+  padding: 0;
+  border-radius: 0;
+}
+.contactpanel .flexwrap .rightwrap {
+    max-width: 1014px;
+    width: 100%;
+    position: relative;}
+    @media (min-width: 1024px) and (max-width: 1279px) {
+      .contactpanel .flexwrap .rightwrap {
+        max-width: 100%;
+      }
+    }
+    @media print, screen and (min-width: 48em) and (max-width: 63.99875em) {
+      .contactpanel .flexwrap .rightwrap {
+        max-width: 100%; } }
+    @media print, screen and (max-width: 47.99875em) {
+      .contactpanel .flexwrap .rightwrap {
+        max-width: 100%; } }
+    .contactpanel .flexwrap .rightwrap .desctext p {
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 26px; }
+      @media print, screen and (max-width: 47.99875em) {
+        .contactpanel .flexwrap .rightwrap .desctext p {
+          font-size: 16px; } }
+      @media (min-width: 1024px) and (max-width: 1279px) {
+        .contactpanel .flexwrap .rightwrap .desctext p {
+          font-size: 16px; } }
+
+.contactpanel .contactwrap {
+    background: #E9F3FB;
+    border-radius: 20px;
+    padding: 75px 83px;
+    @media (min-width: 768px) and (max-width: 1279px) {
+      padding: 48px 36px;
+    }    
+}
+ .contactpanel .contactwrap .grid-x {
+        -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+        height: 254px;
+        max-width: 100%;
+        min-width: 100%;
+        margin-top: 0px;
+        justify-content: space-between;
+    }
+    .contactpanel .contactwrap .iconsec a {
+        display: inline-block;
+        color: #012169;
+        -webkit-transition: 0.75s all;
+        transition: 0.75s all;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        margin-top: 0px;
+    }
+        .contactpanel .contactwrap .iconsec a .iconbox svg {
+            -webkit-transition: 0.75s all;
+            transition: 0.75s all;
+        }
+                    .contactpanel .contactwrap .iconsec a:hover {
+            text-decoration: none;
+            color: #2D2D2D;
+            -webkit-transition: 0.75s all;
+            transition: 0.75s all;
+        }
+        .contactpanel .contactwrap .iconsec a:hover .iconbox svg {
+          -webkit-transform: scale(1.1);
+              -ms-transform: scale(1.1);
+                  transform: scale(1.1);
+         -webkit-transition: 0.75s all;
+      transition: 0.75s all;
+
+        }
+        .contactpanel .contactwrap .iconsec a:hover .iconbox img {
+            -webkit-transform: scale(1.1);
+            -ms-transform: scale(1.1);
+            transform: scale(1.1);
+           -webkit-transition: 0.75s all;
+      transition: 0.75s all;
+        }
+        .contactpanel .contactwrap .iconsec a:hover span {
+          color: #012169; }
+        .contactpanel .contactwrap .iconsec a .iconbox {
+            display: -webkit-inline-box;
+            display: -webkit-inline-flex;
+            display: -ms-inline-flexbox;
+            display: inline-flex;
+            -webkit-box-pack: center;
+            -webkit-justify-content: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+       
+      .contactpanel .contactwrap .iconsec a .linkContnet {
+        color: #000000;
+        text-align: center;
+        text-transform: none;
+        position: relative;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+        font-size: 22px;
+        line-height: 26px;
+        font-weight: 600;
+        display: block; }
+        @media print, screen and (max-width: 47.99875em) {
+          .contactpanel .contactwrap .iconsec a .linkContnet {
+            font-size: 20px;
+            line-height: 24px; } }
+        @media print, screen and (min-width: 48em) and (max-width: 63.99875em) {
+          .contactpanel .contactwrap .iconsec a .linkContnet {
+            font-size: 16px;
+            line-height: 20px; } }
+        @media print, screen and (min-width: 64em) and (max-width: 84.99875em) {
+          .contactpanel .contactwrap .iconsec a .linkContnet {
+            font-size: 18px;
+            line-height: 22px; } }
+        @media (min-width: 1024px) and (max-width: 1279px) {
+          .contactpanel .contactwrap .iconsec a .linkContnet {
+            font-size: 16px;
+            line-height: 20px; } }
+  .contactpanel .contactwrap .multistepcontact:not(:first-of-type) {
+    display: none; }
+  .contactpanel .contactwrap .multistepcontact .topics {
+    max-width: 1024px;
+    margin: 0px auto;
+    margin-bottom: 0px; }
+    @media print, screen and (min-width: 64em) {
+      .contactpanel .contactwrap .multistepcontact .topics {
+        margin-bottom: 0px; } }
+    .contactpanel .contactwrap .multistepcontact .topics .desctext {
+      padding-top: 20px;
+      padding-bottom: 40px; }
+      @media print, screen and (min-width: 48em) and (max-width: 63.99875em) {
+        .contactpanel .contactwrap .multistepcontact .topics .desctext {
+          font-size: 16px;
+          line-height: 24px; } }
+    .contactpanel .contactwrap .multistepcontact .topics .contactFormField {
+      margin-top: 0px; }
+      .contactpanel .contactwrap .multistepcontact .topics .contactFormField .two-column {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex; }
+        @media print, screen and (max-width: 47.99875em) {
+          .contactpanel .contactwrap .multistepcontact .topics .contactFormField .two-column {
+            -webkit-flex-wrap: wrap;
+                -ms-flex-wrap: wrap;
+                    flex-wrap: wrap; } }
+        .contactpanel .contactwrap .multistepcontact .topics .contactFormField .two-column .form-group {
+          max-width: 401px;
+          width: 100%; }
+          .contactpanel .contactwrap .multistepcontact .topics .contactFormField .two-column .form-group:first-child {
+            margin-right: 30px; }
+            @media print, screen and (max-width: 47.99875em) {
+              .contactpanel .contactwrap .multistepcontact .topics .contactFormField .two-column .form-group:first-child {
+                margin-right: 0; } }
+          @media print, screen and (max-width: 47.99875em) {
+            .contactpanel .contactwrap .multistepcontact .topics .contactFormField .two-column .form-group {
+              max-width: 100%; } }
+      .contactpanel .contactwrap .multistepcontact .topics .contactFormField .form-group {
+        position: relative;
+        margin-bottom: 5px; }
+        .contactwrap select.contact{
+          margin: 0;
+        }
+        .contactpanel .contactwrap .multistepcontact .topics .contactFormField .form-group span.errorMsg {
+            background: #F2A900;
+            background-image: url(../../images/settings/asterisk.svg);
+            background-repeat: no-repeat;
+            position: absolute;
+            top: -6px;
+            right: 8px;
+            width: 19px;
+            height: 19px;
+            background-position: 3px 3px;
+            background-size: 14px 12px;
+            border-radius: 50%;
+        }
+        .contactpanel .contactwrap .multistepcontact .topics .contactFormField .form-group span.f-error {
+            background-color: #F20000;
+            background-image: url(../../images/settings/error-icon.svg);
+            background-position: 5px 5px;
+            background-size: 9px 9px;
+        }
+        .contactpanel .contactwrap .multistepcontact .topics .contactFormField .form-group span.f-success {
+          background-color: #04A40E;
+          background-image: url(../../images/settings/success-icon.svg);
+          background-position: 5px 5px;
+          background-size: 9px 9px;}
+        .contactpanel .contactwrap .multistepcontact .topics .contactFormField .form-group label {
+            font-size: 20px;
+            line-height: 28px;
+            font-weight: 500;
+            padding-left: 26px;
+            white-space: nowrap;
+            text-align: left;
+            margin-bottom: 10px;
+            color: #2D2D2D;
+        }
+        .contactpanel .contactwrap .multistepcontact .topics .contactFormField .form-group input {
+            border-radius: 25px;
+            background-color: #ffffff;
+            padding: 10px 26px;
+            border: 0px solid #000000;
+            height: 50px;
+            color: #2D2D2D;
+            font-size: 20px;
+            width: 100%;
+            margin-bottom: 20px;
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+        }
+        .contactpanel .contactwrap .multistepcontact .topics .contactFormField .form-group .errorContact {
+          font-size: 12px;
+          color: #9f0a1f; }
+        .contactpanel .contactwrap .multistepcontact .topics .contactFormField .form-group .ui-selectmenu-button {
+            height: 50px;
+            color: #000;
+            font-size: 20px;
+            border-color: #ffffff !important;
+            border-radius: 25px !important;
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+            max-width: 100% !important;
+            width: 100%;
+            margin-bottom: 0;
+            padding: 0 15px;
+            margin: 0;
+        }
+          @media print, screen and (min-width: 48em) and (max-width: 63.99875em) {
+            .contactpanel .contactwrap .multistepcontact .topics .contactFormField .form-group .ui-selectmenu-button {
+              color: #000000;
+              font-size: 18px;
+              line-height: 24px;
+              font-weight: 400; } }
+          @media print, screen and (max-width: 47.99875em) {
+            .contactpanel .contactwrap .multistepcontact .topics .contactFormField .form-group .ui-selectmenu-button {
+              color: #000000;
+              font-size: 18px;
+              line-height: 24px;
+              font-weight: 400;
+              height: auto;
+              padding: 9px 18px; } }
+          .contactpanel .contactwrap .multistepcontact .topics .contactFormField .form-group .ui-selectmenu-button .ui-selectmenu-text {
+            padding: 0;
+            font-size: 20px;
+            line-height: 48px;
+            font-weight: 400;
+           }
+            @media print, screen and (min-width: 48em) and (max-width: 63.99875em) {
+              .contactpanel .contactwrap .multistepcontact .topics .contactFormField .form-group .ui-selectmenu-button .ui-selectmenu-text {
+                color: #000000;
+                font-size: 18px;
+                line-height: 24px;
+                font-weight: 400; } }
+            @media print, screen and (max-width: 47.99875em) {
+              .contactpanel .contactwrap .multistepcontact .topics .contactFormField .form-group .ui-selectmenu-button .ui-selectmenu-text {
+                color: #000000;
+                font-size: 18px;
+                line-height: 24px;
+                font-weight: 400; } }
+          @media print, screen and (min-width: 48em) {
+            .contactpanel .contactwrap .multistepcontact .topics .contactFormField .form-group .ui-selectmenu-button {
+              height: 45px;
+              padding: 10px 20px;
+              margin-bottom: 10px; } }
+          @media print, screen and (min-width: 64em) {
+            .contactpanel .contactwrap .multistepcontact .topics .contactFormField .form-group .ui-selectmenu-button {
+              height: 50px;
+              padding: 0px 26px;
+              margin-bottom: 10px; } }
+.contactpanel .contactwrap .multistepcontact .topics .contactFormField .form-group .ui-selectmenu-button:after {
+    height: 8px;
+    width: 15px;
+    right: 15px;
+    top: 36%;
+    background-size: contain;
+    background: url(../../images/settings/form-dropdown.svg) no-repeat;
+    content: "";
+    display: inline-block;
+    margin-top: 0px;
+    pointer-events: none;
+    position: absolute;
+    -webkit-transition: all 0.55s;
+    transition: all 0.55s;
+}
+          .contactpanel .contactwrap .multistepcontact .topics .contactFormField .form-group .ui-selectmenu-button.ui-selectmenu-button-open:after {
+            -webkit-transform: rotate(-180deg);
+                -ms-transform: rotate(-180deg);
+                    transform: rotate(-180deg);
+            -webkit-transition: all 0.55s;
+            transition: all 0.55s; }
+          .contactpanel .contactwrap .multistepcontact .topics .contactFormField .form-group .txtBox ::-webkit-input-placeholder {
+            /* Edge */
+            color: #2D2D2D; }
+          .contactpanel .contactwrap .multistepcontact .topics .contactFormField .form-group .txtBox :-ms-input-placeholder {
+            /* Internet Explorer 10-11 */
+            color: #2D2D2D;
+            opacity: 1; }
+          .contactpanel .contactwrap .multistepcontact .topics .contactFormField .form-group .txtBox ::-moz-placeholder {
+            color: #2D2D2D; }
+          .contactpanel .contactwrap .multistepcontact .topics .contactFormField .form-group .txtBox ::-ms-input-placeholder {
+            color: #2D2D2D; }
+          .contactpanel .contactwrap .multistepcontact .topics .contactFormField .form-group .txtBox ::placeholder {
+            color: #2D2D2D; }
+          .contactpanel .contactwrap .multistepcontact .topics .contactFormField .form-group .txtBox:focus {
+            outline: none; }
+        .contactpanel .contactwrap .multistepcontact .topics .contactFormField .form-group textarea {
+          border-radius: 25px;
+          background-color: #ffffff;
+          width: 100%;
+          height: 237px;
+          color: #2D2D2D;
+          font-size: 20px;
+          padding: 6px 26px;
+          border: 0px solid #000000;
+             margin-bottom: 10px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+    margin-top: 0px; }
+          .contactpanel .contactwrap .multistepcontact .topics .contactFormField .form-group textarea ::-webkit-input-placeholder {
+            /* Edge */
+            color: #2D2D2D; }
+          .contactpanel .contactwrap .multistepcontact .topics .contactFormField .form-group textarea :-ms-input-placeholder {
+            /* Internet Explorer 10-11 */
+            color: #2D2D2D;
+            opacity: 1; }
+          .contactpanel .contactwrap .multistepcontact .topics .contactFormField .form-group textarea ::-moz-placeholder {
+            color: #2D2D2D; }
+          .contactpanel .contactwrap .multistepcontact .topics .contactFormField .form-group textarea ::-ms-input-placeholder {
+            color: #2D2D2D; }
+          .contactpanel .contactwrap .multistepcontact .topics .contactFormField .form-group textarea ::placeholder {
+            color: #2D2D2D; }
+      .contactpanel .contactwrap .multistepcontact .topics .contactFormField .successForm .txtBox, .contactpanel .contactwrap .multistepcontact .topics .contactFormField .successForm .textarea {
+        border: 1px solid #119f0a !important; }
+      .contactpanel .contactwrap .multistepcontact .topics .contactFormField .errorForm .txtBox, .contactpanel .contactwrap .multistepcontact .topics .contactFormField .errorForm .textarea {
+       border: 1px solid #FE1717 !important;
+		background:#FCC1C1 !important; }
+    .errorContact {
+      display: none !important;
+  }
+  .contactpanel .contactwrap .multistepcontact button.ctabtn.next
+  {
+  margin-left: 22px;
+  }
+  button.ctabtn.primarybtn.submitbtn {
+    border-radius: 50px;
+    margin-left: 22px;
+}
+  .contactpanel .contactwrap .multistepcontact .nextPrevBtn {
+    margin-bottom: 45px;
+    text-align: center;
+    margin-top: 35px; }
+    @media print, screen and (max-width: 47.99875em) {
+      .contactpanel .contactwrap .multistepcontact .nextPrevBtn {
+        text-align: center;
+        margin-top: 30px; } }
+    @media print, screen and (min-width: 48em) {
+      .contactpanel .contactwrap .multistepcontact .nextPrevBtn {
+        margin-bottom: 45px; } }
+.contactpanel .contactwrap .multistepcontact .submitbtns {
+    margin-bottom: 45px;
+    margin-top: 25px;
+}
+    @media print, screen and (min-width: 48em) {
+        .contactpanel .contactwrap .multistepcontact .submitbtns {
+            margin-bottom: 45px;
+            margin-top: 25px;
+        } }
+  .contactpanel .contactwrap .multistepcontact .umbraco-forms-fieldset {
+    min-inline-size: auto; }
+  .contactpanel .contactwrap .multistepcontact .umbraco-forms-container {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    margin-top: 36px; }
+    .contactpanel .contactwrap .multistepcontact .umbraco-forms-container .umbraco-forms-field {
+      width: 100%;
+      max-width: 100%;
+      margin-bottom: 20px; }
+   
+      .contactpanel .contactwrap .multistepcontact .umbraco-forms-container .umbraco-forms-field textarea {
+        height: 223px; }
+ 
+      .contactpanel .contactwrap .progress {
+    border: 1px solid #84BD00;
+    background-color: #fff;
+    height: 14px;
+    max-width: 100%;
+    margin: 0px auto;
+    margin-top: 25px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+    @media print, screen and (min-width: 64em) {
+      .contactpanel .contactwrap .progress {
+        margin-top: 15px;
+        height: 13px; } }
+    .contactpanel .contactwrap .progress .progress-bar {
+      float: left;
+      width: 0;
+      height: 100%;
+      font-size: 12px;
+      line-height: 20px;
+      color: #fff;
+      text-align: center;
+      background-color: #84BD00;
+      -webkit-box-shadow: none;
+              box-shadow: none;
+      -webkit-transition: width 0.6s ease;
+      transition: width 0.6s ease; }
+  .contactpanel .contactwrap .imgsection {
+    margin-top: 30px;
+    overflow: hidden;
+    position: relative;
+    bottom: 0;
+    width: 100%; }
+    @media print, screen and (min-width: 64em) {
+      .contactpanel .contactwrap .imgsection {
+        position: absolute;
+        margin-top: 60px; } }
+    .contactpanel .contactwrap .imgsection img {
+      width: 100%; }
+  .contactpanel .contactwrap .current ~ .progress {
+    margin-top: 70px; }
+    @media print, screen and (max-width: 47.99875em) {
+      .contactpanel .contactwrap .current ~ .progress {
+        margin-top: 20px; } }
+
+.contactpanel .successsection {
+  padding-top: 60px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 125px; }
+  .contactpanel .successsection .success {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center; }
+    .contactpanel .successsection .success .successtxt p {
+      font-size: 45px;
+      line-height: 56px;
+      font-weight: 600;
+      padding-bottom: 36px;
+      color: #012169;
+      }
+    .contactpanel .successsection .success p {
+        font-size: 22px;
+        line-height: 34px;
+        font-weight: 500;
+        color: #2D2D2D;
+    }
+      
+    .contactpanel .successsection .success .success-checkmark {
+      padding-top: 0px; }
+      @media print, screen and (min-width: 48em) and (max-width: 63.99875em) {
+        .contactpanel .successsection .success .success-checkmark {
+          padding-top: 0px; } }
+      @media print, screen and (max-width: 47.99875em) {
+        .contactpanel .successsection .success .success-checkmark {
+          padding-top: 0px; } }
+
+@media (min-width: 1200px) and (max-width: 1279px) {
+  .contactpanel .contactwrap .imgsection {
+    position: relative;
+    margin-top: 60px; } }
+    .contactpanel .contactwrap .multistepcontact .topics .contactFormField .form-group .zIndex {
+      z-index: 9999;
+      position: relative;
+  }
+  #bcategory-menu, #pcategory-menu, #lscategory-menu, #personal-lending-category-menu, #residential-mortgage-category-menu, #business-lending-category-menu, #dcategory-menu, #business-options-category-menu, #personal-options-category-menu, #ocategory-menu {
+      border: none;
+      border-radius: 25px;
+      font-family: inherit;
+      margin-top: -30px;
+      padding-top: 30px;
+      height: auto;
+      .ui-menu-item-wrapper{
+        color: #2D2D2D;
+        font-size: 20px;
+        line-height: 28px;
+      }
+       .ui-state-active, .ui-state-focus{
+        background: #E7EDF1;
+       }
+  }
+  .contactpanel .contactwrap .multistepcontact .topics .contactFormField .form-group textarea + span + span.errorMsg,
+  .contactpanel .contactwrap .multistepcontact .topics .contactFormField .form-group textarea + span.errorMsg {
+    top: 28px;
+}
+.contactpanel .contactwrap .multistepcontact .topics .contactFormField .form-group input + span + span.errorMsg, 
+.contactpanel .contactwrap .multistepcontact .topics .contactFormField .form-group input + span.errorMsg{
+  top:28px;
+}
+.ui-selectmenu-button.ui-button {
+  white-space: pre-line;
+}
+.contactpanel .contactwrap .multistepcontact .topics .contactFormField .form-group.checkbox-group fieldset {
+  display: flex;
+  align-items: center;
+}
+
+.contactpanel .contactwrap .multistepcontact .topics .contactFormField .form-group.checkbox-group input {
+  width: 26px !important;
+  height: 26px !important;
+  visibility: hidden !important;
+}
+.contactpanel .contactwrap .multistepcontact .topics .contactFormField .form-group.checkbox-group label {
+  white-space: normal;
+  font-size: 18px;
+  margin-left: 30px;
+  padding-left: 0px;
+  margin-right: 0;
+  cursor:pointer;
+}
+.contactpanel .contactwrap .multistepcontact .topics .contactFormField .form-group.checkbox-group label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 26px;
+  height: 26px;
+  border: 1px solid #012169;
+  background: #ffffff;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+.contactpanel .contactwrap .multistepcontact .topics .contactFormField .form-group.checkbox-group input:checked + label:after {
+  content: '';
+  background: url(/assets/images/settings/checkbox.svg);
+  background-size: contain;
+  transform: none;
+  border: none;
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 15px;
+  top: 13px;
+  display: block;
+  position: absolute;
+  left: 3px;
+}
+.contactpanel .contactwrap .multistepcontact .topics .contactFormField .form-group.checkbox-group span.errorMsg {
+  text-align: left;
+  width: 100%;
+  display: inline-block;
+  color: #F54444 !important;
+  background: transparent;
+  position: relative;
+  font-size: 14px;
+}
+@media (max-width: 767px){
+  .contactpanel .contactwrap .multistepcontact .topics .contactFormField .form-group.checkbox-group label {
+      font-size: 14px;
+      line-height:20px;
+  }
+  .contactpanel .contactwrap .multistepcontact .topics .contactFormField .form-group.checkbox-group label::before {top:3px;}
+  .contactpanel .contactwrap .multistepcontact .topics .contactFormField .form-group.checkbox-group input:checked + label:after {top:9px;}
+}
+.contactpanel .contactwrap .multistepcontact .topics .contactFormField.loaninfo {
+  margin-top: 20px;
+}
+.main-title.mt-20 {
+  margin-top: 28px;
+  margin-bottom: 20px;
+}
+.contactpanel .contactwrap .multistepcontact .topics .contactFormField .form-group .ui-selectmenu-button.ui-selectmenu-button-open {
+  border-bottom-right-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .iconsec{
+    margin-left: 18px;
+  }
+  .iconsec:first-child {
+    margin-left: 0;
+}
+  .contactpanel .iconimg{
+    width: 96px;
+    height: 96px;
+  }
+}
+@media (max-width: 1023px) {
+  .contactpanel .flexwrap .leftwrap .findbranch{
+    max-width: 349px;
+    margin: 0 auto;
+  }
+  .contactpanel .flexwrap .leftwrap .findbranch h2{
+    text-align: center;
+  }
+}
+@media (max-width: 767px) {
+
+  .contactpanel .flexwrap {
+      margin-top: 0;
+  }
+
+  .contactpanel .contactwrap .grid-x {
+      height: auto;
+      flex-wrap:wrap;
+      justify-content:center;
+  }
+  .iconsec.text-center{
+      width:50%;
+      margin-bottom: 16px;
+  }
+      .contactpanel .contactwrap .iconsec a .iconbox {
+          margin-bottom: 15px;
+      }
+
+      h4.umbraco-forms-caption {
+          margin-top: 0;
+      }
+  .contactpanel .contactwrap .multistepcontact .topics {
+      margin-bottom: 0px;
+      }
+  .contactpanel select {
+      display: block;
+      text-overflow: ellipsis;
+      word-wrap: break-word;
+      padding-right: 20px !important;
+      background-position: right -1rem center;
+      background-size: 18px 37px;
+  }
+  .contactpanel {
+    margin-top: 52px;
+  }
+  .contactpanel .flexwrap .leftwrap .findbranch h2, .contactpanel .flexwrap .leftwrap .contentwrap h2{
+    font-size: 30px;
+    line-height: 34px;
+  }
+  .contactpanel .flexwrap .leftwrap .contentwrap p, .contactpanel .flexwrap .leftwrap .contentwrap a[href^="mailto:"]{
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .contactpanel .flexwrap .leftwrap .contentwrap p span, .contactpanel .flexwrap .leftwrap .contentwrap h3, .contactpanel .flexwrap .leftwrap .contentwrap a[href^="tel:"]{
+    font-size: 20px;
+    line-height: 24px;
+  }
+  .contactpanel .flexwrap .leftwrap .findbranch .findlocaion .ctabtn.primarybtn{
+    padding: 0px 34px;
+    right: -6px;
+  }
+  .contactpanel .flexwrap .leftwrap .contentwrap h2{
+    margin-bottom:7px;
+  }
+  .contactpanel .flexwrap .leftwrap .contentwrap a[href^="tel:"]{
+    margin-bottom: 6px;
+  }
+  .contactpanel .flexwrap .leftwrap .contentwrap p span{
+    padding-top: 5px;
+  }
+  .contactpanel .flexwrap .leftwrap .contentwrap h2:last-of-type {
+    padding-top: 21px;
+}
+.contactpanel .flexwrap .leftwrap .contentwrap h3{
+  margin-top: 8px;
+  margin-bottom: 6px;
+}
+.contactpanel .flexwrap .leftwrap .ctawrap {
+  margin-top: 26px;
+}
+.contactpanel .flexwrap .rightwrap .main-title.h2, .contactpanel .flexwrap .rightwrap .main-title h2{
+  margin-bottom: 18px;
+}
+.contactpanel .contactwrap .progress{
+  margin-top: 22px;
+}
+.contactpanel .contactwrap{
+  padding: 30px 10px;
+}
+.contactpanel .contactwrap .multistepcontact .topics .desctext{
+  padding-top: 10px;
+  padding-bottom: 20px
+}
+ #bcategory-menu .ui-menu-item-wrapper, #pcategory-menu .ui-menu-item-wrapper, #lscategory-menu .ui-menu-item-wrapper, #personal-lending-category-menu .ui-menu-item-wrapper, #residential-mortgage-category-menu .ui-menu-item-wrapper,
+    #business-lending-category-menu .ui-menu-item-wrapper, #dcategory-menu .ui-menu-item-wrapper, #business-options-category-menu .ui-menu-item-wrapper, #personal-options-category-menu .ui-menu-item-wrapper, #ocategory-menu .ui-menu-item-wrapper{
+  font-size: 16px;
+    line-height: 28px;
+    padding: 6px 10px
+}
+.contactpanel .contactwrap .multistepcontact .topics .contactFormField .form-group label{
+  font-size: 18px;
+  line-height: 20px;
+}
+.contactpanel .contactwrap .multistepcontact .topics .contactFormField .form-group input, .contactpanel .contactwrap .multistepcontact .topics .contactFormField .successForm .txtBox, .contactpanel .contactwrap .multistepcontact .topics .contactFormField .successForm .textarea{
+  font-size: 18px;
+}
+.contactpanel .contactwrap .multistepcontact .topics .contactFormField .form-group{
+  margin-bottom: 10px;
+}
+}
+@media (max-width: 430px) {
+  .contactpanel .flexwrap .rightwrap .main-title.h2, .contactpanel .flexwrap .rightwrap .main-title h2{
+    max-width: 280px;
+    margin: 0 auto;
+    margin-bottom: 36px;
+  }
+  .contactpanel .flexwrap .leftwrap .findbranch h2{
+    text-align: left;
+  }
+  .contactpanel .flexwrap .leftwrap .findbranch{
+    margin-left: 0;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .contactpanel .contactwrap {
+      padding: 48px 16px;
+  }
+  .contactpanel .flexwrap .leftwrap {
+      max-width: 315px;
+      margin-bottom: 0;
+      margin-right: 20px;
+  }
+}
+.ui-selectmenu-open {
+  border-radius: 0 0px 24px 24px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+}

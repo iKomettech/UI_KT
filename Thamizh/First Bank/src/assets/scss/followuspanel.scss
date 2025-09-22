@@ -1,0 +1,243 @@
+@import "util/util";
+$white: #ffffff;
+$primary-color: #012169;
+$secondary-color: #19A7C1;
+$img: "../../images/";
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    xlarge: 1360px,
+    xxlarge: 1400px,
+    xxxlarge: 1660px,
+);
+.connectpanel{
+    background-color:#F0F1EC;
+     margin-top:75px;
+    @include breakpoint(large){
+      margin-top:110px;
+    }
+      h2{
+        font-size: 30px;
+        font-weight: 600;
+        color:$primary-color;
+        line-height: 50px;
+        padding-top:50px;
+        text-transform: uppercase;
+        text-align: center;
+        padding-bottom:30px;
+        @include breakpoint(medium){
+          font-size: 30px;
+          line-height: 50px;
+          padding-top:55px;
+          padding-bottom:25px;
+        }
+        @include breakpoint(xlarge){
+          font-size: 48px;
+          line-height: 50px;
+          padding-top:110px;
+          padding-bottom:50px;
+        }
+      }
+      .juicer-feed{
+        .j-stacker-wrapper{
+         padding-left: 0px;
+         padding-right:0px;
+         margin:0 auto !important;
+        @include breakpoint(xxlarge){
+            max-width:1440px;
+        }
+        }
+        .j-stacker{
+          display: flex;
+          justify-content: space-between;
+          .j-stack{
+            @include breakpoint(xxlarge){
+              padding-left:0px !important;
+              padding-right:0px !important;
+            &:first-child{
+              // padding-left:0px !important;
+              margin-right:45px !important;
+            }
+            &:nth-child(2){
+              margin-right:45px !important;
+            }
+          }
+          }
+        li.feed-item{
+        background-color:transparent !important;
+        padding:0px !important;
+        border:unset !important;
+        ::before{
+          opacity:0 !important;
+        }
+        .j-post-container{
+          padding: 30px;
+          background-color: #ffffff;
+          border-radius:0px 0px 15px 15px;
+          box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+          padding-bottom:50px;
+          .j-message{
+            p,a{
+              text-align: left;
+              font-size: 18px;
+              line-height: 24px;
+              color: #2D2D2D;
+              font-weight: 500;
+            }
+            a{
+              font-weight: 600;
+              color:$primary-color;
+            }
+          }
+        }
+      }
+    }
+    }
+
+  }
+  .juicer-feed li.feed-item:before {
+   opacity:0 !important;
+   display: none;
+  }
+  .juicer-feed.polaroid .j-image img {
+    border-radius:15px 15px 0px 0px;
+  }
+  .juicer-feed .juicer-button{
+    background-color: #012169;
+    color:white;
+    font-weight: 600 !important;
+    font-size:18px;
+    line-height:22px;
+    position: relative;
+    transition: all 0.45s;
+    border:unset;
+    text-transform: capitalize;
+    padding: 11px 18px;
+    border:2px solid $primary-color;
+    text-align: left;
+    min-width: 199px;
+    border-radius:24px;
+    margin-top:0px;
+    margin-bottom:30px;
+    font-family: "Montserrat", sans-serif;
+    @include breakpoint(medium){
+      margin-top:8px;
+      margin-bottom:35px;
+    }
+    @include breakpoint(xlarge){
+      font-size:20px;
+      margin-top:22px;
+      margin-bottom:50px;
+    }
+    @include breakpoint(small only){
+      min-width: 168px;
+    }
+    &:after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      background: url(/assets/images/settings/arrow-cta-icon.svg) no-repeat center;
+      position: absolute;
+      background-size: contain;
+      width: 32px;
+      height: 32px;
+      transition: all 0.45s;
+      top: 6px;
+      transform: rotate(90deg);
+      margin-left: 26px;
+      @include breakpoint(small only){
+        width: 28px;
+        height: 28px;
+        top: 10px;
+        margin-left: 10px;
+      }
+      @include breakpoint(medium only){
+        width: 28px;
+        height: 28px;
+        top: 10px;
+        margin-left: 10px;
+      }
+    }
+    &:hover {
+      transition: all 0.45s;
+      &:after {
+        transition: all 0.45s;
+         background: url(/assets/images/settings/arrow-cta-icon-blue.svg) no-repeat center;
+         background-size: contain;
+        transform: rotate(90deg);
+        width: 32px;
+        height: 32px;
+        @include breakpoint(small only){
+          width: 28px;
+          height: 28px;
+        }
+        @include breakpoint(medium only){
+          width: 28px;
+          height: 28px;
+        }
+      }
+      background-color: white;
+      color: $primary-color;
+      border:2px solid $primary-color;
+    }
+  }
+
+  .juicer-feed .j-stacker li.feed-item {
+    padding: 0px !important;
+    border: unset !important;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px 3px 20px 0px rgba(0, 0, 0, 0.16);
+    background-color: #ffffff !important;
+  }
+   
+  .juicer-feed li.feed-item:before {
+    opacity: 0 !important;
+    display: none;
+  }
+   
+  .juicer-feed.polaroid .j-image img {
+    border-radius: 15px 15px 0px 0px;
+  }
+   
+  .j-poster {
+    display: none;
+  }
+   
+  .j-overlay {
+    z-index: 99999;
+  }
+   
+  .juicer-feed.modern .j-message p {
+    color: #2D2D2D;
+    line-height: 24px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500 !important;
+    @media (max-width: 767px) {
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+   
+  .juicer-feed a {
+    transition: color .2s ease-in-out;
+    color: #012169;
+    font-weight: 600 !important;
+  }
+  .juicer-feed.modern .j-text{
+    background: #ffffff;
+    padding: 28px 25px 30px 30px;
+    @media (max-width: 1280px) {
+      padding: 18px 20px 20px 20px;
+    }
+    @media (max-width: 767px) {
+      padding: 22px 24px 24px 24px;
+    }
+  }
+  .juicer-feed .j-stacker>*{
+    @media (max-width: 420px) {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+  }
