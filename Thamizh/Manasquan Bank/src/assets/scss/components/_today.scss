@@ -1,0 +1,1208 @@
+.breadcrumbWrap {
+    + .generalcontnet {
+        @include breakpoint(small only) {
+            margin-top: 29px;
+        }
+    }
+}
+.todaypanel {
+    margin-top: 50px;
+    padding: 52px 0;
+    @include breakpoint(medium) {
+        padding: 48px 0;
+    }
+    .btn {
+        -ms-box-orient: horizontal;
+        display: flex;
+        justify-content:center;
+        flex-flow: row wrap;
+        align-items: stretch;
+        margin-top: 31px;
+        a {
+            &.active{
+                background: $body-font-color;
+                color: $white;
+            }
+            &:nth-child(n + 0) {
+                flex-grow: 0;
+                margin: 7.5px 11.5px;
+                @include breakpoint(medium) {
+                    margin: 10px 15px;
+                }
+                @include breakpoint(large) {
+                    margin: 15px 20px;  
+                }
+            }
+        }
+    }
+}
+.featuredsec {
+    margin-top: 53px;
+    @include breakpoint(medium) {
+        margin-top: 50px;
+    }
+}
+.featuredpanel {
+    margin-top: 20px;
+    display: flex;
+    color: $white;
+    flex-wrap: wrap;
+    @include breakpoint(large) {
+        margin-top: 47px;
+        flex-wrap: nowrap;
+    }
+    @include breakpoint(xlarge) {
+    }
+    &.right {
+        flex-direction: row-reverse;
+        .rightsec.grid-margin-x {
+            margin-right: 0px !important;
+            @include breakpoint(xlarge) {
+                margin-left: -21px !important;
+                margin-right: 51px !important;
+            }
+        }
+        .leftsec.grid-margin-x {
+            @include breakpoint(large) {
+                margin-right: 0px !important;
+            }
+            @include breakpoint(xlarge) {
+                margin-left: -21px !important;
+            }
+        }
+    }
+    a {
+        color: $white;
+        text-decoration: none;
+    }
+    .contentsec {
+        margin-bottom: 20px !important;
+    }
+
+    p {
+        font-size: 17px;
+        line-height: 27px;
+        + p {
+            margin-top: 7px;
+        }
+    }
+
+    .featuredinfo {
+        position: relative;
+        transition: all 0.3s ease-out;
+        overflow: hidden;
+        cursor: pointer;
+    }
+    .leftsec {
+        width: 100%;
+        max-width: 430px;
+        margin: 0 auto;
+        @include breakpoint(medium) {
+            width: 100%;
+            max-width: 768px;
+            margin: 0 auto;
+            margin-left: 0;
+        }
+        @include breakpoint(large) {
+            width: 39.5%;
+            max-width: 610px;
+            margin: 0 0;
+            margin-right: 20px;
+        }
+        @include breakpoint(xlarge) {
+            width: 44.7%;
+        }
+        @media (min-width: 1366px) and (max-width: 1599px) {
+            width: 42.7%;
+        }
+        h4 {
+            font-size: 20px !important;
+            line-height: 27px !important;
+            font-weight: 600;
+            @include breakpoint(medium) {
+                font-size: 35px !important;
+                line-height: 40px !important;
+            }
+        }
+        .imgsec {
+            overflow: hidden;
+            max-width: 100%;
+            display: block;
+            margin: 0 auto;
+            height: 100%;
+            transform: translateZ(0);
+            position: relative;
+            margin-bottom: 0;
+            @include breakpoint(medium) {
+                max-width: 768px;
+                max-height: 454px;
+                min-height: 454px;
+                
+            }
+            @include breakpoint(large) {
+                max-width: 610px;
+                margin-bottom: 24px;
+            }
+            @include breakpoint(xlarge) {
+            }
+            a {
+                img {
+                    transition: all 0.75s;
+                    object-fit: cover;
+                    height: 100%;
+                    width: 100%;
+                    
+                }
+                &:hover {
+                    img {
+                        transform: scale(1.1);
+                        transition: all 0.75s;
+                    }
+                }
+            }
+        }
+        .gridinfo {
+            padding: 0;
+            max-width: 100%;
+            margin: 0 auto;
+            padding-bottom: 18px;
+            margin-top: 12px;
+            margin-bottom: 8px;
+
+            @include breakpoint(medium) {
+                margin: 0 0;
+                margin-top: 28px;
+                margin-bottom: 0px;
+                margin-left: 0;
+                margin-right: 0;
+                max-width: 768px;
+            }
+            @include breakpoint(large) {
+                margin-top: 38px;
+                max-width: 610px;
+            }
+            .contentsec {
+                padding: 18px 10px 19px 55px;
+                @include breakpoint(medium) {
+                    padding: 18px 10px 19px 75px;
+                }
+                p {
+                    &.tag {
+                        font-size: 17px;
+                        line-height: 22px;
+                        margin-bottom: 10px;
+                        @include breakpoint(large) {
+                            font-size: 20px;
+                            line-height: 27px;
+                        }
+                    }
+                }
+                &.blogs {
+                    &:before {
+                        content: "";
+                        width: 100%;
+                        height: 100%;
+                        background: url(#{$img}/message-icon.svg) left top no-repeat;
+                        position: absolute;
+                        left: 10px;
+                        top: 22px;
+                        background-size: contain;
+                        max-width: 27px;
+                        @include breakpoint(medium) {
+                            top: 25px;
+                            left: 20px;
+                            max-width: 37px;
+                        }
+                    }
+                }
+
+                &.video {
+                    &:before {
+                        content: "";
+                        width: 100%;
+                        height: 100%;
+                        background: url(#{$img}/video-icon.svg) left top no-repeat;
+                        position: absolute;
+                        left: 20px;
+                        top: 22px;
+                        max-width: 27px;
+                        background-size: contain;
+                        @include breakpoint(medium) {
+                            top: 25px;
+                            left: 20px;
+                            max-width: 37px;
+                        }
+                    }
+                }
+                .btn {
+                    margin-bottom: 10px;
+                }
+                p {
+                    font-size: 17px;
+                    line-height: 27px;
+                    + p {
+                        margin-top: 7px;
+                    }
+                }
+            }
+            .ctablock {
+                padding: 2px 0 18px 55px;
+                @include breakpoint(medium) {
+                    padding: 2px 0 18px 75px;
+                }
+            }
+        }
+    }
+    .rightsec {
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 20px;
+        max-width: 430px;
+        @include breakpoint(medium) {
+            max-width: 100%;
+        }
+        @include breakpoint(large) {
+            margin-top: 0px;
+            width: 59%;
+            max-width: 726px;
+        }
+        &.grid-margin-x {
+            @include breakpoint(medium) {
+                margin-right: 0 !important;
+            }
+            // @media (min-width: 1366px) and (max-width: 1529px) {
+            //     margin-right: 0px !important;
+            // }
+        }
+        .imgsec {
+            overflow: hidden;
+            max-width: 610px;
+            display: block;
+            margin: 0 auto;
+            height: 100%;
+            transform: translateZ(0);
+            position: relative;
+            @include breakpoint(medium) {
+            }
+            @include breakpoint(large) {
+            }
+            @include breakpoint(xlarge) {
+                max-width: 353px;
+                max-height: 205px;
+                min-height: 205px;
+            }
+            a {
+                img {
+                    transition: all 0.75s;
+                    object-fit: cover;
+                    height: 100%;
+                    width: 100%;
+                }
+                &:hover {
+                    img {
+                        transform: scale(1.1);
+                        transition: all 0.75s;
+                    }
+                }
+            }
+            &.frame {
+                max-width: 197px;
+                min-height: 205px;
+                @include breakpoint(medium) {
+                    max-height: 205px;
+                }
+                @include breakpoint(large) {
+                    min-height: 205px;
+                    max-height: 205px;
+                    max-width: 197px;
+                }
+                @include breakpoint(xlarge) {
+                    max-width: 197px;
+                    min-height: 205px;
+                    max-height: 205px;
+                }
+                a {
+                    img {
+                        transition: all 0.75s;
+                        object-fit: cover;
+                        height: 100%;
+                        width: 100%;
+                        object-position: top;
+                    }
+                    &:hover {
+                        img {
+                            transform: scale(1.1);
+                            transition: all 0.75s;
+                        }
+                    }
+                }
+            }
+            &.video {
+                a {
+                    &:before {
+                        content: "";
+                        width: 58px;
+                        height: 58px;
+                        background: url(#{$img}/video-play-icon.svg) no-repeat;
+                        position: absolute;
+                        background-size: contain;
+                        z-index: 10;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%);
+
+                        @include breakpoint(medium) {
+                            width: 92px;
+                            height: 92px;
+                        }
+                        @include breakpoint(xlarge) {
+                            width: 122px;
+                            height: 122px;
+                        }
+                    }
+                    img {
+                        margin-top: 0;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+        .gridinfo {
+            padding: 0;
+            max-width: 353px;
+            margin: 0 auto;
+            padding-bottom: 8px;
+            margin-top: 12px;
+            margin-bottom: 8px;
+
+            @include breakpoint(medium) {
+                margin: 0 0;
+                margin-top: 28px;
+                margin-bottom: 0px;
+                margin-left: 0;
+                margin-right: 21.9px;
+            }
+            @include breakpoint(large) {
+                margin-top: 38px;
+            }
+            .contentsec {
+                padding: 11px 30px 19px 54px;
+                .btn {
+                    margin-top: 16px;
+                }
+            }
+            .ctablock {
+                padding: 2px 0 18px 55px;
+            }
+            .events {
+                display: inline-flex;
+
+                .eventcard {
+                    color: $body-font-color;
+                    font-weight: bold;
+                    width: 120px;
+                    min-width: 120px;
+                    text-align: center;
+                    margin-top: 16px;
+                }
+                .month {
+                    font-size: 17px;
+                    line-height: 22px;
+                }
+                .date {
+                    font-size: 43px;
+                    line-height: 57px;
+                    margin-top: -16px;
+                }
+            }
+            &.event {
+                .ctablock {
+                    padding: 2px 0 18px 121px;
+                }
+                .contentsec {
+                    padding: 11px 30px 19px 0px;
+                    h4 {
+                        font-size: 17px;
+                        line-height: 22px;
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+        .link-cta {
+            margin-top: 26px;
+            color: $white;
+            font-size: 17px;
+            line-height: 22px;
+        }
+
+        .featuredinfo {
+            width: 100%;
+            max-width: 430px;
+            float: none;
+            margin-right: 0px;
+
+            @include breakpoint(medium) {
+                float: left;
+                width: 48.4%;
+                 max-width: 353px;
+                margin-right: 30px;
+            }
+            @include breakpoint(large) {
+                width: 46.5%;
+                margin-right: 17px;
+            }
+            @include breakpoint(xlarge) {
+                width: 47.2%;
+                margin-right: 20px;
+            }
+            @include breakpoint(xxlarge) {
+                width: 50%;
+            }
+            .featuredinfo {
+                margin-bottom: 20px;
+                @include breakpoint(medium) {
+                    margin-bottom: 13px;
+                }
+                @include breakpoint(large) {
+                    margin-bottom: 0px;
+                }
+            }
+            &:nth-child(2n + 0) {
+                margin-right: 0px;
+            }
+        }
+    }
+}
+
+.gridpanel,
+.featuredpanel {
+    margin-top: 33px;
+    @include breakpoint(medium) {
+        margin-top: 27px;
+    }
+    + .gridpanel {
+        margin-top: 45px;
+        @include breakpoint(medium) {
+            margin-top: 13px;
+        }
+    }
+    .grid-margin-x > .large-4 {
+        @include breakpoint(medium only) {
+            width: calc(50% - 1.374rem);
+        }
+        @include breakpoint(large) {
+            width: calc(33.333% - 1.374rem);
+        }
+    }
+    .grid-margin-x {
+        @include breakpoint(medium) {
+            // margin-left: -10px !important;
+            margin-right: -21px !important;
+        }
+        // @media (min-width: 1366px) and (max-width: 1529px) {
+        //     margin-right: 0px !important;
+        // }
+    }
+    .link-cta {
+        margin-top: 26px;
+        color: $white;
+        font-size: 17px;
+        line-height: 22px;
+        @include breakpoint(large) {
+            font-size: 17px;
+            line-height: 22px;
+            margin-top: 36px;
+        }
+        &:after {
+            top: auto;
+            width: auto;
+            height: auto;
+            margin-left: 10px;
+            font-size: 17px;
+            line-height: 27px;
+            bottom: 3px;
+        }
+        &:hover {
+            &:after {
+                transition: all 0.55s;
+            }
+
+            text-decoration: none;
+        }
+    }
+    .topsec {
+        height: 100%;
+    }
+    .imgsec {
+        overflow: hidden;
+        max-width: 448px;
+        display: block;
+        margin: 0 auto;
+        height: 100%;
+        transform: translateZ(0);
+        position: relative;
+        border-top-left-radius: 16px;
+        border-top-right-radius: 16px;
+        max-height: 205px;
+        min-height: 205px;
+        @include breakpoint(medium) {
+            max-height: 205px;
+        }
+        @include breakpoint(large) {
+            min-height: 176px;
+            max-height: 176px;
+            max-width: 442px;
+        }
+        @include breakpoint(xlarge) {
+            max-width: 442px;
+            min-height: 252px;
+            max-height: 252px;
+        }
+        a {
+            img {
+                transition: all 0.75s;
+                object-fit: cover;
+                height: 100%;
+                width: 100%;
+                object-position: top;
+            }
+            &:hover {
+                img {
+                    transform: scale(1.1);
+                    transition: all 0.75s;
+                }
+            }
+        }
+
+        &.frame {
+            max-width: 202px;
+            min-height: 20202px0px;
+            border-radius: 0;
+            @include breakpoint(medium) {
+                max-height: 202px;
+            }
+            @include breakpoint(large) {
+                min-height: 176px;
+                max-height: 176px;
+                max-width: 234px;
+            }
+            @include breakpoint(xlarge) {
+                max-width: 249px;
+                min-height: 252px;
+                max-height: 252px;
+            }
+            a {
+                img {
+                    transition: all 0.75s;
+                    object-fit: cover;
+                    height: 100%;
+                    width: 100%;
+                    object-position: top;
+                }
+                &:hover {
+                    img {
+                        transform: scale(1.1);
+                        transition: all 0.75s;
+                    }
+                }
+            }
+        }
+        &.video {
+            a {
+                &:before {
+                    content: "";
+                    width: 122px;
+                    height: 122px;
+                    background: url(#{$img}/video-play-icon.svg) no-repeat;
+                    position: absolute;
+                    background-size: contain;
+                    z-index: 10;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                    @include breakpoint(medium) {
+                        width: 92px;
+                        height: 92px;
+                    }
+                    @include breakpoint(xlarge) {
+                        width: 122px;
+                        height: 122px;
+                    }
+                }
+                &:after {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    margin: 0;
+                    background-color: rgba(16, 17, 16, 0.46);
+                    z-index: 9;
+                    opacity: 1;
+                    -webkit-transition: 0.75s all;
+                    transition: 0.75s all;
+                }
+                img {
+                    margin-top: 0;
+                    height: 100%;
+                }
+                &:hover {
+                    &:after {
+                        background-color: rgba(16, 17, 16, 0);
+                    }
+                }
+            }
+        }
+    }
+    .ctablock {
+        max-width: 100%;
+        margin-top: -70px;
+        padding: 2px 0 18px 45px;
+        text-align: left;
+        margin-bottom: 20px;
+        @include breakpoint(medium) {
+            margin-bottom: 10px;
+        }
+        @include breakpoint(large) {
+            padding: 2px 0 18px 55px;
+        }
+        .link-cta:hover {
+            padding-right: 8px;
+        }
+    }
+    .contentsec {
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 18px 10px 20px 45px;
+        position: relative;
+        @include breakpoint(medium) {
+            padding: 18px 10px 30px 45px;
+            margin-bottom: 0;
+        }
+        @include breakpoint(large) {
+            padding: 18px 10px 19px 54px;
+            margin-bottom: 0;
+        }
+        h4 {
+            font-size: 20px;
+            line-height: 22px;
+            + p {
+                margin-top: 5px;
+                @include breakpoint(large) {
+                    margin-top: 12px;
+                }
+            }
+        }
+        p {
+            color: $body-font-color;
+            text-align: left;
+            font-size: 17px;
+            line-height: 22px;
+            @include breakpoint(medium) {
+            }
+            @include breakpoint(large) {
+            }
+
+            @include breakpoint(xlarge) {
+            }
+            &.tag {
+                color: $body-font-color;
+                font-size: 17px;
+                line-height: 23px;
+                margin-top: 0px;
+                @include breakpoint(medium) {
+                    font-size: 17px;
+                    line-height: 22px;
+                    margin-top: 3px;
+                }
+                + .tag {
+                    padding-top: 8px;
+                }
+            }
+        }
+
+        &.blogs {
+            &:before {
+                content: "";
+                width: 100%;
+                height: 100%;
+                background: url(#{$img}/message-icon.svg) left top no-repeat;
+                position: absolute;
+                left: 10px;
+                top: 22px;
+                background-size: contain;
+                max-width: 24px;
+                @include breakpoint(medium) {
+                    top: 18px;
+                }
+                @include breakpoint(large) {
+                  
+                    left: 20px;
+                }
+            }
+        }
+
+        &.video {
+            &:before {
+                content: "";
+                width: 100%;
+                height: 100%;
+                background: url(#{$img}/video-icon.svg) left top no-repeat;
+                position: absolute;
+                left: 10px;
+                top: 22px;
+                max-width: 28px;
+                background-size: contain;
+                @include breakpoint(medium) {
+                    top: 18px;
+                }
+                @include breakpoint(large) {
+                   
+                    left: 20px;
+                }
+            }
+        }
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+    }
+
+    .gridinfo {
+        padding: 0;
+        max-width: 448px;
+        margin: 0 auto;
+        background-color: #edf2f7;
+        padding-bottom: 8px;
+        margin-top: 12px;
+        margin-bottom: 8px;
+        box-shadow: 0px 3px 6px 0px rgba(98, 127, 168, 0.2);
+        border-radius: 16px;
+        @include breakpoint(medium) {
+            margin: 0 0;
+            margin-top: 28px;
+            margin-bottom: 0px;
+            margin-left: 0;
+            margin-right: 21.9px;
+        }
+        @include breakpoint(large) {
+            margin-top: 38px;
+        }
+        .btn {
+            text-align: left;
+            margin-top: 16px;
+            a {
+                color: $body-font-color;
+                &:hover {
+                    color: $white;
+                    min-height: auto;
+                    border: 0px solid transparent;
+                }
+                // + a {
+                //     margin-left: 5px;
+                // }
+            }
+            .ctabutton {
+                border: 1px solid #00214e;
+                font-size: 15px;
+                line-height: normal;
+                border-radius: 5px;
+                text-transform: initial;
+                padding: 0px 21.5px;
+                &:after {
+                    border-radius: 5px;
+                }
+            }
+            + p {
+                margin-top: 10px;
+            }
+        }
+    }
+    .btn-center {
+        margin: 0 auto;
+        text-align: center;
+        margin-top: 20px;
+        @include breakpoint(medium) {
+            margin-top: 45px;
+        }
+    }
+}
+
+.line-clamp {
+    display: block;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    position: relative;
+    line-height: 1.2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 !important;
+    height: calc(1.9em * 1.2);
+    max-width: 33ch;
+}
+
+.line-clamp:after {
+    content: "...";
+    text-align: right;
+    bottom: 0;
+    right: 44px;
+    width: 25%;
+    display: block;
+    position: absolute;
+    height: calc(1em * 1.2);
+}
+.ie11 .line-clamp:after {
+    right: -2px;
+}
+
+.paginations {
+    width: 100%;
+    margin-top: 60px;
+    @include breakpoint(medium) {
+        margin-top: 90px;
+    }
+    @include breakpoint(large) {
+        margin-top: 120px;
+    }
+    @include breakpoint(xlarge) {
+        margin-top: 170px;
+    }
+}
+
+.pagination {
+    margin-bottom: 31px;
+    margin-top: -5px;
+    width: 100%;
+    @include breakpoint(large) {
+        margin-bottom: 81px;
+        margin-top: 32px;
+    }
+    a,
+    button {
+        padding: 7.4px 10px;
+        min-width: 25px;
+        color: #4f4f4f;
+        @include breakpoint(large) {
+            min-width: 30px;
+            padding: 4px 0px;
+        }
+        &:hover {
+            text-decoration: none;
+            color: $white;
+        }
+    }
+    .current {
+        padding: 0 !important;
+        font-weight: bold;
+        a {
+            color: $white;
+        }
+    }
+    li {
+        margin-right: 5px;
+        font-size: 22px;
+        line-height: 28px;
+        font-weight: 700;
+        font-weight: bold;
+        display: inline-block;
+        @include breakpoint(medium) {
+            margin-right: 27px;
+            font-size: 24px;
+            line-height: 32px;
+        }
+    }
+    .pagination-previous {
+        margin-right: 27px;
+        color: #ffffff;
+        background: $body-font-color;
+        border-radius: 5px;
+        min-width: 77px;
+        font-weight: bold;
+        @include breakpoint(large) {
+            min-width: 85px;
+            margin-right: 27px;
+        }
+        a {
+            color: #ffffff;
+            min-width: 77px;
+            @include breakpoint(large) {
+                padding: 8.8px 10px;
+                min-width: 85px;
+                border-radius: 5px;
+            }
+        }
+    }
+    .pagination-next {
+        margin-right: 0rem;
+        color: #ffffff;
+        background: $primary-color;
+        border-radius: 5px;
+        min-width: 77px;
+        font-weight: bold;
+        @include breakpoint(large) {
+            min-width: 85px;
+        }
+        a {
+            color: #ffffff;
+            min-width: 77px;
+            @include breakpoint(large) {
+                padding: 8.8px 10px;
+                min-width: 85px;
+                border-radius: 5px;
+            }
+        }
+    }
+}
+.featurepanel {
+    .ctablock {
+        padding: 2px 0 18px 55px;
+        @include breakpoint(medium) {
+            padding: 2px 0 18px 75px;
+        }
+    }
+    .grid-margin-x {
+        @include breakpoint(medium only) {
+            margin-right: 0px !important;
+        }
+    }
+    .grey {
+        box-shadow: 0px 3px 6px 0px rgba(98, 127, 168, 0.2);
+        border-radius: 16px;
+
+        .grid-margin-x > .large-6 {
+            @include breakpoint(large) {
+                width: 48%;
+            }
+        }
+
+        .imgsec {
+            overflow: hidden;
+            max-width: 448px;
+            display: block;
+            margin: 0 0;
+            height: 100%;
+            transform: translateZ(0);
+            position: relative;
+            border-top-left-radius: 16px;
+            border-top-right-radius: 16px;
+            border-bottom-left-radius: 0;
+
+            @include breakpoint(medium) {
+                max-width: 100%;
+                max-height: 363px;
+            }
+            @include breakpoint(large) {
+                min-height: 100%;
+                max-width: 644px;
+                border-bottom-left-radius: 16px;
+                border-top-right-radius: 0;
+            }
+            @include breakpoint(xlarge) {
+                max-width: 644px;
+                min-height: 363px;
+                max-height: 363px;
+            }
+            a {
+                img {
+                    transition: all 0.75s;
+                    object-fit: cover;
+                    height: 100%;
+                    width: 100%;
+                }
+                &:hover {
+                    img {
+                        transform: scale(1.1);
+                        transition: all 0.75s;
+                    }
+                }
+            }
+        }
+    }
+    .gridinfo {
+        box-shadow: none;
+        border-radius: 0;
+        max-width: 100%;
+        @include breakpoint(large) {
+            max-width: 47%;
+        }
+        margin-top: 0;
+        .contentsec {
+            padding: 18px 10px 19px 55px;
+            @include breakpoint(medium) {
+                padding: 18px 90px 19px 75px;
+            }
+            h4 {
+                font-size: 20px;
+                line-height: 27px;
+                @include breakpoint(medium) {
+                    font-size: 30px;
+                    line-height: 38px;
+                }
+            }
+            p {
+                font-size: 17px;
+                line-height: 22px;
+                @include breakpoint(medium) {
+                    font-size: 20px;
+                    line-height: 27px;
+                }
+                .tag {
+                    font-size: 26px;
+                    line-height: 35px;
+                }
+            }
+            &.blogs {
+                &:before {
+                    content: "";
+                    width: 100%;
+                    height: 100%;
+                    background: url(#{$img}/message-icon.svg) left top no-repeat;
+                    position: absolute;
+                    left: 10px;
+                    top: 22px;
+                    background-size: contain;
+                    max-width: 29px;
+                    @include breakpoint(medium) {
+                        top: 18px;
+                        max-width: 39px;
+                        left: 20px;
+                    }
+                }
+            }
+
+            &.video {
+                &:before {
+                    content: "";
+                    width: 100%;
+                    height: 100%;
+                    background: url(#{$img}/video-icon.svg) left top no-repeat;
+                    position: absolute;
+                    left: 10px;
+                    top: 22px;
+                    max-width: 28px;
+                    background-size: contain;
+                    @include breakpoint(medium) {
+                        top: 18px;
+                        max-width: 38px;
+                        left: 20px;
+                    }
+                }
+            }
+        }
+    }
+    .link-cta {
+        margin-top: 26px;
+        color: $white;
+        font-size: 17px;
+        line-height: 22px;
+        @include breakpoint(medium) {
+            font-size: 20px;
+            line-height: 27px;
+        }
+    }
+}
+.newsdetailpanel {
+    &.videopanel {
+        .imgwrap {
+            .imgsec {
+                position: relative;
+                max-width: 100%;
+                min-height: 196px;
+                margin: 0 auto;
+                height: auto;
+                @include breakpoint(medium) {
+                    max-width: 560px;
+                    min-height: 315px;
+                    height: 315px;
+                }
+                .filter-img {
+                    padding-bottom: 0;
+                    .videoPanel {
+                        &:after {
+                            @include breakpoint(medium) {
+                                width: 122px;
+                                height: 122px
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .ctablock {
+        max-width: 100%;
+    }
+    .imgsec {
+        &.event {
+            max-width: 277px;
+            min-height: 347px;
+            margin: 0 auto;
+            margin-top: 62px;
+            margin-bottom: 62px;
+            .imgwrap {
+                min-height: auto;
+            }
+            + .content {
+                .btn {
+                    margin-top: 25px;
+                    @include breakpoint(medium) {
+                        text-align: left;
+                        margin-top: 35px;
+                    }
+                }
+            }
+        }
+    }
+    &.podcastpanel {
+         .podcastiframe {
+        max-width: 981px;
+        margin: 0 auto;
+        padding-top: 21px;
+        padding-bottom: 53px;
+        
+        iframe{
+            border-radius: 23px;
+        }
+    }
+    }
+    .content {
+        max-width: 1213px;
+        p {
+            font-size: 17px;
+        }
+        .ctablock{
+            margin-top: 59px;
+        }
+    }
+}
+
+.resultsSection{
+    min-height: 350px;
+    margin-bottom: 50px;
+    @include breakpoint(large) {
+        margin-bottom: 80px;
+    }
+}
+
+.breadcrumbWrap + .todaypanel .btn a:nth-child(n + 0) {
+    flex-grow: 0;
+}
+.gridpanel{
+    .contentsec {
+        h4{
+            margin-top: -5px;
+        }
+    }
+}
+.todaypanel.linkpanel{
+        h2{
+            font-size: 24px;
+            line-height: 32px;
+            @include breakpoint(medium) {
+            font-size: 36px;
+            line-height: 48px;
+            }
+        }
+    }

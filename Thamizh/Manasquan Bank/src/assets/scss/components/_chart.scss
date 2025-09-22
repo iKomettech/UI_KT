@@ -1,0 +1,701 @@
+$border-color: #00577d;
+$blue-text: #004d6e;
+
+.generalTemplate {
+  table {
+    width: 100%;
+    background: #ffffff;
+    border-collapse: separate;
+    border-spacing: 0px;
+    border-bottom-right-radius: 18px;
+    border-bottom-left-radius: 18px;
+    @media (max-width: 767px) {
+      padding: 0;
+      table-layout: fixed;
+      margin: -7px 0px 19px;
+      overflow: unset !important;
+    }
+
+    @include breakpoint(medium) {
+      table-layout: fixed;
+      padding: 0;
+    }
+
+    @include breakpoint(large) {
+      margin: 45px 0 90px 0;
+      padding: 0;
+      box-shadow: 1px 3px 12px -7px #484444;
+    }
+
+    thead {
+      @media (max-width: 1023px) {
+        display: none;
+      }
+
+      tr {
+        height: auto !important;
+
+        th {
+          background: #ffffff;
+          text-align: center;
+          vertical-align: middle;
+          color: #000000;
+          font-weight: 600;
+          border: none;
+          border: solid 1px #aca3a3;
+          padding-bottom: 12px;
+          padding-top: 27px;
+          border-bottom: 0px;
+          border-right: 0px;
+
+          @include breakpoint(medium) {
+            padding-bottom: 15px;
+            overflow-wrap: break-word;
+          }
+
+          @include breakpoint(large) {
+            border: 0px;
+            border-bottom: solid 2px $border-color;
+            font-size: 22px;
+            line-height: 30px;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+
+    tbody {
+      background: #ffffff;
+
+      @media (max-width: 767px) {
+        background: transparent;
+      }
+
+      tr {
+        height: auto !important;
+
+        td {
+        }
+
+        &:last-child {
+          td {
+            &:last-child {
+              @media (max-width: 767px) {
+                border-bottom: none;
+              }
+            }
+          }
+        }
+
+        td {
+          @media (min-width: 1280px) and (max-width: 1365px) {
+            padding-left: 15px;
+            padding-right: 15px;
+          }
+          @include breakpoint(large) {
+            padding-top: 24px;
+            padding-bottom: 18px;
+            vertical-align: middle;
+            border-top: none;
+            text-align: left;
+            color: #000000;
+            border: solid 1px #000000;
+            padding-left: 0;
+            padding-right: 0px;
+            border-top: 0px;
+            border-right: 0px;
+            border: 0px;
+            border-bottom: solid 1px $border-color;
+          }
+          sup {
+            top: -0.6em;
+            line-height: initial;
+          }
+        }
+      }
+    }
+
+    &.small-only {
+      display: block;
+      width: 100%;
+      background: #ffffff;
+      border-collapse: separate;
+      border-spacing: 0px;
+      box-shadow: 1px 3px 12px -7px #484444;
+      border-bottom-left-radius: 18px;
+      border-bottom-right-radius: 18px;
+      @media (max-width: 1024px) {
+        padding: 0;
+        table-layout: fixed;
+        margin: 0;
+        overflow: unset !important;
+        a{
+          color: $white;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        display: none;
+      }
+
+      + .small-only {
+        @media (max-width: 1024px) {
+          padding: 0;
+        }
+      }
+
+      tr {
+        display: flex;
+        border-bottom: solid 1px #5d5d5d;
+        &:first-child {
+          border-bottom: solid 2px #5d5d5d;
+          text-align: center;
+          border-top-left-radius: 12px;
+          border-top-right-radius: 12px;
+          color: #fff;
+          background: rgb(28, 55, 94);
+          background: linear-gradient(
+            180deg,
+            rgba(28, 55, 94, 1) 0%,
+            rgba(28, 55, 94, 1) 0%,
+            rgba(29, 56, 95, 1) 38%,
+            rgba(60, 104, 151, 1) 100%
+          );
+          td {
+            width: 100%;
+            text-align: left;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 27px;
+            color: #ffffff;
+            padding: 0px 0px 8px;
+            background: none;
+          }
+          td:first-child {
+            text-transform: uppercase;
+            text-align: center;
+            vertical-align: middle;
+            display: none;
+          }
+
+          td:last-child {
+            width: 100%;
+            text-align: left;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 27px;
+            color: #ffffff;
+            padding: 13px 0px 12px;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+            width: 100%;
+            display: block;
+            text-align: center;
+            div {
+              background-image: none;
+              width: auto;
+              height: auto;
+            }
+          }
+        }
+        &:last-child {
+          border-bottom: 0px;
+        }
+        td {
+          position: relative;
+          padding-top: 23px;
+          padding-bottom: 23px;
+          font-size: 17px;
+          line-height: 24px;
+          color: #00214e;
+          width: 50%;
+          text-align: center;
+          div {
+            background: url(../images/chart-tick.svg) no-repeat;
+            display: inline-block;
+            height: 20px;
+            vertical-align: middle;
+            width: 26px;
+            position: relative;
+            color: #fff;
+            left: 0px;
+            top: 0px;
+            background-size: contain;
+          }
+
+          p {
+            position: relative;
+            margin-bottom: 7px;
+            color: #000000;
+            font-size: 18px;
+            line-height: 24px;
+          }
+
+          a.tablelink {
+            font-weight: 600;
+            font-size: 17px;
+            line-height: 23px;
+            position: relative;
+            color: $blue-text;
+            transition: all 0.75s;
+
+            &:after {
+              content: "";
+              background: url(../images/table-arrow.svg) no-repeat;
+              display: inline-block;
+              height: 9px;
+              vertical-align: middle;
+              width: 16px;
+              position: relative;
+              color: #fff;
+              left: 2px;
+              top: 1px;
+              background-size: contain;
+            }
+
+            &:hover {
+              padding-left: 10px;
+            }
+          }
+          &:first-child {
+            color: #00214e;
+            font-weight: 700;
+            padding-top: 23px;
+            padding-bottom: 23px;
+            margin-top: 0px;
+            width: 50%;
+            background: none !important;
+          }
+        }
+      }
+    }
+  }
+
+  table tr td.chart-enable {
+    margin: 0px auto;
+    text-align: center;
+
+    div {
+      @media (max-width: 767px) {
+        background-size: 18px 21px;
+        background-position: 6px 14px;
+        margin: 0px auto;
+        vertical-align: middle;
+        top: 27px;
+      }
+
+      @include breakpoint(medium) {
+        background: url(../images/chart-tick.svg) no-repeat;
+        display: inline-block;
+        height: 20px;
+        vertical-align: middle;
+        width: 26px;
+        position: relative;
+        color: #fff;
+        left: 0px;
+        top: 0px;
+        background-size: contain;
+      }
+    }
+  }
+
+  table tr td.chart-disable {
+    margin: 0px auto;
+    text-align: center;
+    div {
+      margin: 0px auto;
+      text-align: center;
+      @media (max-width: 767px) {
+        background-size: 18px 21px;
+        background-position: 6px 14px;
+        margin: 0px auto;
+        vertical-align: middle;
+        top: 27px;
+      }
+
+      @include breakpoint(medium) {
+        background: url(../images/X.svg) no-repeat;
+        display: inline-block;
+        height: 36px;
+        vertical-align: middle;
+        width: 26px;
+        position: relative;
+        color: #fff;
+        left: 0px;
+        top: 0px;
+        background-size: contain;
+      }
+    }
+  }
+}
+
+.comparisionChhart {
+  &.chartdesktop {
+    display: block;
+    margin-top: 0px;
+    padding-top: 0px;
+   
+
+    @include breakpoint(large) {
+      margin-top: 0px;
+     
+    }
+  }
+  .btn{
+    padding-bottom: 19px;
+    @include breakpoint(large) {
+    padding-bottom: 85px;
+    }
+  }
+  p {
+    &:first-child {
+      margin-top: 42px;
+    }
+    font-size: 26px;
+    line-height: 35px;
+    @include breakpoint(small only) {
+      font-size: 17px;
+      line-height: 23px;
+    }
+    + p {
+      margin-top: 26px;
+      @include breakpoint(small only) {
+        margin-top: 22px;
+      }
+    }
+  }
+
+  h2 {
+    text-align: center;
+    @media (max-width: 1023px) {
+      font-size: 26px;
+      line-height: 34px;
+    }
+  }
+
+  .grid-container {
+    @media (min-width: 0px) and (max-width: 767px) {
+      margin: 0px auto;
+      padding: 0 0px;
+      max-width: 450px;
+    }
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+      max-width: 768px;
+      padding: 0 18px;
+    }
+
+    @media (min-width: 1024px) and (max-width: 1365px) {
+      max-width: 1020px;
+      padding: 0 18px;
+    }
+
+    @media (min-width: 1366px) and (max-width: 1439px) {
+      max-width: 1366px;
+      padding-right: 1.125rem;
+      padding-left: 1.125rem;
+    }
+
+    @media (min-width: 1440px) {
+      max-width: 1366px;
+      padding-right: 0px;
+      padding-left: 0px;
+    }
+  }
+
+  table {
+    &.small-only {
+      display: none;
+
+      @media (max-width: 1023px) {
+        display: block;
+        margin-top: 45px;
+      }
+    }
+
+    &.large-only {
+      @media (max-width: 1023px) {
+        display: none;
+      }
+    }
+
+    thead tr {
+      th {
+        padding-bottom: 12px;
+        padding-top: 12px;
+        padding-left: 95px;
+        background: rgb(28, 55, 94);
+        background: linear-gradient(
+          180deg,
+          rgba(28, 55, 94, 1) 0%,
+          rgba(28, 55, 94, 1) 0%,
+          rgba(29, 56, 95, 1) 38%,
+          rgba(60, 104, 151, 1) 100%
+        );
+        @include breakpoint(medium) {
+          font-size: 18px;
+          line-height: 24px;
+          color: #ffffff;
+          font-weight: 700;
+        }
+
+        @include breakpoint(large) {
+          font-size: 18px;
+          line-height: 24px;
+          padding-right: 20px;
+          padding-left: 20px;
+          text-align: center;
+        }
+
+        @include breakpoint(xlarge) {
+          font-size: 20px;
+          line-height: 24px;
+          padding-right: 20px;
+          padding-left: 20px;
+        }
+
+        p {
+          position: relative;
+          margin-bottom: 11px;
+
+          @include breakpoint(medium) {
+            font-size: 18px;
+            line-height: 24px;
+          }
+
+          @include breakpoint(large) {
+            min-height: 70px;
+            font-size: 18px;
+            line-height: 24px;
+            margin-bottom: 11px;
+          }
+
+          @include breakpoint(xlarge) {
+            min-height: 48px;
+            font-size: 18px;
+            line-height: 24px;
+            margin-bottom: 11px;
+          }
+        }
+
+        a.tablelink {
+          font-weight: 600;
+          font-size: 17px;
+          line-height: 23px;
+          position: relative;
+          color: $blue-text;
+          transition: all 0.75s;
+
+          &:after {
+            content: "";
+            background: url(../images/table-arrow.svg) no-repeat;
+            display: inline-block;
+            height: 9px;
+            vertical-align: middle;
+            width: 16px;
+            position: relative;
+            color: #fff;
+            left: 2px;
+            top: 1px;
+            background-size: contain;
+          }
+
+          &:hover {
+            padding-left: 10px;
+          }
+        }
+
+        &:first-child {
+          border-top-left-radius: 18px;
+          @include breakpoint(medium) {
+            font-size: 20px;
+            line-height: 24px;
+            padding-left: 20px;
+          }
+          @include breakpoint(large) {
+          text-align: center;
+          }
+          @include breakpoint(xlarge) {
+            padding-left: 20px;
+          }
+        }
+        &:last-child {
+          border-top-right-radius: 18px;
+        }
+      }
+    }
+
+    tr {
+      &.theadsection {
+        vertical-align: middle;
+        font-weight: 600;
+        border: none;
+        padding-bottom: 12px;
+        padding-top: 27px;
+        border-bottom: 0px;
+        border-right: 0px;
+
+        td {
+          padding-left: 20px;
+          padding-right: 0px;
+        }
+      }
+
+      td {
+        @include breakpoint(large) {
+          padding-top: 24px;
+          padding-bottom: 30px;
+          font-size: 17px;
+          line-height: 24px;
+          background: #ffffff;
+          color: #1c375e;
+          font-weight: 700;
+        }
+
+        &:first-child {
+          text-align: left;
+          padding-left: 0px;
+          padding-top: 23px;
+          padding-left: 44px;
+          @include breakpoint(medium) {
+            padding-top: 24px;
+            padding-bottom: 30px;
+            line-height: 24px;
+            background: #ffffff;
+            padding-left: 20px;
+          }
+
+          @include breakpoint(large) {
+            padding-top: 24px;
+            padding-bottom: 30px;
+            font-size: 17px;
+            line-height: 24px;
+            background: #ffffff;
+            color: #1c375e;
+            font-weight: 700;
+            padding-left: 25px;
+          }
+          @include breakpoint(xlarge) {
+            padding-left: 20px;
+          }
+        }
+
+        &.blueBg {
+          text-align: center;
+          vertical-align: middle;
+          font-weight: 600;
+          border: none;
+          border-bottom: solid 1px #aca3a3 !important;
+          padding-left: 1px;
+          border-bottom: 0px;
+          border-right: 0px;
+
+          &:before {
+            font-weight: 600;
+            padding-top: 4px;
+            padding-bottom: 12px;
+            font-size: 22px;
+            line-height: 26px;
+          }
+
+          div {
+            font-weight: 600;
+            font-size: 22px;
+            line-height: 26px;
+          }
+        }
+
+        a.ctabtn {
+          width: 132px;
+          font-size: 16px;
+          line-height: 22px;
+          text-align: center;
+          padding: 10px 10px;
+          border: solid 1px #00577d;
+          border-radius: 10px;
+          color: #00577d;
+          font-weight: 600;
+          margin-top: 5px;
+          margin-bottom: -5px;
+
+          &:hover {
+            color: #ffffff;
+          }
+          @include breakpoint(large) {
+            width: 109px;
+            padding: 10px 5px;
+          }
+          @include breakpoint(xlarge) {
+            width: 132px;
+            padding: 10px 10px;
+          }
+        }
+      }
+
+      &:last-child {
+        td {
+          border-bottom: 0px;
+          border-bottom-left-radius: 18px;
+          //   background: #fff;
+          border-bottom-color: transparent;
+        }
+      }
+    }
+  }
+
+  &.chartsmall {
+    display: block;
+
+    @include breakpoint(medium) {
+      display: block;
+    }
+  }
+}
+.comparsioncharttable {
+  .btn {
+    @include breakpoint(medium only) {
+      margin-top: 60px;
+      margin-bottom: 64px;
+    }
+    @include breakpoint(small only) {
+      margin-top: 60px;
+      margin-bottom: 64px;
+    }
+  }
+}
+.generalTemplate{ 
+  .personalChecking{
+    tr{
+      td{
+        div{
+          background: none !important;
+          img{
+            position: absolute;
+            top: 6px;
+          }
+        }
+      }
+    }
+  }
+}
+.generalTemplate{ 
+  &.personalChecking{
+    .small-only{
+      tr{
+      td{
+        div{
+          background: none !important;
+          img{
+            position: absolute;
+            top: 6px;
+          }
+        }
+      }
+    }
+    }
+  }
+}
+
+.todaypanel +.comparsioncharttable {
+  margin-top: 50px;
+}

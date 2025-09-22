@@ -1,0 +1,227 @@
+.breadcrumbWrap {
+    + .faqpanel {
+        margin-top: 40px;
+        @include breakpoint(medium) {       
+        margin-top: 17px;
+        }
+    }
+}
+.faqpanel {
+    padding-top: 52px;
+    padding-bottom: 17px;
+    @include breakpoint(large) {
+    padding-top: 48px;
+    padding-bottom: 34px;
+}
+    @include breakpoint(small only) {
+    	    padding-top: 40px;
+    	    padding-bottom: 6px;
+	}
+
+&.white{
+	+.white{
+		padding-top: 0px;
+		margin-top: -10px;
+	}
+}
+    + .twoColumnWrapModule {
+        margin: 0 0 47px;
+    }
+    h2 {
+        margin-bottom: 22px;
+        @include breakpoint(large) {
+        margin-bottom: 43px;
+        }
+    }
+    p {
+        font-size: 17px;
+        margin-bottom: 23px;
+        @include breakpoint(large) {
+        font-size: 30px;
+        line-height: 40px;        
+        margin-bottom: 21px;
+        +p{
+            margin-bottom: 45px;
+        }
+        }
+    }
+
+    .accordion-container {
+        position: relative;
+        margin: 42px 0;
+        max-width: 1168px;
+        @include breakpoint(large) {
+            margin: 56px 0;
+        }
+    }
+    .faq-accordion {
+        position: relative;
+        width: 100%;
+        height: auto;
+        margin-bottom: 15px;
+        @include breakpoint(large) {
+            margin-bottom: 14px;
+        }
+    }
+
+    .faq-accordion > a {
+        display: block;
+        padding: 15px 63px 18px 10px;       
+        text-decoration: none;
+        font-weight: normal;
+        -webkit-transition: all 0.2s linear;
+        transition: all 0.2s linear;
+        align-items: center;
+        display: flex;
+        background: #edf2f7;
+        position: relative;
+        font-size: 20px;
+        line-height: 27px;
+        @include breakpoint(large) {
+            font-size: 30px;
+            line-height: 40px;
+            padding: 6px 63px 12px 30px;
+        }
+    }
+
+    .faq-accordion > a i {
+        position: relative;
+        &.fa-angle-down {
+            background: url(../images/faq-up.svg);
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 13px;
+            height: 8px;
+            transform: translate(0px, -50%) rotate(180deg);
+            @include breakpoint(large) {
+                right: 30px;
+                width: 18px;
+            height: 11px;
+            }
+        }
+
+        &.fa-angle-up {
+            background: url(../images/faq-up.svg);
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 13px;
+            height: 8px;
+            transform: translate(0px, -50%);
+            @include breakpoint(large) {
+                right: 30px;
+                width: 18px;
+            height: 11px;
+            }
+        }
+    }
+
+    .faq-accordion > a.active {
+        background-color: #edf2f7;
+    }
+
+    .faq-content {
+        display: none;
+        padding-left: 10px;
+        border-top: 0px;
+        padding-bottom: 12px;
+        padding-right: 20px;
+        padding-top: 15px;
+        box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+        @include breakpoint(large) {
+            padding-left: 20px;
+            padding-left: 30px;
+            padding-right: 80px;
+            padding-top: 40px;
+            padding-bottom: 35px;
+        }
+
+        .btn {
+            margin-top: 28px;
+            text-align: center;
+            margin-bottom: 12px;
+            @include breakpoint(large) {
+                text-align: left;
+                margin-top: 43px;
+                margin-bottom: 18px;
+            }
+        }
+        p {
+            font-size: 17px;
+            line-height: 22px;
+            margin-top: 0;            
+            margin-bottom: 22px;
+            @include breakpoint(large) {
+                margin-bottom: 23px;
+                font-size: 18px;
+                line-height: 24px;
+            }
+
+            a {
+                text-decoration: underline;
+            }
+        }
+
+        ul {
+            padding-left: 20px;
+            padding-top: 1px;
+            padding-bottom: 0px;
+            margin-bottom:0 ;
+            @include breakpoint(large) {
+                padding-top: 7px;
+                padding-bottom: 7px;
+            }
+
+            li {
+                position: relative;
+                padding-bottom: 8px;
+                overflow-wrap: break-word;
+                font-weight: normal;
+                font-size: 17px;
+                line-height: 22px;
+                @include breakpoint(large) {                 
+                    font-size: 18px;
+                    line-height: 24px;
+                }
+                
+                &:before {
+                    vertical-align: top;
+                    display: inline-block;
+                    left: -15px;
+                    content: "";
+                    height: 6px;
+                    width: 6px;
+                    position: absolute;
+                    background-color: #eb0535;
+                    border-radius: 50%;
+                    top: 8px;
+                    text-indent: 0;
+                    font-weight: bold;
+                    @include breakpoint(medium) {
+                        height: 8px;
+                        width: 8px;
+                        left: -15px;
+                        top: 8px;
+                    }
+                }
+                a {
+                    text-decoration: underline;
+                }
+                ul {
+                    padding-bottom: 0px;
+                }
+            }
+        }
+    }
+    &.grey{
+        .faq-accordion > a { 
+            background: #fff;
+            color: $body-font-color;
+        }
+    }
+}

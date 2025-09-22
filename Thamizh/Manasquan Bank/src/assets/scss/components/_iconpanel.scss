@@ -1,0 +1,507 @@
+$lightblue: #3b6796;
+.profilebuildeinfo {
+    margin-bottom: 50px;
+}
+.personaliconpanel {
+    padding: 24px 0px 56px 0px;
+    @include breakpoint(large) {
+        padding: 30px 0px 90px 0px;
+    }
+
+    @media (min-width: 1024px) and (max-width: 1279px) {
+        padding: 34px 0px 90px 0px;
+    }
+
+    // .grid-container {
+    //     @media (min-width: 1700px) {
+    //         max-width: 1557px;
+    //     }
+    // }
+    .contentsec {
+        margin: 0px auto;
+        @include breakpoint(large) {
+            margin: 0px auto;
+        }
+
+        h2 {
+            margin-bottom: 22px;
+            @include breakpoint(large) {
+                margin-bottom: 45px;
+            }
+
+            @media (min-width: 1024px) and (max-width: 1279px) {
+                font-size: 35px;
+            }
+        }
+        p {
+            color: $lightblue;
+            font-size: 20px;
+            line-height: 27px;
+            margin-bottom: 34px;
+            @include breakpoint(large) {
+                color: $lightblue;
+                font-size: 25px;
+                line-height: 34px;
+                margin-bottom: 56px;
+            }
+            @include breakpoint(xlarge) {
+                font-size: 30px;
+                line-height: 40px;
+            }
+            +.link-cta {
+                @include breakpoint(large) {
+                margin-top: -8px;
+                }
+            }
+        }
+    }
+
+    .tabHorizontal {
+        max-width: 325px;
+        background: $tertiary-color;
+        margin: 0px auto;
+        background: #edf2f7;
+        border-radius: 26px;
+        padding: 9px 10px;
+
+        @include breakpoint(medium) {
+            max-width: 427px;
+        }
+
+        @include breakpoint(large) {
+            max-width: 500px;
+            margin: 0px auto;
+            background: $tertiary-color;
+            border-radius: 26px;
+            padding: 10px 12px;
+        }
+
+        .nav.nav-tabs {
+            display: flex;
+            background: $white-color;
+            margin: 0px;
+            border-radius: 26px;
+            li {
+                font-size: 15px;
+                line-height: 22px;
+                font-weight: 400;
+                width: 147px;
+                text-transform: uppercase;
+                -webkit-transition: all 0.5s;
+                transition: all 0.5s;
+                padding: 4px 6px;
+                margin: 0px;
+                margin-right: 5px;
+                @include breakpoint(medium) {
+                    width: 347px;
+                  
+                }
+                @include breakpoint(large) {
+                    font-size: 16px;
+                    line-height: 22px;
+                    font-weight: 400;
+                    width: 240px;
+                    text-transform: uppercase;
+                    transition: all 0.5s;
+                    padding: 9.2px 20px;
+                    margin: 0px;
+                    margin-right: 10px;
+                    &:last-child{
+                        margin-right: 0px;
+                    }
+                }
+                a {
+                    text-decoration: none;
+                    color: $secondary-blue;
+                }
+                &:hover {
+                    background: $secondary-blue;
+                    color: $white-color;
+                    border-radius: 16.39px;
+                    font-weight: 700;
+                    a {
+                        color: $white-color;
+                    }
+                }
+                &.active {
+                    background: $secondary-blue;
+                    color: $white-color;
+                    border-radius: 16.39px;
+                    a {
+                        font-weight: 700;
+                        color: $white-color;
+                    }
+                    &:hover {
+                        background: $lightblue;
+                    }
+                }
+            }
+        }
+    }
+
+    .multiplecheckbox {
+        max-width: 100%;
+        margin: 0px auto;
+        background: $tertiary-color;
+        border-radius: 24.5px;
+        padding: 23px 26px 22px;
+        max-width: 293px;
+        @include breakpoint(medium) {
+        padding: 23px 66px 40px;
+        max-width: 500px;
+        }
+
+        @include breakpoint(large) {
+            max-width: 1350px;
+            margin: 0px auto;
+            background: $tertiary-color;
+            border-radius: 24.5px;
+            padding: 12px 61px 0px;
+        }
+        .flexwrap {
+            justify-content: center;
+            &.flexcenter{
+                justify-content: center;
+            }
+
+            @media (min-width:1024px) and (max-width:1279px){
+                justify-content: flex-start;
+            }
+        }
+        .form-group {
+            display: block;
+            margin-bottom: 20px;
+            margin-right: 0px;
+
+            @include breakpoint(large) {
+                margin-right: 5%;
+                margin-bottom: 18px;
+            }
+         
+            @include breakpoint(xlarge) {
+                margin-right: 9%;
+                margin-bottom: 18px;
+            }
+            &:nth-child(4n + 4) {
+                @include breakpoint(xlarge) {
+                margin-right: 0px;
+                }
+            }
+            @media (min-width:1530px){
+                margin-right: 10%;
+            }
+            input {
+                padding: 0;
+                height: initial;
+                width: initial;
+                margin-bottom: 0;
+                display: none;
+                cursor: pointer;
+            }
+            label {
+                position: relative;
+                cursor: pointer;
+                color: $body-font-color;
+                font-size: 16px;
+                line-height: 22px;
+                font-weight: 700;
+                margin: 0px;
+                padding: 0px;
+                vertical-align: middle;
+
+                &:before {
+                    content: "";
+                    -webkit-appearance: none;
+                    background-color: $white-color;
+                    border: 2px solid $body-font-color;
+                    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+                    padding: 7px;
+                    border-radius: 50%;
+                    display: inline-block;
+                    position: relative;
+                    vertical-align: middle;
+                    cursor: pointer;
+                    margin-right: 15px;
+                    @include breakpoint(large) {
+                        padding: 8px;
+                        margin-right: 18px;
+                    }
+                }
+            }
+            input:checked + label:after {
+                content: "";
+                display: block;
+                position: absolute;
+                top: 1px;
+                left: 0px;
+                width: 20px;
+                height: 20px;
+                border: 0px;
+                background: $body-font-color;
+                border-radius: 50%;
+            }
+        }
+    }
+    .btnsection {
+        margin: 0px auto;
+        max-width: 200px;
+        text-align: center;
+        margin-top: 60px;
+        margin-bottom: 34px;
+        @include breakpoint(large) {
+            margin-top: 90px;
+            margin-bottom: 0px;
+        }
+        .ctaborder {
+            @media (min-width: 0px) and (max-width: 1023px) {
+                font-size: 17px;
+                font-size: 23px;
+                min-height: 38px;
+                border-radius: 22px;
+                padding: 3px 15px;
+            }
+
+            @include breakpoint(large) {
+                min-height: 43px;
+                border-radius: 24px;
+                font-weight: 400;
+                padding: 5px 22.2px 4px 22.2px;
+            }
+        }
+    }
+    .tab-content {
+        .tab-pane {
+            opacity: 0;
+            transform: translateY(15px);
+            animation: fadeIn 0.5s ease 1 forwards;
+            display: none;
+            &.active {
+                display: block;
+            }
+        }
+    }
+    @keyframes fadeIn {
+        100% {
+            opacity: 1;
+            transform: none;
+        }
+    }
+}
+
+.iconpanel {
+    padding-bottom: 20px;
+    padding-top: 32px;
+    border-radius: 24.5px;
+    padding: 18px 0px;
+    @include breakpoint(large) {
+        padding-bottom: 37px;
+        padding-top: 59px;
+    }
+    h2 {
+        margin-bottom: 30px;
+        @include breakpoint(large) {
+            margin-bottom: 71px;
+        }
+    }
+
+    .grid-container{
+
+        @media (min-width: 1366px) {
+           max-width: 1350px;
+           margin:0px auto;;
+           
+        }
+
+    }
+    .grid-x {
+        justify-content: center;
+
+        &.flexcenter{
+            justify-content: center;
+        }
+        @media (min-width: 0px) and (max-width: 768px) {
+            margin-top: 14px;
+            max-width: 404px;
+            margin: 0px auto;
+        }
+        @media (min-width: 768px) and (max-width: 1023px) {
+            margin-top: 14px;
+            max-width: 600px;
+            margin: 0px auto;
+        }
+    }
+
+    .icondetail {
+        text-align: center;
+        @media (max-width: 767px) {
+            width: 45%;
+            margin: 0px auto;
+            margin-bottom: 25px;
+            margin-right: 2%;
+        }
+      
+        &:nth-child(2n + 2) {
+            @media (min-width: 768px) and (max-width: 1023px) {
+                margin-right: 0px;
+            }
+        }
+        @media (min-width: 768px) and (max-width: 1023px) {
+            width: 45%;
+            margin: 0px auto;
+            margin-right: 30px;
+            margin-bottom: 25px;
+            &.last-child{
+                margin-right: 0px;
+            }
+        }
+        @include breakpoint(large) {
+            margin-top: 0px;
+            margin-bottom: 40px;
+            margin-right: 3.7%;
+            &:nth-child(6n + 6) {
+                margin-right: 0px;
+            }
+            
+        }
+      
+        @include breakpoint(xlarge) {
+            margin-right: 7%;
+            &:nth-child(6n + 6) {
+                margin-right: 0px;
+            }
+            &.last-child{
+                margin-right: 0px;
+            }
+        }
+
+        @media (min-width: 1366px) and (max-width: 1399px) {
+            margin-right: 5%;
+        }
+
+        @media (min-width: 1400px) and (max-width: 1529px) {
+            margin-right: 6%;
+        }
+        &.last-child{
+            margin-right: 0px;
+        }
+
+        &.nomarginright {
+            &:last-child {
+                margin-right: 0px;
+            }
+        }
+
+        a {
+            display: block;
+            transition: all 0.75s;
+            text-align: center;
+
+            .iconsec {
+                width: 145px;
+                height: 145px;
+                margin-bottom: 34px;
+                transition: all 0.75s;
+                display: inline-flex;
+                background: $tertiary-color;
+                border-radius: 18px;
+                justify-content: center;
+                align-items: center;
+                @include breakpoint(small only) {
+                    width: 131px;
+                    height: 131px;
+                    margin-bottom: 14px;
+                }
+                @include breakpoint(medium only) {
+                    width: 131px;
+                    height: 131px;
+                    margin-bottom: 14px;
+                }
+                svg {
+                    transition: all 0.75s;
+                }
+                &:hover {
+                    svg {
+                        transform: scale(1.2);
+                        fill: $white-color;
+                        path {
+                            fill: $white-color;
+                        }
+                        g {
+                            path {
+                                fill: $white-color;
+                            }
+                        }
+                    }
+                }
+            }
+            &:hover {
+                transition: all 0.75s;
+                .iconsec {
+                    background: $primary-color;
+                    svg {
+                        transform: scale(1.2);
+                        fill: $white-color;
+                        path {
+                            fill: $white-color;
+                        }
+                        g {
+                            path {
+                                fill: $white-color;
+                            }
+                        }
+                    }
+                }
+                text-decoration: none;
+                .ctaborder {
+                    color: #ffffff;
+                    background: $primary-color;
+                    &:after {
+                        height: 100%;
+                        z-index: 1;
+                    }
+                    i {
+                        z-index: 2;
+                    }
+                }
+                p {
+                    color: $lightblue;
+                }
+            }
+
+            p {
+                color: $body-font-color;
+                font-weight: 700;
+                text-transform: uppercase;
+                font-size: 16px;
+                line-height: 22px;
+            }
+        }
+        .ctaborder {
+            margin-top: 30px;
+            min-width: 178px;
+            color: #2e2e36;
+            text-align: center;
+            @include breakpoint(large) {
+                margin-top: 90px;
+                min-width: 222px;
+            }
+            &:hover {
+                color: #ffffff;
+            }
+            span {
+                text-align: center;
+                display: block;
+            }
+            i {
+                font-style: normal;
+                margin-top: 0px;
+                @include breakpoint(large) {
+                    margin-top: -2px;
+                }
+            }
+        }
+    }
+}
+
+
+

@@ -1,0 +1,1039 @@
+// Banner Pannel
+.bannerpanel {
+    position: relative;
+
+    &.primarybgcolor {
+        background: transparent;
+        .contentsection {
+            h1,
+            h2 {
+                color: $white-color;
+                span {
+                    &:after {
+                        background: url(../images/primary-banner-icon.svg) no-repeat;
+                        background-size: contain;
+                    }
+                }
+            }
+            p {
+                color: $white-color;
+            }
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: $primary-color;
+            bottom: 0px;
+            z-index: -1;
+            bottom: 46px;
+        }
+    }
+
+    .grid-container {
+        @include breakpoint(large) {
+            max-width: 1248px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+    }
+
+    .contentsection {
+        padding-top: 22px;
+        text-align: left;
+        z-index: 999999999;
+        @include breakpoint(small only) {
+            max-width: 273px;
+            margin: 0px auto;
+        }
+        @include breakpoint(medium only) {
+            max-width: 573px;
+            margin: 0px auto;
+        }
+        @include breakpoint(large) {
+            padding-top: 22px;
+            max-width: 480px;
+        }
+        @include breakpoint(xlarge) {
+            max-width: 555px;
+        }
+        @include breakpoint(xlarge) {
+            padding-top: 51px;
+        }
+        @media (min-width: 1024px) and (max-width: 1279px) {
+            max-width: 480px;
+        }
+        @media (min-width: 1366px) and (max-width: 1500px) {
+            max-width: 475px;
+            padding-top: 22px;
+        }
+        h1,
+        h2 {
+            font-weight: normal;
+            text-align: left;
+            margin-bottom: 0px;
+            position: relative;
+            font-style: italic;
+            @include breakpoint(small only) {
+                max-width: 240px;
+                margin: 0px auto;
+                margin-bottom: 24px;
+            }
+            @include breakpoint(medium only) {
+                max-width: 240px;
+                margin: 0px auto;
+                margin-bottom: 24px;
+            }
+
+            @media (min-width: 1366px) {
+                font-size: 80px !important;
+                line-height: 74px !important;
+            }
+
+            span {
+                position: relative;
+                width: 150px;
+                &:after {
+                    background: url(../images/banner-icon.svg) no-repeat;
+                    background-size: contain;
+                    content: "";
+                    display: inline-block;
+                    height: 23px;
+                    vertical-align: middle;
+                    width: 76px;
+                    position: absolute;
+                    right: -92px;
+                    bottom: 12px;
+                    @include breakpoint(medium) {
+                        height: 23px;
+                        vertical-align: middle;
+                        width: 76px;
+                        position: absolute;
+                        right: -92px;
+                        bottom: 12px;
+                    }
+                    @include breakpoint(large) {
+                        height: 46px;
+                        width: 156px;
+                        right: -181px;
+                        bottom: 21px;
+                    }
+                }
+            }
+
+            a {
+                color: $white;
+                text-decoration: none;
+                &:hover {
+                    color: inherit;
+                }
+            }
+        }
+
+        p {
+            font-size: 17px;
+            line-height: 20px;
+            margin-top: 8px;
+
+            @include breakpoint(medium only) {
+                max-width: 600px;
+                margin: 0px auto;
+                font-size: 17px;
+                line-height: 20px;
+                max-width: 315px;
+            }
+            @include breakpoint(large) {
+                font-size: 24px;
+                line-height: 33px;
+                line-height: 36px;
+                max-width: 594px;
+                margin-bottom: 19px;
+                font-weight: normal;
+            }
+            @include breakpoint(xlarge) {
+                line-height: 33px;
+            }
+            a {
+                text-decoration: none;
+                &:hover {
+                    color: inherit;
+                }
+            }
+
+            + p {
+                margin-top: 0px;
+            }
+        }
+        .ctaBlock {
+            margin: 0 auto;
+            margin-top: 31px;
+
+            @media screen and (max-width: 374px) {
+                margin-top: 31px;
+            }
+            @include breakpoint(medium) {
+                margin: 0;
+                margin-top: 31px;
+                max-width: 500px;
+            }
+            @include breakpoint(large) {
+                margin-top: 28px;
+            }
+            @include breakpoint(xlarge) {
+                margin-top: 44px;
+            }
+            .ctaborder {
+                &.nobg {
+                    background: transparent;
+                    font-size: 16px;
+                    line-height: 22px;
+                    color: $primary-color;
+                    padding: 7px 32px;
+                    border: 2px solid $primary-color;
+                    font-weight: 700;
+                    border-radius: 3px;
+                    @include breakpoint(large) {
+                        font-size: 24px;
+                        line-height: 34px;
+                        padding: 11px 46.5px;
+                    }
+                    &:hover {
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+
+    .homeBanner {
+        min-height: 432px;
+        position: relative;
+        @include breakpoint(small only) {
+            min-height: 286px;
+            margin-top: 72px;
+        }
+
+        @include breakpoint(medium only) {
+            min-height: 286px;
+            margin-top: 72px;
+        }
+
+        @media (min-width: 1024px) and (max-width: 1279px) {
+            min-height: 332px;
+        }
+        @include breakpoint(large) {
+            margin-top: -9px;
+        }
+
+        .bannerwarp {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            height: 100%;
+            clip-path: polygon(0% 14%, 100% 0%, 100% 95%, 0% 100%);
+
+            @include breakpoint(small only) {
+                clip-path: polygon(0% 15%, 101% 1%, 120% 106%, 0% 100%);
+                margin-top: -18px;
+            }
+
+            @include breakpoint(medium only) {
+                clip-path: polygon(0% 15%, 101% 1%, 120% 106%, 0% 100%);
+                margin-top: -18px;
+            }
+            @include breakpoint(large) {
+                margin-top: -23px;
+            }
+            @include breakpoint(xlarge) {
+                margin-top: -22px;
+            }
+            @media (min-width: 1024px) and (max-width: 1279px) {
+                margin-top: -33px;
+            }
+            @media (min-width: 1366px) and (max-width: 1430px) {
+                margin-top: -23px;
+            }
+
+            img {
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+
+                // @media (min-width: 1700px) {
+                //     object-position: 0px -289px;
+                // }
+                // @media (min-width: 1500px) and (max-width: 1600px) {
+                //     object-position: 0px -191px;
+                // }
+            }
+        }
+        &:after {
+            content: "";
+            clip-path: polygon(0% 0%, 100% 0%, 100% 14%, 0% 100%);
+            position: absolute;
+            width: 100%;
+            height: 50px;
+            background: $secondary-color;
+            left: 0;
+            bottom: 0px;
+            @include breakpoint(small only) {
+                height: 18px;
+                clip-path: polygon(0% 0%, 100% 0%, 100% 35%, 0% 100%);
+            }
+            @include breakpoint(medium only) {
+                height: 18px;
+                clip-path: polygon(0% 0%, 100% 0%, 100% 43%, 0% 100%);
+            }
+        }
+    }
+
+    .videosectionwrap {
+        position: absolute;
+        top: 0px;
+        z-index: 2;
+
+        @include breakpoint(small only) {
+            top: -48px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        @include breakpoint(medium only) {
+            top: -48px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        @include breakpoint(large) {
+            top: -120px;
+            right: 41px;
+        }
+        @media (min-width: 1024px) and (max-width: 1279px) {
+            right: 50px;
+        }
+        @include breakpoint(xlarge) {
+            top: -120px;
+            right: 270px;
+        }
+        @media (min-width: 1366px) and (max-width: 1499px) {
+            right: 80px;
+        }
+        @media (min-width: 1500px) and (max-width: 1700px) {
+            right: 142px;
+            top: -120x;
+        }
+
+        &.border-radius {
+            @include breakpoint(small only) {
+                top: -48px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            @include breakpoint(medium only) {
+                top: -48px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            @include breakpoint(large) {
+                top: -253px;
+                right: 41px;
+            }
+            @media (min-width: 1024px) and (max-width: 1279px) {
+                right: 104px;
+            }
+            @include breakpoint(xlarge) {
+                top: -257px;
+                right: 270px;
+            }
+            @media (min-width: 1366px) and (max-width: 1499px) {
+                right: 50px;
+                top: -248px;
+            }
+            @media (min-width: 1500px) and (max-width: 1700px) {
+                right: 142px;
+                top: -257px;
+            }
+            .imgsec {
+                width: 269px;
+                height: 269px;
+                border: solid 5px #ffffff;
+                overflow: hidden;
+                transform: translateZ(0);
+                border-radius: 50%;
+                background: #fff;
+                @include breakpoint(medium) {
+                    width: 269px;
+                    height: 269px;
+                }
+                @include breakpoint(large) {
+                    width: 580px;
+                    height: 580px;
+                }
+                @media (min-width: 1024px) and (max-width: 1279px) {
+                    width: 400px;
+                    height: 400px;
+                }
+                img {
+                    border-radius: 50%;
+                    object-fit: cover;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .imgWrap {
+                border-radius: 50%;
+                width: 100%;
+                height: 100%;
+                padding-bottom: 56.25%;
+                height: 269px;
+                overflow: hidden;
+                position: relative;
+                @include breakpoint(medium) {
+                    width: 100%;
+                    height: 100%;
+                }
+                @include breakpoint(large) {
+                    width: 100%;
+                    height: 100%;
+                }
+                @media (min-width: 1024px) and (max-width: 1279px) {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .filter-img {
+                width: 100%;
+                height: 259px;
+                padding-bottom: 0px;
+                transform: translateZ(0);
+                @include breakpoint(medium) {
+                    width: 269px;
+                    height: 269px;
+                }
+                @include breakpoint(large) {
+                    width: 580px;
+                    height: 580px;
+                }
+                @media (min-width: 1024px) and (max-width: 1279px) {
+                    width: 400px;
+                    height: 400px;
+                }
+                .videoPanel:before,
+                .video-panel::after {
+                    border-radius: 50%;
+                    display: none;
+                }
+            }
+            .video-thumb-image iframe {
+                border-radius: 50%;
+            }
+            .video-panel .filter-img .videoPanel:before {
+                border-radius: 50%;
+                display: none;
+            }
+            .video-thumb-image {
+                pointer-events: none;
+                &.fullscreen {
+                    pointer-events: inherit;
+                }
+                iframe {
+                    height: 100%;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 71vw;
+                    // width: 96vw;
+                    // height: 100vw;
+                    @include breakpoint(small only) {
+                        width: 130vw;
+                    }
+                }
+            }
+            .video-panel .filter-img .videoPanel:before {
+                display: none;
+            }
+            .video-panel .filter-img .videoPanel:after {
+                display: none;
+            }
+        }
+
+        &.border-radius {
+            .imgsec {
+                border-radius: 50%;
+                img {
+                    border-radius: 50%;
+                }
+            }
+            .imgWrap {
+                border-radius: 50%;
+            }
+            .filter-img {
+                .videoPanel:before,
+                .video-panel::after {
+                    border-radius: 50%;
+                    display: none;
+                }
+            }
+            .video-thumb-image iframe {
+                border-radius: 50%;
+            }
+            .video-panel .filter-img .videoPanel:before {
+                border-radius: 50%;
+                display: none;
+            }
+        }
+
+        .imgsec {
+            width: 342px;
+            height: 192px;
+            border: solid 5px #ffffff;
+            overflow: hidden;
+            transform: translateZ(0);
+            background: #fff;
+
+            @include breakpoint(medium) {
+                width: 342px;
+                height: 192px;
+            }
+            @include breakpoint(large) {
+                width: 580px;
+                height: 326px;
+            }
+            @media (min-width: 1024px) and (max-width: 1279px) {
+                width: 400px;
+                height: 225px;
+            }
+            img {
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .imgWrap {
+            width: 100%;
+            height: 100%;
+            padding-bottom: 56.25%;
+            height: 192px;
+            overflow: hidden;
+            position: relative;
+            @include breakpoint(medium) {
+                width: 100%;
+                height: 100%;
+            }
+            @include breakpoint(large) {
+                width: 100%;
+                height: 100%;
+            }
+            @media (min-width: 1024px) and (max-width: 1279px) {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .filter-img {
+            width: 100%;
+            height: 192px;
+            padding-bottom: 0px;
+            transform: translateZ(0);
+            @include breakpoint(medium) {
+                width: 342px;
+                height: 192px;
+            }
+            @include breakpoint(large) {
+                width: 580px;
+                height: 326px;
+            }
+            @media (min-width: 1024px) and (max-width: 1279px) {
+                width: 400px;
+                height: 225px;
+            }
+            .videoPanel:before,
+            .video-panel::after {
+                display: none;
+            }
+        }
+        .video-thumb-image {
+            pointer-events: none;
+            &.fullscreen {
+                pointer-events: inherit;
+            }
+            iframe {
+                height: 100%;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 100%;
+                // width: 96vw;
+                // height: 100vw;
+                @include breakpoint(small only) {
+                    width: 103%;
+                }
+            }
+        }
+        .video-panel .filter-img .videoPanel:before {
+            display: none;
+        }
+        .video-panel .filter-img .videoPanel:after {
+            display: none;
+        }
+    }
+}
+
+.bannerpanel {
+    .videoPanel.loaded {
+        background-image: none !important;
+        background-color: #000;
+    }
+}
+.homeBanner {
+    &.border-radius {
+        .video-controller {
+            bottom: -26px;
+            left: -13px;
+            @include breakpoint(large) {
+                left: -53px;
+                bottom: -26px;
+            }
+            @media (min-width: 1280px) and (max-width: 1365px) {
+                left: -71px;
+            }
+            @include breakpoint(xlarge) {
+                left: -71px;
+            }
+            .play-bt {
+                border-radius: 50%;
+            }
+            .pause-bt {
+                border-radius: 50%;
+            }
+            .mute-bt {
+                border-radius: 50%;
+                @include breakpoint(large) {
+                    top: -28px;
+                }
+            }
+            .mute-bt.mute {
+                border-radius: 50%;
+                @include breakpoint(large) {
+                    top: -28px;
+                }
+            }
+            .expand {
+                border-radius: 50%;
+                @include breakpoint(large) {
+                    bottom: 11px;
+                    right: 53px;
+                }
+                @media (min-width: 1024px) and (max-width: 1279px) {
+                    bottom: 20px;
+                    right: 130px;
+                }
+            }
+        }
+    }
+}
+
+.video-controller {
+    position: absolute;
+    margin-left: auto;
+    bottom: 0px;
+    left: -3px;
+    width: 40px;
+    @include breakpoint(small only) {
+        bottom: -90px;
+        left: -3px;
+        width: auto;
+    }
+    @include breakpoint(medium) {
+        left: -76px;
+    }
+    @include breakpoint(large) {
+        left: -87px;
+        width: 240px;
+        bottom: -53px;
+    }
+    @media (min-width: 1280px) and (max-width: 1365px) {
+        left: -155px;
+        bottom: 20px;
+    }
+    @include breakpoint(xlarge) {
+        left: -155px;
+        bottom: 20px;
+    }
+
+    .play-bt {
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 54px;
+        height: 54px;
+        margin: 10px 0px;
+        overflow: hidden;
+        cursor: pointer;
+        margin-bottom: 21px;
+        border: solid 3px $white-color;
+        background-color: $primary-color;
+        background-image: url(#{$img}/video-play.svg);
+        background-repeat: no-repeat;
+        background-position: 19px 16px;
+        background-size: 13px 16px;
+        margin-left: 6px;
+        @include breakpoint(medium) {
+            background-position: 19px 16px;
+            background-size: 13px 16px;
+            margin-left: 6px;
+            width: 54px;
+            height: 54px;
+        }
+        @include breakpoint(large) {
+            width: 115px;
+            height: 115px;
+            margin: 0px;
+            margin-bottom: 32px;
+            border: solid 5px $white-color;
+            margin-left: 40px;
+            background-position: 39px 40px;
+            background-size: 35px 28px;
+        }
+        @media (min-width: 1024px) and (max-width: 1279px) {
+            width: 97px;
+            height: 97px;
+            margin: 0px;
+            margin-bottom: 53px;
+            margin-left: -10px;
+            background-position: 31px 30px;
+            background-size: 50px 50px;
+        }
+    }
+    .pause-bt {
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 54px;
+        height: 54px;
+        margin: 10px 0px;
+        overflow: hidden;
+        cursor: pointer;
+        margin-bottom: 21px;
+        border: solid 3px $white-color;
+        background-color: $primary-color;
+        background-image: url(#{$img}/video-pause.svg);
+        background-repeat: no-repeat;
+        background-position: 17px 14px;
+        background-size: 24px 30px;
+        margin-left: 6px;
+        @include breakpoint(medium) {
+            width: 54px;
+            height: 54px;
+            background-position: 17px 14px;
+            background-size: 24px 30px;
+        }
+        @include breakpoint(large) {
+            width: 115px;
+            height: 115px;
+            margin: 0px;
+            margin-bottom: 32px;
+            margin-left: 40px;
+            background-position: 40px 40px;
+            background-size: 50px 50px;
+            border: solid 5px $white-color;
+        }
+        @media (min-width: 1024px) and (max-width: 1279px) {
+            width: 97px;
+            height: 97px;
+            margin: 0px;
+            margin-bottom: 53px;
+            margin-left: -10px;
+            background-position: 31px 30px;
+            /*background-size: 35px 28px;*/
+        }
+    }
+    .mute-bt {
+        background-size: 14px 14px;
+        background-repeat: no-repeat;
+        width: 29px;
+        height: 29px;
+        margin: 0px;
+        margin-bottom: 20px;
+        overflow: hidden;
+        cursor: pointer;
+        border: solid 2px $white-color;
+        background-color: $primary-color;
+        background-image: url(#{$img}/video-mute.svg);
+        background-repeat: no-repeat;
+        background-position: 5px 5px;
+        position: absolute;
+        top: -5px;
+        left: 3px;
+        @include breakpoint(medium) {
+            width: 29px;
+            height: 29px;
+            margin: 0px;
+            background-repeat: no-repeat;
+            background-position: 5px 5px;
+        }
+        @include breakpoint(large) {
+            width: 64px;
+            height: 64px;
+            margin: 0px;
+            background-position: 15px 14px;
+            background-size: 28px 25px;
+            top: -42px;
+            left: 19px;
+            margin-bottom: 19px;
+            border: solid 5px $white-color;
+        }
+        @media (min-width: 1024px) and (max-width: 1279px) {
+            top: -44px;
+            left: -16px;
+        }
+    }
+
+    .mute-bt.mute {
+        background-size: 14px 14px;
+        background-repeat: no-repeat;
+        width: 29px;
+        height: 29px;
+        overflow: hidden;
+        margin: 0px;
+        cursor: pointer;
+
+        border: solid 2px $white-color;
+        background-color: $primary-color;
+        background-image: url(#{$img}/video-unmute.svg);
+        background-repeat: no-repeat;
+        background-position: 5px 5px;
+        position: absolute;
+
+        @include breakpoint(medium) {
+            width: 29px;
+            height: 29px;
+        }
+        @include breakpoint(large) {
+            width: 64px;
+            height: 64px;
+            margin: 0px;
+            background-position: 13px 14px;
+            background-size: 28px 25px;
+            top: -42px;
+            left: 19px;
+            border: solid 5px $white-color;
+        }
+        @media (min-width: 1024px) and (max-width: 1279px) {
+        }
+    }
+    .expand {
+        background-size: 14px 14px;
+        background-repeat: no-repeat;
+        width: 29px;
+        height: 29px;
+        margin: 10px 0px;
+        overflow: hidden;
+        cursor: pointer;
+        margin-bottom: 19px;
+        border: solid 2px $white-color;
+        background-color: $primary-color;
+        background-image: url(#{$img}/video-expand.svg);
+        background-repeat: no-repeat;
+        background-position: 5px 6px;
+        position: absolute;
+        bottom: -8px;
+        right: -13px;
+        @include breakpoint(medium) {
+            width: 29px;
+            height: 29px;
+            bottom: -5px;
+            right: -37px;
+        }
+        @include breakpoint(large) {
+            width: 64px;
+            height: 64px;
+            margin: 0px;
+            background-position: 13px 12px;
+            background-size: 30px 30px;
+            border: solid 5px $white-color;
+            bottom: -6px;
+            right: 154px;
+        }
+        @media (min-width: 1024px) and (max-width: 1279px) {
+            width: 64px;
+            height: 64px;
+            margin: 0px;
+            background-position: 13px 12px;
+            background-size: 30px 30px;
+            bottom: 8px;
+            right: 191px;
+        }
+    }
+}
+
+.vimeo-video-src {
+    position: relative;
+    padding-bottom: 302%;
+    transform: translateY(-35.95%);
+
+    @include breakpoint(medium) {
+        padding-bottom: 200%;
+    }
+    @include breakpoint(large) {
+        position: relative;
+        padding-bottom: 190%;
+        transform: translateY(-35.95%);
+    }
+    @media (min-width: 1366px) and (max-width: 1428px) {
+        padding-bottom: 176%;
+    }
+    @media (min-width: 1600px) and(max-width:1800px) {
+        padding-bottom: 183%;
+    }
+}
+
+.ie11 {
+    .bannerpanel {
+        .overlay {
+            background: url(../images/top-overlay.svg) no-repeat;
+            height: 180px;
+            background-size: cover !important;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 100%;
+            position: absolute;
+            top: 170px;
+            overflow: hidden;
+            z-index: -2;
+        }
+        .bottom-overlay {
+            background: url(../images/banner-red-border.svg) no-repeat;
+            height: 45px;
+            background-size: cover !important;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 100%;
+            position: relative;
+            bottom: 5px;
+            overflow: hidden;
+            z-index: -4;
+            transform: rotate3d(0, 0, 0, -1deg);
+        }
+        .homeBanner:after {
+            display: none;
+        }
+        .homeBanner .bannerwarp {
+            z-index: -3;
+            margin-top: 0px;
+            img {
+                height: auto;
+                margin-top: -12%;
+            }
+        }
+    }
+
+    .personaliconpanel.dialanimatesection .dialpadsection .inputField .jqx-input-content {
+        background: transparent;
+        font-size: 45px;
+        line-height: 68px;
+        color: #00214e;
+        box-shadow: none;
+        height: 65px !important;
+    }
+    .personaliconpanel.dialanimatesection .dialpadsection .tblChart svg path {
+        fill: #000;
+    }
+
+    .video-controller .play-bt {
+        background-position: 47px 42px;
+        background-size: 22px 24px;
+    }
+
+    @media (min-width: 1024px) {
+        .bannerpanel .videosectionwrap {
+            top: -226px;
+        }
+    }
+}
+$base: 0.6rem;
+.arrowanimation {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    position: absolute;
+    top: 75%;
+    transform: translate(-50%, 0px);
+    z-index: 999;
+    left: 46%;
+    cursor: pointer;
+    @include breakpoint(large) {
+        display: flex;
+        width: 40px;
+        height: 80px;
+    }
+}
+
+.chevron {
+    position: absolute;
+    width: $base * 3.5;
+    height: $base * 0.8;
+    opacity: 0;
+    transform: scale(0.3);
+    animation: move-chevron 3s ease-out infinite;
+    cursor: pointer;
+    @include breakpoint(large) {
+        margin-top: -76px;
+    }
+    @include breakpoint(xlarge) {
+        margin-top: -95px;
+    }
+}
+
+.chevron:first-child {
+    animation: move-chevron 3s ease-out 1s infinite;
+    cursor: pointer;
+}
+
+.chevron:nth-child(2) {
+    animation: move-chevron 3s ease-out 2s infinite;
+    cursor: pointer;
+}
+
+.chevron:before,
+.chevron:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    background: $white;
+    cursor: pointer;
+}
+
+.chevron:before {
+    left: 0;
+    transform: skewY(30deg);
+}
+
+.chevron:after {
+    right: 0;
+    width: 50%;
+    transform: skewY(-30deg);
+}
+
+@keyframes move-chevron {
+    25% {
+        opacity: 1;
+    }
+    33.3% {
+        opacity: 1;
+        transform: translateY($base * 3.8);
+    }
+    66.6% {
+        opacity: 1;
+        transform: translateY($base * 5.2);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY($base * 8) scale(0.5);
+    }
+}

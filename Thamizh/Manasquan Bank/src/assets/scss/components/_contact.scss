@@ -1,0 +1,1643 @@
+$contact-icon-bg: #004d6e;
+$blue-color: #004d6e;
+.contacticon {
+    padding-top: 45px;
+    padding-bottom: 58px;
+    @include breakpoint(large) {
+        padding-top: 17px;
+        padding-bottom: 90px;
+    }
+    h2 {
+        margin-bottom: 30px;
+        color: $body-font-color;
+        @include breakpoint(small only) {
+            font-size: 27px;
+            line-height: 36px;
+        }
+        @include breakpoint(large) {
+            margin-bottom: 47px;
+        }
+    }
+    .grid-container {
+        margin: 0px auto;
+    }
+    h3,
+    h4 {
+        font-size: 22px;
+        line-height: 27px;
+        color: #3b6796;
+        font-weight: 400;
+        @include breakpoint(medium) {
+            font-size: 33px;
+            line-height: 41px;
+        }
+        @include breakpoint(large) {
+            font-size: 30px;
+            line-height: 40px;
+        }
+    }
+    .grid-x {
+        margin-top: 39px;
+        @include breakpoint(medium) {
+            margin-top: 60px;
+            margin-bottom: 65px;
+        }
+        @include breakpoint(large) {
+            margin-top: 88px;
+            margin-bottom: 85px;
+        }
+    }
+    .large-3 {
+        @include breakpoint(large) {
+            width: 24.5%;
+            margin-right: 6px;
+        }
+        @include breakpoint(xlarge) {
+            width: 19.5%;
+            margin-right: 100px;
+        }
+
+        @media (min-width: 1366px) and (max-width: 1530px) {
+            width: 20.5%;
+            margin-right: 76px;
+        }
+
+        &:nth-child(4n + 4) {
+            @include breakpoint(large) {
+                margin-right: 0px;
+            }
+        }
+    }
+    .iconsec {
+        margin-bottom: 56px;
+        @include breakpoint(medium) {
+            margin-bottom: 40px;
+        }
+        @include breakpoint(large) {
+            margin-bottom: 0px;
+        }
+        &:nth-child(4n + 4) {
+            margin-right: 0px;
+        }
+
+        a {
+            display: inline-block;
+            color: inherit;
+            transition: 0.75s all;
+            &:hover {
+                figure {
+                    background: $primary-color;
+                    svg {
+                        transform: scale(1.2);
+                        fill: $blue-color;
+                        path {
+                            fill: $white-color;
+                        }
+                        g {
+                            path {
+                                fill: $white-color;
+                            }
+                        }
+                    }
+                    img {
+                        transform: scale(1.2);
+                        transition: 1s ease;
+                        color: #ffffff;
+                    }
+                }
+                span {
+                    color: $blue-color;
+                    transform: scale(1);
+                }
+                text-decoration: none;
+            }
+            figure {
+                border-radius: 18px;
+                background: $tertiary-color;
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                @include breakpoint(small) {
+                    margin: 0px auto;
+                    width: 104px;
+                    height: 104px;
+                }
+                @include breakpoint(medium) {
+                    width: 176px;
+                    height: 176px;
+                }
+                @include breakpoint(large) {
+                    width: 176px;
+                    height: 176px;
+                }
+                svg {
+                    height: 70px;
+                    width: 70px;
+                    position: relative;
+                    overflow: hidden;
+                    vertical-align: middle;
+                    transition: 0.75s all;
+                    @include breakpoint(medium) {
+                        height: 80px;
+                        width: 80px;
+                    }
+                    @include breakpoint(large) {
+                        width: 96px;
+                        height: 96px;
+                    }
+                }
+                img {
+                    transition: 1s ease;
+                    height: 50px;
+                    width: 56px;
+                    @include breakpoint(medium) {
+                        height: 80px;
+                        width: 80px;
+                    }
+                    @include breakpoint(large) {
+                        width: 63px;
+                        height: 69px;
+                    }
+                }
+            }
+            span {
+                color: $body-font-color;
+                text-align: center;
+                text-transform: none;
+                position: relative;
+                transition: all 0.3s;
+                margin-top: 22px;
+                @include breakpoint(small) {
+                    margin: 0px auto;
+                    margin-top: 12px;
+                    font-size: 16px;
+                    line-height: 22px;
+                    margin-bottom: 0px;
+                }
+                @include breakpoint(large) {
+                    font-size: 36px;
+                    line-height: 48px;
+                    margin-top: 19px;
+                    margin-bottom: 0px;
+                }
+                @include breakpoint(xlarge) {
+                    font-size: 36px;
+                    line-height: 48px;
+                }
+            }
+        }
+        a,
+        span,
+        figure {
+            display: block;
+        }
+    }
+    .multistepcontact {
+        h5 {
+            line-height: 22px;
+            font-size: 16px;
+            color: #3b6796;
+            font-weight: 400;
+            margin-bottom: 14px;
+            @include breakpoint(medium) {
+                line-height: 32px;
+                font-size: 23px;
+            }
+            @include breakpoint(large) {
+                line-height: 51px;
+                font-size: 38px;
+                margin-bottom: 14px;
+            }
+        }
+        h6 {
+            color: #3b6796;
+            line-height: 22px;
+            font-size: 16px;
+            font-weight: 400;
+            margin-bottom: 56px;
+            @include breakpoint(large) {
+                line-height: 40px;
+                font-size: 30px;
+                margin-bottom: 56px;
+            }
+        }
+        .topics {
+            max-width: 1024px;
+            margin: 0px auto;
+            margin-top: -8px;
+            h5 + h5 {
+                margin-top: 11px;
+            }
+            .contactFormField {
+                margin-top: 36px;
+                @include breakpoint(medium) {
+                    margin-top: 36px;
+                }
+                @include breakpoint(large) {
+                    margin-top: 46px;
+                }
+                &.textareasection {
+                    margin-bottom: 90px;
+                    @include breakpoint(large) {
+                        margin-bottom: 77px;
+                    }
+                }
+                &.loaninfo {
+                    margin-top: 67px;
+                    margin-bottom: 90px;
+                    @include breakpoint(medium) {
+                        margin-top: 30px;
+                    }
+                    @include breakpoint(large) {
+                        margin-top: 73px;
+                        margin-bottom: 60px;
+                    }
+                    .form-group {
+                        label {
+                            color: $body-font-color;
+                            font-size: 16px;
+                            line-height: 22px;
+                            font-weight: 400;
+                            padding-left: 3px;
+                            white-space: nowrap;
+                            text-align: left;
+                            margin-bottom: 10px;
+                            @include breakpoint(medium) {
+                                font-size: 22px;
+                                line-height: 35px;
+                                margin-bottom: 10px;
+                            }
+                            @include breakpoint(large) {
+                                font-size: 38px;
+                                line-height: 51px;
+                                margin-bottom: 10px;
+                            }
+                        }
+                    }
+                }
+                .form-group {
+                    position: relative;
+                    margin-bottom: 24px;
+                    @include breakpoint(medium) {
+                        margin-bottom: 22px;
+                    }
+                    @include breakpoint(large) {
+                        margin-bottom: 18px;
+                    }
+                    span {
+                        &.errorMsg {
+                            background-color: #3b6796;
+                            background-image: url(../images/star.svg);
+                            background-repeat: no-repeat;
+                            position: absolute;
+                            top: 21px;
+                            right: -8px;
+                            width: 20px;
+                            height: 20px;
+                            background-size: 20px 36px;
+                            background-position: 1px -6px;
+                            border-radius: 50%;
+                            @include breakpoint(medium) {
+                                background-position: 1px -6px;
+                                top: 26px;
+                                right: -10px;
+                                width: 30px;
+                                height: 30px;
+                                background-size: 30px 50px;
+                            }
+                            @include breakpoint(large) {
+                                top: 29px;
+                                right: -9px;
+                                background-position: 5px -8px;
+                                top: 39px;
+                                right: -17px;
+                                width: 38px;
+                                height: 38px;
+                                border-radius: 50%;
+                                background-size: 30px 62px;
+                            }
+                            @include breakpoint(xlarge) {
+                                background-position: 5px -8px;
+                                top: 39px;
+                                right: -17px;
+                                width: 38px;
+                                height: 38px;
+                                border-radius: 50%;
+                                background-size: 30px 62px;
+                            }
+                        }
+                        &.f-error {
+                            background-color: #9f0a1f;
+                            background-image: url(../images/wrong.svg);
+                            background-position: 6px 5px;
+                            background-size: 9px 10px;
+                            @include breakpoint(medium) {
+                                background-position: 10px 8px;
+                                background-size: 12px 13px;
+                            }
+                            @include breakpoint(large) {
+                                background-position: 13px 11px;
+                                background-size: 12px 16px;
+                            }
+                        }
+                        &.f-success {
+                            background-color: #119f0a;
+                            background-image: url(../images/success.svg);
+                            border: 2px solid #119f0a;
+                            background-position: 2px 1px;
+                            background-size: 13px 15px;
+                            @include breakpoint(medium) {
+                                background-position: 4px 0px;
+                                background-size: 17px 26px;
+                            }
+                            @include breakpoint(large) {
+                                background-position: 8px 5px;
+                                background-size: 19px 24px;
+                            }
+                        }
+                    }
+                    label {
+                        color: $body-font-color;
+                        font-size: 16px;
+                        line-height: 22px;
+                        font-weight: 400;
+                        padding-left: 3px;
+                        white-space: nowrap;
+                        text-align: left;
+                        margin-bottom: 10px;
+                        @include breakpoint(medium) {
+                            font-size: 22px;
+                            line-height: 35px;
+                            margin-bottom: 10px;
+                        }
+                        @include breakpoint(large) {
+                            font-size: 30px;
+                            line-height: 40px;
+                            margin-bottom: 10px;
+                        }
+                    }
+                    input {
+                        border-radius: 0;
+                        background-color: #ffffff;
+                        padding: 10px 10px;
+                        border: 1px solid #3b6796;
+                        height: 40px;
+                        color: #00214e;
+                        font-size: 18px;
+                        width: 100%;
+                        margin-bottom: 0px;
+                        @include breakpoint(medium) {
+                            height: 45px;
+                            font-size: 22px;
+                            line-height: 35px;
+                        }
+                        @include breakpoint(large) {
+                            height: 75px;
+                            font-size: 38px;
+                            line-height: 51px;
+                            padding: 10px 20px;
+                        }
+                    }
+                    .ui-selectmenu-button {
+                        border-radius: 0;
+                        background-color: #ffffff;
+                        padding: 5px 18px;
+                        border: 1px solid #707070;
+                        height: 42px;
+                        color: #00214e;
+                        width: 100%;
+                        margin-bottom: 158px;
+                        height: 75px;
+                        font-size: 38px;
+                        line-height: 51px;
+                        font-weight: 400;
+                        margin-bottom: 43px;
+                        padding-left: 35px;
+                        padding-right: 35px;
+                        @include breakpoint(medium only) {
+                            color: #00214e;
+                            font-size: 18px;
+                            line-height: 24px;
+                            font-weight: 400;
+                        }
+                        @include breakpoint(small only) {
+                            color: #00214e;
+                            font-size: 18px;
+                            line-height: 24px;
+                            font-weight: 400;
+                            height: auto;
+                            padding: 9px 18px;
+                        }
+                        .ui-selectmenu-text {
+                            padding: 0;
+                            font-size: 38px;
+                            line-height: 51px;
+                            font-weight: 400;
+                            font-family: "Archivo Narrow";
+                            @include breakpoint(medium only) {
+                                color: #00214e;
+                                font-size: 18px;
+                                line-height: 24px;
+                                font-weight: 400;
+                            }
+                            @include breakpoint(small only) {
+                                color: #00214e;
+                                font-size: 18px;
+                                line-height: 24px;
+                                font-weight: 400;
+                            }
+                        }
+                        @include breakpoint(medium) {
+                            height: 45px;
+                            padding: 10px 20px;
+                            margin-bottom: 43px;
+                        }
+                        @include breakpoint(large) {
+                            height: 79px;
+                            padding: 13px 37px;
+                            margin-bottom: 80px;
+                        }
+                        &:after {
+                            height: 30px;
+                            width: 48px;
+                            right: 24px;
+                            top: 32%;
+                            background-size: contain;
+                            background: url(../images/dropdownarrow.svg) no-repeat;
+                            content: "";
+                            display: inline-block;
+                            margin-top: 0px;
+                            pointer-events: none;
+                            position: absolute;
+                            transition: all 0.55s;
+                            @include breakpoint(medium only) {
+                                height: 14px;
+                                background-size: contain;
+                                width: 33px;
+                                right: 10px;
+                                top: 38%;
+                            }
+                            @include breakpoint(small only) {
+                                height: 14px;
+                                background-size: contain;
+                                width: 33px;
+                                right: 10px;
+                                top: 38%;
+                            }
+                        }
+                        &.ui-selectmenu-button-open:after {
+                            transform: rotate(-180deg);
+                            transition: all 0.55s;
+                        }
+                    }
+                    .txtBox {
+                        border: 1px solid #3b6796;
+                        ::-webkit-input-placeholder {
+                            /* Edge */
+                            color: #00214e;
+                        }
+                        :-ms-input-placeholder {
+                            /* Internet Explorer 10-11 */
+                            color: #00214e;
+                            opacity: 1;
+                        }
+                        ::placeholder {
+                            color: #00214e;
+                        }
+                        &.error {
+                            border-color: #9f0a1f;
+                            border: 2px solid #9f0a1f;
+                        }
+                        &.f-success {
+                            border-color: #119f0a;
+                            border: 2px solid #119f0a;
+                        }
+                        &:focus {
+                            outline: none;
+                        }
+                    }
+                    textarea {
+                        border-radius: 0;
+                        background-color: #ffffff;
+                        width: 100%;
+                        height: 318px;
+                        color: $body-font-color;
+                        font-size: 18px;
+                        padding: 6px 12px;
+                        border: 1px solid #3b6796;
+                        margin-bottom: 13px;
+
+                        @include breakpoint(large) {
+                            font-size: 38px;
+                            line-height: 51px;
+                        }
+                        ::-webkit-input-placeholder {
+                            /* Edge */
+                            color: #000000;
+                        }
+                        :-ms-input-placeholder {
+                            /* Internet Explorer 10-11 */
+                            color: #000000;
+                            opacity: 1;
+                        }
+                        ::placeholder {
+                            color: #000000;
+                        }
+                    }
+                    .successForm {
+                        textarea,
+                        .txtBox {
+                            border: 1px solid #119f0a;
+                        }
+                    }
+                }
+            }
+        }
+
+        button.ctaborder.prev,
+        button.ctaborder.next,
+        button.ctaborder.submitbtn {
+            font-size: 21px;
+            line-height: 29px;
+            text-transform: uppercase;
+            border-radius: 29px;
+            min-width: auto;
+            min-height: auto;
+            @include breakpoint(medium) {
+                font-size: 23px;
+                line-height: 32px;
+            }
+            @include breakpoint(large) {
+                font-size: 21px;
+                line-height: 29px;
+                padding: 5px 25px;
+            }
+        }
+        button.ctaborder.prev {
+            margin-right: 30px;
+            @include breakpoint(medium) {
+                margin-right: 23px;
+            }
+            @include breakpoint(large) {
+                margin-right: 55px;
+            }
+        }
+        button.ctaborder.prev,
+        button.ctaborder.next {
+            @include breakpoint(large) {
+                min-width: 103px;
+            }
+        }
+        button.ctaborder {
+            &.submitbtn {
+                font-size: 21px;
+                line-height: 29px;
+                text-transform: uppercase;
+                border-radius: 29px;
+                min-width: auto;
+                min-height: auto;
+                @include breakpoint(medium) {
+                    font-size: 23px;
+                    line-height: 32px;
+                }
+                @include breakpoint(large) {
+                    font-size: 21px;
+                    line-height: 29px;
+                    padding: 5px 22px;
+                }
+            }
+            &:hover {
+                border: solid 2px #00214e;
+            }
+        }
+        .nextPrevBtn {
+            margin-bottom: 58px;
+            @include breakpoint(medium) {
+                margin-bottom: 0px;
+            }
+        }
+        .submitbtns {
+            margin-bottom: 58px;
+            @include breakpoint(medium) {
+                margin-bottom: 90px;
+            }
+        }
+    }
+    .progress {
+        border-radius: 9px;
+        border: 1px solid #707070;
+        background-color: #fff;
+        height: 14px;
+        max-width: 100%;
+        margin: 0px auto;
+        margin-top: 26px;
+        overflow: hidden;
+        @include breakpoint(medium) {
+            margin-top: 60px;
+            height: 30px;
+        }
+        .progress-bar {
+            float: left;
+            width: 0;
+            height: 100%;
+            border-radius: 9px 0 0 9px;
+            font-size: 12px;
+            line-height: 20px;
+            color: #fff;
+            text-align: center;
+            background-color: #b5b9bc;
+            box-shadow: none;
+            transition: width 0.6s ease;
+            @include breakpoint(large) {
+                height: 30px;
+            }
+        }
+    }
+}
+
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active,
+.ui-button.ui-state-active:hover {
+    background: #fff;
+    color: $secondary-color;
+    font-weight: 600;
+    border: 0px solid #003eff;
+}
+
+.ui-selectmenu-text {
+    font-size: 18px;
+    line-height: 30px;
+    font-family: "opensans";
+    @include breakpoint(medium) {
+        font-size: 25px;
+        line-height: 33px;
+    }
+    @include breakpoint(large) {
+        font-size: 36px;
+        line-height: 49px;
+    }
+}
+
+.ui-selectmenu-button.ui-button {
+    text-align: left;
+    white-space: nowrap;
+    width: 100%;
+    display: block;
+    padding: 8px 0;
+}
+
+.ui-selectmenu-button-closed {
+    &::after {
+        content: "";
+        position: absolute;
+        top: 33%;
+        right: 0px;
+        margin-top: 0px;
+        z-index: 2;
+        margin: auto;
+        width: 33px;
+        height: 14px;
+        background-image: url(../images/selct-arrow.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        transition: all 0.3s;
+        pointer-events: none;
+        @include breakpoint(medium) {
+            top: 30%;
+            right: 10px;
+            margin-top: 0px;
+            z-index: 2;
+            margin: auto;
+            width: 33px;
+            height: 21px;
+            background-size: contain;
+        }
+        @include breakpoint(large) {
+            top: 33%;
+            right: 10px;
+            margin-top: 0px;
+            z-index: 2;
+            margin: auto;
+            width: 48px;
+            height: 30px;
+            background-size: cover;
+        }
+    }
+}
+
+.ui-selectmenu-button-open {
+    &::after {
+        content: "";
+        position: absolute;
+        top: 36%;
+        right: 10px;
+        margin-top: 0px;
+        z-index: 2;
+        margin: auto;
+        width: 33px;
+        height: 14px;
+        background-image: url(../images/selct-arrow.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        transition: all 0.3s;
+        pointer-events: none;
+        transform: rotate(180deg);
+        @include breakpoint(medium) {
+            top: 30%;
+            right: 10px;
+            margin-top: 0px;
+            z-index: 2;
+            margin: auto;
+            width: 33px;
+            height: 21px;
+            background-size: contain;
+        }
+        @include breakpoint(large) {
+            top: 33%;
+            right: 10px;
+            margin-top: 0px;
+            z-index: 2;
+            margin: auto;
+            width: 48px;
+            height: 30px;
+            background-size: cover;
+        }
+    }
+}
+
+.ui-selectmenu-menu .ui-menu {
+    margin-top: 0;
+    background: #fff;
+    padding: 10px 0;
+    -webkit-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.4);
+    transition: all 0.2s;
+}
+
+.ui-menu-item {
+    padding: 1px 18px;
+    @include breakpoint(medium) {
+        padding: 1px 20px;
+    }
+    @include breakpoint(large) {
+        padding: 1px 44px;
+    }
+}
+
+.ui-selectmenu-menu .ui-menu li:hover {
+    background: #fff;
+    color: $secondary-color;
+    font-weight: 600;
+}
+
+.ui-menu .ui-menu-item-wrapper {
+    position: relative;
+    padding: 0 0 6px 0;
+    font-size: 22px;
+    line-height: 37px;
+    transition: all 0.5s;
+    color: #000000;
+}
+
+.ui-state-active {
+    margin: 0px !important;
+}
+
+.ui-menu-item-wrapper:hover {
+    background: #fff;
+    color: $secondary-color;
+}
+
+.ui-selectmenu-button.ui-button {
+    height: 44px;
+    outline: none;
+}
+
+.ui-button:focus .ui-icon,
+.ui-button:hover .ui-icon,
+.ui-state-focus .ui-icon,
+.ui-state-hover .ui-icon {
+    background-image: none;
+}
+
+.ui-button .ui-icon {
+    background-image: none;
+}
+
+.ui-selectmenu-open {
+    background: #fff;
+}
+
+
+
+.backtoTop {
+    z-index: 9999;
+}
+
+.successbtn {
+    @include breakpoint(large) {
+        max-width: 805px;
+        height: auto;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .ctaborder {
+        margin-top: 60px;
+        @include breakpoint(large) {
+            margin-top: 90px;
+            margin-bottom: 0px;
+        }
+    }
+}
+
+.success {
+    max-width: 100%;
+    height: auto;
+    padding: 50px 20px;
+    text-align: center;
+    margin: 0px auto;
+    padding: 46px 40px 50px 40px;
+    border: solid 4px #1c375e;
+    border-radius: 5px;
+    @include breakpoint(large) {
+        max-width: 805px;
+        height: auto;
+        margin: 0 auto;
+        text-align: center;
+        padding: 46px 40px 100px 40px;
+        border: solid 4px #1c375e;
+    }
+    h3 {
+        font-size: 35px;
+        line-height: 45px;
+        color: $primary-color;
+        padding-top: 0px;
+        padding-bottom: 20px;
+        margin-bottom: 0;
+        text-align: center !important;
+        text-transform: uppercase;
+        font-weight: 700;
+        @include breakpoint(medium) {
+            padding-top: 0px;
+            font-size: 30px;
+            line-height: 45px;
+        }
+        @include breakpoint(large) {
+            font-size: 42px;
+            line-height: 56px;
+            padding-bottom: 47px;
+            max-width: 400px;
+            margin: 0px auto;
+        }
+    }
+
+    p {
+        font-size: 22px;
+        line-height: 35px;
+        color: $primary-color;
+        @include breakpoint(medium only) {
+            font-size: 27px;
+            line-height: 35px;
+            color: #1c375e;
+            max-width: 550px;
+            margin: 0px auto;
+        }
+        @include breakpoint(large) {
+            font-size: 38px;
+            line-height: 40px;
+            max-width: 688px;
+            margin: 0px auto;
+        }
+    }
+    .success-btn {
+        margin-top: 49px;
+        a {
+            min-width: 211px;
+            text-decoration: none;
+        }
+    }
+    .success-checkmark {
+        width: 180px;
+        height: 180px;
+        margin: 0 auto;
+        padding-top: 30px;
+        margin-bottom: 10px;
+        @include breakpoint(medium) {
+            width: 250px;
+            height: 250px;
+            padding-top: 30px;
+            margin-bottom: 15px;
+        }
+        @include breakpoint(large) {
+            width: 320px;
+            height: 320px;
+            padding-top: 60px;
+            margin-bottom: 50px;
+        }
+    }
+    &.alert-success {
+        background: transparent;
+    }
+}
+
+.contacticon .multistepcontact h5.headmargin {
+    margin-top: -7px;
+    margin-bottom: 24px;
+    @include breakpoint(large) {
+        margin-top: -8px;
+    }
+}
+
+.contacticon .multistepcontact .errorContact {
+    text-align: left !important;
+    margin: 10px 0px 0px;
+    display: block;
+    color: #9f0a1f;
+    @include breakpoint(large) {
+        text-align: left !important;
+        margin: 10px 0px 0px;
+        display: block;
+        color: #9f0a1f;
+    }
+}
+
+.contacticon .multistepcontact .topics .contactFormField .form-group .txtBox.errorPlacement {
+    border: 1px solid #9f0a1f;
+}
+
+#contactFormId .multistepcontact:not(:first-of-type),
+.login-panel #contactFormId .multistepcontact:not(:first-of-type) {
+    display: none;
+}
+
+.contactdetails {
+    padding: 50px 0px 89px;
+    margin-bottom: 90px;
+    @include breakpoint(large) {
+        padding: 50px 0px 89px;
+        margin-bottom: 90px;
+    }
+    h2 {
+        text-align: center;
+        margin-bottom: 30px;
+        @include breakpoint(large) {
+            margin-bottom: 46px;
+        }
+    }
+    .contentwrap {
+        p {
+            font-size: 17px;
+            line-height: 27px;
+            color: $body-font-color;
+            margin-bottom: 0px;
+            @include breakpoint(large) {
+                font-size: 26px;
+                line-height: 35px;
+            }
+            + p {
+                margin-top: 29px;
+            }
+        }
+    }
+    .clientsupportpanel {
+        border-radius: 25px;
+        box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.2);
+        padding: 30px 20px 40px 20px;
+        margin-top: 45px;
+        @include breakpoint(large) {
+            max-width: 907px;
+            border-radius: 25px;
+            margin: 0px auto;
+            padding: 34px 91px 42px 97px;
+            margin-top: 83px;
+        }
+
+        .flexwrap {
+            justify-content: center;
+            align-items: center;
+        }
+        .contentsection {
+            text-align: center;
+            @include breakpoint(large) {
+                width: 50%;
+                margin-right: 120px;
+                text-align: left;
+            }
+            @include breakpoint(xlarge) {
+                margin-right: 131px;
+            }
+        }
+        h4 {
+            font-size: 30px;
+            line-height: 45px;
+            color: $body-font-color;
+            margin-bottom: 15px;
+            @include breakpoint(large) {
+                font-size: 38px;
+                line-height: 51px;
+                margin-bottom: 15px;
+            }
+        }
+        p {
+            font-size: 22px;
+            line-height: 35px;
+            color: $body-font-color;
+            margin-bottom: 0px;
+            @include breakpoint(large) {
+                font-size: 30px;
+                line-height: 40px;
+            }
+            a {
+                color: $body-font-color;
+                text-decoration: none;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+            + p {
+                margin-top: 10px;
+                @include breakpoint(large) {
+                    margin-top: 15px;
+                }
+            }
+        }
+    }
+    .btnsection {
+        display: block;
+        text-align: center;
+        padding-top: 24px;
+        @include breakpoint(large) {
+            display: block;
+            width: 31%;
+            text-align: center;
+            padding-top: 11px;
+        }
+        .ctaborder {
+            padding: 6px 26px;
+            min-width: auto;
+            min-height: auto;
+            @media (max-width: 1023px) {
+                width: 100%;
+            }
+            @include breakpoint(large) {
+                padding: 6px 26px;
+            }
+            + .ctaborder {
+                margin-top: 20px;
+                @include breakpoint(large) {
+                    margin-top: 46px;
+                    padding: 6px 24px;
+                }
+            }
+
+        }
+        a.ctaborder[href^="tel"]:hover{
+            text-decoration: none;
+        }
+    }
+}
+
+.contacticon .multistepcontact #InfoForm h5 {
+    @include breakpoint(large) {
+        line-height: 40px;
+        font-size: 30px;
+        margin-bottom: 74px;
+        margin-top: 53px;
+    }
+}
+
+.ie11 {
+    .contacticon .multistepcontact .topics .contactFormField .form-group span.errorMsg {
+        background-position: 10px -8px;
+        background-size: 20px 62px;
+    }
+    .contacticon .multistepcontact .topics .contactFormField .form-group span.f-success {
+        background-position: 8px 10px;
+        background-size: 19px 14px;
+    }
+}
+#accounttype-menu,
+#customerservice-menu,
+#loantype-menu {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    &.ui-menu {
+        border-radius: 0px;
+        .ui-menu-item {
+            padding: 0px;
+        }
+        li {
+            &:hover {
+                font-weight: 400;
+            }
+        }
+        .ui-menu-item-wrapper {
+            font-size: 25px;
+            font-family: "Archivo Narrow";
+            line-height: 35px;
+            padding-left: 36px;
+            padding-right: 36px;
+            font-weight: 400;
+            padding-top: 5px;
+            color: #00214e;
+            @include breakpoint(medium only) {
+                padding-top: 7px;
+                padding-bottom: 7px;
+                font-size: 16px;
+                line-height: 24px;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+            @include breakpoint(small only) {
+                padding-top: 7px;
+                padding-bottom: 7px;
+                font-size: 16px;
+                line-height: 24px;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+            &.ui-state-active {
+                font-weight: 600;
+            }
+        }
+        li {
+            .ui-menu-item-wrapper {
+                &:hover {
+                    background: #1c375e;
+                    color: #ffffff;
+                }
+            }
+        }
+    }
+}
+.MacOS {
+    .contacticon .multistepcontact .topics .contactFormField .form-group span.errorMsg {
+        background-position: 4px -9px;
+    }
+}
+button.ctaborder {
+    &:hover {
+        border: solid 2px #00214e;
+    }
+}
+
+.contacticon {
+    &.reorderchecksform {
+        @include breakpoint(large) {
+            padding-top: 50px;
+        }
+        .contactwrap {
+            .multistepcontact {
+                .topics {
+                    max-width: 100%;
+                    margin: 0px auto;
+                }
+                .contactFormField.loaninfo {
+                    margin-top: 0px;
+                    margin-bottom: 0px;
+                    @include breakpoint(large) {
+                        display: flex;
+                        flex-wrap: wrap;
+                    }
+                    .form-group {
+                        @include breakpoint(large) {
+                            width: 48%;
+                            margin-right: 4%;
+                            margin-bottom: 50px;
+                            &:nth-child(2n + 2) {
+                                margin-right: 0;
+                            }
+                        }
+                    }
+                }
+                &.fullwidth {
+                    .contactFormField.loaninfo {
+                        .form-group {
+                            width: 100%;
+                            margin-right: 0%;
+                        }
+                    }
+                }
+                .submitbtns {
+                    margin-bottom: 0px;
+                    margin-top: 50px;
+                }
+            }
+        }
+    }
+}
+
+.generalcontnet {
+    h1 {
+        @include breakpoint(large) {
+            font-size: 60px;
+            line-height: 70px;
+        }
+    }
+
+    .re-orderList {
+        padding-left: 20px;
+        margin-top: 20px;
+
+        li {
+            margin-bottom: 10px;
+            font-size: 18px;
+            line-height: 27px;
+        }
+    }
+}
+.serviceform {
+    max-width: 1024px;
+    margin: 0px auto;
+    .umbraco-forms-form input.text,
+    .umbraco-forms-form textarea {
+        width: 100%;
+    }
+    input,
+    textarea {
+        width: 100%;
+    }
+}
+
+.contacticon {
+    &.serviceumberacoforms {
+        padding-top: 50px;
+        .contactwrap {
+            margin: 0px auto;
+            max-width: 768px;
+            width: 100%;
+            @include breakpoint(medium) {
+                max-width: 768px;
+                margin: 0px auto;
+            }
+
+            @include breakpoint(large) {
+                max-width: 1024px;
+                margin: 0px auto;
+            }
+            .umbraco-forms-form fieldset {
+                padding: 0px;
+                margin: 0px;
+                border: none !important;
+            }
+            h3 {
+                text-align: center;
+                color: #1c375e;
+                margin-bottom: 30px;
+                font-size: 33px;
+                line-height: 41px;
+                @include breakpoint(large) {
+                    font-size: 50px;
+                    line-height: 45px;
+                    color: #1c375e;
+                    margin-bottom: 30px;
+                    font-weight: 700;
+                }
+            }
+            label.umbraco-forms-label {
+                display: block;
+                background: transparent !important;
+                color: $body-font-color;
+                font-size: 16px;
+                line-height: 22px;
+                font-weight: 400;
+                padding-left: 3px;
+                text-align: left;
+                margin-bottom: 15px;
+                position: relative;
+                @include breakpoint(medium) {
+                    font-size: 22px;
+                    line-height: 35px;
+                    margin-bottom: 15px;
+                }
+                @include breakpoint(large) {
+                    font-size: 38px;
+                    line-height: 51px;
+                    margin-bottom: 15px;
+                }
+            }
+            .umbraco-forms-tooltip {
+                font-size: 20px;
+                font-weight: 600;
+                color: $body-font-color;
+                /* margin-top: 10px; */
+                margin-bottom: 20px;
+                display: block;
+            }
+            .umbraco-forms-field,
+            .umbraco-forms-field-wrapper {
+                margin-bottom: 25px;
+                position: relative;
+                &.consentforstoringsubmitteddata {
+                    .umbraco-forms-label {
+                        margin-bottom: 20px;
+                    }
+                }
+            }
+            .umbraco-forms-indicator {
+                position: absolute;
+
+                top: 22px;
+                right: -10px;
+
+                width: 28px;
+                height: 28px;
+                background: #9f0a1f;
+                border-radius: 50%;
+                color: #fff;
+                font-size: 45px;
+                text-align: center;
+                line-height: 45px;
+                z-index: 1;
+                
+                @include breakpoint(medium) {
+                   top: 34px;
+                    right: -8px;
+                    width: 28px;
+                    height: 28px;
+                    font-size: 48px;
+                    line-height: 48px;
+                }
+                @include breakpoint(large) {
+
+                    top: 47px;
+                    right: -15px;
+                    font-size: 60px;
+                    line-height: 60px;
+                    width: 38px;
+                    height: 38px;
+                }
+            }
+            .umbraco-forms-form input.text,
+            .umbraco-forms-form textarea,  .umbraco-forms-form select {
+                border-radius: 0;
+                background-color: #ffffff;
+                padding: 10px 10px;
+                border: 1px solid #3b6796;
+                height: 40px;
+                color: $body-font-color;
+                font-size: 18px;
+                width: 100%;
+                max-width: 100% !important;
+                margin-bottom: 0px;
+                margin-top: 0px;
+                @include breakpoint(medium) {
+                    height: 45px;
+                    font-size: 22px;
+                    line-height: 35px;
+                    max-width: 100% !important;
+                }
+                @include breakpoint(large) {
+                    height: 75px;
+                    font-size: 38px;
+                    line-height: 51px;
+                    padding: 10px 20px;
+                    max-width: 100% !important;
+                }
+                @include breakpoint(xlarge) {
+                    max-width: 100% !important;
+                }
+                &.input-validation-error {
+                    border: 1px solid #9f0a1f !important;
+                    margin-bottom: 10px;
+                }
+            }
+            .umbraco-forms-form select{
+                background-size: 58px 10px;
+               
+                @include breakpoint(medium only){
+                    height: 55px;
+                    background-size: 50px 14px;
+                }
+                @include breakpoint (large){
+                    background-size: 50px 20px; 
+                }
+                @include breakpoint (xlarge){
+                    background-size: 50px 20px; 
+                }
+            }
+
+            .umbraco-forms-form textarea {
+                height: 200px;
+            }
+            .umbraco-forms-field-wrapper {
+                margin-bottom: 10px;
+                margin-top: 0px;
+                display: grid;
+                @include breakpoint(large) {
+                    margin-top: 0px;
+                }
+            }
+            [type="file"],
+            [type="checkbox"],
+            [type="radio"] {
+                margin: 0px;
+                padding: 10px 10px;
+                font-size: 30px;
+                width: 22px !important;
+                height: 22px !important;
+                margin-right: 10px;
+                margin-top: 0px;
+                vertical-align: middle;
+                border: 1px solid $body-font-color !important;
+            }
+            .umbraco-forms-field div label {
+                display: inline;
+                font-size: 22px;
+                font-size: 21px;
+                line-height: 25px;
+                color: $body-font-color;
+                vertical-align: middle;
+            }
+            .umbraco-forms-navigation {
+                .col-md-12 {
+                    display: block;
+                    text-align: center;
+                }
+                .col-md-12 .btn {
+                    border-radius: 25px;
+                    font-size: 17px;
+                    color: #00214e;
+                    border: 2px solid #00214e;
+                    text-transform: uppercase;
+                    padding: 6.5px 22px;
+                    background-color: #ffffff;
+                    cursor: pointer;
+                    @include breakpoint(small only){
+                        margin-top: 40px;
+                    }
+                }
+                @media print, screen and (min-width: 48em) {
+                    .col-md-12 .btn {
+                        font-size: 21px;
+                        line-height: 29px;
+                        padding: 4.5px 22px;
+                        z-index: 1;
+                        position: relative;
+                        display: inline-block;
+                        overflow: hidden;
+                    }
+                }
+                .btn {
+                    background-image: linear-gradient(0, $primary-color, $primary-color) !important;
+                    transition: all 0.3s;
+                    background-size: 100% 0 !important;
+                    background-repeat: no-repeat;
+                    background-position: top !important;
+                    &:hover {
+                        background-size: 100% 100% !important;
+                        color: $white-color;
+                    }
+                }
+                .umbraco-forms-form span.checkboxlist,
+                .umbraco-forms-form span.radiobuttonlist,
+                .umbraco-forms-form span.checkbox {
+                    display: flex;
+                    float: left;
+                    padding: 10px;
+                    justify-content: center;
+                    align-items: center;
+                }
+                .umbraco-forms-field {
+                    &.multiplechoice {
+                        .umbraco-forms-field-wrapper {
+                            .checkboxlist {
+                                display: flex;
+                                float: left;
+                                padding: 10px;
+                                justify-content: center;
+                                align-items: center;
+                            }
+                        }
+                    }
+                }
+                .umbraco-forms-field {
+                    &.checkbox {
+                        display: flex;
+                        .umbraco-forms-label {
+                            order: 2;
+                        }
+                        .umbraco-forms-field-wrapper {
+                            order: 1;
+                        }
+                        .field-validation-error{
+                            position: absolute;
+                            width: 340px;
+                            top: 42px;
+                            @include breakpoint (medium){
+                                width: 700px;
+                                top: 59px;
+                            }
+                            @include breakpoint (large){
+                                width: 700px;
+                            }
+                        }
+                    }
+
+                    &.dataconsent {
+                        .umbraco-forms-field-wrapper {
+                            display: flex;
+                        }
+
+                    }
+                    &.dataconsent {
+                        .umbraco-forms-field-wrapper {
+                            display: flex;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.contacticon.serviceumberacoforms .contactwrap .umbraco-forms-field.dataconsent .umbraco-forms-field-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+
+.contacticon.serviceumberacoforms .contactwrap .umbraco-forms-field.dataconsent {
+    margin-bottom: 45px;
+}
+
+.contacticon.serviceumberacoforms .contactwrap .umbraco-forms-field.dataconsent .umbraco-forms-field-wrapper .field-validation-error span{
+    position: absolute;
+    top: 55px;
+    left: 0px;
+    line-height: 17px;
+    @include breakpoint (medium){
+        top: 40px; 
+    }
+}
+
+.umbraco-forms-form span.checkboxlist,
+.umbraco-forms-form span.radiobuttonlist,
+.umbraco-forms-form span.checkbox {
+    display: flex !important;
+    float: left;
+    padding: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+    
+}
+.contacticon.serviceumberacoforms .contactwrap .umbraco-forms-field .checkboxlist label{
+    @media (max-width:767px){
+        width: 79%;
+    }
+}
+.umbraco-forms-field {
+    &.checkbox {
+        display: flex;
+        align-items: center;
+        .umbraco-forms-label {
+            order: 2;
+        }
+        .umbraco-forms-field-wrapper {
+            order: 1;
+            input {
+                margin-right: 20px;
+            }
+        }
+        .field-validation-error{
+            position: absolute;
+            width: 340px;
+            top: 42px;
+            @include breakpoint (medium){
+                width: 750px;
+                top: 44px;
+            }
+            @include breakpoint (large){
+                width: 750px;
+                top: 59px;
+            }
+        }
+    }
+}
+
+.umbraco-forms-form span.contourError,
+.umbraco-forms-form span.field-validation-error {
+    color: #8a1f11 !important;
+}
+
+.contacticon.serviceumberacoforms {
+    .umbraco-forms-page {
+        .row-fluid {
+            @media (min-width:0px) and (max-width:460px){
+                max-width: 340px;
+                width: 100%;
+                margin: 0px auto;
+            }
+        }
+    }
+}
+.grecaptcha-badge{
+    display: none !important;
+}
+.umbraco-forms-field-wrapper select{
+    display: block;
+}
