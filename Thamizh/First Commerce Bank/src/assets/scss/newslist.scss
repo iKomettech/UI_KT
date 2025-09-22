@@ -1,0 +1,292 @@
+@import "util/util";
+
+$white: var(--fcb-white);
+$primary-color: var(--fcb-primary);
+$secondary-color: var (--fcb-whitef7);
+$img: "../../images/";
+
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+.breadcrumbWrapBottom{
+    padding-bottom: 45px;
+}
+#news-type-menu .ui-menu-item .ui-menu-item-wrapper, #year-relevance-menu .ui-menu-item .ui-menu-item-wrapper{
+    font-size: 18px;
+}
+
+.newsfilterpanel{
+   margin-bottom: clamp(2.375rem, 1.878vw + 1.935rem, 3.625rem);
+   padding-top: 40px;
+   @include breakpoint(large){
+    padding-top: 0;
+   }
+    .filtersection{
+        display: block;
+        @include breakpoint(medium){
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+        .selectbox{
+            &:first-child{
+                margin-bottom: 10px;
+                @include breakpoint(medium){
+                    margin-right: 20px;
+                    margin-bottom: 0;
+                    width: 272px;
+                }
+            }
+            width: 100%;
+            @include breakpoint(medium){
+                width: 245px;
+            }
+            .selectMenuCurve + .ui-button.ui-selectmenu-button{
+                padding: 10px 12px;
+            }
+            @include breakpoint(medium){
+                .selectMenuCurve + .ui-button.ui-selectmenu-button{
+                    height: 48px;
+                    font-size: 18px;
+                    padding: 14px 22px;
+                }
+                .selectMenuCurve + .ui-selectmenu-button-closed::after, .selectMenuCurve + .ui-selectmenu-button-open::after{
+                    right:25px;
+                }
+            }
+        }
+        .ctabox{
+            margin-left: 0px;
+            width: 100%;
+            margin-top: 10px;
+            @include breakpoint(medium){
+                width: auto;
+                margin-left: 20px;
+                margin-top: 0px;
+            }
+            .defaultBtn{
+                padding: 11px 43px;
+                text-align: center;
+                border-radius: 50px;
+                @include breakpoint(medium){
+                    padding: 14px 37.5px;
+                }
+                &:before{
+                    border-radius: 20px;
+                }
+                &:hover{
+                    border-radius: 26px;
+                    &:before{
+                        border-radius: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+.newslistpanel{
+    .innerwrap{
+        background: #FFFFFF;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+        margin-bottom: clamp(1.25rem, 2.817vw + 0.59rem, 3.125rem);
+        .flexwrap{
+                display: flex;
+                flex-wrap: wrap;
+                @include breakpoint(medium){
+                    flex-wrap: nowrap;
+                }
+                .imgwrap{
+                    overflow: hidden;
+                    border-radius: 10px 10px 0px 0px;
+                    max-width: 100%;
+                    width: 100%;
+                    @include breakpoint(medium){
+                        border-radius: 10px 0px 0px 10px;
+                        max-width: clamp(19.313rem, 19.345vw + 10.027rem, 27.438rem);
+                    }
+                    img{
+                        border-radius: 10px 10px 0px 0px;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        @include breakpoint(medium){
+                            border-radius: 10px 0px 0px 10px;
+                        }
+                    }
+                }
+                .contentwrap{
+                    padding: 20px 10px 18px;
+                    @include breakpoint(large){
+                        padding: 32px 26px 20px;
+                    }
+                    width: 100%;
+                    h3{
+                        font-size: clamp(1.25rem, 0.376vw + 1.162rem, 1.5rem);
+                        color: $primary-color;
+                        font-weight: 600;
+                        margin-bottom: 15px;
+                        @include breakpoint(medium){
+                            margin-bottom: 10px;
+                        }
+                        a{
+                            color: $primary-color;
+                        }
+                    }
+                    p{
+                        line-height: 120%;
+                        @include breakpoint(small only){
+                            margin-top: 16px;
+                        }
+                        @include breakpoint(medium){
+                            word-wrap: break-word;
+                            display: -webkit-box;
+                            -webkit-box-orient: vertical;
+                            -webkit-line-clamp: 4;
+                            overflow: hidden;
+                        }
+                        &.event-date{
+                            font-weight: 500;
+                            b{
+                                @include breakpoint(small only){
+                                    margin-bottom: 4px;
+                                    display: flex;
+                                }
+                                a{
+                                    text-decoration: none;
+                                    &:hover{
+                                        color: #000000;
+                                        text-decoration: underline;
+                                    }
+                                }
+                            }
+                            span{
+                                @include breakpoint(small only){
+                                    display: block;
+                                }
+                            }
+                            .mark{
+                                @include breakpoint(small only){
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                    .biocta{
+                        .textCta{
+                            display: inline-block;
+                            &:hover{
+                                text-decoration: none;
+                            }
+                            &:after{
+                                @include breakpoint(medium only){
+                                    right:-16px;
+                                }
+                            }
+                        }
+                    }
+                }
+        }
+    }
+}
+
+.paginationpanels {
+    @include breakpoint(large) {
+        padding-top: 20px;
+    }
+    ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 0;
+        li {
+            margin: 0 3px;
+            @include breakpoint(medium) {
+                margin: 0 ;
+                margin-inline: 12px;
+            }
+            &.prev-arrow,
+            &.next-arrow {
+                display: flex;
+                &.disable {
+                    opacity: 0.5;
+                    pointer-events: none;
+                }
+                a {
+                    margin-left: 0;
+                    height: 24px;
+                    width: 14px;
+                    background: url('#{$img}/settings/arrow_page.svg') no-repeat;
+                    background-size: contain;
+                    transition: all 0.5s;
+                    position: relative;
+                    top: -1px;
+
+                    &:hover {
+                        height: 24px;
+                        width: 14px;
+                        background: url('#{$img}/settings/arrow_page.svg') no-repeat;
+                        background-size: contain;
+                        transition: all 0.5s;
+                    }
+                }
+            }
+
+            &.prev-arrow {
+                a {
+                    background: url('#{$img}/settings/arrow_page.svg') no-repeat;
+                    background-size: contain;
+                    transform: rotate(180deg);
+                }
+            }
+
+            &.active {
+                a {
+                    background: $primary-color;
+                    color: $white;
+                }
+            }
+
+            &.disable {
+                a {
+                    opacity: 0.5;
+                    pointer-events: none;
+                }
+            }
+
+            a {
+                padding: 10px 0;
+                font-weight: 600;
+                line-height: 100%;
+                text-decoration: none;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 100%;
+                font-size: 18px;
+                width: 38px;
+                @include breakpoint(large) {
+                    font-size: 24px;
+                    width: 44px;
+                }               
+                &:hover {
+                    background: $primary-color;
+                    color: $white;
+                }
+            }    
+            &.pages{
+                font-weight: 600;
+                font-size: 18px;
+                @include breakpoint(large) {
+                    font-size: 24px;
+                } 
+            }   
+        }
+    }
+}

@@ -1,0 +1,425 @@
+@import "util/util";
+
+$white: var(--fcb-white);
+$primary-color: var(--fcb-primary);
+$secondary-color: var (--fcb-whitef7);
+$img: "../../images/";
+
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+.breadcrumbWrapBottom{
+    padding-bottom: 48px;
+}
+
+.contactpanel{
+    padding-top: 40px;
+    @include breakpoint(large){
+        padding-top: 0;
+    }
+    .flexwrap{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        @include breakpoint(large){
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            gap: 0;
+        }
+        .leftwrap{
+            max-width: 100%;
+            width: 100%;
+            @include breakpoint(large){
+                margin-left: 0px;
+                margin-right: 30px;
+                max-width: 290px;
+            }
+            @include breakpoint(xlarge){
+                margin-left: 30px;
+                margin-right: 0;
+            }
+            h2{
+                font-size: clamp(1.5rem, 0.751vw + 1.324rem, 2rem);
+                font-weight: 600;
+                color: $primary-color;
+                margin-bottom: 8px;
+                @include breakpoint(medium){
+                    margin-bottom: 14px;
+                }
+            }
+            h3{
+                font-size: clamp(1.25rem, 0.376vw + 1.162rem, 1.5rem);
+                font-weight: 600;
+                margin-bottom: 16px;
+                @include breakpoint(medium){
+                    margin-bottom: 24px;
+                }
+                a{
+                    text-decoration: none;
+                }
+            }
+            p{
+                font-size: clamp(1.125rem, 0.188vw + 1.081rem, 1.25rem);
+                font-weight: 600;
+                margin-bottom: 18px;
+                @include breakpoint(medium){
+                    margin-bottom: 18px;
+                }
+                +p{
+                    margin-top: 18px;
+                }
+                .defaultBtn{
+                    text-decoration: none;
+                    padding: 15px 30px;
+                }
+            }
+        }
+        .rightwrap{
+            max-width: 100%;
+			width: 100%;
+			position: relative;
+            @include breakpoint(large){
+                max-width: 880px;
+            }
+            .successsection{
+                margin-top: 28px;
+                .success{
+                    max-width: 465px;
+                    width: 100%;
+                    margin-left: auto;
+                    margin-right: auto;
+                    text-align: center;
+                    @include breakpoint(small only){
+                        max-width: 315px;
+                    }
+                    br{
+                        @include breakpoint(small only){
+                            display: none;
+                        }
+                    }
+                    h2{
+                        color: $primary-color;
+                        margin-bottom: 28px;
+                        @include breakpoint(small only){
+                            font-weight: 600;
+                            margin-bottom: 18px;
+                        }
+                    }
+                    p{
+                        font-size: clamp(1.25rem, 0.376vw + 1.162rem, 1.5rem);
+                        font-weight: 500;
+                        @include breakpoint(small only){
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+            .maintitle{
+                h2{
+                    font-size: clamp(1.5rem, 0.751vw + 1.324rem, 2rem);
+                    font-weight: 500;
+                    margin-bottom: 22px;
+                    text-align: left;
+                    @include breakpoint(large){
+                        text-align: center;
+                    }
+                }
+            }
+            .contactwrapsec{
+                background: #FFFFFF;
+                box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+                border-radius: clamp(0.625rem, 0.939vw + 0.405rem, 1.25rem);
+                padding: 38px 20px 20px;
+                @include breakpoint(large){
+                    padding: 30px 20px 30px;
+                }
+                @include breakpoint(llarge){
+                    padding: 30px 50px 40px;
+                }
+                .multistepcontact:not(:first-of-type){
+                    display: none;
+                }
+                .desctexthead {
+                    text-align: center;
+                    @include breakpoint(large){
+                        margin-top:-5px;
+                    }
+                    h2{
+                         font-size: clamp(1.5rem, 0.751vw + 1.324rem, 2rem);
+                         font-weight: 600;
+                         color: $primary-color;
+                         margin-bottom: 20px;
+                         @include breakpoint(small only){
+                            max-width: 290px;
+                            margin-left: auto;
+                            margin-right: auto;
+                         }
+                    }
+                    h3{
+                         font-size: clamp(1.25rem, 0.376vw + 1.162rem, 1.5rem);
+                         font-weight: 600;
+                         margin-bottom: 18px;
+                         @include breakpoint(small only){
+                            font-size: 18px;
+                         }
+                    }
+                }
+                .formpanelwrap{
+                    .topics{
+                        margin-bottom: 30px;
+                    }
+                    .form-group.clearfix.nextPrevBtn, .form-group.clearfix.submitbtns {
+                        margin-bottom: 30px;
+                        .defaultBtn {
+                            padding: 16.5px 54px;
+                            @include breakpoint(small only){
+                                padding: 16px 40px;
+                            }
+                            + .defaultBtn {
+                                margin-left: 22px;
+                                &.submitbtn{
+                                    border-radius: 5px;
+                                    padding: 16.5px 40.5px;
+                                    @include breakpoint(small only){
+                                        padding: 16px 32px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .form-group.clearfix.submitbtns{
+                        @include breakpoint(small only){
+                            margin-top: 25px;
+                        }
+                    }
+                    .desctext {
+                        text-align: center;
+                        h2{
+                            font-size: clamp(1.5rem, 0.751vw + 1.324rem, 2rem);
+                            font-weight: 600;
+                            color: $primary-color;
+                            margin-bottom: 20px;
+                       }
+                       h3{
+                            font-size: clamp(1.25rem, 0.376vw + 1.162rem, 1.5rem);
+                            font-weight: 600;
+                            margin-bottom: 18px;
+                       }
+                       p{
+                         + p, + h3{
+                            margin-top: 24px;
+                         }
+                       }
+                       .umbraco-forms-caption{
+                            font-size: 18px;
+                            font-weight: 600;
+                            margin-bottom: 18px;
+                       }
+                    }
+                    .contactFormField{
+                        margin-top: 32px;
+                        .form-group{
+                            position: relative;
+                            + .desctext{
+                                margin-top: 34px;
+                                @include breakpoint(small only){
+                                    margin-top: 24px;
+                                }
+                            }
+                            .ui-button.ui-selectmenu-button{
+                                border: 2px solid #C4C5C8;
+                                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                                border-radius: 100px;
+                                padding: 20px 25px;
+                                font-size: clamp(1rem, 0.188vw + 0.956rem, 1.125rem);
+                                @include breakpoint(small only){
+                                    height: auto;
+                                    padding: 20px 15px;
+                                    padding-right: 75px;
+                                }
+                            }
+                            .ui-button.ui-selectmenu-button span.ui-selectmenu-text{
+                                overflow: unset;
+                            }
+                            .ui-selectmenu-button-closed::before, .ui-selectmenu-button-open::before{
+                                content: '';
+                                width: 96px;
+                                height: 50px;
+                                background: linear-gradient(180deg, #E7E8EB 27.5%, #C0C1C5 100%);
+                                border-radius: 30px;
+                                position: absolute;
+                                right: 5px;
+                                top: 3px;
+                            }
+                            .ui-selectmenu-button-closed::after, .ui-selectmenu-button-open::after{
+                                right:36px;
+                            }
+                            input {
+                                height: 60px;
+                                font-size: clamp(1rem, 0.188vw + 0.956rem, 1.125rem);
+                                margin-bottom: 26px;
+                                border: 1px solid #C4C5C8;
+                                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                                border-radius: 10px;
+                                padding: 0 22px;
+                                font-weight: 500;
+                                @include breakpoint(small only){
+                                    height: 58px;
+                                    padding: 0 15px;
+                                }
+                            }
+                            textarea{
+                                height: 316px;
+                                border: 1px solid #C4C5C8;
+                                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                                border-radius: 10px;
+                                padding: 0 22px;
+                                font-weight: 500;
+                                @include breakpoint(small only){
+                                    padding: 0 15px;
+                                    height: 226px;
+                                }
+                            }
+                            span.errorMsg, span.f-error, span.f-success {
+                                background: #797979;
+                                background-image: url(#{$img}settings/asterisk.svg);
+                                background-repeat: no-repeat;
+                                position: absolute;
+                                top: -5px;
+                                right: -4px;
+                                width: 15px;
+                                height: 15px;
+                                background-position: 3px 3px;
+                                background-size: 9px 9px;
+                                border-radius: 50%;
+                            }
+                            span.f-error{
+                                background-image: url(#{$img}settings/error-icon.svg);
+                                background-repeat: no-repeat;
+                                background: #C12C2C;
+                            }
+                            span.f-success{
+                                background-image: url(#{$img}settings/success-icon.svg);
+                                background-repeat: no-repeat;
+                                background: #179B3E;
+                            }
+                            &.selectbox{
+                                span.errorMsg{
+                                    right:10px;
+                                }
+                            }
+                        }
+                    }
+                }
+                
+                .grid-x{
+                    display: flex;
+                    flex-wrap: nowrap;
+                    justify-content: space-between;
+                    @include breakpoint(small only){
+                        flex-wrap: wrap;
+                        padding: 0 20px;
+                    }
+                    .iconsec{
+                        @include breakpoint(small only){
+                            width: 42%;
+                        }
+                        &:last-child{
+                            .iconbox + p{
+                                @include breakpoint(small only){
+                                    margin-bottom: 28px;
+                                }
+                            }
+                        }
+                        .multistepclik{
+                            text-decoration: none;
+                            font-weight: 600;
+                            display: block;
+                            &:hover{
+                                transition: 0.75s all;
+                                svg{
+                                    transform: scale(1.1);
+                                }
+                            }
+                        }
+                        .iconbox{
+                            display: inline-flex;
+                            align-items: center;
+                            justify-self: center;
+                            margin-bottom: 32px;
+                            @include breakpoint(small only){
+                                margin-bottom: 28px;
+                            }
+                            + p{
+                                font-size: 18px;
+                                @include breakpoint(small only){
+                                    margin-bottom: 36px;
+                                }
+                            }
+                            .iconimg{
+                                width: 92px;
+                                height: 100px;
+                                transition: all 0.4s;
+                                svg{
+                                    width: 92px;
+                                    height: 100px;
+                                    transition: 0.75s all;
+                                    &:hover{
+                                        transform: scale(1.1);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .progress {
+                    background-color: #ECEDEF;
+                    height: 15px;
+                    max-width: 100%;
+                    margin: 0px auto;
+                    margin-top: 15px;
+                    overflow: hidden;
+                    border-radius: 10px;
+                    .progress-bar {
+                        float: left;
+                        width: 0;
+                        height: 100%;
+                        font-size: 12px;
+                        line-height: 20px;
+                        color: #fff;
+                        text-align: center;
+                        background-color: $primary-color;
+                        -webkit-box-shadow: none;
+                                box-shadow: none;
+                        -webkit-transition: width 0.6s ease;
+                        transition: width 0.6s ease;
+                     }
+                }    
+            }
+        }
+    }
+}
+.ui-selectmenu-menu.curvermenu .ui-menu .ui-menu-item-wrapper{
+    font-size: clamp(1rem, 0.188vw + 0.956rem, 1.125rem);
+    padding: 10px 25px;
+    @include breakpoint(small only){
+        font-size: 15px;
+        padding: 6px 15px;
+    }
+}
+.contactwrap .ui-selectmenu-button.errorPlacement, .contactwrap .txtBox.errorPlacement {
+    border: 1px solid #90182C !important;
+    background: #FFDFDF !important;
+}
+.errorContact {
+    display: none !important;
+}
+.ui-selectmenu-button.ui-button {
+    white-space: pre-line;
+}

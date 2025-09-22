@@ -1,0 +1,207 @@
+@charset 'utf-8';
+@import 'settings';
+@import 'foundation';
+@import 'motion-ui';
+// Global styles
+@include foundation-global-styles;
+@include foundation-forms;
+@include foundation-typography;
+// @include foundation-pagination;
+// Grids (choose one)
+@include foundation-xy-grid-classes;
+@include foundation-grid;
+@include foundation-flex-grid;
+@include foundation-breadcrumbs;
+
+// Helpers
+@include foundation-flex-classes;
+// Custom UI
+@import 'components/header';
+@import 'components/footer';
+@import 'components/alerts';
+@import 'components/animation';
+
+:root {
+  /* color-variable */
+  --fcb-white: #ffffff;
+  --fcb-whitef7: rgba(247, 243, 241, 0.83);
+  --fcb-primary: #90182C;
+  --fcb-yellow: #F0A21F;
+  --fcb-black: #000000;
+  --white-f7: #f7f3f1;
+  --white-d6: #d6dee3;
+  --white-d3: #d3d3d3;
+  --grey-70: #707070;
+  --header-bg: rgba(255, 255, 255, 0.8);
+  /* min60_max110 */
+  --spacing: clamp(3.75rem, 4.695vw + 2.65rem, 6.875rem);
+  --fs: clamp(1rem, calc(1rem + (20 - 16) * ((100vw - 23.4375rem) / (1440 - 375))), 1.25rem);
+  --base-rem: 1rem;
+  --base-max-width: 90rem;
+  --fontfamily: 'Montserrat', sans-serif;
+}
+
+h1 {
+  font-size: clamp(2.5rem, calc(2.5rem + (80 - 40) * ((100vw - 23.4375rem) / (1440 - 375))), 5rem);
+  font-weight: normal;
+  font-style: normal;
+  text-rendering: optimizeLegibility;
+  margin: 0;
+  line-height: 120%;
+}
+
+h2 {
+  font-size: clamp(24px, calc(24px + (40 - 24) * ((100vw - 23.4375rem) / (1440 - 375))), 40px); 
+  line-height: 100%;
+  font-weight: 500;
+  font-style: normal;
+  text-rendering: optimizeLegibility;
+  margin: 0;
+}
+h2.large {
+  font-size: clamp(24px, calc(24px + (48 - 24) * ((100vw - 23.4375rem) / (1440 - 375))), 48px); 
+  line-height: 100%;
+  font-weight: 500;
+  font-style: normal;
+  text-rendering: optimizeLegibility;
+  margin: 0;
+}
+
+h3 {
+  font-size: clamp(22px, calc(22px + (38 - 22) * ((100vw - 23.4375rem) / (1440 - 375))), 38px);
+  font-weight: 500;
+  font-style: normal;
+  text-rendering: optimizeLegibility;
+  margin: 0;
+  line-height: 100%;
+}
+
+h4 {
+  font-size: clamp(20px, calc(20px + (32 - 20) * ((100vw - 23.4375rem) / (1440 - 375))), 32px);
+  font-weight: 500;
+  font-style: normal;
+  text-rendering: optimizeLegibility;
+  margin: 0;
+  line-height: 100%;
+}
+
+h5 {
+  font-size: clamp(18px, calc(18px + (28 - 18) * ((100vw - 23.4375rem) / (1440 - 375))), 28px);
+  font-weight: 500;
+  font-style: normal;
+  text-rendering: optimizeLegibility;
+  margin: 0;
+  line-height: 100%;
+}
+
+h6 {
+  font-size: clamp(16px, calc(16px + (24 - 16) * ((100vw - 23.4375rem) / (1440 - 375))), 24px);
+  font-weight: 500;
+  font-style: normal;
+  text-rendering: optimizeLegibility;
+  margin: 0;
+  line-height: 100%;
+}
+
+.gap {
+  margin-bottom: clamp(40px, calc(40px + (110 - 40) * ((100vw - 23.4375rem) / (1440 - 375))), 110px);
+}
+
+.gapTop {
+  margin-top: clamp(40px, calc(40px + (110 - 40) * ((100vw - 23.4375rem) / (1440 - 375))), 110px);
+}
+
+p {
+  font-size: clamp(16px, calc(16px + (18 - 16) * ((100vw - 23.4375rem) / (1440 - 375))), 18px);
+  margin-bottom: 1rem;
+  line-height:114%;
+  text-rendering: optimizeLegibility; 
+}
+
+p.large {
+  font-size: clamp(16px, calc(16px + (20 - 16) * ((100vw - 23.4375rem) / (1440 - 375))), 20px);
+}
+
+.grid-container {
+  max-width: var(--base-max-width);
+
+  @media (max-width: 1480px) {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  // @media (max-width: 1024px){
+  //   padding-right:25px;
+  //   padding-left:25px;
+  // }
+  // @media (max-width: 767px){
+  //   padding-right:10px;
+  //   padding-left:10px;
+  // }
+}
+
+a {
+  color: #1f1f1f;
+}
+
+a:hover,
+a:focus {
+  color: var(--fcb-primary);
+}
+
+ 
+.page404Wrap:not(a),
+li {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.semibold {
+  font-weight: 600;
+}
+
+.medium {
+  font-weight: 500;
+}
+
+a[href^="tel:"],
+a[href^="mailto:"] {
+  text-decoration: underline;
+}
+
+.ui-selectmenu-menu.curvermenu{
+  overflow: hidden;
+  border-radius: 24px;
+}
+.ui-selectmenu-menu.curvermenu .ui-menu{
+  margin-top: 0;
+  background: #FFF;
+  padding: 10px 0;
+  padding-bottom: 0px;
+  border: 2px solid #D9D9D9;
+  border-radius: 0 0px 24px 24px;
+  font-family: inherit;
+  padding-top: 50px;
+  transition: none;
+}
+.form-group .selectMenuCurve + .ui-button.ui-selectmenu-button {
+  padding: 12px 22px;
+  font-size: 16px;
+  height: 39px;
+  border: 2px solid #D9D9D9;
+  border-radius: 50px;
+  font-weight: 600;
+}
+.form-group .selectMenuCurve + .ui-selectmenu-button-closed::after, .form-group .selectMenuCurve + .ui-selectmenu-button-open::after{
+  content: '';
+  background-image: url("#{$img}/settings/curve-select-list-down-arrow.svg");
+  background-size: cover;
+  width: 15px;
+  height: 8px;
+  top: 40%;
+  right: 14px;
+}
+.ui-selectmenu-menu.curvermenu .ui-menu .ui-menu-item-wrapper {
+  font-size: 16px;
+  transition: none;
+}

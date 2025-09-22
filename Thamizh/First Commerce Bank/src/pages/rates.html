@@ -1,0 +1,1685 @@
+<script type="text/javascript" defrer>
+    $(document).ready(function () {
+        function contentPadding() {
+            var logoLeft = $('.logoSection').offset().left;
+            $('.subbannerpanel .subbanner .bannerwrap .contentwrap .content').css({ 'margin-left': logoLeft });
+        }
+
+        contentPadding();
+
+        $(window).on("resize load", function () {
+            contentPadding();
+        });
+    })
+</script>
+<link rel="stylesheet" href="{{root}}assets/css/subbanner/subbanner.css" media="all">
+<div class="subbannerpanel module">
+    <div class="grid-container-full">
+        <div class="subbanner">
+            <div class="temp1">
+                <div class="bannerwrap">
+                    <div class="contentwrap">
+                        <div class="content">
+                            <h1>Personal <br> <strong>Rates</strong></h1>
+                        </div>
+                    </div>
+                    <div class="imgWrap">
+                        <div class="filter-img">
+                            <img class="img" src="assets/images/home/subbaner.jpg" width="912" height="461"
+                                alt="Home Promotional">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="breadcrumbWrapBottom module come-in " data-swiftype-index="false">
+    <div class="grid-container">
+        <ul class="breadcrumbs">
+            <li class="breadcrumb-item ">
+                <a href="/" aria-label="Home">Home</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="/" aria-label="Personal Checking">Personal Checking</a>
+            </li>
+            <li class="breadcrumb-item">Personal Banking Rates</li>
+        </ul>
+    </div>
+</div>
+
+
+<script type="text/javascript" defer>
+    $(document).ready(function () {
+        function handleTabClick() {
+            let tabId = $(this).data('tab');
+            $('.tab-links li').removeClass('active');
+            $('.tab-pane-content').fadeOut(500).removeClass('active');
+            $(this).fadeIn(500).addClass('active');
+            $('#' + tabId).fadeIn(500).addClass('active');
+        }
+            $('.tab-links li').on('click', handleTabClick);
+        });
+</script>
+
+
+<script type="text/javascript" defer>
+
+$(document).ready(function () {
+            $(".ratetableSlider").each(function(index, element) {
+            let swiperContainer = $(element).find('.swiper');
+            let slides = swiperContainer.find('.swiper-slide');
+            if (slides.length > 1) {
+                let swiperInstance = new Swiper(swiperContainer[0], { 
+                    slidesPerView: "1",
+                    spaceBetween: 1,
+                    navigation: {
+                        nextEl: $(element).find('.swiper-button-next')[0],
+                        prevEl: $(element).find('.swiper-button-prev')[0],
+                    },
+                    pagination: {
+                        el: $(element).find(".swiper-pagination")[0],
+                        clickable: true,
+                    },
+                });
+            }
+        });
+
+        $('#rate-filter').on('selectmenuchange', function () {
+            let selectedValue = $(this).val();
+            console.log("Selected Value:", selectedValue);
+
+            // Handle .ratetablepanel elements
+            $(".ratetablepanel").each(function () {
+                let panelId = $(this).attr('data-id');
+                if (selectedValue === "rate-tab-0") { // If "All" is selected, show everything
+                    $(this).show().addClass("activetablepanel");
+                } else if (panelId === selectedValue) {
+                    $(this).show().addClass("activetablepanel");
+                } else {
+                    $(this).hide().removeClass("activetablepanel");
+                }
+            });
+            $(".personal-tab-content .ratepanelsection").each(function () {
+                let panelId = $(this).attr('data-id');
+                if (selectedValue === "rate-tab-0") { // If "All" is selected, show everything
+                    $(this).show().addClass("activetablepanel");
+                } else if (panelId === selectedValue) {
+                    $(this).show().addClass("activetablepanel");
+                } else {
+                    $(this).hide().removeClass("activetablepanel");
+                }
+            });
+            $(".productCompare .notepanel").each(function () {
+                let panelId = $(this).attr('data-id');
+                if (selectedValue === "rate-tab-0") { 
+                    $(this).show().addClass("activetablepanel");
+                } else if (panelId === selectedValue) {
+                    $(this).show().addClass("activetablepanel");
+                } else {
+                    $(this).hide().removeClass("activetablepanel");
+                }
+            });
+        });
+
+        $('#business-rate-filter').on('selectmenuchange', function () {
+            let selectedValue = $(this).val();
+            console.log("Selected Value:", selectedValue);
+
+            // Handle .ratetablepanel elements
+            $(".ratetablepanel").each(function () {
+                let panelId = $(this).attr('data-id');
+                if (selectedValue === "business-rate-tab-0") { // If "All" is selected, show everything
+                    $(this).show().addClass("activetablepanel");
+                } else if (panelId === selectedValue) {
+                    $(this).show().addClass("activetablepanel");
+                } else {
+                    $(this).hide().removeClass("activetablepanel");
+                }
+            });
+            $(".business-tab-content .ratepanelsection").each(function () {
+                let panelId = $(this).attr('data-id');
+                if (selectedValue === "business-rate-tab-0") { // If "All" is selected, show everything
+                    $(this).show().addClass("activetablepanel");
+                } else if (panelId === selectedValue) {
+                    $(this).show().addClass("activetablepanel");
+                } else {
+                    $(this).hide().removeClass("activetablepanel");
+                }
+            });
+            $(".productCompare .notepanel").each(function () {
+                let panelId = $(this).attr('data-id');
+                if (selectedValue === "business-rate-tab-0") { 
+                    $(this).show().addClass("activetablepanel");
+                } else if (panelId === selectedValue) {
+                    $(this).show().addClass("activetablepanel");
+                } else {
+                    $(this).hide().removeClass("activetablepanel");
+                }
+            });
+        });
+
+    });
+</script>
+
+<link rel="stylesheet" href="https://fcb.dev.activitystaging.com/assets/css/productCompare/productCompare.css" media="all">
+<link rel="stylesheet" href="{{root}}assets/css/ratechartpanel/ratechartpanel.css" media="all">
+
+<div class="ratechartpanel module">
+    <div class="grid-container-full">
+        <div class="smallTitle">
+            <h2>Our Current Rates</h2>
+        </div>
+        <div class="tabphorizonpanel">
+            <div class="tabHorizontal">
+                <div class="tab-container">
+                    <ul class="tab-links">
+                        <li class="active" data-tab="tab-1"><span>Personal Banking Rates</span></li>
+                        <li class="" data-tab="tab-2"><span>Business Banking Rates</span></li>
+                    </ul>
+                </div>
+                <div class="tab-content-section">
+                    <div id="tab-1" class="tab-pane-content personal-tab-content active">
+                        <div class="smallTitle">
+                            <h2>Seeking additional FDIC insurance coverage and competitive rates?</h2>
+                            <p class="large"><a href="#">Learn more about our ICS and CDARS products</a></h3>
+                        </div>
+                        <input type="hidden" id="contentShow" name="contentShow" />
+                        <div class="ratefilterpanel">
+                            <div class="grid-container">
+                                <div class="filtersection">
+                                    <div class="form-group selectbox">
+                                        <select class="selectMenuCurve" id="rate-filter" name="rate-filter" title="filter-rates">
+                                            <option value="rate-tab-0" data-id="rate-tab-0">All Personal Banking Rates</option>
+                                            <option value="rate-tab-1" data-id="rate-tab-1">CD’s</option>
+                                            <option value="rate-tab-2" data-id="rate-tab-2">IRA CD’s</option>
+                                            <option value="rate-tab-3" data-id="rate-tab-3">Online CD’s</option>
+                                            <option value="rate-tab-4" data-id="rate-tab-4">Checking</option>
+                                            <option value="rate-tab-5" data-id="rate-tab-5">Savings</option>
+                                            <option value="rate-tab-6" data-id="rate-tab-6">Money Market</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="ratepanelsection activetablepanel" data-id="rate-tab-1">
+                            <div class="smallTitle">
+                                <h2>CD&#x2019;s</h2>
+                            </div>
+                            <div class="pattern-section">
+                                <div class="panelPattern" style="background: url(assets/images/rate-arrow-pattern.svg) center bottom no-repeat;"></div>
+                                <div class="main-container">
+                                    <div class="grid-container">
+                                        <div class="table-container">
+                                            <div class="table-row heading">
+                                                <div class="row-item">Term</div>
+                                                <div class="row-item">Rate</div>
+                                                <div class="row-item">APY*</div>
+                                                <div class="row-item">Minimum to Open</div>
+                                            </div>
+                                                    <div class="table-row">
+                                                        <div class="row-item">1 Month</div>
+                                                        <div class="row-item">4.402%</div>
+                                                        <div class="row-item">4.50%</div>
+                                                        <div class="row-item">$1,000.00</div>
+                                                    </div>
+                                                    <div class="table-row">
+                                                        <div class="row-item">5 Month</div>
+                                                        <div class="row-item">4.641%</div>
+                                                        <div class="row-item">4.75%</div>
+                                                        <div class="row-item">$1,000.00</div>
+                                                    </div>
+                                                    <div class="table-row">
+                                                        <div class="row-item">9 Month</div>
+                                                        <div class="row-item">3.199%</div>
+                                                        <div class="row-item">3.25%</div>
+                                                        <div class="row-item">$1,000.00</div>
+                                                    </div>
+                                                    <div class="table-row">
+                                                        <div class="row-item">12 Month</div>
+                                                        <div class="row-item">3.199%</div>
+                                                        <div class="row-item">3.25%</div>
+                                                        <div class="row-item">$1,000.00</div>
+                                                    </div>
+                                                    <div class="table-row">
+                                                        <div class="row-item">17 Month</div>
+                                                        <div class="row-item">3.199%</div>
+                                                        <div class="row-item">3.25%</div>
+                                                        <div class="row-item">$1,000.00</div>
+                                                    </div>
+                                                    <div class="table-row">
+                                                        <div class="row-item">20 Month</div>
+                                                        <div class="row-item">3.199%</div>
+                                                        <div class="row-item">3.25%</div>
+                                                        <div class="row-item">$1,000.00</div>
+                                                    </div>
+                                                    <div class="table-row">
+                                                        <div class="row-item">24 Month</div>
+                                                        <div class="row-item">3.199%</div>
+                                                        <div class="row-item">3.25%</div>
+                                                        <div class="row-item">$1,000.00</div>
+                                                    </div>
+                                                    <div class="table-row">
+                                                        <div class="row-item">36 Month</div>
+                                                        <div class="row-item">4.4444%</div>
+                                                        <div class="row-item">5.888%</div>
+                                                        <div class="row-item">$5,000.00</div>
+                                                    </div>
+                                                    <div class="table-row">
+                                                        <div class="row-item">48 Month</div>
+                                                        <div class="row-item">4.884%</div>
+                                                        <div class="row-item">4.550%</div>
+                                                        <div class="row-item">$5,0000</div>
+                                                    </div>
+                                                    <div class="table-row">
+                                                        <div class="row-item">60 Month</div>
+                                                        <div class="row-item">3.199%</div>
+                                                        <div class="row-item">3.25%</div>
+                                                        <div class="row-item">$1,000.00</div>
+                                                    </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid-container">
+                                <div class="notepanel gap">
+                                    <p>Lorem ipsum dolor sit amet consectetur. Suspendisse praesent eu a mattis turpis mattis massa diam. Adipiscing rhoncus rhoncus ultrices pretium tellus id duis mollis. Justo amet nunc sit odio aliquam. Sagittis mi odio nunc enim senectus donec mi turpis eget. Eget tortor malesuada a cras elit. Et cursus molestie et natoque congue sagittis phasellus diam. Vulputate in viverra nisi tincidunt habitant. Purus sed quis consequat condimentum malesuada. Neque purus massa dictum euismod purus. Sed eget elit molestie malesuada. Gravida vitae tempor non tristique. Accumsan aenean bibendum adipiscing condimentum et nec nibh iaculis. Sed accumsan euismod volutpat ac ullamcorper amet. Maecenas nisl sit arcu neque lectus sed ullamcorper sem magna. Sollicitudin aliquam diam maecenas nec et duis amet fringilla. Amet aenean consequat velit in. Mollis viverra enim varius eget massa ipsum. Sem et leo maecenas ridiculus. Dictum sit auctor a bibendum platea fames ac turpis. Dignissim vel urna scelerisque nullam in. Cras et sed a aliquam dolor vitae turpis purus. Et donec blandit vel morbi neque. Risus facilisis diam ut ut magna imperdiet. Blandit tincidunt in convallis pharetra enim morbi.</p>
+                                 </div>   
+                            </div>
+                        </div>
+                        <div class="ratepanelsection activetablepanel" data-id="rate-tab-2">
+                            <div class="smallTitle">
+                                <h2>IRA CD &#x2019;s</h2>
+                            </div>
+                            <div class="pattern-section">
+                                <div class="panelPattern" style="background: url(assets/images/rate-arrow-pattern.svg) center bottom no-repeat;"></div>
+                                <div class="main-container">
+                                    <div class="grid-container">
+                                        <div class="table-container">
+                                            <div class="table-row heading">
+                                                <div class="row-item">Term</div>
+                                                <div class="row-item">Rate</div>
+                                                <div class="row-item">APY*</div>
+                                                <div class="row-item">Minimum to Open</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="row-item">1 Month IRA</div>
+                                                <div class="row-item">4.402%</div>
+                                                <div class="row-item">4.50%</div>
+                                                <div class="row-item">$1,000.00</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="row-item">5 Month IRA</div>
+                                                <div class="row-item">4.641%</div>
+                                                <div class="row-item">4.75%</div>
+                                                <div class="row-item">$1,000.00</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="row-item">9 Month IRA</div>
+                                                <div class="row-item">3.199%</div>
+                                                <div class="row-item">3.25%</div>
+                                                <div class="row-item">$1,000.00</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="row-item">12 Month IRA</div>
+                                                <div class="row-item">3.199%</div>
+                                                <div class="row-item">3.25%</div>
+                                                <div class="row-item">$1,000.00</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="row-item">17 Month IRA</div>
+                                                <div class="row-item">3.199%</div>
+                                                <div class="row-item">3.25%</div>
+                                                <div class="row-item">$1,000.00</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="row-item">20 Month IRA</div>
+                                                <div class="row-item">3.199%</div>
+                                                <div class="row-item">3.25%</div>
+                                                <div class="row-item">$1,000.00</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="row-item">24 Month IRA</div>
+                                                <div class="row-item">3.199%</div>
+                                                <div class="row-item">3.25%</div>
+                                                <div class="row-item">$1,000.00</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="row-item">36 Month IRA</div>
+                                                <div class="row-item">4.4444%</div>
+                                                <div class="row-item">5.888%</div>
+                                                <div class="row-item">$5,000.00</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="row-item">48 Month IRA</div>
+                                                <div class="row-item">4.884%</div>
+                                                <div class="row-item">4.550%</div>
+                                                <div class="row-item">$5,0000</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="row-item">60 Month IRA</div>
+                                                <div class="row-item">3.199%</div>
+                                                <div class="row-item">3.25%</div>
+                                                <div class="row-item">$1,000.00</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid-container">
+                                <div class="notepanel gap">
+                                    <p>Lorem ipsum dolor sit amet consectetur. Suspendisse praesent eu a mattis turpis mattis massa diam. Adipiscing rhoncus rhoncus ultrices pretium tellus id duis mollis. Justo amet nunc sit odio aliquam. Sagittis mi odio nunc enim senectus donec mi turpis eget. Eget tortor malesuada a cras elit. Et cursus molestie et natoque congue sagittis phasellus diam. Vulputate in viverra nisi tincidunt habitant. Purus sed quis consequat condimentum malesuada. Neque purus massa dictum euismod purus. Sed eget elit molestie malesuada. Gravida vitae tempor non tristique. Accumsan aenean bibendum adipiscing condimentum et nec nibh iaculis. Sed accumsan euismod volutpat ac ullamcorper amet. Maecenas nisl sit arcu neque lectus sed ullamcorper sem magna. Sollicitudin aliquam diam maecenas nec et duis amet fringilla. Amet aenean consequat velit in. Mollis viverra enim varius eget massa ipsum. Sem et leo maecenas ridiculus. Dictum sit auctor a bibendum platea fames ac turpis. Dignissim vel urna scelerisque nullam in. Cras et sed a aliquam dolor vitae turpis purus. Et donec blandit vel morbi neque. Risus facilisis diam ut ut magna imperdiet. Blandit tincidunt in convallis pharetra enim morbi.</p>
+                                 </div>   
+                            </div>
+                        </div>
+                        <div class="ratepanelsection activetablepanel" data-id="rate-tab-3">
+                            <div class="smallTitle">
+                                <h2>Online CD &#x2019;s</h2>
+                            </div>
+                            <div class="pattern-section">
+                                <div class="panelPattern" style="background: url(assets/images/rate-arrow-pattern.svg) center bottom no-repeat;"></div>
+                                <div class="main-container">
+                                    <div class="grid-container">
+                                        <div class="table-container">
+                                            <div class="table-row heading">
+                                                <div class="row-item">Term</div>
+                                                <div class="row-item">Rate</div>
+                                                <div class="row-item">APY*</div>
+                                                <div class="row-item">Minimum to Open</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="row-item">6 Month Online CD</div>
+                                                <div class="row-item">4.402%</div>
+                                                <div class="row-item">4.50%</div>
+                                                <div class="row-item">$1,000.00</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="row-item">7 Month Online CD</div>
+                                                <div class="row-item">4.641%</div>
+                                                <div class="row-item">4.75%</div>
+                                                <div class="row-item">$1,000.00</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="row-item">24 Month Online CD</div>
+                                                <div class="row-item">3.199%</div>
+                                                <div class="row-item">3.25%</div>
+                                                <div class="row-item">$1,000.00</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid-container">
+                                <div class="notepanel gap">
+                                    <p>Lorem ipsum dolor sit amet consectetur. Suspendisse praesent eu a mattis turpis mattis massa diam. Adipiscing rhoncus rhoncus ultrices pretium tellus id duis mollis. Justo amet nunc sit odio aliquam. Sagittis mi odio nunc enim senectus donec mi turpis eget. Eget tortor malesuada a cras elit. Et cursus molestie et natoque congue sagittis phasellus diam. Vulputate in viverra nisi tincidunt habitant. Purus sed quis consequat condimentum malesuada. Neque purus massa dictum euismod purus. Sed eget elit molestie malesuada. Gravida vitae tempor non tristique. Accumsan aenean bibendum adipiscing condimentum et nec nibh iaculis. Sed accumsan euismod volutpat ac ullamcorper amet. Maecenas nisl sit arcu neque lectus sed ullamcorper sem magna. Sollicitudin aliquam diam maecenas nec et duis amet fringilla. Amet aenean consequat velit in. Mollis viverra enim varius eget massa ipsum. Sem et leo maecenas ridiculus. Dictum sit auctor a bibendum platea fames ac turpis. Dignissim vel urna scelerisque nullam in. Cras et sed a aliquam dolor vitae turpis purus. Et donec blandit vel morbi neque. Risus facilisis diam ut ut magna imperdiet. Blandit tincidunt in convallis pharetra enim morbi.</p>
+                                 </div>   
+                            </div>
+                        </div>
+                        <div class="ratepanelsection activetablepanel" data-id="rate-tab-4">
+                            <div class="smallTitle">
+                                <h2>Checking</h2>
+                            </div>
+                            <div class="pattern-section">
+                                <div class="panelPattern" style="background: url(assets/images/rate-arrow-pattern.svg) center bottom no-repeat;"></div>
+                                <div class="main-container">
+                                    <div class="grid-container">
+                                        <div class="table-container">
+                                            <div class="table-row heading">
+                                                <div class="row-item">Account</div>
+                                                <div class="row-item">Tiered Amounts</div>
+                                                <div class="row-item">Rate</div>
+                                                <div class="row-item">APY*</div>
+                                                <div class="row-item">Minimum to Open</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="row-item">Ultimate Rewards</div>
+                                                <div class="row-item"><span class="active"></span></div>
+                                                <div class="row-item">4.402%</div>
+                                                <div class="row-item">4.50%</div>
+                                                <div class="row-item">$1,000.00</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="row-item"></div>
+                                                <div class="row-item">Rate applicable for balances up to $100,000 when qualifications disclosed are met.</div>
+                                                <div class="row-item">4.641%</div>
+                                                <div class="row-item">4.75%</div>
+                                                <div class="row-item"></div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="row-item">Premier Interest</div>
+                                                <div class="row-item">$0 - $4,999</div>
+                                                <div class="row-item">3.199%</div>
+                                                <div class="row-item">3.25%</div>
+                                                <div class="row-item">$1,000.00</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="row-item">Interest</div>
+                                                <div class="row-item">$5,000 +</div>
+                                                <div class="row-item">3.199%</div>
+                                                <div class="row-item">3.25%</div>
+                                                <div class="row-item">$1,000.00</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="row-item">50+</div>
+                                                <div class="row-item">$5,000 +</div>
+                                                <div class="row-item">3.199%</div>
+                                                <div class="row-item">3.25%</div>
+                                                <div class="row-item">$1,000.00</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid-container">
+                                <div class="notepanel gap">
+                                    <p>Lorem ipsum dolor sit amet consectetur. Suspendisse praesent eu a mattis turpis mattis massa diam. Adipiscing rhoncus rhoncus ultrices pretium tellus id duis mollis. Justo amet nunc sit odio aliquam. Sagittis mi odio nunc enim senectus donec mi turpis eget. Eget tortor malesuada a cras elit. Et cursus molestie et natoque congue sagittis phasellus diam. Vulputate in viverra nisi tincidunt habitant. Purus sed quis consequat condimentum malesuada. Neque purus massa dictum euismod purus. Sed eget elit molestie malesuada. Gravida vitae tempor non tristique. Accumsan aenean bibendum adipiscing condimentum et nec nibh iaculis. Sed accumsan euismod volutpat ac ullamcorper amet. Maecenas nisl sit arcu neque lectus sed ullamcorper sem magna. Sollicitudin aliquam diam maecenas nec et duis amet fringilla. Amet aenean consequat velit in. Mollis viverra enim varius eget massa ipsum. Sem et leo maecenas ridiculus. Dictum sit auctor a bibendum platea fames ac turpis. Dignissim vel urna scelerisque nullam in. Cras et sed a aliquam dolor vitae turpis purus. Et donec blandit vel morbi neque. Risus facilisis diam ut ut magna imperdiet. Blandit tincidunt in convallis pharetra enim morbi.</p>
+                                 </div>   
+                            </div>
+                        </div>
+                        <div class="ratepanelsection activetablepanel" data-id="rate-tab-5">
+                            <div class="smallTitle">
+                                <h2>Savings</h2>
+                            </div>
+                            <div class="pattern-section">
+                                <div class="panelPattern" style="background: url(assets/images/rate-arrow-pattern.svg) center bottom no-repeat;"></div>
+                                <div class="main-container">
+                                    <div class="grid-container">
+                                        <div class="table-container">
+                                            <div class="table-row heading">
+                                                <div class="row-item">Account</div>
+                                                <div class="row-item">Tiered Amounts</div>
+                                                <div class="row-item">Rate</div>
+                                                <div class="row-item">APY*</div>
+                                                <div class="row-item">Minimum to Open</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="row-item">Statement</div>
+                                                <div class="row-item"><span class="deactive"></span></div>
+                                                <div class="row-item">4.402%</div>
+                                                <div class="row-item">4.50%</div>
+                                                <div class="row-item">$1,000.00</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="row-item">Relationship</div>
+                                                <div class="row-item"><span class="deactive"></span></div>
+                                                <div class="row-item">4.641%</div>
+                                                <div class="row-item">4.75%</div>
+                                                <div class="row-item">$1,000.00</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="row-item">Minor</div>
+                                                <div class="row-item"><span class="deactive"></span></div>
+                                                <div class="row-item">3.199%</div>
+                                                <div class="row-item">3.25%</div>
+                                                <div class="row-item">$1,000.00</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="row-item">Holiday Club</div>
+                                                <div class="row-item">$0 - $99</div>
+                                                <div class="row-item">3.199%</div>
+                                                <div class="row-item">3.25%</div>
+                                                <div class="row-item">$1,000.00</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="row-item"></div>
+                                                <div class="row-item">$100 +</div>
+                                                <div class="row-item">3.199%</div>
+                                                <div class="row-item">3.25%</div>
+                                                <div class="row-item">$1,000.00</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="row-item">Premier</div>
+                                                <div class="row-item">$0 - $4,999</div>
+                                                <div class="row-item">3.199%</div>
+                                                <div class="row-item">3.25%</div>
+                                                <div class="row-item">$1,000.00</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="row-item"></div>
+                                                <div class="row-item">$5,000 +</div>
+                                                <div class="row-item">3.199%</div>
+                                                <div class="row-item">3.25%</div>
+                                                <div class="row-item">$1,000.00</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="row-item">IRA Express</div>
+                                                <div class="row-item">$5,000 +</div>
+                                                <div class="row-item">3.199%</div>
+                                                <div class="row-item">3.25%</div>
+                                                <div class="row-item">$1,000.00</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="row-item"></div>
+                                                <div class="row-item">$5,000 +</div>
+                                                <div class="row-item">3.199%</div>
+                                                <div class="row-item">3.25%</div>
+                                                <div class="row-item">$1,000.00</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid-container">
+                                <div class="notepanel gap">
+                                    <p>Lorem ipsum dolor sit amet consectetur. Suspendisse praesent eu a mattis turpis mattis massa diam. Adipiscing rhoncus rhoncus ultrices pretium tellus id duis mollis. Justo amet nunc sit odio aliquam. Sagittis mi odio nunc enim senectus donec mi turpis eget. Eget tortor malesuada a cras elit. Et cursus molestie et natoque congue sagittis phasellus diam. Vulputate in viverra nisi tincidunt habitant. Purus sed quis consequat condimentum malesuada. Neque purus massa dictum euismod purus. Sed eget elit molestie malesuada. Gravida vitae tempor non tristique. Accumsan aenean bibendum adipiscing condimentum et nec nibh iaculis. Sed accumsan euismod volutpat ac ullamcorper amet. Maecenas nisl sit arcu neque lectus sed ullamcorper sem magna. Sollicitudin aliquam diam maecenas nec et duis amet fringilla. Amet aenean consequat velit in. Mollis viverra enim varius eget massa ipsum. Sem et leo maecenas ridiculus. Dictum sit auctor a bibendum platea fames ac turpis. Dignissim vel urna scelerisque nullam in. Cras et sed a aliquam dolor vitae turpis purus. Et donec blandit vel morbi neque. Risus facilisis diam ut ut magna imperdiet. Blandit tincidunt in convallis pharetra enim morbi.</p>
+                                 </div>   
+                            </div>
+                        </div>
+                        <div class="ratepanelsection activetablepanel" data-id="rate-tab-6">
+                            <div class="smallTitle">
+                                <h2>Money Market</h2>
+                            </div>
+                            <div class="pattern-section">
+                                <div class="panelPattern" style="background: url(assets/images/rate-arrow-pattern.svg) center bottom no-repeat;"></div>
+                                <div class="main-container">
+                                    <div class="grid-container">
+                                        <div class="table-container">
+                                            <div class="table-row heading">
+                                                <div class="row-item">Account</div>
+                                                <div class="row-item">Tiered Amounts</div>
+                                                <div class="row-item">Rate</div>
+                                                <div class="row-item">APY*</div>
+                                                <div class="row-item">Minimum to Open</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="row-item">Premier</div>
+                                                <div class="row-item"><span class="deactive"></span></div>
+                                                <div class="row-item">4.402%</div>
+                                                <div class="row-item">4.50%</div>
+                                                <div class="row-item">$1,000.00</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="row-item">Money Market</div>
+                                                <div class="row-item"><span class="deactive"></span></div>
+                                                <div class="row-item">4.641%</div>
+                                                <div class="row-item">4.75%</div>
+                                                <div class="row-item">$1,000.00</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="row-item">Consumer Relationship</div>
+                                                <div class="row-item"><span class="deactive"></span></div>
+                                                <div class="row-item">3.199%</div>
+                                                <div class="row-item">3.25%</div>
+                                                <div class="row-item">$1,000.00</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid-container">
+                                <div class="notepanel gap">
+                                    <p>Lorem ipsum dolor sit amet consectetur. Suspendisse praesent eu a mattis turpis mattis massa diam. Adipiscing rhoncus rhoncus ultrices pretium tellus id duis mollis. Justo amet nunc sit odio aliquam. Sagittis mi odio nunc enim senectus donec mi turpis eget. Eget tortor malesuada a cras elit. Et cursus molestie et natoque congue sagittis phasellus diam. Vulputate in viverra nisi tincidunt habitant. Purus sed quis consequat condimentum malesuada. Neque purus massa dictum euismod purus. Sed eget elit molestie malesuada. Gravida vitae tempor non tristique. Accumsan aenean bibendum adipiscing condimentum et nec nibh iaculis. Sed accumsan euismod volutpat ac ullamcorper amet. Maecenas nisl sit arcu neque lectus sed ullamcorper sem magna. Sollicitudin aliquam diam maecenas nec et duis amet fringilla. Amet aenean consequat velit in. Mollis viverra enim varius eget massa ipsum. Sem et leo maecenas ridiculus. Dictum sit auctor a bibendum platea fames ac turpis. Dignissim vel urna scelerisque nullam in. Cras et sed a aliquam dolor vitae turpis purus. Et donec blandit vel morbi neque. Risus facilisis diam ut ut magna imperdiet. Blandit tincidunt in convallis pharetra enim morbi.</p>
+                                 </div>   
+                            </div>
+                        </div>
+                        <!-----Mobile version-->
+       
+        <div class="productCompare">
+            <div class="ratetablepanel activetablepanel" data-id="rate-tab-1">
+                <div class="grid-container">
+                    <div class="panelPattern" style="background: url(assets/images/rate-arrow-pattern.svg) center bottom no-repeat;"></div>
+                    <div class="smallTitle">
+                        <h2>CD's</h2>
+                    </div>
+                <div class="ratetableSlider">
+                    <div class="flexCustom">
+                        <div class="navblock">
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                        </div>
+                        <div class="swiper rateCheckingSlider activeSlider">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="swiper-card">
+                                        <div class="titleblock">
+                                            <p>1 Month</p>
+                                        </div>
+                                        <div class="contentblock">
+                                           <div class="contentsecion">
+                                                <div class="content">
+                                                    <p class="tablehead">Rate</p>
+                                                </div>
+                                                <div class="content">
+                                                    <p>4.641%</p>
+                                                </div>
+                                           </div>
+                                            <div class="contentsecion">
+                                                <div class="content">
+                                                    <p class="tablehead">APY*</p>
+                                                </div>
+                                                <div class="content">
+                                                    <p>4.75%</p>
+                                                </div>
+                                            </div>
+                                            <div class="contentsecion">
+                                                <div class="content">
+                                                    <p class="tablehead">Minimum to Balance</p>
+                                                </div>
+                                                <div class="content">
+                                                    <p>$1,000.00</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="swiper-card">
+                                        <div class="titleblock">
+                                            <p>5 Month</p>
+                                        </div>
+                                        <div class="contentblock">
+                                           <div class="contentsecion">
+                                                <div class="content">
+                                                    <p class="tablehead">Rate</p>
+                                                </div>
+                                                <div class="content">
+                                                    <p>4.641%</p>
+                                                </div>
+                                           </div>
+                                            <div class="contentsecion">
+                                                <div class="content">
+                                                    <p class="tablehead">APY*</p>
+                                                </div>
+                                                <div class="content">
+                                                    <p>4.75%</p>
+                                                </div>
+                                            </div>
+                                            <div class="contentsecion">
+                                                <div class="content">
+                                                    <p class="tablehead">Minimum to Balance</p>
+                                                </div>
+                                                <div class="content">
+                                                    <p>$1,000.00</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="navPage">
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </div>     
+                </div>   
+            </div>
+            <div class="notepanel activetablepanel gap" data-id="rate-tab-1">
+                <div class="grid-container">
+                    <p>Lorem ipsum dolor sit amet consectetur. Suspendisse praesent eu a mattis turpis mattis massa diam. Adipiscing rhoncus rhoncus ultrices pretium tellus id duis mollis. Justo amet nunc sit odio aliquam. Sagittis mi odio nunc enim senectus donec mi turpis eget. Eget tortor malesuada a cras elit. Et cursus molestie et natoque congue sagittis phasellus diam. Vulputate in viverra nisi tincidunt habitant. Purus sed quis consequat condimentum malesuada. Neque purus massa dictum euismod purus. Sed eget elit molestie malesuada. Gravida vitae tempor non tristique. Accumsan aenean bibendum adipiscing condimentum et nec nibh iaculis. Sed accumsan euismod volutpat ac ullamcorper amet. Maecenas nisl sit arcu neque lectus sed ullamcorper sem magna. Sollicitudin aliquam diam maecenas nec et duis amet fringilla. Amet aenean consequat velit in. Mollis viverra enim varius eget massa ipsum. Sem et leo maecenas ridiculus. Dictum sit auctor a bibendum platea fames ac turpis. Dignissim vel urna scelerisque nullam in. Cras et sed a aliquam dolor vitae turpis purus. Et donec blandit vel morbi neque. Risus facilisis diam ut ut magna imperdiet. Blandit tincidunt in convallis pharetra enim morbi.</p>
+                </div>
+            </div>
+            <div class="ratetablepanel activetablepanel" data-id="rate-tab-2">
+                <div class="grid-container">
+                    <div class="panelPattern" style="background: url(assets/images/rate-arrow-pattern.svg) center bottom no-repeat;"></div>
+                    <div class="smallTitle">
+                        <h2>IRA CD's</h2>
+                    </div>
+                <div class="ratetableSlider">
+                    <div class="flexCustom">
+                        <div class="navblock">
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                        </div>
+                        <div class="swiper rateCheckingSlider activeSlider">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="swiper-card">
+                                        <div class="titleblock">
+                                            <p>5 Month</p>
+                                        </div>
+                                        <div class="contentblock">
+                                           <div class="contentsecion">
+                                                <div class="content">
+                                                    <p class="tablehead">Rate</p>
+                                                </div>
+                                                <div class="content">
+                                                    <p>4.641%</p>
+                                                </div>
+                                           </div>
+                                            <div class="contentsecion">
+                                                <div class="content">
+                                                    <p class="tablehead">APY*</p>
+                                                </div>
+                                                <div class="content">
+                                                    <p>4.75%</p>
+                                                </div>
+                                            </div>
+                                            <div class="contentsecion">
+                                                <div class="content">
+                                                    <p class="tablehead">Minimum to Balance</p>
+                                                </div>
+                                                <div class="content">
+                                                    <p>$1,000.00</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="navPage">
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </div>     
+                </div>   
+            </div>
+            <div class="ratetablepanel activetablepanel" data-id="rate-tab-3">
+                <div class="grid-container">
+                    <div class="panelPattern" style="background: url(assets/images/rate-arrow-pattern.svg) center bottom no-repeat;"></div>
+                    <div class="smallTitle">
+                        <h2>Online CD's</h2>
+                    </div>
+                <div class="ratetableSlider">
+                    <div class="flexCustom">
+                        <div class="navblock">
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                        </div>
+                        <div class="swiper rateCheckingSlider activeSlider">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="swiper-card">
+                                        <div class="titleblock">
+                                            <p>5 Month</p>
+                                        </div>
+                                        <div class="contentblock">
+                                           <div class="contentsecion">
+                                                <div class="content">
+                                                    <p class="tablehead">Rate</p>
+                                                </div>
+                                                <div class="content">
+                                                    <p>4.641%</p>
+                                                </div>
+                                           </div>
+                                            <div class="contentsecion">
+                                                <div class="content">
+                                                    <p class="tablehead">APY*</p>
+                                                </div>
+                                                <div class="content">
+                                                    <p>4.75%</p>
+                                                </div>
+                                            </div>
+                                            <div class="contentsecion">
+                                                <div class="content">
+                                                    <p class="tablehead">Minimum to Balance</p>
+                                                </div>
+                                                <div class="content">
+                                                    <p>$1,000.00</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="navPage">
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </div>     
+                </div>   
+            </div>
+            <div class="ratetablepanel activetablepanel" data-id="rate-tab-4">
+                <div class="grid-container">
+                    <div class="panelPattern" style="background: url(assets/images/rate-arrow-pattern.svg) center bottom no-repeat;"></div>
+                    <div class="smallTitle">
+                        <h2>Checking</h2>
+                    </div>
+                <div class="ratetableSlider">
+                    <div class="flexCustom">
+                        <div class="navblock">
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                        </div>
+                        <div class="swiper rateCheckingSlider activeSlider">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="swiper-card">
+                                        <div class="titleblock">
+                                            <p>Ultimate Rewards</p>
+                                        </div>
+                                        <div class="contentblock">
+                                           <div class="contentsecion">
+                                                <div class="content">
+                                                    <p class="tablehead">Tiered Amounts</p>
+                                                </div>
+                                                <div class="content">
+                                                    <p><span class="deactive"></span></p>
+                                                </div>
+                                           </div>
+                                           <div class="contentsecion">
+                                                <div class="content">
+                                                    <p class="tablehead">Rate</p>
+                                                </div>
+                                                <div class="content">
+                                                    <p>4.641%</p>
+                                                </div>
+                                            </div>
+                                            <div class="contentsecion">
+                                                <div class="content">
+                                                    <p class="tablehead">APY*</p>
+                                                </div>
+                                                <div class="content">
+                                                    <p>4.75%</p>
+                                                </div>
+                                            </div>
+                                            <div class="contentsecion">
+                                                <div class="content">
+                                                    <p class="tablehead">Minimum to Balance</p>
+                                                </div>
+                                                <div class="content">
+                                                    <p>$1,000.00</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="swiper-card">
+                                        <div class="titleblock">
+                                            <p>Ultimate Rewards</p>
+                                        </div>
+                                        <div class="contentblock">
+                                           <div class="contentsecion">
+                                                <div class="content">
+                                                    <p class="tablehead">Tiered Amounts</p>
+                                                </div>
+                                                <div class="content">
+                                                    <p>Rate applicable for balances up to $100,000 when qualifications disclosed are met.</p>
+                                                </div>
+                                           </div>
+                                           <div class="contentsecion">
+                                                <div class="content">
+                                                    <p class="tablehead">Rate</p>
+                                                </div>
+                                                <div class="content">
+                                                    <p>4.641%</p>
+                                                </div>
+                                            </div>
+                                            <div class="contentsecion">
+                                                <div class="content">
+                                                    <p class="tablehead">APY*</p>
+                                                </div>
+                                                <div class="content">
+                                                    <p>4.75%</p>
+                                                </div>
+                                            </div>
+                                            <div class="contentsecion">
+                                                <div class="content">
+                                                    <p class="tablehead">Minimum to Balance</p>
+                                                </div>
+                                                <div class="content">
+                                                    <p></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="navPage">
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </div>     
+                </div>   
+            </div>
+        </div>
+                    </div>
+                    <div id="tab-2" class="tab-pane-content business-tab-content">
+                        <div class="smallTitle">
+                            <h2>Seeking additional FDIC insurance coverage and competitive rates?</h2>
+                            <p class="large"><a href="#">Learn more about our ICS and CDARS products</a></h3>
+                        </div>
+                        <input type="hidden" id="contentShow" name="contentShow" />
+                        <div class="ratefilterpanel">
+                            <div class="grid-container">
+                                <div class="filtersection">
+                                    <div class="form-group selectbox">
+                                        <select class="selectMenuCurve" id="business-rate-filter" name="business-rate-filter" title="business-filter-rates">
+                                            <option value="business-rate-tab-0" data-id="business-rate-tab-0">All Business Banking Rates</option>
+                                            <option value="business-rate-tab-1" data-id="business-rate-tab-1">CD’s</option>
+                                            <option value="business-rate-tab-2" data-id="business-rate-tab-2">IRA CD’s</option>
+                                            <option value="business-rate-tab-3" data-id="business-rate-tab-3">Online CD’s</option>
+                                            <option value="business-rate-tab-4" data-id="business-rate-tab-4">Checking</option>
+                                            <option value="business-rate-tab-5" data-id="business-rate-tab-5">Savings</option>
+                                            <option value="business-rate-tab-6" data-id="business-rate-tab-6">Money Market</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="ratepanelsection activetablepanel" data-id="business-rate-tab-1">
+                            <div class="smallTitle">
+                                <h2>CD&#x2019;s</h2>
+                            </div>
+                            <div class="pattern-section">
+                                <div class="panelPattern" style="background: url(assets/images/rate-arrow-pattern.svg) center bottom no-repeat;"></div>
+                                <div class="main-container">
+                                    <div class="grid-container">
+                                        <div class="table-container">
+                                            <div class="table-row heading">
+                                                <div class="row-item">Term</div>
+                                                <div class="row-item">Rate</div>
+                                                <div class="row-item">APY*</div>
+                                                <div class="row-item">Minimum to Open</div>
+                                            </div>
+                                                    <div class="table-row">
+                                                        <div class="row-item">1 Month</div>
+                                                        <div class="row-item">4.402%</div>
+                                                        <div class="row-item">4.50%</div>
+                                                        <div class="row-item">$1,000.00</div>
+                                                    </div>
+                                                    <div class="table-row">
+                                                        <div class="row-item">5 Month</div>
+                                                        <div class="row-item">4.641%</div>
+                                                        <div class="row-item">4.75%</div>
+                                                        <div class="row-item">$1,000.00</div>
+                                                    </div>
+                                                    <div class="table-row">
+                                                        <div class="row-item">9 Month</div>
+                                                        <div class="row-item">3.199%</div>
+                                                        <div class="row-item">3.25%</div>
+                                                        <div class="row-item">$1,000.00</div>
+                                                    </div>
+                                                    <div class="table-row">
+                                                        <div class="row-item">12 Month</div>
+                                                        <div class="row-item">3.199%</div>
+                                                        <div class="row-item">3.25%</div>
+                                                        <div class="row-item">$1,000.00</div>
+                                                    </div>
+                                                    <div class="table-row">
+                                                        <div class="row-item">17 Month</div>
+                                                        <div class="row-item">3.199%</div>
+                                                        <div class="row-item">3.25%</div>
+                                                        <div class="row-item">$1,000.00</div>
+                                                    </div>
+                                                    <div class="table-row">
+                                                        <div class="row-item">20 Month</div>
+                                                        <div class="row-item">3.199%</div>
+                                                        <div class="row-item">3.25%</div>
+                                                        <div class="row-item">$1,000.00</div>
+                                                    </div>
+                                                    <div class="table-row">
+                                                        <div class="row-item">24 Month</div>
+                                                        <div class="row-item">3.199%</div>
+                                                        <div class="row-item">3.25%</div>
+                                                        <div class="row-item">$1,000.00</div>
+                                                    </div>
+                                                    <div class="table-row">
+                                                        <div class="row-item">36 Month</div>
+                                                        <div class="row-item">4.4444%</div>
+                                                        <div class="row-item">5.888%</div>
+                                                        <div class="row-item">$5,000.00</div>
+                                                    </div>
+                                                    <div class="table-row">
+                                                        <div class="row-item">48 Month</div>
+                                                        <div class="row-item">4.884%</div>
+                                                        <div class="row-item">4.550%</div>
+                                                        <div class="row-item">$5,0000</div>
+                                                    </div>
+                                                    <div class="table-row">
+                                                        <div class="row-item">60 Month</div>
+                                                        <div class="row-item">3.199%</div>
+                                                        <div class="row-item">3.25%</div>
+                                                        <div class="row-item">$1,000.00</div>
+                                                    </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid-container">
+                                <div class="notepanel gap">
+                                    <p>Lorem ipsum dolor sit amet consectetur. Suspendisse praesent eu a mattis turpis mattis massa diam. Adipiscing rhoncus rhoncus ultrices pretium tellus id duis mollis. Justo amet nunc sit odio aliquam. Sagittis mi odio nunc enim senectus donec mi turpis eget. Eget tortor malesuada a cras elit. Et cursus molestie et natoque congue sagittis phasellus diam. Vulputate in viverra nisi tincidunt habitant. Purus sed quis consequat condimentum malesuada. Neque purus massa dictum euismod purus. Sed eget elit molestie malesuada. Gravida vitae tempor non tristique. Accumsan aenean bibendum adipiscing condimentum et nec nibh iaculis. Sed accumsan euismod volutpat ac ullamcorper amet. Maecenas nisl sit arcu neque lectus sed ullamcorper sem magna. Sollicitudin aliquam diam maecenas nec et duis amet fringilla. Amet aenean consequat velit in. Mollis viverra enim varius eget massa ipsum. Sem et leo maecenas ridiculus. Dictum sit auctor a bibendum platea fames ac turpis. Dignissim vel urna scelerisque nullam in. Cras et sed a aliquam dolor vitae turpis purus. Et donec blandit vel morbi neque. Risus facilisis diam ut ut magna imperdiet. Blandit tincidunt in convallis pharetra enim morbi.</p>
+                                 </div>   
+                            </div>
+                        </div>
+                        <div class="ratepanelsection activetablepanel" data-id="business-rate-tab-2">
+                            <div class="smallTitle">
+                                <h2>IRA CD &#x2019;s</h2>
+                            </div>
+                            <div class="pattern-section">
+                                <div class="panelPattern" style="background: url(assets/images/rate-arrow-pattern.svg) center bottom no-repeat;"></div>
+                                <div class="main-container">
+                                    <div class="grid-container">
+                                        <div class="table-container">
+                                            <div class="table-row heading">
+                                                <div class="row-item">Term</div>
+                                                <div class="row-item">Rate</div>
+                                                <div class="row-item">APY*</div>
+                                                <div class="row-item">Minimum to Open</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="row-item">1 Month IRA</div>
+                                                <div class="row-item">4.402%</div>
+                                                <div class="row-item">4.50%</div>
+                                                <div class="row-item">$1,000.00</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="row-item">5 Month IRA</div>
+                                                <div class="row-item">4.641%</div>
+                                                <div class="row-item">4.75%</div>
+                                                <div class="row-item">$1,000.00</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="row-item">9 Month IRA</div>
+                                                <div class="row-item">3.199%</div>
+                                                <div class="row-item">3.25%</div>
+                                                <div class="row-item">$1,000.00</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="row-item">12 Month IRA</div>
+                                                <div class="row-item">3.199%</div>
+                                                <div class="row-item">3.25%</div>
+                                                <div class="row-item">$1,000.00</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="row-item">17 Month IRA</div>
+                                                <div class="row-item">3.199%</div>
+                                                <div class="row-item">3.25%</div>
+                                                <div class="row-item">$1,000.00</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="row-item">20 Month IRA</div>
+                                                <div class="row-item">3.199%</div>
+                                                <div class="row-item">3.25%</div>
+                                                <div class="row-item">$1,000.00</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="row-item">24 Month IRA</div>
+                                                <div class="row-item">3.199%</div>
+                                                <div class="row-item">3.25%</div>
+                                                <div class="row-item">$1,000.00</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="row-item">36 Month IRA</div>
+                                                <div class="row-item">4.4444%</div>
+                                                <div class="row-item">5.888%</div>
+                                                <div class="row-item">$5,000.00</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="row-item">48 Month IRA</div>
+                                                <div class="row-item">4.884%</div>
+                                                <div class="row-item">4.550%</div>
+                                                <div class="row-item">$5,0000</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="row-item">60 Month IRA</div>
+                                                <div class="row-item">3.199%</div>
+                                                <div class="row-item">3.25%</div>
+                                                <div class="row-item">$1,000.00</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid-container">
+                                <div class="notepanel gap">
+                                    <p>Lorem ipsum dolor sit amet consectetur. Suspendisse praesent eu a mattis turpis mattis massa diam. Adipiscing rhoncus rhoncus ultrices pretium tellus id duis mollis. Justo amet nunc sit odio aliquam. Sagittis mi odio nunc enim senectus donec mi turpis eget. Eget tortor malesuada a cras elit. Et cursus molestie et natoque congue sagittis phasellus diam. Vulputate in viverra nisi tincidunt habitant. Purus sed quis consequat condimentum malesuada. Neque purus massa dictum euismod purus. Sed eget elit molestie malesuada. Gravida vitae tempor non tristique. Accumsan aenean bibendum adipiscing condimentum et nec nibh iaculis. Sed accumsan euismod volutpat ac ullamcorper amet. Maecenas nisl sit arcu neque lectus sed ullamcorper sem magna. Sollicitudin aliquam diam maecenas nec et duis amet fringilla. Amet aenean consequat velit in. Mollis viverra enim varius eget massa ipsum. Sem et leo maecenas ridiculus. Dictum sit auctor a bibendum platea fames ac turpis. Dignissim vel urna scelerisque nullam in. Cras et sed a aliquam dolor vitae turpis purus. Et donec blandit vel morbi neque. Risus facilisis diam ut ut magna imperdiet. Blandit tincidunt in convallis pharetra enim morbi.</p>
+                                 </div>   
+                            </div>
+                        </div>
+                        <div class="ratepanelsection activetablepanel" data-id="business-rate-tab-3">
+                            <div class="smallTitle">
+                                <h2>Online CD &#x2019;s</h2>
+                            </div>
+                            <div class="pattern-section">
+                                <div class="panelPattern" style="background: url(assets/images/rate-arrow-pattern.svg) center bottom no-repeat;"></div>
+                                <div class="main-container">
+                                    <div class="grid-container">
+                                        <div class="table-container">
+                                            <div class="table-row heading">
+                                                <div class="row-item">Term</div>
+                                                <div class="row-item">Rate</div>
+                                                <div class="row-item">APY*</div>
+                                                <div class="row-item">Minimum to Open</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="row-item">6 Month Online CD</div>
+                                                <div class="row-item">4.402%</div>
+                                                <div class="row-item">4.50%</div>
+                                                <div class="row-item">$1,000.00</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="row-item">7 Month Online CD</div>
+                                                <div class="row-item">4.641%</div>
+                                                <div class="row-item">4.75%</div>
+                                                <div class="row-item">$1,000.00</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="row-item">24 Month Online CD</div>
+                                                <div class="row-item">3.199%</div>
+                                                <div class="row-item">3.25%</div>
+                                                <div class="row-item">$1,000.00</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid-container">
+                                <div class="notepanel gap">
+                                    <p>Lorem ipsum dolor sit amet consectetur. Suspendisse praesent eu a mattis turpis mattis massa diam. Adipiscing rhoncus rhoncus ultrices pretium tellus id duis mollis. Justo amet nunc sit odio aliquam. Sagittis mi odio nunc enim senectus donec mi turpis eget. Eget tortor malesuada a cras elit. Et cursus molestie et natoque congue sagittis phasellus diam. Vulputate in viverra nisi tincidunt habitant. Purus sed quis consequat condimentum malesuada. Neque purus massa dictum euismod purus. Sed eget elit molestie malesuada. Gravida vitae tempor non tristique. Accumsan aenean bibendum adipiscing condimentum et nec nibh iaculis. Sed accumsan euismod volutpat ac ullamcorper amet. Maecenas nisl sit arcu neque lectus sed ullamcorper sem magna. Sollicitudin aliquam diam maecenas nec et duis amet fringilla. Amet aenean consequat velit in. Mollis viverra enim varius eget massa ipsum. Sem et leo maecenas ridiculus. Dictum sit auctor a bibendum platea fames ac turpis. Dignissim vel urna scelerisque nullam in. Cras et sed a aliquam dolor vitae turpis purus. Et donec blandit vel morbi neque. Risus facilisis diam ut ut magna imperdiet. Blandit tincidunt in convallis pharetra enim morbi.</p>
+                                 </div>   
+                            </div>
+                        </div>
+                        <div class="ratepanelsection activetablepanel" data-id="business-rate-tab-4">
+                            <div class="smallTitle">
+                                <h2>Checking</h2>
+                            </div>
+                            <div class="pattern-section">
+                                <div class="panelPattern" style="background: url(assets/images/rate-arrow-pattern.svg) center bottom no-repeat;"></div>
+                                <div class="main-container">
+                                    <div class="grid-container">
+                                        <div class="table-container">
+                                            <div class="table-row heading">
+                                                <div class="row-item">Account</div>
+                                                <div class="row-item">Tiered Amounts</div>
+                                                <div class="row-item">Rate</div>
+                                                <div class="row-item">APY*</div>
+                                                <div class="row-item">Minimum to Open</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="row-item">Ultimate Rewards</div>
+                                                <div class="row-item"><span class="active"></span></div>
+                                                <div class="row-item">4.402%</div>
+                                                <div class="row-item">4.50%</div>
+                                                <div class="row-item">$1,000.00</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="row-item"></div>
+                                                <div class="row-item">Rate applicable for balances up to $100,000 when qualifications disclosed are met.</div>
+                                                <div class="row-item">4.641%</div>
+                                                <div class="row-item">4.75%</div>
+                                                <div class="row-item"></div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="row-item">Premier Interest</div>
+                                                <div class="row-item">$0 - $4,999</div>
+                                                <div class="row-item">3.199%</div>
+                                                <div class="row-item">3.25%</div>
+                                                <div class="row-item">$1,000.00</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="row-item">Interest</div>
+                                                <div class="row-item">$5,000 +</div>
+                                                <div class="row-item">3.199%</div>
+                                                <div class="row-item">3.25%</div>
+                                                <div class="row-item">$1,000.00</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="row-item">50+</div>
+                                                <div class="row-item">$5,000 +</div>
+                                                <div class="row-item">3.199%</div>
+                                                <div class="row-item">3.25%</div>
+                                                <div class="row-item">$1,000.00</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid-container">
+                                <div class="notepanel gap">
+                                    <p>Lorem ipsum dolor sit amet consectetur. Suspendisse praesent eu a mattis turpis mattis massa diam. Adipiscing rhoncus rhoncus ultrices pretium tellus id duis mollis. Justo amet nunc sit odio aliquam. Sagittis mi odio nunc enim senectus donec mi turpis eget. Eget tortor malesuada a cras elit. Et cursus molestie et natoque congue sagittis phasellus diam. Vulputate in viverra nisi tincidunt habitant. Purus sed quis consequat condimentum malesuada. Neque purus massa dictum euismod purus. Sed eget elit molestie malesuada. Gravida vitae tempor non tristique. Accumsan aenean bibendum adipiscing condimentum et nec nibh iaculis. Sed accumsan euismod volutpat ac ullamcorper amet. Maecenas nisl sit arcu neque lectus sed ullamcorper sem magna. Sollicitudin aliquam diam maecenas nec et duis amet fringilla. Amet aenean consequat velit in. Mollis viverra enim varius eget massa ipsum. Sem et leo maecenas ridiculus. Dictum sit auctor a bibendum platea fames ac turpis. Dignissim vel urna scelerisque nullam in. Cras et sed a aliquam dolor vitae turpis purus. Et donec blandit vel morbi neque. Risus facilisis diam ut ut magna imperdiet. Blandit tincidunt in convallis pharetra enim morbi.</p>
+                                 </div>   
+                            </div>
+                        </div>
+                        <div class="ratepanelsection activetablepanel" data-id="business-rate-tab-5">
+                            <div class="smallTitle">
+                                <h2>Savings</h2>
+                            </div>
+                            <div class="pattern-section">
+                                <div class="panelPattern" style="background: url(assets/images/rate-arrow-pattern.svg) center bottom no-repeat;"></div>
+                                <div class="main-container">
+                                    <div class="grid-container">
+                                        <div class="table-container">
+                                            <div class="table-row heading">
+                                                <div class="row-item">Account</div>
+                                                <div class="row-item">Tiered Amounts</div>
+                                                <div class="row-item">Rate</div>
+                                                <div class="row-item">APY*</div>
+                                                <div class="row-item">Minimum to Open</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="row-item">Statement</div>
+                                                <div class="row-item"><span class="deactive"></span></div>
+                                                <div class="row-item">4.402%</div>
+                                                <div class="row-item">4.50%</div>
+                                                <div class="row-item">$1,000.00</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="row-item">Relationship</div>
+                                                <div class="row-item"><span class="deactive"></span></div>
+                                                <div class="row-item">4.641%</div>
+                                                <div class="row-item">4.75%</div>
+                                                <div class="row-item">$1,000.00</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="row-item">Minor</div>
+                                                <div class="row-item"><span class="deactive"></span></div>
+                                                <div class="row-item">3.199%</div>
+                                                <div class="row-item">3.25%</div>
+                                                <div class="row-item">$1,000.00</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="row-item">Holiday Club</div>
+                                                <div class="row-item">$0 - $99</div>
+                                                <div class="row-item">3.199%</div>
+                                                <div class="row-item">3.25%</div>
+                                                <div class="row-item">$1,000.00</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="row-item"></div>
+                                                <div class="row-item">$100 +</div>
+                                                <div class="row-item">3.199%</div>
+                                                <div class="row-item">3.25%</div>
+                                                <div class="row-item">$1,000.00</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="row-item">Premier</div>
+                                                <div class="row-item">$0 - $4,999</div>
+                                                <div class="row-item">3.199%</div>
+                                                <div class="row-item">3.25%</div>
+                                                <div class="row-item">$1,000.00</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="row-item"></div>
+                                                <div class="row-item">$5,000 +</div>
+                                                <div class="row-item">3.199%</div>
+                                                <div class="row-item">3.25%</div>
+                                                <div class="row-item">$1,000.00</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="row-item">IRA Express</div>
+                                                <div class="row-item">$5,000 +</div>
+                                                <div class="row-item">3.199%</div>
+                                                <div class="row-item">3.25%</div>
+                                                <div class="row-item">$1,000.00</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="row-item"></div>
+                                                <div class="row-item">$5,000 +</div>
+                                                <div class="row-item">3.199%</div>
+                                                <div class="row-item">3.25%</div>
+                                                <div class="row-item">$1,000.00</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid-container">
+                                <div class="notepanel gap">
+                                    <p>Lorem ipsum dolor sit amet consectetur. Suspendisse praesent eu a mattis turpis mattis massa diam. Adipiscing rhoncus rhoncus ultrices pretium tellus id duis mollis. Justo amet nunc sit odio aliquam. Sagittis mi odio nunc enim senectus donec mi turpis eget. Eget tortor malesuada a cras elit. Et cursus molestie et natoque congue sagittis phasellus diam. Vulputate in viverra nisi tincidunt habitant. Purus sed quis consequat condimentum malesuada. Neque purus massa dictum euismod purus. Sed eget elit molestie malesuada. Gravida vitae tempor non tristique. Accumsan aenean bibendum adipiscing condimentum et nec nibh iaculis. Sed accumsan euismod volutpat ac ullamcorper amet. Maecenas nisl sit arcu neque lectus sed ullamcorper sem magna. Sollicitudin aliquam diam maecenas nec et duis amet fringilla. Amet aenean consequat velit in. Mollis viverra enim varius eget massa ipsum. Sem et leo maecenas ridiculus. Dictum sit auctor a bibendum platea fames ac turpis. Dignissim vel urna scelerisque nullam in. Cras et sed a aliquam dolor vitae turpis purus. Et donec blandit vel morbi neque. Risus facilisis diam ut ut magna imperdiet. Blandit tincidunt in convallis pharetra enim morbi.</p>
+                                 </div>   
+                            </div>
+                        </div>
+                        <div class="ratepanelsection activetablepanel" data-id="business-rate-tab-6">
+                            <div class="smallTitle">
+                                <h2>Money Market</h2>
+                            </div>
+                            <div class="pattern-section">
+                                <div class="panelPattern" style="background: url(assets/images/rate-arrow-pattern.svg) center bottom no-repeat;"></div>
+                                <div class="main-container">
+                                    <div class="grid-container">
+                                        <div class="table-container">
+                                            <div class="table-row heading">
+                                                <div class="row-item">Account</div>
+                                                <div class="row-item">Tiered Amounts</div>
+                                                <div class="row-item">Rate</div>
+                                                <div class="row-item">APY*</div>
+                                                <div class="row-item">Minimum to Open</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="row-item">Premier</div>
+                                                <div class="row-item"><span class="deactive"></span></div>
+                                                <div class="row-item">4.402%</div>
+                                                <div class="row-item">4.50%</div>
+                                                <div class="row-item">$1,000.00</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="row-item">Money Market</div>
+                                                <div class="row-item"><span class="deactive"></span></div>
+                                                <div class="row-item">4.641%</div>
+                                                <div class="row-item">4.75%</div>
+                                                <div class="row-item">$1,000.00</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="row-item">Consumer Relationship</div>
+                                                <div class="row-item"><span class="deactive"></span></div>
+                                                <div class="row-item">3.199%</div>
+                                                <div class="row-item">3.25%</div>
+                                                <div class="row-item">$1,000.00</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid-container">
+                                <div class="notepanel gap">
+                                    <p>Lorem ipsum dolor sit amet consectetur. Suspendisse praesent eu a mattis turpis mattis massa diam. Adipiscing rhoncus rhoncus ultrices pretium tellus id duis mollis. Justo amet nunc sit odio aliquam. Sagittis mi odio nunc enim senectus donec mi turpis eget. Eget tortor malesuada a cras elit. Et cursus molestie et natoque congue sagittis phasellus diam. Vulputate in viverra nisi tincidunt habitant. Purus sed quis consequat condimentum malesuada. Neque purus massa dictum euismod purus. Sed eget elit molestie malesuada. Gravida vitae tempor non tristique. Accumsan aenean bibendum adipiscing condimentum et nec nibh iaculis. Sed accumsan euismod volutpat ac ullamcorper amet. Maecenas nisl sit arcu neque lectus sed ullamcorper sem magna. Sollicitudin aliquam diam maecenas nec et duis amet fringilla. Amet aenean consequat velit in. Mollis viverra enim varius eget massa ipsum. Sem et leo maecenas ridiculus. Dictum sit auctor a bibendum platea fames ac turpis. Dignissim vel urna scelerisque nullam in. Cras et sed a aliquam dolor vitae turpis purus. Et donec blandit vel morbi neque. Risus facilisis diam ut ut magna imperdiet. Blandit tincidunt in convallis pharetra enim morbi.</p>
+                                 </div>   
+                            </div>
+                        </div>
+                        <!----------Mobile version-->
+                        <div class="productCompare">
+                            <div class="ratetablepanel activetablepanel" data-id="business-rate-tab-1">
+                                <div class="grid-container">
+                                    <div class="panelPattern" style="background: url(assets/images/rate-arrow-pattern.svg) center bottom no-repeat;"></div>
+                                    <div class="smallTitle">
+                                        <h2>CD's</h2>
+                                    </div>
+                                <div class="ratetableSlider">
+                                    <div class="flexCustom">
+                                        <div class="navblock">
+                                            <div class="swiper-button-next"></div>
+                                            <div class="swiper-button-prev"></div>
+                                        </div>
+                                        <div class="swiper rateCheckingSlider activeSlider">
+                                            <div class="swiper-wrapper">
+                                                <div class="swiper-slide">
+                                                    <div class="swiper-card">
+                                                        <div class="titleblock">
+                                                            <p>1 Month</p>
+                                                        </div>
+                                                        <div class="contentblock">
+                                                           <div class="contentsecion">
+                                                                <div class="content">
+                                                                    <p class="tablehead">Rate</p>
+                                                                </div>
+                                                                <div class="content">
+                                                                    <p>4.641%</p>
+                                                                </div>
+                                                           </div>
+                                                            <div class="contentsecion">
+                                                                <div class="content">
+                                                                    <p class="tablehead">APY*</p>
+                                                                </div>
+                                                                <div class="content">
+                                                                    <p>4.75%</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="contentsecion">
+                                                                <div class="content">
+                                                                    <p class="tablehead">Minimum to Balance</p>
+                                                                </div>
+                                                                <div class="content">
+                                                                    <p>$1,000.00</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div class="swiper-card">
+                                                        <div class="titleblock">
+                                                            <p>5 Month</p>
+                                                        </div>
+                                                        <div class="contentblock">
+                                                           <div class="contentsecion">
+                                                                <div class="content">
+                                                                    <p class="tablehead">Rate</p>
+                                                                </div>
+                                                                <div class="content">
+                                                                    <p>4.641%</p>
+                                                                </div>
+                                                           </div>
+                                                            <div class="contentsecion">
+                                                                <div class="content">
+                                                                    <p class="tablehead">APY*</p>
+                                                                </div>
+                                                                <div class="content">
+                                                                    <p>4.75%</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="contentsecion">
+                                                                <div class="content">
+                                                                    <p class="tablehead">Minimum to Balance</p>
+                                                                </div>
+                                                                <div class="content">
+                                                                    <p>$1,000.00</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="navPage">
+                                            <div class="swiper-pagination"></div>
+                                        </div>
+                                    </div>
+                                </div>     
+                                </div>   
+                            </div>
+                            <div class="notepanel activetablepanel gap" data-id="business-rate-tab-1">
+                                <div class="grid-container">
+                                    <p>Lorem ipsum dolor sit amet consectetur. Suspendisse praesent eu a mattis turpis mattis massa diam. Adipiscing rhoncus rhoncus ultrices pretium tellus id duis mollis. Justo amet nunc sit odio aliquam. Sagittis mi odio nunc enim senectus donec mi turpis eget. Eget tortor malesuada a cras elit. Et cursus molestie et natoque congue sagittis phasellus diam. Vulputate in viverra nisi tincidunt habitant. Purus sed quis consequat condimentum malesuada. Neque purus massa dictum euismod purus. Sed eget elit molestie malesuada. Gravida vitae tempor non tristique. Accumsan aenean bibendum adipiscing condimentum et nec nibh iaculis. Sed accumsan euismod volutpat ac ullamcorper amet. Maecenas nisl sit arcu neque lectus sed ullamcorper sem magna. Sollicitudin aliquam diam maecenas nec et duis amet fringilla. Amet aenean consequat velit in. Mollis viverra enim varius eget massa ipsum. Sem et leo maecenas ridiculus. Dictum sit auctor a bibendum platea fames ac turpis. Dignissim vel urna scelerisque nullam in. Cras et sed a aliquam dolor vitae turpis purus. Et donec blandit vel morbi neque. Risus facilisis diam ut ut magna imperdiet. Blandit tincidunt in convallis pharetra enim morbi.</p>
+                                </div>
+                            </div>
+                            <div class="ratetablepanel activetablepanel" data-id="business-rate-tab-2">
+                                <div class="grid-container">
+                                    <div class="panelPattern" style="background: url(assets/images/rate-arrow-pattern.svg) center bottom no-repeat;"></div>
+                                    <div class="smallTitle">
+                                        <h2>IRA CD's</h2>
+                                    </div>
+                                <div class="ratetableSlider">
+                                    <div class="flexCustom">
+                                        <div class="navblock">
+                                            <div class="swiper-button-next"></div>
+                                            <div class="swiper-button-prev"></div>
+                                        </div>
+                                        <div class="swiper rateCheckingSlider activeSlider">
+                                            <div class="swiper-wrapper">
+                                                <div class="swiper-slide">
+                                                    <div class="swiper-card">
+                                                        <div class="titleblock">
+                                                            <p>5 Month</p>
+                                                        </div>
+                                                        <div class="contentblock">
+                                                           <div class="contentsecion">
+                                                                <div class="content">
+                                                                    <p class="tablehead">Rate</p>
+                                                                </div>
+                                                                <div class="content">
+                                                                    <p>4.641%</p>
+                                                                </div>
+                                                           </div>
+                                                            <div class="contentsecion">
+                                                                <div class="content">
+                                                                    <p class="tablehead">APY*</p>
+                                                                </div>
+                                                                <div class="content">
+                                                                    <p>4.75%</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="contentsecion">
+                                                                <div class="content">
+                                                                    <p class="tablehead">Minimum to Balance</p>
+                                                                </div>
+                                                                <div class="content">
+                                                                    <p>$1,000.00</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="navPage">
+                                            <div class="swiper-pagination"></div>
+                                        </div>
+                                    </div>
+                                </div>     
+                                </div>   
+                            </div>
+                            <div class="ratetablepanel activetablepanel" data-id="business-rate-tab-3">
+                                <div class="grid-container">
+                                    <div class="panelPattern" style="background: url(assets/images/rate-arrow-pattern.svg) center bottom no-repeat;"></div>
+                                    <div class="smallTitle">
+                                        <h2>Online CD's</h2>
+                                    </div>
+                                <div class="ratetableSlider">
+                                    <div class="flexCustom">
+                                        <div class="navblock">
+                                            <div class="swiper-button-next"></div>
+                                            <div class="swiper-button-prev"></div>
+                                        </div>
+                                        <div class="swiper rateCheckingSlider activeSlider">
+                                            <div class="swiper-wrapper">
+                                                <div class="swiper-slide">
+                                                    <div class="swiper-card">
+                                                        <div class="titleblock">
+                                                            <p>5 Month</p>
+                                                        </div>
+                                                        <div class="contentblock">
+                                                           <div class="contentsecion">
+                                                                <div class="content">
+                                                                    <p class="tablehead">Rate</p>
+                                                                </div>
+                                                                <div class="content">
+                                                                    <p>4.641%</p>
+                                                                </div>
+                                                           </div>
+                                                            <div class="contentsecion">
+                                                                <div class="content">
+                                                                    <p class="tablehead">APY*</p>
+                                                                </div>
+                                                                <div class="content">
+                                                                    <p>4.75%</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="contentsecion">
+                                                                <div class="content">
+                                                                    <p class="tablehead">Minimum to Balance</p>
+                                                                </div>
+                                                                <div class="content">
+                                                                    <p>$1,000.00</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="navPage">
+                                            <div class="swiper-pagination"></div>
+                                        </div>
+                                    </div>
+                                </div>     
+                                </div>   
+                            </div>
+                            <div class="ratetablepanel activetablepanel" data-id="business-rate-tab-4">
+                                <div class="grid-container">
+                                    <div class="panelPattern" style="background: url(assets/images/rate-arrow-pattern.svg) center bottom no-repeat;"></div>
+                                    <div class="smallTitle">
+                                        <h2>Checking</h2>
+                                    </div>
+                                <div class="ratetableSlider">
+                                    <div class="flexCustom">
+                                        <div class="navblock">
+                                            <div class="swiper-button-next"></div>
+                                            <div class="swiper-button-prev"></div>
+                                        </div>
+                                        <div class="swiper rateCheckingSlider activeSlider">
+                                            <div class="swiper-wrapper">
+                                                <div class="swiper-slide">
+                                                    <div class="swiper-card">
+                                                        <div class="titleblock">
+                                                            <p>Ultimate Rewards</p>
+                                                        </div>
+                                                        <div class="contentblock">
+                                                           <div class="contentsecion">
+                                                                <div class="content">
+                                                                    <p class="tablehead">Tiered Amounts</p>
+                                                                </div>
+                                                                <div class="content">
+                                                                    <p><span class="deactive"></span></p>
+                                                                </div>
+                                                           </div>
+                                                           <div class="contentsecion">
+                                                                <div class="content">
+                                                                    <p class="tablehead">Rate</p>
+                                                                </div>
+                                                                <div class="content">
+                                                                    <p>4.641%</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="contentsecion">
+                                                                <div class="content">
+                                                                    <p class="tablehead">APY*</p>
+                                                                </div>
+                                                                <div class="content">
+                                                                    <p>4.75%</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="contentsecion">
+                                                                <div class="content">
+                                                                    <p class="tablehead">Minimum to Balance</p>
+                                                                </div>
+                                                                <div class="content">
+                                                                    <p>$1,000.00</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div class="swiper-card">
+                                                        <div class="titleblock">
+                                                            <p>Ultimate Rewards</p>
+                                                        </div>
+                                                        <div class="contentblock">
+                                                           <div class="contentsecion">
+                                                                <div class="content">
+                                                                    <p class="tablehead">Tiered Amounts</p>
+                                                                </div>
+                                                                <div class="content">
+                                                                    <p>Rate applicable for balances up to $100,000 when qualifications disclosed are met.</p>
+                                                                </div>
+                                                           </div>
+                                                           <div class="contentsecion">
+                                                                <div class="content">
+                                                                    <p class="tablehead">Rate</p>
+                                                                </div>
+                                                                <div class="content">
+                                                                    <p>4.641%</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="contentsecion">
+                                                                <div class="content">
+                                                                    <p class="tablehead">APY*</p>
+                                                                </div>
+                                                                <div class="content">
+                                                                    <p>4.75%</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="contentsecion">
+                                                                <div class="content">
+                                                                    <p class="tablehead">Minimum to Balance</p>
+                                                                </div>
+                                                                <div class="content">
+                                                                    <p></p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="navPage">
+                                            <div class="swiper-pagination"></div>
+                                        </div>
+                                    </div>
+                                </div>     
+                                </div>   
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        
+    </div>
+</div>

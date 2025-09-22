@@ -1,0 +1,62 @@
+@import "util/util";
+$white: #ffffff;
+$black: #000000;
+$primary-color: #90182C;
+$secondary-color: #19A7C1;
+$img: "../../images/";
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    xslarge:1240,
+    xlarge: 1360px,
+    xxlarge: 1400px,
+    xxxlarge: 1660px,
+);
+
+
+.productHighlight {
+    .productDesc {
+        text-align: left;
+
+        @include breakpoint(medium) {
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 19px;
+        }
+
+        +.flexBox {
+            margin-top: clamp(20px, calc(20px + (46 - 20) * ((100vw - 375px) / (1440 - 375))), 46px);
+
+        }
+    }
+
+    .flexBox {
+        @include breakpoint(medium) {
+            display: flex;
+        }
+
+        .evenCta {
+
+            @include breakpoint(small only) {
+                margin-top: 20px;
+
+                +.evenCta {
+                    margin-top: 21px;
+                }
+            }
+
+            @include breakpoint(medium) {
+                width: 50%;
+            }
+
+            text-align: center;
+
+
+        }
+    }
+}
+
+

@@ -1,0 +1,149 @@
+<!-------Template Pattern--------->
+<script type="text/javascript">
+    $(document).ready(function () {
+        function adjustSubPattern() {
+            let $panel = $('.productTypepanel');
+            let $clonepanel = $('.cloneMobile');
+            let adjPanelTop;
+            let $panelTop = $('.subbannerpanel .subbanner .bannerwrap .contentwrap .content').offset().top;
+            if ($(window).outerWidth() >= 1024) {
+                if ($panel.length) {
+                    if ($(window).outerWidth() >= 1440) {
+                        adjPanelTop = $panelTop + 90;
+                    }
+                    else if ($(window).outerWidth() >= 1024) {
+                        adjPanelTop = $panelTop + 90;
+                    }
+                    else {
+                        adjPanelTop = $('.subbannerpanel .subbanner .bannerwrap .imgWrap').offset().top + 70;
+                    }
+                    let panelTop = $panel.offset().top;
+                    let getPanelHeight = panelTop;
+                    $(".templatesection").css('height', getPanelHeight - adjPanelTop - 25 + 'px');
+                    $(".templatesection").css('top', adjPanelTop + 'px');
+                } else {
+                    console.warn('.fivestarpanel not found!');
+                }
+            } else {
+                if ($clonepanel.length) {
+                    let adjPanelTop = $('.subbannerpanel .subbanner .bannerwrap .imgWrap').offset().top + 70;
+                    let panelTop = $clonepanel.offset().top;
+                    let getPanelHeight = panelTop;
+                    console.log('Panel Top:', panelTop);
+                    $(".templatesection").css('height', getPanelHeight - adjPanelTop - 25 + 'px');
+                    $(".templatesection").css('top', adjPanelTop + 'px');
+                }
+            }
+        }
+
+        setTimeout(adjustSubPattern, 500);
+
+        $(window).on("resize", function () {
+            setTimeout(adjustSubPattern, 200);
+        });
+    });
+</script>
+<div class="templatesection">
+    <div class="templatePattern"
+        style="background: url(assets/images/business-plan-pattern.svg) center center no-repeat;">
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        function contentPadding() {
+            var logoLeft = $('.logoSection').offset().left;
+            $('.subbannerpanel .subbanner .bannerwrap .contentwrap .content').css({ 'margin-left': logoLeft });
+        }
+
+        contentPadding();
+
+        $(window).on("resize load", function () {
+            contentPadding();
+        });
+    })
+</script>
+
+<link rel="stylesheet" href="{{root}}assets/css/subbanner/subbanner.css" media="all">
+<div class="subbannerpanel module">
+    <div class="grid-container-full">
+        <div class="subbanner">
+            <div class="temp1">
+                <div class="bannerwrap">
+                    <div class="contentwrap">
+                        <div class="content">
+                            <h1>Free <strong>Business Checking</strong></h1>
+                        </div>
+                    </div>
+                    <div class="imgWrap">
+                        <div class="filter-img">
+                            <img class="img" src="assets/images/home/subbaner.jpg" width="912" height="461"
+                                alt="Home Promotional">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="breadcrumbWrapBottom module come-in " data-swiftype-index="false">
+    <div class="grid-container">
+        <ul class="breadcrumbs">
+            <li class="breadcrumb-item ">
+                <a href="/" aria-label="Home">Home</a>
+            </li>
+            <li class="breadcrumb-item ">
+                <a href="/" aria-label="Home">Business Checking</a>
+            </li>
+            <li class="breadcrumb-item ">Free Business Checking</li>
+        </ul>
+    </div>
+</div>
+
+
+<link rel="stylesheet" href="{{root}}assets/css/generalcontent/generalcontent.css" media="all">
+
+<div class="general module gap come-in">
+    <div class="grid-container">
+        <div class="contentwrap">
+            <h2>Building Community Together</h2>
+            <p>
+                Start your construction project with a partner committed to building a future together. Whether you're planning a single-family residential project, land development, or need a commercial construction loan for your next big
+                expansion, First Commerce Bank provides the financing and support to turn your vision into reality. Let’s build a strong foundation for success and community growth.
+            </p>
+            <ul>
+                <li>Personalized Service: Tailored solutions for your unique construction needs.</li>
+                <li>Personalized Service: Tailored solutions for your unique construction needs.</li>
+                <li>Personalized Service: Tailored solutions for your unique construction needs.</li>
+                <li>
+                    Personalized Service: Tailored solutions for your unique construction needs.
+                    <ul>
+                        <li>Personalized Service: Tailored solutions for your unique construction needs.</li>
+                        <li>Personalized Service: Tailored solutions for your unique construction needs.</li>
+                        <li>Personalized Service: Tailored solutions for your unique construction needs.</li>
+                        <li>Personalized Service: Tailored solutions for your unique construction needs.</li>
+                        <li>Personalized Service: Tailored solutions for your unique construction needs.</li>
+                        <li>Personalized Service: Tailored solutions for your unique construction needs.</li>
+                    </ul>
+                </li>
+                <li>Personalized Service: Tailored solutions for your unique construction needs.</li>
+                <li>Personalized Service: Tailored solutions for your unique construction needs.</li>
+            </ul>
+            <h1>Building Community Together</h1>
+            <h2>Building Community Together</h2>
+            <h3>Online Banking Cookies</h3>
+            <h4>Online Banking Cookies</h4>
+            <div class="ctablock">
+                <a href="#" class="primaryCta small" aria-label="Apply Now">
+                    <span>Apply Now</span>
+                    <span class="iconprops"><i></i></span>
+                </a>
+                <a href="#" class="defaultBtn light" aria-label="Find a Lender">
+                    Find a Lender
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

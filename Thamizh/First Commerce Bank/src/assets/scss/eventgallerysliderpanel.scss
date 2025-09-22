@@ -1,0 +1,313 @@
+@import "util/util";
+
+$white: var(--fcb-white);
+$primary-color: var(--fcb-primary);
+$secondary-color: var (--fcb-whitef7);
+$img: "../../images/";
+
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+.eventsubbannerpanel + .newsdetails .contentwrap p {
+    @include breakpoint(small only) {
+        font-weight: 500;
+    }
+}
+.eventgallerysliderpanel{
+    .grid-container{
+        position: relative;
+        .eventgallerysection{
+            @include breakpoint(small only) {
+                max-width: 335px;
+                margin-left: auto;
+                margin-right: auto;
+                display: block;
+                position: relative;
+            }
+            .flexBox{
+                .swiper-button-prev, .swiper-button-next {
+                    width: 14px;
+                    height: 24px;
+                    margin-top: calc(0px - (var(--swiper-navigation-size) / 2));
+                    &:after{
+                        font-size: 0px;
+                    }
+                    @include breakpoint(medium) {
+                        width: 17px;
+                        height: 19px;
+                        margin-top: calc(-25px - (var(--swiper-navigation-size) / 2));
+                    }
+                    @include breakpoint(large) {
+                        width: 35px;
+                        height: 35px;
+                    }
+                    @include breakpoint(llarge) {
+                        width: 50px;
+                        height: 50px;
+                    }
+                    &::after {
+                        background: url('#{$img}settings/arrow-backward.svg') no-repeat;
+                        background-size: contain;
+                        width: 14px;
+                        height: 24px;
+                        position: relative;
+                        left: -10px;
+                        right:auto;
+                        @include breakpoint(medium) {
+                            left: 20px;
+                            width: 17px;
+                            height: 19px;
+                        }
+                        @include breakpoint(large) {
+                            background: url('#{$img}settings/arrow-dropleft.svg') no-repeat;
+                            background-size: contain;
+                            left: 12px;
+                            width: 35px;
+                            height: 35px;
+                        }
+                        @include breakpoint(llarge) {
+                            left: 4px;
+                            width: 50px;
+                            height: 50px;
+                        }
+                        @media (min-width: 1480px){
+                            left: -8px;
+                        }
+                    }
+                }
+                .swiper-button-next{
+                    &::after {
+                        transform: rotate(180deg);
+                        left: auto;
+                        right: -10px;
+                        @include breakpoint(medium) {
+                            right: 20px;
+                        }
+                        @include breakpoint(large) {
+                            right: 12px;
+                        }
+                        @include breakpoint(llarge) {
+                            right: 4px;
+                        }
+                        @media (min-width: 1480px){
+                            right: -8px;
+                        }
+                    }
+                }
+            }
+            .flexBox-pagination{
+                display: flex ;
+                   justify-content: center;
+                   align-items: center;
+                   position: relative;
+                   top:0px;
+               .swiper-pagination{
+                   position: static;
+                   width: initial;
+                   .swiper-pagination-bullet{
+                       width: 13px;
+                       height: 13px;
+                       background: transparent;
+                       border: 1px solid $primary-color;
+                       margin: 0 6px;
+                       opacity: 1;
+                       &:last-child{
+                           margin-right: 0;
+                       }
+                       @include breakpoint(medium) {
+                           width: 16px;
+                           height: 16px;
+                           margin: 0 8px;
+                       }
+                       &.swiper-pagination-bullet-active{
+                           background-color: $primary-color;
+                       }
+                       
+                   }
+               }
+           }
+        }
+    }
+    .ctablock{
+        text-align: center;
+        margin-top: 30px;
+        @include breakpoint(medium){
+            margin-top: 24px;
+        }
+        .defaultBtn{
+            br{
+                display: block;
+                @include breakpoint(medium){
+                    display: none;
+                }
+            }
+        }
+    }
+    .eventgalleryswiperpanel{
+        width: 100%;
+        max-width: 311px;
+        margin-left: auto;
+        margin-right: auto;
+        @include breakpoint(medium){
+            max-width: 93%;
+        }
+        .eventgallerySlider {
+            padding: 22px 8px 16px 8px;
+            @include breakpoint(medium){
+                padding: 30px 8px 30px 8px;
+            }
+            .swiper-wrapper{
+                &.center-align{
+                    @include breakpoint(large){
+                        justify-content: center;
+                    }
+                }
+                .swiper-slide{
+                    background: #FFFFFF;
+                    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+                    border-radius: 20px;
+                    @include breakpoint(small only){
+                        border-radius: 10px;
+                    }
+                    .imagerow{
+                        cursor: pointer;
+                        padding:9px;
+                        @include breakpoint(medium){
+                            padding-top: clamp(0.563rem, 3.38vw - 0.23rem, 2.813rem);
+                            padding-bottom: clamp(0.563rem, 3.38vw - 0.23rem, 2.813rem);
+                            padding-left: clamp(0.563rem, 0.563vw + 0.43rem, 0.938rem);
+                            padding-right: clamp(0.563rem, 0.563vw + 0.43rem, 0.938rem);
+                        }
+                        .imgwrap{
+                            img{
+                                border-radius: 10px;
+                                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                                @include breakpoint(small only){
+                                    border-radius: 5px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.eventslider-overlay{
+    position: fixed;
+    right: 0;
+    top:110px;
+    width: 100%;
+    height: calc(100% - 100px);
+    background: $white;
+    z-index: 999999;
+    display: none;
+    overflow-y: auto;
+    @include breakpoint(medium){
+        background: rgba(0, 0, 0, 0.4);
+        top:0;
+        height: 100%;
+        overflow-y: hidden;
+    }
+    .eventslider-content {
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+        display: flex;
+        align-items: flex-start;
+        margin: 0 auto;
+        position: relative;
+        @include breakpoint(medium){
+            max-width: 70%;
+            align-items: center;
+        }
+        @include breakpoint(large){
+            max-width: 65%;
+        }
+        @include breakpoint(llarge){
+            max-width: 58%;
+        }
+        @include breakpoint(xxlarge){
+            max-width: 52.42%;
+        }
+        .eventslider-body {
+            width: 100%;
+            max-height: 97.5%;
+            display: flex;
+            flex-direction: column;
+            background-color: $white;
+            padding: 20px;
+            border-radius: 15px;
+            position: relative;
+            overflow-y: auto;
+            .eventslider-header{
+                    display: none;
+                @include breakpoint(medium){
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: center;
+                    margin-bottom: 10px;
+                }
+                .eventslider-close{
+                    cursor: pointer;
+                    span{
+                        font-size: 20px;
+                        font-weight: 700;
+                        color: $primary-color;
+                        margin-right: 8px;
+                        line-height: 20px;
+                        position: relative;
+                        top: -3px;
+                    }
+                }
+            }
+            .eventsliderwrap{
+                @include breakpoint(medium){
+                    overflow-x: hidden;
+                    overflow-y: auto;
+                    &::-webkit-scrollbar {
+                        width: 6px;
+                        background: #dddddd;
+                    }
+                
+                    &::-webkit-scrollbar-track {
+                        border-radius: 0px;
+                    }
+                
+                    &::-webkit-scrollbar-thumb {
+                        border-radius: 0px;
+                        background: $primary-color;
+                        height: 2px;
+                    }
+                }
+                .imgwrap{
+                    img{
+                        border-radius: 10px;
+                        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                    }
+                }
+                .contwrap{
+                    margin: 30px 0 0 0;                    
+                    p:last-child{
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+            .event-ctablock {
+                text-align: center;
+                display: block;
+                @include breakpoint(medium){
+                        display: none;
+                }
+                .eventslider-close{
+                    margin-top: 20px;
+                }
+            }
+        }
+    }   
+}

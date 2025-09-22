@@ -1,0 +1,158 @@
+@import "util/util";
+
+$white: var(--fcb-white);
+$primary-color: var(--fcb-primary);
+$secondary-color: var (--fcb-whitef7);
+$img: "../../images/";
+
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+.contactsection{
+    .flexwrap{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 20px;
+        @include breakpoint(medium){
+            flex-wrap: nowrap;
+        }
+        @media (min-width: 1100px){
+            gap: 40px;
+        }
+        .alreadypanel, .findpanel{
+            background: #FFFFFF;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+            border-radius: clamp(0.625rem, 0.939vw + 0.405rem, 1.25rem);
+            width: 100%;
+            padding: clamp(0.938rem, 1.408vw + 0.607rem, 1.875rem);
+            @include breakpoint(medium){
+                width: 50%;
+            }
+            h2{
+                font-size: clamp(1.5rem, 0.751vw + 1.324rem, 2rem);
+                font-weight: 600;
+                color: $primary-color;
+                margin-bottom: 10px;
+                @media (min-width: 1100px){
+                    margin-bottom: 20px;
+                }
+            }
+            p{
+                font-size: clamp(1.125rem, 0.188vw + 1.081rem, 1.25rem);
+                font-weight: 600;
+                margin-bottom: 10px;
+                @media (min-width: 768px) and (max-width: 1099px) {
+                    max-width: 400px;
+                }
+            }
+            .selectbox{
+                + p{
+                    margin-top: 20px;
+                    @media (min-width: 1100px){
+                        margin-top: 40px;
+                    }
+                    @media (min-width: 768px) and (max-width: 1099px) {
+                        max-width: 400px;
+                    }
+                }
+                max-width: 462px;
+                width: 100%;
+                @media (min-width: 1100px){
+                    max-width: 72.2%;
+                }
+                .selectMenuCurve + .ui-button.ui-selectmenu-button{
+                    height: 43px;
+                    background: #ECEDEF;
+                    border-color: #ECEDEF;
+                    padding: 10px 12px;
+                    font-size: clamp(1rem, 0.188vw + 0.956rem, 1.125rem);
+                    line-height: 120%;
+                    font-weight: 500;
+                    @media (min-width: 1100px){
+                        height: 60px;
+                        padding: 18px 22px;
+                    }
+                }
+                .selectMenuCurve + .ui-selectmenu-button-closed::after, 
+                .selectMenuCurve + .ui-selectmenu-button-open::after{
+                    width: 15px;
+                    height: 9px;
+                    top: 40%;
+                    right: 12px;
+                    background-size: contain;
+                    @media (min-width: 1100px){
+                        width: 20px;
+                        height: 10px;
+                        top: 44%;
+                        right: 25px;
+                    }
+                }
+            }
+            .connectcta{
+                margin-top: 20px;
+            }
+        }
+    }
+    .findpanel{
+        .inputSearch{
+            margin-bottom: 20px;
+            @media (min-width: 1100px){
+                margin-bottom: 40px;
+            }
+            .form-group{
+                max-width: 462px;
+                width: 100%;
+                @media (min-width: 1100px){
+                    max-width: calc(clamp(18.25rem, 46vw - 13.375rem, 24rem));
+                }
+                @media (min-width: 1300px){
+                    max-width: 72.2%;
+                }
+                .txtBox{
+                    height: 43px;
+                    background: #ECEDEF;
+                    border-color: #ECEDEF;
+                    padding: 10px 12px;
+                    font-size: clamp(1rem, 0.188vw + 0.956rem, 1.125rem);
+                    line-height: 120%;
+                    border-radius: 50px;
+                    font-weight: 500;
+                    box-shadow: none;
+                    @media (min-width: 1100px){
+                        height: 60px;
+                        padding: 18px 22px;
+                    }
+                }
+            }
+        }
+        .locationwrap{
+            display: block;
+            @include breakpoint(medium){
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+            }
+            @media (min-width: 1100px){
+                flex-wrap: nowrap;
+            }
+            .submitcta{
+                margin-top: 20px;
+                @media (min-width: 1100px){
+                    margin-left: 25px;
+                    margin-top: 0px;
+                }
+                .defaultBtn{
+                    border-radius: 5px;
+                    padding: 17px 30px;
+                }
+            }
+        }
+    }
+}

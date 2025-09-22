@@ -1,0 +1,442 @@
+
+<link rel="stylesheet" href="{{root}}assets/css/ourteampanel/ourteampanel.css" media="all">
+<script type="text/javascript" defer>
+    $(document).ready(function () {
+        function handleTabClick() {
+            let tabId = $(this).data('tab');
+            $('.tab-links li').removeClass('active');
+            $('.tab-pane-content').removeClass('active');
+            $(this).addClass('active');
+            $('#' + tabId).addClass('active');
+        }
+        $('.tab-links li').on('click', handleTabClick);
+
+
+        if ($(".teamSectionMobile .swiper .swiper-slide").length > 1) {
+                var swiperCarousel = new Swiper('.teamSlider', {
+                    slidesPerView: "1",
+                    spaceBetween: 10,
+                    navigation: {
+                        nextEl: '.teamSlider .swiper-button-next',
+                        prevEl: '.teamSlider .swiper-button-prev',
+                    },
+                    on: {
+                        slideChangeTransitionEnd: function () {
+                            $('.swiper-slide-active .lazy').Lazy({ bind: 'event' });
+                        }
+                    }
+                });
+
+                $(window).on("load resize", function (e) {
+                    $('#mob_tab_item-1 .lazy').Lazy({ bind: 'event' });
+                });
+            }
+
+            let tabcountmob = 1;
+
+            $('.tab-content-section .tab-pane-content').each(function (index) {
+                let $tabContent = $(this); 
+                let $swiperSlide = $('.teamSectionMobile .swiper-slide .contentblock').eq(index);
+
+                if ($swiperSlide.length) {
+                    let newId = 'mob_tab_item-' + tabcountmob;
+                    $swiperSlide.attr('id', newId);
+                    let clonedContent = $tabContent.clone();
+                    $swiperSlide.html(clonedContent.html()).show();
+                    tabcountmob++;
+                }
+            });
+    });
+</script>
+<div class="headingpanel">
+    <div class="breadcrumbWrapBottom">
+        <div class="grid-container">
+            <ul class="breadcrumbs">
+                <li class="breadcrumb-item">
+                    <a href="/" aria-label="Learn More - Home">Home</a>
+                </li>
+                <li class="breadcrumb-item ">Our Team</li>
+            </ul>
+        </div>
+    </div>
+    <div class="locationtitle">
+        <div class="grid-container">
+            <h1>Our Team</h1>
+        </div>
+    </div>
+</div>    
+<div class="ourteampanel gap">
+    <div class="grid-container mobileborder">
+        <div class="tabphorizonpanel">
+            <div class="tabHorizontal">
+                <ul class="tab-links"> <!----More than 5 add class tablinks-more -->
+                    <li class="active" data-tab="tab-1"><span>Executive Leadership</span></li>
+                    <li class="" data-tab="tab-2"><span>SBA Team</span></li>
+                    <li class="" data-tab="tab-3"><span>Lending Team</span></li>
+                    <li class="" data-tab="tab-4"><span>Treasury Management Team</span></li>
+                    <li class="" data-tab="tab-5"><span>Relationship Managers</span></li>  
+                </ul>
+                <div class="tab-content-section">
+                    <div id="tab-1" class="tab-pane-content active">
+                        <h2>Our Executive Leaders</h2>
+                        <div class="flexwrap">
+                            <div class="colblock">
+                                <a href="#" class="readbiolink" aria-label="learn more - Donald Mindiak">
+                                    <div class="imgwrap">
+                                        <img class="lazy layzeloading" data-src="{{root}}assets/images/team/image-1.jpg" width="314" height="351" alt="Donald Mindiak">
+                                    </div>
+                                    <div class="contentwrap">
+                                        <h3>Donald Mindiak</h3>
+                                        <p>President <br> Chief Executive Officer</p>
+                                        <div class="biocta">
+                                            <span class="textCta small">Read Bio</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="colblock">
+                                <a href="#" class="readbiolink" aria-label="learn more - Donald Mindiak">
+                                    <div class="imgwrap">
+                                        <img class="lazy layzeloading" data-src="{{root}}assets/images/team/image-2.jpg" width="314" height="351" alt="Donald Mindiak">
+                                    </div>
+                                    <div class="contentwrap">
+                                        <h3>Gregory Garcia</h3>
+                                        <p>Executive Vice President <br> Chief Operating Officer</p>
+                                        <div class="biocta">
+                                            <span class="textCta small">Read Bio</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="colblock">
+                                <a href="#" class="readbiolink" aria-label="learn more - Donald Mindiak">
+                                    <div class="imgwrap">
+                                        <img class="lazy layzeloading" data-src="{{root}}assets/images/team/image-3.jpg" width="314" height="351" alt="Donald Mindiak">
+                                    </div>
+                                    <div class="contentwrap">
+                                        <h3>Eli Rennert</h3>
+                                        <p>Executive Vice President <br> Chief Operating Officer</p>
+                                        <div class="biocta">
+                                            <span class="textCta small">Read Bio</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="colblock">
+                                <a href="#" class="readbiolink" aria-label="learn more - Donald Mindiak">
+                                    <div class="imgwrap">
+                                        <img class="lazy layzeloading" data-src="{{root}}assets/images/team/image-4.jpg" width="314" height="351" alt="Donald Mindiak">
+                                    </div>
+                                    <div class="contentwrap">
+                                        <h3>David Onderko</h3>
+                                        <p>Senior Vice President <br> Chief Lending Officer</p>
+                                        <div class="biocta">
+                                            <span class="textCta small">Read Bio</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="colblock">
+                                <a href="#" class="readbiolink" aria-label="learn more - Donald Mindiak">
+                                    <div class="imgwrap">
+                                        <img class="lazy layzeloading" data-src="{{root}}assets/images/team/image-5.jpg" width="314" height="351" alt="Donald Mindiak">
+                                    </div>
+                                    <div class="contentwrap">
+                                        <h3>Jill Ross</h3>
+                                        <p>Senior Vice President <br> Chief Financial Officer</p>
+                                        <div class="biocta">
+                                            <span class="textCta small">Read Bio</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="colblock">
+                                <a href="#" class="readbiolink" aria-label="learn more - Donald Mindiak">
+                                    <div class="imgwrap">
+                                        <img class="lazy layzeloading" data-src="{{root}}assets/images/team/image-6.jpg" width="314" height="351" alt="Donald Mindiak">
+                                    </div>
+                                    <div class="contentwrap">
+                                        <h3>Danny R. Beagle Jr.</h3>
+                                        <p>Senior Vice President <br>
+                                            Chief Risk Officer</p>
+                                        <div class="biocta">
+                                            <span class="textCta small">Read Bio</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="colblock">
+                                <a href="#" class="readbiolink" aria-label="learn more - Donald Mindiak">
+                                    <div class="imgwrap">
+                                        <img class="lazy layzeloading" data-src="{{root}}assets/images/team/image-7.jpg" width="314" height="351" alt="Donald Mindiak">
+                                    </div>
+                                    <div class="contentwrap">
+                                        <h3>Rhiannon Williams</h3>
+                                        <p>Senior Vice President <br>
+                                            Chief Credit Officer</p>
+                                        <div class="biocta">
+                                            <span class="textCta small">Read Bio</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="colblock">
+                                <a href="#" class="readbiolink" aria-label="learn more - Donald Mindiak">
+                                    <div class="imgwrap">
+                                        <img class="lazy layzeloading" data-src="{{root}}assets/images/team/image-8.jpg" width="314" height="351" alt="Donald Mindiak">
+                                    </div>
+                                    <div class="contentwrap">
+                                        <h3>LaTifa Sciscoe</h3>
+                                        <p>Senior Vice President <br>
+                                            Chief Technology & Information <br> Security Officer</p>
+                                        <div class="biocta">
+                                            <span class="textCta small">Read Bio</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="colblock">
+                                <a href="#" class="readbiolink" aria-label="learn more - Donald Mindiak">
+                                    <div class="imgwrap">
+                                        <img class="lazy layzeloading" data-src="{{root}}assets/images/team/image-9.jpg" width="314" height="351" alt="Donald Mindiak">
+                                    </div>
+                                    <div class="contentwrap">
+                                        <h3>Tonia Thompson</h3>
+                                        <p>Senior Vice President <br>
+                                            Chief Compliance, BSA/AML & OFAC Officer</p>
+                                        <div class="biocta">
+                                            <span class="textCta small">Read Bio</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="colblock">
+                                <a href="#" class="readbiolink" aria-label="learn more - Donald Mindiak">
+                                    <div class="imgwrap">
+                                        <img class="lazy layzeloading" data-src="{{root}}assets/images/team/image-10.jpg" width="314" height="351" alt="Donald Mindiak">
+                                    </div>
+                                    <div class="contentwrap">
+                                        <h3>Mary Kay Malec</h3>
+                                        <p>Senior Vice President <br>
+                                            Human Resources Officer</p>
+                                        <div class="biocta">
+                                            <span class="textCta small">Read Bio</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="tab-2" class="tab-pane-content">
+                        <h2>Our SBA Team</h2>
+                        <div class="flexwrap">
+                            <div class="colblock">
+                                <a href="#" class="readbiolink" aria-label="learn more - Donald Mindiak">
+                                    <div class="imgwrap">
+                                        <img class="lazy layzeloading" data-src="{{root}}assets/images/team/image-1.jpg" width="314" height="351" alt="Donald Mindiak">
+                                    </div>
+                                    <div class="contentwrap">
+                                        <h3>Donald Mindiak</h3>
+                                        <p>President <br> Chief Executive Officer</p>
+                                        <div class="biocta">
+                                            <span class="textCta small">Read Bio</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="colblock">
+                                <a href="#" class="readbiolink" aria-label="learn more - Donald Mindiak">
+                                    <div class="imgwrap">
+                                        <img class="lazy layzeloading" data-src="{{root}}assets/images/team/image-2.jpg" width="314" height="351" alt="Donald Mindiak">
+                                    </div>
+                                    <div class="contentwrap">
+                                        <h3>Donald Mindiak</h3>
+                                        <p>President <br> Chief Executive Officer</p>
+                                        <div class="biocta">
+                                            <span class="textCta small">Read Bio</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                         </div>   
+                    </div>
+                    <div id="tab-3" class="tab-pane-content">
+                        <h2>Our Lending Team</h2>
+                        <div class="flexwrap">
+                            <div class="colblock">
+                                <a href="#" class="readbiolink" aria-label="learn more - Donald Mindiak">
+                                    <div class="imgwrap">
+                                        <img class="lazy layzeloading" data-src="{{root}}assets/images/team/image-1.jpg" width="314" height="351" alt="Donald Mindiak">
+                                    </div>
+                                    <div class="contentwrap">
+                                        <h3>Donald Mindiak</h3>
+                                        <p>President <br> Chief Executive Officer</p>
+                                        <div class="biocta">
+                                            <span class="textCta small">Read Bio</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="colblock">
+                                <a href="#" class="readbiolink" aria-label="learn more - Donald Mindiak">
+                                    <div class="imgwrap">
+                                        <img class="lazy layzeloading" data-src="{{root}}assets/images/team/image-2.jpg" width="314" height="351" alt="Donald Mindiak">
+                                    </div>
+                                    <div class="contentwrap">
+                                        <h3>Donald Mindiak</h3>
+                                        <p>President <br> Chief Executive Officer</p>
+                                        <div class="biocta">
+                                            <span class="textCta small">Read Bio</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                         </div>   
+                    </div>
+                    <div id="tab-4" class="tab-pane-content">
+                        <h2>Our Treasury Management Team</h2>
+                        <div class="flexwrap">
+                            <div class="colblock">
+                                <a href="#" class="readbiolink" aria-label="learn more - Donald Mindiak">
+                                    <div class="imgwrap">
+                                        <img class="lazy layzeloading" data-src="{{root}}assets/images/team/image-1.jpg" width="314" height="351" alt="Donald Mindiak">
+                                    </div>
+                                    <div class="contentwrap">
+                                        <h3>Donald Mindiak</h3>
+                                        <p>President <br> Chief Executive Officer</p>
+                                        <div class="biocta">
+                                            <span class="textCta small">Read Bio</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="colblock">
+                                <a href="#" class="readbiolink" aria-label="learn more - Donald Mindiak">
+                                    <div class="imgwrap">
+                                        <img class="lazy layzeloading" data-src="{{root}}assets/images/team/image-2.jpg" width="314" height="351" alt="Donald Mindiak">
+                                    </div>
+                                    <div class="contentwrap">
+                                        <h3>Donald Mindiak</h3>
+                                        <p>President <br> Chief Executive Officer</p>
+                                        <div class="biocta">
+                                            <span class="textCta small">Read Bio</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                         </div>   
+                    </div>
+                    <div id="tab-5" class="tab-pane-content">
+                        <h2>Our Relationship Managers</h2>
+                        <div class="flexwrap">
+                            <div class="colblock">
+                                <a href="#" class="readbiolink" aria-label="learn more - Donald Mindiak">
+                                    <div class="imgwrap">
+                                        <img class="lazy layzeloading" data-src="{{root}}assets/images/team/image-1.jpg" width="314" height="351" alt="Donald Mindiak">
+                                    </div>
+                                    <div class="contentwrap">
+                                        <h3>Donald Mindiak</h3>
+                                        <p>President <br> Chief Executive Officer</p>
+                                        <div class="biocta">
+                                            <span class="textCta small">Read Bio</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="colblock">
+                                <a href="#" class="readbiolink" aria-label="learn more - Donald Mindiak">
+                                    <div class="imgwrap">
+                                        <img class="lazy layzeloading" data-src="{{root}}assets/images/team/image-2.jpg" width="314" height="351" alt="Donald Mindiak">
+                                    </div>
+                                    <div class="contentwrap">
+                                        <h3>Donald Mindiak</h3>
+                                        <p>President <br> Chief Executive Officer</p>
+                                        <div class="biocta">
+                                            <span class="textCta small">Read Bio</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                         </div>   
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="teamSectionMobile">
+            <div class="swiper teamSlider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="swiper-card">
+                            <div class="titleblock">
+                                <p>Executive Leadership</p>
+                                <div class="navblock">
+                                    <div class="swiper-button-next"></div>
+                                    <div class="swiper-button-prev"></div>
+                                </div>
+                            </div>
+                            <div class="contentblock">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="swiper-card">
+                            <div class="titleblock">
+                                <p>SBA Team</p>
+                                <div class="navblock">
+                                    <div class="swiper-button-next"></div>
+                                    <div class="swiper-button-prev"></div>
+                                </div>
+                            </div>
+                            <div class="contentblock">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="swiper-card">
+                            <div class="titleblock">
+                                <p>Lending Team</p>
+                                <div class="navblock">
+                                    <div class="swiper-button-next"></div>
+                                    <div class="swiper-button-prev"></div>
+                                </div>
+                            </div>
+                            <div class="contentblock">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="swiper-card">
+                            <div class="titleblock">
+                                <p>Treasury Management Team</p>
+                                <div class="navblock">
+                                    <div class="swiper-button-next"></div>
+                                    <div class="swiper-button-prev"></div>
+                                </div>
+                            </div>
+                            <div class="contentblock">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="swiper-card">
+                            <div class="titleblock">
+                                <p>Relationship Managers</p>
+                                <div class="navblock">
+                                    <div class="swiper-button-next"></div>
+                                    <div class="swiper-button-prev"></div>
+                                </div>
+                            </div>
+                            <div class="contentblock">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </div>
+</div>

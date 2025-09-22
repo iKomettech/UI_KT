@@ -1,0 +1,34 @@
+@import "util/util";
+
+$white: var(--fcb-white);
+$primary-color: var(--fcb-primary);
+$secondary-color: var (--fcb-whitef7);
+$img: "../../images/";
+
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+.bankingtextpanel{
+    padding-bottom: 0px;
+    @include breakpoint(large){
+        padding-bottom: 40px;
+    }
+    max-width: 735px;
+    margin-left: auto;
+    margin-right: auto;
+    .contentwrap{
+        text-align: center;
+        h2{
+            margin-bottom: clamp(0.25rem, 1.878vw - 0.19rem, 1.5rem);
+        }
+        .ctablock{
+            margin-top: clamp(1.25rem, 2.066vw + 0.766rem, 2.625rem);
+        }
+    }
+}

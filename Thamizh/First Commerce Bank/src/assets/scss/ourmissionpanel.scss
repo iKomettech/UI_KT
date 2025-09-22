@@ -1,0 +1,238 @@
+@import "util/util";
+
+$white: var(--fcb-white);
+$primary-color: var(--fcb-primary);
+$secondary-color: var (--fcb-whitef7);
+$img: "../../images/";
+
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+.ourmissionpanel{
+    position: relative;
+    padding-top: 26px;
+    @include breakpoint(medium) {
+        padding-top: 50px;
+    }
+    @include breakpoint(large) {
+        padding-top: 120px;
+    }
+    .panelPattern {
+        background-size: cover !important;
+        bottom: 0px;
+        left: 0;
+        right: 0;
+        margin-inline: auto; 
+        max-width: 1920px;
+        width: 100%;
+        max-height: 878px;
+        height: 100%;
+        position: absolute;
+        z-index: -1;
+        @include breakpoint(small only) {
+            bottom: -162px;
+        }
+        @include breakpoint(medium) {
+            bottom: -205px;
+        }
+        @include breakpoint(large) {
+            bottom: -194px;
+        }
+        @include breakpoint(llarge) {
+            bottom: -254px;
+            left: 8px;
+        }
+    }
+    .panelCenterPattern{
+        background-size: contain !important;
+        bottom: -12px;
+        left: 0;
+        right: 0;
+        max-width: 681px;
+        width: 100%;
+        max-height: 1017px;
+        height: 100%;
+        position: absolute;
+        margin-inline: auto; 
+        z-index: -1;
+        @media (max-width: 520px) {
+            background-size: cover !important;
+            transform: scale(1.06);
+        }
+        @include breakpoint(medium) {
+            bottom: -14px;
+        }
+        @include breakpoint(large) {
+            bottom: -34px;
+        }
+    }
+    .grid-container{
+        .innerwrap{
+            width: 100%;
+            max-width: 1125px;
+            margin-left: auto;
+            margin-right: auto;
+            @include breakpoint(xlarge) {
+                margin-left: 14%;
+            }
+            .flexwrap{
+                display: flex;
+                flex-wrap: wrap;
+                margin-bottom: 0px;
+                @include breakpoint(medium) {
+                    margin-bottom: 20px;
+                }
+                @include breakpoint(large) {
+                    flex-wrap: nowrap;
+                    align-items: center;
+                    margin-bottom: 45px;
+                }
+                &.right{
+                    @include breakpoint(large) {
+                        flex-direction: row-reverse;
+                        padding-top: 55px;
+                    }
+                    .leftwrap{
+                        text-align: left;
+                        margin-left: 0px;
+                        @include breakpoint(large) {
+                            margin-left: calc(clamp(2.5rem, 9.615vw - 3.654rem, 5rem));
+                        }
+                    }
+                    .rightwrap{
+                        margin-left: 0px;
+                        text-align: left;
+                        @include breakpoint(large) {
+                            text-align: right;
+                        }
+                    }
+                }
+                .leftwrap{
+                    max-width: 100%;
+                    width: 100%;
+                    text-align: left;
+                    @include breakpoint(large) {
+                        max-width: 522px;
+                        text-align: right;
+                    }
+                    h2{
+                        font-size: calc(clamp(2.813rem, 5.401vw + 1.547rem, 5rem));
+                        color: $primary-color;
+                        text-transform: uppercase;
+                        line-height: 105%;
+                        font-weight: 700;
+                        @include breakpoint(large) {
+                            font-size: calc(clamp(2.813rem, 1.408vw + 2.482rem, 3.75rem));
+                            font-weight: 400;
+                            line-height: 130%;
+                            b, strong{
+                                font-size: calc(clamp(2.813rem, 5.164vw + 1.602rem, 6.25rem));
+                            }
+                        }
+                        br{
+                            display: none;
+                            @include breakpoint(large) {
+                                display: block;
+                            }
+                        }
+                    }
+                }
+                .rightwrap{
+                    max-width: 100%;
+                    width: 100%;
+                    margin-left: 0px;
+                    @include breakpoint(large) {
+                        max-width: 522px;
+                        margin-left: calc(clamp(2.5rem, 9.615vw - 3.654rem, 5rem));
+                    }
+                    p{
+                        @include breakpoint(small only) {
+                            margin-bottom: 12px;
+                        }
+                        @include breakpoint(large) {
+                            line-height: 122%;
+                        }
+                        br{
+                            display: none;
+                            @include breakpoint(large) {
+                                display: block;
+                            }
+                        }
+                        &.hightlight::first-letter {
+                            color: $primary-color;
+                            font-size: 50px;
+                            font-weight: 900;
+                            @include breakpoint(medium) {
+                                font-size: 30px;
+                            }
+                            @include breakpoint(large) {
+                                font-size: clamp(30px,calc(30px + (40 - 30) * ((100vw - 64rem) / (1440 - 1024))), 40px);
+                            }
+                        }
+                        &.hightlight{
+                            font-weight: 500;
+                            @include breakpoint(small only) {
+                                display: flex;
+                                align-items: center;
+                                line-height: 95%;
+                                &:first-child{
+                                    margin-top: 16px;
+                                    @media (max-width: 400px) {
+                                        margin-top: 6px;
+                                    }
+                                }
+                            }
+                            .left{
+                                @include breakpoint(small only) {
+                                    color: $primary-color;
+                                    font-size: 50px;
+                                    font-weight: 900;
+                                    margin-right: 8px;
+                                }  
+                            }
+                            .right{
+                                @include breakpoint(small only) {
+                                    font-size: 16px;
+                                }
+                                @include breakpoint(medium) {
+                                    position: relative;
+                                    top: -2px;
+                                    right: -2px;
+                                }
+                            }
+                            @include breakpoint(medium) {
+                                margin-bottom: 22px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media print, screen and (max-width: 767px) {
+    .ourmissionpanel .grid-container .innerwrap .flexwrap .rightwrap p.hightlight{
+        margin-bottom: 35px;
+    }
+    .ourmissionpanel .grid-container .innerwrap .flexwrap .rightwrap p.hightlight:last-child{
+        margin-top:30px;
+    }
+  }
+  @media (max-width: 440px) {
+    .ourmissionpanel .grid-container .innerwrap .flexwrap .rightwrap p.hightlight{
+        margin-bottom: 12px;
+    }
+    .ourmissionpanel .grid-container .innerwrap .flexwrap .rightwrap p.hightlight:last-child {
+          margin-top: 25px;
+      }
+      .ourmissionpanel .grid-container .innerwrap .flexwrap .rightwrap p.hightlight:first-child{
+        margin-top: 16px;
+      }
+  }

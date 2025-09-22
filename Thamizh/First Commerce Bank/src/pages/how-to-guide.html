@@ -1,0 +1,767 @@
+<script type="text/javascript">
+    $(document).ready(function () {
+        function contentPadding() {
+            var logoLeft = $('.logoSection').offset().left;
+            $('.subbannerpanel .subbanner .bannerwrap .contentwrap .content').css({ 'margin-left': logoLeft });
+        }
+    
+        function heightLoad() {
+            if ($(window).width() >= 768 && $(window).width() <= 1024) {
+                if ($('.subbannerpanel .subbanner .contentwrap .content').height() <= 58) {
+                    $('.subbannerpanel .subbanner .contentwrap .content').css('padding-top', '35px');
+                } else {
+                    $('.subbannerpanel .subbanner .contentwrap .content').css('padding-top', '14px');
+                }
+            }
+        }
+    
+        contentPadding();
+         heightLoad();
+    
+        $(window).on("resize load", function () {
+            contentPadding();
+             heightLoad();
+        });
+    });
+    
+            function getNumberOfLines(selector) {
+    var el = $(selector)[0];  
+    
+    if (!el) {
+        console.warn("Element not found:", selector);
+        return 0;  
+    }
+    
+    var computedStyle = window.getComputedStyle(el);
+    var lineHeight = parseFloat(computedStyle.lineHeight);
+    var scrollHeight = el.scrollHeight;
+    
+    console.log("Checking element:", el);
+    console.log("Line Height:", lineHeight);
+    console.log("Scroll Height:", scrollHeight);
+    
+    if (!lineHeight || isNaN(lineHeight)) {
+        console.error("Invalid line-height for", selector);
+        return 0;
+    }
+    
+    var lines = Math.round(scrollHeight / lineHeight);
+    console.log("Number of lines:", lines);
+    
+    return lines;
+    }
+    $(window).on("load", function () {
+    var content = $('.subbannerpanel .subbanner .contentwrap .content');
+    
+    if (content.length === 0) {
+        console.error("Content element not found!");
+        return;
+    }
+    
+    var h1Lines = content.find('h1').length ? getNumberOfLines(content.find('h1')) : 0;
+    var pLines = content.find('p').length ? getNumberOfLines(content.find('p').first()) : 0;
+    
+    console.log("H1 Lines:", h1Lines, "P Lines:", pLines);
+    
+    content.removeClass('oneLine twoLine oneLineP twoLineP');
+    
+    if (h1Lines === 1) {
+        content.addClass('oneLine');
+    } else if (h1Lines === 2) {
+        content.addClass('twoLine');
+    }
+    
+    if(pLines === 1){
+        content.addClass('singleLineP');
+    }
+    if (pLines === 1 && h1Lines === 2) {
+        content.addClass('twoLineP');
+        content.removeClass('twoLine');
+        content.removeClass('singleLineP');
+    } else if (pLines === 1 && h1Lines === 1) {
+        content.addClass('oneLineP');
+        content.removeClass('oneLine');
+        content.removeClass('singleLineP');
+    }
+    
+     
+    });
+    </script>
+
+
+    <link rel="stylesheet" href="{{root}}assets/css/subbanner/subbanner.css" media="all">
+    <div class="subbannerpanel module">
+    <div class="grid-container-full">
+    <div class="subbanner">
+    <div class="temp1">
+        <div class="bannerwrap">
+            <div class="contentwrap">
+                <div class="content">
+                    <h1>Education<br> <strong>Center</strong></h1>
+                    <p>How To Guides</p>
+                </div>
+            </div>
+            <div class="imgWrap">
+                <div class="filter-img">
+                    <img class="img" src="assets/images/calculator-details.jpg" width="952" height="461"
+                        alt="Home Promotional">
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    
+    
+    <div class="breadcrumbWrapBottom module come-in " data-swiftype-index="false">
+    <div class="grid-container">
+    <ul class="breadcrumbs">
+    <li class="breadcrumb-item ">
+        <a href="/" aria-label="Home">Home</a>
+    </li>
+    <li class="breadcrumb-item ">
+        <a href="/" aria-label="Education Center">Education Center</a>
+    </li>
+    <li class="breadcrumb-item ">How To Guides</li>
+    </ul>
+    </div>
+    </div>
+
+    <link rel="stylesheet" href="{{root}}assets/css/generalcontent/generalcontent.css" media="all">
+
+    <div class="general module gap come-in">
+        <div class="grid-container">
+            <div class="contentwrap">
+                <h2>We’re Here to Help</h2>
+                <p>Make the most of your First Commerce Bank accounts & services with our library of video tutorials & click-through demos.</p>
+                <div class="ctablock">
+                    <a href="#" class="defaultBtn" aria-label="Additional Resources">
+                        Additional Resources
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <link rel="stylesheet" href="{{root}}assets/css/productimage/productimage.css" media="all">
+
+    <div class="alternative gap left  module">
+        <div class="grid-container">
+            <div class="flexwrap">
+                <div class="contentwrap">                        
+                    <div class="content">
+                        <h2>See Our Calculators</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur. Velit eu tortor ut scelerisque morbi. Mauris risus ut quam habitasse cras augue pellentesque enim ut.</p>
+                        <div class="ctablock">
+                            <a href="#" class="defaultBtn" aria-label="Calculators">Calculators</a>
+                        </div>
+                    </div>
+                </div>
+                    <div class="imgWrap">
+                        <img class="lazy svg-border-mask" alt="Compare Business Checking" src="assets/images/product/product-image-1.jpg" width="607" height="350">
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <link rel="stylesheet" href="{{root}}assets/css/bankingvideopanel/bankingvideopanel.css" media="all">
+    <script type="text/javascript">
+        $(document).ready(function () {
+             $('.bankingvideosliderpanel').last().addClass('mb-110');
+        });
+    </script>
+
+    <!-------Mobile Version---------->
+    
+<script type="text/javascript" defer>
+
+    $(document).ready(function () {
+                $(".bankingvideoslidersection").each(function(index, element) {
+                let swiperContainer = $(element).find('.swiper');
+                let slides = swiperContainer.find('.swiper-slide');
+                if (slides.length > 1) {
+                    let swiperInstance = new Swiper(swiperContainer[0], { 
+                        slidesPerView: 1,
+                        spaceBetween: 10,
+                        navigation: {
+                            nextEl: $(element).find('.swiper-button-next')[0],
+                            prevEl: $(element).find('.swiper-button-prev')[0],
+                        },
+                        pagination: {
+                            el: $(element).find(".swiper-pagination")[0],
+                            clickable: true,
+                        },
+                        breakpoints: {
+                            370: {
+                                slidesPerView: 1,
+                                spaceBetween: 10,
+                            },
+                            768: {
+                                slidesPerView: 2,
+                                spaceBetween: 40,
+                            },
+                            1024: {
+                                slidesPerView: 3,
+                                spaceBetween: 24,
+                            },
+                            1280: {
+                                slidesPerView: 3,
+                                spaceBetween: 40,
+                            },
+                        },
+                    });
+                }
+            });
+        });
+</script>
+
+<div class="bankingvideosliderpanel gap module">
+        <div class="grid-container">
+            <h2>Personal Banking</h2>
+            <div class="bankingvideoslidersection">
+                <div class="flexBox">
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+                <div class="bankingvideosliderswiperpanel">
+                    <div class="swiper bankingVideoSlider">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="colblock">
+                                    <div class="embededwrap">
+                                        <div class="videowrap">
+                                                <!-- Edit The Link Here: -->
+                                    <a href="https://www.onlinebanktours.com/mobile/?b=8024&amp;c=105921&amp;playlist=Default" target="_blank" id="imagef07bfbbeb474880841cfd97437f3831b507feb6a-mv1" role="button">
+                                        <img src="https://cdn.oectours.com/media/cds/banks/8024/143708.png" alt="Online Banking">
+                                    </a>
+                                    <!-- Edit The Link Here: -->		<script type="text/javascript">
+                                                (function() { 
+                                                    var BCM_Banner_Path = window.location.protocol + '//www.onlinebanktours.com'; 
+                                                    BCM_Looping = true; 
+                                                    function funcf07bfbbeb474880841cfd97437f3831b507feb6a() {
+                                                        if(!document.getElementById('BCM_Light_Box_Script')) {
+                                                            var script = document.createElement('script');
+                                                            script.src = BCM_Banner_Path + '/external/v5/BCM_Light_Box.js'; 
+                                                            script.type = 'text/javascript';
+                                                            script.id = 'BCM_Light_Box_Script';
+                                                            document.getElementsByTagName('head')[0].appendChild(script);
+                                                        }
+                                                        if(!document.getElementById('BCM_Light_Box_Styles')) {
+                                                            var css = document.createElement('link');css.type = 'text/css';
+                                                            css.rel = 'stylesheet';css.href = BCM_Banner_Path + '/external/v5/BCM_Ad_Styles.css';
+                                                            css.id = 'BCM_Light_Box_Styles';
+                                                            document.getElementsByTagName('head')[0].appendChild(css);
+                                                        }
+                                                        var bcm = document.getElementById('imagef07bfbbeb474880841cfd97437f3831b507feb6a-mv1'); 
+                                                        if(bcm !== null) { 
+                                                            bcm.removeAttribute('target'); 
+                                                            bcm.addEventListener('click', function(e) { 
+                                                                e.preventDefault(); 
+                                                                e.stopImmediatePropagation(); 
+                                                                beavercreekmarketinglightbox.returnFocusTo(bcm); 
+                                                                beavercreekmarketinglightbox.setURL(BCM_Banner_Path + '/external/v5/player.php?key=f07bfbbeb474880841cfd97437f3831b507feb6a&loop=' + BCM_Looping); 
+                                                                return false; 
+                                                                }, false); 
+                                                        } 
+                                                    };
+                                                    funcf07bfbbeb474880841cfd97437f3831b507feb6a(); 
+                                                })();
+                                            </script>
+                                        </div>
+                                    </div>
+                                    <div class="contentwrap">
+                                        <h3>Online Banking</h3>
+                                        <p>Click-Thu Demo</p>
+                                        <div class="ctablock">
+                                            <a href="#" class="textCta" aria-label="More About Online Banking">Learn More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="colblock">
+                                    <div class="embededwrap">
+                                        <div class="videowrap">
+                                                <!-- Edit The Link Here: -->
+                                    <a href="https://www.onlinebanktours.com/mobile/?b=8024&amp;c=105921&amp;playlist=Default" target="_blank" id="imagef07bfbbeb474880841cfd97437f3831b507feb6a-mv2" role="button">
+                                        <img src="https://cdn.oectours.com/media/cds/banks/8024/143708.png" alt="Online Banking">
+                                    </a>
+                                    <!-- Edit The Link Here: -->		<script type="text/javascript">
+                                                (function() { 
+                                                    var BCM_Banner_Path = window.location.protocol + '//www.onlinebanktours.com'; 
+                                                    BCM_Looping = true; 
+                                                    function funcf07bfbbeb474880841cfd97437f3831b507feb6a() {
+                                                        if(!document.getElementById('BCM_Light_Box_Script')) {
+                                                            var script = document.createElement('script');
+                                                            script.src = BCM_Banner_Path + '/external/v5/BCM_Light_Box.js'; 
+                                                            script.type = 'text/javascript';
+                                                            script.id = 'BCM_Light_Box_Script';
+                                                            document.getElementsByTagName('head')[0].appendChild(script);
+                                                        }
+                                                        if(!document.getElementById('BCM_Light_Box_Styles')) {
+                                                            var css = document.createElement('link');css.type = 'text/css';
+                                                            css.rel = 'stylesheet';css.href = BCM_Banner_Path + '/external/v5/BCM_Ad_Styles.css';
+                                                            css.id = 'BCM_Light_Box_Styles';
+                                                            document.getElementsByTagName('head')[0].appendChild(css);
+                                                        }
+                                                        var bcm = document.getElementById('imagef07bfbbeb474880841cfd97437f3831b507feb6a-mv2'); 
+                                                        if(bcm !== null) { 
+                                                            bcm.removeAttribute('target'); 
+                                                            bcm.addEventListener('click', function(e) { 
+                                                                e.preventDefault(); 
+                                                                e.stopImmediatePropagation(); 
+                                                                beavercreekmarketinglightbox.returnFocusTo(bcm); 
+                                                                beavercreekmarketinglightbox.setURL(BCM_Banner_Path + '/external/v5/player.php?key=f07bfbbeb474880841cfd97437f3831b507feb6a&loop=' + BCM_Looping); 
+                                                                return false; 
+                                                                }, false); 
+                                                        } 
+                                                    };
+                                                    funcf07bfbbeb474880841cfd97437f3831b507feb6a(); 
+                                                })();
+                                            </script>
+                                        </div>
+                                    </div>
+                                    <div class="contentwrap">
+                                        <h3>Online Banking</h3>
+                                        <p>Click-Thu Demo</p>
+                                        <div class="ctablock">
+                                            <a href="#" class="textCta" aria-label="More About Online Banking">Learn More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="colblock">
+                                    <div class="embededwrap">
+                                        <div class="videowrap">
+                                                <!-- Edit The Link Here: -->
+                                    <a href="https://www.onlinebanktours.com/mobile/?b=8024&amp;c=105921&amp;playlist=Default" target="_blank" id="imagef07bfbbeb474880841cfd97437f3831b507feb6a-mv2" role="button">
+                                        <img src="https://cdn.oectours.com/media/cds/banks/8024/143708.png" alt="Online Banking">
+                                    </a>
+                                    <!-- Edit The Link Here: -->		<script type="text/javascript">
+                                                (function() { 
+                                                    var BCM_Banner_Path = window.location.protocol + '//www.onlinebanktours.com'; 
+                                                    BCM_Looping = true; 
+                                                    function funcf07bfbbeb474880841cfd97437f3831b507feb6a() {
+                                                        if(!document.getElementById('BCM_Light_Box_Script')) {
+                                                            var script = document.createElement('script');
+                                                            script.src = BCM_Banner_Path + '/external/v5/BCM_Light_Box.js'; 
+                                                            script.type = 'text/javascript';
+                                                            script.id = 'BCM_Light_Box_Script';
+                                                            document.getElementsByTagName('head')[0].appendChild(script);
+                                                        }
+                                                        if(!document.getElementById('BCM_Light_Box_Styles')) {
+                                                            var css = document.createElement('link');css.type = 'text/css';
+                                                            css.rel = 'stylesheet';css.href = BCM_Banner_Path + '/external/v5/BCM_Ad_Styles.css';
+                                                            css.id = 'BCM_Light_Box_Styles';
+                                                            document.getElementsByTagName('head')[0].appendChild(css);
+                                                        }
+                                                        var bcm = document.getElementById('imagef07bfbbeb474880841cfd97437f3831b507feb6a-mv2'); 
+                                                        if(bcm !== null) { 
+                                                            bcm.removeAttribute('target'); 
+                                                            bcm.addEventListener('click', function(e) { 
+                                                                e.preventDefault(); 
+                                                                e.stopImmediatePropagation(); 
+                                                                beavercreekmarketinglightbox.returnFocusTo(bcm); 
+                                                                beavercreekmarketinglightbox.setURL(BCM_Banner_Path + '/external/v5/player.php?key=f07bfbbeb474880841cfd97437f3831b507feb6a&loop=' + BCM_Looping); 
+                                                                return false; 
+                                                                }, false); 
+                                                        } 
+                                                    };
+                                                    funcf07bfbbeb474880841cfd97437f3831b507feb6a(); 
+                                                })();
+                                            </script>
+                                        </div>
+                                    </div>
+                                    <div class="contentwrap">
+                                        <h3>Online Banking</h3>
+                                        <p>Click-Thu Demo</p>
+                                        <div class="ctablock">
+                                            <a href="#" class="textCta" aria-label="More About Online Banking">Learn More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="colblock">
+                                    <div class="embededwrap">
+                                        <div class="videowrap">
+                                                <!-- Edit The Link Here: -->
+                                    <a href="https://www.onlinebanktours.com/mobile/?b=8024&amp;c=105921&amp;playlist=Default" target="_blank" id="imagef07bfbbeb474880841cfd97437f3831b507feb6a-mv2" role="button">
+                                        <img src="https://cdn.oectours.com/media/cds/banks/8024/143708.png" alt="Online Banking">
+                                    </a>
+                                    <!-- Edit The Link Here: -->		<script type="text/javascript">
+                                                (function() { 
+                                                    var BCM_Banner_Path = window.location.protocol + '//www.onlinebanktours.com'; 
+                                                    BCM_Looping = true; 
+                                                    function funcf07bfbbeb474880841cfd97437f3831b507feb6a() {
+                                                        if(!document.getElementById('BCM_Light_Box_Script')) {
+                                                            var script = document.createElement('script');
+                                                            script.src = BCM_Banner_Path + '/external/v5/BCM_Light_Box.js'; 
+                                                            script.type = 'text/javascript';
+                                                            script.id = 'BCM_Light_Box_Script';
+                                                            document.getElementsByTagName('head')[0].appendChild(script);
+                                                        }
+                                                        if(!document.getElementById('BCM_Light_Box_Styles')) {
+                                                            var css = document.createElement('link');css.type = 'text/css';
+                                                            css.rel = 'stylesheet';css.href = BCM_Banner_Path + '/external/v5/BCM_Ad_Styles.css';
+                                                            css.id = 'BCM_Light_Box_Styles';
+                                                            document.getElementsByTagName('head')[0].appendChild(css);
+                                                        }
+                                                        var bcm = document.getElementById('imagef07bfbbeb474880841cfd97437f3831b507feb6a-mv2'); 
+                                                        if(bcm !== null) { 
+                                                            bcm.removeAttribute('target'); 
+                                                            bcm.addEventListener('click', function(e) { 
+                                                                e.preventDefault(); 
+                                                                e.stopImmediatePropagation(); 
+                                                                beavercreekmarketinglightbox.returnFocusTo(bcm); 
+                                                                beavercreekmarketinglightbox.setURL(BCM_Banner_Path + '/external/v5/player.php?key=f07bfbbeb474880841cfd97437f3831b507feb6a&loop=' + BCM_Looping); 
+                                                                return false; 
+                                                                }, false); 
+                                                        } 
+                                                    };
+                                                    funcf07bfbbeb474880841cfd97437f3831b507feb6a(); 
+                                                })();
+                                            </script>
+                                        </div>
+                                    </div>
+                                    <div class="contentwrap">
+                                        <h3>Online Banking</h3>
+                                        <p>Click-Thu Demo</p>
+                                        <div class="ctablock">
+                                            <a href="#" class="textCta" aria-label="More About Online Banking">Learn More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flexBox-pagination">
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </div>
+        </div>    
+</div>
+
+
+<div class="bankingvideosliderpanel gap module">
+    <div class="grid-container">
+        <h2>Business Banking</h2>
+        <div class="bankingvideoslidersection">
+            <div class="flexBox">
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+            <div class="bankingvideosliderswiperpanel">
+                <div class="swiper bankingVideoSlider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="colblock">
+                                <div class="embededwrap">
+                                    <div class="videowrap">
+                                            <!-- Edit The Link Here: -->
+                                <a href="https://www.onlinebanktours.com/mobile/?b=8024&amp;c=105921&amp;playlist=Default" target="_blank" id="imagef07bfbbeb474880841cfd97437f3831b507feb6a-mv3" role="button">
+                                    <img src="https://cdn.oectours.com/media/cds/banks/8024/143708.png" alt="Online Banking">
+                                </a>
+                                <!-- Edit The Link Here: -->		<script type="text/javascript">
+                                            (function() { 
+                                                var BCM_Banner_Path = window.location.protocol + '//www.onlinebanktours.com'; 
+                                                BCM_Looping = true; 
+                                                function funcf07bfbbeb474880841cfd97437f3831b507feb6a() {
+                                                    if(!document.getElementById('BCM_Light_Box_Script')) {
+                                                        var script = document.createElement('script');
+                                                        script.src = BCM_Banner_Path + '/external/v5/BCM_Light_Box.js'; 
+                                                        script.type = 'text/javascript';
+                                                        script.id = 'BCM_Light_Box_Script';
+                                                        document.getElementsByTagName('head')[0].appendChild(script);
+                                                    }
+                                                    if(!document.getElementById('BCM_Light_Box_Styles')) {
+                                                        var css = document.createElement('link');css.type = 'text/css';
+                                                        css.rel = 'stylesheet';css.href = BCM_Banner_Path + '/external/v5/BCM_Ad_Styles.css';
+                                                        css.id = 'BCM_Light_Box_Styles';
+                                                        document.getElementsByTagName('head')[0].appendChild(css);
+                                                    }
+                                                    var bcm = document.getElementById('imagef07bfbbeb474880841cfd97437f3831b507feb6a-mv3'); 
+                                                    if(bcm !== null) { 
+                                                        bcm.removeAttribute('target'); 
+                                                        bcm.addEventListener('click', function(e) { 
+                                                            e.preventDefault(); 
+                                                            e.stopImmediatePropagation(); 
+                                                            beavercreekmarketinglightbox.returnFocusTo(bcm); 
+                                                            beavercreekmarketinglightbox.setURL(BCM_Banner_Path + '/external/v5/player.php?key=f07bfbbeb474880841cfd97437f3831b507feb6a&loop=' + BCM_Looping); 
+                                                            return false; 
+                                                            }, false); 
+                                                    } 
+                                                };
+                                                funcf07bfbbeb474880841cfd97437f3831b507feb6a(); 
+                                            })();
+                                        </script>
+                                    </div>
+                                </div>
+                                <div class="contentwrap">
+                                    <h3>Online Banking</h3>
+                                    <p>Click-Thu Demo</p>
+                                    <div class="ctablock">
+                                        <a href="#" class="textCta" aria-label="More About Online Banking">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="colblock">
+                                <div class="embededwrap">
+                                    <div class="videowrap">
+                                            <!-- Edit The Link Here: -->
+                                <a href="https://www.onlinebanktours.com/mobile/?b=8024&amp;c=105921&amp;playlist=Default" target="_blank" id="imagef07bfbbeb474880841cfd97437f3831b507feb6a-mv4" role="button">
+                                    <img src="https://cdn.oectours.com/media/cds/banks/8024/143708.png" alt="Online Banking">
+                                </a>
+                                <!-- Edit The Link Here: -->		<script type="text/javascript">
+                                            (function() { 
+                                                var BCM_Banner_Path = window.location.protocol + '//www.onlinebanktours.com'; 
+                                                BCM_Looping = true; 
+                                                function funcf07bfbbeb474880841cfd97437f3831b507feb6a() {
+                                                    if(!document.getElementById('BCM_Light_Box_Script')) {
+                                                        var script = document.createElement('script');
+                                                        script.src = BCM_Banner_Path + '/external/v5/BCM_Light_Box.js'; 
+                                                        script.type = 'text/javascript';
+                                                        script.id = 'BCM_Light_Box_Script';
+                                                        document.getElementsByTagName('head')[0].appendChild(script);
+                                                    }
+                                                    if(!document.getElementById('BCM_Light_Box_Styles')) {
+                                                        var css = document.createElement('link');css.type = 'text/css';
+                                                        css.rel = 'stylesheet';css.href = BCM_Banner_Path + '/external/v5/BCM_Ad_Styles.css';
+                                                        css.id = 'BCM_Light_Box_Styles';
+                                                        document.getElementsByTagName('head')[0].appendChild(css);
+                                                    }
+                                                    var bcm = document.getElementById('imagef07bfbbeb474880841cfd97437f3831b507feb6a-mv4'); 
+                                                    if(bcm !== null) { 
+                                                        bcm.removeAttribute('target'); 
+                                                        bcm.addEventListener('click', function(e) { 
+                                                            e.preventDefault(); 
+                                                            e.stopImmediatePropagation(); 
+                                                            beavercreekmarketinglightbox.returnFocusTo(bcm); 
+                                                            beavercreekmarketinglightbox.setURL(BCM_Banner_Path + '/external/v5/player.php?key=f07bfbbeb474880841cfd97437f3831b507feb6a&loop=' + BCM_Looping); 
+                                                            return false; 
+                                                            }, false); 
+                                                    } 
+                                                };
+                                                funcf07bfbbeb474880841cfd97437f3831b507feb6a(); 
+                                            })();
+                                        </script>
+                                    </div>
+                                </div>
+                                <div class="contentwrap">
+                                    <h3>Online Banking</h3>
+                                    <p>Click-Thu Demo</p>
+                                    <div class="ctablock">
+                                        <a href="#" class="textCta" aria-label="More About Online Banking">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flexBox-pagination">
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </div>    
+</div>
+
+<div class="bankingvideosliderpanel gap module">
+    <div class="grid-container">
+        <h2>Security</h2>
+        <div class="bankingvideoslidersection">
+            <div class="flexBox">
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+            <div class="bankingvideosliderswiperpanel">
+                <div class="swiper bankingVideoSlider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="colblock">
+                                <div class="embededwrap">
+                                    <div class="videowrap">
+                                            <!-- Edit The Link Here: -->
+                                <a href="https://www.onlinebanktours.com/mobile/?b=8024&amp;c=105921&amp;playlist=Default" target="_blank" id="imagef07bfbbeb474880841cfd97437f3831b507feb6a-mv5" role="button">
+                                    <img src="https://cdn.oectours.com/media/cds/banks/8024/143708.png" alt="Online Banking">
+                                </a>
+                                <!-- Edit The Link Here: -->		<script type="text/javascript">
+                                            (function() { 
+                                                var BCM_Banner_Path = window.location.protocol + '//www.onlinebanktours.com'; 
+                                                BCM_Looping = true; 
+                                                function funcf07bfbbeb474880841cfd97437f3831b507feb6a() {
+                                                    if(!document.getElementById('BCM_Light_Box_Script')) {
+                                                        var script = document.createElement('script');
+                                                        script.src = BCM_Banner_Path + '/external/v5/BCM_Light_Box.js'; 
+                                                        script.type = 'text/javascript';
+                                                        script.id = 'BCM_Light_Box_Script';
+                                                        document.getElementsByTagName('head')[0].appendChild(script);
+                                                    }
+                                                    if(!document.getElementById('BCM_Light_Box_Styles')) {
+                                                        var css = document.createElement('link');css.type = 'text/css';
+                                                        css.rel = 'stylesheet';css.href = BCM_Banner_Path + '/external/v5/BCM_Ad_Styles.css';
+                                                        css.id = 'BCM_Light_Box_Styles';
+                                                        document.getElementsByTagName('head')[0].appendChild(css);
+                                                    }
+                                                    var bcm = document.getElementById('imagef07bfbbeb474880841cfd97437f3831b507feb6a-mv5'); 
+                                                    if(bcm !== null) { 
+                                                        bcm.removeAttribute('target'); 
+                                                        bcm.addEventListener('click', function(e) { 
+                                                            e.preventDefault(); 
+                                                            e.stopImmediatePropagation(); 
+                                                            beavercreekmarketinglightbox.returnFocusTo(bcm); 
+                                                            beavercreekmarketinglightbox.setURL(BCM_Banner_Path + '/external/v5/player.php?key=f07bfbbeb474880841cfd97437f3831b507feb6a&loop=' + BCM_Looping); 
+                                                            return false; 
+                                                            }, false); 
+                                                    } 
+                                                };
+                                                funcf07bfbbeb474880841cfd97437f3831b507feb6a(); 
+                                            })();
+                                        </script>
+                                    </div>
+                                </div>
+                                <div class="contentwrap">
+                                    <h3>Online Banking</h3>
+                                    <p>Click-Thu Demo</p>
+                                    <div class="ctablock">
+                                        <a href="#" class="textCta" aria-label="More About Online Banking">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="colblock">
+                                <div class="embededwrap">
+                                    <div class="videowrap">
+                                            <!-- Edit The Link Here: -->
+                                <a href="https://www.onlinebanktours.com/mobile/?b=8024&amp;c=105921&amp;playlist=Default" target="_blank" id="imagef07bfbbeb474880841cfd97437f3831b507feb6a-mv6" role="button">
+                                    <img src="https://cdn.oectours.com/media/cds/banks/8024/143708.png" alt="Online Banking">
+                                </a>
+                                <!-- Edit The Link Here: -->		<script type="text/javascript">
+                                            (function() { 
+                                                var BCM_Banner_Path = window.location.protocol + '//www.onlinebanktours.com'; 
+                                                BCM_Looping = true; 
+                                                function funcf07bfbbeb474880841cfd97437f3831b507feb6a() {
+                                                    if(!document.getElementById('BCM_Light_Box_Script')) {
+                                                        var script = document.createElement('script');
+                                                        script.src = BCM_Banner_Path + '/external/v5/BCM_Light_Box.js'; 
+                                                        script.type = 'text/javascript';
+                                                        script.id = 'BCM_Light_Box_Script';
+                                                        document.getElementsByTagName('head')[0].appendChild(script);
+                                                    }
+                                                    if(!document.getElementById('BCM_Light_Box_Styles')) {
+                                                        var css = document.createElement('link');css.type = 'text/css';
+                                                        css.rel = 'stylesheet';css.href = BCM_Banner_Path + '/external/v5/BCM_Ad_Styles.css';
+                                                        css.id = 'BCM_Light_Box_Styles';
+                                                        document.getElementsByTagName('head')[0].appendChild(css);
+                                                    }
+                                                    var bcm = document.getElementById('imagef07bfbbeb474880841cfd97437f3831b507feb6a-mv6'); 
+                                                    if(bcm !== null) { 
+                                                        bcm.removeAttribute('target'); 
+                                                        bcm.addEventListener('click', function(e) { 
+                                                            e.preventDefault(); 
+                                                            e.stopImmediatePropagation(); 
+                                                            beavercreekmarketinglightbox.returnFocusTo(bcm); 
+                                                            beavercreekmarketinglightbox.setURL(BCM_Banner_Path + '/external/v5/player.php?key=f07bfbbeb474880841cfd97437f3831b507feb6a&loop=' + BCM_Looping); 
+                                                            return false; 
+                                                            }, false); 
+                                                    } 
+                                                };
+                                                funcf07bfbbeb474880841cfd97437f3831b507feb6a(); 
+                                            })();
+                                        </script>
+                                    </div>
+                                </div>
+                                <div class="contentwrap">
+                                    <h3>Online Banking</h3>
+                                    <p>Click-Thu Demo</p>
+                                    <div class="ctablock">
+                                        <a href="#" class="textCta" aria-label="More About Online Banking">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flexBox-pagination">
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </div>    
+</div>
+
+<link rel="stylesheet" href="{{root}}assets/css/finacialresourcepanel/finacialresourcepanel.css" media="all">
+
+<div class="finacialresourcepanel gap module">
+    <div class="grid-container">
+        <div class="text-center">
+            <h2>Additional Resources</h2>
+        </div>
+        <div class="innerwrap noheadwrap"> <!---without h3 add this class---->
+            <h3>About</h3>
+            <div class="flexwrap">
+                <div class="ctablock">
+                    <a href="#"  class="defaultBtn light" aria-label="Curriculum">Curriculum</a>
+                </div>
+                <div class="ctablock">
+                    <a href="#"  class="defaultBtn light" aria-label="Banzai Video">Banzai Video</a>
+                </div>
+                <div class="ctablock">
+                    <a href="#"  class="defaultBtn light" aria-label="Banzai Support Page">Banzai Support Page</a>
+                </div>
+                <div class="ctablock">
+                    <a href="#"  class="defaultBtn light" aria-label="Demo Wellness Center">Demo Wellness Center</a>
+                </div>
+            </div>
+        </div>
+        <div class="innerwrap">
+            <h3>For Teachers</h3>
+            <div class="flexwrap">
+                <div class="ctablock">
+                    <a href="#"  class="defaultBtn light" aria-label="Teacher Demo">Teacher Demo</a>
+                </div>
+                <div class="ctablock">
+                    <a href="#"  class="defaultBtn light" aria-label="Getting Started Video">Getting Started Video</a>
+                </div>
+                <div class="ctablock">
+                    <a href="#"  class="defaultBtn light" aria-label="Teacher Guide PDF">Teacher Guide PDF</a>
+                </div>
+            </div>
+        </div>
+        <div class="innerwrap">
+            <h3>Personal Finance</h3>
+            <div class="flexwrap">
+                <div class="ctablock">
+                    <a href="#"  class="defaultBtn light" aria-label="Teacher Demo">Elementary School</a>
+                </div>
+                <div class="ctablock">
+                    <a href="#"  class="defaultBtn light" aria-label="Getting Started Video">Middle School</a>
+                </div>
+                <div class="ctablock">
+                    <a href="#"  class="defaultBtn light" aria-label="Teacher Guide PDF">High School</a>
+                </div>
+            </div>
+        </div>
+        <div class="innerwrap">
+            <h3>Course Rundowns</h3>
+            <div class="flexwrap">
+                <div class="ctablock">
+                    <a href="#"  class="defaultBtn light" aria-label="Teacher Demo">High School</a>
+                </div>
+                <div class="ctablock">
+                    <a href="#"  class="defaultBtn light" aria-label="Getting Started Video">College & Careers</a>
+                </div>
+                <div class="ctablock">
+                    <a href="#"  class="defaultBtn light" aria-label="Teacher Guide PDF">Digital Citizenship</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

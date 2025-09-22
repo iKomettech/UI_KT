@@ -1,0 +1,359 @@
+@import "util/util";
+
+$white: var(--fcb-white);
+$primary-color: var(--fcb-primary);
+$secondary-color: var (--fcb-whitef7);
+$img: "../../images/";
+
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+.headingpanel{
+    background: $white;
+    padding-bottom: 80px;
+    .locationtitle{
+        h1{
+            font-size: clamp(40px, calc(40px + (50 - 40) * ((100vw - 23.4375rem) / (1440 - 375))), 50px);
+            line-height: 92%;
+            color:$primary-color;
+            font-weight: 800;
+            padding-top: 27px;
+            margin-bottom: 0;
+            text-transform: uppercase;
+            @include breakpoint(small only){
+                padding-top: 30px;
+            }
+        }
+    }
+}
+.breadcrumbWrapBottom {
+    padding-top: 35px;
+    padding-bottom: 15px;
+    position: relative;
+    z-index: 9;
+  }
+  .ourteampanel{
+    @include breakpoint(small only){
+        margin-bottom: -26px;
+    }
+    @include breakpoint(medium only){
+        margin-bottom: 0;
+    }
+    .grid-container{
+        &.mobileborder{
+            position: relative;
+            @include breakpoint(small only){
+                padding-right: 0;
+                padding-left: 0;
+            }
+            @include breakpoint(medium only){
+                padding-right: 0;
+                padding-left: 0;
+            }
+            &::before{
+                content: '';
+                width: 100%;
+                height: 2px;
+                background: $primary-color;
+                position: absolute;
+                left: 0;
+                top:37px;
+                display: block;
+                @include breakpoint(large){
+                    display: none;
+                }
+            }
+        }
+        .tabphorizonpanel{
+            display: none;
+            @include breakpoint(large) {
+                display: block;
+            }
+            .tabHorizontal {
+                width: 100%;
+                margin: 0 auto;
+                .tab-links {
+                    list-style: none;
+                    position: relative;
+                    display: inline-flex;
+                    font-weight: 700;
+                    font-size: 20px;
+                    align-items: center;
+                    width: 100%;
+                    top:-45px;
+                    &::after{
+                        content: '';
+                        width: 100%;
+                        height: 2px;
+                        background: $primary-color;
+                        position: absolute;
+                        bottom: 0%;
+                    }
+                    &.tablinks-more{
+                        flex-wrap: wrap;
+                        border-bottom: none;
+                        position: relative;
+                        &::after{
+                            bottom: 97px;
+                        }
+                        li{
+                            width: calc(20% - 9.8px);
+                            &:nth-child(5n+5), &:last-child{
+                                margin-right: 0;
+                            }
+                            &:nth-child(n+6){
+                                transform: rotate(180deg);
+                                span{
+                                    transform: rotate(180deg);
+                                }
+                            }
+                        }
+                    }
+                    li{
+                        cursor: pointer;
+                        position: relative;
+                        color: $primary-color;
+                        text-align: center;
+                        font-weight: 700;
+                        font-size: calc(clamp(1rem, 1.389vw + 0.111rem, 1.5rem));
+                        line-height: 100%;
+                        padding-bottom: 0;
+                        margin-bottom: 0;
+                        padding-left: 0;
+                        display: flex;
+                        align-items: center;
+                        width: 100%;
+                        justify-content: center;
+                        transition: all 0.4s;
+                        background: linear-gradient(0deg, #FFFFFF -13.27%, #DCDCDC 100%);
+                        transform: rotate(0deg);
+                        background-size: 100% 200%;
+                        border-radius: 26px 26px 0px 0px;
+                        min-height: 97px;
+                        margin-right: calc(clamp(0.375rem, 1.442vw - 0.548rem, 0.75rem));
+                        &:last-child{
+                            margin-right: 0;
+                        }
+                        &:before{
+                            content: '';
+                            position: absolute;
+                            top: 0%;
+                            left: 0;
+                            width: 100%;
+                            height: 0;
+                            background: linear-gradient(0deg, #BF3149 0%, #68101F 100%);
+                            transition:all 0.3s linear;
+                            border-radius: 26px 26px 0px 0px;
+                            z-index: -1;
+                            display: block;
+                        }
+                        span{
+                            transform: rotate(0deg);
+                            padding: 0 calc(clamp(0.5rem, 1.683vw - 0.577rem, 0.938rem));
+                        }
+                        &.active, &:hover {
+                            color: #FFFFFF;
+                            &:before{
+                                bottom: 0;
+                                height: 100%;
+                            }
+                        }
+                    }
+                }
+                .tab-content-section {
+                    margin-top: 20px;
+                    .tab-pane-content {
+                        display: none;
+                        position: relative;
+                        h2{
+                            text-align: center;
+                        }
+                    }
+                    .tab-pane-content.active {
+                        display: block;
+                    }   
+                }     
+            }
+        }
+        .flexwrap{
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 40px;
+            gap: 20px;
+            @include breakpoint(small only){
+                justify-content: center;
+            }
+            .colblock{
+                width: 100%;
+                background: #FFFFFF;
+                background-blend-mode: multiply;
+                mix-blend-mode: normal;
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+                border-radius: 15px;
+                position: relative;
+                max-width: 100%;
+                @media (min-width: 580px) and (max-width: 767px){
+                    max-width: 48%;
+                }
+                @include breakpoint(medium){
+                    max-width: 48%;
+                }
+                @include breakpoint(large){
+                    max-width: 31.9%;
+                }
+                @include breakpoint(llarge){
+                    max-width: 23.78%;
+                }
+                @include breakpoint(xxlarge){
+                    max-width: 23.88%;
+                }
+                &:hover{
+                    .imgwrap{
+                        img{
+                            transform: scale(1.02);
+                        }
+                    }
+                }
+                .readbiolink{
+                    display: block;
+                    padding: 12px;
+                    @include breakpoint(large){
+                        padding: 15px;
+                    }
+                    &:hover{
+                        text-decoration: none;
+                        color: #2D2D2D;
+                    }
+                }
+                .imgwrap{
+                    width: 100%;
+                    max-width: 100%;
+                    margin-left: auto;
+                    margin-right: auto;
+                    border-radius: 15px;
+                    overflow: hidden;
+                    img{
+                        object-fit: cover;
+                        width: 100%;
+                        height: 100%;
+                        transition: all 0.75s;
+                    }
+                }
+                .contentwrap{
+                    margin-top: 20px;
+                    padding-bottom: 44px;
+                    h3{
+                        font-size: calc(clamp(1.25rem, 0.962vw + 0.635rem, 1.5rem));
+                        line-height: 100%;
+                        font-weight: 700;
+                        color: $primary-color;
+                        margin-bottom: 18px;
+                    }
+                    p{
+                        font-size: 16px;
+                        line-height: 22px;
+                        color: #2D2D2D;
+                        font-weight: 500;
+                        margin-bottom: 0;
+                        @include breakpoint(large){
+                            font-size: calc(clamp(1rem, 0.481vw + 0.692rem, 1.125rem)); 
+                        }
+                        a{
+                            text-decoration: none;
+                            &:hover{
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                    .biocta{
+                        bottom: 20px;
+                        position: absolute;
+                        width: 100%;
+                        left: 15px;
+                        .textCta {
+                            font-size: 18px;
+                        }
+                    }
+                }
+            }
+        }
+        .teamSectionMobile{
+            position: relative;
+            top: -50px;
+            display: block;
+            @include breakpoint(medium only){
+                max-width: 768px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            @include breakpoint(large){
+                display: none;
+            }
+            .titleblock{
+                        position: relative;
+                        text-align: center;
+                        display: flex;
+                        align-items: center;
+                        width: 100%;
+                        justify-content: center;
+                        background: linear-gradient(0deg, #BF3149 0%, #68101F 100%);
+                        transform: rotate(0deg);
+                        border-radius: 26px 26px 0px 0px;
+                        min-height: 87px;
+                    p{
+                    
+                            color: $white;
+                            font-size: 20px;
+                            line-height: 24px;
+                            font-weight: 700;
+                            margin-bottom: 0;
+                            max-width: 217px;
+                    }
+            }
+            .navblock {
+                .swiper-button-prev,
+                .swiper-button-next {
+                    &::after {
+                        background: url("#{$img}/settings/arrow-backward-white.svg") no-repeat center;
+                        overflow: hidden;
+                        background-size: cover;
+                        width: 12px;
+                        height: 24px;
+                        font-size: 0;
+                    }
+                }
+                .swiper-button-next {
+                    &::after {
+                        background: url("#{$img}/settings/arrow-forward-white.svg") no-repeat center;
+                        background-size: cover;
+                    }
+                }
+            }
+            .swiper-card{
+                margin-left: 20px;
+                margin-right: 20px;
+                margin-bottom: 20px;
+                .contentblock{
+                    margin-top: 44px;
+                    .flexwrap{
+                        margin-top: 35px;
+                        .contentwrap{
+                            text-align: center;
+                            .biocta{
+                                left: 0;
+                                bottom: 12px;
+                            }
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+}

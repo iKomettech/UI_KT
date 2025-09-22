@@ -1,0 +1,324 @@
+<script type="text/javascript">
+    $(document).ready(function () {
+        function contentPadding() {
+            var logoLeft = $('.logoSection').offset().left;
+            $('.subbannerpanel .subbanner .bannerwrap .contentwrap .content').css({ 'margin-left': logoLeft });
+        }
+    
+        function heightLoad() {
+            if ($(window).width() >= 768 && $(window).width() <= 1024) {
+                if ($('.subbannerpanel .subbanner .contentwrap .content').height() <= 58) {
+                    $('.subbannerpanel .subbanner .contentwrap .content').css('padding-top', '35px');
+                } else {
+                    $('.subbannerpanel .subbanner .contentwrap .content').css('padding-top', '14px');
+                }
+            }
+        }
+    
+        contentPadding();
+         heightLoad();
+    
+        $(window).on("resize load", function () {
+            contentPadding();
+             heightLoad();
+        });
+    });
+    
+            function getNumberOfLines(selector) {
+    var el = $(selector)[0];  
+    
+    if (!el) {
+        console.warn("Element not found:", selector);
+        return 0;  
+    }
+    
+    var computedStyle = window.getComputedStyle(el);
+    var lineHeight = parseFloat(computedStyle.lineHeight);
+    var scrollHeight = el.scrollHeight;
+    
+    console.log("Checking element:", el);
+    console.log("Line Height:", lineHeight);
+    console.log("Scroll Height:", scrollHeight);
+    
+    if (!lineHeight || isNaN(lineHeight)) {
+        console.error("Invalid line-height for", selector);
+        return 0;
+    }
+    
+    var lines = Math.round(scrollHeight / lineHeight);
+    console.log("Number of lines:", lines);
+    
+    return lines;
+    }
+    $(window).on("load", function () {
+    var content = $('.subbannerpanel .subbanner .contentwrap .content');
+    
+    if (content.length === 0) {
+        console.error("Content element not found!");
+        return;
+    }
+    
+    var h1Lines = content.find('h1').length ? getNumberOfLines(content.find('h1')) : 0;
+    var pLines = content.find('p').length ? getNumberOfLines(content.find('p').first()) : 0;
+    
+    console.log("H1 Lines:", h1Lines, "P Lines:", pLines);
+    
+    content.removeClass('oneLine twoLine oneLineP twoLineP');
+    
+    if (h1Lines === 1) {
+        content.addClass('oneLine');
+    } else if (h1Lines === 2) {
+        content.addClass('twoLine');
+    }
+    
+    if(pLines === 1){
+        content.addClass('singleLineP');
+    }
+    if (pLines === 1 && h1Lines === 2) {
+        content.addClass('twoLineP');
+        content.removeClass('twoLine');
+        content.removeClass('singleLineP');
+    } else if (pLines === 1 && h1Lines === 1) {
+        content.addClass('oneLineP');
+        content.removeClass('oneLine');
+        content.removeClass('singleLineP');
+    }
+    
+     
+    });
+    </script>
+
+<style>
+    @media (min-width: 1024px) {
+        .subbannerpanel .subbanner .bannerwrap .contentwrap .content h1{
+            margin-left: -16px !important;
+        }
+    }
+    @media (min-width: 1300px) {
+        .subbannerpanel .subbanner .bannerwrap .contentwrap .content h1{
+            margin-left: -25px !important;
+        }
+    }
+    @media (min-width: 1600px) {
+        .subbannerpanel .subbanner .bannerwrap .contentwrap .content h1{
+            margin-left: -20px !important;
+        }
+    }
+</style>
+
+    <link rel="stylesheet" href="{{root}}assets/css/subbanner/subbanner.css" media="all">
+    <div class="subbannerpanel module">
+    <div class="grid-container-full">
+    <div class="subbanner">
+    <div class="temp1">
+        <div class="bannerwrap">
+            <div class="contentwrap">
+                <div class="content">
+                    <h1>Why <br> <strong>First Commerce Bank</strong></h1>
+                </div>
+            </div>
+            <div class="imgWrap">
+                <div class="filter-img">
+                    <img class="img" src="assets/images/aboutus.jpg" width="952" height="461"
+                        alt="Home Promotional">
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    
+    
+    <div class="breadcrumbWrapBottom module come-in " data-swiftype-index="false">
+    <div class="grid-container">
+    <ul class="breadcrumbs">
+    <li class="breadcrumb-item ">
+        <a href="/" aria-label="Home">Home</a>
+    </li>
+    <li class="breadcrumb-item ">About Us</li>
+    </ul>
+    </div>
+    </div>
+
+    <link rel="stylesheet" href="{{root}}assets/css/productimage/productimage.css" media="all">
+
+    <div class="alternative gap left  module">
+        <div class="grid-container">
+            <div class="flexwrap">
+                <div class="contentwrap">                        
+                    <div class="content">
+<h2>Our Story</h2>
+<h6><span style="color: #90182C;"><b>Banking Built for Community</b></span></h6>
+<p>First Commerce Bank started with a community-first mindset, focused on <b>serving and empowering local neighborhoods.</b> Our founders saw the importance of having a bank focused on people, small businesses, and communities—and that vision still guides us today. We shape every decision, investment, and service to <b>help you and our community thrive.</b></p>
+                    </div>
+                </div>
+                    <div class="imgWrap">
+                        <img class="lazy svg-border-mask" alt="Compare Business Checking" src="assets/images/product/product-image-1.jpg" width="607" height="350">
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <link rel="stylesheet" href="{{root}}assets/css/ourmissionpanel/ourmissionpanel.css" media="all">
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("p.hightlight").each(function () {
+                let text = $(this).text();
+                let firstLetter = text.charAt(0);
+                let remainingText = text.slice(1);
+                $(this).html(`<span class="left">${firstLetter}</span><span class="right">${remainingText}</span>`);
+            });
+        });
+    </script>
+    <div class="ourmissionpanel gap module">
+        <div class="panelPattern" style="background: url(assets/images/about/mission-arrow-pattern.svg) center bottom no-repeat;"> </div>
+        <div class="panelCenterPattern" style="background: url(assets/images/about/mission-center-pattern.svg) center top no-repeat;"></div>
+        <div class="grid-container">
+            <div class="innerwrap">
+                <div class="flexwrap left">
+                    <div class="leftwrap">
+                        <h2>Our <br> <strong>Vision</strong> </h2>
+                    </div>
+                    <div class="rightwrap">
+                        <p>To help businesses and <br> communities prosper.</p>
+                    </div>
+                </div>
+                <div class="flexwrap right">
+                    <div class="leftwrap">
+                        <h2>Our <br> <strong>Mission</strong></h2>
+                    </div>
+                    <div class="rightwrap">
+                        <p>First Commerce is dedicated to relationships, providing people, businesses, and communities in our markets with high-quality products and services and superior customer service. We will deliver these through secure, user-friendly, and cutting-edge technology, ensuring our offerings are competitive. Our customer-friendly locations and innovative solutions are designed to meet the evolving needs of our customers. Our relationships are founded on our desire to be responsive to the financial needs of our customers in an atmosphere of personal attention, professionalism, trust, integrity, and fairness. First Commerce prides itself on maintaining personal communication, beginning with the Board of Directors.
+                        </p>
+                    </div>
+                </div>
+                <div class="flexwrap left">
+                    <div class="leftwrap">
+                        <h2>Our <br> <strong>Values</strong> </h2>
+                    </div>
+                    <div class="rightwrap">
+                        <p class="hightlight">Foster Relationships - Building Trust &amp; Loyalty</p>
+                        <p class="hightlight">Improve &amp; Grow - Taking Pride in Your Work</p>
+                        <p class="hightlight">Respond in a Professional &amp; Prompt Manner</p>
+                        <p class="hightlight">Stay Accountable &amp; Work Collaboratively</p>
+                        <p class="hightlight">Think Like Our Customers</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+<link rel="stylesheet" href="{{root}}assets/css/fivstarservicepanel/fivstarservicepanel.css" media="all">
+
+<div class="fivstarservicepanel module gap">
+    <div class="grid-container">
+        <div class="head-center">
+            <h2>Five Star Service Standards</h2>
+            <h3>First Commerce Bank, our Five-Star Service Standards define how we serve you every day:</h3>
+        </div>
+        <div class="flexwrap">
+            <div class="leftwrap">
+                <div class="colblock">
+                    <h4 style="color: #8F8F8F;"><span class="number">1.</span><span style="color: #8F8F8F">Friendly</span></h4>
+                    <p>We greet our Customers with a warm and welcoming energy. Our Customers feel comfortable speaking to us and are uplifted after each interaction — they feel like friends and look forward to seeing us again.</p>
+                </div>
+                <div class="colblock">
+                    <h4 style="color: #079BB0;"><span class="number">2.</span><span style="color: #079BB0">Fast & Accurate</span></h4>
+                    <p>We have an eye for details and are efficient. We are mindful of completing tasks at a brisk pace, yet we don’t compromise the quality of our work. We  masterfully balance speed and precision.</p>
+                </div>
+                <div class="colblock">
+                    <h4 style="color: #BC7802;"><span class="number">3.</span><span style="color: #BC7802">Find Solutions</span></h4>
+                    <p>We are eager to understand the problem. We consider many options, choose the best solution and ask for  help when needed.</p>
+                </div>
+            </div>
+            <div class="middlewrap">
+                <div class="imgwrap">
+                    <img class="lazy layzeloading" data-src="{{root}}assets/images/about/starpanel.svg" width="480" height="471" alt="Star Panel">
+                </div>
+            </div>
+            <div class="rightwrap">
+                <div class="colblock">
+                    <h4 style="color: #14801C;"><span class="number">4.</span><span style="color: #14801C">Follow-Through</span></h4>
+                    <p>We take ownership of tasks — completing all the necessary steps while collaborating with colleagues. We stay in communication with our Customers until the situation is resolved.</p>
+                </div>
+                <div class="colblock">
+                    <h4 style="color: #757575;"><span class="number">5.</span><span style="color: #757575">Fun!</span></h4>
+                    <p>We do fun things. We delight in making our  Customers smile and laugh — creating a lighthearted environment, both within our bank, and within the communities we serve.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<link rel="stylesheet" href="{{root}}assets/css/ourcommitmentpanel/ourcommitmentpanel.css" media="all">
+<div class="ourcommitmentpanel module gap">
+    <div class="topPattern" style="background: url(assets/images/about/commitment-top-pattern.svg) top right no-repeat;"> </div>
+    <div class="bottomPattern" style="background: url(assets/images/about/commitment-bottom-pattern.svg) top left no-repeat;"> </div>
+    <div class="grid-container">
+        <div class="flexwrap right">
+            <div class="contentwrap">                        
+                <div class="content">
+                    <h2>Our Commitment to You</h2>
+                    <p>At First Commerce Bank, your experience matters most. Every customer is partnered with <b>a dedicated relationship manager</b> —a reliable team member who understands your objectives and offers personalized support.</p>
+                    <p> Whether you need customized lending solutions, assistance with cash flow management, or strategic advice to expand your business, we're here to simplify and enhance your banking experience. Whether in-person, over the phone, or online, you can expect exceptional creativity, responsiveness, and unwavering support.
+                    </p>
+                </div>
+            </div>
+            <div class="imgWrap">
+                <img class="lazy svg-border-mask" alt="Compare Business Checking" src="{{root}}assets/images/about/commitment-1.jpg" width="720" height="415">
+            </div>
+        </div>
+        <div class="flexwrap left">
+            <div class="contentwrap">                        
+                <div class="content">
+                    <h2>How We Reinvest Locally</h2>
+                    <p>As members of this community, we prioritize its well-being. By offering loans, sponsorships, and forming local partnerships, we ensure <b>your deposits fuel growth, generate employment, and support local businesses.</b> When you bank with us, you help create a vibrant local economy that benefits all.</p>
+                    <div class="ctablock">
+                        <a href="#" class="defaultBtn" aria-label="See How"> See How </a>
+                    </div>
+                </div>
+            </div>
+            <div class="imgWrap">
+                <img class="lazy svg-border-mask" alt="Compare Business Checking" src="{{root}}assets/images/about/commitment-2.jpg" width="720" height="415">
+            </div>
+        </div>
+    </div>
+</div>
+
+<link rel="stylesheet" href="{{root}}assets/css/bankingdrivenpanel/bankingdrivenpanel.css" media="all">
+
+<div class="bankingdrivenpanel module gap">
+    <div class="grid-container">
+        <div class="innerwrap">
+            <div class="flexwrap">
+                <div class="contentwrap">
+                    <h2>Banking Driven by People</h2>
+                    <p>At the heart of our success is our incredible team. We thrive on <b>a culture that's positive, fun, and dedicated to exceptional service.</b> This unique environment sets us apart as we collaborate and support our customers. If you value relationship-driven service and want to join a bank that genuinely invests in its people, we’d love to connect with you. </p>
+                    <div class="ctablock">
+                        <a href="#" class="defaultBtn" aria-label="Join Our Team">Join Our Team</a>
+                    </div>
+                </div>
+                <div class="imgwrap">
+                    <img class="lazy layzeloading" data-src="{{root}}assets/images/about/banking-driven.jpg" width="609" height="343" alt="NJBIA">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<link rel="stylesheet" href="{{root}}assets/css/bankingtextpanel/bankingtextpanel.css" media="all">
+
+<div class="bankingtextpanel module gap">
+    <div class="grid-container">
+        <div class="contentwrap">
+            <h2>Banks Near You</h2>
+            <p>Find a community bank location near you, with bank locations in Ocean County, Bergen County, Mercer County, Monmouth County, and Burlington County.</p>
+            <div class="ctablock">
+                <a href="#" class="primaryCta dark" aria-label="Find a Branch">
+                    <span>Find a Branch</span>
+                    <span class="iconprops"><i></i></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

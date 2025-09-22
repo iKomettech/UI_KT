@@ -1,0 +1,191 @@
+@import "util/util";
+$white: #ffffff;
+$black: #000000;
+$primary-color: #90182C;
+$secondary-color: #19A7C1;
+$img: "../../images/";
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    xslarge:1240,
+    xlarge: 1360px,
+    xxlarge: 1400px,
+    xxxlarge: 1660px,
+);
+
+
+
+.twoColumnvideo {
+    .cloning {
+        @include breakpoint(medium) {
+            display: none;
+        }
+
+        margin-bottom: 20px;
+    }
+
+    .flexBox {
+        display: flex;
+        flex-direction: column-reverse;
+        row-gap: 25px;
+
+        @include breakpoint(medium) {
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .videoContent {
+            @include breakpoint(medium) {
+                width: 70%;
+                padding-right: clamp(12px, calc(12px + (35 - 12) * ((100vw - 768px) / (1440 - 768))), 35px);
+            }
+            @include breakpoint(xslarge){width: 59%;}
+
+            .insideContent {
+                max-width: 772px;
+
+                @include breakpoint(large) {
+                    margin-top: clamp(18px, calc(18px + (50 - 18) * ((100vw - 1024px) / (1440 - 1024))), 50px);
+
+                }
+
+                h2 {
+
+
+
+                    +h3 {
+                        margin-top: 16px;
+                        margin-bottom: 0;
+                        font-size: clamp(20px, calc(20px + (24 - 20) * ((100vw - 23.4375rem) / (1440 - 375))), 24px);
+
+                        +p {
+                            margin-top: 0px;
+
+                            @include breakpoint(small only) {
+                                margin-top: 17px;
+                            }
+                        }
+                    }
+                }
+
+                h2 {
+                    display: none;
+                    font-weight: 500;
+
+                    @include breakpoint(medium) {
+                        display: block;
+                    }
+                }
+            }
+
+            p {
+                line-height: 140%;
+            }
+        }
+
+        .videoCliping {
+            text-align: center;
+
+            @include breakpoint(medium) {
+                width: 24%;
+                margin-left: 2%;
+            }
+
+            @include breakpoint(xslarge) {
+                width: 41%;
+            }
+
+            .insight-img {
+                position: relative;
+                max-width: 383px;
+                margin: 0 auto;
+                background: url('#{$img}/mobile-frame.png') no-repeat;
+                background-size: contain;
+                overflow: hidden;
+                z-index: 99;
+                @include breakpoint(small only) {
+                    max-width: 245px;
+                    margin: 0 auto;
+                }
+                @include breakpoint(medium only) {
+                    background-size: cover;
+                }
+                .insideVideo {
+                    max-width: 332px;
+                    margin: 10px 14px;
+                    overflow: hidden;
+                    @include breakpoint(medium) {
+                        margin-inline: clamp(8px, calc(8px + (20 - 8) * ((100vw - 768px) / (1440 - 768))), 20px);
+                        margin-block: clamp(4px, calc(4px + (10 - 4) * ((100vw - 768px) / (1440 - 768))), 10px); 
+                    }
+
+                    // @include breakpoint(large) {
+                    //     margin-block: 13px;
+                    //     margin-inline: 16px;
+                    // }
+                    // @include breakpoint(xslarge) {
+                    //     margin-block: 10px;
+                    //     margin-inline: 20px;
+                    // }
+
+                    figure {
+                        overflow: hidden;
+                        border-radius: 25px;
+                        position: relative;
+
+                        @include breakpoint(medium) {
+                            border-radius: clamp(20px, calc(20px + (40 - 20) * ((100vw - 768px) / (1440 - 768))), 40px);
+                        }
+                        // @include breakpoint(large) {
+                        //     border-radius: 25px;
+                        // }
+                        // @include breakpoint(xslarge) {
+                        //     border-radius: 35px;
+                        // }
+                    }
+
+                    .video-thumb-image {
+                        &::before{
+                            background-image: unset;
+                        }
+                        &.loading{
+                            &::before{
+                                width: 55px;
+                                height: 55px;
+                                margin: -26px 0 0 -26px;
+                                display: none;
+                            }
+                        }
+                        &.loaded {
+                            overflow: hidden;
+                            position: relative;
+                            z-index: 9;
+                            border-radius: 25px;
+                            @include breakpoint(medium) {
+                                border-radius: clamp(20px, calc(20px + (40 - 20) * ((100vw - 768px) / (1440 - 768))), 40px);
+                            }
+                            // @include breakpoint(large) {
+                            //     border-radius: 25px;
+                            // }
+                            // @include breakpoint(xslarge) {
+                            //     border-radius: 35px;
+                            // }
+
+                            iframe {
+                                overflow: hidden;
+                                scale: 1.25;
+                            }
+                        }
+
+                        &::before {
+                            width: 75px;
+                            height: 75px;
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,112 @@
+@import "util/util";
+
+$white: var(--fcb-white);
+$primary-color: var(--fcb-primary);
+$secondary-color: var (--fcb-whitef7);
+$img: "../../images/";
+
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+.fivstarservicepanel{
+    padding-top: 160px;
+    max-width: 1360px;
+    margin-left: auto;
+    margin-right: auto;
+    @include breakpoint(medium) {
+        padding-top: 180px;
+    }
+    @include breakpoint(llarge) {
+        padding-top: 240px;
+    }
+    .head-center{
+        text-align: center;
+        margin-bottom: clamp(1.25rem, 2.03vw + 0.774rem, 2.5rem);
+        h3{
+            font-size: clamp(1.25rem, 0.406vw + 1.155rem, 1.5rem);
+            color: $primary-color;
+            font-weight: 600;
+            margin-top: clamp(0.625rem, 2.03vw + 0.149rem, 1.875rem);
+            @include breakpoint(small only) {
+                margin-top: 5px;
+            }
+        }
+    }
+    .flexwrap{
+        display: flex;
+        flex-wrap: wrap;
+        @include breakpoint(medium) {
+            gap: 20px;
+            flex-wrap: nowrap;
+        }
+        @include breakpoint(large) {
+            gap: clamp(1.875rem, 12.5vw - 6.125rem, 4.5rem);
+        }
+        .leftwrap, .rightwrap{
+            width: 100%;
+            max-width: 100%;
+            @include breakpoint(medium) {
+                max-width: 367px;
+            }
+        }
+        .leftwrap{
+            @include breakpoint(small only) {
+                order: 2;
+                margin-top: 16px;
+            }
+        }
+        .rightwrap{
+            order: 3;
+        }
+        .middlewrap{
+            max-width: 100%;
+            width: 100%;
+            text-align: center;
+            @include breakpoint(medium) {
+                max-width: clamp(14rem, 43.243vw - 6.757rem, 30rem);
+            }
+        }
+        
+        .colblock{
+            margin-bottom: clamp(1.25rem, 3.046vw + 0.536rem, 3.125rem);
+            @include breakpoint(medium only) {
+                margin-bottom: 10px;
+            }
+            h4{
+                font-size: 18px;
+                font-weight: 700;
+                border-bottom: 1px solid $primary-color;
+                margin-bottom: 8px;
+                padding-bottom: 5px;
+                @include breakpoint(medium only) {
+                    font-size: 16px;
+                }
+                .number{
+                    font-size: 24px;
+                    font-weight: 900;
+                    margin-right: 5px;
+                    @include breakpoint(medium only) {
+                        font-size: 18px;
+                    }
+                }
+            }
+            p{
+                font-size: 16px;
+                line-height: 120%;
+                @include breakpoint(small only) {
+                    margin-bottom: 0;
+                }
+                @include breakpoint(medium only) {
+                    font-size: 14px;
+                    line-height: 110%;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,261 @@
+@import "util/util";
+
+$white: var(--fcb-white);
+$primary-color: var(--fcb-primary);
+$secondary-color: var (--fcb-whitef7);
+$img: "../../images/";
+
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+.featuredarticlepanel{
+    .grid-container{
+        position: relative;
+        .flexBox{
+            display: none;
+            @include breakpoint(large) {
+                display: block;
+            }
+            .swiper-button-prev, .swiper-button-next {
+                width: 58px;
+                height: 58px;
+                margin-top: calc(-8px - (var(--swiper-navigation-size) / 2));
+                &:before{
+                    content: '';
+                    background: #ffffff;
+                    box-shadow: -4px 0px 6px 0px rgba(0, 0, 0, 0.10);
+                    border-radius: 50%;
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    z-index: -1;
+                }
+                &:after{
+                    font-size: 0px;
+                }
+                &::after {
+                    background: url('#{$img}settings/arrow-dropleft.svg') no-repeat;
+                    background-size: contain;
+                    width: 58px;
+                    height: 58px;
+                }
+            }
+            .swiper-button-next{
+                &:before{
+                    content: '';  
+                    box-shadow: 4px 0px 6px 0px rgba(0, 0, 0, 0.10);
+                }
+                &::after {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+        .flexBox-pagination{
+             display: flex ;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                top:25px;
+                @include breakpoint(large) {
+                    top:22px;
+                }
+            .swiper-pagination{
+                position: static;
+                width: initial;
+                .swiper-pagination-bullet{
+                    width: 13px;
+                    height: 13px;
+                    background: transparent;
+                    border: 1px solid $primary-color;
+                    margin: 0 6px;
+                    opacity: 1;
+                    &:last-child{
+                        margin-right: 0;
+                    }
+                    @include breakpoint(medium) {
+                        width: 16px;
+                        height: 16px;
+                        margin: 0 8px;
+                    }
+                    &.swiper-pagination-bullet-active{
+                        background-color: $primary-color;
+                    }
+                    
+                }
+            }
+            .feature-swiper-button{
+                display: inline-block;
+                width: 10px;
+                height: 13px;
+                background: url('#{$img}settings/pause.svg') no-repeat;
+                background-size: contain;
+                background-repeat: no-repeat;
+                margin-left: 12px;
+                top: 0px;
+                cursor: pointer;
+                position: relative;
+                left: auto;
+                right: 0%;
+                z-index: 9;
+                @include breakpoint(medium) {
+                    width: 17px;
+                    height: 19px;
+                    margin-left: 16px;
+                    top: -4px;
+                }
+                &.active{
+                    background: url('#{$img}settings/play.svg') no-repeat;
+                    background-size: contain;
+                }
+            }
+            .swiper-button-prev, .swiper-button-next {
+                display: flex;
+                @include breakpoint(large) {
+                    display: none;
+                }
+                width: 16px;
+                height: 28px;
+                margin-top: -5px;
+                position: relative;
+                left: -10px;
+                &:after{
+                    font-size: 0px;
+                }
+                &::after {
+                    background: url('#{$img}settings/arrow-backward.svg') no-repeat;
+                    background-size: contain;
+                    width: 16px;
+                    height: 28px;
+                }
+            }
+            .swiper-button-next{    
+                left: auto;
+                right: -18px;
+                &:before{
+                    content: '';  
+                    box-shadow: 4px 0px 6px 0px rgba(0, 0, 0, 0.10);
+                }
+                &::after {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+    }
+    .featureswiperpanel{
+        width: 100%;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        @include breakpoint(large){
+            max-width: 94.5%;
+        }
+        .featureSlider {
+            background: #FFFFFF;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+            border-radius: 20px;
+            @include breakpoint(large){
+                border-radius: 30px;
+            }
+            .innerwrap{
+                padding: clamp(0.625rem, 3.756vw - 0.255rem, 3.125rem);
+                .flexwrap{
+                        display: flex;
+                        flex-wrap: wrap;
+                        @include breakpoint(medium){
+                            flex-wrap: nowrap;
+                        }
+                        .imgwrap{
+                            overflow: hidden;
+                            border-radius: 10px;
+                            max-width: 100%;
+                            width: 100%;
+                            @include breakpoint(large){
+                                border-radius: 20px;
+                                max-width: 529px;
+                            }
+                            @include breakpoint(medium only){
+                                height: 100%;
+                            }
+                            img{
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                                @include breakpoint(medium only){
+                                    object-fit: contain;
+                                }
+                            }
+                        }
+                        .contentwrap{
+                            width: 100%;
+                            padding-top: 20px;
+                            padding-bottom: 10px;
+                            @include breakpoint(medium){
+                                margin-left: clamp(1.25rem, 6.696vw - 1.964rem, 4.063rem);
+                                padding-top: 0;
+                                padding-bottom: 0;
+                            }
+                            h2{
+                                font-size: clamp(1.25rem, 1.127vw + 0.986rem, 2rem);
+                                color: $primary-color;
+                                font-weight: 600;
+                                margin-bottom: 10px;
+                                a{
+                                    color: $primary-color;
+                                }
+                            }
+                            p{
+                                line-height: 120%;
+                                @include breakpoint(small only){
+                                    margin-top: 16px;
+                                }
+                                @include breakpoint(medium){
+                                    word-wrap: break-word;
+                                    display: -webkit-box;
+                                    -webkit-box-orient: vertical;
+                                    -webkit-line-clamp: 5;
+                                    overflow: hidden;
+                                    margin-top: 28px;
+                                }
+                                &.event-date{
+                                    font-weight: 500;
+                                    font-size: clamp(1rem, 0.376vw + 0.912rem, 1.25rem);
+                                    @include breakpoint(small only){
+                                        margin-top: 10px;
+                                    }
+                                    b{
+                                        @include breakpoint(small only){
+                                            margin-bottom: 4px;
+                                            display: flex;
+                                        }
+                                        a{
+                                            text-decoration: none;
+                                            &:hover{
+                                                color: #000000;
+                                                text-decoration: underline;
+                                            }
+                                        }
+                                    }
+                                    span{
+                                        @include breakpoint(small only){
+                                            display: block;
+                                        }
+                                    }
+                                    .mark{
+                                        @include breakpoint(small only){
+                                            display: none;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                }
+            }
+        }
+    }
+}

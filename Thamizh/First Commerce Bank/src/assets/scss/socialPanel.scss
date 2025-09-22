@@ -1,0 +1,105 @@
+@import "util/util";
+$white: #ffffff;
+$black: #000000;
+$primary-color: #90182C;
+$secondary-color: #19A7C1;
+$img: "../../images/";
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    xslarge:1240,
+    xlarge: 1360px,
+    xxlarge: 1400px,
+    xxxlarge: 1660px,
+);
+
+
+
+.socialPanel {
+    h2 {
+        margin-bottom: 18px;
+    }
+
+    a.j-paginate.juicer-button {
+        // display: inline-block;
+        padding-top: clamp(10px, calc(10px + (11 - 10) * ((100vw - 375px) / (1023 - 375))), 11px);
+        padding-inline: 15px;
+        padding-bottom: clamp(11px, calc(11px + (14 - 11) * ((100vw - 375px) / (1023 - 375))), 14px);
+        background: #90182C;
+        color: #fff;
+        font-family: "Montserrat", sans-serif;
+        border-radius: 5px;
+        font-size: clamp(18px, calc(18px + (20 - 18) * ((100vw - 375px) / (1023 - 375))), 20px);
+        font-weight: bold;
+        transition: ease .5s;
+        margin: 0 auto;
+        border: 0;
+        text-transform: capitalize;
+        width: 152px;
+        position: relative;
+        overflow: hidden;
+        z-index: 0;
+
+        &::before {
+            content: '';
+            background: linear-gradient(180deg, #E7E8EB 27.5%, #C0C1C5 100%);
+            transition: ease .5s;
+            position: absolute;
+            z-index: -1;
+            height: 100%;
+            width: 0;
+            top: 0;
+            left: 0;
+            display: inline-block;
+        }
+
+        &:hover {
+            // background: linear-gradient(180deg, #E7E8EB 27.5%, #C0C1C5 100%);
+            color: #90182C;
+            transition: ease .5s;
+            text-decoration: none;
+
+            &::before {
+                width: 100%;
+            }
+        }
+    }
+
+    .juicer-feed.modern li.feed-item {
+        padding: 15px;
+        border: 0;
+        box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
+        border-radius: 15px;
+
+
+        .j-poster,
+        .j-message {
+            display: none;
+        }
+
+        &::before {
+            content: unset;
+        }
+
+        .j-meta {
+            margin-top: 0;
+        }
+
+        .j-linkedin {
+            background: rgba(144, 24, 44, 0.5);
+            color: #fff;
+            padding: 5px 1px 2px 5px;
+            border-radius: 3px;
+        }
+
+        nav,
+        .j-twitter-date {
+            float: left;
+        }
+
+        .j-text {
+            padding: 22px 15px 3px 2px;
+        }
+    }
+}

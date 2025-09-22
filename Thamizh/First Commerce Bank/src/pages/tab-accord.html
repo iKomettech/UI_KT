@@ -1,0 +1,155 @@
+<div class="tab-accordion">
+  <div class="tab-item">
+    <button class="tab-header" data-tab="1">Tab 1 Title</button>
+    <div class="tab-content" data-tab="1">
+      <p>Content for Tab 1</p>
+    </div>
+  </div>
+
+  <div class="tab-item">
+    <button class="tab-header" data-tab="2">Tab 2 Title</button>
+    <div class="tab-content" data-tab="2">
+      <p>Content for Tab 2</p>
+    </div>
+  </div>
+
+  <div class="tab-item">
+    <button class="tab-header" data-tab="3">Tab 3 Title</button>
+    <div class="tab-content" data-tab="3">
+      <p>Content for Tab 3</p>
+    </div>
+  </div>
+</div>
+
+
+
+<style>
+/* Base Styles */
+.tab-accordion {
+  width: 100%;
+}
+
+.tab-header {
+  width: 100%;
+  text-align: left;
+  padding: 15px;
+  background: #f1f1f1;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.tab-content {
+  display: none;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+.tab-item.active .tab-content {
+  display: block;
+}
+
+/* Desktop Layout (Tabs) */
+@media (min-width: 768px) {
+  .tab-accordion {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .tab-header {
+    display: inline-block;
+    width: auto;
+    margin-right: 5px;
+    border-bottom: none;
+  }
+
+  .tab-item {
+    display: inline-block;
+  }
+
+  .tab-accordion .tab-content {
+    display: none;
+    width: 100%;
+    border-top: 1px solid #ccc;
+  }
+
+  .tab-accordion .tab-item.active .tab-content {
+    display: block;
+  }
+
+  /* Hide extra tab-contents to avoid accordion layout on desktop */
+  .tab-item {
+    display: block;
+  }
+
+  .tab-item:not(:first-child) .tab-content {
+    border-top: none;
+  }
+
+  .tab-accordion {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .tab-headers {
+    display: flex;
+  }
+
+  .tab-item {
+    border-bottom: none;
+  }
+
+  .tab-header {
+    border-radius: 0;
+    border-bottom: none;
+  }
+}
+</style>
+
+<script>
+  function isMobile() {
+    return window.innerWidth < 768;
+  }
+
+  function setupTabsAndAccordion() {
+    const tabItems = document.querySelectorAll('.tab-item');
+    const headers = document.querySelectorAll('.tab-header');
+
+    headers.forEach(header => {
+      header.onclick = () => {
+        const tab = header.dataset.tab;
+        const parent = header.closest('.tab-item');
+
+        if (isMobile()) {
+          // Accordion behavior
+          const isActive = parent.classList.contains('active');
+          tabItems.forEach(item => item.classList.remove('active'));
+          if (!isActive) {
+            parent.classList.add('active');
+          }
+        } else {
+          // Tabs behavior
+          tabItems.forEach(item => {
+            if (item.querySelector('.tab-header').dataset.tab === tab) {
+              item.classList.add('active');
+            } else {
+              item.classList.remove('active');
+            }
+          });
+        }
+      };
+    });
+
+    // Set default tab on desktop
+    if (!isMobile()) {
+      tabItems.forEach(item => item.classList.remove('active'));
+      tabItems[0]?.classList.add('active');
+    }
+  }
+
+  window.addEventListener('load', setupTabsAndAccordion);
+  window.addEventListener('resize', setupTabsAndAccordion);
+</script>
+
+

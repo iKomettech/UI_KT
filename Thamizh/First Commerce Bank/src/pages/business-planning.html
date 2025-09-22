@@ -1,0 +1,709 @@
+<!-------Template Pattern--------->
+<script type="text/javascript">
+    $(document).ready(function () {
+        function adjustSubPattern() {
+            let $panel = $('.productTypepanel');
+            let $clonepanel = $('.cloneMobile');
+            let adjPanelTop;
+            let $panelTop = $('.subbannerpanel .subbanner .bannerwrap .contentwrap .content').offset().top;
+            if ($(window).outerWidth() >= 1024) {
+                if ($panel.length) {
+                    if ($(window).outerWidth() >= 1440) {
+                        adjPanelTop = $panelTop + 90;
+                    }
+                    else if ($(window).outerWidth() >= 1024) {
+                        adjPanelTop = $panelTop + 90;
+                    }
+                    else {
+                        adjPanelTop = $('.subbannerpanel .subbanner .bannerwrap .imgWrap').offset().top + 70;
+                    }
+                    let panelTop = $panel.offset().top;
+                    let getPanelHeight = panelTop;
+                    $(".templatesection").css('height', getPanelHeight - adjPanelTop - 25 + 'px');
+                    $(".templatesection").css('top', adjPanelTop + 'px');
+                } else {
+                    console.warn('.fivestarpanel not found!');
+                }
+            } else {
+                if ($clonepanel.length) {
+                    let adjPanelTop = $('.subbannerpanel .subbanner .bannerwrap .imgWrap').offset().top + 70;
+                    let panelTop = $clonepanel.offset().top;
+                    let getPanelHeight = panelTop;
+                    console.log('Panel Top:', panelTop);
+                    $(".templatesection").css('height', getPanelHeight - adjPanelTop - 25 + 'px');
+                    $(".templatesection").css('top', adjPanelTop + 'px');
+                }
+            }
+        }
+
+        setTimeout(adjustSubPattern, 500);
+
+        $(window).on("resize", function () {
+            setTimeout(adjustSubPattern, 200);
+        });
+    });
+</script>
+<div class="templatesection">
+    <div class="templatePattern"
+        style="background: url(assets/images/business-plan-pattern.svg) center center no-repeat;">
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        function contentPadding() {
+            var logoLeft = $('.logoSection').offset().left;
+            $('.subbannerpanel .subbanner .bannerwrap .contentwrap .content').css({ 'margin-left': logoLeft });
+        }
+
+        contentPadding();
+
+        $(window).on("resize load", function () {
+            contentPadding();
+        });
+    })
+</script>
+
+<link rel="stylesheet" href="{{root}}assets/css/subbanner/subbanner.css" media="all">
+<div class="subbannerpanel module">
+    <div class="grid-container-full">
+        <div class="subbanner">
+            <div class="temp1">
+                <div class="bannerwrap">
+                    <div class="contentwrap">
+                        <div class="content">
+                            <h1>Business Planning & <strong>Financial Growth</strong></h1>
+                            <p>Financial Coaching</p>
+                        </div>
+                    </div>
+                    <div class="imgWrap">
+                        <div class="filter-img">
+                            <img class="img" src="assets/images/home/subbaner.jpg" width="912" height="461"
+                                alt="Home Promotional">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="breadcrumbWrapBottom module come-in " data-swiftype-index="false">
+    <div class="grid-container">
+        <ul class="breadcrumbs">
+            <li class="breadcrumb-item ">
+                <a href="/" aria-label="Home">Home</a>
+            </li>
+            <li class="breadcrumb-item ">Business Financial Journey</li>
+        </ul>
+    </div>
+</div>
+
+
+<link rel="stylesheet" href="{{root}}assets/css/productTabPanel/productTabPanel.css" media="all">
+<script src="assets/scripts/tabpanel/easy-responsive-tabs.js" defer></script>
+<script type="text/javascript" defer>
+    $(document).ready(function () {
+        $('.tabpanelcontent').easyResponsiveTabs({
+            type: 'default',
+            width: 'auto',
+            fit: true,
+            tabidentify: 'tab_identifier_child',
+            activate: function (event) {
+                var $tab = $(this);
+                var $info = $('#tabInfo');
+                var $name = $('span', $info);
+                $name.text($tab.text());
+                $info.show();
+            }
+        });
+
+        if ($(".taphomeswiperpanel .swiper .swiper-slide").length > 0) {
+            let swiperBusinessCarousel = new Swiper('.tapBusinesssSlider', {
+                slidesPerView: "1",
+                allowTouchMove: true,
+                preloadImages: false,
+                spaceBetween: 10,
+                lazy: true,
+                loop: false,
+                navigation: {
+                    nextEl: '.tapBusinesssSlider .swiper-button-next',
+                    prevEl: '.tapBusinesssSlider .swiper-button-prev',
+                },
+            });
+            let swiperBusinessCarouselContent = new Swiper(".tabBusinessContentSlider", {
+                spaceBetween: 10,
+                allowTouchMove: true,
+                preloadImages: false,
+                lazy: true,
+                autoHeight: false,
+                loop: false,
+                pagination: {
+                    el: '.sliderboxShadow .swiper-pagination',
+                    clickable: true
+                },
+                on: {
+                    slideChange: function () {
+                        let activeSlide = swiperBusinessCarouselContent.slides[swiperBusinessCarouselContent.activeIndex];
+                        let productId = $(activeSlide).data('id');
+                        $('.mobileProduct').fadeOut(300);
+                        $('#' + productId).fadeIn(400);
+                    }
+                },
+            });
+            swiperBusinessCarousel.controller.control = swiperBusinessCarouselContent;
+            swiperBusinessCarouselContent.controller.control = swiperBusinessCarousel;
+            $('.mobileProduct').attr('style', 'unset');
+        }
+    });
+</script>
+<link rel="stylesheet" href="{{root}}assets/css/productType/productType.css" media="all">
+<div class="productTabPanel gap module">
+    <div class="grid-container">
+        <div class="smallTitle">
+            <h2>Banking Support as Your Business Grows</h2>
+        </div>
+        <div class="maxw1100">
+            <p>As your business grows, having the right banking partner can make all the difference. At First Commerce
+                Bank, we’re here to support you with personalized solutions and a team that’s ready to help. Rooted in
+                our community, we’re committed to providing the tools and guidance your business needs to succeed.</p>
+        </div>
+        <div class="subtabpanel">
+            <div class="grid-container-full">
+                <div class="tabpanelcontent">
+                    <ul class="resp-tabs-list" role="tablist" aria-label="Product Tabs">
+                        <li role="tab">
+                            <p>Starting Out</p>
+                        </li>
+                        <li role="tab">
+                            <p>Developing</p>
+                        </li>
+                        <li role="tab">
+                            <p>Progressing</p>
+                        </li>
+                        <li role="tab">
+                            <p>Thriving</p>
+                        </li>
+                    </ul>
+                    <div class="resp-tabs-container">
+                        <div class="tabblock">
+
+                            <div class="insideBlock gap">
+                                <div class="contentWrap">
+                                    <div class="insideContent">
+                                        <p class="large">Starting your business journey requires the right financial
+                                            foundation.
+                                            We offer flexible solutions and expert guidance to help you build your
+                                            business
+                                            from
+                                            the ground up.</p>
+                                    </div>
+                                </div>
+                                <div class="tabimage">
+                                    <div class="insideImg">
+                                        <img data-src="assets/images/producttab.jpg" class="lazy layzeloading zoom"
+                                            width="278" height="278" alt="Checking">
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="productTypepanel desktop gap mobile-gap-pattern module">
+                                <h2>Our Suggested Products</h2>
+                                <div class="productpattern"
+                                    style="background: url(assets/images/product/product-pattern.svg) center bottom no-repeat;">
+                                </div>
+                                <div class="taColumnBlock">
+                                    <div class="tabBoxBlock module">
+                                        <div class="imageblock">
+                                            <img class="lazy layzeloading mask"
+                                                data-src="assets/images/product/product-image-2.jpg" width="581"
+                                                height="335" alt="Home Promotional">
+                                        </div>
+                                        <div class="contentblock">
+                                            <div class="contentsection">
+                                                <h3>Free Business Checking</h3>
+                                                <p>Lorem ipsum dolor sit amet consectetur. Aliquam suspendisse et
+                                                    sed tristique gravida quisque ultricies felis. Cras non enim
+                                                    pellentesque nulla.</p>
+                                                <div class="ctaBlock">
+                                                    <div class="leftcta">
+                                                        <a href="#" class="primaryCta small" aria-label="Open Account">
+                                                            <span>Open Account</span>
+                                                            <span class="iconprops"><i></i></span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="rightcta">
+                                                        <a href="#" class="textCta" aria-label="Learn More">
+                                                            Learn More
+                                                        </a>
+                                                        <a href="#" class="textCta" aria-label="Request Appointment">
+                                                            Request Appointment
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tabBoxBlock module">
+                                        <div class="imageblock">
+                                            <img class="lazy layzeloading mask"
+                                                data-src="{{root}}assets/images/product/product-image-1.jpg" width="581"
+                                                height="335" alt="Home Promotional">
+                                        </div>
+                                        <div class="contentblock">
+                                            <div class="contentsection">
+                                                <h3>Free Business Checking</h3>
+                                                <p>Lorem ipsum dolor sit amet consectetur. Aliquam suspendisse et
+                                                    sed tristique gravida quisque ultricies felis. Cras non enim
+                                                    pellentesque nulla.</p>
+                                                <div class="ctaBlock">
+                                                    <div class="leftcta">
+                                                        <a href="#" class="primaryCta small" aria-label="Open Account">
+                                                            <span>Open Account</span>
+                                                            <span class="iconprops"><i></i></span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="rightcta">
+                                                        <a href="#" class="textCta" aria-label="Learn More">
+                                                            Learn More
+                                                        </a>
+                                                        <a href="#" class="textCta" aria-label="Request Appointment">
+                                                            Request Appointment
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tabBoxBlock module">
+                                        <div class="imageblock">
+                                            <img class="lazy layzeloading mask"
+                                                data-src="{{root}}assets/images/product/product-image-2.jpg" width="581"
+                                                height="335" alt="Home Promotional">
+                                        </div>
+                                        <div class="contentblock">
+                                            <div class="contentsection">
+                                                <h3>Business Relationship Money Market</h3>
+                                                <p>Lorem ipsum dolor sit amet consectetur. Aliquam suspendisse et
+                                                    sed tristique gravida quisque ultricies felis. Cras non enim
+                                                    pellentesque nulla.</p>
+                                                <div class="ctaBlock">
+                                                    <div class="leftcta">
+                                                        <a href="#" class="primaryCta small" aria-label="Open Account">
+                                                            <span>Open Account</span>
+                                                            <span class="iconprops"><i></i></span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="rightcta">
+                                                        <a href="#" class="textCta" aria-label="Learn More">
+                                                            Learn More
+                                                        </a>
+                                                        <a href="#" class="textCta" aria-label="Request Appointment">
+                                                            Request Appointment
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tabBoxBlock module">
+                                        <div class="imageblock">
+                                            <img class="lazy layzeloading mask"
+                                                data-src="{{root}}assets/images/product/product-image-1.jpg" width="581"
+                                                height="335" alt="Home Promotional">
+                                        </div>
+                                        <div class="contentblock">
+                                            <div class="contentsection">
+                                                <h3>Free Business Checking</h3>
+                                                <p>Lorem ipsum dolor sit amet consectetur. Aliquam suspendisse et
+                                                    sed tristique gravida quisque ultricies felis. Cras non enim
+                                                    pellentesque nulla.</p>
+                                                <div class="ctaBlock">
+                                                    <div class="leftcta">
+                                                        <a href="#" class="primaryCta small" aria-label="Open Account">
+                                                            <span>Open Account</span>
+                                                            <span class="iconprops"><i></i></span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="rightcta">
+                                                        <a href="#" class="textCta" aria-label="Learn More">
+                                                            Learn More
+                                                        </a>
+                                                        <a href="#" class="textCta" aria-label="Request Appointment">
+                                                            Request Appointment
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tabblock">
+                            <div class="insideBlock">
+                                <div class="contentWrap w100">
+                                    <div class="insideContent">
+                                        <p class="large">Starting your business journey requires the right financial
+                                            foundation.
+                                            We offer flexible solutions and expert guidance to help you build your
+                                            business
+                                            from
+                                            the ground up.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="productTypepanel desktop gap mobile-gap-pattern module">
+                                <h2>Business Products</h2>
+                                <div class="productpattern"
+                                    style="background: url(assets/images/product/product-pattern.svg) center bottom no-repeat;">
+                                </div>
+                                <div class="taColumnBlock">
+                                    <div class="tabBoxBlock module">
+                                        <div class="imageblock">
+                                            <img class="lazy layzeloading mask"
+                                                data-src="{{root}}assets/images/product/product-image-1.jpg" width="581"
+                                                height="335" alt="Home Promotional">
+                                        </div>
+                                        <div class="contentblock">
+                                            <div class="contentsection">
+                                                <h3>Free Business Checking</h3>
+                                                <p>Lorem ipsum dolor sit amet consectetur. Aliquam suspendisse et
+                                                    sed tristique gravida quisque ultricies felis. Cras non enim
+                                                    pellentesque nulla.</p>
+                                                <div class="ctaBlock">
+                                                    <div class="leftcta">
+                                                        <a href="#" class="primaryCta small" aria-label="Open Account">
+                                                            <span>Open Account</span>
+                                                            <span class="iconprops"><i></i></span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="rightcta">
+                                                        <a href="#" class="textCta" aria-label="Learn More">
+                                                            Learn More
+                                                        </a>
+                                                        <a href="#" class="textCta" aria-label="Request Appointment">
+                                                            Request Appointment
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tabblock">
+                            <div class="insideBlock">
+                                <div class="tabimage">
+                                    <a href="#">
+                                        <img data-src="assets/images/home/checking.svg" class="lazy layzeloading zoom"
+                                            width="134" height="134" alt="Checking">
+                                        <p>Checking</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tabblock">
+                            <div class="insideBlock">
+                                <div class="tabimage">
+                                    <a href="#">
+                                        <img data-src="assets/images/home/checking.svg" class="lazy layzeloading zoom"
+                                            width="134" height="134" alt="Checking">
+                                        <p>Checking</p>
+                                    </a>
+                                </div>
+                                <div class="tabimage">
+                                    <a href="#">
+                                        <img data-src="assets/images/home/checking.svg" class="lazy layzeloading zoom"
+                                            width="134" height="134" alt="Checking">
+                                        <p>Checking</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="taphomeswiperpanel gap">
+            <div class="grid-container-full">
+                <div class="swiper tapSlider tapBusinesssSlider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="swiper-list">
+                                <p>Personal</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="swiper-list">
+                                <p>Education Center</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+                <div class="sliderboxShadow">
+                    <div thumbsSlider="" class="swiper tabContentSlider tabBusinessContentSlider">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide" data-id="mob_tab_item-0">
+                                <div class="swiper-content">
+                                    <div class="tabblock">
+                                        <div class="contentWrap">
+                                            <div class="tabimage">
+                                                <img data-src="assets/images/producttab.jpg"
+                                                    class="lazy layzeloading zoom" width="278" height="278"
+                                                    alt="Checking">
+                                            </div>
+                                            <div class="insideContent">
+                                                <p class="large">Starting your business journey requires the right
+                                                    financial
+                                                    foundation.
+                                                    We offer flexible solutions and expert guidance to help you build
+                                                    your business
+                                                    from
+                                                    the ground up.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide" data-id="mob_tab_item-1">
+                                <div class="swiper-content">
+                                    <div class="tabblock">
+                                        <div class="contentWrap">
+                                            <div class="tabimage">
+                                                <a href="#">
+                                                    <img data-src="assets/images/producttab.jpg"
+                                                        class="lazy layzeloading zoom" width="278" height="278"
+                                                        alt="Checking">
+                                                </a>
+                                            </div>
+                                            <div class="insideContent">
+                                                <p class="large">Starting your business journey requires the right
+                                                    financial
+                                                    foundation.
+                                                    We offer flexible solutions and expert guidance to help you build
+                                                    your business
+                                                    from
+                                                    the ground up.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide" data-id="mob_tab_item-2">
+                                <div class="swiper-content">
+                                    <div class="tabblock">
+                                        <div class="contentWrap">
+                                            <div class="tabimage">
+                                                <a href="#">
+                                                    <img data-src="assets/images/producttab.jpg"
+                                                        class="lazy layzeloading zoom" width="278" height="278"
+                                                        alt="Checking">
+                                                </a>
+                                            </div>
+                                            <div class="insideContent">
+                                                <p class="large">Starting your business journey requires the right
+                                                    financial
+                                                    foundation.
+                                                    We offer flexible solutions and expert guidance to help you build
+                                                    your business
+                                                    from
+                                                    the ground up.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide" data-id="mob_tab_item-3">
+                                <div class="swiper-content">
+                                    <div class="tabblock">
+                                        <div class="contentWrap">
+                                            <div class="tabimage">
+                                                <a href="#">
+                                                    <img data-src="assets/images/producttab.jpg"
+                                                        class="lazy layzeloading zoom" width="278" height="278"
+                                                        alt="Checking">
+                                                </a>
+                                            </div>
+                                            <div class="insideContent">
+                                                <p class="large">Starting your business journey requires the right
+                                                    financial
+                                                    foundation.
+                                                    We offer flexible solutions and expert guidance to help you build
+                                                    your business
+                                                    from
+                                                    the ground up.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mobileCloneContent">
+            <div class="mobiletabData">
+                <div class="mobileProduct active"></div>
+                <div class="mobileProduct"></div>
+                <div class="mobileProduct"></div>
+                <div class="mobileProduct"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<link rel="stylesheet" href="{{root}}assets/css/productTilePanel/productTilePanel.css" media="all">
+<div class="productTilePanel gap">
+    <div class="grid-container">
+        <div class="smallTitle">
+            <h2 >Explore Business Banking Options</h2>
+        </div>
+        <div class="flexBox">
+            <div class="tiles">
+                <a href="#" aria-label="business">
+                    <div class="insideTile">
+                        <div class="imgWrap">
+                            <img src="{{root}}assets/images/home/icon-4.svg" width="90" height="90" alt="">
+                        </div>
+                        <div class="contentWrap">
+                            <p>Business<br>
+                                Checking</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="tiles">
+                <a href="#" aria-label="business">
+                    <div class="insideTile">
+                        <div class="imgWrap">
+                            <img src="{{root}}assets/images/home/icon-3.svg" width="90" height="90" alt="icon">
+                        </div>
+                        <div class="contentWrap">
+                            <p>Business <br>
+                                Money Market</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="tiles">
+                <a href="#" aria-label="business">
+                    <div class="insideTile">
+                        <div class="imgWrap">
+                            <img src="{{root}}assets/images/home/icon-2.svg" width="90" height="90" alt="icon">
+                        </div>
+                        <div class="contentWrap">
+                            <p>IOLTA <br>
+                                Checking</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="tiles">
+                <a href="#" aria-label="business">
+                    <div class="insideTile">
+                        <div class="imgWrap">
+                            <img src="{{root}}assets/images/home/icon-5.svg" width="90" height="90" alt="icon">
+                        </div>
+                        <div class="contentWrap">
+                            <p>Business<br>
+                                Escrow</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="tiles">
+                <a href="#" aria-label="business">
+                    <div class="insideTile">
+                        <div class="imgWrap">
+                            <img src="{{root}}assets/images/home/icon-1.svg" width="90" height="90" alt="icon">
+                        </div>
+                        <div class="contentWrap">
+                            <p>Business <br>
+                                Savings & CD’s</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="tiles">
+                <a href="#" aria-label="business">
+                    <div class="insideTile">
+                        <div class="imgWrap">
+                            <img src="{{root}}assets/images/home/icon-4.svg" width="90" height="90" alt="">
+                        </div>
+                        <div class="contentWrap">
+                            <p>Business<br>
+                                Checking</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="tiles">
+                <a href="#" aria-label="business">
+                    <div class="insideTile">
+                        <div class="imgWrap">
+                            <img src="{{root}}assets/images/home/icon-3.svg" width="90" height="90" alt="icon">
+                        </div>
+                        <div class="contentWrap">
+                            <p>Business <br>
+                                Money Market</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="tiles">
+                <a href="#" aria-label="business">
+                    <div class="insideTile">
+                        <div class="imgWrap">
+                            <img src="{{root}}assets/images/home/icon-2.svg" width="90" height="90" alt="icon">
+                        </div>
+                        <div class="contentWrap">
+                            <p>IOLTA <br>
+                                Checking</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="tiles">
+                <a href="#" aria-label="business">
+                    <div class="insideTile">
+                        <div class="imgWrap">
+                            <img src="{{root}}assets/images/home/icon-5.svg" width="90" height="90" alt="icon">
+                        </div>
+                        <div class="contentWrap">
+                            <p>Business<br>
+                                Escrow</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="tiles">
+                <a href="#" aria-label="business">
+                    <div class="insideTile">
+                        <div class="imgWrap">
+                            <img src="{{root}}assets/images/home/icon-1.svg" width="90" height="90" alt="icon">
+                        </div>
+                        <div class="contentWrap">
+                            <p>Business <br>
+                                Savings & CD’s</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+

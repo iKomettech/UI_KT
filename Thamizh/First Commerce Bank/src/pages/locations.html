@@ -1,0 +1,274 @@
+
+<link rel="stylesheet" href="{{root}}assets/css/locations/locations.css" media="all">
+
+<div class="headingpanel">
+    <div class="breadcrumbWrapBottom">
+        <div class="grid-container">
+            <ul class="breadcrumbs">
+                <li class="breadcrumb-item">
+                    <a href="/" aria-label="Learn More - Home">Home</a>
+                </li>
+                <li class="breadcrumb-item ">Locations</li>
+            </ul>
+        </div>
+    </div>
+    <div class="locationtitle">
+        <div class="grid-container">
+            <h1>Find a Branch</h1>
+        </div>
+    </div>
+</div>    
+
+<div class="locationpanel gap module">
+    <div class="inputWrap">
+        <div class="grid-container">
+            <div class="filtertitle">
+                <h2>Our Locations:</h2>
+            </div>
+            <div class="dataFilter">
+                <div class="column-1">
+                    <div class="inputSearch">
+                        <div class="form-group">
+                            <legend class="screen-reader-text">Enter Zip Code</legend>
+                            <input type="text" class="txtBox" id="zipcode" name="search" placeholder="Enter Zip" value="" autocomplete="off">
+                            <button type="submit" name="button" id="btnFindABranch" class="defaultBtn">Submit</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="column-2">
+                    <p>OR</p>
+                </div>
+                <div class="column-3">
+                    <div class="form-group selectbox">
+                        <select class="selectMenuCurve" id="location-filter" name="location-filter" title="filter-city">
+                            <option value="">Select City</option>
+                            <option value="City 1">City 1</option>
+                            <option value="City 2">City 2</option>
+                            <option value="City 3">City 3</option>
+                            <option value="City 4">City 4</option>
+                            <option value="City 5">City 5</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+       </div>
+    </div>
+    <div class="mapFilter">
+        <div class="grid-container">
+            <div class="innerWrap">
+                <div class="overflowwrap">
+                    <div class="locationWrap" id="locationContainer">
+                        <div class="addresswrap active" id="location-box-0" onclick="infoOpen(0, this);">
+                            <div class="addresssec">
+                                <div class="offerlist">
+                                    <p class="heading"><a href="#">Corporate Office</a></p>
+                                    <p class="miles">0.00 mi</p>
+                                </div>
+                                <ul class="service-list">
+                                    <li>Drive-Thru</li>
+                                    <li>ATM</li>
+                                    <li>Safe Deposit Boxes</li>
+                                    <li>Drive-Thru</li>
+                                    <li>ATM</li>
+                                </ul>
+                                <div class="addreslist">
+                                    <p>105 River Avenue <br>
+                                        Lakewood, NJ 08701</p>
+                                </div>
+                                <p class="contactnumber"><a href="tel:732-364-0032">(732) 364-0032</a></p>
+                                <p class="openhrs"><b>Hours:</b> Open Now - 5:00 PM</p>
+                            </div>
+                            <div class="locationbtnwrap">
+                                <a href="#" class="textCta small" aria-label="Get Directions" target="_blank">Get Directions</a>
+                                <a href="#" class="textCta small" aria-label="Denville Branch - Branch Details">Branch Details</a>
+                            </div>
+                        </div>
+                        <div class="addresswrap" id="location-box-1" onclick="infoOpen(1, this);">
+                            <div class="addresssec">
+                                <div class="offerlist">
+                                    <p class="heading"><a href="#">Allentown Branch</a></p>
+                                    <p class="miles">0.00 mi</p>
+                                </div>
+                                <ul class="service-list">
+                                    <li>Drive-Thru</li>
+                                    <li>ATM</li>
+                                    <li>Safe Deposit Boxes</li>
+                                </ul>
+                                <div class="addreslist">
+                                    <p>40 North Main Street <br>
+                                        Allentown, NJ 08501</p>
+                                </div>
+                                <p class="contactnumber"><a href="tel:732-364-0032">(732) 364-0032</a></p>
+                                <p class="openhrs"><b>Hours:</b> Open Now - 5:00 PM</p>
+                            </div>
+                            <div class="locationbtnwrap">
+                                <a href="#" class="textCta small" aria-label="Get Directions" target="_blank">Get Directions</a>
+                                <a href="#" class="textCta small" aria-label="Denville Branch - Branch Details">Branch Details</a>
+                            </div>
+                        </div>
+                        <div class="addresswrap" id="location-box-2" onclick="infoOpen(2, this);">
+                            <div class="addresssec">
+                                <div class="offerlist">
+                                    <p class="heading"><a href="#">Bordentown Branch</a></p>
+                                    <p class="miles">0.00 mi</p>
+                                </div>
+                                <ul class="service-list">
+                                    <li>Safe Deposit Boxes</li>
+                                    <li>Drive-Thru</li>
+                                    <li>ATM</li>
+                                </ul>
+                                <div class="addreslist">
+                                    <p>105 River Avenue <br>
+                                        Lakewood, NJ 08701</p>
+                                </div>
+                                <p class="contactnumber"><a href="tel:609 259-2040">(609) 259-2040</a></p>
+                                <p class="openhrs"><b>Hours:</b> Open Now - 5:00 PM</p>
+                            </div>
+                            <div class="locationbtnwrap">
+                                <a href="#" class="textCta small" aria-label="Get Directions" target="_blank">Get Directions</a>
+                                <a href="#" class="textCta small" aria-label="Denville Branch - Branch Details">Branch Details</a>
+                            </div>
+                        </div>
+                        <div class="addresswrap" id="location-box-2" onclick="infoOpen(2, this);">
+                            <div class="addresssec">
+                                <div class="offerlist">
+                                    <p class="heading"><a href="#">Corporate Office</a></p>
+                                    <p class="miles">0.00 mi</p>
+                                </div>
+                                <ul class="service-list">
+                                    <li>Drive-Thru</li>
+                                    <li>ATM</li>
+                                    <li>Safe Deposit Boxes</li>
+                                    <li>Drive-Thru</li>
+                                    <li>ATM</li>
+                                </ul>
+                                <div class="addreslist">
+                                    <p>105 River Avenue <br>
+                                        Lakewood, NJ 08701</p>
+                                </div>
+                                <p class="contactnumber"><a href="tel:732-364-0032">(732) 364-0032</a></p>
+                                <p class="openhrs"><b>Hours:</b> Open Now - 5:00 PM</p>
+                            </div>
+                            <div class="locationbtnwrap">
+                                <a href="#" class="textCta small" aria-label="Get Directions" target="_blank">Get Directions</a>
+                                <a href="#" class="textCta small" aria-label="Denville Branch - Branch Details">Branch Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mapdetails">
+                    <div id="map" style="width: 100%;"></div>
+                </div>
+            </div>
+         </div>       
+    </div>    
+</div>
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDME98sjC55HfhTr-soJj_5nbdmXPDVITs&amp;libraries=drawing,geometry&callback=initMap"></script>
+<script type="text/javascript">
+   
+    let currentMarker = null;
+ 
+    var gmarkers = [], markersContent = [];
+    const defaultSvg = `<svg width="57" height="86" viewBox="0 0 57 86" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_1477_3761)">
+                <path d="M28.5011 83.4264L27.257 81.7929C27.193 81.7089 20.7839 73.2662 14.466 62.5517C10.744 56.2395 7.77501 50.376 5.64161 45.1241C2.93491 38.4608 1.5625 32.7326 1.5625 28.0986C1.5625 24.5137 2.2758 21.0354 3.68256 17.7603C5.04051 14.5988 6.98392 11.7602 9.4588 9.32312C11.9325 6.88727 14.8131 4.97482 18.0206 3.63888C21.3411 2.25591 24.8673 1.55469 28.5011 1.55469C32.135 1.55469 35.6611 2.25591 38.9816 3.63888C42.1892 4.97482 45.0698 6.88727 47.5435 9.32312C50.0184 11.7602 51.9618 14.5988 53.3197 17.7603C54.7265 21.0354 55.4398 24.5137 55.4398 28.0986C55.4398 32.7326 54.0674 38.4608 51.3607 45.1241C49.2273 50.376 46.2583 56.2395 42.5363 62.5517C36.2184 73.2662 29.8093 81.7089 29.7453 81.7929L28.5011 83.4264Z" fill="#D9D9D9"/>
+                <path d="M28.5001 3.10958C14.4847 3.10958 3.12295 14.2976 3.12295 28.0987C3.12295 47.5347 28.5001 80.8535 28.5001 80.8535C28.5001 80.8535 53.8773 47.5347 53.8773 28.0987C53.8773 14.2976 42.5155 3.10958 28.5001 3.10958ZM28.5001 0C32.342 0 36.0708 0.741743 39.5832 2.20462C42.9764 3.61787 46.0237 5.64097 48.6404 8.21773C51.2596 10.7968 53.3166 13.8018 54.7544 17.149C56.2446 20.6185 57.0002 24.3025 57.0002 28.0987C57.0002 36.7202 52.5865 48.5767 43.8818 63.339C37.5173 74.1325 31.252 82.3865 30.9884 82.7326L28.5001 85.9995L26.0118 82.7326C25.7482 82.3865 19.4829 74.1325 13.1185 63.339C4.41369 48.5767 0 36.7202 0 28.0987C0 24.3025 0.755612 20.6185 2.24585 17.149C3.68361 13.8018 5.74063 10.7968 8.3598 8.21773C10.9766 5.64097 14.0239 3.61787 17.4171 2.20462C20.9294 0.741743 24.6583 0 28.5001 0Z" fill="#90182C"/>
+                <path d="M35.2519 32.4149L29.8069 33.8556C29.5124 33.5125 29.0556 33.312 28.5548 33.3759C27.9461 33.4546 27.4418 33.9472 27.3511 34.5556C27.2648 35.1398 27.5377 35.667 27.9806 35.953L27.0273 41.2913L28.2112 41.5031L29.1739 36.1086C29.6627 35.9504 30.0331 35.5313 30.1237 35.0154L35.5593 33.5773L35.2519 32.4141V32.4149Z" fill="#90182C"/>
+                <path d="M28.7429 23.21C22.3627 23.21 17.1914 28.3866 17.1914 34.7715C17.1914 41.1563 22.3636 46.333 28.7429 46.333C35.1231 46.333 40.2944 41.1563 40.2944 34.7715C40.2944 28.3866 35.1222 23.21 28.7429 23.21ZM28.7429 43.1743C24.1138 43.1743 20.3474 39.4046 20.3474 34.7715C20.3474 30.1384 24.1138 26.3687 28.7429 26.3687C33.372 26.3687 37.1384 30.1384 37.1384 34.7715C37.1384 39.4046 33.372 43.1743 28.7429 43.1743Z" fill="#90182C"/>
+                <path d="M28.7411 12.4072C27.5936 12.4072 26.6602 13.3414 26.6602 14.49H30.8229C30.8229 13.3414 29.8895 12.4072 28.742 12.4072H28.7411Z" fill="#90182C"/>
+                <path d="M43.484 34.7711C43.484 31.5649 42.4617 28.598 40.7261 26.1782C40.562 25.95 40.7598 25.2137 40.7857 25.1117C40.8712 24.7842 41.1138 24.3918 41.2416 24.3754C41.6966 24.3184 42.0904 24.1576 42.4125 23.8958C43.1568 23.2917 43.4918 22.4266 43.3321 21.5209C43.2319 20.954 42.7449 20.5374 42.1698 20.5271C42.15 20.5271 39.9058 20.5314 39.0674 19.0268C38.0476 17.1964 36.2516 17.0624 36.2136 17.0598C36.1497 17.0503 34.1914 16.855 33.9954 14.398C33.953 13.8657 33.5723 13.4361 33.0723 13.3177C32.5568 11.4087 30.8109 10 28.742 10C26.6731 10 24.9272 11.4087 24.4108 13.3186C23.9118 13.4361 23.531 13.8665 23.4887 14.3989C23.2927 16.8559 21.3343 17.0512 21.2704 17.0607C21.2324 17.0633 19.4364 17.1972 18.4166 19.0276C17.5782 20.5322 15.3349 20.5271 15.3142 20.5279C14.7391 20.5383 14.2521 20.9548 14.152 21.5218C13.9922 22.4275 14.3273 23.2934 15.0716 23.8966C15.3936 24.1576 15.7874 24.3193 16.2424 24.3763C16.3702 24.3918 16.6129 24.7851 16.6983 25.1126C16.7242 25.2146 16.922 25.9509 16.7579 26.1791C15.0223 28.598 14 31.5649 14 34.7711C14 37.9774 15.0457 41.0125 16.8175 43.4479C16.9936 43.6907 17.0006 44.0165 16.8356 44.2672C16.5187 44.7494 16.0568 45.5082 15.9938 45.7199C15.8858 46.0855 15.9627 46.661 16.3184 47.1459C16.5714 47.4907 17.08 47.9116 18.0687 47.96C18.1852 47.966 18.351 47.9954 18.4883 48.0844C19.3751 48.6583 19.7913 49.8638 19.8958 50.1724C20.1885 51.0392 20.9561 51.6243 21.9163 51.5759C22.2772 51.7833 22.709 52.0054 23.4299 51.982C23.044 52.4021 22.9982 53.0485 23.3583 53.5273C23.5897 53.8349 23.9644 54 24.3495 54H33.131C33.5161 54 33.8909 53.8341 34.1223 53.5273C34.4832 53.0485 34.4366 52.4021 34.0506 51.982C34.7708 52.0054 35.2034 51.7833 35.5643 51.5759C36.5245 51.6243 37.2921 51.0401 37.5848 50.1724C37.6893 49.863 38.1063 48.6583 38.9923 48.0844C39.1295 47.9954 39.2953 47.966 39.4119 47.96C40.4006 47.9116 40.9092 47.4907 41.1622 47.1459C41.5179 46.661 41.5948 46.0855 41.4868 45.7199C41.4246 45.509 40.9627 44.7494 40.6449 44.2672C40.48 44.0165 40.4869 43.6907 40.6631 43.4479C42.4349 41.0125 43.4806 38.0137 43.4806 34.7711H43.484ZM16.3409 23.1759C16.1362 23.1586 15.9445 23.0618 15.7891 22.9279C15.5629 22.7325 15.3159 22.4162 15.3151 21.9651C15.3151 21.8372 15.4118 21.7292 15.5387 21.7197C16.258 21.6644 18.6886 21.3455 19.5115 19.5237C19.5115 19.5237 19.9528 18.5229 21.3939 18.2585C21.3939 18.2585 24.4229 17.9638 24.6872 14.4913H25.4582C25.4582 12.6765 26.9287 11.2047 28.742 11.2047C30.5553 11.2047 32.0258 12.6765 32.0258 14.4913H32.7969C33.0619 17.9646 36.0901 18.2585 36.0901 18.2585C37.5313 18.5229 37.9725 19.5237 37.9725 19.5237C38.7954 21.3455 41.2261 21.6652 41.9453 21.7197C42.0714 21.7292 42.169 21.8363 42.169 21.9634C42.169 22.4162 41.922 22.7325 41.6949 22.9279C41.5395 23.0627 41.3478 23.1586 41.1432 23.1759C40.0327 23.271 39.6468 24.7133 39.6209 24.8144C36.9251 21.8657 33.0499 20.0163 28.742 20.0163C24.4342 20.0163 20.5589 21.8657 17.8632 24.8144C17.8373 24.7133 17.4513 23.271 16.3409 23.1759ZM39.342 46.7587C38.9586 46.7751 38.5787 46.8866 38.2756 47.1217C36.9346 48.1622 36.5849 49.3799 36.4476 49.7869C36.3664 50.028 36.1627 50.3746 35.6679 50.3746C35.6256 50.3746 35.5807 50.372 35.5341 50.3668C35.3467 50.3452 35.1585 50.3997 35.003 50.506C34.8131 50.6365 34.5229 50.7817 34.1767 50.7817C33.852 50.7817 33.4773 50.6537 33.0896 50.2657L32.5663 51.1584C32.3867 51.5629 32.4653 52.0356 32.7658 52.3606L33.1682 52.7961H24.3176L24.72 52.3606C25.0205 52.0356 25.0982 51.5629 24.9194 51.1584L24.3962 50.2657C24.0085 50.6537 23.6337 50.7817 23.3091 50.7817C22.9628 50.7817 22.6735 50.6365 22.4827 50.506C22.3264 50.3988 22.1391 50.3444 21.9517 50.3668C21.9051 50.372 21.8602 50.3746 21.8179 50.3746C21.3222 50.3746 21.1193 50.028 21.0381 49.7869C20.9008 49.3799 20.5511 48.1622 19.2102 47.1217C18.9071 46.8866 18.5272 46.7751 18.1438 46.7587C17.0239 46.7094 17.2026 46.0276 17.2026 46.0276L17.9072 44.7736C20.6012 47.6955 24.4583 49.5268 28.7437 49.5268C33.0291 49.5268 36.8871 47.6964 39.5803 44.7736L40.2849 46.0276C40.2849 46.0276 40.4636 46.7103 39.3437 46.7587H39.342ZM28.742 48.3229C21.2765 48.3229 15.2019 42.244 15.2019 34.7711C15.2019 27.2982 21.2756 21.2193 28.742 21.2193C36.2084 21.2193 42.2821 27.2982 42.2821 34.7711C42.2821 42.244 36.2084 48.3229 28.742 48.3229Z" fill="#90182C"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_1477_3761">
+                <rect width="57" height="86" fill="white"/>
+                </clipPath>
+                </defs>
+                </svg>`;
+            const activeSvg = `
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="57" height="86" viewBox="0 0 57 86">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_1" data-name="Rectangle 1" width="57" height="86" fill="#fff"/>
+    </clipPath>
+  </defs>
+  <g id="Group_1" data-name="Group 1" clip-path="url(#clip-path)">
+    <path id="Path_1" data-name="Path 1" d="M28.5,83.426l-1.244-1.633A221.012,221.012,0,0,1,14.466,62.552,135.187,135.187,0,0,1,5.642,45.124C2.935,38.461,1.563,32.733,1.563,28.1A26.046,26.046,0,0,1,3.683,17.76,26.436,26.436,0,0,1,9.459,9.323,27.279,27.279,0,0,1,38.982,3.639a26.873,26.873,0,0,1,8.562,5.684A26.434,26.434,0,0,1,53.32,17.76,26.045,26.045,0,0,1,55.44,28.1c0,4.634-1.372,10.362-4.079,17.025a135.187,135.187,0,0,1-8.824,17.428A221.013,221.013,0,0,1,29.745,81.793Z" fill="#fff"/>
+    <path id="Path_2" data-name="Path 2" d="M28.5,3.11A25.185,25.185,0,0,0,3.123,28.1C3.123,47.535,28.5,80.854,28.5,80.854S53.877,47.535,53.877,28.1A25.185,25.185,0,0,0,28.5,3.11ZM28.5,0A28.626,28.626,0,0,1,48.64,8.218a27.983,27.983,0,0,1,6.114,8.931A27.587,27.587,0,0,1,57,28.1c0,8.622-4.414,20.478-13.118,35.24A218.268,218.268,0,0,1,30.988,82.733L28.5,86l-2.488-3.267A218.255,218.255,0,0,1,13.118,63.339C4.414,48.577,0,36.72,0,28.1a27.586,27.586,0,0,1,2.246-10.95A27.983,27.983,0,0,1,8.36,8.218,28.626,28.626,0,0,1,28.5,0Z" fill="#90182c"/>
+    <path id="Path_3" data-name="Path 3" d="M35.252,32.415l-5.445,1.441a1.405,1.405,0,1,0-1.826,2.1l-.953,5.338,1.184.212.963-5.395a1.407,1.407,0,0,0,.95-1.093l5.436-1.438-.307-1.163Z" fill="#90182c"/>
+    <path id="Path_4" data-name="Path 4" d="M28.743,23.21A11.562,11.562,0,1,0,40.294,34.771,11.556,11.556,0,0,0,28.743,23.21Zm0,19.964a8.4,8.4,0,1,1,8.4-8.4A8.409,8.409,0,0,1,28.743,43.174Z" fill="#90182c"/>
+    <path id="Path_5" data-name="Path 5" d="M28.741,12.407A2.084,2.084,0,0,0,26.66,14.49h4.163a2.084,2.084,0,0,0-2.081-2.083Z" fill="#90182c"/>
+    <path id="Path_6" data-name="Path 6" d="M43.484,34.771a14.692,14.692,0,0,0-2.758-8.593c-.164-.228.034-.965.06-1.066.085-.327.328-.72.456-.736a2.268,2.268,0,0,0,1.171-.48,2.449,2.449,0,0,0,.92-2.375,1.2,1.2,0,0,0-1.162-.994c-.02,0-2.264,0-3.1-1.5a3.793,3.793,0,0,0-2.854-1.967A2.618,2.618,0,0,1,34,14.4a1.207,1.207,0,0,0-.923-1.08,4.485,4.485,0,0,0-8.661,0,1.206,1.206,0,0,0-.922,1.08,2.618,2.618,0,0,1-2.218,2.662,3.792,3.792,0,0,0-2.854,1.967c-.838,1.5-3.082,1.5-3.1,1.5a1.2,1.2,0,0,0-1.162.994,2.448,2.448,0,0,0,.92,2.375,2.274,2.274,0,0,0,1.171.48c.128.015.371.409.456.736.026.1.224.838.06,1.066a14.766,14.766,0,0,0,.06,17.269.72.72,0,0,1,.018.819,10.9,10.9,0,0,0-.842,1.453,1.736,1.736,0,0,0,.325,1.426,2.168,2.168,0,0,0,1.75.814.876.876,0,0,1,.42.124A4.163,4.163,0,0,1,19.9,50.172a1.994,1.994,0,0,0,2.021,1.4,2.6,2.6,0,0,0,1.514.406,1.207,1.207,0,0,0-.072,1.545A1.234,1.234,0,0,0,24.35,54h8.781a1.236,1.236,0,0,0,.991-.473,1.206,1.206,0,0,0-.072-1.545,2.6,2.6,0,0,0,1.514-.406,1.993,1.993,0,0,0,2.021-1.4,4.165,4.165,0,0,1,1.407-2.088.875.875,0,0,1,.42-.124,2.168,2.168,0,0,0,1.75-.814,1.736,1.736,0,0,0,.325-1.426,10.768,10.768,0,0,0-.842-1.453.72.72,0,0,1,.018-.819,14.7,14.7,0,0,0,2.817-8.677Zm-27.143-11.6a.988.988,0,0,1-.552-.248,1.268,1.268,0,0,1-.474-.963.244.244,0,0,1,.224-.245c.719-.055,3.15-.374,3.973-2.2a2.515,2.515,0,0,1,1.882-1.265,3.838,3.838,0,0,0,3.293-3.767h.771a3.284,3.284,0,1,1,6.568,0H32.8a3.837,3.837,0,0,0,3.293,3.767,2.515,2.515,0,0,1,1.882,1.265c.823,1.822,3.254,2.141,3.973,2.2a.244.244,0,0,1,.224.244,1.264,1.264,0,0,1-.474.965.982.982,0,0,1-.552.248c-1.111.1-1.5,1.537-1.522,1.639a14.732,14.732,0,0,0-21.758,0C17.837,24.713,17.451,23.271,16.341,23.176Zm23,23.583a1.86,1.86,0,0,0-1.066.363,5.2,5.2,0,0,0-1.828,2.665.791.791,0,0,1-.78.588,1.211,1.211,0,0,1-.134-.008.787.787,0,0,0-.531.139,1.48,1.48,0,0,1-.826.276,1.526,1.526,0,0,1-1.087-.516l-.523.893a1.108,1.108,0,0,0,.2,1.2l.4.436H24.318l.4-.436a1.11,1.11,0,0,0,.2-1.2l-.523-.893a1.526,1.526,0,0,1-1.087.516,1.483,1.483,0,0,1-.826-.276.779.779,0,0,0-.531-.139,1.211,1.211,0,0,1-.134.008.79.79,0,0,1-.78-.588,5.2,5.2,0,0,0-1.828-2.665,1.86,1.86,0,0,0-1.066-.363c-1.12-.049-.941-.731-.941-.731l.7-1.254a14.729,14.729,0,0,0,21.673,0l.7,1.254s.179.683-.941.731Zm-10.6,1.564a13.552,13.552,0,1,1,13.54-13.552A13.561,13.561,0,0,1,28.742,48.323Z" fill="#90182c"/>
+  </g>
+</svg>
+`;
+
+            const encodedDefaultSvg = encodeURIComponent(defaultSvg).replace(/'/g, "%27").replace(/"/g, "%22");
+            const encodedActiveSvg = encodeURIComponent(activeSvg).replace(/'/g, "%27").replace(/"/g, "%22");            
+
+    const defaultIcon = `data:image/svg+xml;charset=UTF-8,${encodedDefaultSvg}`;
+    const activeIcon = `data:image/svg+xml;charset=UTF-8,${encodedActiveSvg}`;
+    
+    function initMap() {
+            var locations = [
+                ['<p class="head">Corporate Office</p> <ul class="service-list"><li>Drive-Thru</li><li>ATM</li><li>Safe Deposit Boxes</li></ul><p class="openhrs"><b>Hours:</b> Open Now - 5:00 PM</p><p class="getlnk"><a href="http://maps.google.com/maps?saddr=Current+Location&amp;daddr=24+Princeton+Avenue+Brick%2c+NJ+08724" class="textCta small" target="_blank">Get Directions</a>  <a href="#" class="textCta small" target="_blank">Branch Info</a></p>', '40.6545753', '-73.9134312', '1'],
+                ['<p class="head">Allentown Branch</p> <ul class="service-list"><li>Drive-Thru</li><li>ATM</li><li>Safe Deposit Boxes</li></ul><p class="openhrs"><b>Hours:</b> Open Now - 5:00 PM</p><p class="getlnk"><a href="http://maps.google.com/maps?saddr=Current+Location&amp;daddr=24+Princeton+Avenue+Brick%2c+NJ+08724" class="textCta small" target="_blank">Get Directions</a>  <a href="#" class="textCta small" target="_blank">Branch Info</a></p>', '40.6535688', '-73.9134312', '2'],
+                ['<p class="head">Bordentown Branch</p> <ul class="service-list"><li>Drive-Thru</li><li>ATM</li><li>Safe Deposit Boxes</li></ul><p class="openhrs"><b>Hours:</b> Open Now - 5:00 PM</p><p class="getlnk"><a href="http://maps.google.com/maps?saddr=Current+Location&amp;daddr=24+Princeton+Avenue+Brick%2c+NJ+08724" class="textCta small" target="_blank">Get Directions</a>  <a href="#" class="textCta small" target="_blank">Branch Info</a></p>', '40.6550688', '-73.9134312', '3'],
+            ];
+
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 17,
+                center: new google.maps.LatLng(40.654605, -73.9121705),
+                mapTypeControl: false,
+                zoomControl:false,
+                panControl:false,
+                streetViewControl:false,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            });
+            gmarkers.push(marker);
+            var infowindow = new google.maps.InfoWindow();
+            var marker, i;
+          
+            for (let i = 0; i < locations.length; i++) {
+            const marker = new google.maps.Marker({
+                position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                map: map,
+                icon: defaultIcon,
+                animation: google.maps.Animation.DROP,
+            });
+
+            google.maps.event.addListener(marker, 'click', (function (marker) {
+                return function () {
+                    if (currentMarker) {
+                        currentMarker.setIcon(defaultIcon);
+                    }
+                    marker.setIcon(activeIcon);
+                    infowindow.setContent(locations[i][0]);
+                    infowindow.open(map, marker);
+                    currentMarker = marker;
+                    currentMarker.setMap(map);
+                    map.setCenter(currentMarker.getPosition());
+                };
+            })(marker));
+
+            google.maps.event.addListener(marker, 'mouseover', (function (marker) {
+                return function () {
+                    marker.setIcon(activeIcon);
+                    infowindow.setContent(locations[i][0]);
+                    infowindow.open(map, marker);
+                };
+            })(marker));
+
+            google.maps.event.addListener(marker, 'mouseout', (function (marker) {
+                return function () {
+                    if (currentMarker !== marker) {
+                        marker.setIcon(defaultIcon);
+                        infowindow.setContent(locations[i][0]);
+                        infowindow.open(map, marker);
+                    }
+                };
+            })(marker));
+        }
+            
+        }   
+</script>

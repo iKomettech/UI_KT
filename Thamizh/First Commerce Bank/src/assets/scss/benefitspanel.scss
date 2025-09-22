@@ -1,0 +1,138 @@
+@import "util/util";
+
+$white: var(--fcb-white);
+$primary-color: var(--fcb-primary);
+$secondary-color: var (--fcb-whitef7);
+$img: "../../images/";
+
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+.benefitspanel + link + .financialLiteracy {
+    padding-top: 0;
+    @include breakpoint(medium) {
+        padding-top: 26px;
+    }
+}
+
+.benefitspanel{
+    position: relative;
+    .panelPattern{
+        background-size: cover !important;
+        bottom: -86px;
+        left: 0;
+        right: 0;
+        margin-inline: auto;
+        max-width: 1920px;
+        width: 100%;
+        max-height: 878px;
+        height: 300%;
+        position: absolute;
+        z-index: -1;
+        display: none;
+        @include breakpoint(medium) {
+            bottom: -60px;
+            display: block;
+        }
+        @include breakpoint(llarge) {
+            bottom: -86px;
+        }
+    }
+    .flexwrap{
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        flex-wrap: wrap;
+        @include breakpoint(medium) {
+            flex-wrap: nowrap;
+            justify-content: space-between;
+        }
+        @include breakpoint(large) {
+            max-width: 912px;
+        }
+        @include breakpoint(llarge) {
+            max-width: 1132px;
+        }
+        .contentwrap{
+            order: 2;
+            margin-top: 20px;
+            @include breakpoint(medium) {
+               order: 1;
+            }
+            @include breakpoint(large) {
+                margin-top: 60px;
+            }
+            .content{
+                max-width: 100%;
+                width: 100%;
+                @include breakpoint(medium) {
+                    max-width: 50%;
+                }
+                @include breakpoint(large) {
+                    max-width: 520px;
+                }
+                h2{
+                    + h6{
+                        margin-top: 10px;
+                        font-weight: 600;
+                        @include breakpoint(medium) {
+                            margin-top: 20px;
+                        }
+                    }
+                }
+                p{
+                    margin-top: 10px;
+                    @include breakpoint(medium) {
+                        margin-top: 20px;
+                    }
+                }
+                ol{
+                    margin-left: 30px;
+                    margin-top: 22px;
+                    @include breakpoint(medium) {
+                        margin-top: 18px;
+                    }
+                    li{
+                        font-size: 18px;
+                        font-weight: 500;
+                        line-height: 100%;
+                        margin-bottom: 10px;
+                        &:last-child{
+                            margin-bottom: 0;
+                        }
+                        @include breakpoint(medium) {
+                            margin-bottom: 18px;
+                        }
+                        &::marker{
+                            color: #F0A21F;
+                            font-size: 24px;
+                            font-weight: 700;
+                        }
+                    }
+                }
+            }
+        }
+        .imgwrap{
+            max-width: 100%;
+            width: 100%;
+            text-align: center;
+            @include breakpoint(medium) {
+                max-width: 50%;
+                text-align: left;
+            }
+            @include breakpoint(large) {
+                max-width: 441px;
+            }
+            @include breakpoint(llarge) {
+                margin-right: 65px;
+            }
+        }
+    }
+}

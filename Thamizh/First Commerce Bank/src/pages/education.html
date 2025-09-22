@@ -1,0 +1,727 @@
+<script type="text/javascript">
+    $(document).ready(function () {
+     function adjustPattern() {
+     let windowWidth = $(window).outerWidth();
+        let $panel = $('#maincontent').children().not('link, script').eq(6);
+        let adjPanelTop;
+        let bottomTop;
+        let $panelTop = $('.subbannerpanel .subbanner .bannerwrap .contentwrap .content').offset().top;
+        if ($panel.length) {
+            if (windowWidth >= 1440) {
+                adjPanelTop = $panelTop + 50;
+                bottomTop = 45;
+            }
+            else if (windowWidth >= 1024 && windowWidth < 1440) {
+                adjPanelTop = $panelTop + 70;
+                bottomTop = 45;
+            }
+            else{
+                adjPanelTop = $('.subbannerpanel .subbanner .bannerwrap .imgWrap').offset().top + 70;
+                bottomTop = 22;
+            }
+            let panelTop = $panel.offset().top;
+            let getPanelHeight = panelTop;
+            $(".templatesection").css('height', getPanelHeight - adjPanelTop - bottomTop + 'px');
+            $(".templatesection").css('top', adjPanelTop + 'px');
+        } else {
+        }
+    }
+
+     setTimeout(adjustPattern, 500);
+
+     $(window).on("resize", function () {
+         setTimeout(function() {
+             adjustPattern();
+         }, 800);
+     });
+ });
+</script>
+<div class="templatesection">
+    <div class="templatePattern" style="background: url(assets/images/news/news-template-pattern.svg) center bottom no-repeat;"> </div>
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        function contentPadding() {
+            var logoLeft = $('.logoSection').offset().left;
+            $('.subbannerpanel .subbanner .bannerwrap .contentwrap .content').css({ 'margin-left': logoLeft });
+        }
+    
+        function heightLoad() {
+            if ($(window).width() >= 768 && $(window).width() <= 1024) {
+                if ($('.subbannerpanel .subbanner .contentwrap .content').height() <= 58) {
+                    $('.subbannerpanel .subbanner .contentwrap .content').css('padding-top', '35px');
+                } else {
+                    $('.subbannerpanel .subbanner .contentwrap .content').css('padding-top', '14px');
+                }
+            }
+        }
+    
+        contentPadding();
+         heightLoad();
+    
+        $(window).on("resize load", function () {
+            contentPadding();
+             heightLoad();
+        });
+    });
+    
+            function getNumberOfLines(selector) {
+    var el = $(selector)[0];  
+    
+    if (!el) {
+        console.warn("Element not found:", selector);
+        return 0;  
+    }
+    
+    var computedStyle = window.getComputedStyle(el);
+    var lineHeight = parseFloat(computedStyle.lineHeight);
+    var scrollHeight = el.scrollHeight;
+    
+    console.log("Checking element:", el);
+    console.log("Line Height:", lineHeight);
+    console.log("Scroll Height:", scrollHeight);
+    
+    if (!lineHeight || isNaN(lineHeight)) {
+        console.error("Invalid line-height for", selector);
+        return 0;
+    }
+    
+    var lines = Math.round(scrollHeight / lineHeight);
+    console.log("Number of lines:", lines);
+    
+    return lines;
+    }
+    $(window).on("load", function () {
+    var content = $('.subbannerpanel .subbanner .contentwrap .content');
+    
+    if (content.length === 0) {
+        console.error("Content element not found!");
+        return;
+    }
+    
+    var h1Lines = content.find('h1').length ? getNumberOfLines(content.find('h1')) : 0;
+    var pLines = content.find('p').length ? getNumberOfLines(content.find('p').first()) : 0;
+    
+    console.log("H1 Lines:", h1Lines, "P Lines:", pLines);
+    
+    content.removeClass('oneLine twoLine oneLineP twoLineP');
+    
+    if (h1Lines === 1) {
+        content.addClass('oneLine');
+    } else if (h1Lines === 2) {
+        content.addClass('twoLine');
+    }
+    
+    if(pLines === 1){
+        content.addClass('singleLineP');
+    }
+    if (pLines === 1 && h1Lines === 2) {
+        content.addClass('twoLineP');
+        content.removeClass('twoLine');
+        content.removeClass('singleLineP');
+    } else if (pLines === 1 && h1Lines === 1) {
+        content.addClass('oneLineP');
+        content.removeClass('oneLine');
+        content.removeClass('singleLineP');
+    }
+    
+     
+    });
+    </script>
+
+
+    <link rel="stylesheet" href="{{root}}assets/css/subbanner/subbanner.css" media="all">
+    <div class="subbannerpanel module">
+    <div class="grid-container-full">
+    <div class="subbanner">
+    <div class="temp1">
+        <div class="bannerwrap">
+            <div class="contentwrap">
+                <div class="content">
+                    <h1>Education<br> <strong>Center</strong></h1>
+                    <p>How To Guides</p>
+                </div>
+            </div>
+            <div class="imgWrap">
+                <div class="filter-img">
+                    <img class="img" src="assets/images/calculator-details.jpg" width="952" height="461"
+                        alt="Home Promotional">
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    
+    
+    <div class="breadcrumbWrapBottom module come-in " data-swiftype-index="false">
+    <div class="grid-container">
+    <ul class="breadcrumbs">
+    <li class="breadcrumb-item ">
+        <a href="/" aria-label="Home">Home</a>
+    </li>
+    <li class="breadcrumb-item ">
+        <a href="/" aria-label="Education Center">Education Center</a>
+    </li>
+    <li class="breadcrumb-item ">How To Guides</li>
+    </ul>
+    </div>
+    </div>
+
+            <link rel="stylesheet" href="{{root}}assets/css/productimage/productimage.css" media="all">
+
+<div class="alternative gap left  module">
+    <div class="grid-container">
+        <div class="flexwrap">
+            <div class="contentwrap">                        
+                <div class="content">
+                    <h2>Learn More About Our Program</h2>
+                                <p>First Commerce Bank is bringing Banzai, a premium online financial literacy program, to educators
+                                    and students in your area for free.</p>
+                    <div class="ctablock">
+                        <a href="#" class="defaultBtn">Additional Resources</a>
+                    </div>
+                </div>
+            </div>
+                <div class="imgWrap">
+                    <img class="lazy svg-border-mask" alt="Compare Business Checking" src="assets/images/product/product-image-1.jpg" width="607" height="350">
+                </div>
+        </div>
+    </div>
+</div>
+
+    <link rel="stylesheet" href="https://fcb.dev.activitystaging.com/assets/css/schoolStats/schoolStats.css" media="all">
+    <div class="schoolStats gap">
+        <div class="grid-container">
+            <div class="parentCard">
+                <div class="flexBox">
+                    <div class="columnBox">
+                        <h2>5</h2>
+                        <hr>
+                        <p>Schools Sponsored</p>
+                    </div>
+                    <div class="columnBox">
+                        <h2>34</h2>
+                        <hr>
+                        <p>Teachers Served</p>
+                    </div>
+                    <div class="columnBox">
+                        <h2>540</h2>
+                        <hr>
+                        <p>Students Educated</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <link rel="stylesheet" href="{{root}}assets/css/schoolsliderpanel/schoolsliderpanel.css" media="all">
+
+    <script type="text/javascript" defer>
+        $(document).ready(function () {
+            if ($(".schoolswiperpanel .swiper .swiper-slide").length > 0) {
+                let swiperfeatureCarousel = new Swiper('.schoolSlider', {
+                            spaceBetween: 0,
+                            slidesPerView: 1,
+                            loop: false,
+                            preventClicks: true,
+                            pagination: {
+                                el: '.schoolsliderpanel .swiper-pagination',
+                                clickable: true
+                            },
+                            navigation: {
+                                nextEl: '.schoolsliderpanel .swiper-button-next',
+                                prevEl: '.schoolsliderpanel .swiper-button-prev',
+                            },
+                            breakpoints: {
+                                300: {
+                                    slidesPerView: 1,
+                                    slidesPerGroup: 1,
+                                    spaceBetween: 16
+                                },
+                                768: {
+                                    slidesPerView: 2,
+                                    slidesPerGroup: 2,
+                                    spaceBetween: 16
+                                },
+                                1024: {
+                                    slidesPerView: 4,
+                                    slidesPerGroup: 4,
+                                    spaceBetween: 25
+                                },
+                                1280: {
+                                    slidesPerView: 5,
+                                    slidesPerGroup: 5,
+                                    spaceBetween: 25
+                                }
+                            },
+                            on: {
+                                slideChangeTransitionEnd: function () {
+                                    $('.schoolSlider .swiper-slide .lazy').Lazy({ bind: 'event' });
+                                }
+                            }
+                });
+            }
+        });
+    </script>
+
+    <div class="schoolsliderpanel gap module">
+        <div class="grid-container">
+            <div class="text-center">
+                <h2>Schools Sponsored</h2>
+            </div>
+            <div class="flexBox">
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+            <div class="schoolswiperpanel">
+                <div class="innerWrap">
+                    <div class="swiper schoolSlider">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="swiper-content">
+                                    <a href="#"  aria-label="Lumberton Middle School">
+                                        <div class="imgwrap">
+                                            <img class="lazy zoom layzeloading" data-src="{{root}}assets/images/school/image-1.jpg" width="230" height="170" alt="NJBIA">
+                                        </div>
+                                        <p>Lumberton Middle School</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="swiper-content">
+                                    <a href="#"  aria-label="Lakewood High School">
+                                        <div class="imgwrap">
+                                            <img class="lazy zoom layzeloading" data-src="{{root}}assets/images/school/image-2.jpg" width="230" height="170" alt="NJBIA">
+                                        </div>
+                                        <p>Lumberton Middle School</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="swiper-content">
+                                    <a href="#"  aria-label="Clifton T. Barkalow">
+                                        <div class="imgwrap">
+                                            <img class="lazy zoom layzeloading" data-src="{{root}}assets/images/school/image-3.jpg" width="230" height="170" alt="NJBIA">
+                                        </div>
+                                        <p>Lumberton Middle School</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="swiper-content">
+                                    <a href="#"  aria-label="Jackson Memorial High School">
+                                        <div class="imgwrap">
+                                            <img class="lazy zoom layzeloading" data-src="{{root}}assets/images/school/image-4.jpg" width="230" height="170" alt="NJBIA">
+                                        </div>
+                                        <p>Jackson Memorial High School</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="swiper-content">
+                                    <a href="#"  aria-label="Jackson Memorial High School">
+                                        <div class="imgwrap">
+                                            <img class="lazy zoom layzeloading" data-src="{{root}}assets/images/school/image-5.jpg" width="230" height="170" alt="NJBIA">
+                                        </div>
+                                        <p>Jackson Memorial High School</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="swiper-content">
+                                    <a href="#"  aria-label="Jackson Memorial High School">
+                                        <div class="imgwrap">
+                                            <img class="lazy zoom layzeloading" data-src="{{root}}assets/images/school/image-1.jpg" width="230" height="170" alt="NJBIA">
+                                        </div>
+                                        <p>Jackson Memorial High School</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="swiper-content">
+                                    <a href="#"  aria-label="Jackson Memorial High School">
+                                        <div class="imgwrap">
+                                            <img class="lazy zoom layzeloading" data-src="{{root}}assets/images/school/image-1.jpg" width="230" height="170" alt="NJBIA">
+                                        </div>
+                                        <p>Jackson Memorial High School</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="swiper-content">
+                                    <a href="#"  aria-label="Jackson Memorial High School">
+                                        <div class="imgwrap">
+                                            <img class="lazy zoom layzeloading" data-src="{{root}}assets/images/school/image-1.jpg" width="230" height="170" alt="NJBIA">
+                                        </div>
+                                        <p>Jackson Memorial High School</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="swiper-content">
+                                    <a href="#"  aria-label="Jackson Memorial High School">
+                                        <div class="imgwrap">
+                                            <img class="lazy zoom layzeloading" data-src="{{root}}assets/images/school/image-1.jpg" width="230" height="170" alt="NJBIA">
+                                        </div>
+                                        <p>Jackson Memorial High School</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="swiper-content">
+                                    <a href="#"  aria-label="Jackson Memorial High School">
+                                        <div class="imgwrap">
+                                            <img class="lazy zoom layzeloading" data-src="{{root}}assets/images/school/image-1.jpg" width="230" height="170" alt="NJBIA">
+                                        </div>
+                                        <p>Jackson Memorial High School</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="swiper-content">
+                                    <a href="#"  aria-label="Jackson Memorial High School">
+                                        <div class="imgwrap">
+                                            <img class="lazy zoom layzeloading" data-src="{{root}}assets/images/school/image-2.jpg" width="230" height="170" alt="NJBIA">
+                                        </div>
+                                        <p>Jackson Memorial High School</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="swiper-content">
+                                    <a href="#"  aria-label="Jackson Memorial High School">
+                                        <div class="imgwrap">
+                                            <img class="lazy zoom layzeloading" data-src="{{root}}assets/images/school/image-2.jpg" width="230" height="170" alt="NJBIA">
+                                        </div>
+                                        <p>Jackson Memorial High School</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="swiper-content">
+                                    <a href="#"  aria-label="Jackson Memorial High School">
+                                        <div class="imgwrap">
+                                            <img class="lazy zoom layzeloading" data-src="{{root}}assets/images/school/image-2.jpg" width="230" height="170" alt="NJBIA">
+                                        </div>
+                                        <p>Jackson Memorial High School</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="swiper-content">
+                                    <a href="#"  aria-label="Jackson Memorial High School">
+                                        <div class="imgwrap">
+                                            <img class="lazy zoom layzeloading" data-src="{{root}}assets/images/school/image-2.jpg" width="230" height="170" alt="NJBIA">
+                                        </div>
+                                        <p>Jackson Memorial High School</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="swiper-content">
+                                    <a href="#"  aria-label="Jackson Memorial High School">
+                                        <div class="imgwrap">
+                                            <img class="lazy zoom layzeloading" data-src="{{root}}assets/images/school/image-2.jpg" width="230" height="170" alt="NJBIA">
+                                        </div>
+                                        <p>Jackson Memorial High School</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flexBox-pagination">
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </div>
+    
+    <link rel="stylesheet" href="https://fcb.dev.activitystaging.com/html/assets/css/schoolCard/schoolCard.css" media="all">
+    <div class="financialLiteracy gap">
+        <div class="grid-container">
+            <h2>Why Work with Us? </h2>
+            <div class="flexBox">
+                <div class="fullCard">
+                    <div class="insideCard">
+                        <div class="iconBox">
+                            <img src="https://fcb.dev.activitystaging.com/html/assets/images/icons/icon1.svg" alt="" width="93" height="93">
+                        </div>
+                        <div class="contentWrap">
+                            <h3>Rewards:</h3>
+                            <ul>
+                                <li>Competitive compensation packages</li>
+                                <li>Comprehensive benefits, including health, dental, and vision insurance</li>
+                                <li>Retirement plans with company matching</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div> 
+                <div class="fullCard">
+                    <div class="insideCard">
+                        <div class="iconBox">
+                            <img src="https://fcb.dev.activitystaging.com/html/assets/images/icons/icon2.svg" alt="" width="93" height="93">
+                        </div>
+                        <div class="contentWrap">
+                            <h3>ReWork Perks:</h3>
+                            <ul>
+                                <li>Paid time off and holidays</li>
+                                <li>Employee wellness programs</li>
+                                <li>Community involvement and volunteer opportunities</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div> 
+                <div class="fullCard">
+                    <div class="insideCard">
+                        <div class="iconBox">
+                            <img src="https://fcb.dev.activitystaging.com/html/assets/images/icons/icon3.svg" alt="" width="93" height="93">
+                        </div>
+                        <div class="contentWrap">
+                            <h3>Career Development:</h3>
+                            <ul>
+                                <li>Professional growth opportunities through training and mentorship</li>
+                                <li>Clear paths for advancement</li>
+                                <li>Access to leadership development programs</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </div>
+
+    <link rel="stylesheet" href="https://fcb.dev.activitystaging.com/assets/css/testimonials/testimonials.css" media="all">
+            
+    <script type="text/javascript" defer>
+        $(document).ready(function () {
+            let isPlaying = true;
+            $(".testimonialsPanel").each(function (index, element) {
+                let swiperContainer = $(element).find('.testimonials'); 
+                let slides = swiperContainer.find('.swiper-slide');
+    
+                if (slides.length > 1) {
+                    let swiperInstance = new Swiper(swiperContainer[0], {
+                        slidesPerView: 1,
+                        spaceBetween: 10,
+                        loop: true,
+                        autoplay: {
+                            delay: 3000,
+                            disableOnInteraction: false
+                        },
+                        navigation: {
+                            nextEl: $(element).find('.navBox .swiper-button-next')[0],
+                            prevEl: $(element).find('.navBox .swiper-button-prev')[0],
+                        },
+                        pagination: {
+                            el: $(element).find(".swiper-pagination")[0],
+                            clickable: true,
+                        },
+                    });
+    
+                    let isPlaying = true;
+                    $(element).find("#play-slider").on("click", function () {
+                        if (isPlaying) {
+                            swiperInstance.autoplay.stop();
+                            $(this).addClass("active");
+                        } else {
+                            swiperInstance.autoplay.start();
+                            $(this).removeClass("active");
+                        }
+                        isPlaying = !isPlaying;
+                    });
+                }
+            });
+        });
+    
+    </script>
+
+    <div class="testimonialsPanel secondary gap">
+        <div class="grid-container">
+            <h2>Our Team's Perspective on Working at FCB</h2>
+            <div class="carouselcontainer">
+                <div class="swiper-container testimonials">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="parentBox bgBox">
+                                <div class="boxSlide">
+                                    <div class="insideBox">
+                                        <div class="flexBox">
+                                            <div class="leftWrap">
+                                                <div class="insideimg">
+                                                    <div class="imgWrap">
+                                                        <img src="https://fcb.dev.activitystaging.com/html/assets/images/testimonial/person.jpg"
+                                                            class="lazy " alt="image" width="300" height="300">
+                                                        <div class="justopacity"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="rightWrap">
+                                                <div class="contentWrap">
+                                                    <p>Lorem ipsum dolor sit amet consectetur. Elit fringilla donec at ipsum
+                                                        libero venenatis vel sit. Posuere ridiculus sed non ultricies elit
+                                                        tortor cursus. Id aliquet non facilisis feugiat egestas rhoncus
+                                                        aliquam
+                                                        netus. Magna nibh amet ipsum tincidunt erat in lobortis risus
+                                                        phasellus.
+                                                    </p>
+                                                    <p class="large"><strong>Mary Sue, Business Owner, Sample
+                                                            Business</strong></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="parentBox bgBox">
+                                <div class="boxSlide">
+                                    <div class="insideBox">
+                                        <div class="flexBox">
+                                            <div class="leftWrap">
+                                                <div class="insideimg">
+                                                    <div class="imgWrap">
+                                                        <img src="https://fcb.dev.activitystaging.com/html/assets/images/testimonial/person.jpg"
+                                                            class="lazy " alt="image" width="300" height="300">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="rightWrap">
+                                                <div class="contentWrap">
+                                                    <p>Lorem ipsum dolor sit amet consectetur. Elit fringilla donec at ipsum
+                                                        libero venenatis vel sit. Posuere ridiculus sed non ultricies elit
+                                                        tortor cursus. Id aliquet non facilisis feugiat egestas rhoncus
+                                                        aliquam
+                                                        netus. Magna nibh amet ipsum tincidunt erat in lobortis risus
+                                                        phasellus.
+                                                    </p>
+                                                    <p class="large"><strong>Mary Sue, Business Owner, Sample
+                                                            Business</strong></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                    </div>
+    
+                    <div class="navBox">
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+                </div>
+    
+            </div>
+    
+            <div class="navBoxPagi">
+                <div class="flexDis">
+                    <div class="swiper-pagination">
+                    </div>
+                    <a href="javascript:void(0)" class="swiper-button-play" id="play-slider">
+                        <span class="screen-reader-text">Play / Pause</span>
+                    </a>
+                </div>
+            </div>
+    
+        </div>
+    </div>    
+
+
+<link rel="stylesheet" href="{{root}}assets/css/finacialresourcepanel/finacialresourcepanel.css" media="all">
+
+<div class="finacialresourcepanel gap module">
+    <div class="grid-container">
+        <div class="text-center">
+            <h2>Additional Resources</h2>
+        </div>
+        <div class="innerwrap noheadwrap"> <!---without h3 add this class---->
+            <h3>About</h3>
+            <div class="flexwrap">
+                <div class="ctablock">
+                    <a href="#"  class="defaultBtn light" aria-label="Curriculum">Curriculum</a>
+                </div>
+                <div class="ctablock">
+                    <a href="#"  class="defaultBtn light" aria-label="Banzai Video">Banzai Video</a>
+                </div>
+                <div class="ctablock">
+                    <a href="#"  class="defaultBtn light" aria-label="Banzai Support Page">Banzai Support Page</a>
+                </div>
+                <div class="ctablock">
+                    <a href="#"  class="defaultBtn light" aria-label="Demo Wellness Center">Demo Wellness Center</a>
+                </div>
+            </div>
+        </div>
+        <div class="innerwrap">
+            <h3>For Teachers</h3>
+            <div class="flexwrap">
+                <div class="ctablock">
+                    <a href="#"  class="defaultBtn light" aria-label="Teacher Demo">Teacher Demo</a>
+                </div>
+                <div class="ctablock">
+                    <a href="#"  class="defaultBtn light" aria-label="Getting Started Video">Getting Started Video</a>
+                </div>
+                <div class="ctablock">
+                    <a href="#"  class="defaultBtn light" aria-label="Teacher Guide PDF">Teacher Guide PDF</a>
+                </div>
+            </div>
+        </div>
+        <div class="innerwrap">
+            <h3>Personal Finance</h3>
+            <div class="flexwrap">
+                <div class="ctablock">
+                    <a href="#"  class="defaultBtn light" aria-label="Teacher Demo">Elementary School</a>
+                </div>
+                <div class="ctablock">
+                    <a href="#"  class="defaultBtn light" aria-label="Getting Started Video">Middle School</a>
+                </div>
+                <div class="ctablock">
+                    <a href="#"  class="defaultBtn light" aria-label="Teacher Guide PDF">High School</a>
+                </div>
+            </div>
+        </div>
+        <div class="innerwrap">
+            <h3>Course Rundowns</h3>
+            <div class="flexwrap">
+                <div class="ctablock">
+                    <a href="#"  class="defaultBtn light" aria-label="Teacher Demo">High School</a>
+                </div>
+                <div class="ctablock">
+                    <a href="#"  class="defaultBtn light" aria-label="Getting Started Video">College & Careers</a>
+                </div>
+                <div class="ctablock">
+                    <a href="#"  class="defaultBtn light" aria-label="Teacher Guide PDF">Digital Citizenship</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<link rel="stylesheet" href="{{root}}assets/css/productimage/productimage.css" media="all">
+
+<div class="alternative gap left  module">
+    <div class="grid-container">
+        <div class="flexwrap">
+            <div class="contentwrap">                        
+                <div class="content">
+                    <h2>Learn more about Banzai</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur. Velit eu tortor ut scelerisque morbi. Mauris risus ut quam habitasse cras augue pellentesque enim ut.</p>
+                    <div class="ctablock">
+                        <a href="#" class="defaultBtn" aria-label="Calculators">Calculators</a>
+                    </div>
+                </div>
+            </div>
+                <div class="imgWrap">
+                    <img class="lazy svg-border-mask" alt="Compare Business Checking" src="assets/images/product/product-image-1.jpg" width="607" height="350">
+                </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,425 @@
+@import "util/util";
+
+$white: var(--fcb-white);
+$primary-color: var(--fcb-primary);
+$secondary-color: var (--fcb-whitef7);
+$img: "../../images/";
+
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+.ratechartpanel {
+    position: relative;
+
+    .smallTitle {
+        margin-bottom: 20px;
+
+        @include breakpoint(large) {
+            margin-bottom: 45px;
+        }
+
+        h2 {
+            text-align: left;
+            padding-right: 20px;
+            padding-left: 20px;
+
+            @include breakpoint(large) {
+                text-align: center;
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+        
+        p.large{
+            text-align: left;
+            padding-right: 20px;
+            padding-left: 20px;
+            color: $primary-color;
+            margin-top: 12px;
+            font-weight: 600;
+            @include breakpoint(large) {
+                text-align: center;
+                padding-left: 0;
+                padding-right: 0;
+                font-size: calc(clamp(1.5rem, -0.962vw + 2.115rem, 1.25rem));
+            }
+            a{
+                color: $primary-color;
+            }
+        }
+    }
+
+    .tabphorizonpanel {
+        .tabHorizontal {
+            width: 100%;
+            margin: 0 auto;
+            .tab-container{
+                margin-left: auto;
+                margin-right: auto;
+                max-width: 1048px;
+                padding-left: 20px;
+                padding-right: 20px;
+                @include breakpoint(llarge) {
+                    padding-left: 0px;
+                    padding-right: 0px;
+                }
+            }
+            .tab-links {
+                list-style: none;
+                position: relative;
+                display: inline-flex;
+                border-radius: 70px;
+                font-weight: 700;
+                font-size: 20px;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                color: $primary-color;
+                background: linear-gradient(180deg, #F8F8F8 0%, #C2C2C2 100%);
+                margin-bottom: 32px !important;
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: -8px;
+                    left: -8px;
+                    right: -8px;
+                    bottom: -8px;
+                    border-radius: inherit;
+                    box-shadow: inset 0px 6px 10px rgba(0, 0, 0, 0.15);
+                    z-index: -1;
+
+                    @media (min-width:1100px) {
+                        top: -15px;
+                        left: -15px;
+                        right: -15px;
+                        bottom: -15px;
+                    }
+                }
+
+                li {
+                    cursor: pointer;
+                    position: relative;
+                    color: $primary-color;
+                    text-align: center;
+                    font-weight: 700;
+                    font-size: clamp(18px,calc(18px + (32 - 18) * ((100vw - 23.4375rem) / (1440 - 375))),32px);
+                    line-height: 100%;
+                    margin-right: 0;
+                    padding-bottom: 0;
+                    margin-bottom: 0;
+                    padding-left: 0;
+                    display: flex;
+                    align-items: center;
+                    width: 100%;
+                    justify-content: center;
+                    border: 9px solid transparent;
+                    transition: all 0.5s;
+                    border-radius: 55px;
+                    min-height: 97px;
+
+                    &:first-child {
+                        margin-left: 0;
+                    }
+
+                    &::before {
+                        visibility: hidden;
+                    }
+                    span {
+                        user-select: none;
+                    }
+                }
+
+                .active {
+                    background: linear-gradient(180deg, #BF3149 0%, #68101F 100%) padding-box, linear-gradient(360deg, #BE3149 0%, #6C1121 100%) border-box;
+                    border-radius: 100px;
+                    border: 9px solid transparent;
+                    box-shadow: inset 0px 6px 10px rgba(0, 0, 0, 0.15);
+                    color: #ffffff;
+                    &:after{
+                        display: none;
+                    }
+                }
+            }
+
+            .tab-content-section {
+                margin-top: calc(clamp(0rem, 12.019vw - 7.692rem, 3.125rem));
+
+                .tab-pane-content {
+                    display: none;
+                    position: relative;
+                    .ratepanelsection{
+                        display: none;
+                        &.activetablepanel{
+                            display: none !important;
+                            @include breakpoint(large) {
+                                display: block !important;
+                            }
+                        }
+                    }
+                    .panelPattern {
+                        @include breakpoint(large) {
+                            background-size: cover !important;
+                            bottom: -60px;
+                            left: 0;
+                            right: 0;
+                            margin-inline: auto;
+                            max-width: 1920px;
+                            width: 100%;
+                            max-height: 878px;
+                            height: 300%;
+                            position: absolute;
+                            z-index: -1;
+                        }    
+                        &.patternAdjust {
+                            @include breakpoint(large) {
+                                bottom: -53px;
+                            }    
+                            @include breakpoint(xlarge) {
+                                bottom: -60px;
+                            }
+                        }
+                    }
+
+                    .smallTitle {
+                        @include breakpoint(large) {
+                            margin-bottom: 34px;
+                        }
+                    }
+                    .pattern-section{
+                        position: relative;
+                    }
+                    .main-container {
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        margin: 0;
+                        justify-content: center;
+                        align-items: center;
+                        margin-bottom: calc(clamp(5.313rem, 6.01vw + 1.466rem, 6.875rem));
+                        .grid-container{
+                            width: 100%;
+                        }
+                        .table-container {
+                            display: flex;
+                            flex-flow: column nowrap;
+                            width: 100%;
+                            margin: 0 auto;
+                            box-shadow: 0px 3px 25px rgba(0, 0, 0, 0.13);
+                            border-radius: 25px;
+                            background: #fff;
+
+                            .table-row {
+                                display: flex;
+                                flex-flow: row nowrap;
+                                width: 100%;
+                                border-bottom: 1px solid $primary-color;
+
+                                &:last-child {
+                                    border-bottom: none;
+                                }
+
+                                &.heading {
+                                    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                                    border-radius: 25px 25px 0 0;
+                                    background: linear-gradient(0deg, #DCDCDC 25%, #FFFFFF 100%);
+                                    padding-top: 13px;
+                                    padding-bottom: 13px;
+                                    color: $primary-color;
+                                    position: relative;
+                                    border-bottom: none;
+                                    .row-item {
+                                        font-size: calc(clamp(1.25rem, 0.962vw + 0.635rem, 1.5rem));
+                                        font-weight: 700;
+                                    }
+                                    &::after{
+                                        content: '';
+                                        position: absolute;
+                                        width: 100%;
+                                        height: 1px;
+                                        background: var(--fcb-primary);
+                                        bottom: 0;
+                                    }
+                                }
+
+                                .row-item {
+                                    display: flex;
+                                    flex: 1;
+                                    align-items: center;
+                                    transition: all 0.15s ease-in-out;
+                                    font-size: calc(clamp(1.125rem, 0.481vw + 0.817rem, 1.25rem));
+                                    line-height: 100%;
+                                    font-weight: 600;
+                                    padding-top: calc(clamp(1.5rem, 1.683vw + 0.423rem, 1.938rem));
+                                    padding-bottom: calc(clamp(1.25rem, 2.644vw - 0.442rem, 1.938rem));
+                                    padding-left: 30px;
+                                    padding-right: 15px;
+                                    &:first-child {
+                                        justify-content: flex-start;
+                                    }
+                                    span{
+                                        width: 34px;
+                                        height: 33px;
+                                        background: url('#{$img}settings/check.svg') no-repeat;
+                                        background-size: contain;
+                                        &.deactive{
+                                            background: url(#{$img}settings/uncheck.svg) no-repeat;
+                                            background-size: contain;
+                                            width: 30px;
+                                            height: 27px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .notepanel {
+                        width: 100%;
+                        max-width: 1100px;
+
+                        p {
+                            font-size: 14px;
+                            font-style: italic;
+                            line-height: 100%;
+                        }
+                    }
+                }
+
+                .tab-pane-content.active {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    .ratefilterpanel {
+        width: 100%;
+        max-width: 768px;
+        margin: 0 auto;
+        padding-bottom: 10px;
+        padding-top: 22px;
+        @include breakpoint(large) {
+            max-width: 1048px;
+            padding-bottom: 88px;
+        }
+        .filtersection{
+            .form-group .selectMenuCurve + .ui-button.ui-selectmenu-button{
+                @include breakpoint(large) {
+                    font-size: 20px;
+                    height: 52px;
+                    padding: 15px 22px;
+                }
+            }
+            .form-group .selectMenuCurve + .ui-selectmenu-button-closed::after, .form-group .selectMenuCurve + .ui-selectmenu-button-open::after{
+                @include breakpoint(large) {
+                    background-size: contain;
+                    width: 22px;
+                    height: 16px;
+                    top: 40%;
+                    right: 24px;
+                }
+            }
+            .form-group .selectMenuCurve + .ui-selectmenu-button-open::after{
+                @include breakpoint(large) {
+                    top: 31%;
+                }
+            }
+            .ui-selectmenu-text{
+                overflow: inherit;
+                color: $primary-color;
+                font-weight: bold;
+            }
+        }
+    }
+
+    .productCompare {
+        display: block;
+
+        @include breakpoint(large) {
+            display: none;
+        }
+
+        .panelPattern {
+            bottom: -14px;
+        }
+
+        .smallTitle {
+            margin-bottom: 24px;
+
+            h2 {
+                text-align: left;
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+
+        .notepanel {
+            width: 100%;
+            display: none;
+
+            &.activetablepanel {
+                display: block;
+            }
+
+            p {
+                font-size: 14px;
+                font-style: italic;
+                line-height: 100%;
+            }
+
+            +.ratetablepanel {
+                margin-bottom: 40px;
+            }
+        }
+
+        .ratetablepanel {
+            display: none;
+            position: relative;
+            margin-bottom: 50px;
+            padding-bottom: 0;
+
+            &.activetablepanel {
+                display: block;
+            }
+
+            .ratetableSlider {
+
+                .navblock .swiper-button-next,
+                .navblock .swiper-button-prev {
+                    top: 60px;
+                    @include breakpoint(small only){
+                        top: 70px;
+                    }
+                }
+
+                .swiper.rateCheckingSlider .swiper-card {
+                    .titleblock {
+                        padding-bottom: 10px;
+
+                        @include breakpoint(small only) {
+                            height: 84px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
+
+                        p {
+                            padding-top: 28px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+#rate-filter-menu.ui-menu .ui-menu-item-wrapper, #business-rate-filter-menu.ui-menu .ui-menu-item-wrapper{
+    @include breakpoint(large) {
+        font-size: 18px;
+    }
+}

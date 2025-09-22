@@ -1,0 +1,111 @@
+@import "util/util";
+$white: #ffffff;
+$black: #000000;
+$primary-color: #90182C;
+$secondary-color: #19A7C1;
+$img: "../../images/";
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    xslarge:1240,
+    xlarge: 1360px,
+    xxlarge: 1400px,
+    xxxlarge: 1660px,
+);
+
+
+.twoColWeekPanel {
+    .grid-container {
+        .flexBox {
+            display: flex;
+            flex-direction: column;
+            margin-top: 30px;
+            row-gap: 25px;
+
+            @include breakpoint(medium) {
+                flex-direction: row;
+                align-items: center;
+            }
+
+            .leftWrap {
+                @include breakpoint(small only) {
+                    max-width: 470px;
+                    margin: 0 auto;
+                }
+
+                @include breakpoint(medium) {
+                    width: 40%;
+                }
+                @include breakpoint(medium only) {
+                    padding: 25px;
+                }
+                @include breakpoint(large) {
+                    width: 32.7%;
+                }
+                @include breakpoint(large only) {
+                    padding: 25px;
+                }
+
+                .insideWrap {
+
+                    padding: clamp(15px, calc(15px + (25 - 15) * ((100vw - 375px) / (767 - 375))), 25px);
+                    background: #EBEFF2;
+                    border-radius: 50%;
+                    border: 2px solid $primary-color;
+
+                    @include breakpoint(medium) {
+                        padding: clamp(10px, calc(10px + (25 - 10) * ((100vw - 768px) / (1440 - 768))), 25px);
+                    }
+
+                    .overlay {
+                        border-radius: 50%;
+                        overflow: hidden;
+                    }
+                }
+            }
+
+            .rightWrap {
+
+                @include breakpoint(medium) {
+                    width: 60%;
+                    display: flex;
+                    justify-content: space-between;
+                    padding-left: clamp(10px, calc(10px + (54 - 10) * ((100vw - 768px) / (1440 - 768))), 54px);
+                }
+
+                @include breakpoint(large) {
+                    width: 67.3%;
+                }
+
+                .contentWrap {
+                    max-width: 917px;
+
+                    h2 {
+                        color: $primary-color;
+                        margin-bottom: 14px;
+                        @include breakpoint(small only){
+                            margin-top: 17px;
+                        }
+                    }
+
+
+                }
+            }
+
+            &.unflex {
+                display: inherit;
+
+                .rightWrap {
+                    display: inherit;
+                    width: 100%;
+                    padding-left: 0;
+
+                    .contentWrap {
+                        max-width: inherit;
+                    }
+                }
+            }
+        }
+    }
+}

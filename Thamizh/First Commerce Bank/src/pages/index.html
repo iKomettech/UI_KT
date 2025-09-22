@@ -1,0 +1,503 @@
+<link rel="stylesheet" href="assets/css/heroslider/heroslider.css">
+<script type="text/javascript" defer>
+    $(document).ready(function () {
+        if ($('.homeBanner').length > 0) {
+            let homesliderDelay = $(".hdnHomeBannerSliderDelay").val();
+            let swiperHomeBanner = new Swiper('.homeBannerSlider', {
+                loop: false,
+                speed: 1000,
+                preventClicks: true,
+                autoplayDisableOnInteraction: false,
+                simulateTouch: false,
+                autoplay: {
+                    delay: homesliderDelay,
+                    disableOnInteraction: false,
+                    reverseDirection: false,
+                },
+                pagination: {
+                    el: '.homeBannerSlider .swiper-pagination',
+                    clickable: true
+                },
+                navigation: {
+                    nextEl: '.homeBannerSlider .swiper-button-next',
+                    prevEl: '.homeBannerSlider .swiper-button-prev',
+                }
+            });
+
+            // Play/Pause Button
+            $(".swiper-button-play").click(function (e) {
+                e.preventDefault();
+                if (swiperHomeBanner.autoplay.running) {
+                    swiperHomeBanner.autoplay.stop();
+                    $(this).addClass("active");
+                } else {
+                    swiperHomeBanner.autoplay.start();
+                    $(this).removeClass("active");
+                }
+            });
+
+            function contentPadding() {
+                var logoLeft = $('.logoSection').offset().left;
+                $('.bannerpanel .homeBanner .bannerwrap .contentwrap .content').css({ 'margin-left': logoLeft });
+            }
+
+            contentPadding();
+
+            $(window).on("resize load", function () {
+                contentPadding();
+            });
+        }
+    });
+
+</script>
+<div class="bannerpanel gap module">
+    <div class="homeBanner">
+        <div class="grid-container-full">
+            <div class="swiper homeBannerSlider">
+                <div class="swiper-wrapper">
+                    <input type="hidden" class="hdnHomeBannerSliderDelay" value="8000" />
+                    <div class="swiper-slide temp1" id="homeBanner-1">
+                        <div class="sliderWrapper">
+                            <div class="bannerwrap">
+                                <div class="contentwrap">
+                                    <div class="content">
+                                        <h1>Banking <br> Built for <br> <b>Community</b></h1>
+                                        <div class="ctablock">
+                                            <a href="#" class="defaultBtn light" aria-label="Why US?">Why US?</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="imgWrap">
+                                    <div class="filter-img">
+                                        <img class="img" src="assets/images/home/Man-Coffee-Shop.jpg" width="1032"
+                                            height="578" alt="Home Promotional">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide temp1" id="homeBanner-2">
+                        <div class="sliderWrapper">
+                            <div class="bannerwrap">
+                                <div class="contentwrap">
+                                    <div class="content">
+                                        <h1>Banking <br> Built for <br> <b>Community</b></h1>
+                                        <div class="ctablock">
+                                            <a href="#" class="defaultBtn light" aria-label="Why US?">Why US?</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="imgWrap">
+                                    <div class="filter-img">
+                                        <img class="img" src="assets/images/home/Man-Coffee-Shop.jpg" width="1032"
+                                            height="578" alt="Home Promotional">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-container">
+                    <div class="swiper-nav-flexBox">
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+                    <div class="flexBox">
+                        <div class="swiper-pagination"></div>
+                        <a href="javascript:void(0)" class="swiper-button-play" id="play-slider">
+                            <span class="screen-reader-text">Play / Pause</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<link rel="stylesheet" href="{{root}}assets/css/productHighlight/productHighlight.css" media="all">
+<div class="productHighlight gap module">
+    <div class="grid-container">
+        <div class="productDesc">
+            <div class="smallTitle">
+                <h2>Guidance for Every Step of Your Financial Journey</h2>
+                <p>Choose what best fits you</p>
+            </div>
+        </div>
+        <div class="flexBox">
+            <div class="evenCta">
+                <a href="#" class="primaryCta dark">
+                    <span>Personal Banking</span>
+                    <span class="iconprops"><i></i></span>
+                </a>
+            </div>
+            <div class="evenCta">
+                <a href="#" class="primaryCta light">
+                    <span>Business Banking</span>
+                    <span class="iconprops"><i></i></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<link rel="stylesheet" href="{{root}}assets/css/inlinevideo/inlinevideo.css" media="all">
+<link rel="stylesheet" href="{{root}}assets/css/twoColumnvideo/twoColumnvideo.css" media="all">
+<script src="{{root}}assets/scripts/inlinevideo/custom-video.js" defer></script>
+<div class="twoColumnvideo gap">
+    <div class="grid-container">
+        <div class="cloning"></div>
+        <div class="flexBox videotwocol">
+            <div class="videoContent">
+                <div class="insideContent">
+                    <h2>Business Spotlight</h2>
+                    <h3><strong>Tindall & Ranson</strong></h3>
+                    <p class="large">Lorem ipsum dolor sit amet consectetur. Eu integer aliquam accumsan sagittis felis
+                        cras. Platea lacus
+                        non sed tristique condimentum tristique arcu convallis convallis. Sit posuere justo mauris risus
+                        fringilla. Mauris odio enim bibendum sit lobortis in. Tellus integer urna rhoncus volutpat.
+                        Rutrum
+                        at bibendum ut enim facilisi hendrerit auctor cras. Ullamcorper non varius arcu vitae lectus
+                        risus
+                        gravida ornare. Sit sed congue aliquet tincidunt facilisi neque faucibus. Pharetra nulla non
+                        justo
+                        mattis.</p>
+                </div>
+            </div>
+            <div class="videoCliping">
+                <div class="insight-img">
+                    <div class="insideVideo">
+                        <figure class="videoPanel vimeovideopanel video-thumb-image noSpeedBump"
+                            data-videoSource="vimeo">
+                            <img data-src="assets/images/mobile-video.png" class="layzeloading lazy" width="330"
+                                height="717" alt="Special Promotions">
+                            <div id="ytplayer-tabMobile" class="vimeo-video-src" data-videoid="262907735"> </div>
+                        </figure>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $(".flexBox .videoContent h2").clone().appendTo(".cloning");
+    });
+</script>
+
+
+
+<link rel="stylesheet" href="{{root}}assets/css/personWeek/personWeek.css" media="all">
+<div class="twoColWeekPanel gap">
+    <div class="grid-container">
+        <h2>First Commerce Bank Person of the Week</h2>
+        <div class="flexBox">
+            <div class="leftWrap">
+                <div class="insideWrap">
+                    <div class="overlay">
+                        <img data-src="{{root}}assets/images/GARCIA_GREGORY.jpg" alt="Person" class="lazy layzeloading"
+                            width="416" height="416">
+                    </div>
+                </div>
+            </div>
+            <div class="rightWrap">
+                <div class="contentWrap">
+                    <h2><strong>Gregory Garcia</strong></h2>
+                    <p>Mr. Gregory Garcia currently serves as EVP, Chief Operating Officer for First Commerce Bank, a
+                        community bank headquartered in Lakewood, NJ. Greg began his career with the Bank in 2021,
+                        serving as the Bank’s Chief Risk Officer and was promoted to COO in 2022. Prior to joining FCB,
+                        Greg served as Chief Financial Officer and Chief Operating Officer for William Penn Bank from
+                        2019 to 2021. Greg began his career in community banking in 2004 as a consultant for the
+                        strategic consulting firm, FinPro, Inc. where he worked for 14 years and served as the firm’s
+                        Executive Managing Director.</p>
+                    <p>Greg received a BA from Rutgers University. </p>
+                    <a href="#" class="defaultBtn" aria-label="Read Bio">Read Bio</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" defer>
+    $(window).resize(function () {
+    $(document).ready(function () {
+        var swiper = new Swiper(".insightSlider", {
+            slidesPerView: 1,
+            slidesPerGroup: 1,
+            centeredSlides: false,
+            spaceBetween: 8,
+            loop: true,
+            loopedSlides: 10,
+            watchSlidesVisibility: true,
+            updateOnWindowResize: true,
+            pagination: {
+                el: ".insightSlider .swiper-pagination",
+                clickable: true,
+            },
+            autoplay: false,
+            navigation: {
+                nextEl: ".insightSlider .swiper-button-next",
+                prevEl: ".insightSlider .swiper-button-prev",
+            },
+            breakpoints: {
+                370: {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                    initialSlide: 1,
+                    // centeredSlides: true,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 15,
+                    slidesPerGroup: 1,
+                    // centeredSlides: false,
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                },
+            },
+        });
+    });
+    });
+</script>
+
+
+
+<link rel="stylesheet" href="{{root}}assets/css/promotionalRates/promotionalRates.css" media="all">
+<div class="featuresPanel gap">
+    <div class="panelPattern"
+        style="background: url(assets/images/home/star-arrow-patten.svg) bottom center no-repeat;"> </div>
+    <div class="grid-container">
+        <h2>See our Featured Rates:</h2>
+        <div class="carouselcontainer">
+            <div class="swiper-container insightSlider">
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide">
+                        <div class="colblock">
+                            <div class="front">
+                                <div class="topWrap">
+                                    <p>4.641% <small>Rate</small></p>
+                                    <p>4.75% <small>APY*</small></p>
+
+                                    <a href="#" class="primaryCta small">
+                                        <span>Open Account</span>
+                                        <span class="iconprops"><i></i></span>
+                                    </a>
+                                </div>
+                                <hr>
+                                <div class="contentsection">
+                                    <div class="col-title">
+                                        <h3><strong>7 Months CD Rates</strong></h3>
+                                    </div>
+                                </div>
+                                <div class="fliping">
+                                    <a href="" class="flipCta">See Tiered Rates of $50,000.00+</a>
+                                </div>
+                            </div>
+                            <div class="back">
+                                <div class="fliping">
+                                    <a href="" class="flipCta backcta">See Tiered Rates of $50,000.00+</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="discBlock">
+                            <a class="goIcon" href="#"><strong>** See Disclaimers</strong></a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="colblock">
+                            <div class="front">
+                                <div class="topWrap">
+                                    <p>1.243% <small>Rate</small></p>
+                                    <p>1.25% <small>APY*</small></p>
+
+                                    <a href="#" class="primaryCta small">
+                                        <span>Open Account</span>
+                                        <span class="iconprops"><i></i></span>
+                                    </a>
+                                </div>
+                                <hr>
+                                <div class="contentsection">
+                                    <div class="col-title">
+                                        <h3><strong>Premier Money Market</strong></h3>
+                                    </div>
+                                    <div class="contentblock">
+                                        <p>Minimum To Open $10,000</p>
+                                        <p>Tiered Amount of: $0 - $49,999.99</p>
+                                    </div>
+                                </div>
+                                <div class="fliping">
+                                    <a href="" class="flipCta">See Tiered Rates of $50,000.00+</a>
+                                </div>
+                            </div>
+                            <div class="back">
+                                <div class="topWrap">
+                                    <p>1.43% <small>Rate</small></p>
+                                    <p>1.25% <small>APY*</small></p>
+
+                                    <a href="#" class="primaryCta small light">
+                                        <span>Open Account</span>
+                                        <span class="iconprops"><i></i></span>
+                                    </a>
+                                </div>
+                                <hr>
+                                <div class="contentsection">
+                                    <div class="col-title">
+                                        <h3><strong>Premier Money Market</strong></h3>
+                                    </div>
+                                    <div class="contentblock">
+                                        <p>Minimum To Open $10,000</p>
+                                        <p>Tiered Amount of: $50,000.00+</p>
+                                    </div>
+                                </div>
+                                <div class="fliping">
+                                    <a href="" class="flipCta backcta">Tiered Amount of: $0 - $49,999.99 </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="discBlock">
+                            <p class="goIcon"><strong>** See Disclaimers</strong></p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="colblock">
+                            <div class="front">
+                                <div class="topWrap">
+                                    <p>4.641% <small>Rate</small></p>
+                                    <p>4.75% <small>APY*</small></p>
+
+                                    <a href="#" class="primaryCta small">
+                                        <span>Open Account</span>
+                                        <span class="iconprops"><i></i></span>
+                                    </a>
+                                </div>
+                                <hr>
+                                <div class="contentsection">
+                                    <div class="col-title">
+                                        <h3><strong>Ultimate Rewards Checking</strong></h3>
+                                    </div>
+                                    <div class="contentblock">
+                                        <p>Minimum to Open $100</p>
+                                        <p>Rate applicable for balances up to <br> $100,000.00 when qualifications are
+                                            met.</p>
+                                    </div>
+                                </div>
+                                <div class="discBlock">
+                                    <p class="goIcon"><strong>** See Disclaimers</strong></p>
+                                </div>
+                            </div>
+                            <div class="back"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="navBox">
+                    <div class="swiper-button-next"></div>
+                    <div class="contentswipe">Slide to View More Rates</div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+
+        </div>
+        <div class="text-center mt10">
+            <a class="defaultBtn">View all Rates</a>
+        </div>
+    </div>
+</div>
+
+
+
+<link rel="stylesheet" href="{{root}}assets/css/socialPanel/socialPanel.css" media="all">
+<div class="socialPanel gap">
+    <div class="grid-container">
+        <h2>Connect With Us</h2>
+
+        <script type="text/javascript"
+            delay="https://www.juicer.io/embed/first-bank-nj/embed-code.js?per=3&gutter=45&filter=Linkedin&nojquery=true"
+            async defer></script>
+    </div>
+
+</div>
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        setMaxHeight();
+        $(".fliping .flipCta").on("click", function (e) {
+            e.preventDefault();
+            let $card = $(this).closest('.colblock');
+            let $dis = $(this).closest('.swiper-slide');
+            setTimeout(function () {
+                $card.find('.front').css('transform', 'rotateY(180deg)');
+                $card.find('.back').css('transform', 'rotateY(0deg)');
+                $card.parent().addClass('fillflip');
+                $dis.find('.discBlock').css('display', 'none');
+            }, 500);
+            setTimeout( function(){                
+                $dis.find('.discBlock').css('display', 'block');
+            }, 3000);
+        });
+
+        $(".fliping .flipCta.backcta").on("click", function (e) {
+            e.preventDefault();
+            let $card = $(this).closest('.colblock');
+            setTimeout(function () {
+                $card.find('.front').css('transform', 'rotateY(0deg)');
+                $card.find('.back').css('transform', 'rotateY(180deg)');
+                $card.parent().removeClass('fillflip');
+                $dis.find('.discBlock').css('display', 'none');
+            }, 500);
+            setTimeout( function(){                
+                $dis.find('.discBlock').css('display', 'block');
+            }, 3000);
+        }); 
+    });
+
+    function setMaxHeight() { 
+        $(".featuresPanel .carouselcontainer .swiper-slide .colblock .front, .featuresPanel .carouselcontainer .swiper-slide .colblock .back").css('height', 'auto');
+ 
+        var heightsnew = $(".featuresPanel .carouselcontainer .swiper-slide .colblock .front").map(function () {
+            return $(this).height();
+        }).get();
+ 
+        var maxHeightnew = Math.max.apply(null, heightsnew); 
+        $(".featuresPanel .carouselcontainer .swiper-slide .colblock .front, .featuresPanel .carouselcontainer .swiper-slide .colblock .back").css('height', maxHeightnew + 137);
+    }
+
+    $(window).resize(function () {
+        setMaxHeight();
+    });
+</script>
+
+
+
+<div class="disclaimerpanel  module come-in">
+    <div class="grid-container">
+        <div class="notepanel">
+            <p>Lorem ipsum dolor sit amet consectetur. Suspendisse praesent eu a mattis turpis mattis massa diam.
+                Adipiscing
+                rhoncus rhoncus ultrices pretium tellus id duis mollis. Justo amet nunc sit odio aliquam. Sagittis mi
+                odio
+                nunc enim senectus donec mi turpis eget. Eget tortor malesuada a cras elit. Et cursus molestie et
+                natoque
+                congue sagittis phasellus diam. Vulputate in viverra nisi tincidunt habitant. Purus sed quis consequat
+                condimentum malesuada. Neque purus massa dictum euismod purus. Sed eget elit molestie malesuada. Gravida
+                vitae tempor non tristique. Accumsan aenean bibendum adipiscing condimentum et nec nibh iaculis. Sed
+                accumsan euismod volutpat ac ullamcorper amet. Maecenas nisl sit arcu neque lectus sed ullamcorper sem
+                magna. Sollicitudin aliquam diam maecenas nec et duis amet fringilla. Amet aenean consequat velit in.
+                Mollis
+                viverra enim varius eget massa ipsum. Sem et leo maecenas ridiculus. Dictum sit auctor a bibendum platea
+                fames ac turpis. Dignissim vel urna scelerisque nullam in. Cras et sed a aliquam dolor vitae turpis
+                purus.
+                Et donec blandit vel morbi neque. Risus facilisis diam ut ut magna imperdiet. Blandit tincidunt in
+                convallis
+                pharetra enim morbi.</p>
+        </div>
+    </div>
+</div>

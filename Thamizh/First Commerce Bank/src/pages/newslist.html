@@ -1,0 +1,463 @@
+<!-------Template Pattern--------->
+    <script type="text/javascript">
+                $(document).ready(function () {
+                    function adjustSubPattern() {
+                        let $panel = $('.newsfilterpanel');
+                        let adjPanelTop;
+                        let getPanelHeight;
+                        let panelTop;
+                        let $panelTop = $('.subbannerpanel .subbanner .bannerwrap .contentwrap .content').offset().top;
+                        if ($panel.length) {
+                               if ($(window).outerWidth() >= 1024) {
+                                    adjPanelTop = $panelTop + 66;
+                                    panelTop = $panel.offset().top - 46;
+                                }
+                                else {
+                                    adjPanelTop = $('.subbannerpanel .subbanner .bannerwrap .imgWrap').offset().top + 70;
+                                    panelTop = $panel.offset().top;
+                                }
+                                getPanelHeight = panelTop;
+                                $(".templatesection").css('height', getPanelHeight - adjPanelTop + 'px');
+                                $(".templatesection").css('top', adjPanelTop + 'px');
+                            } else {
+                                console.warn('.fivestarpanel not found!');
+                            }
+                    }
+
+                    setTimeout(adjustSubPattern, 500);
+
+                    $(window).on("resize", function () {
+                        setTimeout(adjustSubPattern, 200);
+                    });
+                });
+         </script>
+         <div class="templatesection">
+             <div class="templatePattern" style="background: url(assets/images/news/news-template-pattern.svg) center bottom no-repeat;"> </div>
+         </div>
+<!-------Template Pattern--------->
+
+<script type="text/javascript">
+        $(document).ready(function () {
+                function contentPadding() {
+                    var logoLeft = $('.logoSection').offset().left;
+                    $('.subbannerpanel .subbanner .bannerwrap .contentwrap .content').css({ 'margin-left': logoLeft });
+                }
+
+                function heightLoad() {
+                    if ($(window).width() >= 768 && $(window).width() <= 1024) {
+                        if ($('.subbannerpanel .subbanner .contentwrap .content').height() <= 58) {
+                            $('.subbannerpanel .subbanner .contentwrap .content').css('padding-top', '35px');
+                        } else {
+                            $('.subbannerpanel .subbanner .contentwrap .content').css('padding-top', '14px');
+                        }
+                    }
+                }
+
+                contentPadding();
+                 heightLoad();
+
+                $(window).on("resize load", function () {
+                    contentPadding();
+                     heightLoad();
+                });
+            });
+
+                    function getNumberOfLines(selector) {
+            var el = $(selector)[0];  
+
+            if (!el) {
+                console.warn("Element not found:", selector);
+                return 0;  
+            }
+
+            var computedStyle = window.getComputedStyle(el);
+            var lineHeight = parseFloat(computedStyle.lineHeight);
+            var scrollHeight = el.scrollHeight;
+
+            console.log("Checking element:", el);
+            console.log("Line Height:", lineHeight);
+            console.log("Scroll Height:", scrollHeight);
+
+            if (!lineHeight || isNaN(lineHeight)) {
+                console.error("Invalid line-height for", selector);
+                return 0;
+            }
+
+            var lines = Math.round(scrollHeight / lineHeight);
+            console.log("Number of lines:", lines);
+
+            return lines;
+        }
+        $(window).on("load", function () {
+            var content = $('.subbannerpanel .subbanner .contentwrap .content');
+
+            if (content.length === 0) {
+                console.error("Content element not found!");
+                return;
+            }
+
+            var h1Lines = content.find('h1').length ? getNumberOfLines(content.find('h1')) : 0;
+            var pLines = content.find('p').length ? getNumberOfLines(content.find('p').first()) : 0;
+
+            console.log("H1 Lines:", h1Lines, "P Lines:", pLines);
+
+            content.removeClass('oneLine twoLine oneLineP twoLineP');
+
+            if (h1Lines === 1) {
+                content.addClass('oneLine');
+            } else if (h1Lines === 2) {
+                content.addClass('twoLine');
+            }
+
+            if(pLines === 1){
+                content.addClass('singleLineP');
+            }
+            if (pLines === 1 && h1Lines === 2) {
+                content.addClass('twoLineP');
+                content.removeClass('twoLine');
+                content.removeClass('singleLineP');
+            } else if (pLines === 1 && h1Lines === 1) {
+                content.addClass('oneLineP');
+                content.removeClass('oneLine');
+                content.removeClass('singleLineP');
+            }
+
+             
+        });
+</script>
+<link rel="stylesheet" href="{{root}}assets/css/subbanner/subbanner.css" media="all">
+<div class="subbannerpanel module">
+    <div class="grid-container-full">
+        <div class="subbanner">
+            <div class="temp1">
+                <div class="bannerwrap">
+                    <div class="contentwrap">
+                        <div class="content">
+                            <h1><strong>News</strong></h1>
+                        </div>
+                    </div>
+                    <div class="imgWrap">
+                        <div class="filter-img">
+                            <img class="img" src="assets/images/newlist.jpg" width="952" height="461"
+                                alt="Home Promotional">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="breadcrumbWrapBottom module come-in " data-swiftype-index="false">
+    <div class="grid-container">
+        <ul class="breadcrumbs">
+            <li class="breadcrumb-item ">
+                <a href="/" aria-label="Home">Home</a>
+            </li>
+            <li class="breadcrumb-item ">News</li>
+        </ul>
+    </div>
+</div>
+
+<link rel="stylesheet" href="{{root}}assets/css/featuredarticlepanel/featuredarticlepanel.css" media="all">
+
+<script type="text/javascript">
+    $(document).ready(function () {
+		if ($(".featureswiperpanel .swiper .swiper-slide").length > 0) {
+            let featureSliderDelay = $(".featureSliderDelay").val();
+			let swiperfeatureCarousel = new Swiper('.featureSlider', {
+                spaceBetween: 0,
+                        loop: true,
+                        preventClicks: true,
+                        autoplay: {
+                            delay: featureSliderDelay,
+                            disableOnInteraction: false,
+                            pauseOnMouseEnter: true,
+                            reverseDirection: false,
+                        },
+                        pagination: {
+                            el: '.featureswiperpanel .swiper-pagination',
+                            clickable: true
+                        },
+                        navigation: {
+                            nextEl: '.featuredarticlepanel .swiper-button-next',
+                            prevEl: '.featuredarticlepanel .swiper-button-prev',
+                        },
+                        on: {
+                            slideChangeTransitionEnd: function () {
+                                $('.swiper-slide-active .lazy').Lazy({ bind: 'event' });
+                            }
+                        }
+			});
+
+            let isPlaying = true;
+            $(".feature-swiper-button").on("click", function () {
+                if (isPlaying) {
+                    swiperfeatureCarousel.autoplay.stop();
+                    $(this).addClass("active");
+                } else {
+                    swiperfeatureCarousel.autoplay.start();
+                    $(this).removeClass("active");
+                }
+                isPlaying = !isPlaying;
+            });
+		}
+	});
+</script>
+
+<div class="featuredarticlepanel gap module">
+    <div class="grid-container">
+        <div class="flexBox">
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+        <div class="featureswiperpanel">
+            <div class="swiper featureSlider">
+                <input type="hidden" class="featureSliderDelay" value="6000" />
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="innerwrap">
+                            <div class="flexwrap">
+                                <div class="imgwrap">
+                                    <a href="#"  aria-label="7th Annual Veterans, Disabled Children & Active-Duty Military Fishing Day"><img class="lazy zoom layzeloading" src="{{root}}assets/images/news/featured-news.jpg" width="529" height="330" alt="NJBIA"></a>
+                                </div>
+                                <div class="contentwrap">
+                                    <h2><a href="#"  aria-label="7th Annual Veterans, Disabled Children & Active-Duty Military Fishing Day">Proud Diamond Sponsor of WEEH’s  Night of Networking Event</a></h2>
+                                    <p class="event-date"><b>January 15, 2025</b></p>
+                                    <p>We were a proud Diamond Sponsor of the Night of Networking. This event was one to remember! Hosted by a group of women who are an inspiration to all, making a positive impact in the healthcare industry. We thank all members of the WEEH for providing “a seat at the table” and we look forward to mingling at the next event!</p>
+                                    <div class="biocta">
+                                        <a href="#" class="defaultBtn" aria-label="Read More - 7th Annual Veterans, Disabled Children & Active-Duty Military Fishing Day">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="innerwrap">
+                            <div class="flexwrap">
+                                <div class="imgwrap">
+                                    <a href="#"  aria-label="7th Annual Veterans, Disabled Children & Active-Duty Military Fishing Day"><img class="lazy zoom layzeloading" src="{{root}}assets/images/news/featured-news.jpg" width="529" height="330" alt="NJBIA"></a>
+                                </div>
+                                <div class="contentwrap">
+                                    <h2><a href="#"  aria-label="7th Annual Veterans, Disabled Children & Active-Duty Military Fishing Day">Proud Diamond Sponsor of WEEH’s  Night of Networking Event</a></h2>
+                                    <p class="event-date"><b>January 15, 2025</b></p>
+                                    <p>We were a proud Diamond Sponsor of the Night of Networking. This event was one to remember! Hosted by a group of women who are an inspiration to all, making a positive impact in the healthcare industry. We thank all members of the WEEH for providing “a seat at the table” and we look forward to mingling at the next event!</p>
+                                    <div class="biocta">
+                                        <a href="#" class="defaultBtn" aria-label="Read More - 7th Annual Veterans, Disabled Children & Active-Duty Military Fishing Day">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="innerwrap">
+                            <div class="flexwrap">
+                                <div class="imgwrap">
+                                    <a href="#"  aria-label="7th Annual Veterans, Disabled Children & Active-Duty Military Fishing Day"><img class="lazy zoom layzeloading" src="{{root}}assets/images/news/featured-news.jpg" width="529" height="330" alt="NJBIA"></a>
+                                </div>
+                                <div class="contentwrap">
+                                    <h2><a href="#"  aria-label="7th Annual Veterans, Disabled Children & Active-Duty Military Fishing Day">Proud Diamond Sponsor of WEEH’s  Night of Networking Event</a></h2>
+                                    <p class="event-date"><b>January 15, 2025</b></p>
+                                    <p>We were a proud Diamond Sponsor of the Night of Networking. This event was one to remember! Hosted by a group of women who are an inspiration to all, making a positive impact in the healthcare industry. We thank all members of the WEEH for providing “a seat at the table” and we look forward to mingling at the next event!</p>
+                                    <div class="biocta">
+                                        <a href="#" class="defaultBtn" aria-label="Read More - 7th Annual Veterans, Disabled Children & Active-Duty Military Fishing Day">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="innerwrap">
+                            <div class="flexwrap">
+                                <div class="imgwrap">
+                                    <a href="#"  aria-label="7th Annual Veterans, Disabled Children & Active-Duty Military Fishing Day"><img class="lazy zoom layzeloading" src="{{root}}assets/images/news/featured-news.jpg" width="529" height="330" alt="NJBIA"></a>
+                                </div>
+                                <div class="contentwrap">
+                                    <h2><a href="#"  aria-label="7th Annual Veterans, Disabled Children & Active-Duty Military Fishing Day">Proud Diamond Sponsor of WEEH’s  Night of Networking Event</a></h2>
+                                    <p class="event-date"><b>January 15, 2025</b></p>
+                                    <p>We were a proud Diamond Sponsor of the Night of Networking. This event was one to remember! Hosted by a group of women who are an inspiration to all, making a positive impact in the healthcare industry. We thank all members of the WEEH for providing “a seat at the table” and we look forward to mingling at the next event!</p>
+                                    <div class="biocta">
+                                        <a href="#" class="defaultBtn" aria-label="Read More - 7th Annual Veterans, Disabled Children & Active-Duty Military Fishing Day">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="innerwrap">
+                            <div class="flexwrap">
+                                <div class="imgwrap">
+                                    <a href="#"  aria-label="7th Annual Veterans, Disabled Children & Active-Duty Military Fishing Day"><img class="lazy zoom layzeloading" src="{{root}}assets/images/news/featured-news.jpg" width="529" height="330" alt="NJBIA"></a>
+                                </div>
+                                <div class="contentwrap">
+                                    <h2><a href="#"  aria-label="7th Annual Veterans, Disabled Children & Active-Duty Military Fishing Day">Proud Diamond Sponsor of WEEH’s  Night of Networking Event</a></h2>
+                                    <p class="event-date"><b>January 15, 2025</b></p>
+                                    <p>We were a proud Diamond Sponsor of the Night of Networking. This event was one to remember! Hosted by a group of women who are an inspiration to all, making a positive impact in the healthcare industry. We thank all members of the WEEH for providing “a seat at the table” and we look forward to mingling at the next event!</p>
+                                    <div class="biocta">
+                                        <a href="#" class="defaultBtn" aria-label="Read More - 7th Annual Veterans, Disabled Children & Active-Duty Military Fishing Day">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flexBox-pagination">
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+                <a href="javascript:void(0)" class="feature-swiper-button">
+                    <span class="screen-reader-text">Play / Pause</span>
+                </a>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<link rel="stylesheet" href="{{root}}assets/css/newslist/newslist.css" media="all">
+
+<div class="newsfilterpanel module">
+    <div class="grid-container">
+        <div class="filtersection">
+            <div class="form-group selectbox">
+                <select class="selectMenuCurve" id="news-type" name="news-type" title="type news">
+                    <option value="">View All News</option>
+                            <option value="Community Events">Community Events</option>
+                            <option value="Press Releases">Press Releases</option>
+                            <option value="Investor News">Investor News</option>
+                </select>
+            </div>
+            <div class="form-group selectbox">
+                <select class="selectMenuCurve" id="year-relevance" name="year-relevance" title="year news">
+                        <option value="">Select Year</option>
+                        <option value="2025">2025</option>
+                        <option value="2024">2024</option>
+                </select>
+            </div>
+            <div class="form-group ctabox">
+                <button class="defaultBtn" type="button" id="btnCancel">
+                    Reset
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="newslistpanel module">
+    <div class="grid-container">
+        <div class="innerwrap">
+            <div class="flexwrap">
+                <div class="imgwrap">
+                    <a href="#"  aria-label="7th Annual Veterans, Disabled Children & Active-Duty Military Fishing Day"><img class="lazy zoom layzeloading" data-src="{{root}}assets/images/news/newslist-1.jpg" width="439" height="257" alt="NJBIA"></a>
+                </div>
+                <div class="contentwrap">
+                    <h3><a href="#"  aria-label="7th Annual Veterans, Disabled Children & Active-Duty Military Fishing Day">7th Annual Veterans, Disabled Children & Active-Duty Military Fishing Day</a></h3>
+                    <p class="event-date"><b><a href="#">Community Events</a></b> <span class="mark">-</span> <span>January 15, 2025</span> </p>
+                    <p>On August 26th First Commerce Bank proudly attended the 7th Annual Veterans, Disabled Children & Active-Duty Military Fishing Day event at Lake Juliano in Millstone. John Crisafulli; Senior Business Development Officer, Doreen Goch; Commercial Loan Officer, and other First Commerce Bank customers were pleased to volunteer at this amazing event. </p>
+                    <div class="biocta">
+                        <a href="#" class="textCta" aria-label="Read More - 7th Annual Veterans, Disabled Children & Active-Duty Military Fishing Day">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="innerwrap">
+            <div class="flexwrap">
+                <div class="contentwrap">
+                    <h3> <a href="#"  aria-label="7th Annual Veterans, Disabled Children & Active-Duty Military Fishing Day">7th Annual Veterans, Disabled Children & Active-Duty Military Fishing Day</a></h3>
+                    <p class="event-date"><b><a href="#">Community Events</a></b> <span class="mark">-</span> <span>January 15, 2025</span> </p>
+                    <p>On August 26th First Commerce Bank proudly attended the 7th Annual Veterans, Disabled Children & Active-Duty Military Fishing Day event at Lake Juliano in Millstone. John Crisafulli; Senior Business Development Officer, Doreen Goch; Commercial Loan Officer, and other First Commerce Bank customers were pleased to volunteer at this amazing event. </p>
+                    <div class="biocta">
+                        <a href="#" class="textCta" aria-label="Read More - 7th Annual Veterans, Disabled Children & Active-Duty Military Fishing Day">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="innerwrap">
+            <div class="flexwrap">
+                <div class="imgwrap">
+                    <a href="#"  aria-label="7th Annual Veterans, Disabled Children & Active-Duty Military Fishing Day"><img class="lazy zoom layzeloading" data-src="{{root}}assets/images/news/newslist-1.jpg" width="439" height="257" alt="NJBIA"></a>
+                </div>
+                <div class="contentwrap">
+                    <h3> <a href="#"  aria-label="7th Annual Veterans, Disabled Children & Active-Duty Military Fishing Day">7th Annual Veterans, Disabled Children & Active-Duty Military Fishing Day</a></h3>
+                    <p class="event-date"><b><a href="#">Community Events</a></b> <span class="mark">-</span> <span>January 15, 2025</span> </p>
+                    <p>On August 26th First Commerce Bank proudly attended the 7th Annual Veterans, Disabled Children & Active-Duty Military Fishing Day event at Lake Juliano in Millstone. John Crisafulli; Senior Business Development Officer, Doreen Goch; Commercial Loan Officer, and other First Commerce Bank customers were pleased to volunteer at this amazing event. </p>
+                    <div class="biocta">
+                        <a href="#" class="textCta" aria-label="Read More - 7th Annual Veterans, Disabled Children & Active-Duty Military Fishing Day">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="innerwrap">
+            <div class="flexwrap">
+                <div class="contentwrap">
+                    <h3> <a href="#"  aria-label="7th Annual Veterans, Disabled Children & Active-Duty Military Fishing Day">7th Annual Veterans, Disabled Children & Active-Duty Military Fishing Day</a></h3>
+                    <p class="event-date"><b><a href="#">Community Events</a></b> <span class="mark">-</span> <span>January 15, 2025</span> </p>
+                    <p>On August 26th First Commerce Bank proudly attended the 7th Annual Veterans, Disabled Children & Active-Duty Military Fishing Day event at Lake Juliano in Millstone. John Crisafulli; Senior Business Development Officer, Doreen Goch; Commercial Loan Officer, and other First Commerce Bank customers were pleased to volunteer at this amazing event. </p>
+                    <div class="biocta">
+                        <a href="#" class="textCta" aria-label="Read More - 7th Annual Veterans, Disabled Children & Active-Duty Military Fishing Day">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="innerwrap">
+            <div class="flexwrap">
+                <div class="imgwrap">
+                    <a href="#"  aria-label="7th Annual Veterans, Disabled Children & Active-Duty Military Fishing Day"><img class="lazy zoom layzeloading" data-src="{{root}}assets/images/news/newslist-1.jpg" width="439" height="257" alt="NJBIA"></a>
+                </div>
+                <div class="contentwrap">
+                    <h3> <a href="#"  aria-label="7th Annual Veterans, Disabled Children & Active-Duty Military Fishing Day">7th Annual Veterans, Disabled Children & Active-Duty Military Fishing Day</a></h3>
+                    <p class="event-date"><b><a href="#">Community Events</a></b> <span class="mark">-</span> <span>January 15, 2025</span> </p>
+                    <p>On August 26th First Commerce Bank proudly attended the 7th Annual Veterans, Disabled Children & Active-Duty Military Fishing Day event at Lake Juliano in Millstone. John Crisafulli; Senior Business Development Officer, Doreen Goch; Commercial Loan Officer, and other First Commerce Bank customers were pleased to volunteer at this amazing event. </p>
+                    <div class="biocta">
+                        <a href="#" class="textCta" aria-label="Read More - 7th Annual Veterans, Disabled Children & Active-Duty Military Fishing Day">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="innerwrap">
+            <div class="flexwrap">
+                <div class="contentwrap">
+                    <h3> <a href="#"  aria-label="7th Annual Veterans, Disabled Children & Active-Duty Military Fishing Day">7th Annual Veterans, Disabled Children & Active-Duty Military Fishing Day</a></h3>
+                    <p class="event-date"><b><a href="#">Community Events</a></b> <span class="mark">-</span> <span>January 15, 2025</span> </p>
+                    <p>On August 26th First Commerce Bank proudly attended the 7th Annual Veterans, Disabled Children & Active-Duty Military Fishing Day event at Lake Juliano in Millstone. John Crisafulli; Senior Business Development Officer, Doreen Goch; Commercial Loan Officer, and other First Commerce Bank customers were pleased to volunteer at this amazing event. </p>
+                    <div class="biocta">
+                        <a href="#" class="textCta" aria-label="Read More - 7th Annual Veterans, Disabled Children & Active-Duty Military Fishing Day">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="paginationpanels gap"> <!-----------Check Mobile Version for Paul Weiss Project--->
+            <ul>
+                <li class="prev-arrow disable">
+                    <a aria-label="Goto Page 1" data-page="1" href="?page=1"></a>
+                </li>
+                <li class="active">
+                    <a data-page="1" aria-label="Goto Page 1" href="#">1</a>
+                </li>
+                <li>
+                    <a data-page="2" aria-label="Goto Page 2" href="#">2</a>
+                </li>
+                <li>
+                    <a data-page="3" aria-label="Goto Page 3" href="#">3</a>
+                </li>
+                <li>
+                    <a data-page="4" aria-label="Goto Page 4" href="#">4</a>
+                </li>
+                <li>
+                    <a data-page="4" aria-label="Goto Page 5" href="#">5</a>
+                </li>
+                <li>
+                    <a data-page="4" aria-label="Goto Page 6" href="#">6</a>
+                </li>
+                <li class="pages">...</li>
+                <li>
+                    <a data-page="4" aria-label="Goto Page 7" href="#">38</a>
+                </li>
+                <li class="next-arrow">
+                    <a aria-label="Goto Page" data-page="1" href="#"></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>        

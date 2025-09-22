@@ -1,0 +1,622 @@
+@import "util/util";
+$img: "../../images/";
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1279px,
+    xlarge: 1360px,
+    xxlarge: 1400px,
+    xxxlarge: 1660px,
+);
+footer {
+    padding-top: 32px;
+    background-color: #E0E3E6;
+    @include breakpoint(medium) {
+        padding-top: 30px;
+    }
+    @include breakpoint(large) {
+        padding-top:25px;
+    }
+    .footer-top-section{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 26px;
+        @include breakpoint(small only) {
+            padding-bottom: 20px;
+        }
+        .footer-logo {
+           width:100%;
+           max-width: 165px;
+            @include breakpoint(medium) {
+                max-width: 346px;
+            }
+            @include breakpoint(large) {
+                max-width: calc(clamp(21.625rem, 55.048vw - 13.606rem, 35.938rem));
+            }
+        }
+    }
+    br {
+        @include breakpoint(medium) {
+            display: none;
+        }
+        +span {
+            display: none;
+            @include breakpoint(medium) {
+                display: inline-block;
+            }
+        }
+    }
+    &.threerow {
+        margin: 0px 0 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        position: relative;
+        @include breakpoint(large) {
+            position: absolute;
+        }
+        li,
+        a,
+        p {
+            font-weight: 500;
+            color: $black;
+            margin-bottom: 12px;
+            text-decoration: none;
+            line-height: 100%;
+            //font-size: clamp(18px,calc(18px + (20 - 18) * ((100vw - 23.4375rem) / (1440 - 375))) ,20px);
+            font-size:18px;
+            @include breakpoint(medium) {
+                font-size: 16px;
+            }
+            @include breakpoint(large) {
+                font-size: clamp(16px,calc(16px + (20 - 16) * ((100vw - 64rem) / (1440 - 1024))),20px);
+            }
+        }
+        svg{
+            width: 100%;
+        }
+        a {
+            &:hover {
+                color: $primary-color;
+                text-decoration: underline;
+            }
+        }
+        ul {
+            margin-left: 0;
+            margin-top: 0;
+        }
+        .menutitle{
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #000000;
+            font-size: 24px;
+            @include breakpoint(small only) {
+                margin-bottom: 13px;
+            }
+            @include breakpoint(medium) {
+                font-size: 18px;
+            }
+            @include breakpoint(large) {
+                font-size: clamp(18px,calc(18px + (24 - 18) * ((100vw - 64rem) / (1440 - 1024))),24px);
+            }
+        }
+    }
+    .footersec {
+        padding-bottom: 30px;
+        width: 100%;
+        @include breakpoint(medium) {
+            padding-bottom: 36px;
+        }
+    }
+    .primaryfooter {
+       position: relative;
+        padding-top: 0px;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        @include breakpoint(medium) {
+            flex-direction: row;
+        }
+        @include breakpoint(xlarge) {
+            flex-wrap: nowrap;
+            padding-top: 12px;
+        }
+        .column-1 {
+           width: 100%;
+           max-width: 100%;
+           @include breakpoint(small only) {
+               display: flex;
+               flex-wrap: wrap;
+           }
+           @include breakpoint(medium) {
+            width:100%;
+           }
+           @include breakpoint(large) {
+            width: 26%;
+           }
+           @include breakpoint(llarge) {
+                width: 26.5%;
+           }
+           @include breakpoint(xlarge) {
+            width: 31%;
+           }
+           p{
+            font-weight: 700;
+            a{
+                font-weight: 700;
+            }
+           }
+       }
+
+        .column-2, .column-3 {
+            @include breakpoint(small only) {
+                padding-bottom: 24px;
+                width: 100%;
+                li{
+                    margin-bottom: 12px;
+                    line-height: 116%;
+                    &:last-child{
+                        margin-bottom: 5px;
+                    }
+                }
+            }
+            @include breakpoint(medium only) { 
+                width: 33%;
+                padding-bottom: 65px;
+                margin-top:20px;
+            }
+            @include breakpoint(large) {
+                margin-top:-5px;
+                width: 20%;
+            }
+            @include breakpoint(llarge) {
+                width: 20%;
+            }
+            @include breakpoint(xlarge) {
+                width: 26%;
+            }
+            ul{
+                max-width: 216px;
+                @include breakpoint(large only) {
+                    max-width: 210px;
+                }
+            }
+        }
+
+        .column-4 {
+            @include breakpoint(small only) {
+                margin-top: 12px;
+            }
+            .appsection{
+                position: relative;
+                @include breakpoint(small only) {
+                    margin-top:30px;
+                }
+                @include breakpoint(medium) {
+                    position: absolute;
+                    bottom: 0;
+                }
+                @include breakpoint(large) {
+                    position: absolute;
+                    bottom: 8px;
+                }
+                .apptitle{
+                    font-weight: 700;
+                    //font-size: clamp(20px,calc(20px + (24 - 20) * ((100vw - 23.4375rem) / (1440 - 375))) ,24px);
+                    font-size: 20px;
+                    margin-bottom: 22px;
+                    @include breakpoint(small only) {
+                        margin-bottom:20px;
+                    }   
+                    @include breakpoint(medium) {
+                        font-size: 18px;
+                    }
+                    @include breakpoint(large) {
+                        font-size: clamp(18px,calc(18px + (24 - 18) * ((100vw - 64rem) / (1440 - 1024))),24px);
+                    }
+                }
+                .applogos{
+                    display: flex;
+                    li{
+                        margin-right: 25px;
+                        margin-bottom: 0;
+                        @include breakpoint(small only) {
+                            margin-right: 18px;
+                            &:last-child{
+                                margin-right: 0;
+                            }
+                            img{
+                                width: 158px;
+                            }
+                        }
+                    }
+                }
+            }
+            @include breakpoint(small only) {
+                width: 100%;
+            }
+            @include breakpoint(medium only) { 
+                width: 33%;
+            }
+            @include breakpoint(large) {  
+                width: 33%;
+                margin-right: 0;
+            }
+            @include breakpoint(xxlarge) { 
+                width: 42.3%;
+            }
+        }
+
+    }
+
+    .secondaryfooter {
+        background: #90182C;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        @include breakpoint(medium) {
+            padding-top: 35px;
+            padding-bottom: 35px;
+        }
+        .grid-container {
+            width: 100%;
+            .column-custom {
+                display: block;
+                width: 100%;
+                margin-bottom: 0;
+                text-align: center;
+                @include breakpoint(large) {
+                    align-items: center;
+                    display: flex;
+                    flex-wrap: wrap;
+                    text-align: left;
+                    padding-top: 0; 
+                    justify-content: space-between;
+                    flex-direction: row;
+                    margin-left: 0;
+                }
+                .col-2nd{
+                    @include breakpoint(small only) {
+                        max-width: 300px;
+                        margin-left: auto !important;
+                        margin-right: auto !important;
+                    }
+                    li{
+                        margin-top:15px;
+                        @include breakpoint(large) {
+                            margin-top: 0;
+                        }
+                    }
+                }
+                ul {
+                    li,
+                    a {
+                        //font-size: clamp(14px,calc(14px + (18 - 14) * ((100vw - 23.4375rem) / (1440 - 375))) ,18px);
+                        line-height: 100%;
+                        font-weight: 600;
+                        padding-bottom: 0px;
+                        margin-bottom: 0px;
+                        color: $white;
+                        font-size:14px;
+                        @include breakpoint(small only) {
+                            line-height: 115%;
+                        }
+                        @include breakpoint(medium) {
+                            font-size: 16px;
+                        }
+                        @include breakpoint(large) {
+                            font-size: clamp(16px,calc(16px + (18 - 16) * ((100vw - 64rem) / (1440 - 1024))),18px);
+                        }
+                    }
+                    a{
+                        text-decoration: underline;
+                    }
+                }
+                .copyright span:last-child {
+                    @include breakpoint(small only) {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}
+.Routing{
+    @include breakpoint(small only) {
+        width: 100%;
+        p{
+            b{
+                font-weight: 600;
+                a{
+                    font-weight: 600 !important;
+                }
+            }
+        }
+    }
+    p + P{
+         margin-top:0px;
+         @include breakpoint(large) {
+            margin-top:30px;
+            margin-bottom:20px;
+         }
+    }
+}
+.relationshipmanager{
+    position: relative;
+    right: 0;
+    top:0;
+    max-width: 486px;
+    width: 100%;
+    @include breakpoint(small only) {
+        max-width: 335px !important;
+        margin-bottom: 32px;
+        margin-top:27px;
+    }
+    @include breakpoint(medium) {
+        position: absolute;
+    }
+    .managertitle{
+        margin-bottom: 18px;
+        @include breakpoint(small only) {
+            margin-bottom: 15px;
+        }
+        p{
+            font-weight: 700;
+            font-size: 20px;
+            @include breakpoint(small only) {
+                margin-bottom: 10px;
+            }
+            @include breakpoint(medium only) {
+                font-size: 18px;
+                max-width: 235px;
+            }
+            @include breakpoint(large) {
+                font-size: clamp(18px,calc(18px + (30 - 18) * ((100vw - 64rem) / (1440 - 1024))),30px);
+            }
+            @include breakpoint(large only) {
+                max-width: calc(clamp(18.75rem, 15.686vw + 8.711rem, 21.25rem));
+            }
+        }
+    }
+    .managerdropdown{
+        z-index: 9;
+    }
+    #manager-filter-button{
+        width: 100%;
+        @include breakpoint(small only) {
+            height: 48px;
+            padding: 13px 20px;
+        }
+        @include breakpoint(medium only) {
+            padding: 20px 15px;
+        }
+        @include breakpoint(large) {
+            width: calc(100% - 24px);
+        }
+        @include breakpoint(xlarge) {
+            margin-left: 12px;
+        }
+        &:after{
+            @include breakpoint(small only) {
+                content: '';
+                top: 22%;
+                right: 20px;
+            }
+        }
+    }
+    #manager-filter-button:before {
+        background: $primary-color;
+        display: block;
+        content: "";
+        width: 105%;
+        height: 100%;
+        position: absolute;
+        left: -8px;
+        top: 0;
+        z-index: -1;
+        @include breakpoint(medium) {
+            left: -6px;
+        }
+        @include breakpoint(large) {
+            left: -8px;
+        }
+        @include breakpoint(xlarge) {
+            left: -10px;
+        }
+        @include breakpoint(xxlarge) {
+            left: -12px;
+        }
+    }
+}
+.socialLnkpanel {
+    position: relative;
+    @include breakpoint(large) {
+        margin-top:-74px;
+    }
+    @include breakpoint(xxlarge) {
+        margin-top:-107px;
+    }
+    &.footersocials{
+        @include breakpoint(medium only) {
+            margin-top:-128px;
+        }
+        .sociallinks{
+            li{
+                @include breakpoint(medium) {
+                    margin-right: 18px;
+                }
+                @include breakpoint(large) {
+                    margin-right: calc(clamp(1.125rem, 1.683vw + 0.048rem, 1.563rem));
+                }
+                a{
+                    svg{
+                        width: 32px;
+                        @include breakpoint(medium) {
+                            width: 35px;
+                        }
+                        @include breakpoint(large) {
+                            width: calc(clamp(2.188rem, 3.606vw - 0.12rem, 3.125rem));
+                        }
+                    }
+                }
+            }     
+        }
+    }
+    &.memberfdic{
+        margin-top: 0;
+        @include breakpoint(medium) {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+        .sociallinks {
+            margin-bottom: 10px !important;
+            li{
+                margin-right: 18px;
+            }
+        }
+    }
+    
+.sociallinks {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px !important;
+    li {
+        font-size: 0;
+        line-height: 0px;
+        margin-bottom: 0;
+        margin-right:15px;
+        a {
+            font-size: 0;
+            line-height: 0px;
+            img {
+                transition: all 0.5s;
+                &:hover {
+                    transform: scale(1.05);
+                }
+            }
+            svg {
+                transition: all 0.5s;
+                width: 100%;
+                height:100%;
+                &:hover {
+                    transition: all 0.5s;
+                    transform: scale(1.05);
+                }
+
+            }
+        }
+        &:last-child {
+            margin-right: 0px;
+        }
+    }
+}
+}
+
+.scroll-hidden {
+    overflow-y: hidden;
+}
+
+.managerform-overlay {
+    position: fixed;
+    top: 114px;
+    right: 0;
+    width: 100%;
+    height: calc(100% - 100px);
+    background: #FFFFFF;
+    display: none;
+    z-index: 999999;
+    overflow-y: auto;
+    @include breakpoint(medium) {
+        background: rgba(0, 0, 0, 0.38);
+        top:0 !important;
+        height: 100%;
+        overflow-y:hidden;
+    }
+}
+
+.managerform-content {
+    width: 100%;
+    height: 100%;
+    max-width: 630px;
+    display: flex;
+    align-items: flex-start;
+    margin: 0 auto;
+    position: relative;
+    @include breakpoint(medium) {
+        align-items: center;
+    }
+    .managerform-body {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: #fff;
+        padding: 40px 0px 35px;
+        border-radius: 15px;
+        position: relative;
+        @include breakpoint(small only) {
+            height: auto !important;
+            border-radius: 0px;
+        }
+        @include breakpoint(medium) {
+            height: 96%;
+        }
+        .managerform-header{
+            .managerform-close {
+                position: absolute;
+                top: 12px;
+                right: 20px;
+                cursor: pointer;
+                font-size: 0px;
+                max-width: 20px;
+                display: none;
+                @include breakpoint(medium) {
+                    display: block;
+                }
+            }
+            .namecontent{
+                h2{
+                    font-size: clamp(24px,calc(24px + (32 - 24) * ((100vw - 23.4375rem) / (1440 - 375))),32px);
+                    line-height: 100%;
+                    color: $primary-color;
+                    font-weight: 600;
+                    text-align: center;
+                    margin-bottom: 0.5rem;
+                }
+            }
+        }
+        .managerform-umbraco{
+            height: 100%;
+            padding: 0 20px;
+            @include breakpoint(medium) {
+                padding: 0 27px;
+                overflow-x: hidden;
+                overflow-y: auto;
+                &::-webkit-scrollbar {
+                    width: 6px;
+                    background: #dddddd;
+                }
+            
+                &::-webkit-scrollbar-track {
+                    border-radius: 0px;
+                }
+            
+                &::-webkit-scrollbar-thumb {
+                    border-radius: 0px;
+                    background: $primary-color;
+                    height: 2px;
+                }
+            }
+        }
+    }
+}   
+@media only screen and (max-height: 900px) and (orientation: landscape) {
+    .managerform-content .managerform-body {
+        height: 96% !important;
+    }
+}

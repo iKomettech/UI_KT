@@ -1,0 +1,51 @@
+@import "util/util";
+
+$white: #ffffff;
+$primary-color: #90182C;
+$secondary-color: #91CBF0;
+$img: "../../images/";
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+
+.page404Wrap {
+    text-align: center;
+    background-color: #fff;
+
+    h1 {
+        color: $primary-color;
+        font-weight: 700;
+        font-size: clamp(30px, calc(30px + (60 - 30) * ((100vw - 375px) / (1440 - 375))), 60px);
+        padding-bottom: 15px;
+        padding-top: clamp(15px, calc(15px + (36 - 15) * ((100vw - 375px) / (1440 - 375))), 36px);
+        position: relative;
+        display: inline-block;
+        letter-spacing: -0.04em; 
+    }
+
+    p {
+        font-weight: 400;
+        max-width: 75%;
+        margin: 0 auto;
+        padding-top: clamp(35px, calc(35px + (65 - 35) * ((100vw - 375px) / (1440 - 375))), 65px);
+        font-size: clamp(18px, calc(18px + (24 - 18) * ((100vw - 375px) / (1440 - 375))), 24px);
+        word-break: inherit;
+        line-height: 110%;
+
+        @include breakpoint(llarge) {
+            max-width: 78%;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    }
+
+
+}

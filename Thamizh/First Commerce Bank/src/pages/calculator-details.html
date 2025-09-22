@@ -1,0 +1,199 @@
+<script type="text/javascript">
+    $(document).ready(function () {
+        function contentPadding() {
+            var logoLeft = $('.logoSection').offset().left;
+            $('.subbannerpanel .subbanner .bannerwrap .contentwrap .content').css({ 'margin-left': logoLeft });
+        }
+    
+        function heightLoad() {
+            if ($(window).width() >= 768 && $(window).width() <= 1024) {
+                if ($('.subbannerpanel .subbanner .contentwrap .content').height() <= 58) {
+                    $('.subbannerpanel .subbanner .contentwrap .content').css('padding-top', '35px');
+                } else {
+                    $('.subbannerpanel .subbanner .contentwrap .content').css('padding-top', '14px');
+                }
+            }
+        }
+    
+        contentPadding();
+         heightLoad();
+    
+        $(window).on("resize load", function () {
+            contentPadding();
+             heightLoad();
+        });
+    });
+    
+            function getNumberOfLines(selector) {
+    var el = $(selector)[0];  
+    
+    if (!el) {
+        console.warn("Element not found:", selector);
+        return 0;  
+    }
+    
+    var computedStyle = window.getComputedStyle(el);
+    var lineHeight = parseFloat(computedStyle.lineHeight);
+    var scrollHeight = el.scrollHeight;
+    
+    console.log("Checking element:", el);
+    console.log("Line Height:", lineHeight);
+    console.log("Scroll Height:", scrollHeight);
+    
+    if (!lineHeight || isNaN(lineHeight)) {
+        console.error("Invalid line-height for", selector);
+        return 0;
+    }
+    
+    var lines = Math.round(scrollHeight / lineHeight);
+    console.log("Number of lines:", lines);
+    
+    return lines;
+    }
+    $(window).on("load", function () {
+    var content = $('.subbannerpanel .subbanner .contentwrap .content');
+    
+    if (content.length === 0) {
+        console.error("Content element not found!");
+        return;
+    }
+    
+    var h1Lines = content.find('h1').length ? getNumberOfLines(content.find('h1')) : 0;
+    var pLines = content.find('p').length ? getNumberOfLines(content.find('p').first()) : 0;
+    
+    console.log("H1 Lines:", h1Lines, "P Lines:", pLines);
+    
+    content.removeClass('oneLine twoLine oneLineP twoLineP');
+    
+    if (h1Lines === 1) {
+        content.addClass('oneLine');
+    } else if (h1Lines === 2) {
+        content.addClass('twoLine');
+    }
+    
+    if(pLines === 1){
+        content.addClass('singleLineP');
+    }
+    if (pLines === 1 && h1Lines === 2) {
+        content.addClass('twoLineP');
+        content.removeClass('twoLine');
+        content.removeClass('singleLineP');
+    } else if (pLines === 1 && h1Lines === 1) {
+        content.addClass('oneLineP');
+        content.removeClass('oneLine');
+        content.removeClass('singleLineP');
+    }
+    
+     
+    });
+    </script>
+
+<style>
+    @media (min-width: 1024px) {
+        .subbannerpanel .subbanner .bannerwrap .contentwrap .content h1{
+            margin-left: -16px !important;
+        }
+    }
+    @media (min-width: 1300px) {
+        .subbannerpanel .subbanner .bannerwrap .contentwrap .content h1{
+            margin-left: -25px !important;
+        }
+    }
+    @media (min-width: 1600px) {
+        .subbannerpanel .subbanner .bannerwrap .contentwrap .content h1{
+            margin-left: -20px !important;
+        }
+    }
+</style>
+
+    <link rel="stylesheet" href="{{root}}assets/css/subbanner/subbanner.css" media="all">
+    <div class="subbannerpanel module">
+    <div class="grid-container-full">
+    <div class="subbanner">
+    <div class="temp1">
+        <div class="bannerwrap">
+            <div class="contentwrap">
+                <div class="content">
+                    <h1>Home BUdget Analysis <br> <strong>Calculator</strong></h1>
+                </div>
+            </div>
+            <div class="imgWrap">
+                <div class="filter-img">
+                    <img class="img" src="assets/images/calculator-details.jpg" width="952" height="461"
+                        alt="Home Promotional">
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    
+    
+    <div class="breadcrumbWrapBottom module come-in " data-swiftype-index="false">
+    <div class="grid-container">
+    <ul class="breadcrumbs">
+    <li class="breadcrumb-item ">
+        <a href="/" aria-label="Home">Home</a>
+    </li>
+    <li class="breadcrumb-item ">
+        <a href="/" aria-label="Calculators">Calculators</a>
+    </li>
+    <li class="breadcrumb-item ">Personal Basic Calculator</li>
+    </ul>
+    </div>
+    </div>
+
+
+    <link rel="stylesheet" href="{{root}}assets/css/generalcontent/generalcontent.css" media="all">
+
+    <div class="calculatordetailpanel gap module">
+        <div class="grid-container">
+            <div class="topctablock">
+                <a href="#" class="textCta" aria-label="Back to All Calculators">Back to All Calculators</a>
+            </div>
+            <div class="iframeContainer">
+                <iframe src="{{root}}KJECalc/Calc/AutoRebate.html" frameborder="0" scrolling="no"></iframe>
+            </div>
+            <div class="ctablock">
+                <a href="#" class="defaultBtn" aria-label="Back to All Calculators">Back to All Calculators</a>
+            </div>
+            <script type="text/javascript" defer>
+                function resizeIframe() {
+                    const iframes = document.querySelectorAll('.iframeContainer iframe');
+                    if (iframes) {
+                        iframes.forEach(iframe => {
+                            iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+                        });
+                    }
+                }
+                document.querySelectorAll('.iframeContainer iframe').forEach(iframe => {
+                    iframe.addEventListener('load', () => {
+                        setTimeout(() => resizeIframe(iframe), 10);
+                        const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+                        iframeDoc.addEventListener('click', function () {
+                            let resizeTimeout;
+                            clearTimeout(resizeTimeout);
+                            resizeTimeout = setTimeout(() => {
+                                document.querySelectorAll('.iframeContainer iframe').forEach(iframe => {
+                                    resizeIframe(iframe);
+                                });
+                            }, 300); 
+                        });
+                    });
+                });
+             
+                let resizeTimeout;
+                window.addEventListener('resize', () => {
+                    clearTimeout(resizeTimeout);
+                    resizeTimeout = setTimeout(() => {
+                        document.querySelectorAll('.iframeContainer iframe').forEach(iframe => {
+                            resizeIframe(iframe);
+                        });
+                    }, 200);
+                });
+
+            </script>
+            
+        </div>
+    </div>
