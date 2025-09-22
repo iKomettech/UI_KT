@@ -1,0 +1,316 @@
+// Banner Pannel
+.subbannerpanel {
+  height: 399px;
+  @media (max-width: 767px) {
+    height: 600px;
+  }
+
+  figure {
+    min-height: 530px;
+    background-size: cover;
+    background-position: center;
+    @include breakpoint(medium only) {
+      min-height: 319px;
+    }
+    @include breakpoint(small only) {
+      min-height: 192px;
+    }
+  }
+  .bannerwrap {
+    width: 100%;
+    position: relative;
+    height: 370px;
+    background-color: black;
+    // @media (max-width: 1297px) {
+    //   height: 320px;
+    // }
+    @media (max-width: 767px) {
+      height: 600px;
+    }
+    .imgWrap {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      @media (max-width: 767px) {
+        background-position-x: -730px;
+      }
+      &.gradient {
+        &:after {
+          content: "";
+          background: #000000;
+          background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(rgba(0, 0, 0, 0.4)));
+          background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.4) 100%);
+          background-size: cover !important;
+          background-repeat: no-repeat;
+          background-position: center;
+          width: 100%;
+          height: 234px;
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          z-index: 1;
+          @media (max-width: 767px) {
+            visibility: hidden;
+          }
+        }
+      }
+    }
+    .content {
+      margin: 0 auto;
+      position: absolute;
+      bottom: 15px;
+      left: 50%;
+      -webkit-transform: translate(-50%, 0%);
+      -ms-transform: translate(-50%, 0%);
+      transform: translate(-50%, 0%);
+      max-width: 100%;
+      width: 100%;
+      z-index: 2;
+      @media (max-width: 767px) {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        padding-top: 105px;
+      }
+      h1 {
+        font-size: 62px !important;
+        line-height: 60px !important;
+        max-width: 100%;
+        color: #fff;
+        font-weight: 900;
+        margin-bottom: -20px;
+        text-transform: uppercase;
+        @media (min-width: 1390px) and (max-width: 1529px) {
+          font-size: 58px !important;
+          text-align: center;
+        }
+        @media (min-width: 1280px) and (max-width: 1390px) {
+          font-size: 54px !important;
+          text-align: center;
+        }
+        @media (max-width: 1279px) {
+          font-size: 44px !important;
+          text-align: center;
+        }
+        @media (max-width: 1023px) {
+          font-size: 32px !important;
+        }
+        @media (max-width: 767px) {
+          font-size: 41px !important;
+          line-height: 44px !important;
+          font-weight: 900;
+          text-indent: 0;
+          background: rgba(0, 0, 0, 0.46);
+          width: 335px;
+          margin: 0 auto;
+          padding: 15px 0;
+        }
+
+        span {
+          display: block;
+          font-size: 26px;
+          color: #fed602;
+          text-indent: 6px;
+          @media (max-width: 1279px) {
+            text-indent: 4px;
+          }
+          @media (max-width: 1023px) {
+            text-indent: 2px;
+          }
+          @media (max-width: 767px) {
+            font-size: 20px;
+            text-indent: 0px;
+          }
+        }
+      }
+      .btnpanel {
+        margin-top: 97px;
+        @include breakpoint(small only) {
+          margin-top: 48px;
+        }
+        @include breakpoint(medium only) {
+          margin-top: 37px;
+        }
+        @include breakpoint(large only) {
+          margin-top: 47px;
+        }
+
+        ul {
+          display: flex;
+          flex-wrap: wrap;
+          margin-left: 0px;
+          li {
+            margin-right: 14px;
+            @include breakpoint(medium only) {
+              display: block;
+              width: 100%;
+              text-align: center;
+              min-width: 231px;
+            }
+            @include breakpoint(small only) {
+              display: block;
+              text-align: center;
+              width: 100%;
+              margin-bottom: 20px;
+            }
+            a {
+              color: #fff;
+              text-transform: uppercase;
+              display: inline-block;
+              padding: 9px 30px;
+              font-size: 21px;
+              line-height: 29px;
+              border-radius: 25px;
+              border: 1px solid #fff;
+              position: relative;
+              z-index: 0;
+              overflow: hidden;
+              @include breakpoint(small only) {
+                font-size: 17px;
+                line-height: 21px;
+                padding: 8px 30px;
+                min-width: 231px;
+              }
+              @include breakpoint(medium only) {
+                padding: 5px 18px;
+                font-size: 18px;
+                line-height: 24px;
+                min-width: 231px;
+              }
+              @include breakpoint(large only) {
+                padding: 3px 12px;
+                font-size: 16px;
+                line-height: 29px;
+              }
+              &:before {
+                background: #ffffff;
+                content: "";
+                position: absolute;
+                z-index: -1;
+                border-radius: 25px;
+              }
+              &:after {
+                background: #ffffff;
+                content: "";
+                position: absolute;
+                z-index: -1;
+                transition: all 0.3s;
+                height: 0;
+                left: 0;
+                top: 0;
+                width: 100%;
+                border-radius: 25px;
+              }
+              &:hover {
+                text-decoration: none;
+                color: $body-font-color;
+                border: 1px solid transparent;
+                &:after {
+                  height: 100%;
+                }
+              }
+              &.orangebtn {
+                background-color: #eeb944;
+                color: $body-font-color;
+                border: 1px solid transparent;
+                position: relative;
+                z-index: 0;
+                overflow: hidden;
+                &:before {
+                  background: #b9922c;
+                  content: "";
+                  position: absolute;
+                  z-index: -1;
+                  border-radius: 25px;
+                }
+                &:after {
+                  background: #b9922c;
+                  content: "";
+                  position: absolute;
+                  z-index: -1;
+                  transition: all 0.3s;
+                  height: 0;
+                  left: 0;
+                  top: 0;
+                  width: 100%;
+                  border-radius: 25px;
+                }
+                &:hover {
+                  text-decoration: none;
+                  &:after {
+                    height: 100%;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &.subpages {
+    .bannerwrap {
+      .imgWrap {
+        &.gradient {
+          &:after {
+            content: "";
+            background: #000000;
+            background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(rgba(0, 0, 0, 1)));
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 1) 100%);
+            background-size: cover !important;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 100%;
+            height: 234px;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 1;
+            @media (max-width: 767px) {
+              visibility: hidden;
+            }
+          }
+        }
+        @media (max-width: 767px) {
+          background-position-x: 0px;
+        }
+      }
+      .content {
+        h1 {
+          font-size: 101px !important;
+          line-height: 32px !important;
+          font-weight: 900;
+          margin-bottom: 6px;
+          text-align: left;
+          text-indent: 0;
+          @media (max-width: 1023px) {
+            font-size: 88px !important;
+          }
+          @media (max-width: 767px) {
+            font-size: 41px !important;
+            line-height: 44px !important;
+            text-align: center;
+          }
+          span {
+            font-size: 34.5px;
+            font-weight: 900;
+            padding-bottom: 45px;
+            text-indent: 0;
+            line-height: 34px;
+            @media (max-width: 1023px) {
+              font-size: 30.5px;
+            }
+            @media (max-width: 767px) {
+              font-size: 20.5px;
+              line-height: 24px;
+              padding-bottom: 10px;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,1 @@
+$.fn.isInViewport=function(){var i=$(this).offset().top,t=i+$(this).outerHeight(),n=$(window).scrollTop(),o=n+$(window).height();return t>n&&i<o},$(window).on("resize scroll",function(){$(".animatable ").each(function(){$(this).attr("class");$(this).isInViewport()&&$(this).addClass("animate-in")})});

@@ -1,0 +1,84 @@
+.errorpage {    
+    margin-bottom: 60px;
+    margin-top: 160px;
+    @include breakpoint(large) {
+        margin-bottom: 200px;
+        margin-top: 395px;
+    }
+    .notfound {
+        display:block;
+        margin: 0 auto;   
+        @include breakpoint(large) {
+        display:flex;
+        margin: 0 auto;   
+        } 
+        .left{
+            background: $primary-color;
+            text-align: center;
+            width: 100%;            
+            padding: 112px 0 115px;
+            @include breakpoint(large) {
+                width: 26.8%;        
+                padding: 112px 0 115px; 
+            }
+         }
+        .right{
+            background: $secondary-color;            
+            text-align: center;     
+            width: 100%;     
+            padding: 62px 20px 40px;
+            @include breakpoint(large) {
+                padding: 62px 20px 40px;   
+            width: 73.2%;    
+            } 
+         }
+        
+    
+    h1 {
+        font-size: 195px;
+        line-height: 60px; 
+        color: $secondary-color;
+        font-weight: 800;
+       
+    }
+    h2 {
+        font-size: 64px;
+        line-height: 60px;   
+        font-weight: 700;
+        text-transform: uppercase;
+        @include breakpoint(large) {
+            font-size: 64px;
+            line-height: 40px;
+            
+        }
+    }
+    p {
+        font-size: 18px;
+        line-height: 28px;
+        font-weight: 700;        
+        margin-top: 40px;
+        margin-bottom: 37px;
+        @include breakpoint(large) {
+            font-size: 18px;
+            line-height: 28px;
+            margin-top: 40px;
+            margin-bottom: 37px;
+        }
+    }
+    .homecta {
+        color:$white-color;     
+        min-width: auto;
+        min-height: auto;
+        font-size: 24px;
+        line-height: 40px;
+        font-weight:700;
+        padding: 12.5px 28px;
+        background-color: $primary-color;
+      
+        &:hover {
+            color: $secondary-color;
+           
+        }
+    }
+}
+}

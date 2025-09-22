@@ -1,0 +1,122 @@
+.infobanner {
+    padding: 40px 0px 65px 0px;
+    h2 {
+        text-transform: uppercase;
+        font-size: 28px;
+        line-height: 40px;
+    }
+    P {
+        text-transform: uppercase;
+        line-height: 32px;
+        margin-bottom: 0px;
+        max-width: 680px;
+        margin: 0 auto;
+    }
+}
+
+.tilesbanner {
+    .grid-container {
+        .row {
+            @media (min-width: 1279px) {
+                margin-left: -24px;
+                margin-right: -28px;
+            }
+        }
+    }
+    .columns.medium-4.large-4 {
+        margin-bottom: 30px;
+        @media (min-width:767px) {
+            margin-bottom: 45px;
+        }
+        &:last-child {
+            float: left;
+        }
+        
+    }
+    .imgsec {
+        max-width: 422px;
+        min-height: 235px;
+        max-height: 235px;
+        overflow: hidden;
+        display: block;
+        margin: 0 auto;
+        height: 100%;
+        position: relative;
+        transition: all 0.5s ease;
+        @media (min-width: 1024px) and (max-width: 1365px) {
+            min-height: 252px;
+            max-height: 252px;
+        }
+        @media (min-width: 768px) and (max-width: 1023px) {
+            min-height: 160px;
+        }
+        @media (max-width: 767px) {
+            min-height: auto;
+        }
+        figure {
+            img {
+                transition: transform 0.5s ease;
+                transform: scale(1);
+                object-fit: cover;
+                max-width: 422px;
+                min-height: 235px;
+                max-height: 235px;
+                @media (min-width: 1024px) and (max-width: 1365px) {
+                    min-height: 252px;
+                    max-height: 252px;
+                }
+                @media (min-width: 768px) and (max-width: 1023px) {
+                    min-height: 160px;
+                }
+                @media (max-width: 767px) {
+                    min-height: auto;
+                }
+            }
+        }
+        &:hover {
+            figure {
+                img {
+                    transition: transform 0.5s ease;
+                    transform: scale(1.1);
+                }
+            }
+            .image-text {
+                background: #3573c8;
+                h4 {
+                    color: #ffffff;
+                }
+            }
+        }
+    }
+    .image-text {
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        max-width: max-content;
+        text-align: center;
+        background: #fed602;
+        margin: 0 auto;
+        @media (min-width: 768px) and (max-width: 1023px) {
+            width: 100%;
+        }
+        @media (max-width: 767px) {
+            width: 100%;
+        }
+        h4 {
+            text-transform: uppercase;
+            margin: 5px 25px;
+            font-size: 22px;
+            @media (min-width: 1024px) and (max-width: 1297px) {
+                font-size: 16px;
+            }
+            @media (min-width: 768px) and (max-width: 1023px) {
+                font-size: 16px;
+            }
+            @media (max-width: 767px) {
+                margin: 5px 5px;
+            }
+        }
+    }
+}
