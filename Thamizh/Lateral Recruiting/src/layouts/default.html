@@ -1,0 +1,311 @@
+{{!-- This is the base layout for your project, and will be used on every page unless specified. --}}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lowenstein Sandler Recruiting</title>
+    <meta name="title" content="Lowenstein Sandler Recruiting" />
+    <meta name="description" content="Lowenstein Sandler Recruiting" />
+    <link rel="shortcut icon" type="image/x-icon" href="{{root}}assets/images/settings/favicon.ico">
+    <link rel="preload" href="{{root}}assets/css/global/font.css">
+    <link rel="stylesheet" href="{{root}}assets/css/global/jquery-ui.min.css">
+    <link rel="stylesheet" href="{{root}}assets/css/global/style.css" media="all">
+    <link rel="stylesheet" href="{{root}}assets/css/subbanner/subbanner.css">
+    <link rel="stylesheet" href="{{root}}assets/css/glance/glance.css">
+    <link rel="stylesheet" href="{{root}}assets/css/present/present.css">
+    <link rel="stylesheet" href="assets/css/popupvideo/YouTubePopUp.css">
+    <link rel="stylesheet" href="{{root}}assets/css/whyjoin/whyjoin.css">
+    <link rel="stylesheet" href="{{root}}assets/css/keyfactor/keyfactor.css">
+    <link rel="stylesheet" href="{{root}}assets/css/experience/experience.css">
+    <link rel="stylesheet" href="{{root}}assets/css/testimonials/testimonials.css">
+    <link rel="stylesheet" href="{{root}}assets/css/timeline/timeline.css">
+    <link rel="stylesheet" href="{{root}}assets/css/global/swiper.min.css" media="all">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> 
+</head>
+
+<body>
+    <div id="skiptocontent"><a href="#maincontent" alt="skip to main content">skip to main content</a></div>
+    <!-- <div class="loaderBlock">
+        <div class="svgAnimation">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="50" />
+            </svg>
+        </div>
+        <div class="loaderWrap">
+            <img src="{{root}}assets/images/settings/logo.svg" alt="Lowenstein Sandler" width="256" />
+        </div>
+    </div> -->
+    <div class="sitewrap">
+        <header class="sticky module">
+            <div class="grid-container">
+                <div class="alertsWrap">
+                    <div class="wrap">
+                      <p>Lowenstein Sandler LLP | The contents of this website contain attorney advertising. | Results may vary depending on your particular facts and legal circumstances.</p>
+                    </div>
+                </div>
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="{{root}}assets/images/settings/logo.svg" alt="Lowenstein Sandler" width="200" height="59" />
+                    </a>
+                </div>
+                <div class="headerMainWrapper">
+                    <div class="headerWrapper">
+                        <div class="hamburger">
+                            <a href="#" class="mhamburger" title="Mobile hamburger">
+                                <span></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="tabnavlinks">
+                    <div class="grid-container">
+                        <div class="stickynav">
+                            <ul>
+                               <li class="active">
+                                   <a href="#">Home</a>
+                               </li>
+                               <li>
+                                   <a href="#">Lateral Stories</a>
+                               </li>
+                               <li>
+                                   <a href="#">Economics</a>
+                               </li>
+                               <li>
+                                   <a href="#">Integration</a>
+                               </li>
+                               <li>
+                                   <a href="#">Experience</a>
+                               </li>
+                               <li>
+                                   <a href="#">Strategic Plan</a>
+                               </li>
+                               <li>
+                                   <a href="#">About Us</a>
+                               </li>
+                            </ul>
+                        </div>
+                   </div>
+                </div>
+            </div>
+            <div class="nav-wrapper">
+                <nav role="navigation">
+                    <div class="primarysubmenu">
+                        <ul class="topmenu">
+                            <li class="link-title">
+                                <a href="#" class="links">
+                                    Home
+                                </a>
+                            </li>
+                            <li class="link-title">
+                                <a href="#" class="links">
+                                    Lateral Stories
+                                </a>
+                            </li>
+                            <li class="link-title">
+                                <a href="#" class="links">
+                                    Economics
+                                </a>
+                            </li>
+                            <li class="link-title">
+                                <a href="#" class="links">
+                                    Integration
+                                </a>
+                            </li>
+                            <li class="link-title">
+                                <a href="#" class="links">
+                                    Experience
+                                </a>
+                            </li>
+                            <li class="link-title">
+                                <a href="#" class="links">
+                                    Strategic Plan
+                                </a>
+                            </li>
+                            <li class="link-title">
+                                <a href="javascript:void(0)" class="links msubMenu">
+                                    About Us
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <div class="stickyEmpty">
+        </div>
+        <!-- <article class="main" id="maincontent"> -->
+            {{!-- Pages you create in the src/pages/ folder are inserted here when the flattened page is created. --}}
+            {{>
+            body}}
+        <!-- </article> -->
+        <link rel="stylesheet" href="{{root}}assets/css/contactUs/contactUs.css" media="all">
+        <div class="contactCards module">
+            <div class="grid-container">
+                <div class="wraps">
+                    <h2>Contact Us</h2> 
+                    <p>For more information, Please contact us</p>
+                </div>
+                <div class="fourColumn">
+                    <div class="userDiv">
+                        <div class="imgWrap">
+                            <img data-src="{{root}}assets/images/about/gary.png" width="194" height="194" alt="gary" class="lazy">
+                        </div>
+                        <div class="detailWrap">
+                            <h3>Gary M. Wingens</h3>
+                            <p>Chair and Managing Partner</p>
+                            <div class="communication">
+                                <p><strong>T: </strong><a href="tel:+1 212.204.8687" aria-label="+1 212.204.8687">+1 212.204.8687</a></p>
+                                <p><strong>E: </strong><a href="mailto:gwingens@lowenstein.com" aria-label="gwingens@lowenstein.com">gwingens@lowenstein.com</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="userDiv">
+                        <div class="imgWrap">
+                            <img data-src="{{root}}assets/images/about/jona.png" width="194" height="194" alt="gary" class="lazy">
+                        </div>
+                        <div class="detailWrap">
+                            <h3>Jonathan C. Wishnia</h3>
+                            <p>Hiring Partner</p>
+                            <div class="communication">
+                                <p><strong>T: </strong><a href="+1 646.414.6797" aria-label="+1 646.414.6797">+1 646.414.6797</a></p>
+                                <p><strong>E: </strong><a href="mailto:jwishnia@lowenstein.com" aria-label="jwishnia@lowenstein.com">jwishnia@lowenstein.com</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="userDiv">
+                        <div class="imgWrap">
+                            <img src="{{root}}assets/images/about/kerry.png" width="194" height="194" alt="gary">
+                        </div>
+                        <div class="detailWrap">
+                            <h3>Kerry A. Lunz</h3>
+                            <p>Director of Recruiting <br>
+                                and Integration</p>
+                            <div class="communication">
+                                <p><strong>T: </strong><a href="tel:+1 212.204.8687" aria-label="+1 212.204.8687">+1 212.419.5874</a></p>
+                                <p><strong>E: </strong><a href="mailto:klunz@lowenstein.com" aria-label="klunz@lowenstein.com">klunz@lowenstein.com</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="userDiv">
+                        <div class="imgWrap">
+                            <img src="{{root}}assets/images/about/patricia.png" width="194" height="194" alt="gary">
+                        </div>
+                        <div class="detailWrap">
+                            <h3>Patricia Cristadoro</h3>
+                            <p>Senior Manager of <br>
+                                Lateral Recruiting</p>
+                            <div class="communication">
+                                <p><strong>T: </strong><a href="tel:+1 646.414.6967" aria-label="+1 646.414.6967">+1 646.414.6967</a></p>
+                                <p><strong>E: </strong><a href="mailto:pcristadoro@lowenstein.com" aria-label="pcristadoro@lowenstein.com">pcristadoro@lowenstein.com</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="threerow module ">
+            <div class="foot-custom">
+                <div class="grid-container">
+                    <div class="footersec">
+                        <div class="footer-logo">
+                            <a href="#"><img src="{{root}}assets/images/settings/footer-logo.svg" width="286"
+                                    height="84" alt="Lateral " /></a>
+                        </div>
+                        <div class="primaryfooter">
+                            <div class="socialLnkpanel">
+                                <ul class="sociallinks">
+                                    <li>
+                                        <a href="#" aria-label="instagram" target="_blank">
+                                            <img src="{{root}}assets/images/settings/instagram.svg" alt="instagram"
+                                                class="lazy imagetoSVG" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" aria-label="linkedin" target="_blank">
+                                            <img src="{{root}}assets/images/settings/linkedin.svg" alt="linkedin"
+                                                class="lazy imagetoSVG" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" aria-label="linkedin" target="_blank">
+                                            <img src="{{root}}assets/images/settings/x.svg" alt="x"
+                                                class="lazy imagetoSVG" />
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="secondaryfooter ">
+                <div class="grid-container">
+                    <div class="column-custom">
+                        <ul class="footerlinks copyright">
+                            <li><span>©</span> <span id="copyright-year"></span> Lowenstein Sandler LLP</li>
+                        </ul>
+                        <ul class="col-2nd">
+                            <li><a href="#">Terms of Use</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+
+<div class="paginacontainer">
+    <div class="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"
+                style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 118.041;">
+            </path>
+        </svg>
+    </div>
+
+</div>
+
+<script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.11/jquery.lazy.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".lazy").Lazy({
+            afterLoad: function (element) {
+                $("img").removeClass("layzeloading");
+            }
+        });
+    });
+</script>
+<script src="{{root}}assets/scripts/global/nprogress.js" defer></script> 
+<script src="{{root}}assets/scripts/global/jquery-ui.min.js" defer></script>
+<script src="{{root}}assets/scripts/global/imagetoSVG.js" defer></script>
+<script src="assets/scripts/popupvideo/YouTubePopUp.jquery.js" defer></script>
+<script src="{{root}}assets/scripts/global/custom.js" defer></script>
+<script src="{{root}}assets/scripts/global/swiper.min.js" defer></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#copyright-year').text(new Date().getFullYear());
+        $('#copyright-year-notfound').text(new Date().getFullYear());
+        setTimeout(function () {
+            if ($('.popUpWrapper').length > 0) {
+                $('html').addClass('popUpOpen');
+                setTimeout(function () {
+                    $('.popupWrap .wrap,.popUpWrapper').addClass('Open');
+                }, 100);
+            }
+        }, 1000);
+        $('.popUpWrapper .popup-close').click(function () {
+            $('html').removeClass('popUpOpen');
+            $('.popupWrap .wrap,.popUpWrapper').removeClass('Open');
+        });
+    });
+</script>
+</body>
+
+</html>

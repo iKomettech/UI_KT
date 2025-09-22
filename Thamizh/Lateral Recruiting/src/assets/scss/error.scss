@@ -1,0 +1,93 @@
+@import "util/util";
+$white: #ffffff;
+$primary-color: #000000;
+$bgpanel-color: #dce7e4;
+$black: #000000;
+$img: "../../images";
+$breakpoints: (
+  small: 0,
+  medium: 768px,
+  large: 1024px,
+  llarge: 1280px,
+  xlarge: 1360px,
+  xxlarge: 1440px,
+);
+
+.alertsWrap {
+  p {
+    color: $black;
+  }
+}
+
+.tabnavlinks {
+  display: none;
+}
+
+.hamburger a.mhamburger span:after {
+  content: '';
+  background: url(#{$img}/settings/hamburger-icon-black.svg) no-repeat;
+}
+
+.contactCards {
+  margin-top: clamp(60px, calc(60px + (130 - 60) * ((100vw - 375px) / (1440 - 375))), 130px) !important;
+}
+
+.page404Wrap {
+  text-align: center;
+  padding-top: 45px;
+  background-color: #fff;
+
+  @include breakpoint(medium) {
+    padding-top: 90px;
+  }
+
+  @include breakpoint(llarge) {
+    padding-top: 70px;
+  }
+
+  h1 {
+    color: $primary-color;
+    font-weight: 700;
+    font-size: clamp(40px, calc(40px + (115 - 40) * ((100vw - 375px) / (1440 - 375))), 115px);
+    line-height: clamp(50px, calc(50px + (138 - 50) * ((100vw - 375px) / (1440 - 375))), 138px);
+    padding-bottom: 15px;
+    padding-top: 36px;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+
+    &.ft-60 {
+      font-size: clamp(28px, calc(28px + (60 - 28) * ((100vw - 375px) / (1440 - 375))), 60px);
+      line-height: clamp(36px, calc(36px + (72 - 36) * ((100vw - 375px) / (1440 - 375))), 72px);
+    }
+
+    &::after {
+      content: '';
+      height: clamp(4px, calc(4px + (8 - 4) * ((100vw - 375px) / (1440 - 375))), 8px);
+      position: absolute;
+      bottom: -0.625rem;
+      background: #EB0028;
+      left: 0;
+      width: 100%;
+    }
+  }
+
+  p {
+    font-weight: 400;
+    max-width: 75%;
+    margin: 0 auto;
+    padding-top: 20px;
+
+    @include breakpoint(llarge) {
+      max-width: 67%;
+    }
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+
+}
+
+

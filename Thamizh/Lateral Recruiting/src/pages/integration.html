@@ -1,0 +1,175 @@
+
+<div class="subbannerpanel module">
+    <div class="grid-container-fullwidth">
+        <div class="bannerwrap">
+            <div class="imgWrap">
+                <picture>
+                    <source media="(min-width:320px) and (max-width:430px)"
+                        srcset="{{root}}assets/images/mobile-banner.jpg" type="image/jpg">
+                    <source media="(min-width: 431px)" srcset="{{root}}assets/images/banner.jpg" type="image/jpg">
+                    <img src="{{root}}assets/images/banner.jpg" alt="Banner Image" width="1920" height="563">
+                </picture>
+            </div>
+            <div class="grid-container">
+                <div class="contentwrap">
+                    <div class="content">
+                        <h1>Let's Talk Laterally</h1>
+                        <p>Explore how our creative approach sheds new light on your future success</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="integrationPanel mb75 module">
+    <div class="grid-container">
+        <div class="wraps">
+            <h2>Forge Your Path</h2>
+        </div>
+        <div class="fragPath">
+            <p>Lowenstein’s unique Orientation, Onboarding, and Integration (OOI) department prepares lateral partners
+                for immediate and long-term success with in-depth planning and support. The OOI team guides you through
+                the logistics of moving to a new firm and creates—and helps execute on—a bespoke plan tailored to meet
+                your individual needs and goals. The OOI program includes regular check-ins and feedback sessions to
+                ensure that your transition is as smooth as possible and that you are integrating culturally as well.
+                The firm’s leadership team is always available to provide guidance and support as you navigate your new
+                role.</p>
+        </div>
+    </div>
+</div>
+<div class="timelinepanel">
+    <div class="iconwrap">
+        <div class="grid-container">
+            <div class="mapiconwrap">
+                <div class="mapicon">
+                    <img data-src="assets/images/integration/map-icon.svg" width="66" height="102" alt="iucon" class="lazy layzeloading">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="timelinewrap">
+        <div class="grid-container">
+            <div class="timeline-item item-1">
+                <div class="leftwrap">
+                    <div class="contwrap">
+                        <h3>0-3<span>MONTHS</span></h3>
+                        <p>Meet key attorneys and staff across departments to provide a working knowledge of how the firm operates.</p>
+                    </div>
+                </div>
+                <div class="rightWrap">
+                    <div class="listwrap">
+                        <ul>
+                            <li>Introductions across practices, firm leadership, and key business services departments</li>
+                            <li>Review of immediate practice needs and any changes since initial recruitment discussions
+                            </li>
+                            <li>Launch of client transfer process</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="timelinewrap">
+        <div class="grid-container">
+            <div class="timeline-item">
+                <div class="leftwrap">
+                    <div class="contwrap">
+                        <h3>4-8<span>MONTHS</span></h3>
+                        <p>Nurture existing client relationships, identify cross-practice opportunities, and develop plans
+                            for targeting new prospects.</p>
+                    </div>
+                </div>
+                <div class="rightWrap">
+                    <div class="listwrap">
+                        <ul>
+                            <li>Creation/implementation of business development plan, including key marketing strategies and tactics</li>
+                            <li>Identification of cross-practice opportunities with current Lowenstein clients
+                            </li>
+                            <li>Professional development, trainings, and continuing legal education sessions</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="timelinewrap">
+        <div class="grid-container">
+            <div class="timeline-item">
+                <div class="leftwrap">
+                    <div class="contwrap">
+                        <h3>9-12<span>MONTHS</span></h3>
+                        <p>Continue to nurture business opportunities and meet with key stakeholders across the firm;
+                            regroup with dedicated OOI team to discuss any additional assistance or support.</p>
+                    </div>
+                </div>
+                <div class="rightWrap">
+                    <div class="listwrap">
+                        <ul>
+                            <li>Execution of business development plan and marketing strategies/tactics, with reporting on key metrics/performance indicators</li>
+                            <li>Continued check-ins and/or introductions across firm practices and offices</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" defer>
+    $(document).ready(function () {
+        // Assign unique IDs to each timeline item
+        $('.timeline-item').each(function (i) {
+            $(this).attr("id", "item-" + i);
+        });
+    
+        // Add a "last-child" marker to the last timeline-item's list
+        const lastTimelineItem = $('.timeline-item').last(); 
+        const listWrap = lastTimelineItem.find('.listwrap ul');
+        if (listWrap.length) {
+            listWrap.append('<li class="last-child"></li>');
+        }
+    
+        // Function to adjust the heights of <li> elements
+        function adjustTimelineHeight() {
+            if ($(window).outerWidth() >= 1024) {
+                $('.timeline-item').each(function () {
+                    const itemId = $(this).attr('id'); 
+                    let maxHeight = 0;
+                    
+                    // Reset all <li> heights to auto
+                    $(`#${itemId} .listwrap li`).css('height', 'auto');
+    
+                    // Calculate the maximum height
+                    $(`#${itemId} .listwrap li`).each(function () {
+                        const currentHeight = $(this).outerHeight();
+                        maxHeight = Math.max(maxHeight, currentHeight);
+                    });
+    
+                    // Apply the max height to all <li> elements
+                    $(this).css('padding-top', maxHeight - 36);
+                    $(`#${itemId} .listwrap li`).css('height', maxHeight);
+                });
+            } else {
+                // Reset <li> heights for smaller screens
+                $('.timeline-item .listwrap li').css('height', 'auto');
+            }
+        }
+    
+        // Debounce function to optimize resize handling
+        function debounce(func, wait) {
+            let timeout;
+            return function (...args) {
+                const context = this;
+                clearTimeout(timeout);
+                timeout = setTimeout(() => func.apply(context, args), wait);
+            };
+        }
+    
+        // Adjust timeline heights on load and debounce resize
+        adjustTimelineHeight();
+        $(window).on('resize', debounce(adjustTimelineHeight, 300));
+    });
+</script>
+    

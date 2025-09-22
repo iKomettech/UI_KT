@@ -1,0 +1,161 @@
+@import "util/util";
+$white: #ffffff;
+$primary-color: #EB0028;
+$bgpanel-color: #dce7e4;
+$black: #000000;
+$img: "../../images";
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+.glancePanel { 
+    height: auto;
+    .counterSection {
+        margin-top: clamp(26px, calc(26px + (58 - 26) * ((100vw - 375px) / (1440 - 375))), 58px);
+
+        .flexBox {
+            display: flex;
+            flex-wrap: wrap;
+            // align-items: center;
+            row-gap: clamp(8px, calc(8px + (47 - 8) * ((100vw - 375px) / (1440 - 375))), 47px);
+
+            .int-grids {
+                width: 48%;
+
+                @include breakpoint(large) {
+                    text-align: center;
+                    width: 33.33%;
+
+                }
+
+
+                &:nth-child(3n + 1) {
+                    h3 {
+                        color: #48215F;
+                    }
+                }
+
+                &:nth-child(3n + 2) {
+                    h3 {
+                        color: #117370;
+
+                        @include breakpoint(large) {
+                            margin-bottom: 10px;
+                        }
+                    }
+                }
+
+                &:nth-child(3n + 3) {
+                    h3 {
+                        color: #066B9B;
+
+                        @include breakpoint(large) {
+                            margin-bottom: 2px;
+                        }
+                    }
+                }
+
+                h3 {
+                    font-size: clamp(35px, calc(35px + (90 - 35) * ((100vw - 375px) / (1440 - 375))), 90px);
+                    font-family: 'Roboto Condensed';
+                    line-height: clamp(29px, calc(29px + (58 - 29) * ((100vw - 375px) / (1440 - 375))), 58px);
+                    font-weight: normal;
+                    margin-bottom: clamp(3px, calc(3px + (10 - 3) * ((100vw - 375px) / (1440 - 375))), 10px);
+
+                    sub {
+                        font-size: clamp(20px, calc(20px + (33 - 20) * ((100vw - 375px) / (1440 - 375))), 33px);
+                        font-family: 'Roboto Condensed';
+                        line-height: clamp(29px, calc(29px + (58 - 29) * ((100vw - 375px) / (1440 - 375))), 58px);
+                        font-weight: normal;
+                        bottom: 0;
+                    }
+                }
+
+                p { 
+                    font-size: clamp(15px, calc(15px + (24 - 15) * ((100vw - 375px) / (1440 - 375))), 24px);
+                    font-family: 'Roboto Condensed';
+                    line-height: clamp(22px, calc(22px + (33 - 22) * ((100vw - 375px) / (1440 - 375))), 33px);
+                    font-weight: normal;
+                    color: #000000;
+                    @media (max-width:480px) {
+                        padding-right: 10px;
+                    }
+                }
+
+                @media (max-width:1023px) {
+                    &:first-child {
+                        order: 1;
+                    }
+
+                    &:nth-child(2) {
+                        order: 3;
+                    }
+
+                    &:nth-child(3) {
+                        order: 5;
+                    }
+
+                    &:nth-child(4) {
+                        order: 2;
+                    }
+
+                    &:nth-child(5) {
+                        order: 4;
+                    }
+
+                    &:nth-child(6) {
+                        order: 6;
+                    }
+                }
+
+                @media (min-width:1023px) {
+                    // &:nth-child(3n + 1) {
+                    //     width: 30%;
+                    // }
+
+                    // &:nth-child(3n + 2) {
+                    //     width: 40.5%;
+                    // }
+
+                    // &:nth-child(3n + 3) {
+                    //     width: 29.5%;
+                    //     padding-left: 1.5%;
+                    // }
+
+                    // &:nth-child(5) {
+                    //     h3 {
+                    //         padding-right: 10%;
+                    //     }
+                    // }
+                }
+
+                &:first-child {
+                    h3 {
+                        margin-bottom: clamp(3px, calc(3px + (18 - 3) * ((100vw - 375px) / (1440 - 375))), 18px);
+                    }
+
+                }
+
+                &:nth-child(4) {
+                    h3 {
+
+                        margin-bottom: clamp(3px, calc(3px + (4 - 3) * ((100vw - 375px) / (1440 - 375))), 4px);
+                    }
+                }
+
+                &:nth-child(5) {
+                    h3 {
+                        @include breakpoint(large) {
+                            margin-bottom: 2px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

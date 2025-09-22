@@ -1,0 +1,120 @@
+@import "util/util";
+$white: #ffffff;
+$primary-color: #EB0028;
+$bgpanel-color: #dce7e4;
+$black: #000000;
+$img: "../../images";
+$breakpoints: (
+  small: 0,
+  medium: 768px,
+  large: 1024px,
+  llarge: 1280px,
+  xlarge: 1360px,
+  xxlarge: 1440px,
+);
+
+.subbannerpanel{
+    width: 100%; 
+    height: auto;
+    position: relative;
+    margin-bottom: clamp(30px, calc(30px + (70 - 30) * ((100vw - 375px) / (1440 - 375))), 70px);
+    // @media (min-width: 1600px) {
+    //     width: 100vw;
+    // }
+    .grid-container-fullwidth{
+        .bannerwrap{
+            position: relative;
+            &:before{
+                content: '';
+                width: 100%;
+                height: clamp(335px, calc(335px + (431 - 335) * ((100vw - 431px) / (1440 - 431))), 431px);
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                background: rgb(0,0,0);
+                background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+                mix-blend-mode: multiply;
+                @include breakpoint(small only) {
+                    height: 100%;
+                }
+            }
+            .imgWrap{
+                width: 100%;
+                @media (min-width: 431px) {
+                    min-height: clamp(393px, calc(393px + (563 - 393) * ((100vw - 431px) / (1440 - 431))), 563px);
+                    height: auto;
+                }
+               img{
+                    width: 100%;
+                    height:100%;
+                    object-fit: cover;
+                    @media (min-width: 431px) {
+                        min-height: clamp(393px, calc(393px + (563 - 393) * ((100vw - 431px) / (1440 - 431))), 563px); 
+                        height: auto;
+                    }
+               }
+            }
+            .grid-container{
+                .contentwrap{
+                    position: absolute;
+                    top: 50%;
+                    left:50%;
+                    transform: translate(-50%, -50%);
+                    color: #ffffff;
+                    text-align: center;
+                    width: 100%;
+                    @media (max-width: 430px) { 
+                        top:68.5%;
+                    }
+                    @media (max-width: 767px) { 
+                        top:62%;
+                    }
+                    .content{
+                        max-width: 100%;
+                        margin: 0 auto;
+                        @media (max-width: 767px) {
+                            max-width: 96%;
+                        }
+                        h1{
+                            color: #ffffff;
+                            font-weight: 300;
+                            font-size: clamp(65px, calc(65px + (191 - 65) * ((100vw - 375px) / (1440 - 375))), 191px);
+                            line-height: clamp(70px, calc(70px + (191 - 70) * ((100vw - 375px) / (1440 - 375))), 191px);
+                            letter-spacing: -0.28rem;
+                            @include breakpoint(medium) {
+                                letter-spacing: - 0.45rem;
+                            }
+                            @include breakpoint(large) {
+                                letter-spacing: - 0.70rem;
+                            }
+                        }
+                        p{
+                            font-size: clamp(15px, calc(15px + (26 - 15) * ((100vw - 375px) / (1440 - 375))), 26px);
+                            line-height: clamp(19px, calc(19px + (32 - 19) * ((100vw - 375px) / (1440 - 375))), 32px);
+                            letter-spacing: 0.05em;
+                            background: $primary-color;
+                            padding: 22.5px 32px;
+                            display: inline-block;
+                            letter-spacing: -0.0em;
+                            @media (max-width: 430px) {
+                               padding: 12px 8px;
+                            }
+                            @media (max-width: 767px) {
+                                padding: 0.8rem 1rem;
+                                position: relative;
+                                top: 20px;
+                             }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.MacOS .subbannerpanel .grid-container-fullwidth .bannerwrap .grid-container .contentwrap .content h1, .firefox .subbannerpanel .grid-container-fullwidth .bannerwrap .grid-container .contentwrap .content h1{
+    @media (min-width: 1280px) {
+        letter-spacing: -0.72rem;
+    }
+}

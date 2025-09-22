@@ -1,0 +1,378 @@
+@import "util/util";
+$white: #ffffff;
+$primary-color: #EB0028;
+$bgpanel-color: #dce7e4;
+$black: #000000;
+$img: "../../images";
+$breakpoints: (
+    small: 0,
+    medium: 768px,
+    large: 1024px,
+    llarge: 1280px,
+    xlarge: 1360px,
+    xxlarge: 1440px,
+);
+
+.timelinepanel{
+    .iconwrap{
+        padding-top: clamp(30px, calc(30px + (85 - 30) * ((100vw - 375px) / (1440 - 375))), 85px);
+        background: rgba(63,63,63,0.05);
+        padding-bottom: 6px;
+        @include breakpoint(large) {
+            padding-bottom: 25px;
+        }
+        width: 100%;
+        .mapiconwrap{
+            position: relative;
+            width: 100%;
+            height: 56px;
+            @media (max-width:1023px) {
+                position: relative;
+            }
+            @include breakpoint(large) {
+                height: 106px;
+            }
+            .mapicon{
+                position: absolute;
+                left: 0;
+                top: 0;
+                z-index: 9;
+                @include breakpoint(large) {
+                    left: calc(50% - 31px);
+                }
+                img{
+                    max-width: 36px;
+                    @include breakpoint(large) {
+                        max-width: 100%;
+                    }
+                }
+            }
+        }
+    }
+    .timelinewrap{
+        position: relative;
+        padding-left: 40px;
+        @include breakpoint(medium only) {
+            padding-left: 50px;
+        }
+        @include breakpoint(large) {
+            padding-left: 0;
+        }
+        &::after{
+            content: '';
+            width: 5px;
+            height: 100%;
+            position: absolute;
+            left: 26px;
+            top: 0;
+            z-index: 9;
+            @include breakpoint(medium only) {
+                left: 46px;
+            }
+            @include breakpoint(large) {
+                left: 50%;
+            }
+        }
+        &::before{
+            content: '';
+            background: #604775;
+            width: 12.625rem;
+            height: 0.3125rem;
+            position: absolute;
+            left: calc(50% - 101px);
+            top: auto;
+            z-index: 99;
+            bottom: 0;
+            display: none;
+            @include breakpoint(large) {
+                width: 80px;
+                left: calc(50% - 40px);
+                display: block;
+            }
+            @media screen and (min-width:1440px) { 
+                width: 202px;
+                left: calc(50% - 101px);
+            }
+            @media (min-width:1440px) and (max-width:1449px) {
+                left:  calc(50% - 112.2px);
+            }
+            // @media (min-width:1440px) and (max-width:1450px) {
+            //     left:  calc(50% - 108px);
+            // }
+            @media (min-width:1450px) and (max-width:1465px) {
+                left:  calc(50% - 104px);
+            }
+            @media (min-width:1466px) and (max-width:1479px) {
+                left:  calc(50% - 104px);
+            }
+        }
+        &:nth-child(3n+2){
+            background: rgba(63,63,63,0.05);
+            &::after{
+                background: #0083C1;
+            }
+            &::before{
+                background: #604775;
+            }
+            .timeline-item{
+                @media screen and (max-width:1023px) { 
+                    padding-top: 0;
+                }
+            }
+            .leftwrap{
+                .contwrap{
+                    h3{
+                        color: #0083C1;
+                    }
+                }
+            }
+            .rightWrap{
+                .listwrap{
+                    ul{
+                        li{
+                            &::before{
+                                content: '';
+                                border-color: #0083C1 !important;
+                            }
+                            &::after{
+                                content: '';
+                                background: #0083C1 !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &:nth-child(3n+3){
+            background: rgba(63,63,63,0.10);
+            &::after{
+                background: #604775;
+            }
+            &::before{
+                background: #604775;
+            }
+            .leftwrap{
+                .contwrap{
+                    h3{
+                        color: #604775;
+                    }
+                }
+            }
+            .rightWrap{
+                .listwrap{
+                    ul{
+                        li{
+                            &::before{
+                                content: '';
+                                border-color: #604775 !important;
+                            }
+                            &::after{
+                                content: '';
+                                background: #604775 !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &:nth-child(3n+4){
+            background: rgba(63,63,63,0.15);
+            &::after{
+                background: #38858B;
+                height: 93%;
+                @include breakpoint(large) {
+                    height: calc(100% - 64px);
+                }
+            }
+            &::before{
+                background: #38858B;
+                bottom: 118px;
+                display: none;
+            }
+            .timeline-item{
+                padding-bottom: 70px;
+                @include breakpoint(large) {
+                    padding-bottom: 90px;
+                }
+            }
+            .leftwrap{
+                .contwrap{
+                    h3{
+                        color: #38858B;
+                    }
+                }
+            }
+            .rightWrap{
+                .listwrap{
+                    ul{
+                        li{
+                            &::before{
+                                content: '';
+                                border-color: #38858B !important;
+                            }
+                            &::after{
+                                content: '';
+                                background: #38858B !important;
+                            }
+                            &.last-child{
+                                &::before{
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .timeline-item{
+            display: flex;
+            justify-content: space-between;
+            padding-top: 32px;
+            padding-bottom: 34px;
+            flex-wrap: wrap;
+            @include breakpoint(large) {
+                max-width: 947px;
+                margin-left: auto;
+                margin-right: auto;
+                padding-top: 36px;
+                padding-bottom: 48px;
+            }
+            @media screen and (min-width:1150px) { 
+                max-width: 1070px;
+            }
+            @include breakpoint(llarge) {
+                max-width: 1200px;
+            }
+            @media screen and (min-width:1360px) { 
+                max-width: 1284px;
+            }
+            @media screen and (min-width:1440px) { 
+                max-width: 100%;
+            }
+            .leftwrap{
+                max-width: 100%;
+                width: 100%;
+                margin-top: -10px;
+                @include breakpoint(large) {
+                    max-width: 355px;
+                    margin-top: 0;
+                }
+                @include breakpoint(llarge) {
+                    max-width: 529px;
+                }
+                .contwrap{
+                    h3{
+                        font-size: clamp(52px, calc(52px + (103 - 52) * ((100vw - 375px) / (1440 - 375))), 103px);
+                        line-height: clamp(62px, calc(62px + (124 - 62) * ((100vw - 375px) / (1440 - 375))), 124px);
+                        font-weight: 400;
+                        span{
+                            font-size: clamp(25px, calc(25px + (50 - 25) * ((100vw - 375px) / (1440 - 375))), 50px);
+                            line-height: clamp(30px, calc(30px + (61 - 30) * ((100vw - 375px) / (1440 - 375))), 61px);
+                            left: 4px;
+                            position: relative;
+                            top: 0px;
+                            @media screen and (min-width:1480px) { 
+                                top: 4px;
+                            }
+                        }
+                    }
+                }
+            }
+            .rightWrap{
+                max-width: 100%;
+                width: 100%;
+                @include breakpoint(large) {
+                    max-width: 384px;
+                }
+                @include breakpoint(llarge) {
+                    max-width: 484px;
+                }
+                .listwrap{
+                    margin-top: 34px;
+                    @include breakpoint(large) {
+                        margin-top: 42px;
+                    }
+                    @media screen and (min-width:1480px) { 
+                        margin-left: -28px;
+                    }
+                    @include breakpoint(large only) {
+                        max-width: 300px;
+                        margin-right: auto;
+                        margin-left: auto;
+                    }
+                    ul{
+                        li{
+                            margin-bottom: 44px;
+                            padding-left: 28px;
+                            &:last-child{
+                                margin-bottom: 0px;
+                            }
+                            @include breakpoint(large) {
+                                padding-left: 18px;
+                                margin-bottom: 28px;
+                            }
+                            &::before{
+                                content: '';
+                                background: transparent;
+                                border: 3px solid transparent;
+                                width: 20px;
+                                height: 20px;
+                                left: 0px;
+                                top:4px;
+                                @include breakpoint(small only) {
+                                    top:2px;
+                                }
+                                @include breakpoint(large) {
+                                    left: -25px;
+                                    width: 25px;
+                                    height: 25px;
+                                }
+                                // @include breakpoint(llarge) {
+                                //     width: 35px;
+                                //     height: 35px;
+                                // }
+                            }
+                            &::after{
+                                content: '';
+                                width: 58px;
+                                height: 5px;
+                                position: absolute;
+                                right: auto;
+                                top: -26px;
+                                z-index: 9;
+                                background: #0083C1;
+                                left: -22px;
+                                @include breakpoint(medium only) {
+                                    left: -32px;
+                                }
+                                @include breakpoint(large) {
+                                    left: auto;
+                                    width: 80px;
+                                    right: calc(100% + 90px);
+                                    top:15px;
+                                }
+                                @media screen and (min-width:1150px) { 
+                                    right: calc(100% + 152px);
+                                }
+                                @include breakpoint(llarge) {
+                                    right: calc(100% + 75px);
+                                    top:18px;
+                                }
+                                @media screen and (min-width:1360px) { 
+                                    right: calc(100% + 116px);
+                                }
+                                @media screen and (min-width:1440px) { 
+                                    width: 202px;
+                                    right: calc(100% + 108px);
+                                }
+                                @media (min-width:1480px) and (max-width:1480px) {
+                                    right:  calc(100% + 76px);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

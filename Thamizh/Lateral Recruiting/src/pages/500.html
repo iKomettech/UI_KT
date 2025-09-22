@@ -1,0 +1,44 @@
+<link rel="stylesheet" href="{{root}}assets/css/error/error.css" media="all">
+<section class="page404Wrap">
+    <div class="grid-container">
+      <div class="contentwrap">
+        <div class="content">
+          <h1 class="ft-60">OUR WEBSITE IS TEMPORARILY UNAVAILABLE</h1>
+        </div>
+      </div>
+   </div>
+</section>
+<script>
+    $(document).ready(function() {
+    function adjustFooterPadding() {
+        if ($(window).outerWidth() >= 768) {
+            $('.siteInner').css({'padding-bottom': $('footer').outerHeight()});
+            $('.main').removeAttr("style");
+        } else {
+            $('.siteInner').removeAttr("style");
+            let windowheight = $(window).innerHeight();
+            //console.log(windowheight);
+            let footerheight = $("footer").innerHeight();
+            let headerheight = $("header").innerHeight();
+            let window_height = footerheight + headerheight;
+            let main_height = windowheight - window_height;
+            $('.main').css({ 'min-height': main_height });
+        }
+        if ($(window).width() >= 1024) {
+            let getHeadHight = $('.stickyEmpty').height();
+            let alertText = $('.alert-text').height();
+            let totalHeight = getHeadHight + alertText + 30;
+            $('.ourfirmbannerpanel').css({'margin-top': - totalHeight});
+        } else {
+            $('.ourfirmbannerpanel').removeAttr("style");
+        }
+    }
+
+    adjustFooterPadding();
+
+    $(window).on("resize load", function() {
+        adjustFooterPadding();
+    });
+});
+
+</script>
