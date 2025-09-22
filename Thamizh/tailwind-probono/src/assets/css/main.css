@@ -1,0 +1,442 @@
+@tailwind base;
+main {
+  @apply max-w-7xl relative px-4 sm:px-6 mb-16 sm:mb-24 mx-auto;
+}
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "roboto";
+    font-style: normal;
+    font-weight: 500;
+    src: url("../fonts/roboto-medium.woff2") format("woff2");
+  }
+
+  @font-face {
+    font-family: "roboto";
+    font-style: normal;
+    font-weight: bold;
+    src: url("../fonts/roboto-bold.woff2") format("woff2");
+  }
+
+  @font-face {
+    font-family: "probono";
+    font-style: normal;
+    font-weight: 300;
+    src: url("../fonts/robotocondensedlight.woff2") format("woff2");
+  }
+
+  @font-face {
+    font-family: "probono";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../fonts/robotocondensedregular.woff2") format("woff2");
+  }
+
+  @font-face {
+    font-family: "probono";
+    font-style: normal;
+    font-weight: 700;
+    src: url("../fonts/robotocondensedbold.woff2") format("woff2");
+  }
+
+  @font-face {
+    font-family: "probonoheading";
+    font-weight: normal;
+    font-style: normal;
+    src: url("../fonts/misproje-webfont.woff2") format("woff2");
+  }
+
+  @font-face {
+    font-family: "probonosubheading";
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+    src: url("../fonts/robinson_corroded-webfont.woff2") format("woff2");
+  }
+}
+.card-zoom {
+  @apply relative flex items-center justify-center overflow-hidden w-60 h-60;
+}
+.card-zoom-image {
+  @apply absolute w-full h-full transition-all duration-1000 ease-in-out transform bg-center bg-cover;
+}
+.card-zoom-text {
+  @apply absolute font-fheaing transition-all duration-500 ease-in-out transform text-white font-light text-[30px] leading-[32px] opacity-0 text-center;
+}
+.card-zoom:hover .card-zoom-image {
+  @apply scale-110;
+}
+.card-zoom:hover .card-zoom-text {
+  @apply opacity-100;
+}
+/* .grid-cols-3:nth-child(2) .card-zoom{
+	margin-left: 18px;
+  } */
+@layer utilities {
+
+  @media (min-width: 1024px) {
+    .container {
+      max-width: 1473px;
+      padding: 0 18px;
+    }
+  }
+
+  @media (min-width: 1500px) {
+    .container {
+      padding: 0;
+    }
+  }
+  
+  @media (max-width: 1600px) {
+    .card-zoom{
+      height: 12rem !important;
+      width: 12rem !important;
+    }
+  }
+
+  @media (max-width: 1279px) {
+    .card-zoom{
+      height: 10rem !important;
+      width: 10rem !important;
+    }
+    .connectingpannel .max-w-sm{
+      margin: 0 auto;
+      max-width: 100%;
+    }
+    .connectingpannel .max-w-sm .object-cover{
+      margin: 0 auto;
+    }
+    .connectingpannel .max-w-sm h3{
+      text-align:center;
+    }
+  }
+
+  .connectingpannel .expand-content span:after {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 9px;
+    margin-top: -2px;
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 9px solid #801028;
+  }
+  .connectingpannel .active .expand-content span:after {
+    margin-top: 0;
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 9px solid #801028;
+    border-top: none;
+  }
+  footer ul li:after {
+    content: "";
+    background: #000;
+    height: 45px;
+    width: 2px;
+    position: absolute;
+    bottom: 2px;
+    right: -28px;
+    -webkit-transform: translateX(50%);
+    transform: translateX(50%);
+  }
+  footer ul li:last-child:after{
+    display:none
+  }
+  .home-icon figure {
+    width: 55px;
+    height: 42px;
+    background: #000;
+    border: solid 1px #707070;
+    display: flex;
+    justify-content: center;
+  }
+  .home-icon figure img {
+    width: 31px;
+  }
+  .searvicespanel ul li {
+    position: relative;
+  }
+  .searvicespanel ul li:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transform: scaleY(0);
+    transform: scaleY(0);
+    -webkit-transition: -webkit-transform 0.35s;
+    transition: -webkit-transform 0.35s;
+    transition: transform 0.35s;
+    transition: transform 0.35s, -webkit-transform 0.35s;
+  }
+  .searvicespanel ul li:hover:after {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+  }
+
+  .screen-reader-text {
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    position: absolute;
+    margin: -1px;
+    padding: 0;
+    height: 1px;
+    width: 1px;
+    word-wrap: normal !important;
+    border: 0 none;
+  }
+
+  .hamburger a {
+    display: block;
+    width: 70px;
+    height: 47px;
+    margin-top: 0;
+    margin-right: 0;
+    text-align: right;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    position: relative;
+    border-radius: 10px;
+  }
+
+  .hamburger a::before {
+    content: "";
+    width: 100%;
+    background: #000000;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    height: 5px;
+    -webkit-transition: 0.18s;
+    transition: 0.18s;
+    border-radius: 10px;
+  }
+  .hamburger a .lines {
+    display: inline-block;
+    width: 70px;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    position: relative;
+  }
+
+  .hamburger a .lines::after,
+  .hamburger a .lines::before {
+    content: "";
+    background: #000000;
+    width: 70px;
+    height: 5px;
+    position: absolute;
+    left: 0;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    border-radius: 10px;
+  }
+  .hamburger a.active .lines::after,
+  .hamburger a.active .lines::before {
+    background: #000;
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    top: -1px;
+    left: 2px;
+    width: 70px;
+    height: 5px;
+  }
+  .hamburger a.active .lines::before {
+    -webkit-transform: rotate3d(0, 0, 1, 45deg);
+    transform: rotate3d(0, 0, 1, 45deg);
+  }
+  .hamburger a.active .lines::after {
+    -webkit-transform: rotate3d(0, 0, 1, -45deg);
+    transform: rotate3d(0, 0, 1, -45deg);
+  }
+  .hamburger a.active::before {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  .hamburger a.active:focus {
+    outline-width: 0;
+  }
+  .hamburger a .lines::before {
+    top: 0px;
+  }
+  .hamburger a .lines::after {
+    top: 19px;
+  }
+  .mnavwrapper {
+    display: none;
+  }
+  .mnavwrapper.active {
+    display: block;
+    background: #fff;
+    padding-top: 72px;
+    position: absolute;
+    top: 135px;
+    width: 100%;
+    z-index: 99;
+    left: 0;
+    padding-bottom:40px;
+    border-bottom: 10px solid #eb0028;
+  }
+  .mnavwrapper.active .grid-cols-3{
+    height:680px;
+  }
+  .mnavwrapper .grid ul li .inner li { 
+    text-transform: none;
+  }
+  @media screen and (min-width: 768px) {
+    .mnavwrapper .grid ul li .inner {
+      display: block !important;
+    }
+  }
+  @media screen and (max-width: 1480px){
+    footer ul li:after{
+      right:-18px
+    } 
+  }
+  
+  @media screen and (max-width: 1366px){
+    footer .whitepanel ul li a br{
+      display: block !important;
+    }
+    footer ul li:after{
+      right:-47px
+    } 
+  }
+
+  @media screen and (max-width: 1023px){
+    .hamburger{
+      transform: scale(0.5);
+    }
+    footer li.home-icon{
+      display: none;
+    }
+    footer ul li{
+      padding-top: 15px;
+    padding-bottom: 17px;
+    }
+    footer ul li:after {
+      right: 50%;
+      height: 1px;
+      width: 248px;
+  }
+  .probonopannel .left-margin, .probonopannel .right-margin {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  .fLogo figure{
+    margin: 0 auto;
+  }
+  .fLogo p.flex{
+    justify-content:center;
+  }
+  .searvicespanel ul li{
+    padding-top: 5px;
+    padding-bottom: 6px;
+  }
+  .whitepanel h2{
+    font-family:'probonosubheading';
+    font-size: 73px;
+    text-align: center;
+  }
+  .mnavwrapper.active .grid-cols-3{
+    height:100%;
+  }
+}
+
+  @media screen and (max-width: 767px){ 
+    header .container{
+      padding: 0 18px;
+      max-width:100%;
+    }
+    .table.w-full.pt-\[30px\].pb-\[17px\] {
+      padding-top: 15px;
+      padding-bottom: 5px;
+  }
+  .logo {
+      max-width: 118px;
+      min-width: 118px;
+  }
+  .hamburger{
+    margin-top:0 !important;
+    transform: scale(0.5);
+    position: relative;
+    left: 25px;
+  }
+  .fLogo figure{
+    margin-bottom: 30px;
+  }
+  .fLogo p{
+    display: block;
+    text-align:center;
+  }
+  .mnavwrapper.active{
+    padding-top: 20px;
+    top: 65px;
+    padding-bottom: 10px;
+    border-bottom: 6px solid #eb0028;
+  }
+  .mnavwrapper.active .container{
+    max-width: 100%;
+    padding:0;
+  }
+  .mnavwrapper .grid-cols-3 {
+    width: 100%;
+    display: block;
+}
+.mnavwrapper .grid-cols-3 .border-black{
+  border:none;
+}
+.mnavwrapper .grid-cols-3 ul li{
+  margin-bottom: 9px;
+}
+.mnavwrapper .grid-cols-3 ul li a {
+  position: relative;
+  display: block;
+    padding: 0 0 0 21px;
+    font-size:13px;
+}
+.mnavwrapper .grid-cols-3 ul li a.msubmenu:after {
+  content: '';
+  background-image: url(http://www.lowensteinprobonoreport.com/2020/images/header/nav_arrow.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 10px;
+  height: 7px;
+  position: absolute;
+  top: 6px;
+  right: 16px;
+}
+.mnavwrapper .grid ul li .inner{
+  padding-left: 18px;
+  background: #ececec;
+  margin: 0;
+    padding-top: 5px;
+    padding-bottom: 2px;
+}
+.mnavwrapper .grid ul li .inner li {
+  text-transform: none;
+  font-size: 13px;
+}
+.link-panel{
+  padding: 10px 10px;
+}
+.link-panel a.text-white{
+  min-width: 110px;
+  font-size: 14px;
+  line-height: 18px;
+}
+  }
+}

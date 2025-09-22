@@ -1,0 +1,7 @@
+[build]
+  publish = "dist/"
+  command = "npm run netlify"
+[context.production.environment]
+  NODE_ENV = "production"
+[context.branch-deploy.environment]
+  NODE_ENV = "development"
